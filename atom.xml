@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-04-25T06:26:29.834Z</updated>
+  <updated>2019-04-25T07:16:27.861Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -21,9 +21,19 @@
     <link href="https://23yue23.github.io/2019/04/25/iTerm2-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     <id>https://23yue23.github.io/2019/04/25/iTerm2-使用技巧/</id>
     <published>2019-04-25T06:24:51.000Z</published>
-    <updated>2019-04-25T06:26:29.834Z</updated>
+    <updated>2019-04-25T07:16:27.861Z</updated>
+    
+    <content type="html"><![CDATA[<h6 id="1-标签"><a href="#1-标签" class="headerlink" title="1.标签"></a>1.标签</h6><ul><li>新建标签：Cmd + t</li><li>关闭标签：Cmd + w</li><li>切换标签：Cmd + 数字 \ Cmd + 左右键</li><li>切换全屏：Cmd + enter</li><li>本页分屏：Cmd + d</li><li>切换分屏：  Cmd + alt + 左右键<h6 id="2-编辑操作"><a href="#2-编辑操作" class="headerlink" title="2.编辑操作"></a>2.编辑操作</h6></li><li>清除当前行： ctrl +u</li><li>当前行最左最右：Ctrl+a / Ctrl+e </li><li>命令历史：ctrl + r</li><li>删除到文本末尾：ctrl + k</li><li>清屏1：Cmd + r</li><li>搜索粘贴：Cmd + F 输入 然后tab 选中直接粘贴。</li></ul>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h6 id=&quot;1-标签&quot;&gt;&lt;a href=&quot;#1-标签&quot; class=&quot;headerlink&quot; title=&quot;1.标签&quot;&gt;&lt;/a&gt;1.标签&lt;/h6&gt;&lt;ul&gt;
+&lt;li&gt;新建标签：Cmd + t&lt;/li&gt;
+&lt;li&gt;关闭标签：Cmd + w&lt;/li&gt;
+&lt;li&gt;切换标签：Cmd + 数
+      
     
     </summary>
     

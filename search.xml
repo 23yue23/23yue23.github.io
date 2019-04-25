@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[iTerm2-使用技巧]]></title>
     <url>%2F2019%2F04%2F25%2FiTerm2-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[1.标签 新建标签：Cmd + t 关闭标签：Cmd + w 切换标签：Cmd + 数字 \ Cmd + 左右键 切换全屏：Cmd + enter 本页分屏：Cmd + d 切换分屏： Cmd + alt + 左右键2.编辑操作 清除当前行： ctrl +u 当前行最左最右：Ctrl+a / Ctrl+e 命令历史：ctrl + r 删除到文本末尾：ctrl + k 清屏1：Cmd + r 搜索粘贴：Cmd + F 输入 然后tab 选中直接粘贴。]]></content>
       <categories>
         <category>工具</category>
       </categories>
