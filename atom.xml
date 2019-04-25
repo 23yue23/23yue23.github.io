@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-04-25T09:32:28.867Z</updated>
+  <updated>2019-04-25T09:34:02.559Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>2-flink</title>
-    <link href="https://23yue23.github.io/2019/04/25/2-flink/"/>
-    <id>https://23yue23.github.io/2019/04/25/2-flink/</id>
-    <published>2019-04-25T09:21:31.000Z</published>
-    <updated>2019-04-25T09:32:28.867Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2019/04/25/2-flink/long.png" alt title="hehe"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/2019/04/25/2-flink/long.png&quot; alt title=&quot;hehe&quot;&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="flink" scheme="https://23yue23.github.io/categories/flink/"/>
-    
-    
-      <category term="flink" scheme="https://23yue23.github.io/tags/flink/"/>
-    
-  </entry>
   
   <entry>
     <title>1-flink系列-搭建部署</title>
