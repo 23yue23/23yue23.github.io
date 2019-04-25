@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[markDown-使用]]></title>
+    <url>%2F2019%2F04%2F25%2FmarkDown-%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[标签` h1h2h3h4h5h6` 段落及区块引用` ` 插入链接和图片[点击跳转至百度](http://www.baidu.com) ![图片](https://user-gold-cdn.xitu.io/2018/4/18/162d75d959444389?w=1240&amp;h=703&amp;f=jpeg&amp;s=56927) 列表` | + | - 是无序列表 数字点加空格 是有序列表列表中加入了区块引用，区域引用标记符也需要缩进4个空格 段落一 区块标记一 段落二 区块标记二` 分割线`两种任一即可 `]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[iTerm2-使用技巧]]></title>
     <url>%2F2019%2F04%2F25%2FiTerm2-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%2F</url>
-    <content type="text"><![CDATA[标签 新建标签：Cmd + t 关闭标签：Cmd + w 切换标签：Cmd + 数字 \ Cmd + 左右键 切换全屏：Cmd + enter 本页分屏：Cmd + d 切换分屏： Cmd + alt + 左右键 编辑操作 清除当前行： ctrl +u 当前行最左最右：Ctrl+a / Ctrl+e 命令历史：ctrl + r 删除到文本末尾：ctrl + k 清屏1：Cmd + r 搜索粘贴：Cmd + F 输入 然后tab 选中直接粘贴。]]></content>
+    <content type="text"><![CDATA[标签 新建标签：Cmd + t 关闭标签：Cmd + w 切换标签：Cmd + 数字 \ Cmd + 左右键 切换全屏：Cmd + enter 本页分屏：Cmd + d 切换分屏： Cmd + alt + 左右键 编辑操作 清除当前行： ctrl +u 当前行最左最右：Ctrl+a / Ctrl+e 命令历史：ctrl + r 删除到文本末尾：ctrl + k 清屏1：Cmd + r 搜索粘贴：Cmd + F 输入 然后tab 选中直接粘贴。 寻找当前鼠标：⌘ + / 自动补全：⌘ + ;]]></content>
       <categories>
         <category>工具</category>
       </categories>
