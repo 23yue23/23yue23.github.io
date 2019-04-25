@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-04-25T08:47:38.106Z</updated>
+  <updated>2019-04-25T08:48:31.442Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://23yue23.github.io/2019/04/25/1-flink%E7%B3%BB%E5%88%97-%E6%90%AD%E5%BB%BA%E9%83%A8%E7%BD%B2/"/>
     <id>https://23yue23.github.io/2019/04/25/1-flink系列-搭建部署/</id>
     <published>2019-04-25T08:28:54.000Z</published>
-    <updated>2019-04-25T08:47:38.106Z</updated>
+    <updated>2019-04-25T08:48:31.442Z</updated>
     
     <content type="html"><![CDATA[<h6 id="程序和数据流"><a href="#程序和数据流" class="headerlink" title="程序和数据流"></a>程序和数据流</h6><pre><code>Flink程序映射到流数据流，由流和转换运算符组成。每个数据流都以一个或多个源开头，并以一个或多个接收器结束.        数据流类似于任意有向无环图 （DAG）。</code></pre><p><img src="evernotecid://D4D3EF49-60E2-451F-9221-C93FFDEF852A/appyinxiangcom/17752258/ENResource/p2461" alt="a0e86a91a3dcea2aeb66f2bdca113466.png"></p>]]></content>
     
