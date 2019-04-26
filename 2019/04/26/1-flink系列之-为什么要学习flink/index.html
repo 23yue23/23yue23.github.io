@@ -147,7 +147,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://flink.apache.org/img/local-state.png">
 <meta property="og:image" content="https://flink.apache.org/img/api-stack.png">
-<meta property="og:updated_time" content="2019-04-26T04:43:26.478Z">
+<meta property="og:updated_time" content="2019-04-26T04:45:11.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1.flink系列之--为什么要学习flink">
 <meta name="twitter:description" content="什么是flink Apache Flink是一个框架和分布式处理引擎，用于对无界和有界数据流进行状态计算。  flink 特点:  其异步和增量检查点算法确保对处理延迟的影响最小，同时保证一次性状态一致性。 随处部署应用程序: 常见的集群资源管理器（如Hadoop YARN，Apache Mesos和Kubernetes）集成，但也可以设置为作为独立集群运行   处理无界和有界数据 充分利用内存性">
@@ -467,10 +467,10 @@
       
 
       
-        <h6 id="什么是flink"><a href="#什么是flink" class="headerlink" title="什么是flink"></a>什么是flink</h6><blockquote>
+        <h4 id="什么是flink"><a href="#什么是flink" class="headerlink" title="什么是flink"></a>什么是flink</h4><blockquote>
 <p>Apache Flink是一个框架和分布式处理引擎，用于对无界和有界数据流进行状态计算。</p>
 </blockquote>
-<h6 id="flink-特点"><a href="#flink-特点" class="headerlink" title="flink 特点:"></a>flink 特点:</h6><blockquote>
+<h4 id="flink-特点"><a href="#flink-特点" class="headerlink" title="flink 特点:"></a>flink 特点:</h4><blockquote>
 <ol>
 <li>其异步和增量检查点算法确保对处理延迟的影响最小，同时保证一次性状态一致性。<ol start="2">
 <li>随处部署应用程序: 常见的集群资源管理器（如Hadoop YARN，Apache Mesos和Kubernetes）集成，但也可以设置为作为独立集群运行</li>
@@ -484,7 +484,7 @@
 </ol>
 </blockquote>
 <hr>
-<h6 id="flink丰富状态功能："><a href="#flink丰富状态功能：" class="headerlink" title="flink丰富状态功能："></a>flink丰富状态功能：</h6><blockquote>
+<h4 id="flink丰富状态功能："><a href="#flink丰富状态功能：" class="headerlink" title="flink丰富状态功能："></a>flink丰富状态功能：</h4><blockquote>
 <ol>
 <li>多状态基元：Flink为不同的数据结构提供状态基元，例如原子值，列表或映射。</li>
 <li>可插拔状态后端：应用程序状态由可插拔状态后端管理和检查点。(内存或RocksDB 存储或自定义)</li>
@@ -494,7 +494,7 @@
 </ol>
 </blockquote>
 <hr>
-<h6 id="flink-的容错机制："><a href="#flink-的容错机制：" class="headerlink" title="flink 的容错机制："></a>flink 的容错机制：</h6><blockquote>
+<h4 id="flink-的容错机制："><a href="#flink-的容错机制：" class="headerlink" title="flink 的容错机制："></a>flink 的容错机制：</h4><blockquote>
 <ol>
 <li>一致的检查点: 如果发生故障，将重新启动应用程序并从最新检查点加载其状态,此功能可以保证一次性状态一致性。</li>
 <li>高效检查点: Flink可以执行异步和增量检查点，以便将检查点对应用程序的延迟SLA的影响保持在非常小的水平。</li>
@@ -515,7 +515,7 @@
 </ol>
 </blockquote>
 <hr>
-<h6 id="flink-丰富time功能"><a href="#flink-丰富time功能" class="headerlink" title="flink 丰富time功能:"></a>flink 丰富time功能:</h6><blockquote>
+<h4 id="flink-丰富time功能"><a href="#flink-丰富time功能" class="headerlink" title="flink 丰富time功能:"></a>flink 丰富time功能:</h4><blockquote>
 <ol>
 <li>Event-time Mode(事件时间):根据事件的时间戳计算结果</li>
 <li>Watermark Support（水印支持）:使用水印来推断事件时间应用中的时间，也可以使用水印来推断事件时间应用中的时间。</li>
@@ -524,7 +524,7 @@
 </ol>
 </blockquote>
 <hr>
-<h6 id="flink-分层API"><a href="#flink-分层API" class="headerlink" title="flink 分层API:"></a>flink 分层API:</h6><blockquote>
+<h4 id="flink-分层API"><a href="#flink-分层API" class="headerlink" title="flink 分层API:"></a>flink 分层API:</h4><blockquote>
 <p><img src="https://flink.apache.org/img/api-stack.png" alt title="flink 分层API"></p>
 </blockquote>
 <blockquote>
@@ -535,7 +535,7 @@
 </ol>
 </blockquote>
 <hr>
-<h6 id="flink-Libraries"><a href="#flink-Libraries" class="headerlink" title="flink Libraries:"></a>flink Libraries:</h6><blockquote>
+<h4 id="flink-Libraries"><a href="#flink-Libraries" class="headerlink" title="flink Libraries:"></a>flink Libraries:</h4><blockquote>
 <ol>
 <li>复杂事件处理（CEP）:CEP库的应用包括网络入侵检测，业务流程监控和欺诈检测。</li>
 <li>DataSet API: 用于批处理应用程序的核心API。</li>
@@ -543,7 +543,7 @@
 </ol>
 </blockquote>
 <hr>
-<h6 id="flink-监控方式："><a href="#flink-监控方式：" class="headerlink" title="flink 监控方式："></a>flink 监控方式：</h6><blockquote>
+<h4 id="flink-监控方式："><a href="#flink-监控方式：" class="headerlink" title="flink 监控方式："></a>flink 监控方式：</h4><blockquote>
 <ol>
 <li>Web UI:可以检查，监视和调试正在运行的应用程序。</li>
 <li>日志记录：Flink实现了流行的slf4j日志记录界面，并与日志框架log4j或logback集成。</li>
@@ -799,7 +799,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#什么是flink"><span class="nav-number">1.</span> <span class="nav-text">什么是flink</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#flink-特点"><span class="nav-number">2.</span> <span class="nav-text">flink 特点:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#flink丰富状态功能："><span class="nav-number">3.</span> <span class="nav-text">flink丰富状态功能：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#flink-的容错机制："><span class="nav-number">4.</span> <span class="nav-text">flink 的容错机制：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#flink-丰富time功能"><span class="nav-number">5.</span> <span class="nav-text">flink 丰富time功能:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#flink-分层API"><span class="nav-number">6.</span> <span class="nav-text">flink 分层API:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#flink-Libraries"><span class="nav-number">7.</span> <span class="nav-text">flink Libraries:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#flink-监控方式："><span class="nav-number">8.</span> <span class="nav-text">flink 监控方式：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是flink"><span class="nav-number">1.</span> <span class="nav-text">什么是flink</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flink-特点"><span class="nav-number">2.</span> <span class="nav-text">flink 特点:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flink丰富状态功能："><span class="nav-number">3.</span> <span class="nav-text">flink丰富状态功能：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flink-的容错机制："><span class="nav-number">4.</span> <span class="nav-text">flink 的容错机制：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flink-丰富time功能"><span class="nav-number">5.</span> <span class="nav-text">flink 丰富time功能:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flink-分层API"><span class="nav-number">6.</span> <span class="nav-text">flink 分层API:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flink-Libraries"><span class="nav-number">7.</span> <span class="nav-text">flink Libraries:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flink-监控方式："><span class="nav-number">8.</span> <span class="nav-text">flink 监控方式：</span></a></li></ol></div>
             
 
           </div>
