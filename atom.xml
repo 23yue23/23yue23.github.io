@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-04-26T06:00:16.760Z</updated>
+  <updated>2019-04-26T06:06:48.870Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>flink系列之--学习网站(实时更新)</title>
+    <link href="https://23yue23.github.io/2019/04/26/flink%E7%B3%BB%E5%88%97%E4%B9%8B-%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/"/>
+    <id>https://23yue23.github.io/2019/04/26/flink系列之-学习网站/</id>
+    <published>2019-04-26T06:02:29.000Z</published>
+    <updated>2019-04-26T06:06:48.870Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="flink-学习网站"><a href="#flink-学习网站" class="headerlink" title="flink 学习网站"></a>flink 学习网站</h4><blockquote><ol><li><a href="https://flink.apache.org/" target="_blank" rel="noopener">flink官网</a></li><li><a href="https://training.ververica.com" target="_blank" rel="noopener">training</a></li><li>[#]</li></ol></blockquote><hr><h4 id="flink-书籍"><a href="#flink-书籍" class="headerlink" title="flink 书籍"></a>flink 书籍</h4><blockquote><ol><li>flink基础教程</li><li>[#]</li></ol></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;flink-学习网站&quot;&gt;&lt;a href=&quot;#flink-学习网站&quot; class=&quot;headerlink&quot; title=&quot;flink 学习网站&quot;&gt;&lt;/a&gt;flink 学习网站&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://fl
+      
+    
+    </summary>
+    
+    
+      <category term="flink-学习" scheme="https://23yue23.github.io/tags/flink-%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>flink系列之--问题汇总（实时更新）</title>
     <link href="https://23yue23.github.io/2019/04/26/flink%E7%B3%BB%E5%88%97%E4%B9%8B-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%EF%BC%88%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0%EF%BC%89/"/>
     <id>https://23yue23.github.io/2019/04/26/flink系列之-问题汇总（实时更新）/</id>
     <published>2019-04-26T05:21:39.000Z</published>
-    <updated>2019-04-26T06:00:16.760Z</updated>
+    <updated>2019-04-26T06:01:51.857Z</updated>
     
     <content type="html"><![CDATA[<h4 id="隐式转换器的异常："><a href="#隐式转换器的异常：" class="headerlink" title="隐式转换器的异常："></a>隐式转换器的异常：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">确保导入：</span><br><span class="line">import org.apache.flink.streaming.api.scala._（DataStream API）</span><br><span class="line">import org.apache.flink.api.scala._（DataSet API）</span><br></pre></td></tr></table></figure><hr><h4 id="如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"><a href="#如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现" class="headerlink" title="如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"></a>如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def myFunction[T: TypeInformation](input: DataSet[T]): DataSet[Seq[T]] = &#123;</span><br><span class="line">  input.reduceGroup( i =&gt; i.toSeq )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h4 id="ClassCastException：X无法强制转换为X"><a href="#ClassCastException：X无法强制转换为X" class="headerlink" title="ClassCastException：X无法强制转换为X"></a>ClassCastException：X无法强制转换为X</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.尝试classloader.resolve-order: parent-first在配置中进行设置</span><br><span class="line">2.从不同的执行尝试缓存类</span><br><span class="line">3.通过child-first类加载进行类复制</span><br></pre></td></tr></table></figure><hr><h4 id="AbstractMethodError或NoSuchFieldError"><a href="#AbstractMethodError或NoSuchFieldError" class="headerlink" title="AbstractMethodError或NoSuchFieldError"></a>AbstractMethodError或NoSuchFieldError</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">存在依赖项版本冲突,确保所有依赖项版本都一致。</span><br></pre></td></tr></table></figure><hr><h4 id="事件正在进行，DataStream应用程序不产生任何输出"><a href="#事件正在进行，DataStream应用程序不产生任何输出" class="headerlink" title="事件正在进行，DataStream应用程序不产生任何输出"></a>事件正在进行，DataStream应用程序不产生任何输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.如果您的DataStream应用程序使用事件时间，请检查您的水印是否已更新。</span><br><span class="line">  如果没有产生水印，事件时间窗口可能永远不会触发，应用程序将不会产生任何结果。</span><br><span class="line">2.您可以在Flink的Web UI（水印部分）中查看水印是否正在取得进展。</span><br></pre></td></tr></table></figure><hr><h4 id="exception-reporting-“Insufficient-number-of-network-buffers”"><a href="#exception-reporting-“Insufficient-number-of-network-buffers”" class="headerlink" title="exception reporting “Insufficient number of network buffers”"></a>exception reporting “Insufficient number of network buffers”</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.原因可能：以很高的并发来执行flink ,增加了网络缓冲区的数量。</span><br><span class="line">  默认情况下，Flink占用网络缓冲区的JVM堆大小的10％，最小为64MB，最大为1GB。</span><br><span class="line">2.可以通过修改一下以下参数来调整：</span><br><span class="line">taskmanager.network.memory.fraction</span><br><span class="line">taskmanager.network.memory.min</span><br><span class="line">taskmanager.network.memory.max</span><br></pre></td></tr></table></figure><p><a href="https://ci.apache.org/projects/flink/flink-docs-master/ops/config.html#configuring-the-network-buffers" title="flink 配置信息" target="_blank" rel="noopener">flink 配置信息</a></p><hr><p>参考：</p><blockquote><p>flink官网：<a href="https://flink.apache.org/gettinghelp.html" target="_blank" rel="noopener">https://flink.apache.org/gettinghelp.html</a></p></blockquote>]]></content>
     
@@ -37,7 +62,7 @@
       <category term="flink" scheme="https://23yue23.github.io/categories/flink/"/>
     
     
-      <category term="flink" scheme="https://23yue23.github.io/tags/flink/"/>
+      <category term="flink-问题" scheme="https://23yue23.github.io/tags/flink-%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
