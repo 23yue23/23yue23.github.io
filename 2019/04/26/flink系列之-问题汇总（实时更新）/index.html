@@ -124,7 +124,7 @@
 
 
 
-  <meta name="keywords" content="flink, spark,kafka,hive">
+  <meta name="keywords" content="flink,">
 
 
 
@@ -137,14 +137,18 @@
 
 
 
+<meta name="description" content="隐式转换器的异常：123确保导入：import org.apache.flink.streaming.api.scala._（DataStream API）import org.apache.flink.api.scala._（DataSet API）  如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现123def">
+<meta name="keywords" content="flink">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蜗牛笔记">
-<meta property="og:url" content="https://23yue23.github.io/2019/04/25/1-flink系列-搭建部署/index.html">
+<meta property="og:title" content="flink系列之--问题汇总（实时更新）">
+<meta property="og:url" content="https://23yue23.github.io/2019/04/26/flink系列之-问题汇总（实时更新）/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
+<meta property="og:description" content="隐式转换器的异常：123确保导入：import org.apache.flink.streaming.api.scala._（DataStream API）import org.apache.flink.api.scala._（DataSet API）  如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现123def">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-25T14:02:55.478Z">
+<meta property="og:updated_time" content="2019-04-26T06:00:16.760Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蜗牛笔记">
+<meta name="twitter:title" content="flink系列之--问题汇总（实时更新）">
+<meta name="twitter:description" content="隐式转换器的异常：123确保导入：import org.apache.flink.streaming.api.scala._（DataStream API）import org.apache.flink.api.scala._（DataSet API）  如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现123def">
 
 
 
@@ -174,13 +178,13 @@
 
 
 
-  <link rel="canonical" href="https://23yue23.github.io/2019/04/25/1-flink系列-搭建部署/">
+  <link rel="canonical" href="https://23yue23.github.io/2019/04/26/flink系列之-问题汇总（实时更新）/">
 
 
 
 
 
-  <title> | 蜗牛笔记</title>
+  <title>flink系列之--问题汇总（实时更新） | 蜗牛笔记</title>
   
 
 
@@ -339,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://23yue23.github.io/2019/04/25/1-flink系列-搭建部署/">
+    <link itemprop="mainEntityOfPage" href="https://23yue23.github.io/2019/04/26/flink系列之-问题汇总（实时更新）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Brady">
@@ -356,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">flink系列之--问题汇总（实时更新）</h1>
         
 
         <div class="post-meta">
@@ -368,8 +372,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-25T16:54:25+08:00">
-                2019-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-26T13:21:39+08:00">
+                2019-04-26
               </time>
             
 
@@ -378,6 +382,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/flink/" itemprop="url" rel="index">
+                    <span itemprop="name">flink</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -401,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  372
                 </span>
               
 
@@ -438,7 +464,24 @@
       
 
       
-        
+        <h4 id="隐式转换器的异常："><a href="#隐式转换器的异常：" class="headerlink" title="隐式转换器的异常："></a>隐式转换器的异常：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">确保导入：</span><br><span class="line">import org.apache.flink.streaming.api.scala._（DataStream API）</span><br><span class="line">import org.apache.flink.api.scala._（DataSet API）</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"><a href="#如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现" class="headerlink" title="如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"></a>如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def myFunction[T: TypeInformation](input: DataSet[T]): DataSet[Seq[T]] = &#123;</span><br><span class="line">  input.reduceGroup( i =&gt; i.toSeq )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="ClassCastException：X无法强制转换为X"><a href="#ClassCastException：X无法强制转换为X" class="headerlink" title="ClassCastException：X无法强制转换为X"></a>ClassCastException：X无法强制转换为X</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.尝试classloader.resolve-order: parent-first在配置中进行设置</span><br><span class="line">2.从不同的执行尝试缓存类</span><br><span class="line">3.通过child-first类加载进行类复制</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="AbstractMethodError或NoSuchFieldError"><a href="#AbstractMethodError或NoSuchFieldError" class="headerlink" title="AbstractMethodError或NoSuchFieldError"></a>AbstractMethodError或NoSuchFieldError</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">存在依赖项版本冲突,确保所有依赖项版本都一致。</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="事件正在进行，DataStream应用程序不产生任何输出"><a href="#事件正在进行，DataStream应用程序不产生任何输出" class="headerlink" title="事件正在进行，DataStream应用程序不产生任何输出"></a>事件正在进行，DataStream应用程序不产生任何输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.如果您的DataStream应用程序使用事件时间，请检查您的水印是否已更新。</span><br><span class="line">  如果没有产生水印，事件时间窗口可能永远不会触发，应用程序将不会产生任何结果。</span><br><span class="line">2.您可以在Flink的Web UI（水印部分）中查看水印是否正在取得进展。</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="exception-reporting-“Insufficient-number-of-network-buffers”"><a href="#exception-reporting-“Insufficient-number-of-network-buffers”" class="headerlink" title="exception reporting “Insufficient number of network buffers”"></a>exception reporting “Insufficient number of network buffers”</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.原因可能：以很高的并发来执行flink ,增加了网络缓冲区的数量。</span><br><span class="line">  默认情况下，Flink占用网络缓冲区的JVM堆大小的10％，最小为64MB，最大为1GB。</span><br><span class="line">2.可以通过修改一下以下参数来调整：</span><br><span class="line">taskmanager.network.memory.fraction</span><br><span class="line">taskmanager.network.memory.min</span><br><span class="line">taskmanager.network.memory.max</span><br></pre></td></tr></table></figure>
+<p><a href="https://ci.apache.org/projects/flink/flink-docs-master/ops/config.html#configuring-the-network-buffers" title="flink 配置信息" target="_blank" rel="noopener">flink 配置信息</a></p>
+<hr>
+<p>参考：</p>
+<blockquote>
+<p>flink官网：<a href="https://flink.apache.org/gettinghelp.html" target="_blank" rel="noopener">https://flink.apache.org/gettinghelp.html</a></p>
+</blockquote>
+
       
     </div>
     
@@ -474,7 +517,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://23yue23.github.io/2019/04/25/1-flink系列-搭建部署/" title>https://23yue23.github.io/2019/04/25/1-flink系列-搭建部署/</a>
+    <a href="https://23yue23.github.io/2019/04/26/flink系列之-问题汇总（实时更新）/" title="flink系列之--问题汇总（实时更新）">https://23yue23.github.io/2019/04/26/flink系列之-问题汇总（实时更新）/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -487,6 +530,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/flink/" rel="tag"><i class="fa fa-tag"></i> flink</a>
+          
+        </div>
+      
 
       
       
@@ -496,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/25/markDown-使用/" rel="next" title="markDown-使用">
-                <i class="fa fa-chevron-left"></i> markDown-使用
+              <a href="/2019/04/26/1-flink系列之-为什么要学习flink/" rel="next" title="1.flink系列之--为什么要学习flink">
+                <i class="fa fa-chevron-left"></i> 1.flink系列之--为什么要学习flink
               </a>
             
           </div>
@@ -505,10 +554,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/26/1-flink系列之-为什么要学习flink/" rel="prev" title="1.flink系列之--为什么要学习flink">
-                1.flink系列之--为什么要学习flink <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -560,8 +605,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -661,6 +715,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换器的异常："><span class="nav-number">1.</span> <span class="nav-text">隐式转换器的异常：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"><span class="nav-number">2.</span> <span class="nav-text">如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ClassCastException：X无法强制转换为X"><span class="nav-number">3.</span> <span class="nav-text">ClassCastException：X无法强制转换为X</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AbstractMethodError或NoSuchFieldError"><span class="nav-number">4.</span> <span class="nav-text">AbstractMethodError或NoSuchFieldError</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件正在进行，DataStream应用程序不产生任何输出"><span class="nav-number">5.</span> <span class="nav-text">事件正在进行，DataStream应用程序不产生任何输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#exception-reporting-“Insufficient-number-of-network-buffers”"><span class="nav-number">6.</span> <span class="nav-text">exception reporting “Insufficient number of network buffers”</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -688,7 +758,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.7k</span>
+    <span title="Site words total count">4.1k</span>
   
 </div>
 
