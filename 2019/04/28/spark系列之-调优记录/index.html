@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="性能调优  分配资源、并行度、RDD架构与缓存 shuffle调优 spark算子调优 JVM调优、广播大变量。   性能调优之在实际项目中分配更多资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置e">
+<meta name="description" content="性能调优  分配资源、并行度、RDD架构与缓存 shuffle调优 spark算子调优 JVM调优、广播大变量。   性能调优之分配资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的">
 <meta name="keywords" content="spark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spark系列之--调优记录">
 <meta property="og:url" content="https://23yue23.github.io/2019/04/28/spark系列之-调优记录/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="性能调优  分配资源、并行度、RDD架构与缓存 shuffle调优 spark算子调优 JVM调优、广播大变量。   性能调优之在实际项目中分配更多资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置e">
+<meta property="og:description" content="性能调优  分配资源、并行度、RDD架构与缓存 shuffle调优 spark算子调优 JVM调优、广播大变量。   性能调优之分配资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-28T08:43:44.630Z">
+<meta property="og:updated_time" content="2019-04-28T08:46:37.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spark系列之--调优记录">
-<meta name="twitter:description" content="性能调优  分配资源、并行度、RDD架构与缓存 shuffle调优 spark算子调优 JVM调优、广播大变量。   性能调优之在实际项目中分配更多资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置e">
+<meta name="twitter:description" content="性能调优  分配资源、并行度、RDD架构与缓存 shuffle调优 spark算子调优 JVM调优、广播大变量。   性能调优之分配资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的">
 
 
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.7k
+                  2.6k
                 </span>
               
 
@@ -472,9 +472,9 @@
 <li>JVM调优、广播大变量。</li>
 </ol>
 </blockquote>
-<h5 id="性能调优之在实际项目中分配更多资源："><a href="#性能调优之在实际项目中分配更多资源：" class="headerlink" title="性能调优之在实际项目中分配更多资源："></a>性能调优之在实际项目中分配更多资源：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/spark/bin/spark-submit</span><br><span class="line">--class cn.spark.sparktest.core.WordCountCluster \</span><br><span class="line">--num-executors 80 \  配置executor的数量</span><br><span class="line">--driver-memory 6g \  配置driver的内存（影响不大）</span><br><span class="line">--executor-memory 6g \  配置每个executor的内存大小</span><br><span class="line">--executor-cores 3 \  配置每个executor的cpu core数量(RDD cache/shuffle/task执行)</span><br><span class="line">--master yarn-cluster \</span><br><span class="line">--queue root.default \</span><br><span class="line">--conf spark.yarn.executor.memoryOverhead=2048 \  executor堆外内存</span><br><span class="line">--conf spark.core.connection.ack.wait.timeout=300 \ 连接的超时时长</span><br><span class="line">/usr/local/spark/spark.jar \</span><br><span class="line">$&#123;1&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="性能调优之分配资源："><a href="#性能调优之分配资源：" class="headerlink" title="性能调优之分配资源："></a>性能调优之分配资源：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/spark/bin/spark-submit</span><br><span class="line">--class cn.spark.sparktest.core.WordCountCluster \</span><br><span class="line">--num-executors 80 \  配置executor的数量</span><br><span class="line">--driver-memory 6g \  配置driver的内存（影响不大）</span><br><span class="line">--executor-memory 6g \  配置每个executor的内存大小</span><br><span class="line">--executor-cores 3 \  配置每个executor的cpu core数量(RDD cache/shuffle/task执行)</span><br><span class="line">--master yarn-cluster \</span><br><span class="line">--queue root.default \</span><br><span class="line">--conf spark.yarn.executor.memoryOverhead=2048 \  executor堆外内存</span><br><span class="line">--conf spark.core.connection.ack.wait.timeout=300 \ 连接的超时时长</span><br><span class="line">/usr/local/spark/spark.jar \</span><br><span class="line">$&#123;1&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h5 id="性能调优之在实际项目中调节并行度："><a href="#性能调优之在实际项目中调节并行度：" class="headerlink" title="性能调优之在实际项目中调节并行度："></a>性能调优之在实际项目中调节并行度：</h5><blockquote>
+<h5 id="性能调优之调节并行度："><a href="#性能调优之调节并行度：" class="headerlink" title="性能调优之调节并行度："></a>性能调优之调节并行度：</h5><blockquote>
 <ol>
 <li>并行度：其实就是指的是，Spark作业中，各个stage的task数量，也就代表了Spark作业的在各个阶段（stage）的并行度。</li>
 <li>官方是推荐，task数量，设置成spark application总cpu core数量的2~3倍，比如150个cpu core，基本要设置task数量为300~500；</li>
@@ -482,7 +482,7 @@
 </ol>
 </blockquote>
 <hr>
-<h5 id="性能调优之在实际项目中重构RDD架构以及RDD持久化："><a href="#性能调优之在实际项目中重构RDD架构以及RDD持久化：" class="headerlink" title="性能调优之在实际项目中重构RDD架构以及RDD持久化："></a>性能调优之在实际项目中重构RDD架构以及RDD持久化：</h5><blockquote>
+<h5 id="性能调优之重构RDD架构以及RDD持久化："><a href="#性能调优之重构RDD架构以及RDD持久化：" class="headerlink" title="性能调优之重构RDD架构以及RDD持久化："></a>性能调优之重构RDD架构以及RDD持久化：</h5><blockquote>
 <ol>
 <li>RDD架构重构与优化</li>
 <li>公共RDD一定要实现持久化,对于要多次计算和使用的公共RDD，一定要进行持久化。</li>
@@ -496,7 +496,7 @@
 </ol>
 </blockquote>
 <hr>
-<h5 id="性能调优之在实际项目中广播大变量（1m-100m）："><a href="#性能调优之在实际项目中广播大变量（1m-100m）：" class="headerlink" title="性能调优之在实际项目中广播大变量（1m~100m）："></a>性能调优之在实际项目中广播大变量（1m~100m）：</h5><blockquote>
+<h5 id="性能调优之广播大变量（1m-100m）："><a href="#性能调优之广播大变量（1m-100m）：" class="headerlink" title="性能调优之广播大变量（1m~100m）："></a>性能调优之广播大变量（1m~100m）：</h5><blockquote>
 <ol>
 <li>默认的情况下，task执行的算子中，使用了外部的变量，每个task都会获取一份变量的副本，有什么缺点呢？<pre><code>网络传输的开销、耗费内存、RDD持久化到内存（内存不够，持续到磁盘）、task创建对象导致gc；
 </code></pre></li>
@@ -509,7 +509,7 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">task在运行的时候，想要使用广播变量中的数据，此时首先会在自己本地的Executor对应的BlockManager中，尝试获取变量副本；</span><br><span class="line">如果本地没有，那么就从Driver远程拉取变量副本，并保存在本地的BlockManager中；</span><br><span class="line">此后这个executor上的task，都会直接使用本地的BlockManager中的副本。</span><br><span class="line">executor的BlockManager除了从driver上拉取，也可能从其他节点的BlockManager上拉取变量副本，举例越近越好。</span><br><span class="line">sc.boradcast();</span><br></pre></td></tr></table></figure>
 <hr>
-<h5 id="性能调优之在实际项目中使用Kryo序列化"><a href="#性能调优之在实际项目中使用Kryo序列化" class="headerlink" title="性能调优之在实际项目中使用Kryo序列化:"></a>性能调优之在实际项目中使用Kryo序列化:</h5><blockquote>
+<h5 id="性能调优之使用Kryo序列化"><a href="#性能调优之使用Kryo序列化" class="headerlink" title="性能调优之使用Kryo序列化:"></a>性能调优之使用Kryo序列化:</h5><blockquote>
 <ol>
 <li>默认情况下，Spark内部是使用Java的序列化机制，ObjectOutputStream / ObjectInputStream，对象输入输出流机制，来进行序列化。</li>
 <li>Spark支持使用Kryo序列化机制。Kryo序列化机制，比默认的Java序列化机制，速度要快，序列化后的数据要更小，大概是Java序列化机制的1/10。</li>
@@ -524,7 +524,7 @@
 </ol>
 </blockquote>
 <hr>
-<h5 id="性能调优之在实际项目中使用fastutil优化数据格式"><a href="#性能调优之在实际项目中使用fastutil优化数据格式" class="headerlink" title="性能调优之在实际项目中使用fastutil优化数据格式:"></a>性能调优之在实际项目中使用fastutil优化数据格式:</h5><blockquote>
+<h5 id="性能调优之使用fastutil优化数据格式"><a href="#性能调优之使用fastutil优化数据格式" class="headerlink" title="性能调优之使用fastutil优化数据格式:"></a>性能调优之使用fastutil优化数据格式:</h5><blockquote>
 <ol>
 <li>fastutil是扩展了Java标准集合框架（Map、List、Set；HashMap、ArrayList、HashSet）的类库，提供了特殊类型的map、set、list和queue；</li>
 <li>fastutil能够提供更小的内存占用，更快的存取速度；我们使用fastutil提供的集合类，来替代自己平时使用的JDK的原生的Map、List、Set，好处在于，fastutil集合类，可以减小内存的占用，并且在进行集合的遍历、根据索引（或者key）获取元素的值和设置元素的值的时候，提供更快的存取速度；</li>
@@ -540,7 +540,7 @@
 </ol>
 </blockquote>
 <hr>
-<h5 id="性能调优之在实际项目中调节数据本地化等待时长："><a href="#性能调优之在实际项目中调节数据本地化等待时长：" class="headerlink" title="性能调优之在实际项目中调节数据本地化等待时长："></a>性能调优之在实际项目中调节数据本地化等待时长：</h5><blockquote>
+<h5 id="性能调优之调节数据本地化等待时长："><a href="#性能调优之调节数据本地化等待时长：" class="headerlink" title="性能调优之调节数据本地化等待时长："></a>性能调优之调节数据本地化等待时长：</h5><blockquote>
 <ol>
 <li>PROCESS_LOCAL：进程本地化；NODE_LOCAL：节点本地化；NO_PREF：对于task来说，没有好坏之分；RACK_LOCAL：机架本地化；ANY：数据和task可能在集群中的任何地方，而且不在一个机架中，性能最差；</li>
 <li>观察日志，spark作业的运行日志，推荐大家在测试的时候，先用client模式，在本地就直接可以看到比较全的日志。<br>日志里面会显示，starting task。。。，PROCESS LOCAL（不用调节）、NODE LOCAL、ANY（调节一下数据本地化的等待时长），反复调节，每次调节完以后，再来运行，观察日志</li>
@@ -863,7 +863,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#性能调优"><span class="nav-number">1.</span> <span class="nav-text">性能调优</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之在实际项目中分配更多资源："><span class="nav-number">1.1.</span> <span class="nav-text">性能调优之在实际项目中分配更多资源：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之在实际项目中调节并行度："><span class="nav-number">1.2.</span> <span class="nav-text">性能调优之在实际项目中调节并行度：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之在实际项目中重构RDD架构以及RDD持久化："><span class="nav-number">1.3.</span> <span class="nav-text">性能调优之在实际项目中重构RDD架构以及RDD持久化：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之在实际项目中广播大变量（1m-100m）："><span class="nav-number">1.4.</span> <span class="nav-text">性能调优之在实际项目中广播大变量（1m~100m）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之在实际项目中使用Kryo序列化"><span class="nav-number">1.5.</span> <span class="nav-text">性能调优之在实际项目中使用Kryo序列化:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之在实际项目中使用fastutil优化数据格式"><span class="nav-number">1.6.</span> <span class="nav-text">性能调优之在实际项目中使用fastutil优化数据格式:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之在实际项目中调节数据本地化等待时长："><span class="nav-number">1.7.</span> <span class="nav-text">性能调优之在实际项目中调节数据本地化等待时长：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM-调优"><span class="nav-number">2.</span> <span class="nav-text">JVM 调优</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JVM调优之原理概述以及降低cache操作的内存占比"><span class="nav-number">2.1.</span> <span class="nav-text">JVM调优之原理概述以及降低cache操作的内存占比:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JVM调优之调节executor堆外内存与连接等待时长-在spark-sbmit中修改-："><span class="nav-number">2.2.</span> <span class="nav-text">JVM调优之调节executor堆外内存与连接等待时长(在spark-sbmit中修改)：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shuffle调优"><span class="nav-number">3.</span> <span class="nav-text">Shuffle调优</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Shuffle调优之原理概述："><span class="nav-number">3.1.</span> <span class="nav-text">Shuffle调优之原理概述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shuffle调优之合并map端输出文件："><span class="nav-number">3.2.</span> <span class="nav-text">Shuffle调优之合并map端输出文件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shuffle调优之合并map端输出文件：-1"><span class="nav-number">3.3.</span> <span class="nav-text">Shuffle调优之合并map端输出文件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shuffle调优之HashShuffleManager与SortShuffleManager"><span class="nav-number">3.4.</span> <span class="nav-text">Shuffle调优之HashShuffleManager与SortShuffleManager</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算子调优"><span class="nav-number">4.</span> <span class="nav-text">算子调优</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#算子调优之MapPartitions提升Map类操作性能"><span class="nav-number">4.1.</span> <span class="nav-text">算子调优之MapPartitions提升Map类操作性能:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算子调优之filter过后使用coalesce减少分区数量："><span class="nav-number">4.2.</span> <span class="nav-text">算子调优之filter过后使用coalesce减少分区数量：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算子调优之使用foreachPartition优化写数据库性能："><span class="nav-number">4.3.</span> <span class="nav-text">算子调优之使用foreachPartition优化写数据库性能：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算子调优之使用repartition解决Spark-SQL低并行度的性能问题："><span class="nav-number">4.4.</span> <span class="nav-text">算子调优之使用repartition解决Spark SQL低并行度的性能问题：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算子调优之reduceByKey本地聚合介绍："><span class="nav-number">4.5.</span> <span class="nav-text">算子调优之reduceByKey本地聚合介绍：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#性能调优"><span class="nav-number">1.</span> <span class="nav-text">性能调优</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之分配资源："><span class="nav-number">1.1.</span> <span class="nav-text">性能调优之分配资源：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之调节并行度："><span class="nav-number">1.2.</span> <span class="nav-text">性能调优之调节并行度：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之重构RDD架构以及RDD持久化："><span class="nav-number">1.3.</span> <span class="nav-text">性能调优之重构RDD架构以及RDD持久化：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之广播大变量（1m-100m）："><span class="nav-number">1.4.</span> <span class="nav-text">性能调优之广播大变量（1m~100m）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之使用Kryo序列化"><span class="nav-number">1.5.</span> <span class="nav-text">性能调优之使用Kryo序列化:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之使用fastutil优化数据格式"><span class="nav-number">1.6.</span> <span class="nav-text">性能调优之使用fastutil优化数据格式:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能调优之调节数据本地化等待时长："><span class="nav-number">1.7.</span> <span class="nav-text">性能调优之调节数据本地化等待时长：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM-调优"><span class="nav-number">2.</span> <span class="nav-text">JVM 调优</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JVM调优之原理概述以及降低cache操作的内存占比"><span class="nav-number">2.1.</span> <span class="nav-text">JVM调优之原理概述以及降低cache操作的内存占比:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JVM调优之调节executor堆外内存与连接等待时长-在spark-sbmit中修改-："><span class="nav-number">2.2.</span> <span class="nav-text">JVM调优之调节executor堆外内存与连接等待时长(在spark-sbmit中修改)：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shuffle调优"><span class="nav-number">3.</span> <span class="nav-text">Shuffle调优</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Shuffle调优之原理概述："><span class="nav-number">3.1.</span> <span class="nav-text">Shuffle调优之原理概述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shuffle调优之合并map端输出文件："><span class="nav-number">3.2.</span> <span class="nav-text">Shuffle调优之合并map端输出文件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shuffle调优之合并map端输出文件：-1"><span class="nav-number">3.3.</span> <span class="nav-text">Shuffle调优之合并map端输出文件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shuffle调优之HashShuffleManager与SortShuffleManager"><span class="nav-number">3.4.</span> <span class="nav-text">Shuffle调优之HashShuffleManager与SortShuffleManager</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算子调优"><span class="nav-number">4.</span> <span class="nav-text">算子调优</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#算子调优之MapPartitions提升Map类操作性能"><span class="nav-number">4.1.</span> <span class="nav-text">算子调优之MapPartitions提升Map类操作性能:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算子调优之filter过后使用coalesce减少分区数量："><span class="nav-number">4.2.</span> <span class="nav-text">算子调优之filter过后使用coalesce减少分区数量：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算子调优之使用foreachPartition优化写数据库性能："><span class="nav-number">4.3.</span> <span class="nav-text">算子调优之使用foreachPartition优化写数据库性能：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算子调优之使用repartition解决Spark-SQL低并行度的性能问题："><span class="nav-number">4.4.</span> <span class="nav-text">算子调优之使用repartition解决Spark SQL低并行度的性能问题：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算子调优之reduceByKey本地聚合介绍："><span class="nav-number">4.5.</span> <span class="nav-text">算子调优之reduceByKey本地聚合介绍：</span></a></li></ol></li></ol></div>
             
 
           </div>
