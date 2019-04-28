@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="性能调优  分配资源、并行度、RDD架构与缓存 shuffle调优 spark算子调优 JVM调优、广播大变量。   分配资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的数量--d">
+<meta name="description" content="性能调优分配资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的数量--driver-memory 6g \  配置driver的内存（影响不大）--executor-memory 6">
 <meta name="keywords" content="spark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spark系列之--调优记录">
 <meta property="og:url" content="https://23yue23.github.io/2019/04/28/spark系列之-调优记录/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="性能调优  分配资源、并行度、RDD架构与缓存 shuffle调优 spark算子调优 JVM调优、广播大变量。   分配资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的数量--d">
+<meta property="og:description" content="性能调优分配资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的数量--driver-memory 6g \  配置driver的内存（影响不大）--executor-memory 6">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-28T08:48:49.538Z">
+<meta property="og:updated_time" content="2019-04-28T08:49:19.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spark系列之--调优记录">
-<meta name="twitter:description" content="性能调优  分配资源、并行度、RDD架构与缓存 shuffle调优 spark算子调优 JVM调优、广播大变量。   分配资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的数量--d">
+<meta name="twitter:description" content="性能调优分配资源：123456789101112/usr/local/spark/bin/spark-submit--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的数量--driver-memory 6g \  配置driver的内存（影响不大）--executor-memory 6">
 
 
 
@@ -464,15 +464,7 @@
       
 
       
-        <h4 id="性能调优"><a href="#性能调优" class="headerlink" title="性能调优"></a>性能调优</h4><blockquote>
-<ol>
-<li>分配资源、并行度、RDD架构与缓存</li>
-<li>shuffle调优</li>
-<li>spark算子调优</li>
-<li>JVM调优、广播大变量。</li>
-</ol>
-</blockquote>
-<h5 id="分配资源："><a href="#分配资源：" class="headerlink" title="分配资源："></a>分配资源：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/spark/bin/spark-submit</span><br><span class="line">--class cn.spark.sparktest.core.WordCountCluster \</span><br><span class="line">--num-executors 80 \  配置executor的数量</span><br><span class="line">--driver-memory 6g \  配置driver的内存（影响不大）</span><br><span class="line">--executor-memory 6g \  配置每个executor的内存大小</span><br><span class="line">--executor-cores 3 \  配置每个executor的cpu core数量(RDD cache/shuffle/task执行)</span><br><span class="line">--master yarn-cluster \</span><br><span class="line">--queue root.default \</span><br><span class="line">--conf spark.yarn.executor.memoryOverhead=2048 \  executor堆外内存</span><br><span class="line">--conf spark.core.connection.ack.wait.timeout=300 \ 连接的超时时长</span><br><span class="line">/usr/local/spark/spark.jar \</span><br><span class="line">$&#123;1&#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="性能调优"><a href="#性能调优" class="headerlink" title="性能调优"></a>性能调优</h4><h5 id="分配资源："><a href="#分配资源：" class="headerlink" title="分配资源："></a>分配资源：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/spark/bin/spark-submit</span><br><span class="line">--class cn.spark.sparktest.core.WordCountCluster \</span><br><span class="line">--num-executors 80 \  配置executor的数量</span><br><span class="line">--driver-memory 6g \  配置driver的内存（影响不大）</span><br><span class="line">--executor-memory 6g \  配置每个executor的内存大小</span><br><span class="line">--executor-cores 3 \  配置每个executor的cpu core数量(RDD cache/shuffle/task执行)</span><br><span class="line">--master yarn-cluster \</span><br><span class="line">--queue root.default \</span><br><span class="line">--conf spark.yarn.executor.memoryOverhead=2048 \  executor堆外内存</span><br><span class="line">--conf spark.core.connection.ack.wait.timeout=300 \ 连接的超时时长</span><br><span class="line">/usr/local/spark/spark.jar \</span><br><span class="line">$&#123;1&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <h5 id="调节并行度："><a href="#调节并行度：" class="headerlink" title="调节并行度："></a>调节并行度：</h5><blockquote>
 <ol>
