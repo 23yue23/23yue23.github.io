@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-04-26T08:45:18.573Z</updated>
+  <updated>2019-04-28T03:50:06.402Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1.grafana系列之--调研</title>
+    <link href="https://23yue23.github.io/2019/04/28/1-grafana%E7%B3%BB%E5%88%97%E4%B9%8B-%E8%B0%83%E7%A0%94/"/>
+    <id>https://23yue23.github.io/2019/04/28/1-grafana系列之-调研/</id>
+    <published>2019-04-28T03:38:55.000Z</published>
+    <updated>2019-04-28T03:50:06.402Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="参考地址："><a href="#参考地址：" class="headerlink" title="参考地址："></a>参考地址：</h5><blockquote><ol><li><a href="https://grafana.com" target="_blank" rel="noopener">官网</a></li><li><a href="https://grafana.com/docs/tutorials/screencasts/" target="_blank" rel="noopener">官网视频</a></li></ol></blockquote><h5 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h5><blockquote><ol><li><a href="https://grafana.com/docs/plugins/installation/" target="_blank" rel="noopener">插件安装步骤</a></li><li><a href="https://grafana.com/plugins" target="_blank" rel="noopener">插件搜索</a></li></ol></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;参考地址：&quot;&gt;&lt;a href=&quot;#参考地址：&quot; class=&quot;headerlink&quot; title=&quot;参考地址：&quot;&gt;&lt;/a&gt;参考地址：&lt;/h5&gt;&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://grafana.com&quot; target=&quot;_
+      
+    
+    </summary>
+    
+      <category term="grafana" scheme="https://23yue23.github.io/categories/grafana/"/>
+    
+    
+      <category term="grafana" scheme="https://23yue23.github.io/tags/grafana/"/>
+    
+  </entry>
   
   <entry>
     <title>3.1-flink系列之--数据类型和序列化</title>
@@ -75,9 +102,9 @@
     <link href="https://23yue23.github.io/2019/04/26/flink%E7%B3%BB%E5%88%97%E4%B9%8B-%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/"/>
     <id>https://23yue23.github.io/2019/04/26/flink系列之-学习网站/</id>
     <published>2019-04-26T06:02:29.000Z</published>
-    <updated>2019-04-26T12:28:21.448Z</updated>
+    <updated>2019-04-26T12:30:31.810Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="flink-学习（系列）"><a href="#flink-学习（系列）" class="headerlink" title="flink 学习（系列）"></a>flink 学习（系列）</h4><blockquote><ol><li><a href="https://flink.apache.org/" target="_blank" rel="noopener">flink官网</a></li><li><a href="https://training.ververica.com" target="_blank" rel="noopener">training</a></li><li><a href="https://github.com/flink-china/flink-training-course/blob/master/%E8%AF%BE%E7%A8%8B%E8%A1%A8%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89.md" target="_blank" rel="noopener">flink-阿里巴巴课程</a></li><li><a href="https://blog.csdn.net/yanghua_kobe/column/info/apacheflink" target="_blank" rel="noopener">flink-vinoYang博客</a></li><li><a href="http://wuchong.me/" target="_blank" rel="noopener">flink-云邪博客</a></li><li><a href="https://blog.csdn.net/liguohuabigdata/article/category/7279020" target="_blank" rel="noopener">云星数据-大数据团队</a></li></ol></blockquote><hr><h4 id="flink-代码"><a href="#flink-代码" class="headerlink" title="flink 代码"></a>flink 代码</h4><blockquote><ol><li><a href="https://github.com/apache/flink" target="_blank" rel="noopener">flink</a></li><li><a href="https://github.com/zhisheng17/flink-learning/" target="_blank" rel="noopener">flink-learning</a></li><li><a href="https://github.com/ververica" target="_blank" rel="noopener">flink-training-exercises</a></li></ol></blockquote><hr><h4 id="flink-书籍"><a href="#flink-书籍" class="headerlink" title="flink 书籍"></a>flink 书籍</h4><blockquote><ol><li>flink基础教程</li><li>[#]</li></ol></blockquote><hr><h4 id="博客-单篇"><a href="#博客-单篇" class="headerlink" title="博客(单篇)"></a>博客(单篇)</h4><blockquote><ol><li><a href="https://www.ververica.com/what-is-stream-processing" target="_blank" rel="noopener">什么是流处理</a><br>2.</li></ol></blockquote>]]></content>
+    <content type="html"><![CDATA[<h4 id="flink-学习（系列）"><a href="#flink-学习（系列）" class="headerlink" title="flink 学习（系列）"></a>flink 学习（系列）</h4><blockquote><ol><li><a href="https://flink.apache.org/" target="_blank" rel="noopener">flink官网</a></li><li><a href="https://training.ververica.com" target="_blank" rel="noopener">training</a></li><li><a href="https://github.com/flink-china/flink-training-course/blob/master/%E8%AF%BE%E7%A8%8B%E8%A1%A8%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89.md" target="_blank" rel="noopener">flink-阿里巴巴课程</a></li><li><a href="https://blog.csdn.net/yanghua_kobe/column/info/apacheflink" target="_blank" rel="noopener">flink-vinoYang博客</a></li><li><a href="http://wuchong.me/" target="_blank" rel="noopener">flink-云邪博客</a></li><li><a href="https://blog.csdn.net/liguohuabigdata/article/category/7279020" target="_blank" rel="noopener">云星数据-大数据团队</a></li></ol></blockquote><hr><h4 id="flink-代码"><a href="#flink-代码" class="headerlink" title="flink 代码"></a>flink 代码</h4><blockquote><ol><li><a href="https://github.com/apache/flink" target="_blank" rel="noopener">flink</a></li><li><a href="https://github.com/zhisheng17/flink-learning/" target="_blank" rel="noopener">flink-learning</a></li><li><a href="https://github.com/ververica" target="_blank" rel="noopener">flink-training-exercises</a></li></ol></blockquote><hr><h4 id="flink-书籍"><a href="#flink-书籍" class="headerlink" title="flink 书籍"></a>flink 书籍</h4><blockquote><ol><li>flink基础教程</li><li>[#]</li></ol></blockquote><hr><h4 id="博客-单篇"><a href="#博客-单篇" class="headerlink" title="博客(单篇)"></a>博客(单篇)</h4><blockquote><ol><li><a href="https://www.ververica.com/what-is-stream-processing" target="_blank" rel="noopener">什么是流处理</a></li></ol></blockquote>]]></content>
     
     <summary type="html">
     

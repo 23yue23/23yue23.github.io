@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[1.grafana系列之--调研]]></title>
+    <url>%2F2019%2F04%2F28%2F1-grafana%E7%B3%BB%E5%88%97%E4%B9%8B-%E8%B0%83%E7%A0%94%2F</url>
+    <content type="text"><![CDATA[参考地址： 官网 官网视频 安装插件 插件安装步骤 插件搜索]]></content>
+      <categories>
+        <category>grafana</category>
+      </categories>
+      <tags>
+        <tag>grafana</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[3.1-flink系列之--数据类型和序列化]]></title>
     <url>%2F2019%2F04%2F26%2F3-1-flink%E7%B3%BB%E5%88%97%E4%B9%8B-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BA%8F%E5%88%97%E5%8C%96%2F</url>
     <content type="text"></content>
@@ -36,7 +47,7 @@
   <entry>
     <title><![CDATA[flink系列之--学习网站 (实时更新)]]></title>
     <url>%2F2019%2F04%2F26%2Fflink%E7%B3%BB%E5%88%97%E4%B9%8B-%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99%2F</url>
-    <content type="text"><![CDATA[flink 学习（系列） flink官网 training flink-阿里巴巴课程 flink-vinoYang博客 flink-云邪博客 云星数据-大数据团队 flink 代码 flink flink-learning flink-training-exercises flink 书籍 flink基础教程 [#] 博客(单篇) 什么是流处理2.]]></content>
+    <content type="text"><![CDATA[flink 学习（系列） flink官网 training flink-阿里巴巴课程 flink-vinoYang博客 flink-云邪博客 云星数据-大数据团队 flink 代码 flink flink-learning flink-training-exercises flink 书籍 flink基础教程 [#] 博客(单篇) 什么是流处理]]></content>
       <categories>
         <category>flink</category>
       </categories>
