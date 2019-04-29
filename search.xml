@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[kafka系列之优化consumer]]></title>
+    <url>%2F2019%2F04%2F29%2Fkafka%E7%B3%BB%E5%88%97%E4%B9%8B%E4%BC%98%E5%8C%96consumer%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[kafka系列之优化producer]]></title>
+    <url>%2F2019%2F04%2F29%2Fkafka%E7%B3%BB%E5%88%97%E4%B9%8B%E4%BC%98%E5%8C%96producer%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[kafka系列之基本命令]]></title>
+    <url>%2F2019%2F04%2F29%2Fkafka%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>kafka</category>
+      </categories>
+      <tags>
+        <tag>kafka</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[spark系列之-问题汇总]]></title>
+    <url>%2F2019%2F04%2F29%2Fspark%E7%B3%BB%E5%88%97%E4%B9%8B-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
+    <content type="text"><![CDATA[org.apache.spark.SparkException: Could not find CoarseGrainedScheduler. 这个可能是一个资源问题，应该给任务分配更多的 cores 和Executors，并且分配更多的内存。并且需要给RDD分配更多的分区 在配置资源中加入这句话也许能解决你的问题： –conf spark.dynamicAllocation.enabled=false 经过一般调试，发现原来是因为spark任务生成task任务过少，而任务提交时所指定的Excutor 数过多导致，故调小 –num-executors 参数问题得以解决。 #####]]></content>
+      <categories>
+        <category>spark</category>
+      </categories>
+      <tags>
+        <tag>spark-问题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac OS之使用]]></title>
+    <url>%2F2019%2F04%2F29%2FMac-OS%E4%B9%8B%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[快捷键： 退出关闭应用：Command+Q]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>mac-使用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[经典文章]]></title>
     <url>%2F2019%2F04%2F29%2F%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%2F</url>
     <content type="text"><![CDATA[技术文章 MySQL索引原理及慢查询优化 其他 工作中如何做好技术积累]]></content>
@@ -80,7 +123,7 @@
   <entry>
     <title><![CDATA[flink系列之--学习网站 (实时更新)]]></title>
     <url>%2F2019%2F04%2F26%2Fflink%E7%B3%BB%E5%88%97%E4%B9%8B-%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99%2F</url>
-    <content type="text"><![CDATA[flink 学习（系列） flink官网 training flink-阿里巴巴课程 flink-vinoYang博客 flink-云邪博客 云星数据-大数据团队 flink-归来朝歌博客 flink 代码 flink flink-learning flink-training-exercises flink 书籍 flink基础教程 [#] 博客(单篇) 什么是流处理]]></content>
+    <content type="text"><![CDATA[flink 学习（系列） flink官网 training flink-阿里巴巴课程 flink-vinoYang博客 flink-云邪博客 云星数据-大数据团队 flink-归来朝歌博客 阿里云实时计算 flink 代码 flink flink-learning flink-training-exercises flink 书籍 flink基础教程 [#] 博客(单篇) 什么是流处理]]></content>
       <categories>
         <category>flink</category>
       </categories>
