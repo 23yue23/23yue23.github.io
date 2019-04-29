@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[经典文章]]></title>
+    <url>%2F2019%2F04%2F29%2F%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%2F</url>
+    <content type="text"><![CDATA[技术文章 MySQL索引原理及慢查询优化 其他 工作中如何做好技术积累]]></content>
+      <categories>
+        <category>经典文章</category>
+      </categories>
+      <tags>
+        <tag>经典文章</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mysql系列之-问题汇总]]></title>
     <url>%2F2019%2F04%2F29%2Fmysql%E7%B3%BB%E5%88%97%E4%B9%8B-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
     <content type="text"><![CDATA[###om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:1om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:The last packet successfully received from the server was 44,024,462 milliseconds ago. The last packet sent successfully to the server was 44,024,462 milliseconds ago. is longer than the server configured value of &apos;wait_timeout&apos;. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property &apos;autoReconnect=true&apos; to avoid this problem. 解决方法：1231.在连接上添加这个设置&amp;autoReconnect=true&amp;failOverReadOnly=false2.每次使用完记得归还连接]]></content>
