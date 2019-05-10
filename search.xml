@@ -77,7 +77,7 @@
   <entry>
     <title><![CDATA[经典文章]]></title>
     <url>%2F2019%2F04%2F29%2F%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[技术文章 MySQL索引原理及慢查询优化 其他 工作中如何做好技术积累]]></content>
+    <content type="text"><![CDATA[技术文章 MySQL索引原理及慢查询优化 美团点评基于 Flink 的实时数仓建设实践 其他 工作中如何做好技术积累]]></content>
       <categories>
         <category>经典文章</category>
       </categories>
