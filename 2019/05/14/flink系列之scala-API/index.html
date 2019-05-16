@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="scala API 扩展 dataSet    1import org.apache.flink.api.scala.extensions._  dataStream  1import org.apache.flink.streaming.api.scala.extensions._ ###dataStream:  map 采用一个元素并生成一个元素。 【DataStream→DataStream">
+<meta name="description" content="scala API 扩展 dataSet    1import org.apache.flink.api.scala.extensions._  dataStream  1import org.apache.flink.streaming.api.scala.extensions._  将Java中的Iterable对象转换为Scala的Iterable(scala的集合操作效率高，简洁)  12">
 <meta name="keywords" content="flink-scalaAPI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flink系列之scala API">
 <meta property="og:url" content="https://23yue23.github.io/2019/05/14/flink系列之scala-API/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="scala API 扩展 dataSet    1import org.apache.flink.api.scala.extensions._  dataStream  1import org.apache.flink.streaming.api.scala.extensions._ ###dataStream:  map 采用一个元素并生成一个元素。 【DataStream→DataStream">
+<meta property="og:description" content="scala API 扩展 dataSet    1import org.apache.flink.api.scala.extensions._  dataStream  1import org.apache.flink.streaming.api.scala.extensions._  将Java中的Iterable对象转换为Scala的Iterable(scala的集合操作效率高，简洁)  12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-14T03:36:42.717Z">
+<meta property="og:updated_time" content="2019-05-16T09:45:26.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flink系列之scala API">
-<meta name="twitter:description" content="scala API 扩展 dataSet    1import org.apache.flink.api.scala.extensions._  dataStream  1import org.apache.flink.streaming.api.scala.extensions._ ###dataStream:  map 采用一个元素并生成一个元素。 【DataStream→DataStream">
+<meta name="twitter:description" content="scala API 扩展 dataSet    1import org.apache.flink.api.scala.extensions._  dataStream  1import org.apache.flink.streaming.api.scala.extensions._  将Java中的Iterable对象转换为Scala的Iterable(scala的集合操作效率高，简洁)  12">
 
 
 
@@ -472,6 +472,10 @@
 <p>dataStream</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.flink.streaming.api.scala.extensions._</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将Java中的Iterable对象转换为Scala的Iterable(scala的集合操作效率高，简洁)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import scala.collection.JavaConverters._</span><br><span class="line">val T1: java.lang.Iterable</span><br><span class="line">val scalaT1 = T1.asScala.toList</span><br></pre></td></tr></table></figure>
 <p>###dataStream:</p>
 <blockquote>
 <p>map 采用一个元素并生成一个元素。 【DataStream→DataStream】</p>
@@ -812,7 +816,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.3k</span>
+    <span title="Site words total count">14.1k</span>
   
 </div>
 

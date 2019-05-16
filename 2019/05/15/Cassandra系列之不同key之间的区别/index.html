@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="Single column Primary KeyComposite Primary KeyPartition key &amp;amp; Clustering key &amp;amp; Primary Key 作用">
+<meta name="description" content="Single column Primary Key Primary Key 可以由一列或多列组成,用于从表中检索数据，如果 Primary Key 由一列组成，那么称为 Single column Primary Key&amp;gt; 如下：  1CREATE TABLE iteblog_user (first_name text , last_name text, PRIMARY KEY (first">
 <meta name="keywords" content="Cassandra-命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cassandra系列之不同key之间的区别">
 <meta property="og:url" content="https://23yue23.github.io/2019/05/15/Cassandra系列之不同key之间的区别/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="Single column Primary KeyComposite Primary KeyPartition key &amp;amp; Clustering key &amp;amp; Primary Key 作用">
+<meta property="og:description" content="Single column Primary Key Primary Key 可以由一列或多列组成,用于从表中检索数据，如果 Primary Key 由一列组成，那么称为 Single column Primary Key&amp;gt; 如下：  1CREATE TABLE iteblog_user (first_name text , last_name text, PRIMARY KEY (first">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-15T09:39:35.290Z">
+<meta property="og:updated_time" content="2019-05-15T09:58:19.525Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cassandra系列之不同key之间的区别">
-<meta name="twitter:description" content="Single column Primary KeyComposite Primary KeyPartition key &amp;amp; Clustering key &amp;amp; Primary Key 作用">
+<meta name="twitter:description" content="Single column Primary Key Primary Key 可以由一列或多列组成,用于从表中检索数据，如果 Primary Key 由一列组成，那么称为 Single column Primary Key&amp;gt; 如下：  1CREATE TABLE iteblog_user (first_name text , last_name text, PRIMARY KEY (first">
 
 
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  15
+                  564
                 </span>
               
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -464,7 +464,25 @@
       
 
       
-        <h4 id="Single-column-Primary-Key"><a href="#Single-column-Primary-Key" class="headerlink" title="Single column Primary Key"></a>Single column Primary Key</h4><h4 id="Composite-Primary-Key"><a href="#Composite-Primary-Key" class="headerlink" title="Composite Primary Key"></a>Composite Primary Key</h4><h4 id="Partition-key-amp-Clustering-key-amp-Primary-Key-作用"><a href="#Partition-key-amp-Clustering-key-amp-Primary-Key-作用" class="headerlink" title="Partition key &amp; Clustering key &amp; Primary Key 作用"></a>Partition key &amp; Clustering key &amp; Primary Key 作用</h4>
+        <h4 id="Single-column-Primary-Key"><a href="#Single-column-Primary-Key" class="headerlink" title="Single column Primary Key"></a>Single column Primary Key</h4><blockquote>
+<p>Primary Key 可以由一列或多列组成,用于从表中检索数据，如果 Primary Key 由一列组成，那么称为 Single column Primary Key&gt; 如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE iteblog_user (first_name text , last_name text, PRIMARY KEY (first_name)) ;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我们在检索数据的时候需要指定 Primary Key,不指定查询数据会抛以下异常：</p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">InvalidRequest: Error from server: code=2200 [Invalid query] </span><br><span class="line">message=&quot;Cannot execute this query as it might involve data filtering and thus may have unpredictable performance. </span><br><span class="line">If you want to execute this query despite the performance unpredictability, use ALLOW FILTERING&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="Composite-Primary-Key"><a href="#Composite-Primary-Key" class="headerlink" title="Composite Primary Key"></a>Composite Primary Key</h4><blockquote>
+<p>如果 Primary Key 由多列组成，那么这种情况称为 Compound Primary Key 或 Composite Primary Key  如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE iteblog_user_composite (first_name text , last_name text, PRIMARY KEY (first_name, last_name)) ;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中 first_name 称为 Partition key，last_name 称为 Clustering key（也可以称为 Clustering column）。在这种情况下，下面查询的前三条都是合法的，最后一条是非法的。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cqlsh:iteblog_keyspace&gt; select * from iteblog_user_composite;</span><br><span class="line"> </span><br><span class="line">cqlsh:iteblog_keyspace&gt; select * from iteblog_user_composite where first_name = &apos;iteblog&apos;;</span><br><span class="line"> </span><br><span class="line">cqlsh:iteblog_keyspace&gt; select * from iteblog_user_composite where first_name = &apos;iteblog&apos; and last_name = &apos;hadoop&apos;;</span><br><span class="line"> </span><br><span class="line">//非法查询</span><br><span class="line">cqlsh:iteblog_keyspace&gt; select * from iteblog_user_composite where last_name = &apos;hadoop&apos;;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&gt; Partition key 和 Clustering key(查询的时候不可以仅指定，需要和partition key 组合) 也可以由多个字段组成，如果 Partition key 由多个字段组成，称之为 Composite partition key：</span><br></pre></td></tr></table></figure>
+<p>create table iteblog_multiple (<br>      k_part_one text,<br>      k_part_two int,<br>      k_clust_one text,<br>      k_clust_two int<br>      data text,<br>      PRIMARY KEY((k_part_one, k_part_two), k_clust_one, k_clust_two)<br>  );<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;小知识：使用 Composite partition key 的一个原因</span><br><span class="line">其实一个 Partition 对应的 Cell 个数在 Cassandra 里面是有限制的。理论上来说，一个 Partition 的 Cell 个数大约在20亿个（231）。所以采用了 Composite partition key，我们可以将数据分散到不同的 Partition，这样有利于将同一个 Partition 的 Cell 个数减少。</span><br><span class="line"></span><br><span class="line">#### Partition key &amp; Clustering key &amp; Primary Key 作用</span><br><span class="line"></span><br><span class="line">&gt; Partition Key：将数据分散到集群的 node 上</span><br><span class="line"></span><br><span class="line">&gt; Primary Key：在 Single column Primary Key 情况下作用和 Partition Key 一样；在 Composite Primary Key 情况下，组合 Partition key 字段决定数据的分发的节点；</span><br><span class="line"></span><br><span class="line">&gt; Clustering Key：决定同一个分区内相同 Partition Key 数据的排序，默认为升序，我们可以在建表语句里面手动设置排序的方式（DESC 或 ASC）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">***</span><br></pre></td></tr></table></figure></p>
+<p>转载自过往记忆（<a href="https://www.iteblog.com/）" target="_blank" rel="noopener">https://www.iteblog.com/）</a><br>本文链接: 【Apache Cassandra Composite KeyPartition keyClustering key 介绍<br>（<a href="https://www.iteblog.com/archives/2534.html）" target="_blank" rel="noopener">https://www.iteblog.com/archives/2534.html）</a><br><code>`</code></p>
+
       
     </div>
     
@@ -707,7 +725,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Single-column-Primary-Key"><span class="nav-number">1.</span> <span class="nav-text">Single column Primary Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Composite-Primary-Key"><span class="nav-number">2.</span> <span class="nav-text">Composite Primary Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Partition-key-amp-Clustering-key-amp-Primary-Key-作用"><span class="nav-number">3.</span> <span class="nav-text">Partition key &amp; Clustering key &amp; Primary Key 作用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Single-column-Primary-Key"><span class="nav-number">1.</span> <span class="nav-text">Single column Primary Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Composite-Primary-Key"><span class="nav-number">2.</span> <span class="nav-text">Composite Primary Key</span></a></li></ol></div>
             
 
           </div>
@@ -741,7 +759,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.3k</span>
+    <span title="Site words total count">14.1k</span>
   
 </div>
 
