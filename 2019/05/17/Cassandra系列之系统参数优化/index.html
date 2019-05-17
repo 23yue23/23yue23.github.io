@@ -124,7 +124,7 @@
 
 
 
-  <meta name="keywords" content="Cassandra-问题总结,">
+  <meta name="keywords" content="Cassandra-系统优化,">
 
 
 
@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？ Cassandra是一个基于gossip协议的分布式系统，监听地址是用来告诉其它节点来访问的，告诉别的节点说“连接我任何地址都可以”，是一个糟糕的想法，如果集群中不同的节点使用了不同方式的地址，悲剧的事情就要发生了。   如果你不想为你集群中的每个节点单独配置ip（非常可以理解）,你可以不配，空着它，Cassan">
-<meta name="keywords" content="Cassandra-问题总结">
+<meta name="description" content="Cassandra不同于普通的应用程序，它是分布式数据库，它要大口吃内存，吃磁盘，吃CPU，所以机器要进行特殊的配置，以适应其需要。 使用最新的64位的jdk8的最新发布版本。时钟同步，开启NTP服务. cassandra是分布式存储，就靠时间戳解决数据冲突，所以始终必须同步  TCP参数设置 在低带宽环境下，防火墙会检测闲置的连接并关闭，为了保护节点之间，或者多个DC节点之间的连接，建议如下配置">
+<meta name="keywords" content="Cassandra-系统优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cassandra系列之问题总结">
-<meta property="og:url" content="https://23yue23.github.io/2019/05/17/cassandra系列之问题总结/index.html">
+<meta property="og:title" content="Cassandra系列之系统参数优化">
+<meta property="og:url" content="https://23yue23.github.io/2019/05/17/Cassandra系列之系统参数优化/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？ Cassandra是一个基于gossip协议的分布式系统，监听地址是用来告诉其它节点来访问的，告诉别的节点说“连接我任何地址都可以”，是一个糟糕的想法，如果集群中不同的节点使用了不同方式的地址，悲剧的事情就要发生了。   如果你不想为你集群中的每个节点单独配置ip（非常可以理解）,你可以不配，空着它，Cassan">
+<meta property="og:description" content="Cassandra不同于普通的应用程序，它是分布式数据库，它要大口吃内存，吃磁盘，吃CPU，所以机器要进行特殊的配置，以适应其需要。 使用最新的64位的jdk8的最新发布版本。时钟同步，开启NTP服务. cassandra是分布式存储，就靠时间戳解决数据冲突，所以始终必须同步  TCP参数设置 在低带宽环境下，防火墙会检测闲置的连接并关闭，为了保护节点之间，或者多个DC节点之间的连接，建议如下配置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T06:59:29.923Z">
+<meta property="og:updated_time" content="2019-05-17T07:13:05.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cassandra系列之问题总结">
-<meta name="twitter:description" content="为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？ Cassandra是一个基于gossip协议的分布式系统，监听地址是用来告诉其它节点来访问的，告诉别的节点说“连接我任何地址都可以”，是一个糟糕的想法，如果集群中不同的节点使用了不同方式的地址，悲剧的事情就要发生了。   如果你不想为你集群中的每个节点单独配置ip（非常可以理解）,你可以不配，空着它，Cassan">
+<meta name="twitter:title" content="Cassandra系列之系统参数优化">
+<meta name="twitter:description" content="Cassandra不同于普通的应用程序，它是分布式数据库，它要大口吃内存，吃磁盘，吃CPU，所以机器要进行特殊的配置，以适应其需要。 使用最新的64位的jdk8的最新发布版本。时钟同步，开启NTP服务. cassandra是分布式存储，就靠时间戳解决数据冲突，所以始终必须同步  TCP参数设置 在低带宽环境下，防火墙会检测闲置的连接并关闭，为了保护节点之间，或者多个DC节点之间的连接，建议如下配置">
 
 
 
@@ -178,13 +178,13 @@
 
 
 
-  <link rel="canonical" href="https://23yue23.github.io/2019/05/17/cassandra系列之问题总结/">
+  <link rel="canonical" href="https://23yue23.github.io/2019/05/17/Cassandra系列之系统参数优化/">
 
 
 
 
 
-  <title>cassandra系列之问题总结 | 蜗牛笔记</title>
+  <title>Cassandra系列之系统参数优化 | 蜗牛笔记</title>
   
 
 
@@ -343,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://23yue23.github.io/2019/05/17/cassandra系列之问题总结/">
+    <link itemprop="mainEntityOfPage" href="https://23yue23.github.io/2019/05/17/Cassandra系列之系统参数优化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Brady">
@@ -360,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">cassandra系列之问题总结</h1>
+          <h1 class="post-title" itemprop="name headline">Cassandra系列之系统参数优化</h1>
         
 
         <div class="post-meta">
@@ -372,7 +372,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-17T14:17:21+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-17T15:04:40+08:00">
                 2019-05-17
               </time>
             
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.5k
+                  938
                 </span>
               
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  3
                 </span>
               
             </div>
@@ -464,101 +464,83 @@
       
 
       
-        <h4 id="为什么不可以设置listen-address为0-0-0-0（意思是监听所有地址）？"><a href="#为什么不可以设置listen-address为0-0-0-0（意思是监听所有地址）？" class="headerlink" title="为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？"></a>为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？</h4><blockquote>
-<p>Cassandra是一个基于gossip协议的分布式系统，监听地址是用来告诉其它节点来访问的，告诉别的节点说“连接我任何地址都可以”，是一个糟糕的想法，如果集群中不同的节点使用了不同方式的地址，悲剧的事情就要发生了。</p>
+        <p>Cassandra不同于普通的应用程序，它是分布式数据库，它要大口吃内存，吃磁盘，吃CPU，所以机器要进行特殊的配置，以适应其需要。</p>
+<h4 id="使用最新的64位的jdk8的最新发布版本。"><a href="#使用最新的64位的jdk8的最新发布版本。" class="headerlink" title="使用最新的64位的jdk8的最新发布版本。"></a>使用最新的64位的jdk8的最新发布版本。</h4><h4 id="时钟同步，开启NTP服务"><a href="#时钟同步，开启NTP服务" class="headerlink" title="时钟同步，开启NTP服务."></a>时钟同步，开启NTP服务.</h4><blockquote>
+<p>cassandra是分布式存储，就靠时间戳解决数据冲突，所以始终必须同步</p>
+</blockquote>
+<h4 id="TCP参数设置"><a href="#TCP参数设置" class="headerlink" title="TCP参数设置"></a>TCP参数设置</h4><blockquote>
+<p>在低带宽环境下，防火墙会检测闲置的连接并关闭，为了保护节点之间，或者多个DC节点之间的连接，建议如下配置系统参数</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl -w</span><br><span class="line">net.ipv4.tcp_keepalive_time=60</span><br><span class="line">net.ipv4.tcp_keepalive_probes=3</span><br><span class="line">net.ipv4.tcp_keepalive_intvl=10</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>设置这个就是可以快速的发现底层的TCP连接是否已经关闭，它间隔60秒开始探测3次，每次探测间隔10秒，也就是说最多在60+3*10=90秒内就可以检测到连接被中断。</p>
 </blockquote>
 <blockquote>
-<p>如果你不想为你集群中的每个节点单独配置ip（非常可以理解）,你可以不配，空着它，Cassandra将会使用InetAddress.getLocalHost()来选择地址，然后只要你或者你的运维团队保证这个是正确的(/etc/hosts/,dns 等等要配置对)。</p>
+<p>为了支撑上千个数据库连接，还建议修改以下参数</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl -w</span><br><span class="line">net.core.rmem_max=16777216</span><br><span class="line">net.core.wmem_max=16777216</span><br><span class="line">net.core.rmem_default=16777216</span><br><span class="line">net.core.wmem_default=16777216</span><br><span class="line">net.core.optmem_max=40960</span><br><span class="line">net.ipv4.tcp_rmem=4096 87380 16777216</span><br><span class="line">net.ipv4.tcp_wmem=4096 65536 16777216</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>一个例外是JMX,他默认监听的地址是0.0.0.0（这个是java的bug 6425769）</p>
-</blockquote>
-<blockquote>
-<p>请看CASSANDRA-256 和 CASSANDRA-43获取这方面更多的细节。</p>
+<p>为了让参数永久生效，记得把它们写入系统配置文件/etc/sysctl.conf里</p>
 </blockquote>
 <hr>
-<h4 id="cassandra用了哪些端口？"><a href="#cassandra用了哪些端口？" class="headerlink" title="cassandra用了哪些端口？"></a>cassandra用了哪些端口？</h4><blockquote>
-<p>默认7000作为集群通信端口（如果开启了SSL就是7001端口）。</p>
+<h4 id="禁用CPU动态跳频功能。"><a href="#禁用CPU动态跳频功能。" class="headerlink" title="禁用CPU动态跳频功能。"></a>禁用CPU动态跳频功能。</h4><blockquote>
+<p>最近的linux系统增加了一个新特性，就是可以动态调整CPU频率，就是在机器低负载的时候，可以降低CPU频率，以达到降低功耗的目的。</p>
 </blockquote>
 <blockquote>
-<p>9042端口用于native协议的客户端连接。</p>
+<p>这种动态调频功能会影响cassandra数据库的吞吐量。建议禁用，让CPU一直维持恒定的频率输出，尽管这很耗电，但是保证你的数据库的吞吐量。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">禁用方式：</span><br><span class="line"></span><br><span class="line">for CPUFREQ in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor</span><br><span class="line">do</span><br><span class="line">[ -f $CPUFREQ ] || continue</span><br><span class="line">echo -n performance &gt; $CPUFREQ</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<h4 id="禁用zone-reclaim-mode"><a href="#禁用zone-reclaim-mode" class="headerlink" title="禁用zone_reclaim_mode"></a>禁用zone_reclaim_mode</h4><blockquote>
+<p>官方建议禁用，这个是关于多核CPU使用NUMA架构，分别访问内存，内存回收方面的一个参数</p>
 </blockquote>
 <blockquote>
-<p>7199端口用于JMX，</p>
+<p>这个参数的解释，可以参考：<br><a href="http://linuxinsight.com/proc_sys_vm_zone_reclaim_mode.html" target="_blank" rel="noopener">http://linuxinsight.com/proc_sys_vm_zone_reclaim_mode.html</a></p>
 </blockquote>
 <blockquote>
-<p>9160端口用于废弃的Thrift接口。</p>
+<p>这里面有一句话，当你的机器用作文件服务器，或者你的大部分内存需要用于系统文件缓存的时候，你需要禁用这个功能。<br>我们的Cassandra就相当于文件服务器，它对IO是依赖的，它需要系统内存用于大量缓存DB文件。所以要禁用这个功能。</p>
 </blockquote>
 <blockquote>
-<p>内部节点通信以及native协议的端口在cassandra配置文件里可以配置。JMX端口可以在cassandra-env.sh配置（通过JVM的参数)。所有端口都是TCP的。</p>
+<p>echo 0 &gt; /proc/sys/vm/zone_reclaim_mode</p>
+</blockquote>
+<blockquote>
+<p>Cassandra官方描述了如果不禁用这个参数带来的后果：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、随机CPU尖峰带来时延增加，吞吐量增加。</span><br><span class="line">2、程序假死，什么也不做。</span><br><span class="line">3、一些突然发生又消失的莫名异常。</span><br><span class="line">4、重启机器，可能在一段时间内不再出现异常。</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="资源限制放开。"><a href="#资源限制放开。" class="headerlink" title="资源限制放开。"></a>资源限制放开。</h4><blockquote>
+<p>cassandra会使用很多内存，很多连接，很多文件，所以一律放开。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;cassandra_user&gt; – memlock unlimited</span><br><span class="line">&lt;cassandra_user&gt; – nofile 100000</span><br><span class="line">&lt;cassandra_user&gt; – nproc 32768</span><br><span class="line">&lt;cassandra_user&gt; – as unlimited</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个加入到/etc/security/limits.conf 里（不同操作系统，可能不同，后面不再注明）</p>
+</blockquote>
+<blockquote>
+<p>vm.max_map_count = 1048575   将这个加入到 /etc/sysctl.conf 里</p>
+</blockquote>
+<h4 id="禁用swap"><a href="#禁用swap" class="headerlink" title="禁用swap"></a>禁用swap</h4><blockquote>
+<p>关闭 sudo swapoff –all</p>
+</blockquote>
+<blockquote>
+<p>修改 /etc/fstab. 去掉swap挂载。</p>
+</blockquote>
+<blockquote>
+<p>swap文件内存交换区，当你的内存不够的时候，使用文件内存，这会让你的数据库卡成狗的，一律禁用。</p>
 </blockquote>
 <hr>
-<h4 id="当往集群中增加新节点的时候，对于存在的数据发生了什么？"><a href="#当往集群中增加新节点的时候，对于存在的数据发生了什么？" class="headerlink" title="当往集群中增加新节点的时候，对于存在的数据发生了什么？"></a>当往集群中增加新节点的时候，对于存在的数据发生了什么？</h4><blockquote>
-<p>当一个新节点加入到集群，它将会自动连接集群中的其它节点，并且去复制正确的数据到本地，同样的增加、替换、移动、删除节点都是这样的。</p>
+<h4 id="文件预"><a href="#文件预" class="headerlink" title="文件预"></a>文件预</h4><blockquote>
+<p>默认保持64k即可</p>
 </blockquote>
-<h4 id="我删除了数据，但是磁盘使用率没有变化，这是为什么？"><a href="#我删除了数据，但是磁盘使用率没有变化，这是为什么？" class="headerlink" title="我删除了数据，但是磁盘使用率没有变化，这是为什么？"></a>我删除了数据，但是磁盘使用率没有变化，这是为什么？</h4><blockquote>
-<p>写入到cassandra里的数据会被持久化到SSTable文件里，SSTable文件是不可改变的，也就是说当你执行删除的时候，数据不会从文件中被去除掉的。</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 64 &gt; /sys/class/block/&#123;sda&#125;/queue/read_ahead_kb</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>相反，一个标记（也叫tombstone)会被写入用于标记对应记录的新状态。不用担心，当数据和tombstone发生第一次compaction的时候，数据会被删除掉，相应的磁盘空间也被回收，你可以了解关于Compaction的更多细节。</p>
+<p>如果是ssd，设置为8k</p>
 </blockquote>
-<h4 id="为什么用nodetool-ring只能看到一条记录？-即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。"><a href="#为什么用nodetool-ring只能看到一条记录？-即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。" class="headerlink" title="为什么用nodetool ring只能看到一条记录？ 即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。"></a>为什么用nodetool ring只能看到一条记录？ 即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。</h4><blockquote>
-<p>这个发生于你的所有节点都配了通用的token，不要这么做。</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 8 &gt; /sys/class/block/&#123;sda&#125;/queue/read_ahead_kb</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>这经常发生于哪些使用VM部署cassandra的用户，（特别是使用Debian package，它会在安装完自动启动cassandra，所以会生成token并保存它。），安装好后就把VM整个克隆出另外的节点。</p>
+<p>如果是ssd，还要设置下面的参数进行优化。</p>
 </blockquote>
-<blockquote>
-<p>增很容易修复，只要把数据目录以及commitlog目录删除，然后保证每个节点是随机生成的token，再启动就可以了。</p>
-</blockquote>
-<h4 id="我可以修改一个正在运行中的集群中的keyspace的副本因子吗？"><a href="#我可以修改一个正在运行中的集群中的keyspace的副本因子吗？" class="headerlink" title="我可以修改一个正在运行中的集群中的keyspace的副本因子吗？"></a>我可以修改一个正在运行中的集群中的keyspace的副本因子吗？</h4><blockquote>
-<p>可以，但是修改后需要执行repair或者cleanup来改变已存数据的副本个数。</p>
-</blockquote>
-<blockquote>
-<p>首先使用cqlsh修改目标keyspace的副本因子。<br>如果你是减少副本因子，你可以执行nodetool cleanup去删除多余的副本数据，对每个节点都要执行。</p>
-</blockquote>
-<blockquote>
-<p>如果你是增加副本因子，你需要执行nodetool repair来保证数据的副本个数满足当前的配置。 Repair只要对每个副本集执行一次即可。这是个敏感的操作，这会影响集群的性能。强烈建议执行rolling repair，因为试图一次修复整个集群的话，那可能是个坑。</p>
-</blockquote>
-<h4 id="可以使用cassandra存储大的二进制字段吗？"><a href="#可以使用cassandra存储大的二进制字段吗？" class="headerlink" title="可以使用cassandra存储大的二进制字段吗？"></a>可以使用cassandra存储大的二进制字段吗？</h4><blockquote>
-<p>Cassandra并没有对存储大文件或者二进制，以及这样一个二进制数据被经常读，也就是整个发送到客户端的情况进行优化。因为存储小的二进制数据（小于1MB)应该不是问题。但是还是建议把大的二进制数据分隔成小块。</p>
-</blockquote>
-<blockquote>
-<p>需要特别注意的是，任何大于16MB的值，将被Cassandra拒绝掉，这是由max_mutation_size_in_kb配置项决定的（这个配置项默认是commitlog_segment_size_in_mb的一半，commitlog_segment_size_in_mb默认是32M)。</p>
-</blockquote>
-<h4 id="Nodetool连接远程服务器的时候，提示“Connection-refused-to-host-127-0-1-1”-，这是为什么？"><a href="#Nodetool连接远程服务器的时候，提示“Connection-refused-to-host-127-0-1-1”-，这是为什么？" class="headerlink" title="Nodetool连接远程服务器的时候，提示“Connection refused to host: 127.0.1.1” ，这是为什么？"></a>Nodetool连接远程服务器的时候，提示“Connection refused to host: 127.0.1.1” ，这是为什么？</h4><blockquote>
-<p>nodetool依赖JMX，JMX依赖RMI。RMI在两端通信的时候会根据需要创建自己的listenners和connectors。通常，这些都是底层透明的，但是不正确的hostname解析，无论是在连接方还是被连接方，都会导致错乱和这样的拒绝异常。</p>
-</blockquote>
-<blockquote>
-<p>如果你在使用DNS。确保两端机器的/etc/hosts文件是正确的。如果还是失败的，你可以尝试通过jvm选项-Djava.rmi.server.hostname=指定你要连接的远程机器名称给JMX接口，配置项大体在cassandra-env.sh文件的靠下的位置。</p>
-</blockquote>
-<h4 id="端口占用"><a href="#端口占用" class="headerlink" title="端口占用"></a>端口占用</h4><blockquote>
-<p>错误：<br> Cassandra关闭后，重启，提示，7199端口被占用，分析原因是关闭时使用的ctrl+c，实际上并没有关闭cassandra服务进程，所以提示端口已被使用； </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yxcdeMacBook-Pro:3.11.4 yxc$ cqlsh</span><br><span class="line">Connection error: (&apos;Unable to connect to any servers&apos;, &#123;&apos;127.0.0.1&apos;: error(61, &quot;Tried connecting to [(&apos;127.0.0.1&apos;, 9042)]. Last error: Connection refused&quot;)&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>解决：<br>找出使用7199端口的进程<br>lsof -i:7199<br>杀死残留进程<br>kill direct_pid</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo deadline &gt; /sys/block/sda/queue/scheduler</span><br><span class="line">#OR…</span><br><span class="line">#echo noop &gt; /sys/block/sda/queue/scheduler</span><br><span class="line">touch /var/lock/subsys/local</span><br><span class="line">echo 0 &gt; /sys/class/block/sda/queue/rotational</span><br></pre></td></tr></table></figure>
 <hr>
-<h4 id="版本不一致"><a href="#版本不一致" class="headerlink" title="版本不一致"></a>版本不一致</h4><blockquote>
-<p>错误： </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Connection error: </span><br><span class="line">(‘Unable to connect to any servers’, </span><br><span class="line">&#123;‘127.0.0.1’: ProtocolError(“cql_version ‘3.3.0’ is not supported by remote (w/ native protocol). Supported versions: [u’3.3.1’]”,)&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>解决： </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">修改cassandra_home/bin/cqlsh.py: </span><br><span class="line">DEFAULT_CQLVER = ‘3.3.0’为DEFAULT_CQLVER = ‘3.3.1’；</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="All-host-s-tried-for-query-failed"><a href="#All-host-s-tried-for-query-failed" class="headerlink" title="All host(s) tried for query failed"></a>All host(s) tried for query failed</h4><blockquote>
-<p>错误： </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">message: ‘All host(s) tried for query failed. First host tried, </span><br><span class="line">127.0.0.1:9042: Error: connect ECONNREFUSED 127.0.0.1:9042. </span><br><span class="line">See innerErrors.’ &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>解决： </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">修改cassandra_home/conf/cassandra.yaml: </span><br><span class="line">start_native_transport=false改为start_native_transport=true;</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://zhaoyanblog.com/archives/957.html" target="_blank" rel="noopener">赵岩</a></p>
+<h4 id="确保以上参数重启机器后仍然有效。"><a href="#确保以上参数重启机器后仍然有效。" class="headerlink" title="确保以上参数重启机器后仍然有效。"></a>确保以上参数重启机器后仍然有效。</h4><h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p><a href="https://zhaoyanblog.com/archives/1005.html" target="_blank" rel="noopener">赵岩的博客</a></p>
 
       
     </div>
@@ -595,7 +577,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://23yue23.github.io/2019/05/17/cassandra系列之问题总结/" title="cassandra系列之问题总结">https://23yue23.github.io/2019/05/17/cassandra系列之问题总结/</a>
+    <a href="https://23yue23.github.io/2019/05/17/Cassandra系列之系统参数优化/" title="Cassandra系列之系统参数优化">https://23yue23.github.io/2019/05/17/Cassandra系列之系统参数优化/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -610,7 +592,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Cassandra-问题总结/" rel="tag"><i class="fa fa-tag"></i> Cassandra-问题总结</a>
+            <a href="/tags/Cassandra-系统优化/" rel="tag"><i class="fa fa-tag"></i> Cassandra-系统优化</a>
           
         </div>
       
@@ -623,8 +605,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/17/Druid之调研/" rel="next" title="Druid之调研">
-                <i class="fa fa-chevron-left"></i> Druid之调研
+              <a href="/2019/05/17/linux系列之端口占有/" rel="next" title="linux系列之端口占有">
+                <i class="fa fa-chevron-left"></i> linux系列之端口占有
               </a>
             
           </div>
@@ -632,10 +614,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/17/linux系列之端口占有/" rel="prev" title="linux系列之端口占有">
-                linux系列之端口占有 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -830,7 +808,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么不可以设置listen-address为0-0-0-0（意思是监听所有地址）？"><span class="nav-number">1.</span> <span class="nav-text">为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cassandra用了哪些端口？"><span class="nav-number">2.</span> <span class="nav-text">cassandra用了哪些端口？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当往集群中增加新节点的时候，对于存在的数据发生了什么？"><span class="nav-number">3.</span> <span class="nav-text">当往集群中增加新节点的时候，对于存在的数据发生了什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我删除了数据，但是磁盘使用率没有变化，这是为什么？"><span class="nav-number">4.</span> <span class="nav-text">我删除了数据，但是磁盘使用率没有变化，这是为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么用nodetool-ring只能看到一条记录？-即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。"><span class="nav-number">5.</span> <span class="nav-text">为什么用nodetool ring只能看到一条记录？ 即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我可以修改一个正在运行中的集群中的keyspace的副本因子吗？"><span class="nav-number">6.</span> <span class="nav-text">我可以修改一个正在运行中的集群中的keyspace的副本因子吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以使用cassandra存储大的二进制字段吗？"><span class="nav-number">7.</span> <span class="nav-text">可以使用cassandra存储大的二进制字段吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nodetool连接远程服务器的时候，提示“Connection-refused-to-host-127-0-1-1”-，这是为什么？"><span class="nav-number">8.</span> <span class="nav-text">Nodetool连接远程服务器的时候，提示“Connection refused to host: 127.0.1.1” ，这是为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端口占用"><span class="nav-number">9.</span> <span class="nav-text">端口占用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本不一致"><span class="nav-number">10.</span> <span class="nav-text">版本不一致</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#All-host-s-tried-for-query-failed"><span class="nav-number">11.</span> <span class="nav-text">All host(s) tried for query failed</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">12.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用最新的64位的jdk8的最新发布版本。"><span class="nav-number">1.</span> <span class="nav-text">使用最新的64位的jdk8的最新发布版本。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时钟同步，开启NTP服务"><span class="nav-number">2.</span> <span class="nav-text">时钟同步，开启NTP服务.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP参数设置"><span class="nav-number">3.</span> <span class="nav-text">TCP参数设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用CPU动态跳频功能。"><span class="nav-number">4.</span> <span class="nav-text">禁用CPU动态跳频功能。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用zone-reclaim-mode"><span class="nav-number">5.</span> <span class="nav-text">禁用zone_reclaim_mode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资源限制放开。"><span class="nav-number">6.</span> <span class="nav-text">资源限制放开。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用swap"><span class="nav-number">7.</span> <span class="nav-text">禁用swap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件预"><span class="nav-number">8.</span> <span class="nav-text">文件预</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#确保以上参数重启机器后仍然有效。"><span class="nav-number">9.</span> <span class="nav-text">确保以上参数重启机器后仍然有效。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考："><span class="nav-number">10.</span> <span class="nav-text">参考：</span></a></li></ol></div>
             
 
           </div>
