@@ -72,7 +72,7 @@
     <link href="https://23yue23.github.io/2019/05/17/linux%E7%B3%BB%E5%88%97%E4%B9%8B%E7%AB%AF%E5%8F%A3%E5%8D%A0%E6%9C%89/"/>
     <id>https://23yue23.github.io/2019/05/17/linux系列之端口占有/</id>
     <published>2019-05-17T06:51:25.000Z</published>
-    <updated>2019-05-17T07:59:22.349Z</updated>
+    <updated>2019-05-20T10:01:14.418Z</updated>
     
     <content type="html"><![CDATA[<h4 id="使用lsof"><a href="#使用lsof" class="headerlink" title="使用lsof"></a>使用lsof</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:80</span><br></pre></td></tr></table></figure><h4 id="使用netstat"><a href="#使用netstat" class="headerlink" title="使用netstat"></a>使用netstat</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -anp|grep port</span><br></pre></td></tr></table></figure>]]></content>
     
