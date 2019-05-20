@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mysql系列之问题及解决]]></title>
+    <url>%2F2019%2F05%2F20%2Fmysql%E7%B3%BB%E5%88%97%E4%B9%8B%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%2F</url>
+    <content type="text"><![CDATA[RROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’ (2)12主要原因是mysql 服务没有启动解决：mysql.server start]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql-问题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Cassandra系列之系统参数优化]]></title>
     <url>%2F2019%2F05%2F17%2FCassandra%E7%B3%BB%E5%88%97%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96%2F</url>
     <content type="text"><![CDATA[Cassandra不同于普通的应用程序，它是分布式数据库，它要大口吃内存，吃磁盘，吃CPU，所以机器要进行特殊的配置，以适应其需要。 使用最新的64位的jdk8的最新发布版本。 时钟同步，开启NTP服务. cassandra是分布式存储，就靠时间戳解决数据冲突，所以始终必须同步 TCP参数设置 在低带宽环境下，防火墙会检测闲置的连接并关闭，为了保护节点之间，或者多个DC节点之间的连接，建议如下配置系统参数 1234sudo sysctl -wnet.ipv4.tcp_keepalive_time=60net.ipv4.tcp_keepalive_probes=3net.ipv4.tcp_keepalive_intvl=10 设置这个就是可以快速的发现底层的TCP连接是否已经关闭，它间隔60秒开始探测3次，每次探测间隔10秒，也就是说最多在60+3*10=90秒内就可以检测到连接被中断。为了支撑上千个数据库连接，还建议修改以下参数 12345678sudo sysctl -wnet.core.rmem_max=16777216net.core.wmem_max=16777216net.core.rmem_default=16777216net.core.wmem_default=16777216net.core.optmem_max=40960net.ipv4.tcp_rmem=4096 87380 16777216net.ipv4.tcp_wmem=4096 65536 16777216 为了让参数永久生效，记得把它们写入系统配置文件/etc/sysctl.conf里 禁用CPU动态跳频功能。 最近的linux系统增加了一个新特性，就是可以动态调整CPU频率，就是在机器低负载的时候，可以降低CPU频率，以达到降低功耗的目的。这种动态调频功能会影响cassandra数据库的吞吐量。建议禁用，让CPU一直维持恒定的频率输出，尽管这很耗电，但是保证你的数据库的吞吐量。 1234567禁用方式：for CPUFREQ in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governordo[ -f $CPUFREQ ] || continueecho -n performance &gt; $CPUFREQdone 禁用zone_reclaim_mode 官方建议禁用，这个是关于多核CPU使用NUMA架构，分别访问内存，内存回收方面的一个参数这个参数的解释，可以参考：http://linuxinsight.com/proc_sys_vm_zone_reclaim_mode.html这里面有一句话，当你的机器用作文件服务器，或者你的大部分内存需要用于系统文件缓存的时候，你需要禁用这个功能。我们的Cassandra就相当于文件服务器，它对IO是依赖的，它需要系统内存用于大量缓存DB文件。所以要禁用这个功能。echo 0 &gt; /proc/sys/vm/zone_reclaim_modeCassandra官方描述了如果不禁用这个参数带来的后果： 12341、随机CPU尖峰带来时延增加，吞吐量增加。2、程序假死，什么也不做。3、一些突然发生又消失的莫名异常。4、重启机器，可能在一段时间内不再出现异常。 资源限制放开。 cassandra会使用很多内存，很多连接，很多文件，所以一律放开。 1234&lt;cassandra_user&gt; – memlock unlimited&lt;cassandra_user&gt; – nofile 100000&lt;cassandra_user&gt; – nproc 32768&lt;cassandra_user&gt; – as unlimited 这个加入到/etc/security/limits.conf 里（不同操作系统，可能不同，后面不再注明）vm.max_map_count = 1048575 将这个加入到 /etc/sysctl.conf 里 禁用swap 关闭 sudo swapoff –all修改 /etc/fstab. 去掉swap挂载。swap文件内存交换区，当你的内存不够的时候，使用文件内存，这会让你的数据库卡成狗的，一律禁用。 文件预 默认保持64k即可 1echo 64 &gt; /sys/class/block/&#123;sda&#125;/queue/read_ahead_kb 如果是ssd，设置为8k 1echo 8 &gt; /sys/class/block/&#123;sda&#125;/queue/read_ahead_kb 如果是ssd，还要设置下面的参数进行优化。 12345echo deadline &gt; /sys/block/sda/queue/scheduler#OR…#echo noop &gt; /sys/block/sda/queue/schedulertouch /var/lock/subsys/localecho 0 &gt; /sys/class/block/sda/queue/rotational 确保以上参数重启机器后仍然有效。 参考：赵岩的博客]]></content>
@@ -63,7 +74,7 @@
   <entry>
     <title><![CDATA[Cassandra系列之常用操作命令]]></title>
     <url>%2F2019%2F05%2F15%2FCassandra%E7%B3%BB%E5%88%97%E4%B9%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[cassandra mac os 安装 shell 命令]]></content>
+    <content type="text"><![CDATA[cassandra mac os 安装 shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool describecluster 查看节点状态1nodetool status 重启节点1sudo systemctl restart scylla-server Cql操作查看版本1SHOW VERSION keyspaces 操作1234#查看desc keyspaces;#使用use keyspaceName 查看表12345#table listdescribe tables;#查看表结构describe table table_name;]]></content>
       <categories>
         <category>Cassandra</category>
       </categories>
