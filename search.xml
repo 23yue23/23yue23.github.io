@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo之基本操作]]></title>
+    <url>%2F2019%2F07%2F10%2Fhexo%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[创建新文件 12在当前总目录下hexo new &quot;hexo之基本操作&quot; 更新部署12]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[linux系列之常用命令总结]]></title>
+    <url>%2F2019%2F07%2F10%2Flinux%E7%B3%BB%E5%88%97%E4%B9%8B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[flink阅读资料]]></title>
     <url>%2F2019%2F06%2F11%2Fflink%E9%98%85%E8%AF%BB%E8%B5%84%E6%96%99%2F</url>
     <content type="text"><![CDATA[理解Flink的设计原则 Google Stream 101越了批处理的流处理世界 Google Stream 102超越了批处理的流处理世界 Flink原理和实现 追源索骥：透过源码看懂Flink核心框架的执行流程 Flink的架构和拓扑概览 Flink核心框架的执行流程 理解 Flink 中的计算资源 Flink如何生成ExecutionGraph及物理执行图 Flink 生成StreamGraph Flink Window Flink Window的实现原理 Flink Window的实现原理：Session Window Flink 滑动窗口优化 Flink State Flink中的状态管理 Flink中的反压Back-Pressure Flink Operator Chain原理 Flink内存管理 Flink异步快照机制-Failover 数据流的类型和操作 Flink Async IO Flink源码解析 Stream Operator Flink SQL Flink SQL的大部分代码实现是阿里巴巴的Blink团队贡献给Apache的。 Flink SQL 核心功能解密 Flink SQL维表Join和异步优化 Flink SQL 异步IO设计 Flink SQL数据去重的技巧和思考 Flink SQL TOP N的挑战与实现 Flink SQL 流计算“撤回(Retraction)”案例分析 Flink SQL 解决热点问题的大杀器MiniBatch Flink Table API&amp;SQL的概念和通用API Flink CEP复杂事件处理系列1 Flink-CEP论文与源码解读之状态与状态转换 Flink之CEP-API简介 Flink之CEP案例分析-网络攻击检测 Flink-CEP之NFA Flink-CEP之NFA编译器 Flink-CEP之模式流与运算符 系列2 CEP In Flink (1) - CEP规则解析 CEP In Flink (2) - CEP规则匹配 CEP In Flink (3) - 匹配事件提取 CEP In Flink (4) - 使用瓶颈 Flink事务 Flink Streaming Ledger 支持流式处理ACID事务 Flink源码解析 Apache Flink源码解析 DataStream API Flink Exactly Once语义flink的两阶段提交协议-实现端到端的Exactly Once语义 Flink案例 Flink在唯品会的实践 Flink在美团的实践应用 Flink在G7的实践 Flink在饿了么的应用 基于Flink的实时特征平台在Flink的应用 其它 流计算框架 Flink 与 Storm 的性能对比]]></content>
