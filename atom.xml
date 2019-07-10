@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-05-20T02:56:39.123Z</updated>
+  <updated>2019-06-11T12:03:31.505Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>flink阅读资料</title>
+    <link href="https://23yue23.github.io/2019/06/11/flink%E9%98%85%E8%AF%BB%E8%B5%84%E6%96%99/"/>
+    <id>https://23yue23.github.io/2019/06/11/flink阅读资料/</id>
+    <published>2019-06-11T09:00:23.000Z</published>
+    <updated>2019-06-11T12:03:31.505Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="理解Flink的设计原则"><a href="#理解Flink的设计原则" class="headerlink" title="理解Flink的设计原则"></a>理解Flink的设计原则</h4><blockquote><p><a href="https://blog.csdn.net/ffjl1985/article/details/77961714" target="_blank" rel="noopener">Google Stream 101越了批处理的流处理世界</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/ffjl1985/article/details/78018475" target="_blank" rel="noopener">Google Stream 102超越了批处理的流处理世界</a></p></blockquote><h4 id="Flink原理和实现"><a href="#Flink原理和实现" class="headerlink" title="Flink原理和实现"></a>Flink原理和实现</h4><blockquote><p><a href="https://cloud.tencent.com/developer/article/1172583" target="_blank" rel="noopener">追源索骥：透过源码看懂Flink核心框架的执行流程</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/180418" target="_blank" rel="noopener">Flink的架构和拓扑概览</a></p></blockquote><blockquote><p><a href="https://cloud.tencent.com/developer/article/1172583" target="_blank" rel="noopener">Flink核心框架的执行流程</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/64819" target="_blank" rel="noopener">理解 Flink 中的计算资源</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/225618" target="_blank" rel="noopener">Flink如何生成ExecutionGraph及物理执行图</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/259125" target="_blank" rel="noopener">Flink 生成StreamGraph</a></p></blockquote><h4 id="Flink-Window"><a href="#Flink-Window" class="headerlink" title="Flink Window"></a>Flink Window</h4><blockquote><p><a href="https://yq.aliyun.com/articles/225624" target="_blank" rel="noopener">Flink Window的实现原理</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/a69811b41bc3" target="_blank" rel="noopener">Flink Window的实现原理：Session Window</a></p></blockquote><blockquote><p><a href="https://tech.youzan.com/flink-sliding-window/" target="_blank" rel="noopener">Flink 滑动窗口优化</a></p></blockquote><h4 id="Flink-State"><a href="#Flink-State" class="headerlink" title="Flink State"></a>Flink State</h4><blockquote><p><a href="https://yq.aliyun.com/articles/225623" target="_blank" rel="noopener">Flink中的状态管理</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/64821" target="_blank" rel="noopener">Flink中的反压Back-Pressure</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/225621" target="_blank" rel="noopener">Flink Operator Chain原理</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/57815" target="_blank" rel="noopener">Flink内存管理</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/lmalds/article/details/54925877" target="_blank" rel="noopener">Flink异步快照机制-Failover</a></p></blockquote><blockquote><p><a href="http://wuchong.me/blog/2016/05/20/flink-internals-streams-and-operations-on-streams/" target="_blank" rel="noopener">数据流的类型和操作</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/d8f99d94b761" target="_blank" rel="noopener">Flink Async IO</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/2e379f242272" target="_blank" rel="noopener">Flink源码解析 Stream Operator</a></p></blockquote><h4 id="Flink-SQL"><a href="#Flink-SQL" class="headerlink" title="Flink SQL"></a>Flink SQL</h4><blockquote><p><a href>Flink SQL的大部分代码实现是阿里巴巴的Blink团队贡献给Apache的</a>。</p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457438" target="_blank" rel="noopener">Flink SQL 核心功能解密</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457385" target="_blank" rel="noopener">Flink SQL维表Join和异步优化</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457370" target="_blank" rel="noopener">Flink SQL 异步IO设计</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457356" target="_blank" rel="noopener">Flink SQL数据去重的技巧和思考</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457445" target="_blank" rel="noopener">Flink SQL TOP N的挑战与实现</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457392" target="_blank" rel="noopener">Flink SQL 流计算“撤回(Retraction)”案例分析</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/448853" target="_blank" rel="noopener">Flink SQL 解决热点问题的大杀器MiniBatch</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/6bc5b4e6f163" target="_blank" rel="noopener">Flink Table API&amp;SQL的概念和通用API</a></p></blockquote><h4 id="Flink-CEP复杂事件处理"><a href="#Flink-CEP复杂事件处理" class="headerlink" title="Flink CEP复杂事件处理"></a>Flink CEP复杂事件处理</h4><h5 id="系列1"><a href="#系列1" class="headerlink" title="系列1"></a>系列1</h5><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/60151617" target="_blank" rel="noopener">Flink-CEP论文与源码解读之状态与状态转换</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/58714692" target="_blank" rel="noopener">Flink之CEP-API简介</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/59169473" target="_blank" rel="noopener">Flink之CEP案例分析-网络攻击检测</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/60986433" target="_blank" rel="noopener">Flink-CEP之NFA</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/61430843" target="_blank" rel="noopener">Flink-CEP之NFA编译器</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/62477733" target="_blank" rel="noopener">Flink-CEP之模式流与运算符</a></p></blockquote><h5 id="系列2"><a href="#系列2" class="headerlink" title="系列2"></a>系列2</h5><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-1/" target="_blank" rel="noopener">CEP In Flink (1) - CEP规则解析</a></p></blockquote><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-2/" target="_blank" rel="noopener">CEP In Flink (2) - CEP规则匹配</a></p></blockquote><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-3/" target="_blank" rel="noopener">CEP In Flink (3) - 匹配事件提取</a></p></blockquote><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-4/" target="_blank" rel="noopener">CEP In Flink (4) - 使用瓶颈</a></p></blockquote><h4 id="Flink事务"><a href="#Flink事务" class="headerlink" title="Flink事务"></a>Flink事务</h4><blockquote><p><a href="https://www.itcodemonkey.com/article/8997.html" target="_blank" rel="noopener">Flink Streaming Ledger 支持流式处理ACID事务</a></p></blockquote><h4 id="Flink源码解析"><a href="#Flink源码解析" class="headerlink" title="Flink源码解析"></a>Flink源码解析</h4><blockquote><p><a href="https://www.jianshu.com/p/a3f43f861a42" target="_blank" rel="noopener">Apache Flink源码解析 DataStream API</a></p></blockquote><blockquote><p><a href>Flink Exactly Once语义</a><br><a href="https://data-artisans.com/blog/end-to-end-exactly-once-processing-apache-flink-apache-kafka" target="_blank" rel="noopener">flink的两阶段提交协议-实现端到端的Exactly Once语义</a></p></blockquote><h4 id="Flink案例"><a href="#Flink案例" class="headerlink" title="Flink案例"></a>Flink案例</h4><blockquote><p><a href="https://doc.flink-china.org/blog/apacheflinkinvipcom" target="_blank" rel="noopener">Flink在唯品会的实践</a></p></blockquote><blockquote><p><a href="https://doc.flink-china.org/blog/meituan.html" target="_blank" rel="noopener">Flink在美团的实践应用</a></p></blockquote><blockquote><p><a href="https://doc.flink-china.org/blog/g7onflink.html" target="_blank" rel="noopener">Flink在G7的实践</a></p></blockquote><blockquote><p><a href="https://doc.flink-china.org/blog/eleme.html" target="_blank" rel="noopener">Flink在饿了么的应用</a></p></blockquote><blockquote><p><a href="https://www.sohu.com/a/246673917_315839" target="_blank" rel="noopener">基于Flink的实时特征平台在Flink的应用</a></p></blockquote><h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4><blockquote><p><a href="https://tech.meituan.com/2017/11/17/flink-benchmark.html" target="_blank" rel="noopener">流计算框架 Flink 与 Storm 的性能对比</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;理解Flink的设计原则&quot;&gt;&lt;a href=&quot;#理解Flink的设计原则&quot; class=&quot;headerlink&quot; title=&quot;理解Flink的设计原则&quot;&gt;&lt;/a&gt;理解Flink的设计原则&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://
+      
+    
+    </summary>
+    
+      <category term="flink" scheme="https://23yue23.github.io/categories/flink/"/>
+    
+    
+      <category term="flink资料" scheme="https://23yue23.github.io/tags/flink%E8%B5%84%E6%96%99/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql系列之问题及解决</title>
@@ -72,15 +98,15 @@
     <link href="https://23yue23.github.io/2019/05/17/linux%E7%B3%BB%E5%88%97%E4%B9%8B%E7%AB%AF%E5%8F%A3%E5%8D%A0%E6%9C%89/"/>
     <id>https://23yue23.github.io/2019/05/17/linux系列之端口占有/</id>
     <published>2019-05-17T06:51:25.000Z</published>
-    <updated>2019-05-20T10:01:14.418Z</updated>
+    <updated>2019-05-21T02:59:42.613Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="使用lsof"><a href="#使用lsof" class="headerlink" title="使用lsof"></a>使用lsof</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:80</span><br></pre></td></tr></table></figure><h4 id="使用netstat"><a href="#使用netstat" class="headerlink" title="使用netstat"></a>使用netstat</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -anp|grep port</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h4 id="lsof"><a href="#lsof" class="headerlink" title="lsof"></a>lsof</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:80</span><br></pre></td></tr></table></figure><h4 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -anp|grep port</span><br></pre></td></tr></table></figure><h4 id="ip"><a href="#ip" class="headerlink" title="ip"></a>ip</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure><h4 id="flind"><a href="#flind" class="headerlink" title="flind"></a>flind</h4><h4 id="journalctl"><a href="#journalctl" class="headerlink" title="journalctl"></a>journalctl</h4><p><a href></a></p><h4 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h4><p><a href="http://man.linuxde.net/curl" target="_blank" rel="noopener">curl</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h4 id=&quot;使用lsof&quot;&gt;&lt;a href=&quot;#使用lsof&quot; class=&quot;headerlink&quot; title=&quot;使用lsof&quot;&gt;&lt;/a&gt;使用lsof&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
+        &lt;h4 id=&quot;lsof&quot;&gt;&lt;a href=&quot;#lsof&quot; class=&quot;headerlink&quot; title=&quot;lsof&quot;&gt;&lt;/a&gt;lsof&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
       
     
     </summary>
@@ -445,9 +471,9 @@
     <link href="https://23yue23.github.io/2019/04/29/%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0/"/>
     <id>https://23yue23.github.io/2019/04/29/经典文章/</id>
     <published>2019-04-29T05:37:39.000Z</published>
-    <updated>2019-05-17T05:43:46.230Z</updated>
+    <updated>2019-07-10T03:09:50.259Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="技术文章"><a href="#技术文章" class="headerlink" title="技术文章"></a>技术文章</h4><blockquote><ol><li><a href="https://tech.meituan.com/2014/06/30/mysql-index.html" target="_blank" rel="noopener">MySQL索引原理及慢查询优化</a></li><li><a href="https://tech.meituan.com/2018/10/18/meishi-data-flink.html" target="_blank" rel="noopener">美团点评基于 Flink 的实时数仓建设实践</a></li><li><a href="https://mp.weixin.qq.com/s/lhP4B6jA0CQpjT1PdlYmQw" target="_blank" rel="noopener">从零开始入门推荐算法工程师</a></li></ol></blockquote><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><blockquote><ol><li><a href="https://tech.meituan.com/2018/04/16/study-vs-work.html" target="_blank" rel="noopener">工作中如何做好技术积累</a></li><li><a href="http://openskill.cn/article/488" target="_blank" rel="noopener">学习新技术的10个技巧</a></li><li><a href></a></li><li><a href></a></li></ol></blockquote>]]></content>
+    <content type="html"><![CDATA[<h4 id="技术文章"><a href="#技术文章" class="headerlink" title="技术文章"></a>技术文章</h4><blockquote><ol><li><a href="https://tech.meituan.com/2014/06/30/mysql-index.html" target="_blank" rel="noopener">MySQL索引原理及慢查询优化</a></li><li><a href="https://tech.meituan.com/2018/10/18/meishi-data-flink.html" target="_blank" rel="noopener">美团点评基于 Flink 的实时数仓建设实践</a></li><li><a href="https://mp.weixin.qq.com/s/lhP4B6jA0CQpjT1PdlYmQw" target="_blank" rel="noopener">从零开始入门推荐算法工程师</a></li><li><a href="https://yq.aliyun.com/articles/691816?spm=a2c4e.11153940.blogcont691499.9.2be51d53KvnU8f" target="_blank" rel="noopener">计算广告与流处理技术综述</a></li></ol></blockquote><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><blockquote><ol><li><a href="https://tech.meituan.com/2018/04/16/study-vs-work.html" target="_blank" rel="noopener">工作中如何做好技术积累</a></li><li><a href="http://openskill.cn/article/488" target="_blank" rel="noopener">学习新技术的10个技巧</a></li><li><a href></a></li><li><a href></a></li></ol></blockquote>]]></content>
     
     <summary type="html">
     
@@ -464,31 +490,6 @@
     
     
       <category term="经典文章" scheme="https://23yue23.github.io/tags/%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql系列之-问题汇总</title>
-    <link href="https://23yue23.github.io/2019/04/29/mysql%E7%B3%BB%E5%88%97%E4%B9%8B-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
-    <id>https://23yue23.github.io/2019/04/29/mysql系列之-问题汇总/</id>
-    <published>2019-04-29T05:08:45.000Z</published>
-    <updated>2019-04-29T05:10:40.170Z</updated>
-    
-    <content type="html"><![CDATA[<p>###om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:The last packet successfully received from the server was 44,024,462 milliseconds ago.  The last packet sent successfully to the server was 44,024,462 milliseconds ago. is longer than the server configured value of &apos;wait_timeout&apos;. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property &apos;autoReconnect=true&apos; to avoid this problem.</span><br></pre></td></tr></table></figure></p><p>解决方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.在连接上添加这个设置</span><br><span class="line">&amp;autoReconnect=true&amp;failOverReadOnly=false</span><br><span class="line">2.每次使用完记得归还连接</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;###om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span cl
-      
-    
-    </summary>
-    
-      <category term="mysql" scheme="https://23yue23.github.io/categories/mysql/"/>
-    
-    
-      <category term="mysql-问题" scheme="https://23yue23.github.io/tags/mysql-%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   

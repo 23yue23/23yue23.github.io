@@ -145,7 +145,7 @@
 <meta property="og:site_name" content="蜗牛笔记">
 <meta property="og:description" content="性能调优分配资源：123456789101112131415161718192021222324252627spark-submit \--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的数量--driver-memory 6g \  配置driver的内存（影响不大）--execut">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-20T10:01:13.925Z">
+<meta property="og:updated_time" content="2019-05-20T10:23:15.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spark系列之--调优记录">
 <meta name="twitter:description" content="性能调优分配资源：123456789101112131415161718192021222324252627spark-submit \--class cn.spark.sparktest.core.WordCountCluster \--num-executors 80 \  配置executor的数量--driver-memory 6g \  配置driver的内存（影响不大）--execut">
@@ -669,11 +669,13 @@
 <p>LocationStrategies 位置策略：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The new Kafka consumer API will pre-fetch messages into buffers. Therefore it is important for performance </span><br><span class="line">reasons that the Spark integration keep cached consumers on executors (rather than recreating them for each </span><br><span class="line">batch), and prefer to schedule partitions on the host locations that have the appropriate consumers.</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>新的Kafka消费者API可以预获取消息缓存到缓冲区，因此Spark整合Kafka让消费者在executor上进行缓存对性能是非常有助的，可以调度消费者所在主机位置的分区。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In most cases, you should use LocationStrategies.PreferConsistent as shown above. This will distribute partitions </span><br><span class="line">evenly across available executors. If your executors are on the same hosts as your Kafka brokers, use PreferBrokers,</span><br><span class="line">which will prefer to schedule partitions on the Kafka leader for that partition. Finally, if you have a significant </span><br><span class="line">skew in load among partitions, use PreferFixed. This allows you to specify an explicit mapping of partitions to </span><br><span class="line">hosts (any unspecified partitions will use a consistent location).</span><br></pre></td></tr></table></figure></p>
+<p>新的Kafka消费者API可以预获取消息缓存到缓冲区，因此Spark整合Kafka让消费者在executor上进行缓存对性能是非常有助的，可以调度消费者所在主机位置的分区。</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In most cases, you should use LocationStrategies.PreferConsistent as shown above. This will distribute partitions </span><br><span class="line">evenly across available executors. If your executors are on the same hosts as your Kafka brokers, use PreferBrokers,</span><br><span class="line">which will prefer to schedule partitions on the Kafka leader for that partition. Finally, if you have a significant </span><br><span class="line">skew in load among partitions, use PreferFixed. This allows you to specify an explicit mapping of partitions to </span><br><span class="line">hosts (any unspecified partitions will use a consistent location).</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>通常，你可以使用 LocationStrategies.PreferConsistent，这个策略会将分区分布到所有可获得的executor上。如果你的executor和kafkabroker在同一主机上的话，可以使用PreferBrokers，这样kafka leader会为此分区进行调度。最后，如果你加载数据有倾斜的话可以使用PreferFixed，这将允许你制定一个分区和主机的映射（没有指定的分区将使用PreferConsistent 策略）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The cache for consumers has a default maximum size of 64. If you expect to be handling more than </span><br><span class="line">(64 * number of executors) Kafka partitions, you can change this setting</span><br><span class="line">via spark.streaming.kafka.consumer.cache.maxCapacity</span><br></pre></td></tr></table></figure></p>
+<p>通常，你可以使用 LocationStrategies.PreferConsistent，这个策略会将分区分布到所有可获得的executor上。如果你的executor和kafkabroker在同一主机上的话，可以使用PreferBrokers，这样kafka leader会为此分区进行调度。最后，如果你加载数据有倾斜的话可以使用PreferFixed，这将允许你制定一个分区和主机的映射（没有指定的分区将使用PreferConsistent 策略）</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The cache for consumers has a default maximum size of 64. If you expect to be handling more than </span><br><span class="line">(64 * number of executors) Kafka partitions, you can change this setting</span><br><span class="line">via spark.streaming.kafka.consumer.cache.maxCapacity</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>消费者默认缓存大小是64，如果你期望处理较大的Kafka分区的话，你可以使用</p>
 </blockquote>
@@ -842,7 +844,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -864,7 +866,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -990,7 +992,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.7k</span>
+    <span title="Site words total count">17.2k</span>
   
 </div>
 
