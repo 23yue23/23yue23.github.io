@@ -124,7 +124,7 @@
 
 
 
-  <meta name="keywords" content="flink, spark,kafka,hive">
+  <meta name="keywords" content="linux命令总结,">
 
 
 
@@ -137,14 +137,18 @@
 
 
 
+<meta name="description" content="Bash 快捷键Ctl-U   删除光标到行首的所有字符,在某些设置下,删除全行Ctl-W   删除当前光标到前边的最近一个空格之间的字符 文件  删除文件： rm -rf  log  等加于$ find ./ -name “log” -exec rm {}  搜寻文件或目录: $find ./ -name “core*” | xargs file 查找所有非txt文本: find . ! -na">
+<meta name="keywords" content="linux命令总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux系列之常用命令总结">
 <meta property="og:url" content="https://23yue23.github.io/2019/07/10/linux系列之常用命令总结/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
+<meta property="og:description" content="Bash 快捷键Ctl-U   删除光标到行首的所有字符,在某些设置下,删除全行Ctl-W   删除当前光标到前边的最近一个空格之间的字符 文件  删除文件： rm -rf  log  等加于$ find ./ -name “log” -exec rm {}  搜寻文件或目录: $find ./ -name “core*” | xargs file 查找所有非txt文本: find . ! -na">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-10T03:22:41.159Z">
+<meta property="og:updated_time" content="2019-07-10T03:36:26.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux系列之常用命令总结">
+<meta name="twitter:description" content="Bash 快捷键Ctl-U   删除光标到行首的所有字符,在某些设置下,删除全行Ctl-W   删除当前光标到前边的最近一个空格之间的字符 文件  删除文件： rm -rf  log  等加于$ find ./ -name “log” -exec rm {}  搜寻文件或目录: $find ./ -name “core*” | xargs file 查找所有非txt文本: find . ! -na">
 
 
 
@@ -379,6 +383,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -401,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  810
                 </span>
               
 
@@ -417,7 +443,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -438,7 +464,35 @@
       
 
       
-        
+        <h4 id="Bash-快捷键"><a href="#Bash-快捷键" class="headerlink" title="Bash 快捷键"></a>Bash 快捷键</h4><p>Ctl-U   删除光标到行首的所有字符,在某些设置下,删除全行<br>Ctl-W   删除当前光标到前边的最近一个空格之间的字符</p>
+<p>文件</p>
+<ol>
+<li>删除文件： rm -rf  <em>log  等加于$ find ./ -name “</em>log” -exec rm {} </li>
+<li>搜寻文件或目录: $find ./ -name “core*” | xargs file</li>
+<li>查找所有非txt文本: find . ! -name “*.txt” -print</li>
+<li>统计文本中123 出现的个数： grep -c “123” filename</li>
+<li>sort 排序：-n 按数字进行排序 VS -d 按字典序进行排序 -r 逆序排序  -k N 指定按第N列排序 ：sort -n -1k -2k    sort -bd data // 忽略像空格之类的前导空白字符</li>
+<li>拼接文本 paste file1 file2</li>
+</ol>
+<p>系统</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># uname -a               # 查看内核/操作系统/CPU信息</span><br><span class="line"># head -n 1 /etc/issue   # 查看操作系统版本</span><br><span class="line"># cat /proc/cpuinfo      # 查看CPU信息</span><br><span class="line"># hostname               # 查看计算机名</span><br><span class="line"># lspci -tv              # 列出所有PCI设备</span><br><span class="line"># lsusb -tv              # 列出所有USB设备</span><br><span class="line"># lsmod                  # 列出加载的内核模块</span><br><span class="line"># env                    # 查看环境变量</span><br><span class="line">资源</span><br><span class="line"># free -m                # 查看内存使用量和交换区使用量</span><br><span class="line"># df -h                  # 查看各分区使用情况</span><br><span class="line"># du -sh &lt;目录名&gt;        # 查看指定目录的大小</span><br><span class="line"># grep MemTotal /proc/meminfo   # 查看内存总量</span><br><span class="line"># grep MemFree /proc/meminfo    # 查看空闲内存量</span><br><span class="line"># uptime                 # 查看系统运行时间、用户数、负载</span><br><span class="line"># cat /proc/loadavg      # 查看系统负载</span><br></pre></td></tr></table></figure>
+<h4 id="磁盘和分区"><a href="#磁盘和分区" class="headerlink" title="磁盘和分区"></a>磁盘和分区</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># mount | column -t      # 查看挂接的分区状态</span><br><span class="line"># fdisk -l               # 查看所有分区</span><br><span class="line"># swapon -s              # 查看所有交换分区</span><br><span class="line"># hdparm -i /dev/hda     # 查看磁盘参数(仅适用于IDE设备)</span><br><span class="line"># dmesg | grep IDE       # 查看启动时IDE设备检测状况</span><br></pre></td></tr></table></figure>
+<h4 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># ifconfig               # 查看所有网络接口的属性</span><br><span class="line"># iptables -L            # 查看防火墙设置</span><br><span class="line"># route -n               # 查看路由表</span><br><span class="line"># netstat -lntp          # 查看所有监听端口</span><br><span class="line"># netstat -antp          # 查看所有已经建立的连接</span><br><span class="line"># netstat -s             # 查看网络统计信息</span><br></pre></td></tr></table></figure>
+<h4 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ps -ef                 # 查看所有进程</span><br><span class="line"># top                    # 实时显示进程状态</span><br></pre></td></tr></table></figure>
+<h4 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># w                      # 查看活动用户</span><br><span class="line"># id &lt;用户名&gt;            # 查看指定用户信息</span><br><span class="line"># last                   # 查看用户登录日志</span><br><span class="line"># cut -d: -f1 /etc/passwd   # 查看系统所有用户</span><br><span class="line"># cut -d: -f1 /etc/group    # 查看系统所有组</span><br><span class="line"># crontab -l             # 查看当前用户的计划任务</span><br></pre></td></tr></table></figure>
+<h4 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># chkconfig --list       # 列出所有系统服务</span><br><span class="line"># chkconfig --list | grep on    # 列出所有启动的系统服务</span><br></pre></td></tr></table></figure>
+<h4 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># rpm -qa                # 查看所有安装的软件包</span><br></pre></td></tr></table></figure>
+<h4 id="Shell-脚本执行返回状态码："><a href="#Shell-脚本执行返回状态码：" class="headerlink" title="Shell 脚本执行返回状态码："></a>Shell 脚本执行返回状态码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">0 命令成功完成</span><br><span class="line">1通常的未知错误</span><br><span class="line">2误用shell命令</span><br><span class="line">126命令无法执行</span><br><span class="line">127没有找到命令</span><br><span class="line">128无效的退出参数</span><br><span class="line">128+x使用Linux信号x的致命错误。</span><br><span class="line">130使用Ctrl-C终止的命令</span><br><span class="line">255规范外的退出状态</span><br></pre></td></tr></table></figure>
+<h4 id="技巧："><a href="#技巧：" class="headerlink" title="技巧："></a>技巧：</h4><blockquote>
+<p>1.查看变量是否被声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用 :- 来测试是否一个变量是否被声明过。</span><br><span class="line">如：if [ &quot;$&#123;NAME:-&#125;&quot; = &quot;Kevin&quot; ] 如果 $&#123;NAME&#125;变量未声明则会变为空字符，你也可以设置为其他默认值.</span><br><span class="line">例如：如果不存在，默认值设为：noname ，if [ &quot;$&#123;NAME:-noname&#125;&quot; = &quot;Kevin” ]</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>2.自定义shell命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc 中设置命令别名:</span><br><span class="line">alias lsl=&apos;ls -lrt&apos;</span><br><span class="line">alias lm=&apos;ls -al|more’</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>3.shell文本格式化代码：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gg=G</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
       
     </div>
     
@@ -486,6 +540,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux命令总结/" rel="tag"><i class="fa fa-tag"></i> linux命令总结</a>
+          
+        </div>
       
 
       
@@ -560,8 +620,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -602,7 +671,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -685,6 +754,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bash-快捷键"><span class="nav-number">1.</span> <span class="nav-text">Bash 快捷键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#磁盘和分区"><span class="nav-number">2.</span> <span class="nav-text">磁盘和分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络"><span class="nav-number">3.</span> <span class="nav-text">网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程"><span class="nav-number">4.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户"><span class="nav-number">5.</span> <span class="nav-text">用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务"><span class="nav-number">6.</span> <span class="nav-text">服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#程序"><span class="nav-number">7.</span> <span class="nav-text">程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shell-脚本执行返回状态码："><span class="nav-number">8.</span> <span class="nav-text">Shell 脚本执行返回状态码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#技巧："><span class="nav-number">9.</span> <span class="nav-text">技巧：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -712,7 +797,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">17.3k</span>
+    <span title="Site words total count">18.1k</span>
   
 </div>
 

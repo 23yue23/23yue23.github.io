@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[hexo之基本操作]]></title>
     <url>%2F2019%2F07%2F10%2Fhexo%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
-    <content type="text"><![CDATA[创建新文件 12在当前总目录下hexo new &quot;hexo之基本操作&quot; 更新部署12]]></content>
+    <content type="text"><![CDATA[创建新文件 12在当前总目录下hexo new &quot;hexo之基本操作&quot; 清除缓存更新部署1hexo clean &amp; hexo g -d]]></content>
       <categories>
         <category>hexo</category>
       </categories>
@@ -14,7 +14,13 @@
   <entry>
     <title><![CDATA[linux系列之常用命令总结]]></title>
     <url>%2F2019%2F07%2F10%2Flinux%E7%B3%BB%E5%88%97%E4%B9%8B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[Bash 快捷键Ctl-U 删除光标到行首的所有字符,在某些设置下,删除全行Ctl-W 删除当前光标到前边的最近一个空格之间的字符 文件 删除文件： rm -rf log 等加于$ find ./ -name “log” -exec rm {} 搜寻文件或目录: $find ./ -name “core*” | xargs file 查找所有非txt文本: find . ! -name “*.txt” -print 统计文本中123 出现的个数： grep -c “123” filename sort 排序：-n 按数字进行排序 VS -d 按字典序进行排序 -r 逆序排序 -k N 指定按第N列排序 ：sort -n -1k -2k sort -bd data // 忽略像空格之类的前导空白字符 拼接文本 paste file1 file2 系统 12345678910111213141516# uname -a # 查看内核/操作系统/CPU信息# head -n 1 /etc/issue # 查看操作系统版本# cat /proc/cpuinfo # 查看CPU信息# hostname # 查看计算机名# lspci -tv # 列出所有PCI设备# lsusb -tv # 列出所有USB设备# lsmod # 列出加载的内核模块# env # 查看环境变量资源# free -m # 查看内存使用量和交换区使用量# df -h # 查看各分区使用情况# du -sh &lt;目录名&gt; # 查看指定目录的大小# grep MemTotal /proc/meminfo # 查看内存总量# grep MemFree /proc/meminfo # 查看空闲内存量# uptime # 查看系统运行时间、用户数、负载# cat /proc/loadavg # 查看系统负载 磁盘和分区12345# mount | column -t # 查看挂接的分区状态# fdisk -l # 查看所有分区# swapon -s # 查看所有交换分区# hdparm -i /dev/hda # 查看磁盘参数(仅适用于IDE设备)# dmesg | grep IDE # 查看启动时IDE设备检测状况 网络123456# ifconfig # 查看所有网络接口的属性# iptables -L # 查看防火墙设置# route -n # 查看路由表# netstat -lntp # 查看所有监听端口# netstat -antp # 查看所有已经建立的连接# netstat -s # 查看网络统计信息 进程12# ps -ef # 查看所有进程# top # 实时显示进程状态 用户123456# w # 查看活动用户# id &lt;用户名&gt; # 查看指定用户信息# last # 查看用户登录日志# cut -d: -f1 /etc/passwd # 查看系统所有用户# cut -d: -f1 /etc/group # 查看系统所有组# crontab -l # 查看当前用户的计划任务 服务12# chkconfig --list # 列出所有系统服务# chkconfig --list | grep on # 列出所有启动的系统服务 程序1# rpm -qa # 查看所有安装的软件包 Shell 脚本执行返回状态码：1234567890 命令成功完成1通常的未知错误2误用shell命令126命令无法执行127没有找到命令128无效的退出参数128+x使用Linux信号x的致命错误。130使用Ctrl-C终止的命令255规范外的退出状态 技巧： 1.查看变量是否被声明：123使用 :- 来测试是否一个变量是否被声明过。如：if [ &quot;$&#123;NAME:-&#125;&quot; = &quot;Kevin&quot; ] 如果 $&#123;NAME&#125;变量未声明则会变为空字符，你也可以设置为其他默认值.例如：如果不存在，默认值设为：noname ，if [ &quot;$&#123;NAME:-noname&#125;&quot; = &quot;Kevin” ] 2.自定义shell命令：123vim ~/.bashrc 中设置命令别名:alias lsl=&apos;ls -lrt&apos;alias lm=&apos;ls -al|more’ 3.shell文本格式化代码： 1gg=G]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux命令总结</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[flink阅读资料]]></title>
