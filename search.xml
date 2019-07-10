@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[hexo之基本操作]]></title>
     <url>%2F2019%2F07%2F10%2Fhexo%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
-    <content type="text"><![CDATA[创建新文件 12在当前总目录下hexo new &quot;hexo之基本操作&quot; 清除缓存更新部署1hexo clean &amp; hexo g -d]]></content>
+    <content type="text"><![CDATA[创建新文件 12在当前总目录下hexo new &quot;hexo之基本操作&quot; 清除缓存更新部署1hexo clean &amp;&amp; hexo g -d]]></content>
       <categories>
         <category>hexo</category>
       </categories>
