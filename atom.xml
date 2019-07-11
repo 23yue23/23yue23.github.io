@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-07-10T03:45:03.710Z</updated>
+  <updated>2019-07-11T02:26:59.008Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kafka系列之问题总结</title>
+    <link href="https://23yue23.github.io/2019/07/11/kafka%E7%B3%BB%E5%88%97%E4%B9%8B%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>https://23yue23.github.io/2019/07/11/kafka系列之问题总结/</id>
+    <published>2019-07-11T02:23:16.000Z</published>
+    <updated>2019-07-11T02:26:59.008Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="No-resolvable-bootstrap-urls-given-in-bootstrap-servers"><a href="#No-resolvable-bootstrap-urls-given-in-bootstrap-servers" class="headerlink" title="No resolvable bootstrap urls given in bootstrap.servers"></a>No resolvable bootstrap urls given in bootstrap.servers</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">说明当前的bootstrap.servers 填写不正确或者未再配置conf 中设置</span><br><span class="line"></span><br><span class="line">conf 基础配置</span><br><span class="line"></span><br><span class="line">val props = parameterTool.getProperties</span><br><span class="line">    //判断是线上还是线下</span><br><span class="line">if (parameterTool.get(ENV_STATE_FLAG) == &quot;online&quot;) props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_ONLINE_BROKERS))</span><br><span class="line">else props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_OFFLINE_BROKERS))</span><br><span class="line">    props.put(&quot;group.id&quot;, parameterTool.get(&quot;groupId&quot;))</span><br><span class="line">    props.put(&quot;key.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;)</span><br><span class="line">    props.put(&quot;value.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;)</span><br><span class="line">    props.put(&quot;auto.offset.reset&quot;, &quot;latest&quot;)</span><br><span class="line">    props</span><br></pre></td></tr></table></figure><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;No-resolvable-bootstrap-urls-given-in-bootstrap-servers&quot;&gt;&lt;a href=&quot;#No-resolvable-bootstrap-urls-given-in-bootstrap-servers&quot; class=&quot;h
+      
+    
+    </summary>
+    
+      <category term="kafka" scheme="https://23yue23.github.io/categories/kafka/"/>
+    
+    
+      <category term="kafka-问题总结" scheme="https://23yue23.github.io/tags/kafka-%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo之基本操作</title>
@@ -461,31 +486,6 @@
     
     
       <category term="kafka" scheme="https://23yue23.github.io/tags/kafka/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spark系列之-问题汇总</title>
-    <link href="https://23yue23.github.io/2019/04/29/spark%E7%B3%BB%E5%88%97%E4%B9%8B-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
-    <id>https://23yue23.github.io/2019/04/29/spark系列之-问题汇总/</id>
-    <published>2019-04-29T12:38:35.000Z</published>
-    <updated>2019-04-29T12:39:55.258Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="org-apache-spark-SparkException-Could-not-find-CoarseGrainedScheduler"><a href="#org-apache-spark-SparkException-Could-not-find-CoarseGrainedScheduler" class="headerlink" title="org.apache.spark.SparkException: Could not find CoarseGrainedScheduler."></a>org.apache.spark.SparkException: Could not find CoarseGrainedScheduler.</h5><blockquote><ol><li>这个可能是一个资源问题，应该给任务分配更多的 cores 和Executors，并且分配更多的内存。并且需要给RDD分配更多的分区 </li><li>在配置资源中加入这句话也许能解决你的问题：<br> –conf spark.dynamicAllocation.enabled=false</li><li>经过一般调试，发现原来是因为spark任务生成task任务过少，而任务提交时所指定的Excutor 数过多导致，故调小 –num-executors 参数问题得以解决。</li></ol></blockquote><hr><p>##### </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h5 id=&quot;org-apache-spark-SparkException-Could-not-find-CoarseGrainedScheduler&quot;&gt;&lt;a href=&quot;#org-apache-spark-SparkException-Could-not-find-Coar
-      
-    
-    </summary>
-    
-      <category term="spark" scheme="https://23yue23.github.io/categories/spark/"/>
-    
-    
-      <category term="spark-问题" scheme="https://23yue23.github.io/tags/spark-%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   

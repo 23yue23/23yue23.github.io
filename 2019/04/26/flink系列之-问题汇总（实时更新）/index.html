@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="隐式转换器的异常：123确保导入：import org.apache.flink.streaming.api.scala._（DataStream API）import org.apache.flink.api.scala._（DataSet API）  如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现123def">
+<meta name="description" content="隐式转换器的异常：1234567错误信息：value foreach is not a member of java.util.ArrayList解决：import scala.collection.JavaConversions._错误信息：could not find implicit value for evidence parameter of type org.apache.flink.">
 <meta name="keywords" content="flink-问题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flink系列之--问题汇总（实时更新）">
 <meta property="og:url" content="https://23yue23.github.io/2019/04/26/flink系列之-问题汇总（实时更新）/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="隐式转换器的异常：123确保导入：import org.apache.flink.streaming.api.scala._（DataStream API）import org.apache.flink.api.scala._（DataSet API）  如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现123def">
+<meta property="og:description" content="隐式转换器的异常：1234567错误信息：value foreach is not a member of java.util.ArrayList解决：import scala.collection.JavaConversions._错误信息：could not find implicit value for evidence parameter of type org.apache.flink.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-15T11:56:33.604Z">
+<meta property="og:updated_time" content="2019-07-11T01:20:18.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flink系列之--问题汇总（实时更新）">
-<meta name="twitter:description" content="隐式转换器的异常：123确保导入：import org.apache.flink.streaming.api.scala._（DataStream API）import org.apache.flink.api.scala._（DataSet API）  如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现123def">
+<meta name="twitter:description" content="隐式转换器的异常：1234567错误信息：value foreach is not a member of java.util.ArrayList解决：import scala.collection.JavaConversions._错误信息：could not find implicit value for evidence parameter of type org.apache.flink.">
 
 
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  982
+                  1.5k
                 </span>
               
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -464,7 +464,7 @@
       
 
       
-        <h4 id="隐式转换器的异常："><a href="#隐式转换器的异常：" class="headerlink" title="隐式转换器的异常："></a>隐式转换器的异常：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">确保导入：</span><br><span class="line">import org.apache.flink.streaming.api.scala._（DataStream API）</span><br><span class="line">import org.apache.flink.api.scala._（DataSet API）</span><br></pre></td></tr></table></figure>
+        <h4 id="隐式转换器的异常："><a href="#隐式转换器的异常：" class="headerlink" title="隐式转换器的异常："></a>隐式转换器的异常：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">错误信息：value foreach is not a member of java.util.ArrayList</span><br><span class="line">解决：import scala.collection.JavaConversions._</span><br><span class="line"></span><br><span class="line">错误信息：could not find implicit value for evidence parameter of type org.apache.flink.api.common.typeinfo.TypeInformation</span><br><span class="line"></span><br><span class="line">解决：import org.apache.flink.streaming.api.scala._（DataStream API）</span><br><span class="line">     import org.apache.flink.api.scala._（DataSet API）</span><br></pre></td></tr></table></figure>
 <hr>
 <h4 id="如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"><a href="#如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现" class="headerlink" title="如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"></a>如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def myFunction[T: TypeInformation](input: DataSet[T]): DataSet[Seq[T]] = &#123;</span><br><span class="line">  input.reduceGroup( i =&gt; i.toSeq )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
@@ -522,6 +522,15 @@
 <li>通过slotSharingGroup(“xxx”)，减少Slot中共享Task的个数</li>
 </ol>
 </blockquote>
+<h4 id="map-和list-声明方式"><a href="#map-和list-声明方式" class="headerlink" title="map 和list 声明方式"></a>map 和list 声明方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val seMap: java.util.Map[String, java.util.Map[String, Object]] =</span><br><span class="line">      new java.util.HashMap[String, java.util.Map[String, Object]]()</span><br><span class="line">val topList: java.util.List[String] =</span><br><span class="line">      new java.util.ArrayList[String]()</span><br></pre></td></tr></table></figure>
+<h4 id="Flink参数设置slot数量增加-导致作业无法启动"><a href="#Flink参数设置slot数量增加-导致作业无法启动" class="headerlink" title="Flink参数设置slot数量增加,导致作业无法启动"></a>Flink参数设置slot数量增加,导致作业无法启动</h4><p>报错信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Insufficient number of network buffers: required 96, but only 25 available. </span><br><span class="line">The total number of network buffers is currently set to 2048 of 32768 bytes each. </span><br><span class="line">You can increase this number by setting the configuration keys &apos;taskmanager.network.memory.fraction&apos;, </span><br><span class="line">&apos;taskmanager.network.memory.min&apos;,</span><br><span class="line"> and &apos;taskmanager.network.memory.max&apos;</span><br></pre></td></tr></table></figure></p>
+<p>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">调整Flink里面flink-conf.yaml里面的新增参数增加可支持的slot数量</span><br><span class="line">taskmanager.network.memory.fraction: 0.1</span><br><span class="line">taskmanager.network.memory.min: 268435456</span><br><span class="line">taskmanager.network.memory.max: 4294967296</span><br></pre></td></tr></table></figure>
+<h4 id="flink-任务物理内存溢出问题定位"><a href="#flink-任务物理内存溢出问题定位" class="headerlink" title="flink 任务物理内存溢出问题定位"></a>flink 任务物理内存溢出问题定位</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.apache.flink.yarn.YarnTaskExecutorRunner </span><br><span class="line">- RECEIVED SIGNAL 15: SIGTERM. Shutting down as requested.</span><br></pre></td></tr></table></figure>
+<p>问题定位：<a href="https://www.jianshu.com/p/f18f0494e8ab" target="_blank" rel="noopener">物理内存溢出问题定位</a></p>
+<h4 id="某个TaskManger丢失的问题排查"><a href="#某个TaskManger丢失的问题排查" class="headerlink" title="某个TaskManger丢失的问题排查"></a>某个TaskManger丢失的问题排查</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR [flink-akka.remote.default-remote-dispatcher-5] org.apache.flink.runtime.rest.handler.legacy.TaskManagerLogHandler - Fetching TaskManager log failed.</span><br><span class="line">java.util.concurrent.CompletionException: java.io.IOException: TaskManager log files are unavailable. Log file could not be found at /mnt/disk1/log/hadoop-yarn/containers/application_1556227576661_152377/container_1556227576661_152377_01_000012/taskmanager.log</span><br></pre></td></tr></table></figure>
+<p>地址：<a href="https://blog.csdn.net/u012164361/article/details/95317945" target="_blank" rel="noopener">问题解决地址</a></p>
+<h4 id="flink-设置uid-以及savepoint"><a href="#flink-设置uid-以及savepoint" class="headerlink" title="flink 设置uid 以及savepoint"></a>flink 设置uid 以及savepoint</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">DataStream&lt;String&gt; stream = env.</span><br><span class="line">  // Stateful source (e.g. Kafka) with ID</span><br><span class="line"> .addSource(new StatefulSource())</span><br><span class="line"> .uid(&quot;source-id&quot;) // ID for the source operator</span><br><span class="line"> .shuffle()</span><br><span class="line"> // Stateful mapper with ID</span><br><span class="line"> .map(new StatefulMapper())</span><br><span class="line"> .uid(&quot;mapper-id&quot;)</span><br><span class="line"> </span><br><span class="line">不人为指定ID，它们会被自动生成。</span><br><span class="line">只要ID不变化，则程序可以自动的从savepoint恢复。</span><br><span class="line">ID的生成依赖于程序的结构，并且对程序变化敏感。</span><br><span class="line">因此强烈建议人为分配ID</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">可以将savepoint想象成持有每个有状态的操作的Operator ID到State的映射关系：</span><br><span class="line">Operator ID | State</span><br><span class="line">------------+------------------------</span><br><span class="line">source-id   | State of StatefulSource</span><br><span class="line">mapper-id   | State of StatefulMapper</span><br><span class="line"></span><br><span class="line">在上面的例子中，print sink是无状态的，因此不是savepoint的一部分。默认情况下，会尝试映射savepoint的每条记录到新的程序中</span><br></pre></td></tr></table></figure>
 <p>参考：</p>
 <blockquote>
 <p>flink官网：<a href="https://flink.apache.org/gettinghelp.html" target="_blank" rel="noopener">https://flink.apache.org/gettinghelp.html</a></p>
@@ -683,7 +692,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -705,7 +714,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -797,7 +806,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换器的异常："><span class="nav-number">1.</span> <span class="nav-text">隐式转换器的异常：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"><span class="nav-number">2.</span> <span class="nav-text">如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ClassCastException：X无法强制转换为X"><span class="nav-number">3.</span> <span class="nav-text">ClassCastException：X无法强制转换为X</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AbstractMethodError或NoSuchFieldError"><span class="nav-number">4.</span> <span class="nav-text">AbstractMethodError或NoSuchFieldError</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件正在进行，DataStream应用程序不产生任何输出"><span class="nav-number">5.</span> <span class="nav-text">事件正在进行，DataStream应用程序不产生任何输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#exception-reporting-“Insufficient-number-of-network-buffers”"><span class="nav-number">6.</span> <span class="nav-text">exception reporting “Insufficient number of network buffers”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由于javadoc错误无法构建maven项目"><span class="nav-number">7.</span> <span class="nav-text">由于javadoc错误无法构建maven项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java-lang-ClassNotFoundException-scala-Product-class"><span class="nav-number">8.</span> <span class="nav-text">java.lang.ClassNotFoundException: scala.Product$class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flink-BucketingSink-crashes-with-NoClassDefFoundError-Lorg-apache-hadoop-fs-FileSystem"><span class="nav-number">9.</span> <span class="nav-text">Flink BucketingSink crashes with NoClassDefFoundError: Lorg/apache/hadoop/fs/FileSystem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Name-node-is-in-safe"><span class="nav-number">10.</span> <span class="nav-text">Name node is in safe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#No-implicit-arguments-of-type-XXXXXX"><span class="nav-number">11.</span> <span class="nav-text">No implicit arguments of type: XXXXXX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack-trace-ExitCodeException-exitCode-1"><span class="nav-number">12.</span> <span class="nav-text">Stack trace: ExitCodeException exitCode=1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Checkpoint失败：Checkpoint-expired-before-completing"><span class="nav-number">13.</span> <span class="nav-text">Checkpoint失败：Checkpoint expired before completing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FlinkException：The-assigned-slot-container-XXX-was-removed-异常"><span class="nav-number">14.</span> <span class="nav-text">FlinkException：The assigned slot container_XXX was removed 异常</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换器的异常："><span class="nav-number">1.</span> <span class="nav-text">隐式转换器的异常：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"><span class="nav-number">2.</span> <span class="nav-text">如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ClassCastException：X无法强制转换为X"><span class="nav-number">3.</span> <span class="nav-text">ClassCastException：X无法强制转换为X</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AbstractMethodError或NoSuchFieldError"><span class="nav-number">4.</span> <span class="nav-text">AbstractMethodError或NoSuchFieldError</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件正在进行，DataStream应用程序不产生任何输出"><span class="nav-number">5.</span> <span class="nav-text">事件正在进行，DataStream应用程序不产生任何输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#exception-reporting-“Insufficient-number-of-network-buffers”"><span class="nav-number">6.</span> <span class="nav-text">exception reporting “Insufficient number of network buffers”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由于javadoc错误无法构建maven项目"><span class="nav-number">7.</span> <span class="nav-text">由于javadoc错误无法构建maven项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java-lang-ClassNotFoundException-scala-Product-class"><span class="nav-number">8.</span> <span class="nav-text">java.lang.ClassNotFoundException: scala.Product$class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flink-BucketingSink-crashes-with-NoClassDefFoundError-Lorg-apache-hadoop-fs-FileSystem"><span class="nav-number">9.</span> <span class="nav-text">Flink BucketingSink crashes with NoClassDefFoundError: Lorg/apache/hadoop/fs/FileSystem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Name-node-is-in-safe"><span class="nav-number">10.</span> <span class="nav-text">Name node is in safe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#No-implicit-arguments-of-type-XXXXXX"><span class="nav-number">11.</span> <span class="nav-text">No implicit arguments of type: XXXXXX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack-trace-ExitCodeException-exitCode-1"><span class="nav-number">12.</span> <span class="nav-text">Stack trace: ExitCodeException exitCode=1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Checkpoint失败：Checkpoint-expired-before-completing"><span class="nav-number">13.</span> <span class="nav-text">Checkpoint失败：Checkpoint expired before completing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FlinkException：The-assigned-slot-container-XXX-was-removed-异常"><span class="nav-number">14.</span> <span class="nav-text">FlinkException：The assigned slot container_XXX was removed 异常</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map-和list-声明方式"><span class="nav-number">15.</span> <span class="nav-text">map 和list 声明方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flink参数设置slot数量增加-导致作业无法启动"><span class="nav-number">16.</span> <span class="nav-text">Flink参数设置slot数量增加,导致作业无法启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flink-任务物理内存溢出问题定位"><span class="nav-number">17.</span> <span class="nav-text">flink 任务物理内存溢出问题定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#某个TaskManger丢失的问题排查"><span class="nav-number">18.</span> <span class="nav-text">某个TaskManger丢失的问题排查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flink-设置uid-以及savepoint"><span class="nav-number">19.</span> <span class="nav-text">flink 设置uid 以及savepoint</span></a></li></ol></div>
             
 
           </div>
@@ -831,7 +840,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.1k</span>
+    <span title="Site words total count">18.7k</span>
   
 </div>
 
