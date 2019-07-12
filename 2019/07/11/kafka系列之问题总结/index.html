@@ -145,7 +145,7 @@
 <meta property="og:site_name" content="蜗牛笔记">
 <meta property="og:description" content="No resolvable bootstrap urls given in bootstrap.servers12345678910111213说明当前的bootstrap.servers 填写不正确或者未再配置conf 中设置conf 基础配置val props = parameterTool.getProperties    //判断是线上还是线下if (parameterTool.get(E">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-11T02:26:59.008Z">
+<meta property="og:updated_time" content="2019-07-12T08:29:36.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kafka系列之问题总结">
 <meta name="twitter:description" content="No resolvable bootstrap urls given in bootstrap.servers12345678910111213说明当前的bootstrap.servers 填写不正确或者未再配置conf 中设置conf 基础配置val props = parameterTool.getProperties    //判断是线上还是线下if (parameterTool.get(E">
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  123
+                  160
                 </span>
               
 
@@ -466,6 +466,8 @@
       
         <h4 id="No-resolvable-bootstrap-urls-given-in-bootstrap-servers"><a href="#No-resolvable-bootstrap-urls-given-in-bootstrap-servers" class="headerlink" title="No resolvable bootstrap urls given in bootstrap.servers"></a>No resolvable bootstrap urls given in bootstrap.servers</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">说明当前的bootstrap.servers 填写不正确或者未再配置conf 中设置</span><br><span class="line"></span><br><span class="line">conf 基础配置</span><br><span class="line"></span><br><span class="line">val props = parameterTool.getProperties</span><br><span class="line">    //判断是线上还是线下</span><br><span class="line">if (parameterTool.get(ENV_STATE_FLAG) == &quot;online&quot;) props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_ONLINE_BROKERS))</span><br><span class="line">else props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_OFFLINE_BROKERS))</span><br><span class="line">    props.put(&quot;group.id&quot;, parameterTool.get(&quot;groupId&quot;))</span><br><span class="line">    props.put(&quot;key.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;)</span><br><span class="line">    props.put(&quot;value.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;)</span><br><span class="line">    props.put(&quot;auto.offset.reset&quot;, &quot;latest&quot;)</span><br><span class="line">    props</span><br></pre></td></tr></table></figure>
 <hr>
+<h4 id="写kafka-超时"><a href="#写kafka-超时" class="headerlink" title="写kafka 超时"></a>写kafka 超时</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Caused by: </span><br><span class="line">org.apache.kafka.common.errors.TimeoutException: </span><br><span class="line">Expiring 23 record(s) for Topic: 30001 ms has passed since last append</span><br></pre></td></tr></table></figure>
+<p>解决方法：<br>  查看 request.timeout.ms=120000 （defalt 30s）</p>
 
       
     </div>
@@ -733,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#No-resolvable-bootstrap-urls-given-in-bootstrap-servers"><span class="nav-number">1.</span> <span class="nav-text">No resolvable bootstrap urls given in bootstrap.servers</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#No-resolvable-bootstrap-urls-given-in-bootstrap-servers"><span class="nav-number">1.</span> <span class="nav-text">No resolvable bootstrap urls given in bootstrap.servers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写kafka-超时"><span class="nav-number">2.</span> <span class="nav-text">写kafka 超时</span></a></li></ol></div>
             
 
           </div>
