@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-07-12T08:29:36.354Z</updated>
+  <updated>2019-07-12T09:40:04.934Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -17,11 +17,85 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>广告业务-学习</title>
+    <link href="https://23yue23.github.io/2019/07/12/%E5%B9%BF%E5%91%8A%E4%B8%9A%E5%8A%A1-%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://23yue23.github.io/2019/07/12/广告业务-学习/</id>
+    <published>2019-07-12T09:30:15.000Z</published>
+    <updated>2019-07-12T09:40:04.934Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="术语理解"><a href="#术语理解" class="headerlink" title="术语理解"></a>术语理解</h4><p>1.<a href="https://cloud.tencent.com/developer/article/1351052" target="_blank" rel="noopener">dsp系统架构</a></p><h4 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h4><blockquote><ol><li>dsp 业务</li></ol></blockquote><blockquote><p>1.1 <a href="https://blog.csdn.net/LW_GHY/article/details/71455535" target="_blank" rel="noopener">美团DSP广告策略实践</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;术语理解&quot;&gt;&lt;a href=&quot;#术语理解&quot; class=&quot;headerlink&quot; title=&quot;术语理解&quot;&gt;&lt;/a&gt;术语理解&lt;/h4&gt;&lt;p&gt;1.&lt;a href=&quot;https://cloud.tencent.com/developer/article/1351052
+      
+    
+    </summary>
+    
+      <category term="广告" scheme="https://23yue23.github.io/categories/%E5%B9%BF%E5%91%8A/"/>
+    
+    
+      <category term="广告业务学习" scheme="https://23yue23.github.io/tags/%E5%B9%BF%E5%91%8A%E4%B8%9A%E5%8A%A1%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spark之学习</title>
+    <link href="https://23yue23.github.io/2019/07/12/spark%E4%B9%8B%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://23yue23.github.io/2019/07/12/spark之学习/</id>
+    <published>2019-07-12T08:53:29.000Z</published>
+    <updated>2019-07-12T09:29:20.208Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="spark"><a href="#spark" class="headerlink" title="spark"></a>spark</h4><blockquote><ol><li><a href="https://blog.csdn.net/LW_GHY/article/details/50859346" target="_blank" rel="noopener">Spark on yarn有分为两种模式yarn-cluster和yarn-client</a></li></ol></blockquote><blockquote><ol start="2"><li><a href="https://blog.csdn.net/LW_GHY/article/details/52946136" target="_blank" rel="noopener">spark参数总结</a></li><li><a href="https://blog.csdn.net/LW_GHY/article/details/51477065" target="_blank" rel="noopener">spark 常用算子</a></li><li><a href="https://blog.csdn.net/LW_GHY/article/details/51470073" target="_blank" rel="noopener">Spark on YARN客户端模式作业运行全过程分析</a></li></ol></blockquote><hr><h4 id="spark-batch"><a href="#spark-batch" class="headerlink" title="spark batch"></a>spark batch</h4><blockquote><ol><li><a href="https://blog.csdn.net/LW_GHY/article/details/51477100" target="_blank" rel="noopener">Spark多文件输出(MultipleOutputFormat)</a></li></ol></blockquote><blockquote><p>2.spark-mysql 操作</p><blockquote><p>2.1 <a href="https://blog.csdn.net/LW_GHY/article/details/50939091" target="_blank" rel="noopener">Spark读取数据库(Mysql)的四种方式讲解</a></p></blockquote></blockquote><blockquote><blockquote><p>2.2 <a href="https://blog.csdn.net/LW_GHY/article/details/51465125" target="_blank" rel="noopener">Spark与Mysql(JdbcRDD)整合开发</a></p></blockquote></blockquote><blockquote><blockquote><p>2.3 <a href="https://blog.csdn.net/LW_GHY/article/details/51477072" target="_blank" rel="noopener">spark 计算结果写入mysql</a></p></blockquote></blockquote><hr><h4 id="spark-Streaming"><a href="#spark-Streaming" class="headerlink" title="spark Streaming"></a>spark Streaming</h4><blockquote><ol><li><a href="http://spark.apache.org/docs/latest/streaming-programming-guide.html#a-quick-example" target="_blank" rel="noopener">官网stream</a></li></ol></blockquote><blockquote><ol start="2"><li><a href="https://blog.csdn.net/LW_GHY/article/details/88867174" target="_blank" rel="noopener">Spark Streaming 实现思路与模块概述</a></li></ol></blockquote><blockquote><ol start="3"><li><a href="https://blog.csdn.net/LW_GHY/article/details/51673081" target="_blank" rel="noopener">SparkStreaming向Hbase中写数据</a></li></ol></blockquote><blockquote><ol start="4"><li><a href="https://blog.csdn.net/LW_GHY/article/details/52143659" target="_blank" rel="noopener">Spark Streaming kafka实现数据零丢失的几种方式</a></li></ol></blockquote><blockquote><ol start="5"><li><a href="https://blog.csdn.net/LW_GHY/article/details/50926956" target="_blank" rel="noopener">Kafka+Spark Streaming+Redis实时系统实践</a></li></ol></blockquote><blockquote><ol start="6"><li><a href="https://blog.csdn.net/LW_GHY/article/details/51477355" target="_blank" rel="noopener">Spark Streaming中空batches处理的两种方法</a></li></ol></blockquote><hr><h4 id="spark-调优"><a href="#spark-调优" class="headerlink" title="spark 调优"></a>spark 调优</h4><blockquote><ol><li><a href="https://blog.csdn.net/LW_GHY/article/details/51419760" target="_blank" rel="noopener">spark性能优化：shuffle调优</a></li></ol></blockquote><blockquote><ol start="2"><li><a href="https://blog.csdn.net/LW_GHY/article/details/51420027" target="_blank" rel="noopener">spark性能调优：开发调优</a></li></ol></blockquote><blockquote><ol start="3"><li><a href="https://blog.csdn.net/LW_GHY/article/details/51419977" target="_blank" rel="noopener">spark性能调优：资源优化</a></li></ol></blockquote><blockquote><ol start="4"><li><a href="https://blog.csdn.net/LW_GHY/article/details/50780940" target="_blank" rel="noopener">Saprk Streaming性能调优</a></li></ol></blockquote><blockquote><ol start="5"><li><a href="https://blog.csdn.net/LW_GHY/article/details/52373749" target="_blank" rel="noopener">GC调优在Spark应用中的实践</a></li></ol></blockquote><blockquote><ol start="6"><li><a href="https://blog.csdn.net/LW_GHY/article/details/88232471" target="_blank" rel="noopener">JVM的GC调优-上</a></li></ol></blockquote><blockquote><ol start="7"><li><a href="https://blog.csdn.net/LW_GHY/article/details/88232638" target="_blank" rel="noopener">JVM的GC调优-下</a></li></ol></blockquote><hr><h4 id="sparkMLib"><a href="#sparkMLib" class="headerlink" title="sparkMLib"></a>sparkMLib</h4><blockquote><p>1.<a href="https://blog.csdn.net/LW_GHY/article/details/54426443" target="_blank" rel="noopener">Spark MLlib训练的广告点击率预测模型</a></p></blockquote><hr><h4 id="案例实践"><a href="#案例实践" class="headerlink" title="案例实践"></a>案例实践</h4><blockquote><ol><li><a href="https://blog.csdn.net/xwc35047/article/details/75309350" target="_blank" rel="noopener">基于Spark streaming的SQL服务实时自动化运维</a></li><li></li></ol></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;spark&quot;&gt;&lt;a href=&quot;#spark&quot; class=&quot;headerlink&quot; title=&quot;spark&quot;&gt;&lt;/a&gt;spark&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/LW_GHY/a
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>kafka之学习网站</title>
+    <link href="https://23yue23.github.io/2019/07/12/kafka%E4%B9%8B%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/"/>
+    <id>https://23yue23.github.io/2019/07/12/kafka之学习网站/</id>
+    <published>2019-07-12T08:39:50.000Z</published>
+    <updated>2019-07-12T09:02:06.864Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><blockquote><p>1.<a href="https://kafka.apache.org/quickstart" target="_blank" rel="noopener">官网</a></p></blockquote><h4 id="kafka-技术内幕"><a href="#kafka-技术内幕" class="headerlink" title="kafka 技术内幕"></a>kafka 技术内幕</h4><blockquote><ol><li><a href="https://blog.csdn.net/lw_ghy/article/details/51494292" target="_blank" rel="noopener">Kafka技术内幕-日志压缩</a></li></ol></blockquote><h4 id="中文教程"><a href="#中文教程" class="headerlink" title="中文教程"></a>中文教程</h4><blockquote><p>1.<a href="https://www.orchome.com/kafka/index" target="_blank" rel="noopener">kafka</a></p></blockquote><h4 id="kafka-实践"><a href="#kafka-实践" class="headerlink" title="kafka 实践"></a>kafka 实践</h4><blockquote><p>1.<a href="https://blog.csdn.net/LW_GHY/article/details/72900873" target="_blank" rel="noopener">kafka broker的常用配置</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;官网&quot;&gt;&lt;a href=&quot;#官网&quot; class=&quot;headerlink&quot; title=&quot;官网&quot;&gt;&lt;/a&gt;官网&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;1.&lt;a href=&quot;https://kafka.apache.org/quickstart&quot; target=&quot;_
+      
+    
+    </summary>
+    
+      <category term="kafka" scheme="https://23yue23.github.io/categories/kafka/"/>
+    
+    
+      <category term="kafka资料" scheme="https://23yue23.github.io/tags/kafka%E8%B5%84%E6%96%99/"/>
+    
+  </entry>
+  
+  <entry>
     <title>kafka系列之问题总结</title>
     <link href="https://23yue23.github.io/2019/07/11/kafka%E7%B3%BB%E5%88%97%E4%B9%8B%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     <id>https://23yue23.github.io/2019/07/11/kafka系列之问题总结/</id>
     <published>2019-07-11T02:23:16.000Z</published>
-    <updated>2019-07-12T08:29:36.354Z</updated>
+    <updated>2019-07-12T08:33:42.785Z</updated>
     
     <content type="html"><![CDATA[<h4 id="No-resolvable-bootstrap-urls-given-in-bootstrap-servers"><a href="#No-resolvable-bootstrap-urls-given-in-bootstrap-servers" class="headerlink" title="No resolvable bootstrap urls given in bootstrap.servers"></a>No resolvable bootstrap urls given in bootstrap.servers</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">说明当前的bootstrap.servers 填写不正确或者未再配置conf 中设置</span><br><span class="line"></span><br><span class="line">conf 基础配置</span><br><span class="line"></span><br><span class="line">val props = parameterTool.getProperties</span><br><span class="line">    //判断是线上还是线下</span><br><span class="line">if (parameterTool.get(ENV_STATE_FLAG) == &quot;online&quot;) props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_ONLINE_BROKERS))</span><br><span class="line">else props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_OFFLINE_BROKERS))</span><br><span class="line">    props.put(&quot;group.id&quot;, parameterTool.get(&quot;groupId&quot;))</span><br><span class="line">    props.put(&quot;key.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;)</span><br><span class="line">    props.put(&quot;value.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;)</span><br><span class="line">    props.put(&quot;auto.offset.reset&quot;, &quot;latest&quot;)</span><br><span class="line">    props</span><br></pre></td></tr></table></figure><hr><h4 id="写kafka-超时"><a href="#写kafka-超时" class="headerlink" title="写kafka 超时"></a>写kafka 超时</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Caused by: </span><br><span class="line">org.apache.kafka.common.errors.TimeoutException: </span><br><span class="line">Expiring 23 record(s) for Topic: 30001 ms has passed since last append</span><br></pre></td></tr></table></figure><p>解决方法：<br>  查看 request.timeout.ms=120000 （defalt 30s）</p>]]></content>
     
@@ -96,9 +170,9 @@
     <link href="https://23yue23.github.io/2019/06/11/flink%E9%98%85%E8%AF%BB%E8%B5%84%E6%96%99/"/>
     <id>https://23yue23.github.io/2019/06/11/flink阅读资料/</id>
     <published>2019-06-11T09:00:23.000Z</published>
-    <updated>2019-06-11T12:03:31.505Z</updated>
+    <updated>2019-07-16T01:59:53.198Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="理解Flink的设计原则"><a href="#理解Flink的设计原则" class="headerlink" title="理解Flink的设计原则"></a>理解Flink的设计原则</h4><blockquote><p><a href="https://blog.csdn.net/ffjl1985/article/details/77961714" target="_blank" rel="noopener">Google Stream 101越了批处理的流处理世界</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/ffjl1985/article/details/78018475" target="_blank" rel="noopener">Google Stream 102超越了批处理的流处理世界</a></p></blockquote><h4 id="Flink原理和实现"><a href="#Flink原理和实现" class="headerlink" title="Flink原理和实现"></a>Flink原理和实现</h4><blockquote><p><a href="https://cloud.tencent.com/developer/article/1172583" target="_blank" rel="noopener">追源索骥：透过源码看懂Flink核心框架的执行流程</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/180418" target="_blank" rel="noopener">Flink的架构和拓扑概览</a></p></blockquote><blockquote><p><a href="https://cloud.tencent.com/developer/article/1172583" target="_blank" rel="noopener">Flink核心框架的执行流程</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/64819" target="_blank" rel="noopener">理解 Flink 中的计算资源</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/225618" target="_blank" rel="noopener">Flink如何生成ExecutionGraph及物理执行图</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/259125" target="_blank" rel="noopener">Flink 生成StreamGraph</a></p></blockquote><h4 id="Flink-Window"><a href="#Flink-Window" class="headerlink" title="Flink Window"></a>Flink Window</h4><blockquote><p><a href="https://yq.aliyun.com/articles/225624" target="_blank" rel="noopener">Flink Window的实现原理</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/a69811b41bc3" target="_blank" rel="noopener">Flink Window的实现原理：Session Window</a></p></blockquote><blockquote><p><a href="https://tech.youzan.com/flink-sliding-window/" target="_blank" rel="noopener">Flink 滑动窗口优化</a></p></blockquote><h4 id="Flink-State"><a href="#Flink-State" class="headerlink" title="Flink State"></a>Flink State</h4><blockquote><p><a href="https://yq.aliyun.com/articles/225623" target="_blank" rel="noopener">Flink中的状态管理</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/64821" target="_blank" rel="noopener">Flink中的反压Back-Pressure</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/225621" target="_blank" rel="noopener">Flink Operator Chain原理</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/57815" target="_blank" rel="noopener">Flink内存管理</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/lmalds/article/details/54925877" target="_blank" rel="noopener">Flink异步快照机制-Failover</a></p></blockquote><blockquote><p><a href="http://wuchong.me/blog/2016/05/20/flink-internals-streams-and-operations-on-streams/" target="_blank" rel="noopener">数据流的类型和操作</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/d8f99d94b761" target="_blank" rel="noopener">Flink Async IO</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/2e379f242272" target="_blank" rel="noopener">Flink源码解析 Stream Operator</a></p></blockquote><h4 id="Flink-SQL"><a href="#Flink-SQL" class="headerlink" title="Flink SQL"></a>Flink SQL</h4><blockquote><p><a href>Flink SQL的大部分代码实现是阿里巴巴的Blink团队贡献给Apache的</a>。</p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457438" target="_blank" rel="noopener">Flink SQL 核心功能解密</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457385" target="_blank" rel="noopener">Flink SQL维表Join和异步优化</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457370" target="_blank" rel="noopener">Flink SQL 异步IO设计</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457356" target="_blank" rel="noopener">Flink SQL数据去重的技巧和思考</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457445" target="_blank" rel="noopener">Flink SQL TOP N的挑战与实现</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457392" target="_blank" rel="noopener">Flink SQL 流计算“撤回(Retraction)”案例分析</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/448853" target="_blank" rel="noopener">Flink SQL 解决热点问题的大杀器MiniBatch</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/6bc5b4e6f163" target="_blank" rel="noopener">Flink Table API&amp;SQL的概念和通用API</a></p></blockquote><h4 id="Flink-CEP复杂事件处理"><a href="#Flink-CEP复杂事件处理" class="headerlink" title="Flink CEP复杂事件处理"></a>Flink CEP复杂事件处理</h4><h5 id="系列1"><a href="#系列1" class="headerlink" title="系列1"></a>系列1</h5><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/60151617" target="_blank" rel="noopener">Flink-CEP论文与源码解读之状态与状态转换</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/58714692" target="_blank" rel="noopener">Flink之CEP-API简介</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/59169473" target="_blank" rel="noopener">Flink之CEP案例分析-网络攻击检测</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/60986433" target="_blank" rel="noopener">Flink-CEP之NFA</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/61430843" target="_blank" rel="noopener">Flink-CEP之NFA编译器</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/62477733" target="_blank" rel="noopener">Flink-CEP之模式流与运算符</a></p></blockquote><h5 id="系列2"><a href="#系列2" class="headerlink" title="系列2"></a>系列2</h5><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-1/" target="_blank" rel="noopener">CEP In Flink (1) - CEP规则解析</a></p></blockquote><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-2/" target="_blank" rel="noopener">CEP In Flink (2) - CEP规则匹配</a></p></blockquote><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-3/" target="_blank" rel="noopener">CEP In Flink (3) - 匹配事件提取</a></p></blockquote><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-4/" target="_blank" rel="noopener">CEP In Flink (4) - 使用瓶颈</a></p></blockquote><h4 id="Flink事务"><a href="#Flink事务" class="headerlink" title="Flink事务"></a>Flink事务</h4><blockquote><p><a href="https://www.itcodemonkey.com/article/8997.html" target="_blank" rel="noopener">Flink Streaming Ledger 支持流式处理ACID事务</a></p></blockquote><h4 id="Flink源码解析"><a href="#Flink源码解析" class="headerlink" title="Flink源码解析"></a>Flink源码解析</h4><blockquote><p><a href="https://www.jianshu.com/p/a3f43f861a42" target="_blank" rel="noopener">Apache Flink源码解析 DataStream API</a></p></blockquote><blockquote><p><a href>Flink Exactly Once语义</a><br><a href="https://data-artisans.com/blog/end-to-end-exactly-once-processing-apache-flink-apache-kafka" target="_blank" rel="noopener">flink的两阶段提交协议-实现端到端的Exactly Once语义</a></p></blockquote><h4 id="Flink案例"><a href="#Flink案例" class="headerlink" title="Flink案例"></a>Flink案例</h4><blockquote><p><a href="https://doc.flink-china.org/blog/apacheflinkinvipcom" target="_blank" rel="noopener">Flink在唯品会的实践</a></p></blockquote><blockquote><p><a href="https://doc.flink-china.org/blog/meituan.html" target="_blank" rel="noopener">Flink在美团的实践应用</a></p></blockquote><blockquote><p><a href="https://doc.flink-china.org/blog/g7onflink.html" target="_blank" rel="noopener">Flink在G7的实践</a></p></blockquote><blockquote><p><a href="https://doc.flink-china.org/blog/eleme.html" target="_blank" rel="noopener">Flink在饿了么的应用</a></p></blockquote><blockquote><p><a href="https://www.sohu.com/a/246673917_315839" target="_blank" rel="noopener">基于Flink的实时特征平台在Flink的应用</a></p></blockquote><h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4><blockquote><p><a href="https://tech.meituan.com/2017/11/17/flink-benchmark.html" target="_blank" rel="noopener">流计算框架 Flink 与 Storm 的性能对比</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h4 id="理解Flink的设计原则"><a href="#理解Flink的设计原则" class="headerlink" title="理解Flink的设计原则"></a>理解Flink的设计原则</h4><blockquote><p><a href="https://blog.csdn.net/ffjl1985/article/details/77961714" target="_blank" rel="noopener">Google Stream 101越了批处理的流处理世界</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/ffjl1985/article/details/78018475" target="_blank" rel="noopener">Google Stream 102超越了批处理的流处理世界</a></p></blockquote><h4 id="Flink原理和实现"><a href="#Flink原理和实现" class="headerlink" title="Flink原理和实现"></a>Flink原理和实现</h4><blockquote><p><a href="https://cloud.tencent.com/developer/article/1172583" target="_blank" rel="noopener">追源索骥：透过源码看懂Flink核心框架的执行流程</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/180418" target="_blank" rel="noopener">Flink的架构和拓扑概览</a></p></blockquote><blockquote><p><a href="https://cloud.tencent.com/developer/article/1172583" target="_blank" rel="noopener">Flink核心框架的执行流程</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/64819" target="_blank" rel="noopener">理解 Flink 中的计算资源</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/225618" target="_blank" rel="noopener">Flink如何生成ExecutionGraph及物理执行图</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/259125" target="_blank" rel="noopener">Flink 生成StreamGraph</a></p></blockquote><h4 id="Flink-Window"><a href="#Flink-Window" class="headerlink" title="Flink Window"></a>Flink Window</h4><blockquote><p><a href="https://yq.aliyun.com/articles/225624" target="_blank" rel="noopener">Flink Window的实现原理</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/a69811b41bc3" target="_blank" rel="noopener">Flink Window的实现原理：Session Window</a></p></blockquote><blockquote><p><a href="https://tech.youzan.com/flink-sliding-window/" target="_blank" rel="noopener">Flink 滑动窗口优化</a></p></blockquote><h4 id="Flink-State"><a href="#Flink-State" class="headerlink" title="Flink State"></a>Flink State</h4><blockquote><p><a href="https://yq.aliyun.com/articles/225623" target="_blank" rel="noopener">Flink中的状态管理</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/64821" target="_blank" rel="noopener">Flink中的反压Back-Pressure</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/225621" target="_blank" rel="noopener">Flink Operator Chain原理</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/57815" target="_blank" rel="noopener">Flink内存管理</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/lmalds/article/details/54925877" target="_blank" rel="noopener">Flink异步快照机制-Failover</a></p></blockquote><blockquote><p><a href="http://wuchong.me/blog/2016/05/20/flink-internals-streams-and-operations-on-streams/" target="_blank" rel="noopener">数据流的类型和操作</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/d8f99d94b761" target="_blank" rel="noopener">Flink Async IO</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/2e379f242272" target="_blank" rel="noopener">Flink源码解析 Stream Operator</a></p></blockquote><h4 id="Flink-SQL"><a href="#Flink-SQL" class="headerlink" title="Flink SQL"></a>Flink SQL</h4><blockquote><p><a href>Flink SQL的大部分代码实现是阿里巴巴的Blink团队贡献给Apache的</a>。</p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457438" target="_blank" rel="noopener">Flink SQL 核心功能解密</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457385" target="_blank" rel="noopener">Flink SQL维表Join和异步优化</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457370" target="_blank" rel="noopener">Flink SQL 异步IO设计</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457356" target="_blank" rel="noopener">Flink SQL数据去重的技巧和思考</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457445" target="_blank" rel="noopener">Flink SQL TOP N的挑战与实现</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/457392" target="_blank" rel="noopener">Flink SQL 流计算“撤回(Retraction)”案例分析</a></p></blockquote><blockquote><p><a href="https://yq.aliyun.com/articles/448853" target="_blank" rel="noopener">Flink SQL 解决热点问题的大杀器MiniBatch</a></p></blockquote><blockquote><p><a href="https://www.jianshu.com/p/6bc5b4e6f163" target="_blank" rel="noopener">Flink Table API&amp;SQL的概念和通用API</a></p></blockquote><h4 id="Flink-CEP复杂事件处理"><a href="#Flink-CEP复杂事件处理" class="headerlink" title="Flink CEP复杂事件处理"></a>Flink CEP复杂事件处理</h4><h5 id="系列1"><a href="#系列1" class="headerlink" title="系列1"></a>系列1</h5><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/60151617" target="_blank" rel="noopener">Flink-CEP论文与源码解读之状态与状态转换</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/58714692" target="_blank" rel="noopener">Flink之CEP-API简介</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/59169473" target="_blank" rel="noopener">Flink之CEP案例分析-网络攻击检测</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/60986433" target="_blank" rel="noopener">Flink-CEP之NFA</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/61430843" target="_blank" rel="noopener">Flink-CEP之NFA编译器</a></p></blockquote><blockquote><p><a href="https://blog.csdn.net/yanghua_kobe/article/details/62477733" target="_blank" rel="noopener">Flink-CEP之模式流与运算符</a></p></blockquote><h5 id="系列2"><a href="#系列2" class="headerlink" title="系列2"></a>系列2</h5><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-1/" target="_blank" rel="noopener">CEP In Flink (1) - CEP规则解析</a></p></blockquote><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-2/" target="_blank" rel="noopener">CEP In Flink (2) - CEP规则匹配</a></p></blockquote><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-3/" target="_blank" rel="noopener">CEP In Flink (3) - 匹配事件提取</a></p></blockquote><blockquote><p><a href="http://www.liaojiayi.com/CEP-In-Flink-4/" target="_blank" rel="noopener">CEP In Flink (4) - 使用瓶颈</a></p></blockquote><h4 id="Flink事务"><a href="#Flink事务" class="headerlink" title="Flink事务"></a>Flink事务</h4><blockquote><p><a href="https://www.itcodemonkey.com/article/8997.html" target="_blank" rel="noopener">Flink Streaming Ledger 支持流式处理ACID事务</a></p></blockquote><h4 id="Flink源码解析"><a href="#Flink源码解析" class="headerlink" title="Flink源码解析"></a>Flink源码解析</h4><blockquote><p><a href="https://www.jianshu.com/p/a3f43f861a42" target="_blank" rel="noopener">Apache Flink源码解析 DataStream API</a></p></blockquote><blockquote><p><a href>Flink Exactly Once语义</a><br><a href="https://data-artisans.com/blog/end-to-end-exactly-once-processing-apache-flink-apache-kafka" target="_blank" rel="noopener">flink的两阶段提交协议-实现端到端的Exactly Once语义</a></p></blockquote><h4 id="Flink案例"><a href="#Flink案例" class="headerlink" title="Flink案例"></a>Flink案例</h4><blockquote><p><a href="https://doc.flink-china.org/blog/apacheflinkinvipcom" target="_blank" rel="noopener">Flink在唯品会的实践</a></p></blockquote><blockquote><p><a href="https://doc.flink-china.org/blog/meituan.html" target="_blank" rel="noopener">Flink在美团的实践应用</a></p></blockquote><blockquote><p><a href="https://doc.flink-china.org/blog/g7onflink.html" target="_blank" rel="noopener">Flink在G7的实践</a></p></blockquote><blockquote><p><a href="https://doc.flink-china.org/blog/eleme.html" target="_blank" rel="noopener">Flink在饿了么的应用</a></p></blockquote><blockquote><p><a href="https://www.sohu.com/a/246673917_315839" target="_blank" rel="noopener">基于Flink的实时特征平台在Flink的应用</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/BghNofoU6cPRn7XfdHR83w" target="_blank" rel="noopener">日均处理万亿数据！Flink在快手的应用实践与技术演进之路</a></p></blockquote><h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4><blockquote><p><a href="https://tech.meituan.com/2017/11/17/flink-benchmark.html" target="_blank" rel="noopener">流计算框架 Flink 与 Storm 的性能对比</a></p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -425,58 +499,6 @@
     <id>https://23yue23.github.io/2019/04/29/kafka系列之优化consumer-1/</id>
     <published>2019-04-29T12:49:59.000Z</published>
     <updated>2019-04-29T12:51:57.436Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="kafka" scheme="https://23yue23.github.io/categories/kafka/"/>
-    
-    
-      <category term="kafka" scheme="https://23yue23.github.io/tags/kafka/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>kafka系列之优化consumer</title>
-    <link href="https://23yue23.github.io/2019/04/29/kafka%E7%B3%BB%E5%88%97%E4%B9%8B%E4%BC%98%E5%8C%96consumer/"/>
-    <id>https://23yue23.github.io/2019/04/29/kafka系列之优化consumer/</id>
-    <published>2019-04-29T12:49:13.000Z</published>
-    <updated>2019-04-29T12:52:17.024Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="kafka" scheme="https://23yue23.github.io/tags/kafka/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>kafka系列之优化producer</title>
-    <link href="https://23yue23.github.io/2019/04/29/kafka%E7%B3%BB%E5%88%97%E4%B9%8B%E4%BC%98%E5%8C%96producer/"/>
-    <id>https://23yue23.github.io/2019/04/29/kafka系列之优化producer/</id>
-    <published>2019-04-29T12:46:48.000Z</published>
-    <updated>2019-04-29T12:52:32.408Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="kafka" scheme="https://23yue23.github.io/categories/kafka/"/>
-    
-    
-      <category term="kafka" scheme="https://23yue23.github.io/tags/kafka/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>kafka系列之基本命令</title>
-    <link href="https://23yue23.github.io/2019/04/29/kafka%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/"/>
-    <id>https://23yue23.github.io/2019/04/29/kafka系列之基本命令/</id>
-    <published>2019-04-29T12:45:43.000Z</published>
-    <updated>2019-04-29T12:46:08.720Z</updated>
     
     <summary type="html">
     

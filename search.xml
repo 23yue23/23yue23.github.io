@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[广告业务-学习]]></title>
+    <url>%2F2019%2F07%2F12%2F%E5%B9%BF%E5%91%8A%E4%B8%9A%E5%8A%A1-%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[术语理解1.dsp系统架构 实践 dsp 业务 1.1 美团DSP广告策略实践]]></content>
+      <categories>
+        <category>广告</category>
+      </categories>
+      <tags>
+        <tag>广告业务学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[spark之学习]]></title>
+    <url>%2F2019%2F07%2F12%2Fspark%E4%B9%8B%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[spark Spark on yarn有分为两种模式yarn-cluster和yarn-client spark参数总结 spark 常用算子 Spark on YARN客户端模式作业运行全过程分析 spark batch Spark多文件输出(MultipleOutputFormat) 2.spark-mysql 操作 2.1 Spark读取数据库(Mysql)的四种方式讲解 2.2 Spark与Mysql(JdbcRDD)整合开发 2.3 spark 计算结果写入mysql spark Streaming 官网stream Spark Streaming 实现思路与模块概述 SparkStreaming向Hbase中写数据 Spark Streaming kafka实现数据零丢失的几种方式 Kafka+Spark Streaming+Redis实时系统实践 Spark Streaming中空batches处理的两种方法 spark 调优 spark性能优化：shuffle调优 spark性能调优：开发调优 spark性能调优：资源优化 Saprk Streaming性能调优 GC调优在Spark应用中的实践 JVM的GC调优-上 JVM的GC调优-下 sparkMLib 1.Spark MLlib训练的广告点击率预测模型 案例实践 基于Spark streaming的SQL服务实时自动化运维]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[kafka之学习网站]]></title>
+    <url>%2F2019%2F07%2F12%2Fkafka%E4%B9%8B%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99%2F</url>
+    <content type="text"><![CDATA[官网 1.官网 kafka 技术内幕 Kafka技术内幕-日志压缩 中文教程 1.kafka kafka 实践 1.kafka broker的常用配置]]></content>
+      <categories>
+        <category>kafka</category>
+      </categories>
+      <tags>
+        <tag>kafka资料</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[kafka系列之问题总结]]></title>
     <url>%2F2019%2F07%2F11%2Fkafka%E7%B3%BB%E5%88%97%E4%B9%8B%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[No resolvable bootstrap urls given in bootstrap.servers12345678910111213说明当前的bootstrap.servers 填写不正确或者未再配置conf 中设置conf 基础配置val props = parameterTool.getProperties //判断是线上还是线下if (parameterTool.get(ENV_STATE_FLAG) == &quot;online&quot;) props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_ONLINE_BROKERS))else props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_OFFLINE_BROKERS)) props.put(&quot;group.id&quot;, parameterTool.get(&quot;groupId&quot;)) props.put(&quot;key.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;) props.put(&quot;value.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;) props.put(&quot;auto.offset.reset&quot;, &quot;latest&quot;) props 写kafka 超时123Caused by: org.apache.kafka.common.errors.TimeoutException: Expiring 23 record(s) for Topic: 30001 ms has passed since last append 解决方法： 查看 request.timeout.ms=120000 （defalt 30s）]]></content>
@@ -36,7 +63,7 @@
   <entry>
     <title><![CDATA[flink阅读资料]]></title>
     <url>%2F2019%2F06%2F11%2Fflink%E9%98%85%E8%AF%BB%E8%B5%84%E6%96%99%2F</url>
-    <content type="text"><![CDATA[理解Flink的设计原则 Google Stream 101越了批处理的流处理世界 Google Stream 102超越了批处理的流处理世界 Flink原理和实现 追源索骥：透过源码看懂Flink核心框架的执行流程 Flink的架构和拓扑概览 Flink核心框架的执行流程 理解 Flink 中的计算资源 Flink如何生成ExecutionGraph及物理执行图 Flink 生成StreamGraph Flink Window Flink Window的实现原理 Flink Window的实现原理：Session Window Flink 滑动窗口优化 Flink State Flink中的状态管理 Flink中的反压Back-Pressure Flink Operator Chain原理 Flink内存管理 Flink异步快照机制-Failover 数据流的类型和操作 Flink Async IO Flink源码解析 Stream Operator Flink SQL Flink SQL的大部分代码实现是阿里巴巴的Blink团队贡献给Apache的。 Flink SQL 核心功能解密 Flink SQL维表Join和异步优化 Flink SQL 异步IO设计 Flink SQL数据去重的技巧和思考 Flink SQL TOP N的挑战与实现 Flink SQL 流计算“撤回(Retraction)”案例分析 Flink SQL 解决热点问题的大杀器MiniBatch Flink Table API&amp;SQL的概念和通用API Flink CEP复杂事件处理系列1 Flink-CEP论文与源码解读之状态与状态转换 Flink之CEP-API简介 Flink之CEP案例分析-网络攻击检测 Flink-CEP之NFA Flink-CEP之NFA编译器 Flink-CEP之模式流与运算符 系列2 CEP In Flink (1) - CEP规则解析 CEP In Flink (2) - CEP规则匹配 CEP In Flink (3) - 匹配事件提取 CEP In Flink (4) - 使用瓶颈 Flink事务 Flink Streaming Ledger 支持流式处理ACID事务 Flink源码解析 Apache Flink源码解析 DataStream API Flink Exactly Once语义flink的两阶段提交协议-实现端到端的Exactly Once语义 Flink案例 Flink在唯品会的实践 Flink在美团的实践应用 Flink在G7的实践 Flink在饿了么的应用 基于Flink的实时特征平台在Flink的应用 其它 流计算框架 Flink 与 Storm 的性能对比]]></content>
+    <content type="text"><![CDATA[理解Flink的设计原则 Google Stream 101越了批处理的流处理世界 Google Stream 102超越了批处理的流处理世界 Flink原理和实现 追源索骥：透过源码看懂Flink核心框架的执行流程 Flink的架构和拓扑概览 Flink核心框架的执行流程 理解 Flink 中的计算资源 Flink如何生成ExecutionGraph及物理执行图 Flink 生成StreamGraph Flink Window Flink Window的实现原理 Flink Window的实现原理：Session Window Flink 滑动窗口优化 Flink State Flink中的状态管理 Flink中的反压Back-Pressure Flink Operator Chain原理 Flink内存管理 Flink异步快照机制-Failover 数据流的类型和操作 Flink Async IO Flink源码解析 Stream Operator Flink SQL Flink SQL的大部分代码实现是阿里巴巴的Blink团队贡献给Apache的。 Flink SQL 核心功能解密 Flink SQL维表Join和异步优化 Flink SQL 异步IO设计 Flink SQL数据去重的技巧和思考 Flink SQL TOP N的挑战与实现 Flink SQL 流计算“撤回(Retraction)”案例分析 Flink SQL 解决热点问题的大杀器MiniBatch Flink Table API&amp;SQL的概念和通用API Flink CEP复杂事件处理系列1 Flink-CEP论文与源码解读之状态与状态转换 Flink之CEP-API简介 Flink之CEP案例分析-网络攻击检测 Flink-CEP之NFA Flink-CEP之NFA编译器 Flink-CEP之模式流与运算符 系列2 CEP In Flink (1) - CEP规则解析 CEP In Flink (2) - CEP规则匹配 CEP In Flink (3) - 匹配事件提取 CEP In Flink (4) - 使用瓶颈 Flink事务 Flink Streaming Ledger 支持流式处理ACID事务 Flink源码解析 Apache Flink源码解析 DataStream API Flink Exactly Once语义flink的两阶段提交协议-实现端到端的Exactly Once语义 Flink案例 Flink在唯品会的实践 Flink在美团的实践应用 Flink在G7的实践 Flink在饿了么的应用 基于Flink的实时特征平台在Flink的应用 日均处理万亿数据！Flink在快手的应用实践与技术演进之路 其它 流计算框架 Flink 与 Storm 的性能对比]]></content>
       <categories>
         <category>flink</category>
       </categories>
