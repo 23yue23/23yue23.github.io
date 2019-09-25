@@ -7,7 +7,7 @@
   </entry>
   <entry>
     <title><![CDATA[mysql-问题篇]]></title>
-    <url>%2F2019%2F09%2F25%2Fmysq-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
+    <url>%2F2019%2F09%2F25%2Fmysql-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
     <content type="text"><![CDATA[RROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’ (2)12主要原因是mysql 服务没有启动解决：mysql.server start ###om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:1om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:The last packet successfully received from the server was 44,024,462 milliseconds ago. The last packet sent successfully to the server was 44,024,462 milliseconds ago. is longer than the server configured value of &apos;wait_timeout&apos;. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property &apos;autoReconnect=true&apos; to avoid this problem. 解决方法：1231.在连接上添加这个设置&amp;autoReconnect=true&amp;failOverReadOnly=false2.每次使用完记得归还连接]]></content>
       <categories>
         <category>mysql</category>
