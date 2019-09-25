@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-09-25T06:09:43.124Z</updated>
+  <updated>2019-09-25T06:44:56.105Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -17,11 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>面试资料</title>
+    <link href="https://23yue23.github.io/2019/09/25/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
+    <id>https://23yue23.github.io/2019/09/25/面试资料/</id>
+    <published>2019-09-25T06:44:17.000Z</published>
+    <updated>2019-09-25T06:44:56.105Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="面试" scheme="https://23yue23.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试资料" scheme="https://23yue23.github.io/tags/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
+    
+  </entry>
+  
+  <entry>
     <title>promethus-问题篇</title>
     <link href="https://23yue23.github.io/2019/09/25/promethus-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/09/25/promethus-问题篇/</id>
     <published>2019-09-25T06:08:30.000Z</published>
-    <updated>2019-09-25T06:09:43.124Z</updated>
+    <updated>2019-09-25T06:44:42.128Z</updated>
     
     <content type="html"><![CDATA[<h4 id="address-already-in-use"><a href="#address-already-in-use" class="headerlink" title="address already in use"></a>address already in use</h4><blockquote><p>保存信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error starting web server: listen tcp 0.0.0.0:9090: bind: address already in use</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>解决方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsof -i :9090</span><br><span class="line">sudo kill -9  prot</span><br></pre></td></tr></table></figure></p></blockquote><p>#### </p>]]></content>
     
@@ -34,6 +52,10 @@
     
     </summary>
     
+      <category term="promethus" scheme="https://23yue23.github.io/categories/promethus/"/>
+    
+    
+      <category term="promethus-问题篇" scheme="https://23yue23.github.io/tags/promethus-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
     
   </entry>
   
@@ -214,9 +236,9 @@
     <link href="https://23yue23.github.io/2019/09/25/hadoop-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/09/25/hadoop-常用篇/</id>
     <published>2019-09-25T03:14:09.000Z</published>
-    <updated>2019-09-25T05:11:33.852Z</updated>
+    <updated>2019-09-25T07:16:01.427Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="hadoop-命令"><a href="#hadoop-命令" class="headerlink" title="hadoop 命令"></a>hadoop 命令</h4><blockquote><p>cat<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将路径指定文件的内容输出到stdout。</span><br><span class="line">示例：</span><br><span class="line">  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2</span><br><span class="line">  hadoop fs -cat file:///file3 /user/hadoop/file4</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>dus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用方法：hadoop fs -dus &lt;args&gt;显示文件的大小</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>test<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">使用方法：hadoop fs -test -[ezd] URI</span><br><span class="line">选项：</span><br><span class="line">-e 检查文件是否存在。如果存在则返回0。</span><br><span class="line">-z 检查文件是否是0字节。如果是则返回0。 </span><br><span class="line">-d 如果路径是个目录，则返回1，否则返回0。</span><br><span class="line">示例：</span><br><span class="line">  hadoop fs -test -e filename</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>查看.gz 的文件内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*无需解压整个文件： </span><br><span class="line"> hadoop fs -cat /hdfs_location/part-00000.gz | zcat | head -n 20</span><br><span class="line">  或者 hadoop fs -cat /hdfs_location/part-00000.gz | zmore</span><br><span class="line"></span><br><span class="line">*需要解压整个文件：</span><br><span class="line">hadoop fs -text /myfolder/part-r-00024.gz | tail</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>查看.bz2 的文件内容</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类似查看.gz的方法，只需将zcat换为bzcat， 或者将zmore换为bzmore即可</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h4 id="hadoop-命令"><a href="#hadoop-命令" class="headerlink" title="hadoop 命令"></a>hadoop 命令</h4><blockquote><p>cat<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将路径指定文件的内容输出到stdout。</span><br><span class="line">示例：</span><br><span class="line">  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2</span><br><span class="line">  hadoop fs -cat file:///file3 /user/hadoop/file4</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>dus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用方法：hadoop fs -dus &lt;args&gt;显示文件的大小</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>test<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">使用方法：hadoop fs -test -[ezd] URI</span><br><span class="line">选项：</span><br><span class="line">-e 检查文件是否存在。如果存在则返回0。</span><br><span class="line">-z 检查文件是否是0字节。如果是则返回0。 </span><br><span class="line">-d 如果路径是个目录，则返回1，否则返回0。</span><br><span class="line">示例：</span><br><span class="line">  hadoop fs -test -e filename</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>查看.gz 的文件内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*无需解压整个文件： </span><br><span class="line"> hadoop fs -cat /hdfs_location/part-00000.gz | zcat | head -n 20</span><br><span class="line">  或者 hadoop fs -cat /hdfs_location/part-00000.gz | zmore</span><br><span class="line"></span><br><span class="line">*需要解压整个文件：</span><br><span class="line">hadoop fs -text /myfolder/part-r-00024.gz | tail</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>查看.bz2 的文件内容</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类似查看.gz的方法，只需将zcat换为bzcat， 或者将zmore换为bzmore即可</span><br></pre></td></tr></table></figure><h4 id="yarn-命令"><a href="#yarn-命令" class="headerlink" title="yarn 命令"></a>yarn 命令</h4><h5 id="查看-application列表"><a href="#查看-application列表" class="headerlink" title="查看 application列表 :"></a>查看 application列表 :</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn application -list</span><br></pre></td></tr></table></figure><h5 id="查看单独的logs-日志："><a href="#查看单独的logs-日志：" class="headerlink" title="查看单独的logs 日志："></a>查看单独的logs 日志：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn logs -applicationId  application_1493700892407_0007</span><br><span class="line">yarn logs -applicationId application_1542870632001_26426 &gt; ./application.log</span><br></pre></td></tr></table></figure><h5 id="查看当前作业的状态："><a href="#查看当前作业的状态：" class="headerlink" title="查看当前作业的状态："></a>查看当前作业的状态：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn application -status application_1542870632001_26426</span><br></pre></td></tr></table></figure><h5 id="kill-当前作业"><a href="#kill-当前作业" class="headerlink" title="kill 当前作业"></a>kill 当前作业</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn application -kill application_1542870632001_26426</span><br></pre></td></tr></table></figure><p>#####查看yarn-site.xml，确定log配置目录以及集群ip</p><hr><h4 id="hadoop-集群配置"><a href="#hadoop-集群配置" class="headerlink" title="hadoop 集群配置"></a>hadoop 集群配置</h4><h5 id="日志清理"><a href="#日志清理" class="headerlink" title="日志清理"></a>日志清理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">相关参数：</span><br><span class="line">key : mapreduce.jobhistory.max-age-ms</span><br><span class="line">value : 2592000000 (30天)</span><br><span class="line">descrption：负责清理hdfs路径下日志 /var/hadoop/mapred/mr-history/done</span><br><span class="line">key : yarn.log-aggregation.retain-seconds</span><br><span class="line">value : 2592000 （30天）</span><br><span class="line">description：负责清理hdfs路径下日志 /var/hadoop/yarn/$&#123;user&#125;/logs</span><br><span class="line">服务器上的本地日志在任务执行完进行日志聚合之后会自动进行删除，不过老数据目前还没有清理。</span><br></pre></td></tr></table></figure><h6 id="日志相关参数"><a href="#日志相关参数" class="headerlink" title="日志相关参数"></a>日志相关参数</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1) yarn.log-aggregation-enable</span><br><span class="line">    是否开启日志聚合功能</span><br><span class="line">2) yarn.log-aggregation.retain-seconds</span><br><span class="line">    hdfs上的日志保留多久。当前配置路径为：/var/hadoop/yarn/$&#123;user&#125;/logs</span><br><span class="line">3) yarn.log-aggregation.retain-check-interval-seconds</span><br><span class="line">    多长时间检查一次日志，并将满足条件的删除，如果是0或者负数，则为上一个值的1/10，已经配置为：1296000（15天）</span><br><span class="line">4) yarn.nodemanager.remote-app-log-dir</span><br><span class="line">    前缀目录：/var/hadoop/yarn</span><br><span class="line">5) yarn.nodemanager.remote-app-log-dir-suffix</span><br><span class="line">    后缀目录：logs</span><br><span class="line">6) yarn.nodemanager.log-aggregation.roll-monitoring-interval-seconds</span><br><span class="line">    每隔一段时间进行日志的聚合，当前配置为：3600。如果配置为-1，则会等待任务执行完还会聚合</span><br></pre></td></tr></table></figure><h6 id="日志聚合参数配置"><a href="#日志聚合参数配置" class="headerlink" title="日志聚合参数配置"></a>日志聚合参数配置</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yarn.log-aggregation-enable</span><br><span class="line">参数说明：是否启用日志聚合功能，日志聚合开启后保存到HDFS上。默认值：false</span><br><span class="line">yarn.log-aggregation.retain-seconds</span><br><span class="line">参数说明：聚合后的日志在HDFS上保存多长时间，单位为s。默认值：-1（不启用日志聚合），例如设置为86400，24小时</span><br><span class="line">yarn.log-aggregation.retain-check-interval-seconds</span><br><span class="line">参数说明：删除任务在HDFS上执行的间隔，执行时候将满足条件的日志删除（超过参数2设置的时间的日志），如果是0或者负数，则为参数2设置值的1/10，上例值在此处为8640s。默认值：-1</span><br><span class="line">yarn.nodemanager.log.retain-seconds</span><br><span class="line">参数说明：当不启用日志聚合此参数生效，日志文件保存在本地的时间，单位为s。默认值：10800</span><br><span class="line">yarn.nodemanager.remote-app-log-dir</span><br><span class="line">参数说明：当应用程序运行结束后，日志被转移到的HDFS目录（启用日志聚集功能时有效），修改为保存的日志文件夹。默认值：/tmp/logs</span><br><span class="line">yarn.nodemanager.remote-app-log-dir-suffix</span><br><span class="line">参数说明：远程日志目录子目录名称（启用日志聚集功能时有效）。默认值：logs 日志将被转移到目录$&#123;yarn.nodemanager.remote-app-log-dir&#125;/$&#123;user&#125;/$&#123;thisParam&#125;下</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -339,20 +361,6 @@
     <id>https://23yue23.github.io/2019/09/25/zeppelin-学习篇/</id>
     <published>2019-09-25T03:11:25.000Z</published>
     <updated>2019-09-25T03:11:25.454Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>zeppelin-资料篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/zeppelin-%E8%B5%84%E6%96%99%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/zeppelin-资料篇/</id>
-    <published>2019-09-25T03:11:15.000Z</published>
-    <updated>2019-09-25T03:11:15.682Z</updated>
     
     <summary type="html">
     
