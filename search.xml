@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[flink-实战篇]]></title>
+    <url>%2F2019%2F09%2F25%2Fflink-%E5%AE%9E%E6%88%98%E7%AF%87%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[mysql-问题篇]]></title>
+    <url>%2F2019%2F09%2F25%2Fmysq-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[RROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’ (2)12主要原因是mysql 服务没有启动解决：mysql.server start ###om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:1om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:The last packet successfully received from the server was 44,024,462 milliseconds ago. The last packet sent successfully to the server was 44,024,462 milliseconds ago. is longer than the server configured value of &apos;wait_timeout&apos;. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property &apos;autoReconnect=true&apos; to avoid this problem. 解决方法：1231.在连接上添加这个设置&amp;autoReconnect=true&amp;failOverReadOnly=false2.每次使用完记得归还连接]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql-问题篇</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[指导思想]]></title>
     <url>%2F2019%2F08%2F05%2F%E6%8C%87%E5%AF%BC%E6%80%9D%E6%83%B3%2F</url>
     <content type="text"><![CDATA[学习方法： 3 w 学习 提问的智慧：连接 一万小时定论：一万小时定论 其他 工作中如何做好技术积累 学习新技术的10个技巧]]></content>
@@ -9,6 +25,17 @@
       </categories>
       <tags>
         <tag>指导思想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hbase-学习篇]]></title>
+    <url>%2F2019%2F07%2F29%2Fhbase-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[####HBase的简介 HBase是一个分布式的、面向列的开源数据库，该技术来源于 Fay Chang 所撰写的Google论文“Bigtable：一个结构化数据的分布式存储系统”； 就像Bigtable利用了Google文件系统（File System）所提供的分布式数据存储一样，HBase在Hadoop之上提供了类似于Bigtable的能力； HBase是Apache的Hadoop项目的子项目。HBase不同于一般的关系数据库，它是一个适合于非结构化数据存储的数据库； 另一个不同的是HBase基于列的而不是基于行的模式；一张表的列簇不会超过5个，每个列簇中的列数没有限制； ####HBase的特点 容量大：HBase单表可以有上百亿行、百万列，数据矩阵横向和纵向两个维度所支持的数据量级都非常具有弹性； 面向列：HBase是面向列的存储和权限控制，并支持独立检索。列式存储，其数据在表中是按照某列存储的，这样在查询只需要少数几个字段的时候，能大大减少读取的数据量； 多版本：HBase每一个列的数据存储有多个Version（version）； 稀疏性：为空的列并不占用存储空间，表可以设计的非常稀疏； 扩展性：底层依赖于HDFS； 高可靠性：WAL机制保证了数据写入时不会因集群异常而导致写入数据丢失，Replication机制保证了在集群出现严重的问题时，数据不会发生丢失或损坏。而且HBase底层使用HDFS，HDFS本身也有备份； 高性能：底层的LSM数据结构和Rowkey有序排列等架构上的独特设计，使得HBase具有非常高的写入性能。region切分、主键索引和缓存机制使得HBase在海量数据下具备一定的随机读取性能，该性能针对Rowkey的查询能够达到毫秒级别； ####HBase架构图]]></content>
+      <categories>
+        <category>hbase</category>
+      </categories>
+      <tags>
+        <tag>hbase-学习篇</tag>
       </tags>
   </entry>
   <entry>
@@ -45,6 +72,28 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[kafka-资料篇]]></title>
+    <url>%2F2019%2F07%2F12%2Fkafka-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[官网 1.官网 kafka 技术内幕 Kafka技术内幕-日志压缩 中文教程 1.kafka kafka 实践 1.kafka broker的常用配置]]></content>
+      <categories>
+        <category>kafka</category>
+      </categories>
+      <tags>
+        <tag>kafka-资料篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[kafka-问题篇]]></title>
+    <url>%2F2019%2F07%2F11%2Fkafka-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[No resolvable bootstrap urls given in bootstrap.servers12345678910111213说明当前的bootstrap.servers 填写不正确或者未再配置conf 中设置conf 基础配置val props = parameterTool.getProperties //判断是线上还是线下if (parameterTool.get(ENV_STATE_FLAG) == &quot;online&quot;) props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_ONLINE_BROKERS))else props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_OFFLINE_BROKERS)) props.put(&quot;group.id&quot;, parameterTool.get(&quot;groupId&quot;)) props.put(&quot;key.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;) props.put(&quot;value.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;) props.put(&quot;auto.offset.reset&quot;, &quot;latest&quot;) props 写kafka 超时123Caused by: org.apache.kafka.common.errors.TimeoutException: Expiring 23 record(s) for Topic: 30001 ms has passed since last append 解决方法： 查看 request.timeout.ms=120000 （defalt 30s）]]></content>
+      <categories>
+        <category>kafka</category>
+      </categories>
+      <tags>
+        <tag>kafka-问题篇</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo-常用篇]]></title>
     <url>%2F2019%2F07%2F10%2Fhexo-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[创建新文件 12在当前总目录下hexo new &quot;hexo之基本操作&quot; 清除缓存更新部署1hexo clean &amp;&amp; hexo g -d]]></content>
@@ -67,6 +116,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[cassandra-优化篇]]></title>
+    <url>%2F2019%2F05%2F17%2Fcassandra-%E4%BC%98%E5%8C%96%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[Cassandra不同于普通的应用程序，它是分布式数据库，它要大口吃内存，吃磁盘，吃CPU，所以机器要进行特殊的配置，以适应其需要。 使用最新的64位的jdk8的最新发布版本。 时钟同步，开启NTP服务. cassandra是分布式存储，就靠时间戳解决数据冲突，所以始终必须同步 TCP参数设置 在低带宽环境下，防火墙会检测闲置的连接并关闭，为了保护节点之间，或者多个DC节点之间的连接，建议如下配置系统参数 1234sudo sysctl -wnet.ipv4.tcp_keepalive_time=60net.ipv4.tcp_keepalive_probes=3net.ipv4.tcp_keepalive_intvl=10 设置这个就是可以快速的发现底层的TCP连接是否已经关闭，它间隔60秒开始探测3次，每次探测间隔10秒，也就是说最多在60+3*10=90秒内就可以检测到连接被中断。为了支撑上千个数据库连接，还建议修改以下参数 12345678sudo sysctl -wnet.core.rmem_max=16777216net.core.wmem_max=16777216net.core.rmem_default=16777216net.core.wmem_default=16777216net.core.optmem_max=40960net.ipv4.tcp_rmem=4096 87380 16777216net.ipv4.tcp_wmem=4096 65536 16777216 为了让参数永久生效，记得把它们写入系统配置文件/etc/sysctl.conf里 禁用CPU动态跳频功能。 最近的linux系统增加了一个新特性，就是可以动态调整CPU频率，就是在机器低负载的时候，可以降低CPU频率，以达到降低功耗的目的。这种动态调频功能会影响cassandra数据库的吞吐量。建议禁用，让CPU一直维持恒定的频率输出，尽管这很耗电，但是保证你的数据库的吞吐量。 1234567禁用方式：for CPUFREQ in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governordo[ -f $CPUFREQ ] || continueecho -n performance &gt; $CPUFREQdone 禁用zone_reclaim_mode 官方建议禁用，这个是关于多核CPU使用NUMA架构，分别访问内存，内存回收方面的一个参数这个参数的解释，可以参考：http://linuxinsight.com/proc_sys_vm_zone_reclaim_mode.html这里面有一句话，当你的机器用作文件服务器，或者你的大部分内存需要用于系统文件缓存的时候，你需要禁用这个功能。我们的Cassandra就相当于文件服务器，它对IO是依赖的，它需要系统内存用于大量缓存DB文件。所以要禁用这个功能。echo 0 &gt; /proc/sys/vm/zone_reclaim_modeCassandra官方描述了如果不禁用这个参数带来的后果： 12341、随机CPU尖峰带来时延增加，吞吐量增加。2、程序假死，什么也不做。3、一些突然发生又消失的莫名异常。4、重启机器，可能在一段时间内不再出现异常。 资源限制放开。 cassandra会使用很多内存，很多连接，很多文件，所以一律放开。 1234&lt;cassandra_user&gt; – memlock unlimited&lt;cassandra_user&gt; – nofile 100000&lt;cassandra_user&gt; – nproc 32768&lt;cassandra_user&gt; – as unlimited 这个加入到/etc/security/limits.conf 里（不同操作系统，可能不同，后面不再注明）vm.max_map_count = 1048575 将这个加入到 /etc/sysctl.conf 里 禁用swap 关闭 sudo swapoff –all修改 /etc/fstab. 去掉swap挂载。swap文件内存交换区，当你的内存不够的时候，使用文件内存，这会让你的数据库卡成狗的，一律禁用。 文件预 默认保持64k即可 1echo 64 &gt; /sys/class/block/&#123;sda&#125;/queue/read_ahead_kb 如果是ssd，设置为8k 1echo 8 &gt; /sys/class/block/&#123;sda&#125;/queue/read_ahead_kb 如果是ssd，还要设置下面的参数进行优化。 12345echo deadline &gt; /sys/block/sda/queue/scheduler#OR…#echo noop &gt; /sys/block/sda/queue/schedulertouch /var/lock/subsys/localecho 0 &gt; /sys/class/block/sda/queue/rotational 确保以上参数重启机器后仍然有效。 参考：赵岩的博客]]></content>
+      <categories>
+        <category>Cassandra</category>
+      </categories>
+      <tags>
+        <tag>cassandra-优化篇</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux-问题篇]]></title>
     <url>%2F2019%2F05%2F17%2Flinux-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
     <content type="text"><![CDATA[lsof1lsof -i:80 netstat1netstat -anp|grep port ip1ip addr flindjournalctl curlcurl]]></content>
@@ -75,6 +135,17 @@
       </categories>
       <tags>
         <tag>linux-问题篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cassandra-问题篇]]></title>
+    <url>%2F2019%2F05%2F17%2Fcassandra-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？ Cassandra是一个基于gossip协议的分布式系统，监听地址是用来告诉其它节点来访问的，告诉别的节点说“连接我任何地址都可以”，是一个糟糕的想法，如果集群中不同的节点使用了不同方式的地址，悲剧的事情就要发生了。如果你不想为你集群中的每个节点单独配置ip（非常可以理解）,你可以不配，空着它，Cassandra将会使用InetAddress.getLocalHost()来选择地址，然后只要你或者你的运维团队保证这个是正确的(/etc/hosts/,dns 等等要配置对)。一个例外是JMX,他默认监听的地址是0.0.0.0（这个是java的bug 6425769）请看CASSANDRA-256 和 CASSANDRA-43获取这方面更多的细节。 cassandra用了哪些端口？ 默认7000作为集群通信端口（如果开启了SSL就是7001端口）。9042端口用于native协议的客户端连接。7199端口用于JMX，9160端口用于废弃的Thrift接口。内部节点通信以及native协议的端口在cassandra配置文件里可以配置。JMX端口可以在cassandra-env.sh配置（通过JVM的参数)。所有端口都是TCP的。 当往集群中增加新节点的时候，对于存在的数据发生了什么？ 当一个新节点加入到集群，它将会自动连接集群中的其它节点，并且去复制正确的数据到本地，同样的增加、替换、移动、删除节点都是这样的。 我删除了数据，但是磁盘使用率没有变化，这是为什么？ 写入到cassandra里的数据会被持久化到SSTable文件里，SSTable文件是不可改变的，也就是说当你执行删除的时候，数据不会从文件中被去除掉的。相反，一个标记（也叫tombstone)会被写入用于标记对应记录的新状态。不用担心，当数据和tombstone发生第一次compaction的时候，数据会被删除掉，相应的磁盘空间也被回收，你可以了解关于Compaction的更多细节。 为什么用nodetool ring只能看到一条记录？ 即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。 这个发生于你的所有节点都配了通用的token，不要这么做。这经常发生于哪些使用VM部署cassandra的用户，（特别是使用Debian package，它会在安装完自动启动cassandra，所以会生成token并保存它。），安装好后就把VM整个克隆出另外的节点。增很容易修复，只要把数据目录以及commitlog目录删除，然后保证每个节点是随机生成的token，再启动就可以了。 我可以修改一个正在运行中的集群中的keyspace的副本因子吗？ 可以，但是修改后需要执行repair或者cleanup来改变已存数据的副本个数。首先使用cqlsh修改目标keyspace的副本因子。如果你是减少副本因子，你可以执行nodetool cleanup去删除多余的副本数据，对每个节点都要执行。如果你是增加副本因子，你需要执行nodetool repair来保证数据的副本个数满足当前的配置。 Repair只要对每个副本集执行一次即可。这是个敏感的操作，这会影响集群的性能。强烈建议执行rolling repair，因为试图一次修复整个集群的话，那可能是个坑。 可以使用cassandra存储大的二进制字段吗？ Cassandra并没有对存储大文件或者二进制，以及这样一个二进制数据被经常读，也就是整个发送到客户端的情况进行优化。因为存储小的二进制数据（小于1MB)应该不是问题。但是还是建议把大的二进制数据分隔成小块。需要特别注意的是，任何大于16MB的值，将被Cassandra拒绝掉，这是由max_mutation_size_in_kb配置项决定的（这个配置项默认是commitlog_segment_size_in_mb的一半，commitlog_segment_size_in_mb默认是32M)。 Nodetool连接远程服务器的时候，提示“Connection refused to host: 127.0.1.1” ，这是为什么？ nodetool依赖JMX，JMX依赖RMI。RMI在两端通信的时候会根据需要创建自己的listenners和connectors。通常，这些都是底层透明的，但是不正确的hostname解析，无论是在连接方还是被连接方，都会导致错乱和这样的拒绝异常。如果你在使用DNS。确保两端机器的/etc/hosts文件是正确的。如果还是失败的，你可以尝试通过jvm选项-Djava.rmi.server.hostname=指定你要连接的远程机器名称给JMX接口，配置项大体在cassandra-env.sh文件的靠下的位置。 端口占用 错误： Cassandra关闭后，重启，提示，7199端口被占用，分析原因是关闭时使用的ctrl+c，实际上并没有关闭cassandra服务进程，所以提示端口已被使用； 12yxcdeMacBook-Pro:3.11.4 yxc$ cqlshConnection error: (&apos;Unable to connect to any servers&apos;, &#123;&apos;127.0.0.1&apos;: error(61, &quot;Tried connecting to [(&apos;127.0.0.1&apos;, 9042)]. Last error: Connection refused&quot;)&#125;) 解决：找出使用7199端口的进程lsof -i:7199杀死残留进程kill direct_pid 版本不一致 错误： 123Connection error: (‘Unable to connect to any servers’, &#123;‘127.0.0.1’: ProtocolError(“cql_version ‘3.3.0’ is not supported by remote (w/ native protocol). Supported versions: [u’3.3.1’]”,)&#125;) 解决： 12修改cassandra_home/bin/cqlsh.py: DEFAULT_CQLVER = ‘3.3.0’为DEFAULT_CQLVER = ‘3.3.1’； All host(s) tried for query failed 错误： 123message: ‘All host(s) tried for query failed. First host tried, 127.0.0.1:9042: Error: connect ECONNREFUSED 127.0.0.1:9042. See innerErrors.’ &#125; 解决： 12修改cassandra_home/conf/cassandra.yaml: start_native_transport=false改为start_native_transport=true; 参考赵岩]]></content>
+      <categories>
+        <category>cassandra</category>
+      </categories>
+      <tags>
+        <tag>cassandra-问题篇</tag>
       </tags>
   </entry>
   <entry>
@@ -97,6 +168,28 @@
       </categories>
       <tags>
         <tag>Homebrew-使用篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cassandra-常用篇]]></title>
+    <url>%2F2019%2F05%2F15%2Fcassandra-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[cassandra mac os 安装 shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool describecluster 查看节点状态1nodetool status 重启节点1sudo systemctl restart scylla-server Cql操作查看版本1SHOW VERSION keyspaces 操作1234#查看desc keyspaces;#使用use keyspaceName 查看表12345#table listdescribe tables;#查看表结构describe table table_name;]]></content>
+      <categories>
+        <category>cassandra</category>
+      </categories>
+      <tags>
+        <tag>cassandra-常用篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cassandra-学习篇]]></title>
+    <url>%2F2019%2F05%2F15%2Fcassandra-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[简介： Apache Cassandra 是一个开源的、分布式、无中心、弹性可扩展、高可用、容错、一致性可调、面向行的数据库，它基于 Amazon Dynamo 的分布式设计和 Google Bigtable 的数据模型，Cassandra 其协议是 P2P 的，并使用 gossip 来维护存活或死亡节点的列表（gossip 协议介绍：https://www.iteblog.com/archives/2505.html）由 Facebook 创建，在一些最流行的网站中得到应用. 优点：分布式和去中心化（Distributed and Decentralized）： 可以运行在多台机器上，并呈现给用户一个一致的整体； Cassandra 是无中心的，也就是说每个节点都是一样的，协议是 P2P 的，并使用 gossip 来维护存活或死亡节点的列表。 弹性可扩展： 集群可以不间断的情况下，方便扩展或缩减服务的规模，不需要重新启动进程，不必修改应用的查询，也无需自己手工重新均衡数据分布，只要加入新的计算机，Cassandra 就会自动地发现它并让它开始工作。 高可用和容错： 可以在不中断系统的情况下替换故障节点，还可以把数据分布到多个数据中心里，从而提供更好的本地访问性能，并且在某一数据中心发生火灾、洪水等不可抗灾难的时候防止系统彻底瘫痪 可调节一致性： 通过副本因子（replication factor），你可以决定准备牺牲多少性能来换取一致性。 副本因子是你要求更新在集群中传播到的节点数（注意，更新包括所有增加、删除和更新操作）。 一致性级别（consistency level）参数，这个参数决定了多少个副本写入成功才可以认定写操作是成功的，或者读取过程中读到多少个副本正确就可以认定是读成功的。这里 Cassandra 把决定一致性程度的权利留给了客户自己。 所以，如果需要的话，你可以设定一致性级别和副本因子相等，从而达到一个较高的一致性水平，不过这样就必须付出同步阻塞操作的代价，只有所有节点都被更新完成才能成功返回一次更新。而实际上，Cassandra 一般都不会这么来用，原因显而易见（这样就丧失了可用性目标，影响性能，而且这不是你选择 Cassandra 的初衷）。而如果一个客户端设置一致性级别低于副本因子的话，即使有节点宕机了，仍然可以写成功。 总体来说，Cassandra 更倾向于 CP，虽然它也可以通过调节一致性水平达到 AP；但是不推荐你这么设置。其CAP 定律的详细介绍可参见《分布式系统一致性问题、CAP定律以及 BASE 理论》以及《一篇文章搞清楚什么是分布式系统 CAP 定理》。 面向行 它的数据结构不是关系型的，而是一个多维稀疏哈希表。稀疏（Sparse）意味着任何一行都可能会有一列或者几列。更确切地说，应该把 Cassandra 看做是一个有索引的、面向行的存储系统。 灵活的模式（Flexible Schema） 从 3.0 版本开始，不推荐使用基于 Thrift API 的动态列创建的 API，并且 Cassandra 底层存储已经重新实现了，以更紧密地与 CQL 保持一致。 Cassandra 并没有完全限制动态扩展架构的能力，但它的工作方式却截然不同。 CQL 集合（比如 list、set、尤其是 map）提供了在无结构化的格式里面添加内容的能力，从而能扩展现有的模式。CQL 还提供了改变列的类型的能力，以支持 JSON 格式的文本的存储。 高性能(High Performance) 设计之初就特别考虑了要充分利用多处理器和多核计算机的性能，并考虑在分布于多个数据中心的大量这类服务器上运行。它可以一致而且无缝地扩展到数百台机器，存储数 TB 的数据。Cassandra 已经显示出了高负载下的良好表现，在一个非常普通的工作站上，Cassandra 也可以提供非常高的写吞吐量。而如果你增加更多的服务器，你还可以继续保持 Cassandra 所有的特性而无需牺牲性能 应用场景大规模部署 单节点不易发挥它的性能，多个节点部署cassandra才是最佳选择 写密集、统计和分析型工作 Cassandra 是为优异的写吞吐量而特别优化的。 早期用于存储用户状态更新、社交网络、建议/评价以及应用统计都是很好的应用场景。现又适用于窗口化的时间序列数据库，用于文档搜索的反向索引，以及分布式任务优先级队列。 地区分布 支持多地分布的数据存储，Cassandra 可以很容易配置成将数据分布到多个数据中心的存储方式。如果你有一个全球部署的应用，那么让数据贴近用户会获得不错的性能收益，Cassandra 正适合这种应用场合。 变化的应用 正在“初创阶段”，业务会不断改进，Cassandra 这种灵活的模式的数据模型可能更适合你。这让你的数据库能更快地跟上业务改进的步伐。 参考地址：cassandra 简介 Single column Primary Key Primary Key 可以由一列或多列组成,用于从表中检索数据，如果 Primary Key 由一列组成，那么称为 Single column Primary Key&gt; 如下： 1CREATE TABLE iteblog_user (first_name text , last_name text, PRIMARY KEY (first_name)) ; 我们在检索数据的时候需要指定 Primary Key,不指定查询数据会抛以下异常： 123InvalidRequest: Error from server: code=2200 [Invalid query] message=&quot;Cannot execute this query as it might involve data filtering and thus may have unpredictable performance. If you want to execute this query despite the performance unpredictability, use ALLOW FILTERING&quot; Composite Primary Key 如果 Primary Key 由多列组成，那么这种情况称为 Compound Primary Key 或 Composite Primary Key 如下： 1CREATE TABLE iteblog_user_composite (first_name text , last_name text, PRIMARY KEY (first_name, last_name)) ; 其中 first_name 称为 Partition key，last_name 称为 Clustering key（也可以称为 Clustering column）。在这种情况下，下面查询的前三条都是合法的，最后一条是非法的。 1234567891011cqlsh:iteblog_keyspace&gt; select * from iteblog_user_composite; cqlsh:iteblog_keyspace&gt; select * from iteblog_user_composite where first_name = &apos;iteblog&apos;; cqlsh:iteblog_keyspace&gt; select * from iteblog_user_composite where first_name = &apos;iteblog&apos; and last_name = &apos;hadoop&apos;; //非法查询cqlsh:iteblog_keyspace&gt; select * from iteblog_user_composite where last_name = &apos;hadoop&apos;;``` &gt; Partition key 和 Clustering key(查询的时候不可以仅指定，需要和partition key 组合) 也可以由多个字段组成，如果 Partition key 由多个字段组成，称之为 Composite partition key： create table iteblog_multiple ( k_part_one text, k_part_two int, k_clust_one text, k_clust_two int data text, PRIMARY KEY((k_part_one, k_part_two), k_clust_one, k_clust_two) );` 小知识：使用 Composite partition key 的一个原因其实一个 Partition 对应的 Cell 个数在 Cassandra 里面是有限制的。理论上来说，一个 Partition 的 Cell 个数大约在20亿个（231）。所以采用了 Composite partition key，我们可以将数据分散到不同的 Partition，这样有利于将同一个 Partition 的 Cell 个数减少。 Partition key &amp; Clustering key &amp; Primary Key 作用 Partition Key：将数据分散到集群的 node 上 Primary Key：在 Single column Primary Key 情况下作用和 Partition Key 一样；在 Composite Primary Key 情况下，组合 Partition key 字段决定数据的分发的节点； Clustering Key：决定同一个分区内相同 Partition Key 数据的排序，默认为升序，我们可以在建表语句里面手动设置排序的方式（DESC 或 ASC） 参考链接:Apache Cassandra Composite KeyPartition keyClustering key 介绍]]></content>
+      <categories>
+        <category>cassandra</category>
+      </categories>
+      <tags>
+        <tag>cassandra-学习篇</tag>
       </tags>
   </entry>
   <entry>
@@ -163,6 +256,39 @@
       </categories>
       <tags>
         <tag>grafana-学习篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[flink-资料篇]]></title>
+    <url>%2F2019%2F04%2F26%2Fflink-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[flink 学习（系列） flink官网 training flink-阿里巴巴课程 flink-vinoYang博客 flink-云邪博客 云星数据-大数据团队 flink-归来朝歌博客 阿里云实时计算 flink 代码 flink flink-learning flink-training-exercises flink 书籍 flink基础教程 [#] 博客(单篇) 什么是流处理 理解Flink的设计原则 Google Stream 101越了批处理的流处理世界 Google Stream 102超越了批处理的流处理世界 Flink原理和实现 追源索骥：透过源码看懂Flink核心框架的执行流程 Flink的架构和拓扑概览 Flink核心框架的执行流程 理解 Flink 中的计算资源 Flink如何生成ExecutionGraph及物理执行图 Flink 生成StreamGraph Flink Window Flink Window的实现原理 Flink Window的实现原理：Session Window Flink 滑动窗口优化 Flink State Flink中的状态管理 Flink中的反压Back-Pressure Flink Operator Chain原理 Flink内存管理 Flink异步快照机制-Failover 数据流的类型和操作 Flink Async IO Flink源码解析 Stream Operator Flink SQL Flink SQL的大部分代码实现是阿里巴巴的Blink团队贡献给Apache的。 Flink SQL 核心功能解密 Flink SQL维表Join和异步优化 Flink SQL 异步IO设计 Flink SQL数据去重的技巧和思考 Flink SQL TOP N的挑战与实现 Flink SQL 流计算“撤回(Retraction)”案例分析 Flink SQL 解决热点问题的大杀器MiniBatch Flink Table API&amp;SQL的概念和通用API Flink CEP复杂事件处理系列1 Flink-CEP论文与源码解读之状态与状态转换 Flink之CEP-API简介 Flink之CEP案例分析-网络攻击检测 Flink-CEP之NFA Flink-CEP之NFA编译器 Flink-CEP之模式流与运算符 系列2 CEP In Flink (1) - CEP规则解析 CEP In Flink (2) - CEP规则匹配 CEP In Flink (3) - 匹配事件提取 CEP In Flink (4) - 使用瓶颈 Flink事务 Flink Streaming Ledger 支持流式处理ACID事务 Flink源码解析 Apache Flink源码解析 DataStream API Flink Exactly Once语义flink的两阶段提交协议-实现端到端的Exactly Once语义 Flink案例 Flink在唯品会的实践 Flink在美团的实践应用 Flink在G7的实践 Flink在饿了么的应用 基于Flink的实时特征平台在Flink的应用 日均处理万亿数据！Flink在快手的应用实践与技术演进之路 其它 流计算框架 Flink 与 Storm 的性能对比]]></content>
+      <categories>
+        <category>flink</category>
+      </categories>
+      <tags>
+        <tag>flink-资料篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[flink-问题篇]]></title>
+    <url>%2F2019%2F04%2F26%2Fflink-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[资源管理：flinkvcore:提示：并行度一定要小于solt数，也就是提交命令里 ynys的值，最好保持一致，这样可以将申请的资源充分利用。计算方式：如果并行度小于solt数（ynys），则vocer默认是：并行度 +1 ；如果并行度和solt数(ynys)一致，则vcore数为yn ys + 1memory:计算方式：并行度和solt数保持一致时： yn yjm + ytm并行度小于solt 数是：并行度 yjm + ytm 隐式转换器的异常：12345错误信息：value foreach is not a member of java.util.ArrayList解决：import scala.collection.JavaConversions._错误信息：could not find implicit value for evidence parameter of type org.apache.flink.api.common.typeinfo.TypeInformation解决：import org.apache.flink.streaming.api.scala._（DataStream API） import org.apache.flink.api.scala._（DataSet API） 如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现123def myFunction[T: TypeInformation](input: DataSet[T]): DataSet[Seq[T]] = &#123; input.reduceGroup( i =&gt; i.toSeq )&#125; ClassCastException：X无法强制转换为X1231.尝试classloader.resolve-order: parent-first在配置中进行设置2.从不同的执行尝试缓存类3.通过child-first类加载进行类复制 AbstractMethodError或NoSuchFieldError1存在依赖项版本冲突,确保所有依赖项版本都一致。 事件正在进行，DataStream应用程序不产生任何输出1231.如果您的DataStream应用程序使用事件时间，请检查您的水印是否已更新。 如果没有产生水印，事件时间窗口可能永远不会触发，应用程序将不会产生任何结果。2.您可以在Flink的Web UI（水印部分）中查看水印是否正在取得进展。 exception reporting “Insufficient number of network buffers”1234561.原因可能：以很高的并发来执行flink ,增加了网络缓冲区的数量。 默认情况下，Flink占用网络缓冲区的JVM堆大小的10％，最小为64MB，最大为1GB。2.可以通过修改一下以下参数来调整：taskmanager.network.memory.fractiontaskmanager.network.memory.mintaskmanager.network.memory.max flink 配置信息 由于javadoc错误无法构建maven项目123456789101112131415三个选择：1.修复错误2.禁用严格检查3.在建造时跳过Javadoc&lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-javadoc-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;additionalparam&gt;-Xdoclint:none&lt;/additionalparam&gt; &lt;/configuration&gt; &lt;/plugin&gt;&lt;/plugins&gt;构建时跳过javadocmvn -Dmaven.javadoc.skip=true verify java.lang.ClassNotFoundException: scala.Product$class12原因：构建文件不对。您的scala版本是2.12.x但您使用的是scala版本2.11中编译的库。解决：查看构建文件的lib 中是否包含2.12的版本。 Flink BucketingSink crashes with NoClassDefFoundError: Lorg/apache/hadoop/fs/FileSystem1234567891011缺少hadoop 依赖：（ 版本根据自己的来） &lt;dependency&gt; &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt; &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt; &lt;version&gt;2.7.1&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt; &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt; &lt;version&gt;2.7.1&lt;/version&gt; &lt;/dependency&gt; Name node is in safe123modeorg.apache.hadoop.ipc.RemoteException(org.apache.hadoop.hdfs.server.namenode.SafeModeException): Cannot create file/user/test. Name node is in safe mode.解决方法：bin/hadoop dfsadmin -safemode leave 参考：https://blog.csdn.net/hongweigg/article/details/7185328 No implicit arguments of type: XXXXXX错误：could not find implicit value for evidence parameter of type org.apache.flink.api.common.typeinfo.TypeInformation[Int]解决办法：import org.apache.flink.api.scala._ 或者 import org.apache.flink.streaming.api.scala._ Stack trace: ExitCodeException exitCode=1: 报错信息12345Application application_1556525638125_0015 failed 1 times (global limit =2; local limit is =1) due to AM Container for appattempt_1556525638125_0015_000001 exited with exitCode: 1Failing this attempt.Diagnostics: Exception from container-launch.Container id: container_e04_1556525638125_0015_01_000001Exit code: 1Stack trace: ExitCodeException exitCode=1: 解决方式： 11.查看提交flink 作业的版本是否和提交环境版本一致。 Checkpoint失败：Checkpoint expired before completing1234env.enableCheckpointing(1000L)val checkpointConf = env.getCheckpointConfigcheckpointConf.setMinPauseBetweenCheckpoints(30000L)checkpointConf.setCheckpointTimeout(8000L) 解决方式： 主要因为checkpointConf.setCheckpointTimeout(8000L)设置的太小了，默认是10min。 这里只设置了8sec。当一个Flink App背压的时候（例如由外部组件异常引起），Barrier会流动的非常缓慢，导致Checkpoint时长飙升。 FlinkException：The assigned slot container_XXX was removed 异常 问题原因：一般就是某一个Flink App内存占用大，导致TaskManager（在Yarn上就是Container）被Kill掉。如果代码写的没问题，就确实是资源不够了，其实1G Slot跑多个Task（Slot Group Share）其实挺容易出现的。因此有两种选择。可以根据具体情况，权衡选择一个。解决方式： 将该Flink App调度在Per Slot内存更大的集群上。 通过slotSharingGroup(“xxx”)，减少Slot中共享Task的个数 map 和list 声明方式1234val seMap: java.util.Map[String, java.util.Map[String, Object]] = new java.util.HashMap[String, java.util.Map[String, Object]]()val topList: java.util.List[String] = new java.util.ArrayList[String]() Flink参数设置slot数量增加,导致作业无法启动报错信息：12345Insufficient number of network buffers: required 96, but only 25 available. The total number of network buffers is currently set to 2048 of 32768 bytes each. You can increase this number by setting the configuration keys &apos;taskmanager.network.memory.fraction&apos;, &apos;taskmanager.network.memory.min&apos;, and &apos;taskmanager.network.memory.max&apos; 解决方法：1234调整Flink里面flink-conf.yaml里面的新增参数增加可支持的slot数量taskmanager.network.memory.fraction: 0.1taskmanager.network.memory.min: 268435456taskmanager.network.memory.max: 4294967296 flink 任务物理内存溢出问题定位12org.apache.flink.yarn.YarnTaskExecutorRunner - RECEIVED SIGNAL 15: SIGTERM. Shutting down as requested. 问题定位：物理内存溢出问题定位 某个TaskManger丢失的问题排查12ERROR [flink-akka.remote.default-remote-dispatcher-5] org.apache.flink.runtime.rest.handler.legacy.TaskManagerLogHandler - Fetching TaskManager log failed.java.util.concurrent.CompletionException: java.io.IOException: TaskManager log files are unavailable. Log file could not be found at /mnt/disk1/log/hadoop-yarn/containers/application_1556227576661_152377/container_1556227576661_152377_01_000012/taskmanager.log 地址：问题解决地址 flink 设置uid 以及savepoint1234567891011121314151617181920DataStream&lt;String&gt; stream = env. // Stateful source (e.g. Kafka) with ID .addSource(new StatefulSource()) .uid(&quot;source-id&quot;) // ID for the source operator .shuffle() // Stateful mapper with ID .map(new StatefulMapper()) .uid(&quot;mapper-id&quot;) 不人为指定ID，它们会被自动生成。只要ID不变化，则程序可以自动的从savepoint恢复。ID的生成依赖于程序的结构，并且对程序变化敏感。因此强烈建议人为分配ID可以将savepoint想象成持有每个有状态的操作的Operator ID到State的映射关系：Operator ID | State------------+------------------------source-id | State of StatefulSourcemapper-id | State of StatefulMapper在上面的例子中，print sink是无状态的，因此不是savepoint的一部分。默认情况下，会尝试映射savepoint的每条记录到新的程序中 参考： flink官网：https://flink.apache.org/gettinghelp.html]]></content>
+      <categories>
+        <category>flink</category>
+      </categories>
+      <tags>
+        <tag>flink-问题篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1.flink-学习篇]]></title>
+    <url>%2F2019%2F04%2F26%2Fflink-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[什么是flink Apache Flink是一个框架和分布式处理引擎，用于对无界和有界数据流进行状态计算。 flink 特点: 其异步和增量检查点算法确保对处理延迟的影响最小，同时保证一次性状态一致性。 随处部署应用程序: 常见的集群资源管理器（如Hadoop YARN，Apache Mesos和Kubernetes）集成，但也可以设置为作为独立集群运行 处理无界和有界数据 充分利用内存性能: 任务状态始终保留在内存中，如果状态大小超过可用内存，则保存在访问高效的磁盘上数据结构中 性能：每天处理数万亿个事件；维护多个TB的状态；在数千个内核的运行 flink丰富状态功能： 多状态基元：Flink为不同的数据结构提供状态基元，例如原子值，列表或映射。 可插拔状态后端：应用程序状态由可插拔状态后端管理和检查点。(内存或RocksDB 存储或自定义) 完全一次的状态一致性。 非常大的状态：由于其异步和增量检查点算法，Flink能够维持几兆兆字节的应用程序状态。 可扩展的应用程序：Flink通过将状态重新分配给更多或更少的工作人员来支持有状态应用程序的扩展。 flink 的容错机制： 一致的检查点: 如果发生故障，将重新启动应用程序并从最新检查点加载其状态,此功能可以保证一次性状态一致性。 高效检查点: Flink可以执行异步和增量检查点，以便将检查点对应用程序的延迟SLA的影响保持在非常小的水平。 端到端完全一次: Flink为特定存储系统提供事务接收器，保证数据只写出一次，即使出现故障 与集群管理器集成: Flink与集群管理器紧密集成，例如Hadoop YARN，Mesos或Kubernetes。当进程失败时，将自动启动一个新进程来接管其工作。 高可用性设置: Flink具有高可用性模式，可消除所有单点故障。HA模式基于Apache ZooKeeper，这是一种经过验证的可靠分布式协调服务。 Savepoints操作：用于启动状态兼容的应用程序并初始化其状态。 适用场景： 程序版本升级。 程序迁移集群。 flink 版本更新。 暂停和恢复、存档。 A/B测试：启动同一保存点的所有版本来比较两个（或更多）不同版本的应用程序的性能或质量。 flink 丰富time功能: Event-time Mode(事件时间):根据事件的时间戳计算结果 Watermark Support（水印支持）:使用水印来推断事件时间应用中的时间，也可以使用水印来推断事件时间应用中的时间。 Late Data Handling(延迟数据处理):当使用水印在事件 - 时间模式下处理流时，可能会在所有相关事件到达之前完成计算. Processing-time Mode(处理时间):由处理机器的挂钟时间触发的计算,处理时间模式适用于具有严格的低延迟要求的某些应用，这些要求可以容忍近似结果. flink 分层API: ProcessFunctions:提供对时间和状态的细粒度控制,可以任意修改其状态并注册将在未来触发回调函数的定时器,因此，它可以根据许多有状态事件驱动的应用程序的需要实现复杂的事件业务逻辑:open -&gt; processElement -&gt; onTimer（相关介绍） DataStream API: 提供了许多常见的流处理操作，如窗口，记录在-A-时间变换，并丰富事件原语 SQL和Table API: Table API和SQL利用Apache Calcite进行解析，验证和查询优化,它们可以与DataStream和DataSet API无缝集成，并支持用户定义的标量，聚合和表值函数。 flink Libraries: 复杂事件处理（CEP）:CEP库的应用包括网络入侵检测，业务流程监控和欺诈检测。 DataSet API: 用于批处理应用程序的核心API。 Gelly：Gelly是一个可扩展的图形处理和分析库。 flink 监控方式： Web UI:可以检查，监视和调试正在运行的应用程序。 日志记录：Flink实现了流行的slf4j日志记录界面，并与日志框架log4j或logback集成。 指标：Flink具有复杂的指标系统，可收集和报告系统和用户定义的指标。 REST API：Flink公开REST API以提交新应用程序，获取正在运行的应用程序的保存点或取消应用程序。]]></content>
+      <categories>
+        <category>flink</category>
+      </categories>
+      <tags>
+        <tag>flink-学习篇</tag>
       </tags>
   </entry>
   <entry>
