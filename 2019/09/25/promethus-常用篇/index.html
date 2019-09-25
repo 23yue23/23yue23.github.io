@@ -124,7 +124,7 @@
 
 
 
-  <meta name="keywords" content="flink, spark,kafka,hive">
+  <meta name="keywords" content="promethus-常用篇,">
 
 
 
@@ -137,14 +137,18 @@
 
 
 
+<meta name="description" content="模版案例1234567891011scrape_configs:  - job_name:       &amp;apos;example-random&amp;apos;    # Override the global default and scrape targets from this job every 5 seconds.    scrape_interval: 5s    static_confi">
+<meta name="keywords" content="promethus-常用篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="promethus-常用篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/09/25/promethus-常用篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
+<meta property="og:description" content="模版案例1234567891011scrape_configs:  - job_name:       &amp;apos;example-random&amp;apos;    # Override the global default and scrape targets from this job every 5 seconds.    scrape_interval: 5s    static_confi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T03:15:31.622Z">
+<meta property="og:updated_time" content="2019-09-25T06:23:57.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="promethus-常用篇">
+<meta name="twitter:description" content="模版案例1234567891011scrape_configs:  - job_name:       &amp;apos;example-random&amp;apos;    # Override the global default and scrape targets from this job every 5 seconds.    scrape_interval: 5s    static_confi">
 
 
 
@@ -379,6 +383,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/promethus/" itemprop="url" rel="index">
+                    <span itemprop="name">promethus</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -401,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  85
                 </span>
               
 
@@ -438,7 +464,9 @@
       
 
       
-        
+        <h4 id="模版案例"><a href="#模版案例" class="headerlink" title="模版案例"></a>模版案例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">scrape_configs:</span><br><span class="line">  - job_name:       &apos;example-random&apos;</span><br><span class="line">    # Override the global default and scrape targets from this job every 5 seconds.</span><br><span class="line">    scrape_interval: 5s</span><br><span class="line">    static_configs:</span><br><span class="line">      - targets: [&apos;localhost:8070&apos;, &apos;localhost:8071&apos;]</span><br><span class="line">        labels:</span><br><span class="line">          group: &apos;production&apos;</span><br><span class="line">      - targets: [&apos;localhost:8072&apos;]</span><br><span class="line">        labels:</span><br><span class="line">          group: ‘canary&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">查看进程端口：</span><br><span class="line">    pgrep -f prometheus</span><br><span class="line"></span><br><span class="line">解决端口占用：	 </span><br><span class="line">	 lsof -i :9090</span><br><span class="line">	 sudo kill -9  prot    </span><br><span class="line"></span><br><span class="line">启动进程：</span><br><span class="line">     ./prometheus --config.file=prometheus.yml</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -486,6 +514,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/promethus-常用篇/" rel="tag"><i class="fa fa-tag"></i> promethus-常用篇</a>
+          
+        </div>
       
 
       
@@ -560,8 +594,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -580,7 +623,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -591,7 +634,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -602,7 +645,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -685,6 +728,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#模版案例"><span class="nav-number">1.</span> <span class="nav-text">模版案例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本使用"><span class="nav-number">2.</span> <span class="nav-text">基本使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -712,7 +771,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.4k</span>
+    <span title="Site words total count">20.7k</span>
   
 </div>
 

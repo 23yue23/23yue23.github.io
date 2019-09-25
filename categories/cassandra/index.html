@@ -139,7 +139,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="蜗牛笔记">
-<meta property="og:url" content="https://23yue23.github.io/categories/Cassandra/index.html">
+<meta property="og:url" content="https://23yue23.github.io/categories/cassandra/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -173,13 +173,13 @@
 
 
 
-  <link rel="canonical" href="https://23yue23.github.io/categories/Cassandra/">
+  <link rel="canonical" href="https://23yue23.github.io/categories/cassandra/">
 
 
 
 
 
-  <title>分类: Cassandra | 蜗牛笔记</title>
+  <title>分类: cassandra | 蜗牛笔记</title>
   
 
 
@@ -331,7 +331,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Cassandra<small>分类</small>
+        <h1>cassandra<small>分类</small>
         </h1>
       </div>
 
@@ -343,17 +343,69 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/05/17/cassandra-优化篇/" itemprop="url">
+            <a class="post-title-link" href="/2019/05/17/cassandra-问题篇/" itemprop="url">
               
-                <span itemprop="name">cassandra-优化篇</span>
+                <span itemprop="name">cassandra-问题篇</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-17T15:04:40+08:00" content="2019-05-17">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-05-17T14:17:21+08:00" content="2019-05-17">
           05-17
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2019/05/15/cassandra-常用篇/" itemprop="url">
+              
+                <span itemprop="name">cassandra-常用篇</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-05-15T17:33:51+08:00" content="2019-05-15">
+          05-15
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2019/05/15/cassandra-学习篇/" itemprop="url">
+              
+                <span itemprop="name">cassandra-学习篇</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-05-15T16:52:03+08:00" content="2019-05-15">
+          05-15
         </time>
       </div>
 
@@ -418,7 +470,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -429,7 +481,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -440,7 +492,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -550,7 +602,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.4k</span>
+    <span title="Site words total count">20.7k</span>
   
 </div>
 
@@ -1016,58 +1068,6 @@
 
           // remove loading animation
           $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":100,"height":100,"position":"left"},"mobile":{"show":false},"react":{"opacityDefault":0.9,"opacityOnHover":0.5},"log":false});</script></body>
-</html>
-op-overlay").remove();
           $('body').css('overflow', '');
 
           proceedsearch();

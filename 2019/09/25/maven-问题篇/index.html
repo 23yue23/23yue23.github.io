@@ -124,7 +124,7 @@
 
 
 
-  <meta name="keywords" content="flink, spark,kafka,hive">
+  <meta name="keywords" content="maven-问题篇,">
 
 
 
@@ -137,14 +137,18 @@
 
 
 
+<meta name="description" content="maven thread “main” java.lang.StackOverflowError 保存信息：12maven thread &amp;quot;main&amp;quot; java.lang.StackOverflowErrorat org.codehaus.plexus.archiver.AbstractArchiver$1.hasNext(AbstractArchiver.java:481)">
+<meta name="keywords" content="maven-问题篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="maven-问题篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/09/25/maven-问题篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
+<meta property="og:description" content="maven thread “main” java.lang.StackOverflowError 保存信息：12maven thread &amp;quot;main&amp;quot; java.lang.StackOverflowErrorat org.codehaus.plexus.archiver.AbstractArchiver$1.hasNext(AbstractArchiver.java:481)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T03:10:05.833Z">
+<meta property="og:updated_time" content="2019-09-25T04:12:26.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="maven-问题篇">
+<meta name="twitter:description" content="maven thread “main” java.lang.StackOverflowError 保存信息：12maven thread &amp;quot;main&amp;quot; java.lang.StackOverflowErrorat org.codehaus.plexus.archiver.AbstractArchiver$1.hasNext(AbstractArchiver.java:481)">
 
 
 
@@ -379,6 +383,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/maven/" itemprop="url" rel="index">
+                    <span itemprop="name">maven</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -401,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  85
                 </span>
               
 
@@ -438,7 +464,13 @@
       
 
       
-        
+        <h4 id="maven-thread-“main”-java-lang-StackOverflowError"><a href="#maven-thread-“main”-java-lang-StackOverflowError" class="headerlink" title="maven thread “main” java.lang.StackOverflowError"></a>maven thread “main” java.lang.StackOverflowError</h4><blockquote>
+<p>保存信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">maven thread &quot;main&quot; java.lang.StackOverflowError</span><br><span class="line">at org.codehaus.plexus.archiver.AbstractArchiver$1.hasNext(AbstractArchiver.java:481)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>解决方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">方法一（亲测可以）：</span><br><span class="line">  https://www.jianshu.com/p/5444c660ea87  </span><br><span class="line">Maven -&gt; Runner -&gt;VM Options ,</span><br><span class="line">设置</span><br><span class="line">-Xmx512m -Xms128m -Xss2m</span><br><span class="line">即可</span><br><span class="line">方法二：</span><br><span class="line">在pom.xml 中加上</span><br><span class="line">&lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt; &lt;version&gt;2.6&lt;/version&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
       
     </div>
     
@@ -486,6 +518,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/maven-问题篇/" rel="tag"><i class="fa fa-tag"></i> maven-问题篇</a>
+          
+        </div>
       
 
       
@@ -560,8 +598,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -580,7 +627,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -591,7 +638,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -602,7 +649,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -685,6 +732,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#maven-thread-“main”-java-lang-StackOverflowError"><span class="nav-number">1.</span> <span class="nav-text">maven thread “main” java.lang.StackOverflowError</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -712,7 +775,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.4k</span>
+    <span title="Site words total count">20.7k</span>
   
 </div>
 

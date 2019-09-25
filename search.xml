@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[promethus-问题篇]]></title>
+    <url>%2F2019%2F09%2F25%2Fpromethus-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[address already in use 保存信息：1error starting web server: listen tcp 0.0.0.0:9090: bind: address already in use 解决方法：12lsof -i :9090sudo kill -9 prot ####]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[promethus-学习篇]]></title>
+    <url>%2F2019%2F09%2F25%2Fpromethus-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[####grafana 安装和常用配置 #####常用配置12345678配置： 配置文件应位于/usr/local/etc/grafana/grafana.ini。日志： 日志文件应位于/usr/local/var/log/grafana/grafana.log。插件： 如果你想手动安装一个插件，请点击此处：/usr/local/var/lib/grafana/plugins。数据库： 默认的sqlite数据库位于 /usr/local/var/lib/grafana 下载安装1234wget https://dl.grafana.com/oss/release/grafana-6.3.5.linux-amd64.tar.gztar -zxvf grafana-6.3.5.linux-amd64.tar.gzconf/grafana.ini./bin/grafana-server web mac 安装方式123456789101112131415安装：brew install grafana执行：brew services start grafana重启：brew services restart grafana#Log/usr/local/var/log/grafana/grafana.log#conf/usr/local/etc/grafana/grafana.ini#plugins/usr/local/var/lib/grafana/plugins#database/usr/local/var/lib/grafana Metrics 类型Counter（计数器）123456#获取样本数据node_cpu&#123;cpu=&quot;cpu0&quot;,mode=&quot;idle”&#125; #通过rate()函数获取HTTP请求量的增长率rate(http_requests_total[5m])# 查询当前系统中，访问量前10的HTTP地址：topk(10, http_requests_total) Gauge 可增可减的仪表盘12预测系统磁盘空间在4个小时之后的剩余情况：predict_linear(node_filesystem_free&#123;job=&quot;node&quot;&#125;[1h], 4 * 3600) Histogram和Summary分析数据分布情况 PromQL基础基本函数语法123prometheus_http_requests_total 等价于prometheus_http_requests_total&#123;&#125; #####条件筛选123prometheus_http_requests_total&#123;instance=&quot;localhost:9090”&#125;不满足条件prometheus_http_requests_total&#123;instance!=&quot;localhost:9090”&#125; 123支持使用正则表达式作为匹配条件，多个表达式之间使用|进行分离：使用label=~regx表示选择那些标签符合正则表达式定义的时间序列； 反之使用label!~regx进行排除http_requests_total&#123;environment=~&quot;staging|testing|development&quot;,method!=&quot;GET”&#125; 范围查询123例如：查询最近5分钟http_request_total&#123;&#125;[5m] s - 秒 m - 分钟 h - 小时 d - 天 w - 周 y - 年 123瞬时向量表达式或者区间向量表达式中，都是以当前时间为基准http_request_total&#123;&#125; # 瞬时向量表达式，选择当前最新的数据http_request_total&#123;&#125;[5m] # 区间向量表达式，选择以当前时间为基准，5分钟内的数据 123如果我们想查询，5分钟前的瞬时样本数据，或昨天一天的区间内的样本数据呢? 这个时候我们就可以使用位移操作，位移操作的关键字为offsethttp_request_total&#123;&#125; offset 5m http_request_total&#123;&#125;[1d] offset 1d 聚合操作12 查询系统所有http请求的总量sum(http_request_total) 12 按照mode计算主机CPU的平均使用时间avg(node_cpu) by (mode) 12 按照主机查询各个主机的CPU使用率sum(sum(irate(node_cpu&#123;mode!=&apos;idle&apos;&#125;[5m])) / sum(irate(node_cpu[5m]))) by (instance) 支持的算法： (加法) - (减法) * (乘法) / (除法) % (求余) ^ (幂运算)]]></content>
+      <categories>
+        <category>promethus</category>
+      </categories>
+      <tags>
+        <tag>promethus-学习篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cassandra-资料篇]]></title>
+    <url>%2F2019%2F09%2F25%2Fcassandra-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[Youte 视频12345DataStax Accelerate 2019 — Full Session Recordings： https://www.youtube.com/playlist?list=PLm-EPIkBI3YpJbuKUGDlZVNHzT0umcBSl 大概85个视频，涉及到cassandra各个方面。下次会议是 https://apachecon.com/acna19/s/#/schedule?search=cassandra 可以关注下https://issues.apache.org/jira/browse/CASSANDRA-11815]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[zeppelin-问题篇]]></title>
     <url>%2F2019%2F09%2F25%2Fzeppelin-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
     <content type="text"><![CDATA[hive task 失败 报错信息： 1ERROR [bc60fbe1-ee2a-49e5-8932-231b92250134 main] ql.Driver: FAILED: Execution Error, return code 2 from org.apache.hadoop.hive.ql.exec.mr.MapRedTask 问题原因： 1作业被kill 掉后，会出现以上信息。 Apache zeppelin process died 报错信息： 1Apache zeppelin process died 解决方法: 1234服务失败，重启服务ps -ef | grep &quot;zeppelin&quot; kill -9 pid sudo bin/zeppelin-daemon.sh restart 权限问题，无法执行 报错信息： 12 shell_web_path is: http://zeppeline.com:8070/file/. shell/xianchang.yueJob 20190815-140750_2122347662 finished by scheduler org.apache.zeppelin.interpreter.remote.RemoteInterpreter-shell::2EHURB1RG-shared_session 解决方法： 1切换当前，shell的目录为可执行的目录 chown -R XXX:XXX shell/ connection refused 错误 报错原因：1可能正在使用过期的开发终端节点。尝试创建新的开发终端节点并重新连接。 解决方法：(推荐第一种，不可以后再选择第二种)1234561.重新创建新的note 进行执行。会建立新的连接。2.连接超时或由于任何原因停止工作，则您可能需要采取以下步骤来还原它： (1). 在 Zeppelin 中，在页面右上角的下拉菜单中，选择 Interpreters (解释器)。在解释器页面上，搜索 spark。选择 edit，然后清除 Connect to existing process 复选框。在页面底部选择 Save。 (2). 如前所述启动 SSH 端口转发。 (3). 在 Zeppelin 中，重新启用 spark 解释器的 Connect to existing process 设置，然后再次保存。像这样重置解释器应该会恢复连接。另一种实现方法是在 Interpreters 页面上为 Spark 解释器选择 restart。然后，等待最多 30 秒，以确保远程解释器已重新启动。 ####]]></content>
@@ -40,7 +61,13 @@
   <entry>
     <title><![CDATA[promethus-常用篇]]></title>
     <url>%2F2019%2F09%2F25%2Fpromethus-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[模版案例1234567891011scrape_configs: - job_name: &apos;example-random&apos; # Override the global default and scrape targets from this job every 5 seconds. scrape_interval: 5s static_configs: - targets: [&apos;localhost:8070&apos;, &apos;localhost:8071&apos;] labels: group: &apos;production&apos; - targets: [&apos;localhost:8072&apos;] labels: group: ‘canary&apos; 基本使用123456789查看进程端口： pgrep -f prometheus解决端口占用： lsof -i :9090 sudo kill -9 prot 启动进程： ./prometheus --config.file=prometheus.yml]]></content>
+      <categories>
+        <category>promethus</category>
+      </categories>
+      <tags>
+        <tag>promethus-常用篇</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[hadoop-问题篇]]></title>
@@ -50,7 +77,13 @@
   <entry>
     <title><![CDATA[hadoop-常用篇]]></title>
     <url>%2F2019%2F09%2F25%2Fhadoop-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[hadoop 命令 cat1234将路径指定文件的内容输出到stdout。示例： hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2 hadoop fs -cat file:///file3 /user/hadoop/file4 dus1使用方法：hadoop fs -dus &lt;args&gt;显示文件的大小 test1234567使用方法：hadoop fs -test -[ezd] URI选项：-e 检查文件是否存在。如果存在则返回0。-z 检查文件是否是0字节。如果是则返回0。 -d 如果路径是个目录，则返回1，否则返回0。示例： hadoop fs -test -e filename 查看.gz 的文件内容123456*无需解压整个文件： hadoop fs -cat /hdfs_location/part-00000.gz | zcat | head -n 20 或者 hadoop fs -cat /hdfs_location/part-00000.gz | zmore*需要解压整个文件： hadoop fs -text /myfolder/part-r-00024.gz | tail 查看.bz2 的文件内容 1类似查看.gz的方法，只需将zcat换为bzcat， 或者将zmore换为bzmore即可]]></content>
+      <categories>
+        <category>hadoop</category>
+      </categories>
+      <tags>
+        <tag>hadoop-常用篇</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[airflow-常用篇]]></title>
@@ -105,7 +138,13 @@
   <entry>
     <title><![CDATA[maven-问题篇]]></title>
     <url>%2F2019%2F09%2F25%2Fmaven-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[maven thread “main” java.lang.StackOverflowError 保存信息：12maven thread &quot;main&quot; java.lang.StackOverflowErrorat org.codehaus.plexus.archiver.AbstractArchiver$1.hasNext(AbstractArchiver.java:481) 解决方法：123456789方法一（亲测可以）： https://www.jianshu.com/p/5444c660ea87 Maven -&gt; Runner -&gt;VM Options ,设置-Xmx512m -Xms128m -Xss2m即可方法二：在pom.xml 中加上&lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt; &lt;version&gt;2.6&lt;/version&gt;]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+      <tags>
+        <tag>maven-问题篇</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[maven-常用篇]]></title>
@@ -224,6 +263,17 @@
       </categories>
       <tags>
         <tag>hbase-学习篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[代码库-split分割方式]]></title>
+    <url>%2F2019%2F07%2F25%2F%E4%BB%A3%E7%A0%81%E5%BA%93-split%E5%88%86%E5%89%B2%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[split 案例1234567891011121314151617181920212223String address=&quot;上海*上海市*闵行区*吴中路&quot;; String[] splitAddress=address.split(&quot;\\*&quot;); System.out.println(splitAddress[0]+splitAddress[1]+splitAddress[2]+splitAddress[3]);String address=&quot;上海:上海市:闵行区:吴中路&quot;; String[] splitAddress=address.split(&quot;\:&quot;); System.out.println(splitAddress[0]+splitAddress[1]+splitAddress[2]+splitAddress[3]);String address=&quot;上海.上海市.闵行区.吴中路&quot;; String[] splitAddress=address.split(&quot;\\.&quot;); System.out.println(splitAddress[0]+splitAddress[1]+splitAddress[2]+splitAddress[3]);String address=&quot;上海^上海市^闵行区^吴中路&quot;; String[] splitAddress=address.split(&quot;\\^&quot;); System.out.println(splitAddress[0]+splitAddress[1]+splitAddress[2]+splitAddress[3]);String address=&quot;上海@上海市@闵行区@吴中路&quot;; String[] splitAddress=address.split(&quot;@&quot;); System.out.println(splitAddress[0]+splitAddress[1]+splitAddress[2]+splitAddress[3]);String address=&quot;上海,上海市,闵行区,吴中路&quot;; String[] splitAddress=address.split(&quot;,&quot;);System.out.println(splitAddress[0]+splitAddress[1]+splitAddress[2]+splitAddress[3]);【2】多个符号作为分隔符 String address=&quot;上海^上海市@闵行区#吴中路&quot;; String[] splitAddress=address.split(&quot;\\^|@|#&quot;); System.out.println(splitAddress[0]+splitAddress[1]+splitAddress[2]+splitAddress[3]);]]></content>
+      <categories>
+        <category>代码库</category>
+      </categories>
+      <tags>
+        <tag>split</tag>
       </tags>
   </entry>
   <entry>
