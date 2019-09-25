@@ -3,31 +3,46 @@
   <entry>
     <title><![CDATA[指导思想]]></title>
     <url>%2F2019%2F08%2F05%2F%E6%8C%87%E5%AF%BC%E6%80%9D%E6%83%B3%2F</url>
-    <content type="text"><![CDATA[学习方法： 3 w 学习 提问的智慧：连接 一万小时定论：一万小时定论]]></content>
+    <content type="text"><![CDATA[学习方法： 3 w 学习 提问的智慧：连接 一万小时定论：一万小时定论 其他 工作中如何做好技术积累 学习新技术的10个技巧]]></content>
+      <categories>
+        <category>第三世界</category>
+      </categories>
+      <tags>
+        <tag>指导思想</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Pulsar-学习篇]]></title>
     <url>%2F2019%2F07%2F17%2FPulsar-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
     <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>Pulsar</category>
+      </categories>
       <tags>
-        <tag>Pulsar</tag>
+        <tag>Pulsar-学习篇</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[广告业务-学习]]></title>
+    <title><![CDATA[广告-学习篇]]></title>
     <url>%2F2019%2F07%2F12%2F%E5%B9%BF%E5%91%8A-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
     <content type="text"><![CDATA[术语理解1.dsp系统架构 实践 dsp 业务 1.1 美团DSP广告策略实践]]></content>
       <categories>
         <category>广告</category>
       </categories>
       <tags>
-        <tag>广告业务学习</tag>
+        <tag>广告-学习篇</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[spark-学习篇]]></title>
     <url>%2F2019%2F07%2F12%2Fspark-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
     <content type="text"><![CDATA[spark Spark on yarn有分为两种模式yarn-cluster和yarn-client spark参数总结 spark 常用算子 Spark on YARN客户端模式作业运行全过程分析 spark batch Spark多文件输出(MultipleOutputFormat) 2.spark-mysql 操作 2.1 Spark读取数据库(Mysql)的四种方式讲解 2.2 Spark与Mysql(JdbcRDD)整合开发 2.3 spark 计算结果写入mysql spark Streaming 官网stream Spark Streaming 实现思路与模块概述 SparkStreaming向Hbase中写数据 Spark Streaming kafka实现数据零丢失的几种方式 Kafka+Spark Streaming+Redis实时系统实践 Spark Streaming中空batches处理的两种方法 spark 调优 spark性能优化：shuffle调优 spark性能调优：开发调优 spark性能调优：资源优化 Saprk Streaming性能调优 GC调优在Spark应用中的实践 JVM的GC调优-上 JVM的GC调优-下 sparkMLib 1.Spark MLlib训练的广告点击率预测模型 案例实践 基于Spark streaming的SQL服务实时自动化运维]]></content>
+      <categories>
+        <category>spark</category>
+      </categories>
+      <tags>
+        <tag>spark-学习篇</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[hexo-实战篇]]></title>
@@ -37,48 +52,51 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>hexo-实战篇</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux系列之常用命令总结]]></title>
+    <title><![CDATA[linux-常用篇]]></title>
     <url>%2F2019%2F07%2F10%2Flinux-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[Bash 快捷键Ctl-U 删除光标到行首的所有字符,在某些设置下,删除全行Ctl-W 删除当前光标到前边的最近一个空格之间的字符 文件 删除文件： rm -rf log 等加于$ find ./ -name “log” -exec rm {} 搜寻文件或目录: $find ./ -name “core*” | xargs file 查找所有非txt文本: find . ! -name “*.txt” -print 统计文本中123 出现的个数： grep -c “123” filename sort 排序：-n 按数字进行排序 VS -d 按字典序进行排序 -r 逆序排序 -k N 指定按第N列排序 ：sort -n -1k -2k sort -bd data // 忽略像空格之类的前导空白字符 拼接文本 paste file1 file2 系统 12345678910111213141516# uname -a # 查看内核/操作系统/CPU信息# head -n 1 /etc/issue # 查看操作系统版本# cat /proc/cpuinfo # 查看CPU信息# hostname # 查看计算机名# lspci -tv # 列出所有PCI设备# lsusb -tv # 列出所有USB设备# lsmod # 列出加载的内核模块# env # 查看环境变量资源# free -m # 查看内存使用量和交换区使用量# df -h # 查看各分区使用情况# du -sh &lt;目录名&gt; # 查看指定目录的大小# grep MemTotal /proc/meminfo # 查看内存总量# grep MemFree /proc/meminfo # 查看空闲内存量# uptime # 查看系统运行时间、用户数、负载# cat /proc/loadavg # 查看系统负载 磁盘和分区12345# mount | column -t # 查看挂接的分区状态# fdisk -l # 查看所有分区# swapon -s # 查看所有交换分区# hdparm -i /dev/hda # 查看磁盘参数(仅适用于IDE设备)# dmesg | grep IDE # 查看启动时IDE设备检测状况 网络123456# ifconfig # 查看所有网络接口的属性# iptables -L # 查看防火墙设置# route -n # 查看路由表# netstat -lntp # 查看所有监听端口# netstat -antp # 查看所有已经建立的连接# netstat -s # 查看网络统计信息 进程12# ps -ef # 查看所有进程# top # 实时显示进程状态 用户123456# w # 查看活动用户# id &lt;用户名&gt; # 查看指定用户信息# last # 查看用户登录日志# cut -d: -f1 /etc/passwd # 查看系统所有用户# cut -d: -f1 /etc/group # 查看系统所有组# crontab -l # 查看当前用户的计划任务 服务12# chkconfig --list # 列出所有系统服务# chkconfig --list | grep on # 列出所有启动的系统服务 程序1# rpm -qa # 查看所有安装的软件包 Shell 脚本执行返回状态码：1234567890 命令成功完成1通常的未知错误2误用shell命令126命令无法执行127没有找到命令128无效的退出参数128+x使用Linux信号x的致命错误。130使用Ctrl-C终止的命令255规范外的退出状态 技巧： 1.查看变量是否被声明：123使用 :- 来测试是否一个变量是否被声明过。如：if [ &quot;$&#123;NAME:-&#125;&quot; = &quot;Kevin&quot; ] 如果 $&#123;NAME&#125;变量未声明则会变为空字符，你也可以设置为其他默认值.例如：如果不存在，默认值设为：noname ，if [ &quot;$&#123;NAME:-noname&#125;&quot; = &quot;Kevin” ] 2.自定义shell命令：123vim ~/.bashrc 中设置命令别名:alias lsl=&apos;ls -lrt&apos;alias lm=&apos;ls -al|more’ 3.shell文本格式化代码： 1gg=G vi 快捷建A 移动光标到当前行尾，并进入 insert 状态a 在当前位置后进入 insert 状态dd 删除当前行D 删除光标之后的内容p 粘贴刚删除的文本ctrl+r 搜索历史命令ctrl+X Ctrl+E 调用默认编辑器去编辑一个特别长的命令]]></content>
       <categories>
         <category>linux</category>
       </categories>
       <tags>
-        <tag>linux命令总结</tag>
+        <tag>linux-常用篇</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux系列之端口占有]]></title>
+    <title><![CDATA[linux-问题篇]]></title>
     <url>%2F2019%2F05%2F17%2Flinux-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
     <content type="text"><![CDATA[lsof1lsof -i:80 netstat1netstat -anp|grep port ip1ip addr flindjournalctl curlcurl]]></content>
       <categories>
         <category>linux</category>
       </categories>
       <tags>
-        <tag>linux-端口</tag>
+        <tag>linux-问题篇</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Druid-学习篇]]></title>
     <url>%2F2019%2F05%2F17%2FDruid-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
     <content type="text"><![CDATA[druid 系列csdn]]></content>
+      <categories>
+        <category>Druid</category>
+      </categories>
       <tags>
-        <tag>Druid</tag>
+        <tag>Druid-学习篇</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Homebrew-使用]]></title>
+    <title><![CDATA[Homebrew-使用篇]]></title>
     <url>%2F2019%2F05%2F17%2FHomebrew-%E4%BD%BF%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[安装路径：/usr/local/Cellar/ 查找软件包 1brew search wget 安装软件包 1brew install wget 列出已安装的软件包 1brew list 删除软件包 1brew remove wget 查看软件包信息 1brew info wget 列出软件包的依赖关系 1brew deps wget 更新brew 1brew update 列出过时的软件包（已安装但不是最新版本） 1brew outdated 更新过时的软件包（全部或指定） 1brew upgrade 或 brew upgrade wget]]></content>
       <categories>
         <category>工具</category>
       </categories>
       <tags>
-        <tag>Homebrew-使用</tag>
+        <tag>Homebrew-使用篇</tag>
       </tags>
   </entry>
   <entry>
@@ -89,18 +107,18 @@
         <category>代码库</category>
       </categories>
       <tags>
-        <tag>代码库</tag>
+        <tag>代码库-邮件发送</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[spark系列之-问题汇总]]></title>
-    <url>%2F2019%2F04%2F29%2Fspark%E7%B3%BB%E5%88%97%E4%B9%8B-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
+    <title><![CDATA[spark-问题篇]]></title>
+    <url>%2F2019%2F04%2F29%2Fspark-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
     <content type="text"><![CDATA[org.apache.spark.SparkException: Could not find CoarseGrainedScheduler. 这个可能是一个资源问题，应该给任务分配更多的 cores 和Executors，并且分配更多的内存。并且需要给RDD分配更多的分区 在配置资源中加入这句话也许能解决你的问题： –conf spark.dynamicAllocation.enabled=false 经过一般调试，发现原来是因为spark任务生成task任务过少，而任务提交时所指定的Excutor 数过多导致，故调小 –num-executors 参数问题得以解决。 #####]]></content>
       <categories>
         <category>spark</category>
       </categories>
       <tags>
-        <tag>spark-问题</tag>
+        <tag>spark-问题篇</tag>
       </tags>
   </entry>
   <entry>
@@ -111,18 +129,18 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>mac-使用篇</tag>
+        <tag>MacOS-使用篇</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[经典文章]]></title>
+    <title><![CDATA[技术文章]]></title>
     <url>%2F2019%2F04%2F29%2F%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[技术文章 MySQL索引原理及慢查询优化 美团点评基于 Flink 的实时数仓建设实践 从零开始入门推荐算法工程师 计算广告与流处理技术综述 其他 工作中如何做好技术积累 学习新技术的10个技巧]]></content>
+    <content type="text"><![CDATA[技术文章 MySQL索引原理及慢查询优化 美团点评基于 Flink 的实时数仓建设实践 从零开始入门推荐算法工程师 计算广告与流处理技术综述]]></content>
       <categories>
-        <category>经典文章</category>
+        <category>技术文章</category>
       </categories>
       <tags>
-        <tag>经典文章</tag>
+        <tag>技术文章</tag>
       </tags>
   </entry>
   <entry>
@@ -133,7 +151,7 @@
         <category>spark</category>
       </categories>
       <tags>
-        <tag>spark-调优</tag>
+        <tag>spark-调优篇</tag>
       </tags>
   </entry>
   <entry>
@@ -144,7 +162,7 @@
         <category>grafana</category>
       </categories>
       <tags>
-        <tag>grafana</tag>
+        <tag>grafana-学习篇</tag>
       </tags>
   </entry>
   <entry>
@@ -155,7 +173,7 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>工具</tag>
+        <tag>markDown-使用</tag>
       </tags>
   </entry>
   <entry>
