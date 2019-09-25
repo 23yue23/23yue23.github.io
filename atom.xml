@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-09-25T03:16:30.469Z</updated>
+  <updated>2019-09-25T03:53:34.326Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>zeppelin-问题篇</title>
+    <link href="https://23yue23.github.io/2019/09/25/zeppelin-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/09/25/zeppelin-问题篇/</id>
+    <published>2019-09-25T03:42:07.000Z</published>
+    <updated>2019-09-25T03:53:34.326Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="hive-task-失败"><a href="#hive-task-失败" class="headerlink" title="hive task 失败"></a>hive task 失败</h4><blockquote><p>报错信息：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR [bc60fbe1-ee2a-49e5-8932-231b92250134 main] ql.Driver: FAILED: Execution Error, return code 2 from org.apache.hadoop.hive.ql.exec.mr.MapRedTask</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>问题原因：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">作业被kill 掉后，会出现以上信息。</span><br></pre></td></tr></table></figure></p></blockquote><h4 id="Apache-zeppelin-process-died"><a href="#Apache-zeppelin-process-died" class="headerlink" title="Apache zeppelin process died"></a>Apache zeppelin process died</h4><blockquote><p>报错信息：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Apache zeppelin process died</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>解决方法:<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">服务失败，重启服务</span><br><span class="line">ps -ef | grep &quot;zeppelin&quot;</span><br><span class="line">  kill -9 pid</span><br><span class="line">  sudo bin/zeppelin-daemon.sh restart</span><br></pre></td></tr></table></figure></p></blockquote><h4 id="权限问题，无法执行"><a href="#权限问题，无法执行" class="headerlink" title="权限问题，无法执行"></a>权限问题，无法执行</h4><blockquote><p>报错信息：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell_web_path is: http://zeppeline.com:8070/file/. shell/xianchang.yue</span><br><span class="line">Job 20190815-140750_2122347662 finished by scheduler org.apache.zeppelin.interpreter.remote.RemoteInterpreter-shell::2EHURB1RG-shared_session</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>解决方法：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">切换当前，shell的目录为可执行的目录 chown -R XXX:XXX shell/</span><br></pre></td></tr></table></figure></p></blockquote><h4 id="connection-refused-错误"><a href="#connection-refused-错误" class="headerlink" title="connection refused 错误"></a>connection refused 错误</h4><blockquote><p>报错原因：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可能正在使用过期的开发终端节点。尝试创建新的开发终端节点并重新连接。</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>解决方法：(推荐第一种，不可以后再选择第二种)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.重新创建新的note 进行执行。会建立新的连接。</span><br><span class="line">2.连接超时或由于任何原因停止工作，则您可能需要采取以下步骤来还原它：</span><br><span class="line">    (1). 在 Zeppelin 中，在页面右上角的下拉菜单中，选择 Interpreters (解释器)。在解释器页面上，搜索 spark。选择 edit，然后清除 Connect to existing process 复选框。在页面底部选择 Save。</span><br><span class="line">    (2). 如前所述启动 SSH 端口转发。</span><br><span class="line">    (3). 在 Zeppelin 中，重新启用 spark 解释器的 Connect to existing process 设置，然后再次保存。</span><br><span class="line">像这样重置解释器应该会恢复连接。另一种实现方法是在 Interpreters 页面上为 Spark 解释器选择 restart。然后，等待最多 30 秒，以确保远程解释器已重新启动。</span><br></pre></td></tr></table></figure></p></blockquote><p>#### </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;hive-task-失败&quot;&gt;&lt;a href=&quot;#hive-task-失败&quot; class=&quot;headerlink&quot; title=&quot;hive task 失败&quot;&gt;&lt;/a&gt;hive task 失败&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;报错信息：&lt;br&gt;    &lt;fig
+      
+    
+    </summary>
+    
+      <category term="zeppelin" scheme="https://23yue23.github.io/categories/zeppelin/"/>
+    
+    
+      <category term="zeppelin-问题篇" scheme="https://23yue23.github.io/tags/zeppelin-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>grafana-常用篇</title>
+    <link href="https://23yue23.github.io/2019/09/25/grafana-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/09/25/grafana-常用篇/</id>
+    <published>2019-09-25T03:34:07.000Z</published>
+    <updated>2019-09-25T03:43:03.749Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="grafana" scheme="https://23yue23.github.io/categories/grafana/"/>
+    
+    
+      <category term="grafana-常用篇" scheme="https://23yue23.github.io/tags/grafana-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    
+  </entry>
   
   <entry>
     <title>nginx-常用篇</title>
@@ -199,20 +243,6 @@
   </entry>
   
   <entry>
-    <title>zeppelin-常用篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/zeppelin-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/zeppelin-常用篇/</id>
-    <published>2019-09-25T03:11:37.000Z</published>
-    <updated>2019-09-25T03:11:38.008Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>zeppelin-学习篇</title>
     <link href="https://23yue23.github.io/2019/09/25/zeppelin-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/09/25/zeppelin-学习篇/</id>
@@ -274,20 +304,6 @@
     <id>https://23yue23.github.io/2019/09/25/maven-常用篇/</id>
     <published>2019-09-25T03:09:55.000Z</published>
     <updated>2019-09-25T03:09:55.974Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>redis-资料篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/redis-%E8%B5%84%E6%96%99%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/redis-资料篇/</id>
-    <published>2019-09-25T03:09:45.000Z</published>
-    <updated>2019-09-25T03:09:45.087Z</updated>
     
     <summary type="html">
     

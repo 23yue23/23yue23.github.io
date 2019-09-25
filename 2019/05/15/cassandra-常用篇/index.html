@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool  describecluster 查看节点状态1nodetool    status 重启节点1sudo systemctl restart scylla-server Cql操作查看版本1SH">
+<meta name="description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool  describecluster 查看节点状态1nodetool    status 重启节点1sudo systemctl restart scylla-server 查看系统相关日志信息1s">
 <meta name="keywords" content="cassandra-常用篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cassandra-常用篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/05/15/cassandra-常用篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool  describecluster 查看节点状态1nodetool    status 重启节点1sudo systemctl restart scylla-server Cql操作查看版本1SH">
+<meta property="og:description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool  describecluster 查看节点状态1nodetool    status 重启节点1sudo systemctl restart scylla-server 查看系统相关日志信息1s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T02:54:39.271Z">
+<meta property="og:updated_time" content="2019-09-25T03:40:54.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cassandra-常用篇">
-<meta name="twitter:description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool  describecluster 查看节点状态1nodetool    status 重启节点1sudo systemctl restart scylla-server Cql操作查看版本1SH">
+<meta name="twitter:description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool  describecluster 查看节点状态1nodetool    status 重启节点1sudo systemctl restart scylla-server 查看系统相关日志信息1s">
 
 
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  78
+                  132
                 </span>
               
 
@@ -471,9 +471,13 @@
 <h5 id="查看集群信息"><a href="#查看集群信息" class="headerlink" title="查看集群信息"></a>查看集群信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nodetool  describecluster</span><br></pre></td></tr></table></figure>
 <h5 id="查看节点状态"><a href="#查看节点状态" class="headerlink" title="查看节点状态"></a>查看节点状态</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nodetool    status</span><br></pre></td></tr></table></figure>
 <h5 id="重启节点"><a href="#重启节点" class="headerlink" title="重启节点"></a>重启节点</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart scylla-server</span><br></pre></td></tr></table></figure>
-<h4 id="Cql操作"><a href="#Cql操作" class="headerlink" title="Cql操作"></a>Cql操作</h4><h5 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW VERSION</span><br></pre></td></tr></table></figure>
+<h5 id="查看系统相关日志信息"><a href="#查看系统相关日志信息" class="headerlink" title="查看系统相关日志信息"></a>查看系统相关日志信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo journalctl --follow _UID=`id -u scylla`</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="Cql操作"><a href="#Cql操作" class="headerlink" title="Cql操作"></a>Cql操作</h4><h5 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SHOW VERSION</span><br><span class="line"></span><br><span class="line">OR </span><br><span class="line"></span><br><span class="line">SELECT release_version from system.local;</span><br></pre></td></tr></table></figure>
+<h5 id="查看Schema-信息"><a href="#查看Schema-信息" class="headerlink" title="查看Schema 信息"></a>查看Schema 信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM system_schema.keyspaces;</span><br></pre></td></tr></table></figure>
 <h5 id="keyspaces-操作"><a href="#keyspaces-操作" class="headerlink" title="keyspaces 操作"></a>keyspaces 操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#查看</span><br><span class="line">desc keyspaces;</span><br><span class="line">#使用</span><br><span class="line">use keyspaceName</span><br></pre></td></tr></table></figure>
 <h5 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#table list</span><br><span class="line">describe tables;</span><br><span class="line"></span><br><span class="line">#查看表结构</span><br><span class="line">describe table table_name;</span><br></pre></td></tr></table></figure>
+<h5 id="修改keyspaces-的副本"><a href="#修改keyspaces-的副本" class="headerlink" title="修改keyspaces 的副本"></a>修改keyspaces 的副本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER KEYSPACE library WITH REPLICATION = &#123; &apos;class&apos; : &apos;SimpleStrategy&apos;, &apos;replication_factor&apos; : 1 &#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -631,7 +635,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -642,7 +646,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -653,7 +657,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -745,7 +749,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#shell-命令"><span class="nav-number">1.</span> <span class="nav-text">shell 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#登陆"><span class="nav-number">1.1.</span> <span class="nav-text">登陆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看集群信息"><span class="nav-number">1.2.</span> <span class="nav-text">查看集群信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看节点状态"><span class="nav-number">1.3.</span> <span class="nav-text">查看节点状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重启节点"><span class="nav-number">1.4.</span> <span class="nav-text">重启节点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cql操作"><span class="nav-number">2.</span> <span class="nav-text">Cql操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看版本"><span class="nav-number">2.1.</span> <span class="nav-text">查看版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#keyspaces-操作"><span class="nav-number">2.2.</span> <span class="nav-text">keyspaces 操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看表"><span class="nav-number">2.3.</span> <span class="nav-text">查看表</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#shell-命令"><span class="nav-number">1.</span> <span class="nav-text">shell 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#登陆"><span class="nav-number">1.1.</span> <span class="nav-text">登陆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看集群信息"><span class="nav-number">1.2.</span> <span class="nav-text">查看集群信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看节点状态"><span class="nav-number">1.3.</span> <span class="nav-text">查看节点状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重启节点"><span class="nav-number">1.4.</span> <span class="nav-text">重启节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看系统相关日志信息"><span class="nav-number">1.5.</span> <span class="nav-text">查看系统相关日志信息</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cql操作"><span class="nav-number">2.</span> <span class="nav-text">Cql操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看版本"><span class="nav-number">2.1.</span> <span class="nav-text">查看版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看Schema-信息"><span class="nav-number">2.2.</span> <span class="nav-text">查看Schema 信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#keyspaces-操作"><span class="nav-number">2.3.</span> <span class="nav-text">keyspaces 操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看表"><span class="nav-number">2.4.</span> <span class="nav-text">查看表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改keyspaces-的副本"><span class="nav-number">2.5.</span> <span class="nav-text">修改keyspaces 的副本</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -779,7 +783,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.5k</span>
+    <span title="Site words total count">19.4k</span>
   
 </div>
 

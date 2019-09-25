@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[zeppelin-问题篇]]></title>
+    <url>%2F2019%2F09%2F25%2Fzeppelin-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[hive task 失败 报错信息： 1ERROR [bc60fbe1-ee2a-49e5-8932-231b92250134 main] ql.Driver: FAILED: Execution Error, return code 2 from org.apache.hadoop.hive.ql.exec.mr.MapRedTask 问题原因： 1作业被kill 掉后，会出现以上信息。 Apache zeppelin process died 报错信息： 1Apache zeppelin process died 解决方法: 1234服务失败，重启服务ps -ef | grep &quot;zeppelin&quot; kill -9 pid sudo bin/zeppelin-daemon.sh restart 权限问题，无法执行 报错信息： 12 shell_web_path is: http://zeppeline.com:8070/file/. shell/xianchang.yueJob 20190815-140750_2122347662 finished by scheduler org.apache.zeppelin.interpreter.remote.RemoteInterpreter-shell::2EHURB1RG-shared_session 解决方法： 1切换当前，shell的目录为可执行的目录 chown -R XXX:XXX shell/ connection refused 错误 报错原因：1可能正在使用过期的开发终端节点。尝试创建新的开发终端节点并重新连接。 解决方法：(推荐第一种，不可以后再选择第二种)1234561.重新创建新的note 进行执行。会建立新的连接。2.连接超时或由于任何原因停止工作，则您可能需要采取以下步骤来还原它： (1). 在 Zeppelin 中，在页面右上角的下拉菜单中，选择 Interpreters (解释器)。在解释器页面上，搜索 spark。选择 edit，然后清除 Connect to existing process 复选框。在页面底部选择 Save。 (2). 如前所述启动 SSH 端口转发。 (3). 在 Zeppelin 中，重新启用 spark 解释器的 Connect to existing process 设置，然后再次保存。像这样重置解释器应该会恢复连接。另一种实现方法是在 Interpreters 页面上为 Spark 解释器选择 restart。然后，等待最多 30 秒，以确保远程解释器已重新启动。 ####]]></content>
+      <categories>
+        <category>zeppelin</category>
+      </categories>
+      <tags>
+        <tag>zeppelin-问题篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[grafana-常用篇]]></title>
+    <url>%2F2019%2F09%2F25%2Fgrafana-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>grafana</category>
+      </categories>
+      <tags>
+        <tag>grafana-常用篇</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[nginx-常用篇]]></title>
     <url>%2F2019%2F09%2F25%2Fnginx-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"></content>
@@ -63,11 +85,6 @@
   <entry>
     <title><![CDATA[superset-资料篇]]></title>
     <url>%2F2019%2F09%2F25%2Fsuperset-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[zeppelin-常用篇]]></title>
-    <url>%2F2019%2F09%2F25%2Fzeppelin-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"></content>
   </entry>
   <entry>
@@ -174,6 +191,17 @@
       </categories>
       <tags>
         <tag>mysql-问题篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[zeppelin-常用篇]]></title>
+    <url>%2F2019%2F09%2F15%2Fzeppelin-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[hive 使用作业名设置12%hiveset mapred.job.name=zeppelin_hive_xianchang.yue; ##### shell 使用参数优化123%shell set mapred.child.java.opts; mapred.child.java.opts=-Xmx1536m -Xms1536m -Xmn256m -XX:SurvivorRatio=6 -XX:MaxPermSize=128m -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=80 -XX:GCTimeLimit=90 -XX:GCHeapFreeLimit=10 -XX:ParallelGCThreads=8 执行hive12345%shell export HADOOP_CLIENT_OPTS=&quot;-Xmx4096m $HADOOP_CLIENT_OPTS&quot;hive -e &quot; select * from test &quot;&gt;&gt;./template_size.txt spark 使用spark 执行优化123456789101112 %spark.conf spark.app.name zeppeline_custom_conf spark.driver.memory 3g spark.executor.memory 2g spark.dynamicAllocation.enabled true spark.dynamicAllocation.minExecutors 10 spark.dynamicAllocation.maxExecutors 50 spark.executor.cores 3 spark.shuffle.service.enabled true ``` ##### spark Streaming 执行 %spark import org.apache.spark.streaming._ import org.apache.spark.streaming.StreamingContext import org.apache.spark.streaming.StreamingContext._ import org.apache.spark.streaming.dstream.DStream import org.apache.spark.streaming.Duration import org.apache.spark.streaming.Seconds val ssc = new StreamingContext(sc, Seconds(1)) 12##### 执行后数据保存文件 %sparkimport org.apache.spark.sql.types._val sql_str =”select * from test”val df = sqlContext.sql(sql_str)val out_put_path = “s3://tmp/tag_1”df.repartition(1).write.format(“csv”).option(“delimiter”, “\t”).option(“header”, true).option(“inferSchema”, true).mode(“overwrite”).save(out_put_path) 1234 #### python 使用##### 保存文件 %python import commands print commands.getoutput(&quot;sh /var/tools/hadoop/download_file.sh&quot;+&quot; &quot;+z.input(&quot;s3下载目录:&quot;)+&quot; &quot;+z.input(&quot;保存目录:如 zhangsan/test01&quot;)+&quot; &quot; +z.input(&quot;保存文件名&quot;)) 12##### 读取文件 %pythonimport urllib2data = urllib2.urlopen(“http://zeppeline.com:8060/file/shell/product/shellppp_demo.xls&quot;)for line in data: print line `]]></content>
+      <categories>
+        <category>zeppelin</category>
+      </categories>
+      <tags>
+        <tag>zeppelin-常用篇</tag>
       </tags>
   </entry>
   <entry>
@@ -300,7 +328,7 @@
   <entry>
     <title><![CDATA[cassandra-问题篇]]></title>
     <url>%2F2019%2F05%2F17%2Fcassandra-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？ Cassandra是一个基于gossip协议的分布式系统，监听地址是用来告诉其它节点来访问的，告诉别的节点说“连接我任何地址都可以”，是一个糟糕的想法，如果集群中不同的节点使用了不同方式的地址，悲剧的事情就要发生了。如果你不想为你集群中的每个节点单独配置ip（非常可以理解）,你可以不配，空着它，Cassandra将会使用InetAddress.getLocalHost()来选择地址，然后只要你或者你的运维团队保证这个是正确的(/etc/hosts/,dns 等等要配置对)。一个例外是JMX,他默认监听的地址是0.0.0.0（这个是java的bug 6425769）请看CASSANDRA-256 和 CASSANDRA-43获取这方面更多的细节。 cassandra用了哪些端口？ 默认7000作为集群通信端口（如果开启了SSL就是7001端口）。9042端口用于native协议的客户端连接。7199端口用于JMX，9160端口用于废弃的Thrift接口。内部节点通信以及native协议的端口在cassandra配置文件里可以配置。JMX端口可以在cassandra-env.sh配置（通过JVM的参数)。所有端口都是TCP的。 当往集群中增加新节点的时候，对于存在的数据发生了什么？ 当一个新节点加入到集群，它将会自动连接集群中的其它节点，并且去复制正确的数据到本地，同样的增加、替换、移动、删除节点都是这样的。 我删除了数据，但是磁盘使用率没有变化，这是为什么？ 写入到cassandra里的数据会被持久化到SSTable文件里，SSTable文件是不可改变的，也就是说当你执行删除的时候，数据不会从文件中被去除掉的。相反，一个标记（也叫tombstone)会被写入用于标记对应记录的新状态。不用担心，当数据和tombstone发生第一次compaction的时候，数据会被删除掉，相应的磁盘空间也被回收，你可以了解关于Compaction的更多细节。 为什么用nodetool ring只能看到一条记录？ 即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。 这个发生于你的所有节点都配了通用的token，不要这么做。这经常发生于哪些使用VM部署cassandra的用户，（特别是使用Debian package，它会在安装完自动启动cassandra，所以会生成token并保存它。），安装好后就把VM整个克隆出另外的节点。增很容易修复，只要把数据目录以及commitlog目录删除，然后保证每个节点是随机生成的token，再启动就可以了。 我可以修改一个正在运行中的集群中的keyspace的副本因子吗？ 可以，但是修改后需要执行repair或者cleanup来改变已存数据的副本个数。首先使用cqlsh修改目标keyspace的副本因子。如果你是减少副本因子，你可以执行nodetool cleanup去删除多余的副本数据，对每个节点都要执行。如果你是增加副本因子，你需要执行nodetool repair来保证数据的副本个数满足当前的配置。 Repair只要对每个副本集执行一次即可。这是个敏感的操作，这会影响集群的性能。强烈建议执行rolling repair，因为试图一次修复整个集群的话，那可能是个坑。 可以使用cassandra存储大的二进制字段吗？ Cassandra并没有对存储大文件或者二进制，以及这样一个二进制数据被经常读，也就是整个发送到客户端的情况进行优化。因为存储小的二进制数据（小于1MB)应该不是问题。但是还是建议把大的二进制数据分隔成小块。需要特别注意的是，任何大于16MB的值，将被Cassandra拒绝掉，这是由max_mutation_size_in_kb配置项决定的（这个配置项默认是commitlog_segment_size_in_mb的一半，commitlog_segment_size_in_mb默认是32M)。 Nodetool连接远程服务器的时候，提示“Connection refused to host: 127.0.1.1” ，这是为什么？ nodetool依赖JMX，JMX依赖RMI。RMI在两端通信的时候会根据需要创建自己的listenners和connectors。通常，这些都是底层透明的，但是不正确的hostname解析，无论是在连接方还是被连接方，都会导致错乱和这样的拒绝异常。如果你在使用DNS。确保两端机器的/etc/hosts文件是正确的。如果还是失败的，你可以尝试通过jvm选项-Djava.rmi.server.hostname=指定你要连接的远程机器名称给JMX接口，配置项大体在cassandra-env.sh文件的靠下的位置。 端口占用 错误： Cassandra关闭后，重启，提示，7199端口被占用，分析原因是关闭时使用的ctrl+c，实际上并没有关闭cassandra服务进程，所以提示端口已被使用； 12yxcdeMacBook-Pro:3.11.4 yxc$ cqlshConnection error: (&apos;Unable to connect to any servers&apos;, &#123;&apos;127.0.0.1&apos;: error(61, &quot;Tried connecting to [(&apos;127.0.0.1&apos;, 9042)]. Last error: Connection refused&quot;)&#125;) 解决：找出使用7199端口的进程lsof -i:7199杀死残留进程kill direct_pid 版本不一致 错误： 123Connection error: (‘Unable to connect to any servers’, &#123;‘127.0.0.1’: ProtocolError(“cql_version ‘3.3.0’ is not supported by remote (w/ native protocol). Supported versions: [u’3.3.1’]”,)&#125;) 解决： 12修改cassandra_home/bin/cqlsh.py: DEFAULT_CQLVER = ‘3.3.0’为DEFAULT_CQLVER = ‘3.3.1’； All host(s) tried for query failed 错误： 123message: ‘All host(s) tried for query failed. First host tried, 127.0.0.1:9042: Error: connect ECONNREFUSED 127.0.0.1:9042. See innerErrors.’ &#125; 解决： 12修改cassandra_home/conf/cassandra.yaml: start_native_transport=false改为start_native_transport=true; 参考赵岩]]></content>
+    <content type="text"><![CDATA[为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？ Cassandra是一个基于gossip协议的分布式系统，监听地址是用来告诉其它节点来访问的，告诉别的节点说“连接我任何地址都可以”，是一个糟糕的想法，如果集群中不同的节点使用了不同方式的地址，悲剧的事情就要发生了。如果你不想为你集群中的每个节点单独配置ip（非常可以理解）,你可以不配，空着它，Cassandra将会使用InetAddress.getLocalHost()来选择地址，然后只要你或者你的运维团队保证这个是正确的(/etc/hosts/,dns 等等要配置对)。一个例外是JMX,他默认监听的地址是0.0.0.0（这个是java的bug 6425769）请看CASSANDRA-256 和 CASSANDRA-43获取这方面更多的细节。 cassandra用了哪些端口？ 默认7000作为集群通信端口（如果开启了SSL就是7001端口）。9042端口用于native协议的客户端连接。7199端口用于JMX，9160端口用于废弃的Thrift接口。内部节点通信以及native协议的端口在cassandra配置文件里可以配置。JMX端口可以在cassandra-env.sh配置（通过JVM的参数)。所有端口都是TCP的。 当往集群中增加新节点的时候，对于存在的数据发生了什么？ 当一个新节点加入到集群，它将会自动连接集群中的其它节点，并且去复制正确的数据到本地，同样的增加、替换、移动、删除节点都是这样的。 我删除了数据，但是磁盘使用率没有变化，这是为什么？ 写入到cassandra里的数据会被持久化到SSTable文件里，SSTable文件是不可改变的，也就是说当你执行删除的时候，数据不会从文件中被去除掉的。相反，一个标记（也叫tombstone)会被写入用于标记对应记录的新状态。不用担心，当数据和tombstone发生第一次compaction的时候，数据会被删除掉，相应的磁盘空间也被回收，你可以了解关于Compaction的更多细节。 为什么用nodetool ring只能看到一条记录？ 即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。 这个发生于你的所有节点都配了通用的token，不要这么做。这经常发生于哪些使用VM部署cassandra的用户，（特别是使用Debian package，它会在安装完自动启动cassandra，所以会生成token并保存它。），安装好后就把VM整个克隆出另外的节点。增很容易修复，只要把数据目录以及commitlog目录删除，然后保证每个节点是随机生成的token，再启动就可以了。 我可以修改一个正在运行中的集群中的keyspace的副本因子吗？ 可以，但是修改后需要执行repair或者cleanup来改变已存数据的副本个数。首先使用cqlsh修改目标keyspace的副本因子。如果你是减少副本因子，你可以执行nodetool cleanup去删除多余的副本数据，对每个节点都要执行。如果你是增加副本因子，你需要执行nodetool repair来保证数据的副本个数满足当前的配置。 Repair只要对每个副本集执行一次即可。这是个敏感的操作，这会影响集群的性能。强烈建议执行rolling repair，因为试图一次修复整个集群的话，那可能是个坑。 可以使用cassandra存储大的二进制字段吗？ Cassandra并没有对存储大文件或者二进制，以及这样一个二进制数据被经常读，也就是整个发送到客户端的情况进行优化。因为存储小的二进制数据（小于1MB)应该不是问题。但是还是建议把大的二进制数据分隔成小块。需要特别注意的是，任何大于16MB的值，将被Cassandra拒绝掉，这是由max_mutation_size_in_kb配置项决定的（这个配置项默认是commitlog_segment_size_in_mb的一半，commitlog_segment_size_in_mb默认是32M)。 Nodetool连接远程服务器的时候，提示“Connection refused to host: 127.0.1.1” ，这是为什么？ nodetool依赖JMX，JMX依赖RMI。RMI在两端通信的时候会根据需要创建自己的listenners和connectors。通常，这些都是底层透明的，但是不正确的hostname解析，无论是在连接方还是被连接方，都会导致错乱和这样的拒绝异常。如果你在使用DNS。确保两端机器的/etc/hosts文件是正确的。如果还是失败的，你可以尝试通过jvm选项-Djava.rmi.server.hostname=指定你要连接的远程机器名称给JMX接口，配置项大体在cassandra-env.sh文件的靠下的位置。 端口占用 错误： Cassandra关闭后，重启，提示，7199端口被占用，分析原因是关闭时使用的ctrl+c，实际上并没有关闭cassandra服务进程，所以提示端口已被使用； 12yxcdeMacBook-Pro:3.11.4 yxc$ cqlshConnection error: (&apos;Unable to connect to any servers&apos;, &#123;&apos;127.0.0.1&apos;: error(61, &quot;Tried connecting to [(&apos;127.0.0.1&apos;, 9042)]. Last error: Connection refused&quot;)&#125;) 解决：找出使用7199端口的进程lsof -i:7199杀死残留进程kill direct_pid 版本不一致 错误： 123Connection error: (‘Unable to connect to any servers’, &#123;‘127.0.0.1’: ProtocolError(“cql_version ‘3.3.0’ is not supported by remote (w/ native protocol). Supported versions: [u’3.3.1’]”,)&#125;) 解决： 12修改cassandra_home/bin/cqlsh.py: DEFAULT_CQLVER = ‘3.3.0’为DEFAULT_CQLVER = ‘3.3.1’； All host(s) tried for query failed 错误： 123message: ‘All host(s) tried for query failed. First host tried, 127.0.0.1:9042: Error: connect ECONNREFUSED 127.0.0.1:9042. See innerErrors.’ &#125; 解决： 12修改cassandra_home/conf/cassandra.yaml: start_native_transport=false改为start_native_transport=true; Cannot build a cluster without contact points 解决：1不能构建cassandra 的集群，查看是否ip 没有写对 caching 增加导致负载升高 解决：1234567Not enough replica available for query at consistency ONE (1 required but only 0 alive)https://issues.apache.org/jira/browse/CASSANDRA-7905https://issues.apache.org/jira/browse/CASSANDRA-11815https://stackoverflow.com/questions/27974911/not-enough-replica-available-for-query-at-consistency-one-1-required-but-only-0复制数据的官网解释：https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureDataDistributeReplication_c.htmlhttps://docs.datastax.com/en/archived/cassandra/2.1/cassandra/operations/ops_add_dc_to_cluster_t.html 参考赵岩]]></content>
       <categories>
         <category>cassandra</category>
       </categories>
@@ -333,7 +361,7 @@
   <entry>
     <title><![CDATA[cassandra-常用篇]]></title>
     <url>%2F2019%2F05%2F15%2Fcassandra-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[cassandra mac os 安装 shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool describecluster 查看节点状态1nodetool status 重启节点1sudo systemctl restart scylla-server Cql操作查看版本1SHOW VERSION keyspaces 操作1234#查看desc keyspaces;#使用use keyspaceName 查看表12345#table listdescribe tables;#查看表结构describe table table_name;]]></content>
+    <content type="text"><![CDATA[cassandra mac os 安装 shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool describecluster 查看节点状态1nodetool status 重启节点1sudo systemctl restart scylla-server 查看系统相关日志信息1sudo journalctl --follow _UID=`id -u scylla` Cql操作查看版本12345SHOW VERSIONOR SELECT release_version from system.local; 查看Schema 信息1SELECT * FROM system_schema.keyspaces; keyspaces 操作1234#查看desc keyspaces;#使用use keyspaceName 查看表12345#table listdescribe tables;#查看表结构describe table table_name; 修改keyspaces 的副本1ALTER KEYSPACE library WITH REPLICATION = &#123; &apos;class&apos; : &apos;SimpleStrategy&apos;, &apos;replication_factor&apos; : 1 &#125;;]]></content>
       <categories>
         <category>cassandra</category>
       </categories>
@@ -408,14 +436,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[grafana-学习篇]]></title>
-    <url>%2F2019%2F04%2F28%2Fgrafana-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <title><![CDATA[grafana-资料篇]]></title>
+    <url>%2F2019%2F04%2F28%2Fgrafana-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
     <content type="text"><![CDATA[参考地址： 官网 官网视频 安装插件 插件安装步骤 插件搜索]]></content>
       <categories>
         <category>grafana</category>
       </categories>
       <tags>
-        <tag>grafana-学习篇</tag>
+        <tag>grafana-资料篇</tag>
       </tags>
   </entry>
   <entry>
