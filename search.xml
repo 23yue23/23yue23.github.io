@@ -45,14 +45,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[hexo-实战篇]]></title>
-    <url>%2F2019%2F07%2F10%2Fhexo-%E5%AE%9E%E6%88%98%E7%AF%87%2F</url>
+    <title><![CDATA[hexo-常用篇]]></title>
+    <url>%2F2019%2F07%2F10%2Fhexo-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[创建新文件 12在当前总目录下hexo new &quot;hexo之基本操作&quot; 清除缓存更新部署1hexo clean &amp;&amp; hexo g -d]]></content>
       <categories>
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>hexo-实战篇</tag>
+        <tag>hexo-常用篇</tag>
       </tags>
   </entry>
   <entry>
