@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-09-27T05:45:04.862Z</updated>
+  <updated>2019-09-27T08:56:12.590Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>A目录</title>
+    <link href="https://23yue23.github.io/2019/09/27/A%E7%9B%AE%E5%BD%95/"/>
+    <id>https://23yue23.github.io/2019/09/27/A目录/</id>
+    <published>2019-09-27T08:27:39.000Z</published>
+    <updated>2019-09-27T08:56:12.590Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="语言基础和算法篇："><a href="#语言基础和算法篇：" class="headerlink" title="语言基础和算法篇："></a>语言基础和算法篇：</h4><h5 id="Java："><a href="#Java：" class="headerlink" title="Java："></a>Java：</h5><blockquote><p>基础篇<br>jvm<br>并发<br>多线程<br>定时器<br>guava </p></blockquote><h5 id="scala"><a href="#scala" class="headerlink" title="scala"></a>scala</h5><h5 id="python"><a href="#python" class="headerlink" title="python"></a>python</h5><h5 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h5><h5 id="数据结构篇："><a href="#数据结构篇：" class="headerlink" title="数据结构篇："></a>数据结构篇：</h5><p>####大数据篇</p><blockquote><p>Hadoop<br>flume<br>sqoop<br>kafka<br>hive<br>clickhouse<br>hbase</p></blockquote><h4 id="实时篇"><a href="#实时篇" class="headerlink" title="实时篇"></a>实时篇</h4><blockquote><p>Flink<br>sparkStreaming</p></blockquote><h4 id="olap-篇"><a href="#olap-篇" class="headerlink" title="olap 篇"></a>olap 篇</h4><blockquote><p>superset<br>zeppelin<br>kylin </p></blockquote><p>####应用篇：</p><blockquote><p>Spring(系列)<br>adminETL<br>ldap<br>nginx<br>maven</p></blockquote><h4 id="数据库篇"><a href="#数据库篇" class="headerlink" title="数据库篇"></a>数据库篇</h4><blockquote><p>mysql<br>redis<br>cassandra<br>druid  </p></blockquote><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><blockquote><p>ELK </p></blockquote><h4 id="监控篇："><a href="#监控篇：" class="headerlink" title="监控篇："></a>监控篇：</h4><blockquote><p>Granfana<br>promethus<br>zabbix</p></blockquote><h4 id="调度篇"><a href="#调度篇" class="headerlink" title="调度篇"></a>调度篇</h4><blockquote><p>Azkaban<br>airflow</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;语言基础和算法篇：&quot;&gt;&lt;a href=&quot;#语言基础和算法篇：&quot; class=&quot;headerlink&quot; title=&quot;语言基础和算法篇：&quot;&gt;&lt;/a&gt;语言基础和算法篇：&lt;/h4&gt;&lt;h5 id=&quot;Java：&quot;&gt;&lt;a href=&quot;#Java：&quot; class=&quot;header
+      
+    
+    </summary>
+    
+      <category term="A目录" scheme="https://23yue23.github.io/categories/A%E7%9B%AE%E5%BD%95/"/>
+    
+    
+      <category term="A目录" scheme="https://23yue23.github.io/tags/A%E7%9B%AE%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>面试资料</title>
@@ -359,20 +384,6 @@
     <id>https://23yue23.github.io/2019/09/25/superset-资料篇/</id>
     <published>2019-09-25T03:11:59.000Z</published>
     <updated>2019-09-25T03:11:59.512Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>zeppelin-学习篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/zeppelin-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/zeppelin-学习篇/</id>
-    <published>2019-09-25T03:11:25.000Z</published>
-    <updated>2019-09-25T03:11:25.454Z</updated>
     
     <summary type="html">
     
