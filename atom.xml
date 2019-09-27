@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-09-25T06:44:56.105Z</updated>
+  <updated>2019-09-27T05:45:04.862Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -21,13 +21,21 @@
     <link href="https://23yue23.github.io/2019/09/25/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
     <id>https://23yue23.github.io/2019/09/25/面试资料/</id>
     <published>2019-09-25T06:44:17.000Z</published>
-    <updated>2019-09-25T06:44:56.105Z</updated>
+    <updated>2019-09-27T05:45:04.862Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.语言类</p><blockquote><p><a href="https://mp.weixin.qq.com/s/11vry9estQtQmQnRnbTksQ" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/VIUlROU2hhz7oeOFTVC5sA" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/n7u4nIvpyjMjTA4Yo1w5JQ" target="_blank" rel="noopener">sql</a></p></blockquote><p>知识扩展：<br>1.<a href="https://mp.weixin.qq.com/s/hccUo170_8lhdv6C3OzGzw" target="_blank" rel="noopener">推荐系统实现</a></p><p>2.<a href="https://mp.weixin.qq.com/s/tek6kQb7t8tRQi8OiOj3Zw" target="_blank" rel="noopener">用户行为数据收集系统-(1)简介</a></p><p>3.<a href="https://mp.weixin.qq.com/s/OTNSptAO01y5gAwnSRpZZQ" target="_blank" rel="noopener">用户行为数据收集系统–(2)客户端SDK设计</a></p><p>4.<a href="https://mp.weixin.qq.com/s/rQnqsALpqPnN0RoTOyFJow" target="_blank" rel="noopener">用户行为数据收集系统–(3)数据接收端设计</a></p><p>5.<a href="https://mp.weixin.qq.com/s/ffFy6eE_N5QKn_-o6mqQ5g" target="_blank" rel="noopener">大数据世界</a></p>]]></content>
     
     <summary type="html">
     
-    </summary>
+      
+      
+        &lt;p&gt;1.语言类&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/11vry9estQtQmQnRnbTksQ&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;scala&lt;/a&gt;&lt;/p&gt;
+&lt;/bloc
+      
     
-      <category term="面试" scheme="https://23yue23.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    </summary>
     
     
       <category term="面试资料" scheme="https://23yue23.github.io/tags/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
