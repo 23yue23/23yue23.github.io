@@ -90,7 +90,7 @@
     <link href="https://23yue23.github.io/2019/09/25/cassandra-%E8%B5%84%E6%96%99%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/09/25/cassandra-资料篇/</id>
     <published>2019-09-25T05:05:43.000Z</published>
-    <updated>2019-09-25T05:06:45.821Z</updated>
+    <updated>2019-09-25T10:02:19.749Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Youte-视频"><a href="#Youte-视频" class="headerlink" title="Youte 视频"></a>Youte 视频</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DataStax Accelerate 2019 — Full Session Recordings： </span><br><span class="line">https://www.youtube.com/playlist?list=PLm-EPIkBI3YpJbuKUGDlZVNHzT0umcBSl 大概85个视频，涉及到cassandra各个方面。</span><br><span class="line">下次会议是 https://apachecon.com/acna19/s/#/schedule?search=cassandra </span><br><span class="line">可以关注下</span><br><span class="line">https://issues.apache.org/jira/browse/CASSANDRA-11815</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -103,6 +103,10 @@
     
     </summary>
     
+      <category term="cassandra" scheme="https://23yue23.github.io/categories/cassandra/"/>
+    
+    
+      <category term="cassandra-资料篇" scheme="https://23yue23.github.io/tags/cassandra-%E8%B5%84%E6%96%99%E7%AF%87/"/>
     
   </entry>
   

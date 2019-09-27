@@ -145,7 +145,7 @@
 <meta property="og:site_name" content="蜗牛笔记">
 <meta property="og:description" content="为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？ Cassandra是一个基于gossip协议的分布式系统，监听地址是用来告诉其它节点来访问的，告诉别的节点说“连接我任何地址都可以”，是一个糟糕的想法，如果集群中不同的节点使用了不同方式的地址，悲剧的事情就要发生了。如果你不想为你集群中的每个节点单独配置ip（非常可以理解）,你可以不配，空着它，Cassandra">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T03:37:07.776Z">
+<meta property="og:updated_time" content="2019-09-25T10:05:42.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cassandra-问题篇">
 <meta name="twitter:description" content="为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？ Cassandra是一个基于gossip协议的分布式系统，监听地址是用来告诉其它节点来访问的，告诉别的节点说“连接我任何地址都可以”，是一个糟糕的想法，如果集群中不同的节点使用了不同方式的地址，悲剧的事情就要发生了。如果你不想为你集群中的每个节点单独配置ip（非常可以理解）,你可以不配，空着它，Cassandra">
@@ -529,6 +529,9 @@
 <h4 id="caching-增加导致负载升高"><a href="#caching-增加导致负载升高" class="headerlink" title="caching 增加导致负载升高"></a>caching 增加导致负载升高</h4><blockquote>
 <p>解决：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Not enough replica available for query at consistency ONE (1 required but only 0 alive)</span><br><span class="line">https://issues.apache.org/jira/browse/CASSANDRA-7905</span><br><span class="line">https://issues.apache.org/jira/browse/CASSANDRA-11815</span><br><span class="line">https://stackoverflow.com/questions/27974911/not-enough-replica-available-for-query-at-consistency-one-1-required-but-only-0</span><br><span class="line">复制数据的官网解释：</span><br><span class="line">https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureDataDistributeReplication_c.html</span><br><span class="line">https://docs.datastax.com/en/archived/cassandra/2.1/cassandra/operations/ops_add_dc_to_cluster_t.html</span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<h4 id="Cassandra-received-an-invalid-gossip-generation-for-peer"><a href="#Cassandra-received-an-invalid-gossip-generation-for-peer" class="headerlink" title="Cassandra received an invalid gossip generation for peer"></a>Cassandra received an invalid gossip generation for peer</h4><blockquote>
+<p>解决：<br><a href="https://stackoverflow.com/questions/40676589/cassandra-received-an-invalid-gossip-generation-for-peer" target="_blank" rel="noopener">链接</a></p>
+</blockquote>
 <h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://zhaoyanblog.com/archives/957.html" target="_blank" rel="noopener">赵岩</a></p>
 
       
@@ -698,7 +701,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -709,7 +712,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -801,7 +804,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么不可以设置listen-address为0-0-0-0（意思是监听所有地址）？"><span class="nav-number">1.</span> <span class="nav-text">为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cassandra用了哪些端口？"><span class="nav-number">2.</span> <span class="nav-text">cassandra用了哪些端口？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当往集群中增加新节点的时候，对于存在的数据发生了什么？"><span class="nav-number">3.</span> <span class="nav-text">当往集群中增加新节点的时候，对于存在的数据发生了什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我删除了数据，但是磁盘使用率没有变化，这是为什么？"><span class="nav-number">4.</span> <span class="nav-text">我删除了数据，但是磁盘使用率没有变化，这是为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么用nodetool-ring只能看到一条记录？-即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。"><span class="nav-number">5.</span> <span class="nav-text">为什么用nodetool ring只能看到一条记录？ 即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我可以修改一个正在运行中的集群中的keyspace的副本因子吗？"><span class="nav-number">6.</span> <span class="nav-text">我可以修改一个正在运行中的集群中的keyspace的副本因子吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以使用cassandra存储大的二进制字段吗？"><span class="nav-number">7.</span> <span class="nav-text">可以使用cassandra存储大的二进制字段吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nodetool连接远程服务器的时候，提示“Connection-refused-to-host-127-0-1-1”-，这是为什么？"><span class="nav-number">8.</span> <span class="nav-text">Nodetool连接远程服务器的时候，提示“Connection refused to host: 127.0.1.1” ，这是为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端口占用"><span class="nav-number">9.</span> <span class="nav-text">端口占用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本不一致"><span class="nav-number">10.</span> <span class="nav-text">版本不一致</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#All-host-s-tried-for-query-failed"><span class="nav-number">11.</span> <span class="nav-text">All host(s) tried for query failed</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cannot-build-a-cluster-without-contact-points"><span class="nav-number">12.</span> <span class="nav-text">Cannot build a cluster without contact points</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#caching-增加导致负载升高"><span class="nav-number">13.</span> <span class="nav-text">caching 增加导致负载升高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">14.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么不可以设置listen-address为0-0-0-0（意思是监听所有地址）？"><span class="nav-number">1.</span> <span class="nav-text">为什么不可以设置listen_address为0.0.0.0（意思是监听所有地址）？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cassandra用了哪些端口？"><span class="nav-number">2.</span> <span class="nav-text">cassandra用了哪些端口？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当往集群中增加新节点的时候，对于存在的数据发生了什么？"><span class="nav-number">3.</span> <span class="nav-text">当往集群中增加新节点的时候，对于存在的数据发生了什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我删除了数据，但是磁盘使用率没有变化，这是为什么？"><span class="nav-number">4.</span> <span class="nav-text">我删除了数据，但是磁盘使用率没有变化，这是为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么用nodetool-ring只能看到一条记录？-即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。"><span class="nav-number">5.</span> <span class="nav-text">为什么用nodetool ring只能看到一条记录？ 即便所有节点输出的日志里可以看出，他们都发现彼此加入到了这个ring。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我可以修改一个正在运行中的集群中的keyspace的副本因子吗？"><span class="nav-number">6.</span> <span class="nav-text">我可以修改一个正在运行中的集群中的keyspace的副本因子吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以使用cassandra存储大的二进制字段吗？"><span class="nav-number">7.</span> <span class="nav-text">可以使用cassandra存储大的二进制字段吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nodetool连接远程服务器的时候，提示“Connection-refused-to-host-127-0-1-1”-，这是为什么？"><span class="nav-number">8.</span> <span class="nav-text">Nodetool连接远程服务器的时候，提示“Connection refused to host: 127.0.1.1” ，这是为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端口占用"><span class="nav-number">9.</span> <span class="nav-text">端口占用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本不一致"><span class="nav-number">10.</span> <span class="nav-text">版本不一致</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#All-host-s-tried-for-query-failed"><span class="nav-number">11.</span> <span class="nav-text">All host(s) tried for query failed</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cannot-build-a-cluster-without-contact-points"><span class="nav-number">12.</span> <span class="nav-text">Cannot build a cluster without contact points</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#caching-增加导致负载升高"><span class="nav-number">13.</span> <span class="nav-text">caching 增加导致负载升高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cassandra-received-an-invalid-gossip-generation-for-peer"><span class="nav-number">14.</span> <span class="nav-text">Cassandra received an invalid gossip generation for peer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">15.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -835,7 +838,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">22k</span>
+    <span title="Site words total count">21.5k</span>
   
 </div>
 
