@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-09-27T08:56:12.590Z</updated>
+  <updated>2019-09-30T02:02:40.273Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -17,13 +17,195 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>IDEA使用篇</title>
+    <link href="https://23yue23.github.io/2019/09/30/IDEA%E4%BD%BF%E7%94%A8%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/09/30/IDEA使用篇/</id>
+    <published>2019-09-30T01:14:36.000Z</published>
+    <updated>2019-09-30T02:02:40.273Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h4><blockquote></blockquote><p><a href="https://www.lovesofttech.com/general/IDEA/" target="_blank" rel="noopener">IntelliJ IDEA，使用心得汇总</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;资料&quot;&gt;&lt;a href=&quot;#资料&quot; class=&quot;headerlink&quot; title=&quot;资料&quot;&gt;&lt;/a&gt;资料&lt;/h4&gt;&lt;blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.lovesofttech.com/gener
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://23yue23.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="IDEA使用篇" scheme="https://23yue23.github.io/tags/IDEA%E4%BD%BF%E7%94%A8%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>其他问题篇</title>
+    <link href="https://23yue23.github.io/2019/09/29/%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/09/29/其他问题篇/</id>
+    <published>2019-09-29T09:09:53.000Z</published>
+    <updated>2019-09-29T09:11:08.241Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="lovesofttech.com/mac/macPort/">mac 的netstat 与 linux netstat 不同</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;lovesofttech.com/mac/macPort/&quot;&gt;mac 的netstat 与 linux netstat 不同&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="其他问题篇" scheme="https://23yue23.github.io/categories/%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    
+    
+      <category term="其他问题篇" scheme="https://23yue23.github.io/tags/%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>haproxy-资料篇</title>
+    <link href="https://23yue23.github.io/2019/09/29/haproxy-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/09/29/haproxy-资料篇/</id>
+    <published>2019-09-29T08:22:31.000Z</published>
+    <updated>2019-09-29T08:30:28.349Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="https://www.ilanni.com/?p=10009" target="_blank" rel="noopener">高负载均衡学习haproxy之关键词介绍</a><br><a href="https://www.ilanni.com/?p=10016" target="_blank" rel="noopener">高负载均衡学习haproxy之配置文件详解</a><br><a href="https://www.cnblogs.com/ilanni/p/4750081.html" target="_blank" rel="noopener">高负载均衡学习haproxy之安装与配置</a></p></blockquote><blockquote><p><a href="https://www.ilanni.com/?p=10026" target="_blank" rel="noopener">高负载均衡学习haproxy之TCP应用</a></p></blockquote><blockquote><p><a href="https://www.ilanni.com/?p=10676" target="_blank" rel="noopener">haproxy与nginx、zabbix集成</a><br><a href="https://www.ilanni.com/?p=10641" target="_blank" rel="noopener">haproxy学习之https配置</a><br><a href>haproxy学习之手机规则匹配</a></p></blockquote><blockquote><p><a href="http://www.ttlsa.com/linux/haproxy-study-tutorial/" target="_blank" rel="noopener">HAProxy用法详解 全网最详细中文文档</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ilanni.com/?p=10009&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;高负载均衡学习haproxy之关键词介绍&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.il
+      
+    
+    </summary>
+    
+      <category term="haproxy-资料篇" scheme="https://23yue23.github.io/categories/haproxy-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    
+    
+      <category term="haproxy-资料篇" scheme="https://23yue23.github.io/tags/haproxy-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>haproxy-常用篇</title>
+    <link href="https://23yue23.github.io/2019/09/29/haproxy-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/09/29/haproxy-常用篇/</id>
+    <published>2019-09-29T07:44:12.000Z</published>
+    <updated>2019-09-29T08:48:28.364Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><blockquote><p>mac 安装</p></blockquote> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">安装：brew install haproxy</span><br><span class="line">查看版本：haproxy -v</span><br><span class="line">创建haproxy.cfg 文件</span><br><span class="line">检测文件：haproxy -c -f /usr/local/etc/haproxy.cfg  </span><br><span class="line"></span><br><span class="line">执行文件：</span><br><span class="line">haproxy -f /usr/local/etc/haproxy.cfg -d</span><br></pre></td></tr></table></figure><blockquote><p>配置文件模版</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"># 全局配置</span><br><span class="line">global</span><br><span class="line">    log 127.0.0.1 local0         # 设置日志</span><br><span class="line">    log 127.0.0.1 local1 notice</span><br><span class="line">    maxconn 4000                 # 最大连接数</span><br><span class="line">    chroot /usr/local/haproxy    # 安装目录</span><br><span class="line">    user haproxy</span><br><span class="line">    group haproxy</span><br><span class="line">    daemon                       # 守护进程运行</span><br><span class="line">    #nbproc 1                    # 进程数量，只能用于守护进程模式的haproxy；默认启动一个进程，一般只在单进程仅能打开少数文件描述符的场景中才使用多进程模式；</span><br><span class="line">    pidfile /var/run/haproxy.pid</span><br><span class="line"></span><br><span class="line"># 默认配置</span><br><span class="line">defaults</span><br><span class="line">    log     global</span><br><span class="line">    mode    http                 # 默认的模式mode &#123; tcp|http|health &#125;，tcp是4层，http是7层，health只会返回OK</span><br><span class="line">    option  httplog              # http 日志格式</span><br><span class="line">    option dontlognull           # 不记录健康检查日志信息；</span><br><span class="line">    option  redispatch           # serverId对应的服务器挂掉后,强制定向到其他健康的服务器</span><br><span class="line">    option http-server-close</span><br><span class="line">    #option  abortonclose        # 当服务器负载很高的时候，自动结束掉当前队列处理比较久的链接；</span><br><span class="line">    #option  forwardfor          # 如果后端服务器需要获得客户端真实ip需要配置的参数，可以从Http Header中获得客户端ip；</span><br><span class="line">    #option  httpclose           # 主动关闭http通道,每次请求完毕后主动关闭http通道,ha-proxy不支持keep-alive,只能模拟这种模式的实现;  </span><br><span class="line">    balance roundrobin           # 负载均衡算法,轮询；</span><br><span class="line">    retries 3                    # 重试次数；</span><br><span class="line"></span><br><span class="line">    timeout http-request  10s    # 客户端建立连接但不请求数据时，关闭客户端连接；</span><br><span class="line">    timeout queue         1m     # 等待最大时长；</span><br><span class="line">    timeout connect 10s          # 定义haproxy将客户端请求转发至后端服务器所等待的超时时间；</span><br><span class="line">    timeout client 1m            # 客户端非活动状态的超长时间(默认毫秒)</span><br><span class="line">    timeout server 1m            # 客户端与服务器建立连接后，等待服务器端的超时时长(默认毫秒)</span><br><span class="line">    timeout http-keep-alive 10s  # 定义保持连接的超时时长；</span><br><span class="line">    timeout check 10s            # 心跳检测超时；</span><br><span class="line">    maxconn 3000                 # 每个server最大的连接数；</span><br><span class="line"></span><br><span class="line"># 统计页面配置</span><br><span class="line">listen admin_stats  </span><br><span class="line">    bind 0.0.0.0:50000           # 监听IP和端口，为了安全可以设置本机的局域网IP及端口；</span><br><span class="line">    mode http</span><br><span class="line">    option httplog               # 采用http日志格式  </span><br><span class="line">    stats refresh 30s            # 统计页面自动刷新时间  </span><br><span class="line">    stats uri /haproxy?stats     # 状态管理页面，通过/haproxy?stats来访问</span><br><span class="line">    stats realm Haproxy Manager  # 统计页面密码框上提示文本  </span><br><span class="line">    stats auth admin:psadmin     # 统计页面用户名和密码设置  </span><br><span class="line">    #stats hide-version          # 隐藏统计页面上HAProxy的版本信息</span><br><span class="line">    #errorfile 403 /usr/local/haproxy/examples/errorfiles/   #设置haproxy 错误页面</span><br><span class="line"></span><br><span class="line">#前端配置（多个frontend 必须绑定不同的IP或者端口，否则数据会串，导致映射到不同的后端而报错）</span><br><span class="line"></span><br><span class="line">frontend http_main</span><br><span class="line">    bind 0.0.0.0:80              # http请求的端口，会被转发到设置的ip及端口</span><br><span class="line"></span><br><span class="line">    # 转发规则</span><br><span class="line">    #acl url_yuming   path_beg www.yuming.com</span><br><span class="line">    #use_backend server_yuming if url_yuming</span><br><span class="line"></span><br><span class="line">    # 默认跳转项，当上面都没有匹配上，就转到backend的http_default上；</span><br><span class="line">    default_backend http_default</span><br><span class="line"></span><br><span class="line">    # 提升失败的时候的用户体验</span><br><span class="line">    #errorfile 502 /usr/local/haproxy/examples/errorfiles/502.http</span><br><span class="line">    #errorfile 503 /usr/local/haproxy/examples/errorfiles/503.http</span><br><span class="line">    #errorfile 504 /usr/local/haproxy/examples/errorfiles/504.http</span><br><span class="line"></span><br><span class="line"># 后端配置</span><br><span class="line">backend http_default</span><br><span class="line">    # 额外的一些设置，按需使用</span><br><span class="line">    option forwardfor</span><br><span class="line">    option forwardfor header Client-IP</span><br><span class="line">    option http-server-close</span><br><span class="line">    option httpclose</span><br><span class="line"></span><br><span class="line">    # 负载均衡方式</span><br><span class="line">    #source 根据请求源IP</span><br><span class="line">    #static-rr 根据权重</span><br><span class="line">    #leastconn 最少连接先处理;在有着较长时间会话的场景中推荐使用此算法，如LDAP、SQL等，其并不太适用于较短会话的应用层协议，如HTTP；此算法是动态的，</span><br><span class="line">    #uri 根据请求的uri</span><br><span class="line">    #url_param 根据请求的url参数</span><br><span class="line">    #rdp-cookie 据据cookie(name)来锁定并哈希每一次请求</span><br><span class="line">    #hdr(name) 根据HTTP请求头来锁定每一次HTTP请求</span><br><span class="line">    #roundrobin 轮询方式</span><br><span class="line">    balance roundrobin           # 负载均衡的方式,轮询方式</span><br><span class="line"></span><br><span class="line">    # 设置健康检查页面</span><br><span class="line">    #option httpchk GET /index.html</span><br><span class="line"></span><br><span class="line">    #传递客户端真实IP</span><br><span class="line">    option forwardfor header X-Forwarded-For</span><br><span class="line"></span><br><span class="line">    # 需要转发的ip及端口</span><br><span class="line">    # inter 2000 健康检查时间间隔2秒</span><br><span class="line">    # rise 3 检测多少次才认为是正常的</span><br><span class="line">    # fall 3 失败多少次才认为是不可用的</span><br><span class="line">    # weight 30 权重</span><br><span class="line">    server node1 192.168.1.101:8080 check inter 2000 rise 3 fall 3 weight 30</span><br><span class="line">    server node2 192.168.1.101:8081 check inter 2000 rise 3 fall 3 weight 30</span><br></pre></td></tr></table></figure><blockquote><p>配置介绍</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">global: nbproc 默认是 1 ，我的 CPU 是 4 核 8 线程，这里就设置成了 8</span><br><span class="line">backend: &lt;your server ip&gt; 、 &lt;port&gt; 替换成你的 SS 服务器 IP 和端口</span><br><span class="line">backend: check 健康检查</span><br><span class="line">backend: inter 心跳频率</span><br><span class="line">backend: rise 将服务器标记为可用 的次数</span><br><span class="line">backend: fall 将服务器标记为不可用 的次数</span><br></pre></td></tr></table></figure><blockquote><p>实战</p></blockquote><blockquote><blockquote><p>1.启动hiveServer<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup hive --service hiveserver2 --hiveconf hive.fetch.task.conversion=none --hiveconf hive.exec.scratchdir=/tmp/hive-hadoop-offline --hiveconf hive.exec.local.scratchdir=/tmp/hive-root --hiveconf hive.server2.enable.doAs=false --hiveconf hive.server2.long.polling.timeout=50000 --hiveconf hive.root.logger=INFO,console --hiveconf hive.exec.mode.local.auto=false --hiveconf hadoop.proxyuser.root.groups=* --hiveconf hadoop.proxyuser.root.hosts=* --hiveconf hive.server2.webui.port=10034 --hiveconf hive.server2.thrift.port=10035 --hiveconf hive.mapred.reduce.tasks.speculative.execution=false --hiveconf hive.mapred.map.tasks.speculative.execution=false --hiveconf mapreduce.job.reduce.slowstart.completedmaps=1 &gt; ./hiveServer_10035.log&amp;</span><br></pre></td></tr></table></figure></p></blockquote></blockquote><blockquote><blockquote><p>2.配置haproxy.cfg<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">global</span><br><span class="line">                daemon</span><br><span class="line">                nbproc 1</span><br><span class="line">                pidfile /data/hiveServer_service/haproxy/pid</span><br><span class="line">                ulimit-n 65535</span><br><span class="line">defaults</span><br><span class="line">                mode tcp</span><br><span class="line">                retries 2</span><br><span class="line">                option redispatch</span><br><span class="line">                option abortonclose</span><br><span class="line">                maxconn 1024</span><br><span class="line">                timeout connect 1d</span><br><span class="line">                timeout client 1d</span><br><span class="line">                timeout server 1d</span><br><span class="line">                timeout check 2000</span><br><span class="line">                log 127.0.0.1 local0 err</span><br><span class="line">listen admin_stats</span><br><span class="line">                bind 0.0.0.0:10021</span><br><span class="line">                mode http</span><br><span class="line">                maxconn 10</span><br><span class="line">                stats refresh 30s</span><br><span class="line">                stats uri /</span><br><span class="line">                stats realm Hive\ Haproxy</span><br><span class="line">                stats auth admin:123456</span><br><span class="line">listen hive_common</span><br><span class="line">                bind 0.0.0.0:10025</span><br><span class="line">                mode tcp</span><br><span class="line">                balance roundrobin</span><br><span class="line">                maxconn 1024</span><br><span class="line">                server hive_common_01_10009 127.0.0.1:10009 check inter 180000 rise 1 fall 2</span><br><span class="line">                server hive_common_02_10011 127.0.0.1:10011 check inter 180000 rise 1 fall 2</span><br><span class="line">                server hive_common_03_10013 127.0.0.1:10013 check inter 180000 rise 1 fall 2</span><br><span class="line"></span><br><span class="line">listen hive_dataplatform_offline</span><br><span class="line">                bind 0.0.0.0:10023</span><br><span class="line">                mode tcp</span><br><span class="line">                balance roundrobin</span><br><span class="line">                maxconn 1024</span><br><span class="line">                server hive_dataplatform_offline_01_10015 127.0.0.1:10015 check inter 180000 rise 1 fall 2</span><br><span class="line">                server hive_dataplatform_offline_02_10017 127.0.0.1:10017 check inter 180000 rise 1 fall 2</span><br><span class="line"></span><br><span class="line">listen hive_scientist_offline</span><br><span class="line">                bind 0.0.0.0:10026</span><br><span class="line">                mode tcp</span><br><span class="line">                balance roundrobin</span><br><span class="line">                maxconn 1024</span><br><span class="line">                server hive_scientist_offline_01_10031 127.0.0.1:10031 check inter 180000 rise 1 fall 2</span><br><span class="line">                server hive_scientist_offline_02_10033 127.0.0.1:10033 check inter 180000 rise 1 fall 2</span><br></pre></td></tr></table></figure></p></blockquote></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;mac 安装&lt;/p&gt;
+&lt;/blockquote&gt;
+ &lt;figure class=&quot;highlight plain&quot;
+      
+    
+    </summary>
+    
+      <category term="haproxy-常用篇" scheme="https://23yue23.github.io/categories/haproxy-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    
+    
+      <category term="haproxy-常用篇" scheme="https://23yue23.github.io/tags/haproxy-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql-常用篇</title>
+    <link href="https://23yue23.github.io/2019/09/29/mysql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/09/29/mysql-常用篇/</id>
+    <published>2019-09-29T06:28:11.000Z</published>
+    <updated>2019-09-29T06:44:14.882Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="mysql-mac-安装"><a href="#mysql-mac-安装" class="headerlink" title="mysql-mac 安装"></a>mysql-mac 安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br><span class="line">unset TMPDIR</span><br><span class="line">mysql_install_db --verbose --user=`whoami` --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp</span><br></pre></td></tr></table></figure><h4 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h4><blockquote><p>conf</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/etc/my.cnf</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;mysql-mac-安装&quot;&gt;&lt;a href=&quot;#mysql-mac-安装&quot; class=&quot;headerlink&quot; title=&quot;mysql-mac 安装&quot;&gt;&lt;/a&gt;mysql-mac 安装&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="mysql-常用篇" scheme="https://23yue23.github.io/categories/mysql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    
+    
+      <category term="mysql-常用篇" scheme="https://23yue23.github.io/tags/mysql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kafka-常用篇</title>
+    <link href="https://23yue23.github.io/2019/09/29/kafka-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/09/29/kafka-常用篇/</id>
+    <published>2019-09-29T05:36:02.000Z</published>
+    <updated>2019-09-29T05:37:14.834Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="启动kafka"><a href="#启动kafka" class="headerlink" title="启动kafka"></a>启动kafka</h5> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh bin/kafka-server-start.sh config/server.properties</span><br></pre></td></tr></table></figure><hr><h5 id="创建topic-分区数"><a href="#创建topic-分区数" class="headerlink" title="创建topic 分区数"></a>创建topic 分区数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh kafka-topics.sh --create --topic kafkatopic --replication-factor 1 --partitions 1 --zookeeper localhost:2181</span><br></pre></td></tr></table></figure><h5 id="查看topic"><a href="#查看topic" class="headerlink" title="查看topic"></a>查看topic</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash bin/kafka-topics.sh --list --zookeeper localhost:2181</span><br></pre></td></tr></table></figure><hr><h5 id="启动producer"><a href="#启动producer" class="headerlink" title="启动producer"></a>启动producer</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh kafka-console-producer.sh --broker-list localhost:9092 --sync --topic kafkatopic</span><br></pre></td></tr></table></figure><hr><h5 id="启动consumer"><a href="#启动consumer" class="headerlink" title="启动consumer"></a>启动consumer</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh kafka-console-consumer.sh --zookeeper localhost:2181 --topic kafkatopic --from-beginning</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;启动kafka&quot;&gt;&lt;a href=&quot;#启动kafka&quot; class=&quot;headerlink&quot; title=&quot;启动kafka&quot;&gt;&lt;/a&gt;启动kafka&lt;/h5&gt; &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class
+      
+    
+    </summary>
+    
+      <category term="kafka-常用篇" scheme="https://23yue23.github.io/categories/kafka-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    
+    
+      <category term="kafka-常用篇" scheme="https://23yue23.github.io/tags/kafka-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>心灵笔录</title>
+    <link href="https://23yue23.github.io/2019/09/29/%E5%BF%83%E7%81%B5%E7%AC%94%E5%BD%95/"/>
+    <id>https://23yue23.github.io/2019/09/29/心灵笔录/</id>
+    <published>2019-09-29T04:39:37.000Z</published>
+    <updated>2019-09-29T05:01:15.439Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">凡事都有因果，万事皆有源头</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不是要做到对，而是要做到位</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">正因为难所以值钱</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简单粗暴高效，慢的话你连地铁都挤不上</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编程不编不成</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不会，立刻马上去学</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">天上飞的理念，必有落地实现。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">自律方能自由。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用进废退.</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小孩子才有正错，成年人的世界只有利弊成败。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择重于努力，方向重于速度。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">人家有背景，你有的是背影。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">今天的最后表现是明天的最低要求。自古成功靠强迫。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">刻意的训练+考点的重复。</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">今天的优势会被以后的趋势所取代。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">千羊在外，不如一鸟在手。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">多于同好争高下，不与傻逼论长短。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">没有无所谓，只有做到位。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">成大事的男人：第一不要脸，第二坚持不要脸，第三坚持长期不要脸。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">烧不死的鸟才是火凤凰。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">适用用尽则祸必来。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">好的开始是成功的全部。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">今天没有学习，明天就没有竞争力。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不要写问好的人，只要写句号的人。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">职场上只有0和100。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">程序员分类：1.功能型程序员 2.性能型程序员</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">男人的尊严是打出来的</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">职业化，专业化。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">深深的水，静静地流。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">狼性生存法则。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复杂复杂才是真。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">认真就赢了。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">怕啰嗦就一次做到位。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">少就事多（专一）。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">出来混，野蛮生长。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">帮你是情分，不帮是本分。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不会游泳，不停地换游泳池是没用的。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">脾气不要打过你的本事。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">加以时日你也行,但这些时日必须做到值得你铭记。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">工作起来像蚂蚁，生活起来像蝴蝶。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">若儿女情长，必英雄气短。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">跟对人，才能做对事。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">要想人前显贵，必定人后受罪。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">年轻人时间最重要。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">先投资自己的脑袋，再考虑自己的口袋</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你做不到不一定别人做不到。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">先顺着别人来，让他满意，然后再说特殊情况，来让他吃惊。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">雄心的一半是耐心</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">打败你的一定不是硬硬的困难，一定是软绵绵的诱惑。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">态度、行动、精神。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">深度的思考，重于刻苦的勤奋</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">程序员的懒是高度、深度、深刻的懒（深度思考）</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不要用你战术上的勤奋掩盖你战略上的懒惰。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">最舒服的日子永远是昨天。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">莫把行情当能力。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">拿钱来赚时间。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">人弱万事难。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当你没有见过最好的，你就常常以为自己所拥有的就是最好的，从而将自己禁锢在自己的小世界里，忘记了世界之大。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个见过大世面的人，会讲究能将就，能享受最好的，也能承受最坏的。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">人生不能省去的三件事：学习、旅游、健身。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">昨天的最好表现，是今天的最低要求</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">以后你流的泪是当初脑子进的水</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">生于忧患，死于安乐</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在中国干事有四个字：前提条件。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">跟女人的香水一样，闻闻可以，千万别喝。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">既然球场上要有人赢，为什么不是我。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你还能比现在还差吗？</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">职场上只有线程直播没有彩排</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">互联网只有作战和备战状态</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">伸头一刀缩头也是一刀，怕什么，伸头砍。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">地狱的尽头是天堂。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">想跳得高，要蹲着久(攒足了劲，一猛子跳起来)</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">北京专治各种不服</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">领导给一个？要竭尽全力还他一个。（简单粗暴）</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">日工一足，怕的是放弃</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个人至少拥有一个梦想，有一个理由去坚强。心若没有栖息的地方，到哪里都是在流浪</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不停的走下去就对了，人不可能一辈子走背字。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">都是一肩膀扛着一个脑袋，别人能做到的，你也能做到，做不到那时你还不够努力.</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">不攀，（不攀比权贵，如果你想有，可以通过自己的努力），</span><br><span class="line">不嫉（不嫉妒别人），</span><br><span class="line">不恶（不毁），</span><br><span class="line">不弃（不放弃提升自己）</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">要想有机会，首先你得从人群中冒出来，要想冒出来，你就必须做到与众不同，要做到与众不同，你就要做得更多！</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">芝兰生于深谷，不以无人而不芳。君子修身养德，不以穷困而改志。</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">生活太安逸了，工作就会被生活所累</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">管住嘴，迈开腿</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span cla
+      
+    
+    </summary>
+    
+      <category term="心灵笔录" scheme="https://23yue23.github.io/categories/%E5%BF%83%E7%81%B5%E7%AC%94%E5%BD%95/"/>
+    
+    
+      <category term="心灵笔录" scheme="https://23yue23.github.io/tags/%E5%BF%83%E7%81%B5%E7%AC%94%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>A目录</title>
     <link href="https://23yue23.github.io/2019/09/27/A%E7%9B%AE%E5%BD%95/"/>
     <id>https://23yue23.github.io/2019/09/27/A目录/</id>
     <published>2019-09-27T08:27:39.000Z</published>
-    <updated>2019-09-27T08:56:12.590Z</updated>
+    <updated>2019-09-27T09:09:31.626Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="语言基础和算法篇："><a href="#语言基础和算法篇：" class="headerlink" title="语言基础和算法篇："></a>语言基础和算法篇：</h4><h5 id="Java："><a href="#Java：" class="headerlink" title="Java："></a>Java：</h5><blockquote><p>基础篇<br>jvm<br>并发<br>多线程<br>定时器<br>guava </p></blockquote><h5 id="scala"><a href="#scala" class="headerlink" title="scala"></a>scala</h5><h5 id="python"><a href="#python" class="headerlink" title="python"></a>python</h5><h5 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h5><h5 id="数据结构篇："><a href="#数据结构篇：" class="headerlink" title="数据结构篇："></a>数据结构篇：</h5><p>####大数据篇</p><blockquote><p>Hadoop<br>flume<br>sqoop<br>kafka<br>hive<br>clickhouse<br>hbase</p></blockquote><h4 id="实时篇"><a href="#实时篇" class="headerlink" title="实时篇"></a>实时篇</h4><blockquote><p>Flink<br>sparkStreaming</p></blockquote><h4 id="olap-篇"><a href="#olap-篇" class="headerlink" title="olap 篇"></a>olap 篇</h4><blockquote><p>superset<br>zeppelin<br>kylin </p></blockquote><p>####应用篇：</p><blockquote><p>Spring(系列)<br>adminETL<br>ldap<br>nginx<br>maven</p></blockquote><h4 id="数据库篇"><a href="#数据库篇" class="headerlink" title="数据库篇"></a>数据库篇</h4><blockquote><p>mysql<br>redis<br>cassandra<br>druid  </p></blockquote><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><blockquote><p>ELK </p></blockquote><h4 id="监控篇："><a href="#监控篇：" class="headerlink" title="监控篇："></a>监控篇：</h4><blockquote><p>Granfana<br>promethus<br>zabbix</p></blockquote><h4 id="调度篇"><a href="#调度篇" class="headerlink" title="调度篇"></a>调度篇</h4><blockquote><p>Azkaban<br>airflow</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h4 id="语言基础和算法篇："><a href="#语言基础和算法篇：" class="headerlink" title="语言基础和算法篇："></a>语言基础和算法篇：</h4><h5 id="Java："><a href="#Java：" class="headerlink" title="Java："></a>Java：</h5><blockquote><p>基础篇<br>jvm<br>并发<br>多线程<br>定时器<br>guava </p></blockquote><h5 id="scala"><a href="#scala" class="headerlink" title="scala"></a>scala</h5><h5 id="python"><a href="#python" class="headerlink" title="python"></a>python</h5><h5 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h5><h5 id="数据结构篇："><a href="#数据结构篇：" class="headerlink" title="数据结构篇："></a>数据结构篇：</h5><p>####大数据篇</p><blockquote><p>Hadoop<br>flume<br>sqoop<br>kafka<br>hive<br>clickhouse<br>hbase</p></blockquote><h4 id="实时篇"><a href="#实时篇" class="headerlink" title="实时篇"></a>实时篇</h4><blockquote><p>Flink<br>sparkStreaming</p></blockquote><h4 id="olap-篇"><a href="#olap-篇" class="headerlink" title="olap 篇"></a>olap 篇</h4><blockquote><p>superset<br>zeppelin<br>kylin </p></blockquote><p>####应用篇：</p><blockquote><p>Spring(系列)<br>adminETL<br>ldap<br>nginx<br>maven</p></blockquote><h4 id="数据库篇"><a href="#数据库篇" class="headerlink" title="数据库篇"></a>数据库篇</h4><blockquote><p>mysql<br>redis<br>cassandra<br>druid  </p></blockquote><h4 id="搜索篇"><a href="#搜索篇" class="headerlink" title="搜索篇"></a>搜索篇</h4><blockquote><p>ELK </p></blockquote><h4 id="监控篇："><a href="#监控篇：" class="headerlink" title="监控篇："></a>监控篇：</h4><blockquote><p>Granfana<br>promethus<br>zabbix</p></blockquote><h4 id="调度篇"><a href="#调度篇" class="headerlink" title="调度篇"></a>调度篇</h4><blockquote><p>Azkaban<br>airflow</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -46,18 +228,16 @@
     <link href="https://23yue23.github.io/2019/09/25/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
     <id>https://23yue23.github.io/2019/09/25/面试资料/</id>
     <published>2019-09-25T06:44:17.000Z</published>
-    <updated>2019-09-27T05:45:04.862Z</updated>
+    <updated>2019-09-29T10:13:55.859Z</updated>
     
-    <content type="html"><![CDATA[<p>1.语言类</p><blockquote><p><a href="https://mp.weixin.qq.com/s/11vry9estQtQmQnRnbTksQ" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/VIUlROU2hhz7oeOFTVC5sA" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/n7u4nIvpyjMjTA4Yo1w5JQ" target="_blank" rel="noopener">sql</a></p></blockquote><p>知识扩展：<br>1.<a href="https://mp.weixin.qq.com/s/hccUo170_8lhdv6C3OzGzw" target="_blank" rel="noopener">推荐系统实现</a></p><p>2.<a href="https://mp.weixin.qq.com/s/tek6kQb7t8tRQi8OiOj3Zw" target="_blank" rel="noopener">用户行为数据收集系统-(1)简介</a></p><p>3.<a href="https://mp.weixin.qq.com/s/OTNSptAO01y5gAwnSRpZZQ" target="_blank" rel="noopener">用户行为数据收集系统–(2)客户端SDK设计</a></p><p>4.<a href="https://mp.weixin.qq.com/s/rQnqsALpqPnN0RoTOyFJow" target="_blank" rel="noopener">用户行为数据收集系统–(3)数据接收端设计</a></p><p>5.<a href="https://mp.weixin.qq.com/s/ffFy6eE_N5QKn_-o6mqQ5g" target="_blank" rel="noopener">大数据世界</a></p>]]></content>
+    <content type="html"><![CDATA[<h4 id="语言类"><a href="#语言类" class="headerlink" title="语言类"></a>语言类</h4><blockquote><p><a href="https://mp.weixin.qq.com/s/11vry9estQtQmQnRnbTksQ" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/VIUlROU2hhz7oeOFTVC5sA" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/n7u4nIvpyjMjTA4Yo1w5JQ" target="_blank" rel="noopener">sql</a></p></blockquote><h4 id="知识扩展："><a href="#知识扩展：" class="headerlink" title="知识扩展："></a>知识扩展：</h4><p>1.<a href="https://mp.weixin.qq.com/s/hccUo170_8lhdv6C3OzGzw" target="_blank" rel="noopener">推荐系统实现</a></p><p>2.<a href="https://mp.weixin.qq.com/s/tek6kQb7t8tRQi8OiOj3Zw" target="_blank" rel="noopener">用户行为数据收集系统-(1)简介</a></p><p>3.<a href="https://mp.weixin.qq.com/s/OTNSptAO01y5gAwnSRpZZQ" target="_blank" rel="noopener">用户行为数据收集系统–(2)客户端SDK设计</a></p><p>4.<a href="https://mp.weixin.qq.com/s/rQnqsALpqPnN0RoTOyFJow" target="_blank" rel="noopener">用户行为数据收集系统–(3)数据接收端设计</a></p><p>5.<a href="https://mp.weixin.qq.com/s/ffFy6eE_N5QKn_-o6mqQ5g" target="_blank" rel="noopener">大数据世界</a></p><h4 id="思想指导："><a href="#思想指导：" class="headerlink" title="思想指导："></a>思想指导：</h4><p><a href="https://www.lovesofttech.com/job/adviseForCandidates/" target="_blank" rel="noopener">指导</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;1.语言类&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/11vry9estQtQmQnRnbTksQ&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;scala&lt;/a&gt;&lt;/p&gt;
-&lt;/bloc
+        &lt;h4 id=&quot;语言类&quot;&gt;&lt;a href=&quot;#语言类&quot; class=&quot;headerlink&quot; title=&quot;语言类&quot;&gt;&lt;/a&gt;语言类&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/11vry9estQtQmQnRn
       
     
     </summary>
@@ -174,9 +354,16 @@
     <link href="https://23yue23.github.io/2019/09/25/grafana-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/09/25/grafana-常用篇/</id>
     <published>2019-09-25T03:34:07.000Z</published>
-    <updated>2019-09-25T03:43:03.749Z</updated>
+    <updated>2019-09-30T01:23:43.189Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="grafana-集成ldap"><a href="#grafana-集成ldap" class="headerlink" title="grafana 集成ldap"></a>grafana 集成ldap</h5><p><a href="https://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_liunx_51_ldap_for_grafana.html" target="_blank" rel="noopener">grafana集成ldap</a></p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;grafana-集成ldap&quot;&gt;&lt;a href=&quot;#grafana-集成ldap&quot; class=&quot;headerlink&quot; title=&quot;grafana 集成ldap&quot;&gt;&lt;/a&gt;grafana 集成ldap&lt;/h5&gt;&lt;p&gt;&lt;a href=&quot;https://www.c
+      
     
     </summary>
     
@@ -291,104 +478,6 @@
     
     
       <category term="hadoop-常用篇" scheme="https://23yue23.github.io/tags/hadoop-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>airflow-常用篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/airflow-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/airflow-常用篇/</id>
-    <published>2019-09-25T03:13:52.000Z</published>
-    <updated>2019-09-25T03:13:52.761Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Azkaban-常用篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/Azkaban-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/Azkaban-常用篇/</id>
-    <published>2019-09-25T03:13:34.000Z</published>
-    <updated>2019-09-25T03:13:34.455Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>kylin-常用篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/kylin-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/kylin-常用篇/</id>
-    <published>2019-09-25T03:13:05.000Z</published>
-    <updated>2019-09-25T03:13:05.922Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>kylin-资料篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/kylin-%E8%B5%84%E6%96%99%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/kylin-资料篇/</id>
-    <published>2019-09-25T03:12:51.000Z</published>
-    <updated>2019-09-25T03:12:51.616Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>kylin-学习篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/kylin-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/kylin-学习篇/</id>
-    <published>2019-09-25T03:12:40.000Z</published>
-    <updated>2019-09-25T03:12:40.464Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>superset-常用篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/superset-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/superset-常用篇/</id>
-    <published>2019-09-25T03:12:20.000Z</published>
-    <updated>2019-09-25T03:12:20.116Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>superset-资料篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/superset-%E8%B5%84%E6%96%99%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/superset-资料篇/</id>
-    <published>2019-09-25T03:11:59.000Z</published>
-    <updated>2019-09-25T03:11:59.512Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
