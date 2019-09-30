@@ -146,7 +146,7 @@
   <entry>
     <title><![CDATA[promethus-学习篇]]></title>
     <url>%2F2019%2F09%2F25%2Fpromethus-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[####grafana 安装和常用配置 #####常用配置12345678配置： 配置文件应位于/usr/local/etc/grafana/grafana.ini。日志： 日志文件应位于/usr/local/var/log/grafana/grafana.log。插件： 如果你想手动安装一个插件，请点击此处：/usr/local/var/lib/grafana/plugins。数据库： 默认的sqlite数据库位于 /usr/local/var/lib/grafana 下载安装1234wget https://dl.grafana.com/oss/release/grafana-6.3.5.linux-amd64.tar.gztar -zxvf grafana-6.3.5.linux-amd64.tar.gzconf/grafana.ini./bin/grafana-server web mac 安装方式123456789101112131415安装：brew install grafana执行：brew services start grafana重启：brew services restart grafana#Log/usr/local/var/log/grafana/grafana.log#conf/usr/local/etc/grafana/grafana.ini#plugins/usr/local/var/lib/grafana/plugins#database/usr/local/var/lib/grafana Metrics 类型Counter（计数器）123456#获取样本数据node_cpu&#123;cpu=&quot;cpu0&quot;,mode=&quot;idle”&#125; #通过rate()函数获取HTTP请求量的增长率rate(http_requests_total[5m])# 查询当前系统中，访问量前10的HTTP地址：topk(10, http_requests_total) Gauge 可增可减的仪表盘12预测系统磁盘空间在4个小时之后的剩余情况：predict_linear(node_filesystem_free&#123;job=&quot;node&quot;&#125;[1h], 4 * 3600) Histogram和Summary分析数据分布情况 PromQL基础基本函数语法123prometheus_http_requests_total 等价于prometheus_http_requests_total&#123;&#125; #####条件筛选123prometheus_http_requests_total&#123;instance=&quot;localhost:9090”&#125;不满足条件prometheus_http_requests_total&#123;instance!=&quot;localhost:9090”&#125; 123支持使用正则表达式作为匹配条件，多个表达式之间使用|进行分离：使用label=~regx表示选择那些标签符合正则表达式定义的时间序列； 反之使用label!~regx进行排除http_requests_total&#123;environment=~&quot;staging|testing|development&quot;,method!=&quot;GET”&#125; 范围查询123例如：查询最近5分钟http_request_total&#123;&#125;[5m] s - 秒 m - 分钟 h - 小时 d - 天 w - 周 y - 年 123瞬时向量表达式或者区间向量表达式中，都是以当前时间为基准http_request_total&#123;&#125; # 瞬时向量表达式，选择当前最新的数据http_request_total&#123;&#125;[5m] # 区间向量表达式，选择以当前时间为基准，5分钟内的数据 123如果我们想查询，5分钟前的瞬时样本数据，或昨天一天的区间内的样本数据呢? 这个时候我们就可以使用位移操作，位移操作的关键字为offsethttp_request_total&#123;&#125; offset 5m http_request_total&#123;&#125;[1d] offset 1d 聚合操作12 查询系统所有http请求的总量sum(http_request_total) 12 按照mode计算主机CPU的平均使用时间avg(node_cpu) by (mode) 12 按照主机查询各个主机的CPU使用率sum(sum(irate(node_cpu&#123;mode!=&apos;idle&apos;&#125;[5m])) / sum(irate(node_cpu[5m]))) by (instance) 支持的算法： (加法) - (减法) * (乘法) / (除法) % (求余) ^ (幂运算)]]></content>
+    <content type="text"><![CDATA[prometheus 介绍12345671.prometheus负责从pushgateway和job中采集数据， 存储到后端Storatge中，可以通过PromQL进行查询,推送alerts信息到AlertManager。 AlertManager根据不同的路由规则进行报警通知.2.可以很好地记录任何纯数字时间序列。它既适合以机器为中心的监视，也适合高度动态的面向服务的体系结构的监视。在微服务的世界中，它对多维数据收集和查询的支持是一个特别的优势。普罗米修斯是为可靠性而设计的，它是您在停机期间使用的系统，允许您快速诊断问题。每台普罗米修斯服务器都是独立的，不依赖于网络存储或其他远程服务。当您的基础设施的其他部分被破坏时，您可以依赖它，并且您不需要设置广泛的基础设施来使用它。 ####grafana 安装和常用配置 #####常用配置12345678配置： 配置文件应位于/usr/local/etc/grafana/grafana.ini。日志： 日志文件应位于/usr/local/var/log/grafana/grafana.log。插件： 如果你想手动安装一个插件，请点击此处：/usr/local/var/lib/grafana/plugins。数据库： 默认的sqlite数据库位于 /usr/local/var/lib/grafana 下载安装1234wget https://dl.grafana.com/oss/release/grafana-6.3.5.linux-amd64.tar.gztar -zxvf grafana-6.3.5.linux-amd64.tar.gzconf/grafana.ini./bin/grafana-server web mac 安装方式123456789101112131415安装：brew install grafana执行：brew services start grafana重启：brew services restart grafana#Log/usr/local/var/log/grafana/grafana.log#conf/usr/local/etc/grafana/grafana.ini#plugins/usr/local/var/lib/grafana/plugins#database/usr/local/var/lib/grafana Metrics 类型Counter（计数器）123456#获取样本数据node_cpu&#123;cpu=&quot;cpu0&quot;,mode=&quot;idle”&#125; #通过rate()函数获取HTTP请求量的增长率rate(http_requests_total[5m])# 查询当前系统中，访问量前10的HTTP地址：topk(10, http_requests_total) Gauge 可增可减的仪表盘12预测系统磁盘空间在4个小时之后的剩余情况：predict_linear(node_filesystem_free&#123;job=&quot;node&quot;&#125;[1h], 4 * 3600) Histogram和Summary分析数据分布情况 PromQL基础基本函数语法123prometheus_http_requests_total 等价于prometheus_http_requests_total&#123;&#125; #####条件筛选123prometheus_http_requests_total&#123;instance=&quot;localhost:9090”&#125;不满足条件prometheus_http_requests_total&#123;instance!=&quot;localhost:9090”&#125; 123支持使用正则表达式作为匹配条件，多个表达式之间使用|进行分离：使用label=~regx表示选择那些标签符合正则表达式定义的时间序列； 反之使用label!~regx进行排除http_requests_total&#123;environment=~&quot;staging|testing|development&quot;,method!=&quot;GET”&#125; 范围查询123例如：查询最近5分钟http_request_total&#123;&#125;[5m] s - 秒 m - 分钟 h - 小时 d - 天 w - 周 y - 年 123瞬时向量表达式或者区间向量表达式中，都是以当前时间为基准http_request_total&#123;&#125; # 瞬时向量表达式，选择当前最新的数据http_request_total&#123;&#125;[5m] # 区间向量表达式，选择以当前时间为基准，5分钟内的数据 123如果我们想查询，5分钟前的瞬时样本数据，或昨天一天的区间内的样本数据呢? 这个时候我们就可以使用位移操作，位移操作的关键字为offsethttp_request_total&#123;&#125; offset 5m http_request_total&#123;&#125;[1d] offset 1d 聚合操作12 查询系统所有http请求的总量sum(http_request_total) 12 按照mode计算主机CPU的平均使用时间avg(node_cpu) by (mode) 12 按照主机查询各个主机的CPU使用率sum(sum(irate(node_cpu&#123;mode!=&apos;idle&apos;&#125;[5m])) / sum(irate(node_cpu[5m]))) by (instance) 支持的算法： (加法) - (减法) * (乘法) / (除法) % (求余) ^ (幂运算)]]></content>
       <categories>
         <category>promethus</category>
       </categories>
@@ -200,7 +200,13 @@
   <entry>
     <title><![CDATA[promethus-资料篇]]></title>
     <url>%2F2019%2F09%2F25%2Fpromethus-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[prometheus-系列篇]]></content>
+      <categories>
+        <category>promethus</category>
+      </categories>
+      <tags>
+        <tag>promethus-资料篇</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[promethus-常用篇]]></title>
@@ -364,7 +370,10 @@
   <entry>
     <title><![CDATA[linux-学习篇]]></title>
     <url>%2F2019%2F09%2F25%2Flinux-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[马哥教育内部讲义]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[flink-实战篇]]></title>
