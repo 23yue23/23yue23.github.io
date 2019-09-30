@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="基本命令常用命令： 快速清除文件内容  12: &amp;gt; filename  &amp;gt; filename  按占用内存由高到低排序    内存使用前10:   1ps auxw|head -1;ps auxw|sort -rn -k4|head -10   内存整体情况   1free -m   含义：   1234567891011USER	进程所属用户	PID	进程ID	%CPU	进程占用CP">
+<meta name="description" content="基本命令常用命令： 快速清除文件内容  12: &amp;gt; filename  &amp;gt; filename  cat  123cat -s //多个空白行压缩成一个 cat *.txt | tr -s &amp;apos;\n&amp;apos;   //移除空白行cat -n //加行号  sort  12345678910111213//sort 按第2列排序[root@localhost program_te">
 <meta name="keywords" content="linux-常用篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux-常用篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/07/10/linux-常用篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="基本命令常用命令： 快速清除文件内容  12: &amp;gt; filename  &amp;gt; filename  按占用内存由高到低排序    内存使用前10:   1ps auxw|head -1;ps auxw|sort -rn -k4|head -10   内存整体情况   1free -m   含义：   1234567891011USER	进程所属用户	PID	进程ID	%CPU	进程占用CP">
+<meta property="og:description" content="基本命令常用命令： 快速清除文件内容  12: &amp;gt; filename  &amp;gt; filename  cat  123cat -s //多个空白行压缩成一个 cat *.txt | tr -s &amp;apos;\n&amp;apos;   //移除空白行cat -n //加行号  sort  12345678910111213//sort 按第2列排序[root@localhost program_te">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-29T09:56:14.899Z">
+<meta property="og:updated_time" content="2019-09-30T04:00:16.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux-常用篇">
-<meta name="twitter:description" content="基本命令常用命令： 快速清除文件内容  12: &amp;gt; filename  &amp;gt; filename  按占用内存由高到低排序    内存使用前10:   1ps auxw|head -1;ps auxw|sort -rn -k4|head -10   内存整体情况   1free -m   含义：   1234567891011USER	进程所属用户	PID	进程ID	%CPU	进程占用CP">
+<meta name="twitter:description" content="基本命令常用命令： 快速清除文件内容  12: &amp;gt; filename  &amp;gt; filename  cat  123cat -s //多个空白行压缩成一个 cat *.txt | tr -s &amp;apos;\n&amp;apos;   //移除空白行cat -n //加行号  sort  12345678910111213//sort 按第2列排序[root@localhost program_te">
 
 
 
@@ -469,6 +469,14 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">: &gt; filename </span><br><span class="line"> &gt; filename</span><br></pre></td></tr></table></figure>
 <blockquote>
+<p>cat</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat -s //多个空白行压缩成一个 </span><br><span class="line">cat *.txt | tr -s &apos;\n&apos;   //移除空白行</span><br><span class="line">cat -n //加行号</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>sort</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//sort 按第2列排序</span><br><span class="line">[root@localhost program_test]# sort -k 2 sort.txt</span><br><span class="line">4 bad 5000</span><br><span class="line">3  linux 50</span><br><span class="line">1   mac 2000</span><br><span class="line">2  winxp 100</span><br><span class="line"></span><br><span class="line">//sort 逆序排序</span><br><span class="line">[root@localhost program_test]# sort -r sort.txt</span><br><span class="line">4 bad 5000</span><br><span class="line">3  linux 50</span><br><span class="line">2  winxp 100</span><br><span class="line">1   mac 2000</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>按占用内存由高到低排序</p>
 </blockquote>
 <blockquote>
@@ -645,6 +653,11 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80Njg3NC8yMzM3NQ=="></div>
+    </div>
+
+  
 
 
 
@@ -696,7 +709,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -707,7 +720,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -718,7 +731,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -844,7 +857,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">24.8k</span>
+    <span title="Site words total count">25k</span>
   
 </div>
 
@@ -1012,6 +1025,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
