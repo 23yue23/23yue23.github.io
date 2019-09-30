@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-09-30T02:07:28.277Z</updated>
+  <updated>2019-09-30T03:20:54.836Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>elasticsearch-资料篇</title>
+    <link href="https://23yue23.github.io/2019/09/30/elasticsearch-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/09/30/elasticsearch-资料篇/</id>
+    <published>2019-09-30T03:19:56.000Z</published>
+    <updated>2019-09-30T03:20:54.836Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/laoyang360/deep_elasticsearch/wiki/%E3%80%8A%E6%AD%BB%E7%A3%95Elasticsearch%E6%96%B9%E6%B3%95%E8%AE%BA%E3%80%8B%E2%80%94%E2%80%94%E9%93%AD%E6%AF%85%E5%A4%A9%E4%B8%8B%E5%87%BA%E5%93%81" target="_blank" rel="noopener">死磕Elasticsearch方法论</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://github.com/laoyang360/deep_elasticsearch/wiki/%E3%80%8A%E6%AD%BB%E7%A3%95Elasticsearch%E6%96%B9%E6%B3%95%E8%AE%BA%E3%80%
+      
+    
+    </summary>
+    
+      <category term="elasticsearch" scheme="https://23yue23.github.io/categories/elasticsearch/"/>
+    
+    
+      <category term="elasticsearch-资料篇" scheme="https://23yue23.github.io/tags/elasticsearch-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>课程学习</title>
+    <link href="https://23yue23.github.io/2019/09/30/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://23yue23.github.io/2019/09/30/课程学习/</id>
+    <published>2019-09-30T02:20:52.000Z</published>
+    <updated>2019-09-30T02:55:44.544Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><h5 id="深入JVM内核-原理、诊断与优化"><a href="#深入JVM内核-原理、诊断与优化" class="headerlink" title="深入JVM内核 - 原理、诊断与优化"></a>深入JVM内核 - 原理、诊断与优化</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：http://pan.baidu.com/s/1geQsMcF 密码：wins</span><br><span class="line">解压密码：WxIqq%VJ8sQE9#Mq@WWW.MuKeDaBa.COM</span><br></pre></td></tr></table></figure><h4 id="python"><a href="#python" class="headerlink" title="python"></a>python</h4><h5 id="马哥Python全栈-爬虫-高端自动化课程"><a href="#马哥Python全栈-爬虫-高端自动化课程" class="headerlink" title="马哥Python全栈+爬虫+高端自动化课程"></a>马哥Python全栈+爬虫+高端自动化课程</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1GbGnix9-_TDFIrCUuRFcBA 提取码：saf9</span><br><span class="line">解压密码：www.mukedaba.com</span><br></pre></td></tr></table></figure><hr><h5 id="python编程快速上手，让繁琐工作自动化"><a href="#python编程快速上手，让繁琐工作自动化" class="headerlink" title="python编程快速上手，让繁琐工作自动化"></a>python编程快速上手，让繁琐工作自动化</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">链接：http://pan.baidu.com/s/1c1M5vhA 密码：4hmk</span><br></pre></td></tr></table></figure><hr><h5 id="python实战：四周实现爬虫系统"><a href="#python实战：四周实现爬虫系统" class="headerlink" title="python实战：四周实现爬虫系统"></a>python实战：四周实现爬虫系统</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：http://pan.baidu.com/s/1qYiqJmc 密码：hf20</span><br><span class="line">解压密码：www.mukedaba.com</span><br></pre></td></tr></table></figure><hr><h5 id="python自动化运维-web监控系统"><a href="#python自动化运维-web监控系统" class="headerlink" title="python自动化运维+web监控系统"></a>python自动化运维+web监控系统</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接: http://pan.baidu.com/s/1nuxcuJv 密码: 7qnk</span><br><span class="line">解压密码：www.mukedaba.com_pymaintenance</span><br></pre></td></tr></table></figure><h4 id="面试课程"><a href="#面试课程" class="headerlink" title="面试课程"></a>面试课程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2016年面试班BAT、阿里、谷歌视频教程14课高清长课时附ppt</span><br><span class="line">链接：http://pan.baidu.com/s/1gf1aVfH 密码：d0gp解压密码：www.17zixueba.com7ysfmis14%</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;优化&quot;&gt;&lt;a href=&quot;#优化&quot; class=&quot;headerlink&quot; title=&quot;优化&quot;&gt;&lt;/a&gt;优化&lt;/h4&gt;&lt;h5 id=&quot;深入JVM内核-原理、诊断与优化&quot;&gt;&lt;a href=&quot;#深入JVM内核-原理、诊断与优化&quot; class=&quot;headerlink&quot; 
+      
+    
+    </summary>
+    
+      <category term="课程学习" scheme="https://23yue23.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="课程学习" scheme="https://23yue23.github.io/tags/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>IDEA-使用篇</title>
@@ -128,7 +178,7 @@
     <link href="https://23yue23.github.io/2019/09/29/mysql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/09/29/mysql-常用篇/</id>
     <published>2019-09-29T06:28:11.000Z</published>
-    <updated>2019-09-29T06:44:14.882Z</updated>
+    <updated>2019-09-30T03:23:00.478Z</updated>
     
     <content type="html"><![CDATA[<h4 id="mysql-mac-安装"><a href="#mysql-mac-安装" class="headerlink" title="mysql-mac 安装"></a>mysql-mac 安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br><span class="line">unset TMPDIR</span><br><span class="line">mysql_install_db --verbose --user=`whoami` --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp</span><br></pre></td></tr></table></figure><h4 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h4><blockquote><p>conf</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/etc/my.cnf</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -141,7 +191,7 @@
     
     </summary>
     
-      <category term="mysql-常用篇" scheme="https://23yue23.github.io/categories/mysql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+      <category term="mysql" scheme="https://23yue23.github.io/categories/mysql/"/>
     
     
       <category term="mysql-常用篇" scheme="https://23yue23.github.io/tags/mysql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
@@ -153,7 +203,7 @@
     <link href="https://23yue23.github.io/2019/09/29/kafka-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/09/29/kafka-常用篇/</id>
     <published>2019-09-29T05:36:02.000Z</published>
-    <updated>2019-09-29T05:37:14.834Z</updated>
+    <updated>2019-09-30T03:22:58.254Z</updated>
     
     <content type="html"><![CDATA[<h5 id="启动kafka"><a href="#启动kafka" class="headerlink" title="启动kafka"></a>启动kafka</h5> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh bin/kafka-server-start.sh config/server.properties</span><br></pre></td></tr></table></figure><hr><h5 id="创建topic-分区数"><a href="#创建topic-分区数" class="headerlink" title="创建topic 分区数"></a>创建topic 分区数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh kafka-topics.sh --create --topic kafkatopic --replication-factor 1 --partitions 1 --zookeeper localhost:2181</span><br></pre></td></tr></table></figure><h5 id="查看topic"><a href="#查看topic" class="headerlink" title="查看topic"></a>查看topic</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash bin/kafka-topics.sh --list --zookeeper localhost:2181</span><br></pre></td></tr></table></figure><hr><h5 id="启动producer"><a href="#启动producer" class="headerlink" title="启动producer"></a>启动producer</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh kafka-console-producer.sh --broker-list localhost:9092 --sync --topic kafkatopic</span><br></pre></td></tr></table></figure><hr><h5 id="启动consumer"><a href="#启动consumer" class="headerlink" title="启动consumer"></a>启动consumer</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh kafka-console-consumer.sh --zookeeper localhost:2181 --topic kafkatopic --from-beginning</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -166,7 +216,7 @@
     
     </summary>
     
-      <category term="kafka-常用篇" scheme="https://23yue23.github.io/categories/kafka-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+      <category term="kafka" scheme="https://23yue23.github.io/categories/kafka/"/>
     
     
       <category term="kafka-常用篇" scheme="https://23yue23.github.io/tags/kafka-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
@@ -228,7 +278,7 @@
     <link href="https://23yue23.github.io/2019/09/25/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
     <id>https://23yue23.github.io/2019/09/25/面试资料/</id>
     <published>2019-09-25T06:44:17.000Z</published>
-    <updated>2019-09-29T10:13:55.859Z</updated>
+    <updated>2019-09-30T03:21:58.466Z</updated>
     
     <content type="html"><![CDATA[<h4 id="语言类"><a href="#语言类" class="headerlink" title="语言类"></a>语言类</h4><blockquote><p><a href="https://mp.weixin.qq.com/s/11vry9estQtQmQnRnbTksQ" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/VIUlROU2hhz7oeOFTVC5sA" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/n7u4nIvpyjMjTA4Yo1w5JQ" target="_blank" rel="noopener">sql</a></p></blockquote><h4 id="知识扩展："><a href="#知识扩展：" class="headerlink" title="知识扩展："></a>知识扩展：</h4><p>1.<a href="https://mp.weixin.qq.com/s/hccUo170_8lhdv6C3OzGzw" target="_blank" rel="noopener">推荐系统实现</a></p><p>2.<a href="https://mp.weixin.qq.com/s/tek6kQb7t8tRQi8OiOj3Zw" target="_blank" rel="noopener">用户行为数据收集系统-(1)简介</a></p><p>3.<a href="https://mp.weixin.qq.com/s/OTNSptAO01y5gAwnSRpZZQ" target="_blank" rel="noopener">用户行为数据收集系统–(2)客户端SDK设计</a></p><p>4.<a href="https://mp.weixin.qq.com/s/rQnqsALpqPnN0RoTOyFJow" target="_blank" rel="noopener">用户行为数据收集系统–(3)数据接收端设计</a></p><p>5.<a href="https://mp.weixin.qq.com/s/ffFy6eE_N5QKn_-o6mqQ5g" target="_blank" rel="noopener">大数据世界</a></p><h4 id="思想指导："><a href="#思想指导：" class="headerlink" title="思想指导："></a>思想指导：</h4><p><a href="https://www.lovesofttech.com/job/adviseForCandidates/" target="_blank" rel="noopener">指导</a></p>]]></content>
     
@@ -241,6 +291,8 @@
       
     
     </summary>
+    
+      <category term="面试资料" scheme="https://23yue23.github.io/categories/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
     
     
       <category term="面试资料" scheme="https://23yue23.github.io/tags/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
@@ -438,46 +490,6 @@
     
     
       <category term="promethus-常用篇" scheme="https://23yue23.github.io/tags/promethus-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop-问题篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/hadoop-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/hadoop-问题篇/</id>
-    <published>2019-09-25T03:14:22.000Z</published>
-    <updated>2019-09-25T03:14:22.437Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop-常用篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/hadoop-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/hadoop-常用篇/</id>
-    <published>2019-09-25T03:14:09.000Z</published>
-    <updated>2019-09-25T07:16:01.427Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="hadoop-命令"><a href="#hadoop-命令" class="headerlink" title="hadoop 命令"></a>hadoop 命令</h4><blockquote><p>cat<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将路径指定文件的内容输出到stdout。</span><br><span class="line">示例：</span><br><span class="line">  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2</span><br><span class="line">  hadoop fs -cat file:///file3 /user/hadoop/file4</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>dus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用方法：hadoop fs -dus &lt;args&gt;显示文件的大小</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>test<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">使用方法：hadoop fs -test -[ezd] URI</span><br><span class="line">选项：</span><br><span class="line">-e 检查文件是否存在。如果存在则返回0。</span><br><span class="line">-z 检查文件是否是0字节。如果是则返回0。 </span><br><span class="line">-d 如果路径是个目录，则返回1，否则返回0。</span><br><span class="line">示例：</span><br><span class="line">  hadoop fs -test -e filename</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>查看.gz 的文件内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*无需解压整个文件： </span><br><span class="line"> hadoop fs -cat /hdfs_location/part-00000.gz | zcat | head -n 20</span><br><span class="line">  或者 hadoop fs -cat /hdfs_location/part-00000.gz | zmore</span><br><span class="line"></span><br><span class="line">*需要解压整个文件：</span><br><span class="line">hadoop fs -text /myfolder/part-r-00024.gz | tail</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>查看.bz2 的文件内容</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类似查看.gz的方法，只需将zcat换为bzcat， 或者将zmore换为bzmore即可</span><br></pre></td></tr></table></figure><h4 id="yarn-命令"><a href="#yarn-命令" class="headerlink" title="yarn 命令"></a>yarn 命令</h4><h5 id="查看-application列表"><a href="#查看-application列表" class="headerlink" title="查看 application列表 :"></a>查看 application列表 :</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn application -list</span><br></pre></td></tr></table></figure><h5 id="查看单独的logs-日志："><a href="#查看单独的logs-日志：" class="headerlink" title="查看单独的logs 日志："></a>查看单独的logs 日志：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn logs -applicationId  application_1493700892407_0007</span><br><span class="line">yarn logs -applicationId application_1542870632001_26426 &gt; ./application.log</span><br></pre></td></tr></table></figure><h5 id="查看当前作业的状态："><a href="#查看当前作业的状态：" class="headerlink" title="查看当前作业的状态："></a>查看当前作业的状态：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn application -status application_1542870632001_26426</span><br></pre></td></tr></table></figure><h5 id="kill-当前作业"><a href="#kill-当前作业" class="headerlink" title="kill 当前作业"></a>kill 当前作业</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn application -kill application_1542870632001_26426</span><br></pre></td></tr></table></figure><p>#####查看yarn-site.xml，确定log配置目录以及集群ip</p><hr><h4 id="hadoop-集群配置"><a href="#hadoop-集群配置" class="headerlink" title="hadoop 集群配置"></a>hadoop 集群配置</h4><h5 id="日志清理"><a href="#日志清理" class="headerlink" title="日志清理"></a>日志清理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">相关参数：</span><br><span class="line">key : mapreduce.jobhistory.max-age-ms</span><br><span class="line">value : 2592000000 (30天)</span><br><span class="line">descrption：负责清理hdfs路径下日志 /var/hadoop/mapred/mr-history/done</span><br><span class="line">key : yarn.log-aggregation.retain-seconds</span><br><span class="line">value : 2592000 （30天）</span><br><span class="line">description：负责清理hdfs路径下日志 /var/hadoop/yarn/$&#123;user&#125;/logs</span><br><span class="line">服务器上的本地日志在任务执行完进行日志聚合之后会自动进行删除，不过老数据目前还没有清理。</span><br></pre></td></tr></table></figure><h6 id="日志相关参数"><a href="#日志相关参数" class="headerlink" title="日志相关参数"></a>日志相关参数</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1) yarn.log-aggregation-enable</span><br><span class="line">    是否开启日志聚合功能</span><br><span class="line">2) yarn.log-aggregation.retain-seconds</span><br><span class="line">    hdfs上的日志保留多久。当前配置路径为：/var/hadoop/yarn/$&#123;user&#125;/logs</span><br><span class="line">3) yarn.log-aggregation.retain-check-interval-seconds</span><br><span class="line">    多长时间检查一次日志，并将满足条件的删除，如果是0或者负数，则为上一个值的1/10，已经配置为：1296000（15天）</span><br><span class="line">4) yarn.nodemanager.remote-app-log-dir</span><br><span class="line">    前缀目录：/var/hadoop/yarn</span><br><span class="line">5) yarn.nodemanager.remote-app-log-dir-suffix</span><br><span class="line">    后缀目录：logs</span><br><span class="line">6) yarn.nodemanager.log-aggregation.roll-monitoring-interval-seconds</span><br><span class="line">    每隔一段时间进行日志的聚合，当前配置为：3600。如果配置为-1，则会等待任务执行完还会聚合</span><br></pre></td></tr></table></figure><h6 id="日志聚合参数配置"><a href="#日志聚合参数配置" class="headerlink" title="日志聚合参数配置"></a>日志聚合参数配置</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yarn.log-aggregation-enable</span><br><span class="line">参数说明：是否启用日志聚合功能，日志聚合开启后保存到HDFS上。默认值：false</span><br><span class="line">yarn.log-aggregation.retain-seconds</span><br><span class="line">参数说明：聚合后的日志在HDFS上保存多长时间，单位为s。默认值：-1（不启用日志聚合），例如设置为86400，24小时</span><br><span class="line">yarn.log-aggregation.retain-check-interval-seconds</span><br><span class="line">参数说明：删除任务在HDFS上执行的间隔，执行时候将满足条件的日志删除（超过参数2设置的时间的日志），如果是0或者负数，则为参数2设置值的1/10，上例值在此处为8640s。默认值：-1</span><br><span class="line">yarn.nodemanager.log.retain-seconds</span><br><span class="line">参数说明：当不启用日志聚合此参数生效，日志文件保存在本地的时间，单位为s。默认值：10800</span><br><span class="line">yarn.nodemanager.remote-app-log-dir</span><br><span class="line">参数说明：当应用程序运行结束后，日志被转移到的HDFS目录（启用日志聚集功能时有效），修改为保存的日志文件夹。默认值：/tmp/logs</span><br><span class="line">yarn.nodemanager.remote-app-log-dir-suffix</span><br><span class="line">参数说明：远程日志目录子目录名称（启用日志聚集功能时有效）。默认值：logs 日志将被转移到目录$&#123;yarn.nodemanager.remote-app-log-dir&#125;/$&#123;user&#125;/$&#123;thisParam&#125;下</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;hadoop-命令&quot;&gt;&lt;a href=&quot;#hadoop-命令&quot; class=&quot;headerlink&quot; title=&quot;hadoop 命令&quot;&gt;&lt;/a&gt;hadoop 命令&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;cat&lt;br&gt;&lt;figure class=&quot;highlig
-      
-    
-    </summary>
-    
-      <category term="hadoop" scheme="https://23yue23.github.io/categories/hadoop/"/>
-    
-    
-      <category term="hadoop-常用篇" scheme="https://23yue23.github.io/tags/hadoop-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
     
   </entry>
   

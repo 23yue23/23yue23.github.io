@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[elasticsearch-资料篇]]></title>
+    <url>%2F2019%2F09%2F30%2Felasticsearch-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[死磕Elasticsearch方法论]]></content>
+      <categories>
+        <category>elasticsearch</category>
+      </categories>
+      <tags>
+        <tag>elasticsearch-资料篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[课程学习]]></title>
+    <url>%2F2019%2F09%2F30%2F%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[优化深入JVM内核 - 原理、诊断与优化12链接：http://pan.baidu.com/s/1geQsMcF 密码：wins解压密码：WxIqq%VJ8sQE9#Mq@WWW.MuKeDaBa.COM python马哥Python全栈+爬虫+高端自动化课程12链接：https://pan.baidu.com/s/1GbGnix9-_TDFIrCUuRFcBA 提取码：saf9解压密码：www.mukedaba.com python编程快速上手，让繁琐工作自动化1链接：http://pan.baidu.com/s/1c1M5vhA 密码：4hmk python实战：四周实现爬虫系统12链接：http://pan.baidu.com/s/1qYiqJmc 密码：hf20解压密码：www.mukedaba.com python自动化运维+web监控系统12链接: http://pan.baidu.com/s/1nuxcuJv 密码: 7qnk解压密码：www.mukedaba.com_pymaintenance 面试课程122016年面试班BAT、阿里、谷歌视频教程14课高清长课时附ppt链接：http://pan.baidu.com/s/1gf1aVfH 密码：d0gp解压密码：www.17zixueba.com7ysfmis14%]]></content>
+      <categories>
+        <category>课程学习</category>
+      </categories>
+      <tags>
+        <tag>课程学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[IDEA-使用篇]]></title>
     <url>%2F2019%2F09%2F30%2FIDEA-%E4%BD%BF%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[资料 IntelliJ IDEA，使用心得汇总]]></content>
@@ -49,7 +71,7 @@
     <url>%2F2019%2F09%2F29%2Fmysql-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[mysql-mac 安装123brew install mysqlunset TMPDIRmysql_install_db --verbose --user=`whoami` --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp 配置信息 conf 1/usr/local/etc/my.cnf]]></content>
       <categories>
-        <category>mysql-常用篇</category>
+        <category>mysql</category>
       </categories>
       <tags>
         <tag>mysql-常用篇</tag>
@@ -60,7 +82,7 @@
     <url>%2F2019%2F09%2F29%2Fkafka-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[启动kafka 1sh bin/kafka-server-start.sh config/server.properties 创建topic 分区数1sh kafka-topics.sh --create --topic kafkatopic --replication-factor 1 --partitions 1 --zookeeper localhost:2181 查看topic1bash bin/kafka-topics.sh --list --zookeeper localhost:2181 启动producer1sh kafka-console-producer.sh --broker-list localhost:9092 --sync --topic kafkatopic 启动consumer1sh kafka-console-consumer.sh --zookeeper localhost:2181 --topic kafkatopic --from-beginning]]></content>
       <categories>
-        <category>kafka-常用篇</category>
+        <category>kafka</category>
       </categories>
       <tags>
         <tag>kafka-常用篇</tag>
@@ -92,6 +114,9 @@
     <title><![CDATA[面试资料]]></title>
     <url>%2F2019%2F09%2F25%2F%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99%2F</url>
     <content type="text"><![CDATA[语言类 scala scala sql 知识扩展：1.推荐系统实现 2.用户行为数据收集系统-(1)简介 3.用户行为数据收集系统–(2)客户端SDK设计 4.用户行为数据收集系统–(3)数据接收端设计 5.大数据世界 思想指导：指导]]></content>
+      <categories>
+        <category>面试资料</category>
+      </categories>
       <tags>
         <tag>面试资料</tag>
       </tags>
@@ -334,7 +359,7 @@
     <url>%2F2019%2F09%2F25%2Fmysql-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
     <content type="text"><![CDATA[报错信息笔记（引用链接） 以下链接是各路豪杰整理 沧海一粟-MySQL错误笔记 RROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’ (2) 报错信息： 1Can&apos;t connect to local MySQL server through socket &apos;/tmp/mysql.sock&apos; (2) 解决方法： 12主要原因是mysql 服务没有启动解决：mysql.server start om.mysql.jdbc.exceptions.jdbc4.CommunicationsException: 报错信息： 1om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:The last packet successfully received from the server was 44,024,462 milliseconds ago. The last packet sent successfully to the server was 44,024,462 milliseconds ago. is longer than the server configured value of &apos;wait_timeout&apos;. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property &apos;autoReconnect=true&apos; to avoid this problem. 解决方法： 1231.在连接上添加这个设置&amp;autoReconnect=true&amp;failOverReadOnly=false2.每次使用完记得归还连接 ERROR! The server quit without updating PID file 报错信息： 123$ mysql.server startStarting MySQL. ERROR! The server quit without updating PID file (/usr/local/var/mysql/localhost.pid). 解决方法： 123456789101112131415161718192021220.用sudo 的权限执行。 sudo mysql.server start1.可能是/usr/local/mysql/data/rekfan.pid文件没有写的权限解决方法 ：给予权限，执行 “chown -R mysql:mysql /var/data” “chmod -R 755 /usr/local/mysql/data” 然后重新启动mysqld！2.可能进程里已经存在mysql进程解决方法：用命令“ps -ef|grep mysqld”查看是否有mysqld进程，如果有使用“kill -9 进程号”杀死，然后重新启动mysqld！3.可能是第二次在机器上安装mysql，有残余数据影响了服务的启动。解决方法：去mysql的数据目录/data看看，如果存在mysql-bin.index，就赶快把它删除掉吧，它就是罪魁祸首了。本人就是使用第三条方法解决的 ！http://blog.rekfan.com/?p=1864.mysql在启动时没有指定配置文件时会使用/etc/my.cnf配置文件，请打开这个文件查看在[mysqld]节下有没有指定数据目录(datadir)。解决方法：请在[mysqld]下设置这一行：datadir = /usr/local/mysql/data5.skip-federated字段问题解决方法：检查一下/etc/my.cnf文件中有没有没被注释掉的skip-federated字段，如果有就立即注释掉吧。6.错误日志目录不存在解决方法：使用“chown” “chmod”命令赋予mysql所有者及权限7.selinux惹的祸，如果是centos系统，默认会开启selinux解决方法：关闭它，打开/etc/selinux/config，把SELINUX=enforcing改为SELINUX=disabled后存盘退出重启机器试试。 Formula mysql is not installed 报错信息： 1234brew services restart mysqlStopping `mysql`... (might take a while)==&gt; Successfully stopped `mysql` (label: homebrew.mxcl.mysql)Error: Formula `mysql` is not installed. 解决方法： 123 查看mysql 的版本 brew services start mysql@5.7==&gt; Successfully started `mysql@5.7` (label: homebrew.mxcl.mysql@5.7)]]></content>
       <categories>
-        <category>mysql-问题篇</category>
+        <category>mysql</category>
       </categories>
       <tags>
         <tag>mysql-问题篇</tag>
@@ -563,7 +588,7 @@
   <entry>
     <title><![CDATA[MacOS-使用篇]]></title>
     <url>%2F2019%2F04%2F29%2FMacOS-%E4%BD%BF%E7%94%A8%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[快捷键：退出关闭应用：Command+Q 目录地址： 软件的安装目录 1~/Library/Application Support brew 安装路径 /usr/local/Cellar/ 软件 Mac Beyond Compare4 破解方法 []]]></content>
+    <content type="text"><![CDATA[快捷键：退出关闭应用：Command+Q 目录地址： 软件的安装目录 1~/Library/Application Support brew 安装路径 1234/usr/local/Cellar/ ``` &gt; 系统环境加载顺序 /etc/profile/etc/paths~/.bash_profile~/.bash_login~/.profile~/.bashrc` 软件 Mac Beyond Compare4 破解方法 tldr 命令帮助]]></content>
       <categories>
         <category>工具</category>
       </categories>
