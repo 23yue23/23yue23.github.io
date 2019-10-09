@@ -124,7 +124,7 @@
 
 
 
-  <meta name="keywords" content="flink, spark,kafka,hive">
+  <meta name="keywords" content="clickhouse-学习篇,">
 
 
 
@@ -137,14 +137,21 @@
 
 
 
+<meta name="description" content="介绍 ClickHouse是一个用于联机分析(OLAP)的列式数据库管理系统(DBMS)。 ClickHouse官方中文文档| ClickHouse官方英文文档 Performance comparison of analytical DBMS OLAP场景的关键特征大多数是读请求数据总是以相当大的批(&amp;gt; 1000 rows)进行写入不修改已添加的数据每次查询都从数据库中读取大量的行，但是同">
+<meta name="keywords" content="clickhouse-学习篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="clickhouse-学习篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/09/25/clickhouse-学习篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
+<meta property="og:description" content="介绍 ClickHouse是一个用于联机分析(OLAP)的列式数据库管理系统(DBMS)。 ClickHouse官方中文文档| ClickHouse官方英文文档 Performance comparison of analytical DBMS OLAP场景的关键特征大多数是读请求数据总是以相当大的批(&amp;gt; 1000 rows)进行写入不修改已添加的数据每次查询都从数据库中读取大量的行，但是同">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T03:10:44.803Z">
+<meta property="og:image" content="https://clickhouse.yandex/docs/zh/images/row_oriented.gif">
+<meta property="og:image" content="https://clickhouse.yandex/docs/zh/images/column_oriented.gif">
+<meta property="og:updated_time" content="2019-10-09T08:34:36.225Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="clickhouse-学习篇">
+<meta name="twitter:description" content="介绍 ClickHouse是一个用于联机分析(OLAP)的列式数据库管理系统(DBMS)。 ClickHouse官方中文文档| ClickHouse官方英文文档 Performance comparison of analytical DBMS OLAP场景的关键特征大多数是读请求数据总是以相当大的批(&amp;gt; 1000 rows)进行写入不修改已添加的数据每次查询都从数据库中读取大量的行，但是同">
+<meta name="twitter:image" content="https://clickhouse.yandex/docs/zh/images/row_oriented.gif">
 
 
 
@@ -342,7 +349,7 @@
     <link itemprop="mainEntityOfPage" href="https://23yue23.github.io/2019/09/25/clickhouse-学习篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xianchang.yue">
+      <meta itemprop="name" content="Brady">
       <meta itemprop="description" content>
       <meta itemprop="image" content="http://static.oschina.net/uploads/space/2015/0629/170157_AOda_1767531.jpg">
     </span>
@@ -379,6 +386,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/clickhouse/" itemprop="url" rel="index">
+                    <span itemprop="name">clickhouse</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -401,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  524
                 </span>
               
 
@@ -438,7 +467,24 @@
       
 
       
-        
+        <h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p> ClickHouse是一个用于联机分析(OLAP)的列式数据库管理系统(DBMS)。</p>
+<p><a href="https://clickhouse.yandex/docs/zh/" target="_blank" rel="noopener">ClickHouse官方中文文档</a><br>| <a href="https://clickhouse.yandex/docs/en/" target="_blank" rel="noopener">ClickHouse官方英文文档</a></p>
+<p><a href="https://clickhouse.yandex/benchmark.html" target="_blank" rel="noopener">Performance comparison of analytical DBMS</a></p>
+<h4 id="OLAP场景的关键特征"><a href="#OLAP场景的关键特征" class="headerlink" title="OLAP场景的关键特征"></a>OLAP场景的关键特征</h4><p>大多数是读请求<br>数据总是以相当大的批(&gt; 1000 rows)进行写入<br>不修改已添加的数据<br>每次查询都从数据库中读取大量的行，但是同时又仅需要少量的列<br>宽表，即每个表包含着大量的列<br>较少的查询(通常每台服务器每秒数百个查询或更少)<br>对于简单查询，允许延迟大约50毫秒<br>列中的数据相对较小： 数字和短字符串(例如，每个URL 60个字节)<br>处理单个查询时需要高吞吐量（每个服务器每秒高达数十亿行）<br>事务不是必须的<br>对数据一致性要求低<br>每一个查询除了一个大表外都很小<br>查询结果明显小于源数据，换句话说，数据被过滤或聚合后能够被盛放在单台服务器的内存中</p>
+<p>列式数据库更适合于OLAP场景(对于大多数查询而言，处理速度至少提高了100倍)，下面详细解释了原因(通过图片更有利于直观理解）：</p>
+<p>行式：<br><img src="https://clickhouse.yandex/docs/zh/images/row_oriented.gif" alt></p>
+<p>列式:<br><img src="https://clickhouse.yandex/docs/zh/images/column_oriented.gif" alt></p>
+<h4 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h4><p>官方测试工具：clickhouse benchmark<br>远程测试工具：ab -n 50 -c 10 ‘<a href="http://ip:8123/&#39;" target="_blank" rel="noopener">http://ip:8123/&#39;</a></p>
+<p>Spark 读取性能测试<br>1.m_sys_mode（340个字段）：</p>
+<p>写入一天 m_sys_model，每小时约 1000万~2000万条记录，平均耗费时长约 2min ~ 3min</p>
+<p>读取一小时数据耗费时长约 1min ~ 2min，20w/s</p>
+<p>2.ods_dmp_user_info（9个字段，23亿条记录）：</p>
+<p>写入耗费时长约 30~40min</p>
+<p>通过Spark 读取性能较低，读取 20w/s，三台机器CPU长时间飙至 1500%，影响其他分析类查询，故不适合做大批量读操作。</p>
+<p>Cassandra 读取性能测试<br>40~50w/s<br>num-executors 50 executor-cores 4 executor-memeory 8G</p>
+<p>16min<br>num-executors 50 executor-cores 4 executor-memeory 8G</p>
+<p>[安装部署参考](<a href="https://clickhouse.yandex/docs/en/getting_started/）" target="_blank" rel="noopener">https://clickhouse.yandex/docs/en/getting_started/）</a></p>
+
       
     </div>
     
@@ -470,7 +516,7 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
-    xianchang.yue
+    Brady
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
@@ -486,6 +532,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/clickhouse-学习篇/" rel="tag"><i class="fa fa-tag"></i> clickhouse-学习篇</a>
+          
+        </div>
       
 
       
@@ -565,16 +617,25 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
              <a href="/">
-              <img class="site-author-image" itemprop="image" src="http://static.oschina.net/uploads/space/2015/0629/170157_AOda_1767531.jpg" alt="xianchang.yue">
+              <img class="site-author-image" itemprop="image" src="http://static.oschina.net/uploads/space/2015/0629/170157_AOda_1767531.jpg" alt="Brady">
 	      </a>
             
-              <p class="site-author-name" itemprop="name">xianchang.yue</p>
+              <p class="site-author-name" itemprop="name">Brady</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -585,7 +646,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -596,7 +657,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -607,7 +668,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -690,6 +751,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OLAP场景的关键特征"><span class="nav-number">2.</span> <span class="nav-text">OLAP场景的关键特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性能测试"><span class="nav-number">3.</span> <span class="nav-text">性能测试</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -707,7 +784,7 @@
   <span class="with-love">
     <i class="fa fa-sun-o"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">xianchang.yue</span>
+  <span class="author" itemprop="copyrightHolder">Brady</span>
 
   
     <span class="post-meta-divider">|</span>
@@ -717,7 +794,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">28.8k</span>
+    <span title="Site words total count">30.1k</span>
   
 </div>
 

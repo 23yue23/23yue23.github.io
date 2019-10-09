@@ -6,15 +6,79 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-10-09T07:38:42.872Z</updated>
+  <updated>2019-10-09T08:40:50.766Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
-    <name>xianchang.yue</name>
+    <name>Brady</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kudu-资料篇</title>
+    <link href="https://23yue23.github.io/2019/10/09/kudu-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/10/09/kudu-资料篇/</id>
+    <published>2019-10-09T08:40:32.000Z</published>
+    <updated>2019-10-09T08:40:50.766Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="kudu" scheme="https://23yue23.github.io/categories/kudu/"/>
+    
+    
+      <category term="kudu-资料篇" scheme="https://23yue23.github.io/tags/kudu-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kudu-学习篇</title>
+    <link href="https://23yue23.github.io/2019/10/09/kudu-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/10/09/kudu-学习篇/</id>
+    <published>2019-10-09T08:40:21.000Z</published>
+    <updated>2019-10-09T08:45:57.167Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><blockquote><p>Kudu是基于Hadoop平台的列式存储系统。</p></blockquote><h4 id="Kudu使用场景"><a href="#Kudu使用场景" class="headerlink" title="Kudu使用场景"></a>Kudu使用场景</h4><blockquote><p>适用于既有随机访问，也有批量数据扫描的复合场景</p></blockquote><blockquote><p>适用于高计算量的场景</p></blockquote><blockquote><p>充分利用高性能存储设备</p></blockquote><blockquote><p>支持数据更新，避免数据反复迁移</p></blockquote><blockquote><p>支持跨地域的实时数据备份和查询</p></blockquote><h4 id="Kudu的优势"><a href="#Kudu的优势" class="headerlink" title="Kudu的优势"></a>Kudu的优势</h4><blockquote><p>支持update和upsert操作</p></blockquote><blockquote><p>结构化数据模型</p></blockquote><blockquote><p>与imapla或spark集成后，可通过sql操作，使用方便</p></blockquote><blockquote><p>一个table由多个tablet组成，对分区查看、扩容和数据高可用支持非常好</p></blockquote><h4 id="性能压测："><a href="#性能压测：" class="headerlink" title="性能压测："></a>性能压测：</h4><h5 id="写入性能测试"><a href="#写入性能测试" class="headerlink" title="写入性能测试"></a>写入性能测试</h5><pre><code>executor-cores=2      num-executors=30    executor-memory=4G</code></pre><p>小时级别写（LZ4 ）：源数据2000W行，38G，耗时1.4min，平均23w条/s。</p><p>小时级别写（ZLIB）：源数据1940W行，34.9G，耗时2min，平均16.2w条/s。</p><h5 id="读取性能测试"><a href="#读取性能测试" class="headerlink" title="读取性能测试"></a>读取性能测试</h5><pre><code>executor-cores=2      num-executors=50    executor-memory=4G</code></pre><p>天级别读（LZ4 ）：源数据2.8亿行，541.7 G，耗时10min，平均46.6w条/s。</p><p>天级别读（ZLIB）：源数据3.2亿行，581.7 G，耗时15min，平均35.7w条/s。</p><h5 id="增加新字段性能测试"><a href="#增加新字段性能测试" class="headerlink" title="增加新字段性能测试"></a>增加新字段性能测试</h5><pre><code>executor-cores=2      num-executors=30    executor-memory=4G</code></pre><p>天级别增加（LZ4 ）：源数据4.74亿行，10个新列，耗时17min，平均46.5w条/s。（先读hive表，再选10列插入kudu中。所以其中包括读837G的text格式hive表全量读的时间，真实插入时间理应更少）</p><p>天级别增加（ZLIB）：源数据3.2亿行，10个新列，耗时12min，平均44.7w条/s。（包括读581G的text格式hive表全量读的时间）</p><h4 id="Kudu接口"><a href="#Kudu接口" class="headerlink" title="Kudu接口"></a>Kudu接口</h4><p>在KuduHandle.scala中封装了spark操作kudu的常用接口，在KuduHandleExample.scala中给出了Kudu接口的使用示例。</p><p>业务开发时可直接使用封装在 train_data_flow的dataflow-sdk中的方法，包括saveDFInsertKuduTable()、saveDFUpsertKuduTable()两种插入数据的方法，和读取kudu表数据的 kudu() 方法，以及addKuduColumns()加列方法。</p><h5 id="接口使用注意事项："><a href="#接口使用注意事项：" class="headerlink" title="接口使用注意事项："></a>接口使用注意事项：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1、通过读数据 kudu() 接口返回的df，注册临时视图后可直接用sparkSQL读取，</span><br><span class="line">   但必须使用between或者in来指定range分区字段的范围（目前字段是hour_id），</span><br><span class="line">   否则会变成全表扫描，效率极低！！！</span><br><span class="line"></span><br><span class="line">2、kudu引擎暂不支持sparkSQL中 &lt;、&gt;、or 这些谓词下推，支持like，</span><br><span class="line">   但仅限于“201907%”这种形式，不支持“201907%02”这种形式；</span><br><span class="line">  （只要正确指定了range分区字段，其他字段对读取效率影响不大）</span><br><span class="line"></span><br><span class="line">3、saveDFInsertKuduTable()用于base特征的小时级入库，会根据小时时间新建range分区，</span><br><span class="line">   saveDFUpsertKuduTable()用于插入新列数据，除base数据的小时级入库外，皆用此方法插入数据；</span><br><span class="line"></span><br><span class="line">4、待插入数据df必须包含所有的主键，且主键不可为空值；</span><br><span class="line"></span><br><span class="line">5、删除kudu分区会同时删除分区内的数据，慎用。</span><br></pre></td></tr></table></figure><h4 id="Alluxio-FUSE-测试"><a href="#Alluxio-FUSE-测试" class="headerlink" title="Alluxio FUSE 测试"></a>Alluxio FUSE 测试</h4><ol><li>IO基本性能测试，拷贝一个768M的文件。</li></ol><blockquote><p>读    130M/s    90M/s</p></blockquote><blockquote><p>写    80M/s    194M/s</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;Kudu是基于Hadoop平台的列式存储系统。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;Kudu使用场
+      
+    
+    </summary>
+    
+      <category term="kudu" scheme="https://23yue23.github.io/categories/kudu/"/>
+    
+    
+      <category term="kudu-学习篇" scheme="https://23yue23.github.io/tags/kudu-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>clickhouse-资料篇</title>
+    <link href="https://23yue23.github.io/2019/10/09/clickhouse-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/10/09/clickhouse-资料篇/</id>
+    <published>2019-10-09T08:05:12.000Z</published>
+    <updated>2019-10-09T08:06:10.817Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="clickhouse-资料篇" scheme="https://23yue23.github.io/categories/clickhouse-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    
+    
+      <category term="clickhouse-资料篇" scheme="https://23yue23.github.io/tags/clickhouse-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    
+  </entry>
   
   <entry>
     <title>kylin-问题篇</title>
@@ -431,81 +495,6 @@
     
     
       <category term="A目录" scheme="https://23yue23.github.io/tags/A%E7%9B%AE%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试资料</title>
-    <link href="https://23yue23.github.io/2019/09/25/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
-    <id>https://23yue23.github.io/2019/09/25/面试资料/</id>
-    <published>2019-09-25T06:44:17.000Z</published>
-    <updated>2019-10-09T04:00:04.982Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="面试必刷"><a href="#面试必刷" class="headerlink" title="面试必刷"></a>面试必刷</h4><p><a href="https://cyc2018.github.io/CS-Notes" target="_blank" rel="noopener">Tech Interview Guide 技术面试必备基础知识、Leetcode 题解、设计模式、Java、C++、Python、后端面试、操作系统、计算机网络、系统设计</a></p><h4 id="语言类"><a href="#语言类" class="headerlink" title="语言类"></a>语言类</h4><blockquote><p><a href="http://calvin1978.blogcn.com/articles/collection.html" target="_blank" rel="noopener">java</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/11vry9estQtQmQnRnbTksQ" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/VIUlROU2hhz7oeOFTVC5sA" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/n7u4nIvpyjMjTA4Yo1w5JQ" target="_blank" rel="noopener">sql</a></p></blockquote><h4 id="知识扩展："><a href="#知识扩展：" class="headerlink" title="知识扩展："></a>知识扩展：</h4><p>1.<a href="https://mp.weixin.qq.com/s/hccUo170_8lhdv6C3OzGzw" target="_blank" rel="noopener">推荐系统实现</a></p><p>2.<a href="https://mp.weixin.qq.com/s/tek6kQb7t8tRQi8OiOj3Zw" target="_blank" rel="noopener">用户行为数据收集系统-(1)简介</a></p><p>3.<a href="https://mp.weixin.qq.com/s/OTNSptAO01y5gAwnSRpZZQ" target="_blank" rel="noopener">用户行为数据收集系统–(2)客户端SDK设计</a></p><p>4.<a href="https://mp.weixin.qq.com/s/rQnqsALpqPnN0RoTOyFJow" target="_blank" rel="noopener">用户行为数据收集系统–(3)数据接收端设计</a></p><p>5.<a href="https://mp.weixin.qq.com/s/ffFy6eE_N5QKn_-o6mqQ5g" target="_blank" rel="noopener">大数据世界</a></p><h4 id="思想指导："><a href="#思想指导：" class="headerlink" title="思想指导："></a>思想指导：</h4><p><a href="https://www.lovesofttech.com/job/adviseForCandidates/" target="_blank" rel="noopener">指导</a><br><a href="https://mp.weixin.qq.com/s/qRwDowetBkJqpeMeAZsIpA" target="_blank" rel="noopener">招聘面试的套路与原则</a><br><a href="https://mp.weixin.qq.com/s/3f8hGAQ-auLdkxkQ8XG3CQ" target="_blank" rel="noopener">程序员，为什么写不好一份简历？</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;面试必刷&quot;&gt;&lt;a href=&quot;#面试必刷&quot; class=&quot;headerlink&quot; title=&quot;面试必刷&quot;&gt;&lt;/a&gt;面试必刷&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://cyc2018.github.io/CS-Notes&quot; target=&quot;_blank&quot; r
-      
-    
-    </summary>
-    
-      <category term="面试资料" scheme="https://23yue23.github.io/categories/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
-    
-    
-      <category term="面试资料" scheme="https://23yue23.github.io/tags/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>promethus-问题篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/promethus-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/promethus-问题篇/</id>
-    <published>2019-09-25T06:08:30.000Z</published>
-    <updated>2019-09-25T06:44:42.128Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="address-already-in-use"><a href="#address-already-in-use" class="headerlink" title="address already in use"></a>address already in use</h4><blockquote><p>保存信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error starting web server: listen tcp 0.0.0.0:9090: bind: address already in use</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>解决方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsof -i :9090</span><br><span class="line">sudo kill -9  prot</span><br></pre></td></tr></table></figure></p></blockquote><p>#### </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;address-already-in-use&quot;&gt;&lt;a href=&quot;#address-already-in-use&quot; class=&quot;headerlink&quot; title=&quot;address already in use&quot;&gt;&lt;/a&gt;address already in u
-      
-    
-    </summary>
-    
-      <category term="promethus" scheme="https://23yue23.github.io/categories/promethus/"/>
-    
-    
-      <category term="promethus-问题篇" scheme="https://23yue23.github.io/tags/promethus-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>promethus-学习篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/promethus-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/promethus-学习篇/</id>
-    <published>2019-09-25T05:12:29.000Z</published>
-    <updated>2019-09-30T06:57:43.275Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="prometheus-介绍"><a href="#prometheus-介绍" class="headerlink" title="prometheus 介绍"></a>prometheus 介绍</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.prometheus负责从pushgateway和job中采集数据， 存储到后端Storatge中，可以通过PromQL进行查询,推送alerts信息到AlertManager。 AlertManager根据不同的路由规则进行报警通知.</span><br><span class="line"></span><br><span class="line">2.可以很好地记录任何纯数字时间序列。</span><br><span class="line">它既适合以机器为中心的监视，也适合高度动态的面向服务的体系结构的监视。在微服务的世界中，它对多维数据收集和查询的支持是一个特别的优势。</span><br><span class="line">普罗米修斯是为可靠性而设计的，它是您在停机期间使用的系统，允许您快速诊断问题。</span><br><span class="line">每台普罗米修斯服务器都是独立的，不依赖于网络存储或其他远程服务。</span><br><span class="line">当您的基础设施的其他部分被破坏时，您可以依赖它，并且您不需要设置广泛的基础设施来使用它。</span><br></pre></td></tr></table></figure><p>####grafana 安装和常用配置</p><p>#####常用配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">配置：</span><br><span class="line">    配置文件应位于/usr/local/etc/grafana/grafana.ini。</span><br><span class="line">日志：</span><br><span class="line">    日志文件应位于/usr/local/var/log/grafana/grafana.log。</span><br><span class="line">插件：</span><br><span class="line">    如果你想手动安装一个插件，请点击此处：/usr/local/var/lib/grafana/plugins。</span><br><span class="line">数据库：</span><br><span class="line">    默认的sqlite数据库位于 /usr/local/var/lib/grafana</span><br></pre></td></tr></table></figure></p><h5 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.grafana.com/oss/release/grafana-6.3.5.linux-amd64.tar.gz</span><br><span class="line">tar -zxvf grafana-6.3.5.linux-amd64.tar.gz</span><br><span class="line">conf/grafana.ini</span><br><span class="line">./bin/grafana-server web</span><br></pre></td></tr></table></figure><h5 id="mac-安装方式"><a href="#mac-安装方式" class="headerlink" title="mac 安装方式"></a>mac 安装方式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">安装：brew install grafana</span><br><span class="line">执行：brew services start grafana</span><br><span class="line">重启：brew services restart grafana</span><br><span class="line"></span><br><span class="line">#Log</span><br><span class="line">/usr/local/var/log/grafana/grafana.log</span><br><span class="line"></span><br><span class="line">#conf</span><br><span class="line">/usr/local/etc/grafana/grafana.ini</span><br><span class="line"></span><br><span class="line">#plugins</span><br><span class="line">/usr/local/var/lib/grafana/plugins</span><br><span class="line"></span><br><span class="line">#database</span><br><span class="line">/usr/local/var/lib/grafana</span><br></pre></td></tr></table></figure><hr><h4 id="Metrics-类型"><a href="#Metrics-类型" class="headerlink" title="Metrics 类型"></a>Metrics 类型</h4><h5 id="Counter（计数器）"><a href="#Counter（计数器）" class="headerlink" title="Counter（计数器）"></a>Counter（计数器）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#获取样本数据</span><br><span class="line">node_cpu&#123;cpu=&quot;cpu0&quot;,mode=&quot;idle”&#125; </span><br><span class="line">#通过rate()函数获取HTTP请求量的增长率</span><br><span class="line">rate(http_requests_total[5m])</span><br><span class="line"># 查询当前系统中，访问量前10的HTTP地址：</span><br><span class="line">topk(10, http_requests_total)</span><br></pre></td></tr></table></figure><h5 id="Gauge-可增可减的仪表盘"><a href="#Gauge-可增可减的仪表盘" class="headerlink" title="Gauge 可增可减的仪表盘"></a>Gauge 可增可减的仪表盘</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">预测系统磁盘空间在4个小时之后的剩余情况：</span><br><span class="line">predict_linear(node_filesystem_free&#123;job=&quot;node&quot;&#125;[1h], 4 * 3600)</span><br></pre></td></tr></table></figure><h5 id="Histogram和Summary分析数据分布情况"><a href="#Histogram和Summary分析数据分布情况" class="headerlink" title="Histogram和Summary分析数据分布情况"></a>Histogram和Summary分析数据分布情况</h5><hr><h4 id="PromQL基础"><a href="#PromQL基础" class="headerlink" title="PromQL基础"></a>PromQL基础</h4><h5 id="基本函数语法"><a href="#基本函数语法" class="headerlink" title="基本函数语法"></a>基本函数语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">prometheus_http_requests_total </span><br><span class="line"> 等价于</span><br><span class="line">prometheus_http_requests_total&#123;&#125;</span><br></pre></td></tr></table></figure><p>#####条件筛选<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">prometheus_http_requests_total&#123;instance=&quot;localhost:9090”&#125;</span><br><span class="line">不满足条件</span><br><span class="line">prometheus_http_requests_total&#123;instance!=&quot;localhost:9090”&#125;</span><br></pre></td></tr></table></figure></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">支持使用正则表达式作为匹配条件，多个表达式之间使用|进行分离：</span><br><span class="line">使用label=~regx表示选择那些标签符合正则表达式定义的时间序列； 反之使用label!~regx进行排除</span><br><span class="line">http_requests_total&#123;environment=~&quot;staging|testing|development&quot;,method!=&quot;GET”&#125;</span><br></pre></td></tr></table></figure><h5 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例如：查询最近5分钟</span><br><span class="line">http_request_total&#123;&#125;[5m] </span><br><span class="line">s - 秒 m - 分钟 h - 小时 d - 天 w - 周 y - 年</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">瞬时向量表达式或者区间向量表达式中，都是以当前时间为基准</span><br><span class="line">http_request_total&#123;&#125; # 瞬时向量表达式，选择当前最新的数据</span><br><span class="line">http_request_total&#123;&#125;[5m]  # 区间向量表达式，选择以当前时间为基准，5分钟内的数据</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果我们想查询，5分钟前的瞬时样本数据，或昨天一天的区间内的样本数据呢? 这个时候我们就可以使用位移操作，位移操作的关键字为offset</span><br><span class="line">http_request_total&#123;&#125; offset 5m </span><br><span class="line">http_request_total&#123;&#125;[1d] offset 1d</span><br></pre></td></tr></table></figure><h5 id="聚合操作"><a href="#聚合操作" class="headerlink" title="聚合操作"></a>聚合操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 查询系统所有http请求的总量</span><br><span class="line">sum(http_request_total)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 按照mode计算主机CPU的平均使用时间</span><br><span class="line">avg(node_cpu) by (mode)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 按照主机查询各个主机的CPU使用率</span><br><span class="line">sum(sum(irate(node_cpu&#123;mode!=&apos;idle&apos;&#125;[5m])) / sum(irate(node_cpu[5m]))) by (instance)</span><br></pre></td></tr></table></figure><h5 id="支持的算法："><a href="#支持的算法：" class="headerlink" title="支持的算法："></a>支持的算法：</h5><ul><li>(加法) - (减法) * (乘法) / (除法) % (求余) ^ (幂运算)</li></ul><hr>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;prometheus-介绍&quot;&gt;&lt;a href=&quot;#prometheus-介绍&quot; class=&quot;headerlink&quot; title=&quot;prometheus 介绍&quot;&gt;&lt;/a&gt;prometheus 介绍&lt;/h4&gt;&lt;figure class=&quot;highlight plai
-      
-    
-    </summary>
-    
-      <category term="promethus" scheme="https://23yue23.github.io/categories/promethus/"/>
-    
-    
-      <category term="promethus-学习篇" scheme="https://23yue23.github.io/tags/promethus-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
     
   </entry>
   

@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[kudu-资料篇]]></title>
+    <url>%2F2019%2F10%2F09%2Fkudu-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>kudu</category>
+      </categories>
+      <tags>
+        <tag>kudu-资料篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[kudu-学习篇]]></title>
+    <url>%2F2019%2F10%2F09%2Fkudu-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[介绍 Kudu是基于Hadoop平台的列式存储系统。 Kudu使用场景 适用于既有随机访问，也有批量数据扫描的复合场景 适用于高计算量的场景 充分利用高性能存储设备 支持数据更新，避免数据反复迁移 支持跨地域的实时数据备份和查询 Kudu的优势 支持update和upsert操作 结构化数据模型 与imapla或spark集成后，可通过sql操作，使用方便 一个table由多个tablet组成，对分区查看、扩容和数据高可用支持非常好 性能压测：写入性能测试executor-cores=2 num-executors=30 executor-memory=4G 小时级别写（LZ4 ）：源数据2000W行，38G，耗时1.4min，平均23w条/s。 小时级别写（ZLIB）：源数据1940W行，34.9G，耗时2min，平均16.2w条/s。 读取性能测试executor-cores=2 num-executors=50 executor-memory=4G 天级别读（LZ4 ）：源数据2.8亿行，541.7 G，耗时10min，平均46.6w条/s。 天级别读（ZLIB）：源数据3.2亿行，581.7 G，耗时15min，平均35.7w条/s。 增加新字段性能测试executor-cores=2 num-executors=30 executor-memory=4G 天级别增加（LZ4 ）：源数据4.74亿行，10个新列，耗时17min，平均46.5w条/s。（先读hive表，再选10列插入kudu中。所以其中包括读837G的text格式hive表全量读的时间，真实插入时间理应更少） 天级别增加（ZLIB）：源数据3.2亿行，10个新列，耗时12min，平均44.7w条/s。（包括读581G的text格式hive表全量读的时间） Kudu接口在KuduHandle.scala中封装了spark操作kudu的常用接口，在KuduHandleExample.scala中给出了Kudu接口的使用示例。 业务开发时可直接使用封装在 train_data_flow的dataflow-sdk中的方法，包括saveDFInsertKuduTable()、saveDFUpsertKuduTable()两种插入数据的方法，和读取kudu表数据的 kudu() 方法，以及addKuduColumns()加列方法。 接口使用注意事项：12345678910111213141、通过读数据 kudu() 接口返回的df，注册临时视图后可直接用sparkSQL读取， 但必须使用between或者in来指定range分区字段的范围（目前字段是hour_id）， 否则会变成全表扫描，效率极低！！！2、kudu引擎暂不支持sparkSQL中 &lt;、&gt;、or 这些谓词下推，支持like， 但仅限于“201907%”这种形式，不支持“201907%02”这种形式； （只要正确指定了range分区字段，其他字段对读取效率影响不大）3、saveDFInsertKuduTable()用于base特征的小时级入库，会根据小时时间新建range分区， saveDFUpsertKuduTable()用于插入新列数据，除base数据的小时级入库外，皆用此方法插入数据；4、待插入数据df必须包含所有的主键，且主键不可为空值；5、删除kudu分区会同时删除分区内的数据，慎用。 Alluxio FUSE 测试 IO基本性能测试，拷贝一个768M的文件。 读 130M/s 90M/s 写 80M/s 194M/s]]></content>
+      <categories>
+        <category>kudu</category>
+      </categories>
+      <tags>
+        <tag>kudu-学习篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[clickhouse-资料篇]]></title>
+    <url>%2F2019%2F10%2F09%2Fclickhouse-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>clickhouse-资料篇</category>
+      </categories>
+      <tags>
+        <tag>clickhouse-资料篇</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[kylin-问题篇]]></title>
     <url>%2F2019%2F10%2F09%2Fkylin-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
     <content type="text"><![CDATA[远程连接服务器数据库报错：Host ‘XXXXXX’ is blocked because of many connection errors12345678910111213141516171819问题描述：Kylin聚合任务MR作业运行时，报错：Host ‘XXXXXX’ is blocked because of many connection errors错误原因：同一ip在短时间内产生太多（超过mysql数据库max_connection_errors的最大值）终端的数据库连接而导致的阻塞；解决方案（根据实际情况来选择解决方案）：1、可以更改max_connection_errors的值，即提高允许的max_connection_errors的数量（1）首先查看该属性设置为多大：命令：show global variables like &apos;%max_connect_errors%&apos;;如果需要永久生效，得去修改mysql配置文件里相应属性。可能配置文件里没有这个属性，需要自己手动添加（2）注意： 当客户端连接服务端超时(超过connect_timeout), 服务端就会给这个客户端记录一次error，当出错的次数达到max_connect_errors的时候，这个客户端就会被锁定。所以根据业务来尽量把这个值设置大一点，mysql默认值为10，我们可以根据具体需要设置大一点，这里设置为1000.（并非越大越好，越大被攻击时安全性越低）；2、使用清除缓存的方法，这样就会把计数清理掉，进入mysql控制台，执行：flush hosts;参考链接：https://jingyan.baidu.com/album/9f7e7ec087dcbe6f2815542d.html]]></content>
@@ -325,7 +358,13 @@
   <entry>
     <title><![CDATA[kylin-资料篇]]></title>
     <url>%2F2019%2F09%2F25%2Fkylin-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[Kylin官网 | 中文 Kylin配置 Cube样例 Cube构建 Kylin参考 Kyllin-Calcite Kylin-API参考 Kylin的Github Kylin的Jenkins Kylin的jira链接 Kylin开发指南 Kylin打包二进制文件]]></content>
+      <categories>
+        <category>kylin</category>
+      </categories>
+      <tags>
+        <tag>kylin-资料篇</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[kylin-学习篇]]></title>
@@ -361,7 +400,13 @@
   <entry>
     <title><![CDATA[clickhouse-学习篇]]></title>
     <url>%2F2019%2F09%2F25%2Fclickhouse-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[介绍 ClickHouse是一个用于联机分析(OLAP)的列式数据库管理系统(DBMS)。 ClickHouse官方中文文档| ClickHouse官方英文文档 Performance comparison of analytical DBMS OLAP场景的关键特征大多数是读请求数据总是以相当大的批(&gt; 1000 rows)进行写入不修改已添加的数据每次查询都从数据库中读取大量的行，但是同时又仅需要少量的列宽表，即每个表包含着大量的列较少的查询(通常每台服务器每秒数百个查询或更少)对于简单查询，允许延迟大约50毫秒列中的数据相对较小： 数字和短字符串(例如，每个URL 60个字节)处理单个查询时需要高吞吐量（每个服务器每秒高达数十亿行）事务不是必须的对数据一致性要求低每一个查询除了一个大表外都很小查询结果明显小于源数据，换句话说，数据被过滤或聚合后能够被盛放在单台服务器的内存中 列式数据库更适合于OLAP场景(对于大多数查询而言，处理速度至少提高了100倍)，下面详细解释了原因(通过图片更有利于直观理解）： 行式： 列式: 性能测试官方测试工具：clickhouse benchmark远程测试工具：ab -n 50 -c 10 ‘http://ip:8123/&#39; Spark 读取性能测试1.m_sys_mode（340个字段）： 写入一天 m_sys_model，每小时约 1000万~2000万条记录，平均耗费时长约 2min ~ 3min 读取一小时数据耗费时长约 1min ~ 2min，20w/s 2.ods_dmp_user_info（9个字段，23亿条记录）： 写入耗费时长约 30~40min 通过Spark 读取性能较低，读取 20w/s，三台机器CPU长时间飙至 1500%，影响其他分析类查询，故不适合做大批量读操作。 Cassandra 读取性能测试40~50w/snum-executors 50 executor-cores 4 executor-memeory 8G 16minnum-executors 50 executor-cores 4 executor-memeory 8G [安装部署参考](https://clickhouse.yandex/docs/en/getting_started/）]]></content>
+      <categories>
+        <category>clickhouse</category>
+      </categories>
+      <tags>
+        <tag>clickhouse-学习篇</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[maven-问题篇]]></title>
