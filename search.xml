@@ -243,17 +243,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[A目录]]></title>
-    <url>%2F2019%2F09%2F27%2FA%E7%9B%AE%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[语言基础和算法篇：Java： 基础篇jvm并发多线程定时器guava scalapythonshell数据结构篇：####大数据篇 Hadoopflumesqoopkafkahiveclickhousehbase 实时篇 FlinksparkStreaming olap 篇 supersetzeppelinkylin ####应用篇： Spring(系列)adminETLldapnginxmaven 数据库篇 mysqlrediscassandradruid 搜索篇 ELK 监控篇： Granfanapromethuszabbix 调度篇 Azkabanairflow]]></content>
-      <categories>
-        <category>A目录</category>
-      </categories>
-      <tags>
-        <tag>A目录</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[面试资料]]></title>
     <url>%2F2019%2F09%2F25%2F%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99%2F</url>
     <content type="text"><![CDATA[面试必刷Tech Interview Guide 技术面试必备基础知识、Leetcode 题解、设计模式、Java、C++、Python、后端面试、操作系统、计算机网络、系统设计 语言类 java scala scala sql 知识扩展：1.推荐系统实现 2.用户行为数据收集系统-(1)简介 3.用户行为数据收集系统–(2)客户端SDK设计 4.用户行为数据收集系统–(3)数据接收端设计 5.大数据世界 思想指导：指导招聘面试的套路与原则程序员，为什么写不好一份简历？]]></content>
