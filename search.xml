@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ambari-资料篇]]></title>
+    <url>%2F2019%2F10%2F09%2FAmbari-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[Ambari参考参考 Ambari官网: http://ambari.apache.org/ Ambari-Github: https://github.com/apache/ambari/tree/branch-2.7 Ambari参考: https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/index.html Ambari官网-2.7.0: https://docs.hortonworks.com/HDPDocuments/Ambari/Ambari-2.7.0.0/index.html Apache-Ambari-2.6.2 http://www.apache.org/dyn/closer.cgi/ambari/ambari-2.6.2 Apache-Ambari-2.6.2: https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.6.2 Apache-Ambari-guide: https://cwiki.apache.org/confluence/display/AMBARI/Ambari Apache-Ambari-2.7.0: https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.7.0 Ambari安装参考 Ambari2.7.0安装: https://blog.csdn.net/zsj777/article/details/81052859]]></content>
+      <categories>
+        <category>Ambari</category>
+      </categories>
+      <tags>
+        <tag>Ambari-资料篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ambari-学习篇]]></title>
+    <url>%2F2019%2F10%2F09%2FAmbari-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Ambari-学习篇</category>
+      </categories>
+      <tags>
+        <tag>Ambari-学习篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hbase-资料篇]]></title>
+    <url>%2F2019%2F10%2F09%2Fhbase-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[HBase参考文档：HBase官网链接: https://hbase.apache.org/HBase官方文档: http://hbase.apache.org/book.htmlHBase+Spark整合参考: http://hbase.apache.org/book.html#sparkHBase中文文档: https://www.w3cschool.cn/hbase_doc/HBase教程文档: https://www.yiibai.com/hbase/hbase-help：http://hbase-help.com/HBase：https://pan.baidu.com/s/1jILzgnsCSDN HBase资料库：http://lib.csdn.net/hbase/node/734 知乎HBase讨论：https://www.zhihu.com/topic/19600820/hot HBase架构参考：深入HBase架构参考: https://blog.csdn.net/xiaolang85/article/details/70054783深入理解HBase架构: https://blog.csdn.net/Yaokai_AssultMaster/article/details/72877127HBase底层存储参考: http://www.cnblogs.com/bonelee/p/6279248.htmlHBase高性能分析: https://mp.weixin.qq.com/s/VCZz8rG9hIK7IKvbYLz0pQ HBase-AWS参考：HBase-AWS部署: https://docs.aws.amazon.com/zh_cn/emr/latest/ReleaseGuide/emr-hbase.htmlHBase-AWS-S3: https://docs.aws.amazon.com/zh_cn/emr/latest/ReleaseGuide/emr-hbase-s3.htmlHBase+Hive参考: https://aws.amazon.com/cn/blogs/big-data/combine-nosql-and-massively-parallel-analytics-using-apache-hbase-and-apache-hive-on-amazon-emr/ HBase下载参考：官网版本：http://archive.apache.org/dist/hbase/ CDH版本(稳定,推荐)：http://archive.cloudera.com/cdh5/ Phoenix参考链接Phoenix官网: http://phoenix.apache.org/Phoenix下载: http://apache.fayea.com/phoenix/Phoenix下载: https://archive.apache.org/dist/phoenix/Phoenix-Github: https://github.com/apache/phoenix.git Phoenix加载数据：http://phoenix.apache.org/bulk_dataload.htmlPhoenix二级索引: http://phoenix.apache.org/secondary_indexing.htmlPhoenix安装参考: https://phoenix.apache.org/download.html#Installation ALI-Phoenix入门: https://help.aliyun.com/document_detail/53716.html?spm=a2c4g.11186623.4.1.mfLv99ALI-HBase指南: https://help.aliyun.com/document_detail/52209.html?spm=a2c4g.11186623.6.559.YisTAt HBase+Phoenix参考Phoenix入门到精通: https://yq.aliyun.com/articles/574090?spm=a2c4g.11186623.2.3.CCfNRUPhoenix链接HBase: https://blog.csdn.net/u010429286/article/details/70054232HBase整合Phoenix01: https://www.cnblogs.com/ballwql/p/8371234.htmlPhoenix命令参考: https://blog.csdn.net/high2011/article/details/72772462 HBase+Spark整合应用Spark访问HBase参考Spark访问HBase01: https://www.cnblogs.com/xing901022/p/8486290.html hortonworks-spark/shc github：https://github.com/hortonworks-spark/shcmaven仓库地址: http://mvnrepository.com/artifact/org.apache.hbase/hbase-sparkHbase spark sql/ dataframe官方文档：https://hbase.apache.org/book.html#_sparksql_dataframesHbase-spark 2.0.0-alpha4已经公开在maven仓库: http://mvnrepository.com/artifact/org.apache.hbase/hbase-spark Spark读写HBase参考HDP-SHC: https://github.com/hortonworks-spark/shc HBase-Java-API: https://www.cnblogs.com/liuwei6/p/6842536.htmlHBase-MapReduce: http://www.cnblogs.com/liuwei6/p/6855467.htmlHBase-Client-API: https://blog.csdn.net/vori2010/article/details/78536327HBaseClient基本操作: https://www.cnblogs.com/wzzkaifa/p/7323279.html HBase-Put操作: https://blog.csdn.net/dongbeiMan/article/details/51768251HBase-Put操作: https://blog.csdn.net/mianshui1105/article/details/53305966 Spark读写HBase: https://blog.csdn.net/u011812294/article/details/72553150Spark读写数据库: https://blog.csdn.net/zilong_zilong/article/details/52529263Spark统计HBase条数: https://blog.csdn.net/u012871493/article/details/52701289SparkSQL+HBase: https://hbase.apache.org/book.html#_sparksql_dataframesSpark-DataFrame-HBase: https://www.cnblogs.com/xing901022/p/8486290.html HBase自定义比较器: http://lucky-xingxing.iteye.com/blog/2185072 异常参考异常参考01: http://www.aboutyun.com/forum.php?mod=viewthread&amp;action=printable&amp;tid=17450]]></content>
+      <categories>
+        <category>hbase</category>
+      </categories>
+      <tags>
+        <tag>hbase-资料篇</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[kudu-资料篇]]></title>
     <url>%2F2019%2F10%2F09%2Fkudu-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
     <content type="text"></content>
@@ -539,7 +572,7 @@
   <entry>
     <title><![CDATA[hbase-学习篇]]></title>
     <url>%2F2019%2F07%2F29%2Fhbase-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[####HBase的简介 HBase是一个分布式的、面向列的开源数据库，该技术来源于 Fay Chang 所撰写的Google论文“Bigtable：一个结构化数据的分布式存储系统”； 就像Bigtable利用了Google文件系统（File System）所提供的分布式数据存储一样，HBase在Hadoop之上提供了类似于Bigtable的能力； HBase是Apache的Hadoop项目的子项目。HBase不同于一般的关系数据库，它是一个适合于非结构化数据存储的数据库； 另一个不同的是HBase基于列的而不是基于行的模式；一张表的列簇不会超过5个，每个列簇中的列数没有限制； ####HBase的特点 容量大：HBase单表可以有上百亿行、百万列，数据矩阵横向和纵向两个维度所支持的数据量级都非常具有弹性； 面向列：HBase是面向列的存储和权限控制，并支持独立检索。列式存储，其数据在表中是按照某列存储的，这样在查询只需要少数几个字段的时候，能大大减少读取的数据量； 多版本：HBase每一个列的数据存储有多个Version（version）； 稀疏性：为空的列并不占用存储空间，表可以设计的非常稀疏； 扩展性：底层依赖于HDFS； 高可靠性：WAL机制保证了数据写入时不会因集群异常而导致写入数据丢失，Replication机制保证了在集群出现严重的问题时，数据不会发生丢失或损坏。而且HBase底层使用HDFS，HDFS本身也有备份； 高性能：底层的LSM数据结构和Rowkey有序排列等架构上的独特设计，使得HBase具有非常高的写入性能。region切分、主键索引和缓存机制使得HBase在海量数据下具备一定的随机读取性能，该性能针对Rowkey的查询能够达到毫秒级别； ####HBase架构图]]></content>
+    <content type="text"><![CDATA[####HBase的简介 HBase是一个分布式的、面向列的开源数据库，该技术来源于 Fay Chang 所撰写的Google论文“Bigtable：一个结构化数据的分布式存储系统”； 就像Bigtable利用了Google文件系统（File System）所提供的分布式数据存储一样，HBase在Hadoop之上提供了类似于Bigtable的能力； HBase是Apache的Hadoop项目的子项目。HBase不同于一般的关系数据库，它是一个适合于非结构化数据存储的数据库； 另一个不同的是HBase基于列的而不是基于行的模式；一张表的列簇不会超过5个，每个列簇中的列数没有限制； ####HBase的特点 容量大：HBase单表可以有上百亿行、百万列，数据矩阵横向和纵向两个维度所支持的数据量级都非常具有弹性； 面向列：HBase是面向列的存储和权限控制，并支持独立检索。列式存储，其数据在表中是按照某列存储的，这样在查询只需要少数几个字段的时候，能大大减少读取的数据量； 多版本：HBase每一个列的数据存储有多个Version（version）； 稀疏性：为空的列并不占用存储空间，表可以设计的非常稀疏； 扩展性：底层依赖于HDFS； 高可靠性：WAL机制保证了数据写入时不会因集群异常而导致写入数据丢失，Replication机制保证了在集群出现严重的问题时，数据不会发生丢失或损坏。而且HBase底层使用HDFS，HDFS本身也有备份； 高性能：底层的LSM数据结构和Rowkey有序排列等架构上的独特设计，使得HBase具有非常高的写入性能。region切分、主键索引和缓存机制使得HBase在海量数据下具备一定的随机读取性能，该性能针对Rowkey的查询能够达到毫秒级别； HBase架构图 HBase各部分的作用客户端Client123456789* 整个HBase集群的访问入口；* 使用HBase RPC机制与HMaster和HRegionServer进行通信；* 与HMaster进行通信，进行管理类操作；* 与HRegionServer进行数据读写类操作；* 包含访问HBase的接口，并维护cache来加快对HBase的访问 协调服务组件Zookeeper123456789* 保证任何时候，集群中只有一个HMaster；* 存储所有HRegionServer的寻址入口；* 实时监控HRegionServer的上线和下线信息，并实时通知给HMaster；* 存储HBase的schema和table元数据；* Zookeeper Quorum存储.META.表地址、HMaster地址。 主节点HMaster123456789* HMaster没有单点问题，HBase中可以启动多个HMaster，通过Zookeeper的Master Election机制保证总有一个Master在运行，主要负责Table和Region的管理工作；* 管理用户对table的增删改查操作。* 管理HRegionServer的负载均衡，调整Region分布；* Region Split后，负责新Region的分布；* 在HRegionServer停机后，负责失效HRegionServer上Region迁移工作。 Region节点HRegionServer123456789HRegionServer： * 维护HRegion，处理对这些HRegion的IO请求，向HDFS文件系统中读写数据； * 负责切分在运行过程中变得过大的HRegion； * Client访问HBase上数据的过程并不需要Master参与（寻址访问Zookeeper和HRegionServer，数据读写访问HRegionServer）， HMaster仅仅维护着table和Region的元数据信息，负载很低。 HBase &amp;&amp; Zookeeper1234567* HBase依赖Zookeeper；* 默认情况下，HBase管理Zookeeper实例，比如，启动或停止Zookeeper；* HMaster与HRegionServer启动时会向Zookeeper注册。* Zookeeper的引入使得HMaster不再是单点故障。]]></content>
       <categories>
         <category>hbase</category>
       </categories>
