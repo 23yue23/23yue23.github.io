@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-10-09T03:23:01.374Z</updated>
+  <updated>2019-10-09T05:47:41.834Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,99 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python-资料篇</title>
+    <link href="https://23yue23.github.io/2019/10/09/python-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/10/09/python-资料篇/</id>
+    <published>2019-10-09T05:41:58.000Z</published>
+    <updated>2019-10-09T05:47:41.834Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="https://www.liaoxuefeng.com/wiki/1016959663602400" target="_blank" rel="noopener">廖雪峰</a></p></blockquote><blockquote><p><a href="http://www.icourse163.org/learn/BIT-268001?tid=1002001005#/learn/content" target="_blank" rel="noopener">中国大学mocc</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/1016959663602400&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;廖雪峰&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockq
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://23yue23.github.io/categories/python/"/>
+    
+    
+      <category term="python-资料篇" scheme="https://23yue23.github.io/tags/python-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python-学习篇</title>
+    <link href="https://23yue23.github.io/2019/10/09/python-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/10/09/python-学习篇/</id>
+    <published>2019-10-09T05:41:48.000Z</published>
+    <updated>2019-10-09T06:12:44.442Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="python" scheme="https://23yue23.github.io/categories/python/"/>
+    
+    
+      <category term="python-学习篇" scheme="https://23yue23.github.io/tags/python-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scala-资料篇</title>
+    <link href="https://23yue23.github.io/2019/10/09/scala-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/10/09/scala-资料篇/</id>
+    <published>2019-10-09T03:45:21.000Z</published>
+    <updated>2019-10-09T03:47:36.803Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>官网：<a href="https://www.scala-lang.org/" target="_blank" rel="noopener">scala官网</a></p></blockquote><blockquote><p>易百：<a href="https://www.yiibai.com/scala/scala_strings.html" target="_blank" rel="noopener">scala教程</a></p></blockquote><blockquote></blockquote><blockquote></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;官网：&lt;a href=&quot;https://www.scala-lang.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;scala官网&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;易百：&lt;a 
+      
+    
+    </summary>
+    
+      <category term="scala" scheme="https://23yue23.github.io/categories/scala/"/>
+    
+    
+      <category term="scala-资料篇" scheme="https://23yue23.github.io/tags/scala-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scala-学习篇</title>
+    <link href="https://23yue23.github.io/2019/10/09/scala-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/10/09/scala-学习篇/</id>
+    <published>2019-10-09T03:45:08.000Z</published>
+    <updated>2019-10-09T03:45:30.556Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="scala" scheme="https://23yue23.github.io/categories/scala/"/>
+    
+    
+      <category term="scala-学习篇" scheme="https://23yue23.github.io/tags/scala-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+    
+  </entry>
   
   <entry>
     <title>代码库-表达式scala校验</title>
@@ -114,9 +207,9 @@
     <link href="https://23yue23.github.io/2019/09/30/IDEA-%E4%BD%BF%E7%94%A8%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/09/30/IDEA-使用篇/</id>
     <published>2019-09-30T01:14:36.000Z</published>
-    <updated>2019-09-30T02:07:28.277Z</updated>
+    <updated>2019-10-09T04:01:41.751Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h4><blockquote></blockquote><p><a href="https://www.lovesofttech.com/general/IDEA/" target="_blank" rel="noopener">IntelliJ IDEA，使用心得汇总</a></p>]]></content>
+    <content type="html"><![CDATA[<h4 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h4><blockquote></blockquote><p><a href="https://www.lovesofttech.com/general/IDEA/" target="_blank" rel="noopener">IntelliJ IDEA，使用心得汇总</a><br><a href="https://github.com/judasn/IntelliJ-IDEA-Tutorial" target="_blank" rel="noopener"></a></p>]]></content>
     
     <summary type="html">
     
@@ -321,9 +414,9 @@
     <link href="https://23yue23.github.io/2019/09/25/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/"/>
     <id>https://23yue23.github.io/2019/09/25/面试资料/</id>
     <published>2019-09-25T06:44:17.000Z</published>
-    <updated>2019-09-30T03:40:51.984Z</updated>
+    <updated>2019-10-09T04:00:04.982Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="面试必刷"><a href="#面试必刷" class="headerlink" title="面试必刷"></a>面试必刷</h4><p><a href="https://cyc2018.github.io/CS-Notes" target="_blank" rel="noopener">Tech Interview Guide 技术面试必备基础知识、Leetcode 题解、设计模式、Java、C++、Python、后端面试、操作系统、计算机网络、系统设计</a></p><h4 id="语言类"><a href="#语言类" class="headerlink" title="语言类"></a>语言类</h4><blockquote><p><a href="https://mp.weixin.qq.com/s/11vry9estQtQmQnRnbTksQ" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/VIUlROU2hhz7oeOFTVC5sA" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/n7u4nIvpyjMjTA4Yo1w5JQ" target="_blank" rel="noopener">sql</a></p></blockquote><h4 id="知识扩展："><a href="#知识扩展：" class="headerlink" title="知识扩展："></a>知识扩展：</h4><p>1.<a href="https://mp.weixin.qq.com/s/hccUo170_8lhdv6C3OzGzw" target="_blank" rel="noopener">推荐系统实现</a></p><p>2.<a href="https://mp.weixin.qq.com/s/tek6kQb7t8tRQi8OiOj3Zw" target="_blank" rel="noopener">用户行为数据收集系统-(1)简介</a></p><p>3.<a href="https://mp.weixin.qq.com/s/OTNSptAO01y5gAwnSRpZZQ" target="_blank" rel="noopener">用户行为数据收集系统–(2)客户端SDK设计</a></p><p>4.<a href="https://mp.weixin.qq.com/s/rQnqsALpqPnN0RoTOyFJow" target="_blank" rel="noopener">用户行为数据收集系统–(3)数据接收端设计</a></p><p>5.<a href="https://mp.weixin.qq.com/s/ffFy6eE_N5QKn_-o6mqQ5g" target="_blank" rel="noopener">大数据世界</a></p><h4 id="思想指导："><a href="#思想指导：" class="headerlink" title="思想指导："></a>思想指导：</h4><p><a href="https://www.lovesofttech.com/job/adviseForCandidates/" target="_blank" rel="noopener">指导</a></p>]]></content>
+    <content type="html"><![CDATA[<h4 id="面试必刷"><a href="#面试必刷" class="headerlink" title="面试必刷"></a>面试必刷</h4><p><a href="https://cyc2018.github.io/CS-Notes" target="_blank" rel="noopener">Tech Interview Guide 技术面试必备基础知识、Leetcode 题解、设计模式、Java、C++、Python、后端面试、操作系统、计算机网络、系统设计</a></p><h4 id="语言类"><a href="#语言类" class="headerlink" title="语言类"></a>语言类</h4><blockquote><p><a href="http://calvin1978.blogcn.com/articles/collection.html" target="_blank" rel="noopener">java</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/11vry9estQtQmQnRnbTksQ" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/VIUlROU2hhz7oeOFTVC5sA" target="_blank" rel="noopener">scala</a></p></blockquote><blockquote><p><a href="https://mp.weixin.qq.com/s/n7u4nIvpyjMjTA4Yo1w5JQ" target="_blank" rel="noopener">sql</a></p></blockquote><h4 id="知识扩展："><a href="#知识扩展：" class="headerlink" title="知识扩展："></a>知识扩展：</h4><p>1.<a href="https://mp.weixin.qq.com/s/hccUo170_8lhdv6C3OzGzw" target="_blank" rel="noopener">推荐系统实现</a></p><p>2.<a href="https://mp.weixin.qq.com/s/tek6kQb7t8tRQi8OiOj3Zw" target="_blank" rel="noopener">用户行为数据收集系统-(1)简介</a></p><p>3.<a href="https://mp.weixin.qq.com/s/OTNSptAO01y5gAwnSRpZZQ" target="_blank" rel="noopener">用户行为数据收集系统–(2)客户端SDK设计</a></p><p>4.<a href="https://mp.weixin.qq.com/s/rQnqsALpqPnN0RoTOyFJow" target="_blank" rel="noopener">用户行为数据收集系统–(3)数据接收端设计</a></p><p>5.<a href="https://mp.weixin.qq.com/s/ffFy6eE_N5QKn_-o6mqQ5g" target="_blank" rel="noopener">大数据世界</a></p><h4 id="思想指导："><a href="#思想指导：" class="headerlink" title="思想指导："></a>思想指导：</h4><p><a href="https://www.lovesofttech.com/job/adviseForCandidates/" target="_blank" rel="noopener">指导</a><br><a href="https://mp.weixin.qq.com/s/qRwDowetBkJqpeMeAZsIpA" target="_blank" rel="noopener">招聘面试的套路与原则</a><br><a href="https://mp.weixin.qq.com/s/3f8hGAQ-auLdkxkQ8XG3CQ" target="_blank" rel="noopener">程序员，为什么写不好一份简历？</a></p>]]></content>
     
     <summary type="html">
     
@@ -413,85 +506,6 @@
     
     
       <category term="cassandra-资料篇" scheme="https://23yue23.github.io/tags/cassandra-%E8%B5%84%E6%96%99%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>zeppelin-问题篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/zeppelin-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/zeppelin-问题篇/</id>
-    <published>2019-09-25T03:42:07.000Z</published>
-    <updated>2019-09-25T03:53:34.326Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="hive-task-失败"><a href="#hive-task-失败" class="headerlink" title="hive task 失败"></a>hive task 失败</h4><blockquote><p>报错信息：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR [bc60fbe1-ee2a-49e5-8932-231b92250134 main] ql.Driver: FAILED: Execution Error, return code 2 from org.apache.hadoop.hive.ql.exec.mr.MapRedTask</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>问题原因：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">作业被kill 掉后，会出现以上信息。</span><br></pre></td></tr></table></figure></p></blockquote><h4 id="Apache-zeppelin-process-died"><a href="#Apache-zeppelin-process-died" class="headerlink" title="Apache zeppelin process died"></a>Apache zeppelin process died</h4><blockquote><p>报错信息：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Apache zeppelin process died</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>解决方法:<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">服务失败，重启服务</span><br><span class="line">ps -ef | grep &quot;zeppelin&quot;</span><br><span class="line">  kill -9 pid</span><br><span class="line">  sudo bin/zeppelin-daemon.sh restart</span><br></pre></td></tr></table></figure></p></blockquote><h4 id="权限问题，无法执行"><a href="#权限问题，无法执行" class="headerlink" title="权限问题，无法执行"></a>权限问题，无法执行</h4><blockquote><p>报错信息：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell_web_path is: http://zeppeline.com:8070/file/. shell/xianchang.yue</span><br><span class="line">Job 20190815-140750_2122347662 finished by scheduler org.apache.zeppelin.interpreter.remote.RemoteInterpreter-shell::2EHURB1RG-shared_session</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>解决方法：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">切换当前，shell的目录为可执行的目录 chown -R XXX:XXX shell/</span><br></pre></td></tr></table></figure></p></blockquote><h4 id="connection-refused-错误"><a href="#connection-refused-错误" class="headerlink" title="connection refused 错误"></a>connection refused 错误</h4><blockquote><p>报错原因：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可能正在使用过期的开发终端节点。尝试创建新的开发终端节点并重新连接。</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>解决方法：(推荐第一种，不可以后再选择第二种)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.重新创建新的note 进行执行。会建立新的连接。</span><br><span class="line">2.连接超时或由于任何原因停止工作，则您可能需要采取以下步骤来还原它：</span><br><span class="line">    (1). 在 Zeppelin 中，在页面右上角的下拉菜单中，选择 Interpreters (解释器)。在解释器页面上，搜索 spark。选择 edit，然后清除 Connect to existing process 复选框。在页面底部选择 Save。</span><br><span class="line">    (2). 如前所述启动 SSH 端口转发。</span><br><span class="line">    (3). 在 Zeppelin 中，重新启用 spark 解释器的 Connect to existing process 设置，然后再次保存。</span><br><span class="line">像这样重置解释器应该会恢复连接。另一种实现方法是在 Interpreters 页面上为 Spark 解释器选择 restart。然后，等待最多 30 秒，以确保远程解释器已重新启动。</span><br></pre></td></tr></table></figure></p></blockquote><p>#### </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;hive-task-失败&quot;&gt;&lt;a href=&quot;#hive-task-失败&quot; class=&quot;headerlink&quot; title=&quot;hive task 失败&quot;&gt;&lt;/a&gt;hive task 失败&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;报错信息：&lt;br&gt;    &lt;fig
-      
-    
-    </summary>
-    
-      <category term="zeppelin" scheme="https://23yue23.github.io/categories/zeppelin/"/>
-    
-    
-      <category term="zeppelin-问题篇" scheme="https://23yue23.github.io/tags/zeppelin-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>grafana-常用篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/grafana-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/grafana-常用篇/</id>
-    <published>2019-09-25T03:34:07.000Z</published>
-    <updated>2019-09-30T01:23:43.189Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="grafana-集成ldap"><a href="#grafana-集成ldap" class="headerlink" title="grafana 集成ldap"></a>grafana 集成ldap</h5><p><a href="https://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_liunx_51_ldap_for_grafana.html" target="_blank" rel="noopener">grafana集成ldap</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h5 id=&quot;grafana-集成ldap&quot;&gt;&lt;a href=&quot;#grafana-集成ldap&quot; class=&quot;headerlink&quot; title=&quot;grafana 集成ldap&quot;&gt;&lt;/a&gt;grafana 集成ldap&lt;/h5&gt;&lt;p&gt;&lt;a href=&quot;https://www.c
-      
-    
-    </summary>
-    
-      <category term="grafana" scheme="https://23yue23.github.io/categories/grafana/"/>
-    
-    
-      <category term="grafana-常用篇" scheme="https://23yue23.github.io/tags/grafana-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx-常用篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/nginx-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/nginx-常用篇/</id>
-    <published>2019-09-25T03:16:30.000Z</published>
-    <updated>2019-09-25T03:16:30.469Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>zabbix-常用篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/zabbix-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/zabbix-常用篇/</id>
-    <published>2019-09-25T03:16:12.000Z</published>
-    <updated>2019-09-25T03:16:12.250Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   

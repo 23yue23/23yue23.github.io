@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python-资料篇]]></title>
+    <url>%2F2019%2F10%2F09%2Fpython-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[廖雪峰 中国大学mocc]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python-资料篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[python-学习篇]]></title>
+    <url>%2F2019%2F10%2F09%2Fpython-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python-学习篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[scala-资料篇]]></title>
+    <url>%2F2019%2F10%2F09%2Fscala-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[官网：scala官网 易百：scala教程]]></content>
+      <categories>
+        <category>scala</category>
+      </categories>
+      <tags>
+        <tag>scala-资料篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[scala-学习篇]]></title>
+    <url>%2F2019%2F10%2F09%2Fscala-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>scala</category>
+      </categories>
+      <tags>
+        <tag>scala-学习篇</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[代码库-表达式scala校验]]></title>
     <url>%2F2019%2F10%2F09%2F%E4%BB%A3%E7%A0%81%E5%BA%93-%E8%A1%A8%E8%BE%BE%E5%BC%8Fscala%E6%A0%A1%E9%AA%8C%2F</url>
     <content type="text"><![CDATA[Regex常用的方法12findAllIn 方法找到line中所有符合正则的字符串，可以通过 toArray 方法来将匹配到的结果存放到 Array 中。也可以方法哦for循环中，遍历出符合条件的匹配。findFirstIn 只匹配第一个符合正则的字符串就停止了 设备id 校验1234567val deviceIdReg = &quot;^[0-9a-fA-F]&#123;8&#125;(-[0-9a-fA-F]&#123;4&#125;)&#123;3&#125;-[0-9a-fA-F]&#123;12&#125;$&quot;.r# EF453E92-B6D0-48B9-912B-A156B5C6B90Fdef validateDeviceId(deviceId: String): Boolean = &#123; deviceIdReg.findFirstMatchIn(deviceId).isDefined &#125; 查找匹配部分12345val p = &quot;[0-9]+&quot;.r p.findAllIn(&quot;2 ad 12ab ab21 23&quot;).toList // List(2, 12, 21, 23)p.findFirstMatchIn(&quot;abc123xyz&quot;).get // scala.util.matching.Regex.Match = 123 参考资料： 1.正则表达式（regular expression）以及常用语法]]></content>
@@ -135,7 +179,7 @@
   <entry>
     <title><![CDATA[面试资料]]></title>
     <url>%2F2019%2F09%2F25%2F%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99%2F</url>
-    <content type="text"><![CDATA[面试必刷Tech Interview Guide 技术面试必备基础知识、Leetcode 题解、设计模式、Java、C++、Python、后端面试、操作系统、计算机网络、系统设计 语言类 scala scala sql 知识扩展：1.推荐系统实现 2.用户行为数据收集系统-(1)简介 3.用户行为数据收集系统–(2)客户端SDK设计 4.用户行为数据收集系统–(3)数据接收端设计 5.大数据世界 思想指导：指导]]></content>
+    <content type="text"><![CDATA[面试必刷Tech Interview Guide 技术面试必备基础知识、Leetcode 题解、设计模式、Java、C++、Python、后端面试、操作系统、计算机网络、系统设计 语言类 java scala scala sql 知识扩展：1.推荐系统实现 2.用户行为数据收集系统-(1)简介 3.用户行为数据收集系统–(2)客户端SDK设计 4.用户行为数据收集系统–(3)数据接收端设计 5.大数据世界 思想指导：指导招聘面试的套路与原则程序员，为什么写不好一份简历？]]></content>
       <categories>
         <category>面试资料</category>
       </categories>
@@ -636,7 +680,7 @@
   <entry>
     <title><![CDATA[技术文章]]></title>
     <url>%2F2019%2F04%2F29%2F%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[技术文章 MySQL索引原理及慢查询优化 美团点评基于 Flink 的实时数仓建设实践 从零开始入门推荐算法工程师 计算广告与流处理技术综述]]></content>
+    <content type="text"><![CDATA[技术文章 MySQL索引原理及慢查询优化 美团点评基于 Flink 的实时数仓建设实践 从零开始入门推荐算法工程师 计算广告与流处理技术综述 学习规划文章1.面试过阿里等互联网大公司，我知道了这些套路]]></content>
       <categories>
         <category>技术文章</category>
       </categories>
