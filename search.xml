@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Ambari-资料篇]]></title>
     <url>%2F2019%2F10%2F09%2FAmbari-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[Ambari参考参考 Ambari官网: http://ambari.apache.org/ Ambari-Github: https://github.com/apache/ambari/tree/branch-2.7 Ambari参考: https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/index.html Ambari官网-2.7.0: https://docs.hortonworks.com/HDPDocuments/Ambari/Ambari-2.7.0.0/index.html Apache-Ambari-2.6.2 http://www.apache.org/dyn/closer.cgi/ambari/ambari-2.6.2 Apache-Ambari-2.6.2: https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.6.2 Apache-Ambari-guide: https://cwiki.apache.org/confluence/display/AMBARI/Ambari Apache-Ambari-2.7.0: https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.7.0 Ambari安装参考 Ambari2.7.0安装: https://blog.csdn.net/zsj777/article/details/81052859]]></content>
+    <content type="text"><![CDATA[Ambari参考Ambari官网: http://ambari.apache.org/ Ambari-Github: https://github.com/apache/ambari/tree/branch-2.7 Ambari参考: https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/index.html Ambari官网-2.7.0: https://docs.hortonworks.com/HDPDocuments/Ambari/Ambari-2.7.0.0/index.html Apache-Ambari-2.6.2 http://www.apache.org/dyn/closer.cgi/ambari/ambari-2.6.2 Apache-Ambari-2.6.2: https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.6.2 Apache-Ambari-guide: https://cwiki.apache.org/confluence/display/AMBARI/Ambari Apache-Ambari-2.7.0: https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.7.0 Ambari添加Stack参考：http://www.itkeyword.com/doc/617736624192567x360 Ambari扩展Stack参考：https://my.oschina.net/u/2277929/blog/666180?tdsourcetag=s_pctim_aiomsg Ambari安装参考 Ambari2.7.0安装: https://blog.csdn.net/zsj777/article/details/81052859 Ambari学习链接Ambari参考教程：https://www.aliyun.com/jiaocheng/topic_25417_1.html Ambari操作指南：https://blog.csdn.net/devalone/article/details/80781652 Ambari操作指南：https://blog.csdn.net/devalone/article/details/80800262 Ambari基础参考：https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html Ambari基础应用：https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html Ambari-Metrics：https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/ Ambari-Alerts：https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari3/ Ambari-RoadMap：https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=30755705 Hortonworks链接：https://hortonworks.com/apache/ambari/]]></content>
       <categories>
         <category>Ambari</category>
       </categories>
@@ -611,7 +611,7 @@
   <entry>
     <title><![CDATA[广告-学习篇]]></title>
     <url>%2F2019%2F07%2F12%2F%E5%B9%BF%E5%91%8A-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[术语理解1.dsp系统架构 实践 dsp 业务 1.1 美团DSP广告策略实践]]></content>
+    <content type="text"><![CDATA[术语理解1.dsp系统架构 实践 dsp 业务 1.1 美团DSP广告策略实践 123DSP基本概念介绍： 广告平台：将广告素材分发给下游设备、目标用户，然后跟踪分析用户事件行为，并反馈广告主。 DSP：DemandSidePlatform，需求方平台。即将广告平台或者其他来源的广告素材分发给指定的其他广告平台，并收集分析广告的展示激活信息，反馈广告主]]></content>
       <categories>
         <category>广告</category>
       </categories>
