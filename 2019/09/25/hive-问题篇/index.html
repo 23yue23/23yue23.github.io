@@ -124,7 +124,7 @@
 
 
 
-  <meta name="keywords" content="flink, spark,kafka,hive">
+  <meta name="keywords" content="hive-问题篇,">
 
 
 
@@ -137,14 +137,18 @@
 
 
 
+<meta name="description" content="hql出现类似以下异常异常信息： 12Starting to launch local task to process map join; maximum memory = 301465600 Execution failed with exit status: 2 解决方案：尝试增加以下设置： 12set hive.auto.convert.join=false;关闭自动转化MapJoin，默认">
+<meta name="keywords" content="hive-问题篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hive-问题篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/09/25/hive-问题篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
+<meta property="og:description" content="hql出现类似以下异常异常信息： 12Starting to launch local task to process map join; maximum memory = 301465600 Execution failed with exit status: 2 解决方案：尝试增加以下设置： 12set hive.auto.convert.join=false;关闭自动转化MapJoin，默认">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T03:07:09.884Z">
+<meta property="og:updated_time" content="2019-10-09T09:51:11.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hive-问题篇">
+<meta name="twitter:description" content="hql出现类似以下异常异常信息： 12Starting to launch local task to process map join; maximum memory = 301465600 Execution failed with exit status: 2 解决方案：尝试增加以下设置： 12set hive.auto.convert.join=false;关闭自动转化MapJoin，默认">
 
 
 
@@ -379,6 +383,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hive/" itemprop="url" rel="index">
+                    <span itemprop="name">hive</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -401,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1k
                 </span>
               
 
@@ -417,7 +443,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -438,7 +464,21 @@
       
 
       
-        
+        <h4 id="hql出现类似以下异常"><a href="#hql出现类似以下异常" class="headerlink" title="hql出现类似以下异常"></a>hql出现类似以下异常</h4><p>异常信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Starting to launch local task to process map join; </span><br><span class="line">maximum memory = 301465600 Execution failed with exit status: 2</span><br></pre></td></tr></table></figure>
+<p>解决方案：尝试增加以下设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set hive.auto.convert.join=false;关闭自动转化MapJoin，默认为true;</span><br><span class="line">set hive.ignore.mapjoin.hint=false; 关闭忽略mapjoin的hints（不忽略，hints有效），默认为true(忽略hints)。</span><br></pre></td></tr></table></figure>
+<h4 id="执行hql的时，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space"><a href="#执行hql的时，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space" class="headerlink" title="执行hql的时，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space"></a>执行hql的时，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space</h4><p>解决方法： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在你的程序里设置以下环境变量值：</span><br><span class="line">export HADOOP_CLIENT_OPTS=&quot;-Xmx2048m&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题："><a href="#hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题：" class="headerlink" title="hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题："></a>hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">任务执行是成功的，但是切换了metadata数据库后，发现该分区数据丢失。</span><br><span class="line"></span><br><span class="line">原因：造成此问题的原因是由于执行成功的任务把元数据信息写入到旧的元数据库里，切换时没有同步到新的元数据信息库里。</span><br><span class="line"></span><br><span class="line">解决方法：切换新的元数据信息库后，需要人工检查下分区数据信息，保证分区数据不丢失。</span><br></pre></td></tr></table></figure>
+<h4 id="Failed-to-create-temp-property-file-cause-java-io-IOException-设备上没有空间"><a href="#Failed-to-create-temp-property-file-cause-java-io-IOException-设备上没有空间" class="headerlink" title="Failed to create temp property file cause: java.io.IOException: 设备上没有空间"></a>Failed to create temp property file cause: java.io.IOException: 设备上没有空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">原因：服务器的磁盘空间已满。</span><br><span class="line">解决方法：清理磁盘。</span><br></pre></td></tr></table></figure>
+<h4 id="自定义SerDe的使用方法："><a href="#自定义SerDe的使用方法：" class="headerlink" title="自定义SerDe的使用方法："></a>自定义SerDe的使用方法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">创建SerDe:mobvista.dataplatform.text.TextSerde hive表的使用方法：</span><br><span class="line"></span><br><span class="line">CREATE EXTERNAL TABLE dm_campaign_tag_like</span><br><span class="line">PARTITIONED BY (</span><br><span class="line">year string,</span><br><span class="line">month string,</span><br><span class="line">day string</span><br><span class="line">) ROW FORMAT SERDE &apos;com.text.TextSerde&apos; </span><br><span class="line">WITH SERDEPROPERTIES (&apos;schema.url&apos;=&apos;s3://tag.avsc&apos;)</span><br><span class="line">STORED AS TEXTFILE</span><br><span class="line">LOCATION &apos;s3://DataWareHouse/data/dwh/dm_campaign_tag_like&apos; </span><br><span class="line">TBLPROPERTIES (</span><br><span class="line">&apos;schema.url&apos;=&apos;s3://DataWareHouse/schema/dwh/tag.avsc&apos;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">修改hive表的属性：</span><br><span class="line"></span><br><span class="line">ALTER TABLE ods_adn_trackingnew_click_like SET TBLPROPERTIES (&apos;schema.url&apos; = &apos;s3://click.avsc&apos;);</span><br><span class="line"></span><br><span class="line">修改表的serde和属性</span><br><span class="line"></span><br><span class="line">ALTER TABLE ods_adn_trackingnew_click_like SET SERDE &apos;mobvista.dataplatform.text.TextSerde&apos;;</span><br><span class="line"></span><br><span class="line">ALTER TABLE ods_adn_trackingnew_click_like SET SERDEPROPERTIES (&apos;schema.url&apos; = &apos;s3://DataWareHouse/schema/dwh/ods_adn_trackingv3_click/ods_adn_trackingv3_click.avsc&apos;);</span><br><span class="line"></span><br><span class="line">修改表分区的serde属性</span><br><span class="line"></span><br><span class="line">ALTER TABLE ods_adn_trackingnew_click_like partition(yyyy=&apos;2017&apos;,mm=&apos;06&apos;,dd=&apos;16&apos;,re=&apos;virginia&apos;,hh=&apos;00&apos;) SET SERDEPROPERTIES (&apos;schema.url&apos; = &apos;s3://click.avsc&apos;);</span><br></pre></td></tr></table></figure>
+<h4 id="hive添加分区的时候偶尔会出现以下问题："><a href="#hive添加分区的时候偶尔会出现以下问题：" class="headerlink" title="hive添加分区的时候偶尔会出现以下问题："></a>hive添加分区的时候偶尔会出现以下问题：</h4><p>case 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.sql.BatchUpdateException: </span><br><span class="line">Duplicate entry &apos;admin&apos; for key &apos;ROLEENTITYINDEX&apos;</span><br><span class="line">这主要是由于hive的metastore数据被修改造成的。</span><br><span class="line"></span><br><span class="line">只需要把失败的任务重新执行即可，这是因为metastore在并发比较高时，客户端无法在超时时间内获取到结果信息而导致的异常，重新执行即可。</span><br></pre></td></tr></table></figure>
+<p>case 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Caused by: MetaException(message:Metastore contains multiple versions)</span><br><span class="line"></span><br><span class="line">首先删除matestore数据库当中重复的版本信息：</span><br><span class="line"></span><br><span class="line">mysql -ip -u* -p* -Dhive_db -e &apos;delete from VERSION where VER_ID &lt;&gt; 1;commit;&apos;</span><br><span class="line"></span><br><span class="line">然后重新执行失败的任务，错误原因同case1一样，也是由于metastore在并发比较高时，客户端无法获取到hive的版本信息，从而插入VERSION表一条版本信息数据，而造成的版本信息冗余，从而导致的异常。</span><br><span class="line"></span><br><span class="line">以上两种case偶尔会发生，说明在某一个时间节点，metastore的性能达到了瓶颈，需要优化和提升metastore的性能，可以从以下几点入手解决该问题：</span><br><span class="line"></span><br><span class="line">1，提升metastore数据库服务器的性能指标，例如：io，memory等；</span><br><span class="line"></span><br><span class="line">2，优化metastore的写入和查询性能，可以从缓存和事务入手；</span><br><span class="line"></span><br><span class="line">3，修改hive客户端配置，hive的conf配置文件里有一项是配置读取metastore的超时时间的，参数项为：hive.stats.jdbc.timeout，默认参数值为30s，可以适当放到该参数项的值。</span><br></pre></td></tr></table></figure>
+<h4 id="Caused-by-java-lang-ClassNotFoundException-org-apache-commons-logging-impl-SLF4JLocationAwareLog"><a href="#Caused-by-java-lang-ClassNotFoundException-org-apache-commons-logging-impl-SLF4JLocationAwareLog" class="headerlink" title="Caused by: java.lang.ClassNotFoundException: org.apache.commons.logging.impl.SLF4JLocationAwareLog"></a>Caused by: java.lang.ClassNotFoundException: org.apache.commons.logging.impl.SLF4JLocationAwareLog</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">造成该问题的主要原因是由于系统环境变量里找不到这个jar：jcl-over-slf4j-1.7.16.jar</span><br><span class="line"></span><br><span class="line">需要在执行hql之前手动添加下,</span><br><span class="line">添加命令为：add jar /data/hadoop-alternative/spark/jars/jcl-over-slf4j-1.7.16.jar;</span><br></pre></td></tr></table></figure>
+<h4 id="如何使用hive模拟mysql的自增id"><a href="#如何使用hive模拟mysql的自增id" class="headerlink" title="如何使用hive模拟mysql的自增id"></a>如何使用hive模拟mysql的自增id</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO TABLE customer_dim </span><br><span class="line">SELECT </span><br><span class="line">ROW_NUMBER() OVER (ORDER BY t1.customer_number) + t2.sk_max, </span><br><span class="line">t1.customer_number, </span><br><span class="line">t1.customer_name </span><br><span class="line">FROM </span><br><span class="line">( </span><br><span class="line">SELECT t1.* FROM customer t1 LEFT JOIN customer_dim t2 ON t1.customer_number = t2.customer_number </span><br><span class="line">WHERE t2.customer_sk IS NULL ) t1 </span><br><span class="line">CROSS JOIN </span><br><span class="line">(SELECT COALESCE(MAX(customer_sk),0) sk_max FROM customer_dim) t2;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -486,6 +526,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hive-问题篇/" rel="tag"><i class="fa fa-tag"></i> hive-问题篇</a>
+          
+        </div>
       
 
       
@@ -565,8 +611,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -596,7 +651,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -607,7 +662,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -690,6 +745,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#hql出现类似以下异常"><span class="nav-number">1.</span> <span class="nav-text">hql出现类似以下异常</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行hql的时，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space"><span class="nav-number">2.</span> <span class="nav-text">执行hql的时，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题："><span class="nav-number">3.</span> <span class="nav-text">hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Failed-to-create-temp-property-file-cause-java-io-IOException-设备上没有空间"><span class="nav-number">4.</span> <span class="nav-text">Failed to create temp property file cause: java.io.IOException: 设备上没有空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义SerDe的使用方法："><span class="nav-number">5.</span> <span class="nav-text">自定义SerDe的使用方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hive添加分区的时候偶尔会出现以下问题："><span class="nav-number">6.</span> <span class="nav-text">hive添加分区的时候偶尔会出现以下问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Caused-by-java-lang-ClassNotFoundException-org-apache-commons-logging-impl-SLF4JLocationAwareLog"><span class="nav-number">7.</span> <span class="nav-text">Caused by: java.lang.ClassNotFoundException: org.apache.commons.logging.impl.SLF4JLocationAwareLog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用hive模拟mysql的自增id"><span class="nav-number">8.</span> <span class="nav-text">如何使用hive模拟mysql的自增id</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -717,7 +788,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">31.3k</span>
+    <span title="Site words total count">34.4k</span>
   
 </div>
 
