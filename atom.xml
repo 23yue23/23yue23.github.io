@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-10-09T05:47:41.834Z</updated>
+  <updated>2019-10-09T07:38:42.872Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kylin-问题篇</title>
+    <link href="https://23yue23.github.io/2019/10/09/kylin-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/10/09/kylin-问题篇/</id>
+    <published>2019-10-09T07:26:08.000Z</published>
+    <updated>2019-10-09T07:38:42.872Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="远程连接服务器数据库报错：Host-‘XXXXXX’-is-blocked-because-of-many-connection-errors"><a href="#远程连接服务器数据库报错：Host-‘XXXXXX’-is-blocked-because-of-many-connection-errors" class="headerlink" title="远程连接服务器数据库报错：Host ‘XXXXXX’ is blocked because of many connection errors"></a>远程连接服务器数据库报错：Host ‘XXXXXX’ is blocked because of many connection errors</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">问题描述：</span><br><span class="line">Kylin聚合任务MR作业运行时，报错：Host ‘XXXXXX’ is blocked because of many connection errors</span><br><span class="line"></span><br><span class="line">错误原因：</span><br><span class="line">同一ip在短时间内产生太多（超过mysql数据库max_connection_errors的最大值）终端的数据库连接而导致的阻塞；</span><br><span class="line"></span><br><span class="line">解决方案（根据实际情况来选择解决方案）：</span><br><span class="line"></span><br><span class="line">1、可以更改max_connection_errors的值，即提高允许的max_connection_errors的数量</span><br><span class="line"></span><br><span class="line">（1）首先查看该属性设置为多大：命令：show global variables like &apos;%max_connect_errors%&apos;;如果需要永久生效，得去修改mysql配置文件里相应属性。可能配置文件里没有这个属性，需要自己手动添加</span><br><span class="line"></span><br><span class="line">（2）注意：</span><br><span class="line"> 当客户端连接服务端超时(超过connect_timeout), 服务端就会给这个客户端记录一次error，当出错的次数达到max_connect_errors的时候，这个客户端就会被锁定。所以根据业务来尽量把这个值设置大一点，mysql默认值为10，我们可以根据具体需要设置大一点，这里设置为1000.（并非越大越好，越大被攻击时安全性越低）；</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2、使用清除缓存的方法，这样就会把计数清理掉，进入mysql控制台，执行：flush hosts;</span><br><span class="line"></span><br><span class="line">参考链接：https://jingyan.baidu.com/album/9f7e7ec087dcbe6f2815542d.html</span><br></pre></td></tr></table></figure><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;远程连接服务器数据库报错：Host-‘XXXXXX’-is-blocked-because-of-many-connection-errors&quot;&gt;&lt;a href=&quot;#远程连接服务器数据库报错：Host-‘XXXXXX’-is-blocked-because-of-
+      
+    
+    </summary>
+    
+      <category term="kylin" scheme="https://23yue23.github.io/categories/kylin/"/>
+    
+    
+      <category term="kylin-问题篇" scheme="https://23yue23.github.io/tags/kylin-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    
+  </entry>
   
   <entry>
     <title>python-资料篇</title>
@@ -481,31 +506,6 @@
     
     
       <category term="promethus-学习篇" scheme="https://23yue23.github.io/tags/promethus-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cassandra-资料篇</title>
-    <link href="https://23yue23.github.io/2019/09/25/cassandra-%E8%B5%84%E6%96%99%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/25/cassandra-资料篇/</id>
-    <published>2019-09-25T05:05:43.000Z</published>
-    <updated>2019-09-25T10:02:19.749Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="Youte-视频"><a href="#Youte-视频" class="headerlink" title="Youte 视频"></a>Youte 视频</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DataStax Accelerate 2019 — Full Session Recordings： </span><br><span class="line">https://www.youtube.com/playlist?list=PLm-EPIkBI3YpJbuKUGDlZVNHzT0umcBSl 大概85个视频，涉及到cassandra各个方面。</span><br><span class="line">下次会议是 https://apachecon.com/acna19/s/#/schedule?search=cassandra </span><br><span class="line">可以关注下</span><br><span class="line">https://issues.apache.org/jira/browse/CASSANDRA-11815</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;Youte-视频&quot;&gt;&lt;a href=&quot;#Youte-视频&quot; class=&quot;headerlink&quot; title=&quot;Youte 视频&quot;&gt;&lt;/a&gt;Youte 视频&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
-      
-    
-    </summary>
-    
-      <category term="cassandra" scheme="https://23yue23.github.io/categories/cassandra/"/>
-    
-    
-      <category term="cassandra-资料篇" scheme="https://23yue23.github.io/tags/cassandra-%E8%B5%84%E6%96%99%E7%AF%87/"/>
     
   </entry>
   
