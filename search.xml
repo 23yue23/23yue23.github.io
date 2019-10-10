@@ -80,7 +80,7 @@
   <entry>
     <title><![CDATA[python-资料篇]]></title>
     <url>%2F2019%2F10%2F09%2Fpython-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[廖雪峰 中国大学mocc]]></content>
+    <content type="text"><![CDATA[廖雪峰 中国大学mocc Python - 100天从新手到大师]]></content>
       <categories>
         <category>python</category>
       </categories>
@@ -245,7 +245,7 @@
   <entry>
     <title><![CDATA[面试资料]]></title>
     <url>%2F2019%2F09%2F25%2F%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99%2F</url>
-    <content type="text"><![CDATA[面试必刷Tech Interview Guide 技术面试必备基础知识、Leetcode 题解、设计模式、Java、C++、Python、后端面试、操作系统、计算机网络、系统设计 语言类 java scala scala sql 知识扩展：1.推荐系统实现 2.用户行为数据收集系统-(1)简介 3.用户行为数据收集系统–(2)客户端SDK设计 4.用户行为数据收集系统–(3)数据接收端设计 5.大数据世界 思想指导：指导招聘面试的套路与原则程序员，为什么写不好一份简历？]]></content>
+    <content type="text"><![CDATA[面试必刷Tech Interview Guide 技术面试必备基础知识、Leetcode 题解、设计模式、Java、C++、Python、后端面试、操作系统、计算机网络、系统设计 flink-40问 语言类 java scala scala sql 知识扩展：1.推荐系统实现 2.用户行为数据收集系统-(1)简介 3.用户行为数据收集系统–(2)客户端SDK设计 4.用户行为数据收集系统–(3)数据接收端设计 5.大数据世界 思想指导：指导招聘面试的套路与原则程序员，为什么写不好一份简历？]]></content>
       <categories>
         <category>面试资料</category>
       </categories>
@@ -403,11 +403,23 @@
     <title><![CDATA[superset-常用篇]]></title>
     <url>%2F2019%2F09%2F25%2Fsuperset-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>superset</category>
+      </categories>
+      <tags>
+        <tag>superset-常用篇</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[superset-资料篇]]></title>
     <url>%2F2019%2F09%2F25%2Fsuperset-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>superset</category>
+      </categories>
+      <tags>
+        <tag>superset-资料篇</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[zeppelin-学习篇]]></title>
