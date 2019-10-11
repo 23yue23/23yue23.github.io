@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-10-09T10:17:36.835Z</updated>
+  <updated>2019-10-10T10:02:32.293Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>职业知识图谱</title>
+    <link href="https://23yue23.github.io/2019/10/10/%E8%81%8C%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/"/>
+    <id>https://23yue23.github.io/2019/10/10/职业知识图谱/</id>
+    <published>2019-10-10T10:00:19.000Z</published>
+    <updated>2019-10-10T10:02:32.293Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="大数据通用处理平台"><a href="#大数据通用处理平台" class="headerlink" title="大数据通用处理平台"></a>大数据通用处理平台</h4><p>Spark<br>Flink<br>Hadoop</p><h4 id="分布式存储"><a href="#分布式存储" class="headerlink" title="分布式存储"></a>分布式存储</h4><p>HDFS</p><h4 id="资源调度"><a href="#资源调度" class="headerlink" title="资源调度"></a>资源调度</h4><p>1、Yarn<br>2、Mesos</p><h4 id="机器学习工具"><a href="#机器学习工具" class="headerlink" title="机器学习工具"></a>机器学习工具</h4><p>Mahout</p><p>Spark Mlib</p><p>TensorFlow (Google 系)</p><p>Amazon Machine Learning</p><p>DMTK (微软分布式机器学习工具)</p><h4 id="数据分析-数据仓库-SQL类"><a href="#数据分析-数据仓库-SQL类" class="headerlink" title="数据分析/数据仓库(SQL类)"></a>数据分析/数据仓库(SQL类)</h4><p>Pig</p><p>Hive</p><p>kylin</p><p>Spark SQL,</p><p>Spark DataFrame</p><p>Impala</p><p>Phoenix</p><p>ELK（ElasticSearch，Logstash，Kibana）</p><h4 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h4><p>Kafka(纯日志类，大吞吐量)</p><p>RocketMQ</p><p>ZeroMQ</p><p>ActiveMQ</p><p>RabbitMQ</p><h4 id="流式计算"><a href="#流式计算" class="headerlink" title="流式计算"></a>流式计算</h4><p>Storm/JStorm</p><p>Spark Streaming</p><p>Flink</p><h4 id="日志收集"><a href="#日志收集" class="headerlink" title="日志收集"></a>日志收集</h4><p>Scribe</p><p>Flume</p><h4 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h4><p>Java</p><p>Python</p><p>R</p><p>Ruby</p><p>Scala</p><h4 id="数据分析挖掘"><a href="#数据分析挖掘" class="headerlink" title="数据分析挖掘"></a>数据分析挖掘</h4><p>MATLAB</p><p>SPSS</p><p>SAS</p><h4 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h4><p>R</p><p>D3.js</p><p>ECharts</p><p>Excle</p><p>Python</p><h4 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h4><p>机器学习基础</p><p>聚类</p><p>时间序列</p><p>推荐系统</p><p>回归分析</p><p>文本挖掘</p><p>决策树</p><p>支持向量机</p><p>贝叶斯分类</p><p>神经网络</p><p>机器学习工具</p><p>Mahout</p><p>Spark Mlib</p><p>TensorFlow (Google 系)</p><p>Amazon Machine Learning</p><p>DMTK (微软分布式机器学习工具)</p><h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>一致性</p><p>paxos</p><p>raft</p><p>gossip</p><p>数据结构</p><p>栈，队列，链表</p><p>散列表</p><p>二叉树，红黑树，B树</p><p>图</p><p>常用算法<br>1.排序</p><p>插入排序</p><p>桶排序</p><p>堆排序</p><p>2.快速排序</p><p>3,最大子数组</p><p>4.最长公共子序列</p><p>5.最小生成树</p><p>最短路径</p><p>6.矩阵的存储和运算</p><h4 id="云计算"><a href="#云计算" class="headerlink" title="云计算"></a>云计算</h4><p>云服务</p><p>SaaS</p><p>PaaS</p><p>IaaS</p><p>Openstack</p><p>Docker</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;大数据通用处理平台&quot;&gt;&lt;a href=&quot;#大数据通用处理平台&quot; class=&quot;headerlink&quot; title=&quot;大数据通用处理平台&quot;&gt;&lt;/a&gt;大数据通用处理平台&lt;/h4&gt;&lt;p&gt;Spark&lt;br&gt;Flink&lt;br&gt;Hadoop&lt;/p&gt;
+&lt;h4 id=&quot;分布式存储
+      
+    
+    </summary>
+    
+      <category term="职业知识图谱" scheme="https://23yue23.github.io/categories/%E8%81%8C%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/"/>
+    
+    
+      <category term="职业知识图谱" scheme="https://23yue23.github.io/tags/%E8%81%8C%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>Ambari-资料篇</title>
@@ -463,31 +489,6 @@
     
     
       <category term="haproxy-常用篇" scheme="https://23yue23.github.io/tags/haproxy-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql-常用篇</title>
-    <link href="https://23yue23.github.io/2019/09/29/mysql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/29/mysql-常用篇/</id>
-    <published>2019-09-29T06:28:11.000Z</published>
-    <updated>2019-09-30T03:23:00.478Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="mysql-mac-安装"><a href="#mysql-mac-安装" class="headerlink" title="mysql-mac 安装"></a>mysql-mac 安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br><span class="line">unset TMPDIR</span><br><span class="line">mysql_install_db --verbose --user=`whoami` --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp</span><br></pre></td></tr></table></figure><h4 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h4><blockquote><p>conf</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/etc/my.cnf</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;mysql-mac-安装&quot;&gt;&lt;a href=&quot;#mysql-mac-安装&quot; class=&quot;headerlink&quot; title=&quot;mysql-mac 安装&quot;&gt;&lt;/a&gt;mysql-mac 安装&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="mysql" scheme="https://23yue23.github.io/categories/mysql/"/>
-    
-    
-      <category term="mysql-常用篇" scheme="https://23yue23.github.io/tags/mysql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
     
   </entry>
   
