@@ -69,11 +69,11 @@
   </entry>
   
   <entry>
-    <title>Ambari-资料篇</title>
-    <link href="https://23yue23.github.io/2019/10/09/Ambari-%E8%B5%84%E6%96%99%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/09/Ambari-资料篇/</id>
+    <title>ambari-资料篇</title>
+    <link href="https://23yue23.github.io/2019/10/09/ambari-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/10/09/ambari-资料篇/</id>
     <published>2019-10-09T09:04:15.000Z</published>
-    <updated>2019-10-09T10:17:36.835Z</updated>
+    <updated>2019-10-12T01:51:42.578Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Ambari参考"><a href="#Ambari参考" class="headerlink" title="Ambari参考"></a>Ambari参考</h4><p>Ambari官网: <a href="http://ambari.apache.org/" target="_blank" rel="noopener">http://ambari.apache.org/</a></p><p>Ambari-Github: <a href="https://github.com/apache/ambari/tree/branch-2.7" target="_blank" rel="noopener">https://github.com/apache/ambari/tree/branch-2.7</a></p><p>Ambari参考: <a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/index.html</a></p><p>Ambari官网-2.7.0: <a href="https://docs.hortonworks.com/HDPDocuments/Ambari/Ambari-2.7.0.0/index.html" target="_blank" rel="noopener">https://docs.hortonworks.com/HDPDocuments/Ambari/Ambari-2.7.0.0/index.html</a></p><p>Apache-Ambari-2.6.2 <a href="http://www.apache.org/dyn/closer.cgi/ambari/ambari-2.6.2" target="_blank" rel="noopener">http://www.apache.org/dyn/closer.cgi/ambari/ambari-2.6.2</a></p><p>Apache-Ambari-2.6.2: <a href="https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.6.2" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.6.2</a></p><p>Apache-Ambari-guide: <a href="https://cwiki.apache.org/confluence/display/AMBARI/Ambari" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/AMBARI/Ambari</a></p><p>Apache-Ambari-2.7.0: <a href="https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.7.0" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.7.0</a></p><p>Ambari添加Stack参考：<a href="http://www.itkeyword.com/doc/617736624192567x360" target="_blank" rel="noopener">http://www.itkeyword.com/doc/617736624192567x360</a></p><p>Ambari扩展Stack参考：<a href="https://my.oschina.net/u/2277929/blog/666180?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">https://my.oschina.net/u/2277929/blog/666180?tdsourcetag=s_pctim_aiomsg</a></p><hr><h4 id="Ambari安装参考"><a href="#Ambari安装参考" class="headerlink" title="Ambari安装参考"></a>Ambari安装参考</h4><blockquote><p>Ambari2.7.0安装: <a href="https://blog.csdn.net/zsj777/article/details/81052859" target="_blank" rel="noopener">https://blog.csdn.net/zsj777/article/details/81052859</a></p></blockquote><h4 id="Ambari学习链接"><a href="#Ambari学习链接" class="headerlink" title="Ambari学习链接"></a>Ambari学习链接</h4><p>Ambari参考教程：<a href="https://www.aliyun.com/jiaocheng/topic_25417_1.html" target="_blank" rel="noopener">https://www.aliyun.com/jiaocheng/topic_25417_1.html</a></p><p>Ambari操作指南：<a href="https://blog.csdn.net/devalone/article/details/80781652" target="_blank" rel="noopener">https://blog.csdn.net/devalone/article/details/80781652</a></p><p>Ambari操作指南：<a href="https://blog.csdn.net/devalone/article/details/80800262" target="_blank" rel="noopener">https://blog.csdn.net/devalone/article/details/80800262</a></p><p>Ambari基础参考：<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html</a></p><p>Ambari基础应用：<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html</a></p><p>Ambari-Metrics：<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/</a></p><p>Ambari-Alerts：<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari3/" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari3/</a></p><p>Ambari-RoadMap：<a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=30755705" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=30755705</a></p><p>Hortonworks链接：<a href="https://hortonworks.com/apache/ambari/" target="_blank" rel="noopener">https://hortonworks.com/apache/ambari/</a></p>]]></content>
     
@@ -86,17 +86,17 @@
     
     </summary>
     
-      <category term="Ambari" scheme="https://23yue23.github.io/categories/Ambari/"/>
+      <category term="ambari" scheme="https://23yue23.github.io/categories/ambari/"/>
     
     
-      <category term="Ambari-资料篇" scheme="https://23yue23.github.io/tags/Ambari-%E8%B5%84%E6%96%99%E7%AF%87/"/>
+      <category term="ambari-资料篇" scheme="https://23yue23.github.io/tags/ambari-%E8%B5%84%E6%96%99%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>Ambari-学习篇</title>
-    <link href="https://23yue23.github.io/2019/10/09/Ambari-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/09/Ambari-学习篇/</id>
+    <link href="https://23yue23.github.io/2019/10/09/ambari-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/10/09/ambari-学习篇/</id>
     <published>2019-10-09T09:04:08.000Z</published>
     <updated>2019-10-09T10:27:46.516Z</updated>
     
@@ -412,11 +412,11 @@
   </entry>
   
   <entry>
-    <title>IDEA-使用篇</title>
-    <link href="https://23yue23.github.io/2019/09/30/IDEA-%E4%BD%BF%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/09/30/IDEA-使用篇/</id>
+    <title>idea-使用篇</title>
+    <link href="https://23yue23.github.io/2019/09/30/idea-%E4%BD%BF%E7%94%A8%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/09/30/idea-使用篇/</id>
     <published>2019-09-30T01:14:36.000Z</published>
-    <updated>2019-10-09T04:01:41.751Z</updated>
+    <updated>2019-10-11T10:28:54.363Z</updated>
     
     <content type="html"><![CDATA[<h4 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h4><blockquote></blockquote><p><a href="https://www.lovesofttech.com/general/IDEA/" target="_blank" rel="noopener">IntelliJ IDEA，使用心得汇总</a><br><a href="https://github.com/judasn/IntelliJ-IDEA-Tutorial" target="_blank" rel="noopener"></a></p>]]></content>
     
@@ -434,7 +434,7 @@
       <category term="工具" scheme="https://23yue23.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="IDEA-使用篇" scheme="https://23yue23.github.io/tags/IDEA-%E4%BD%BF%E7%94%A8%E7%AF%87/"/>
+      <category term="idea-使用篇" scheme="https://23yue23.github.io/tags/idea-%E4%BD%BF%E7%94%A8%E7%AF%87/"/>
     
   </entry>
   

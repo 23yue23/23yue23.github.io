@@ -23,19 +23,19 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Ambari-资料篇]]></title>
-    <url>%2F2019%2F10%2F09%2FAmbari-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
+    <title><![CDATA[ambari-资料篇]]></title>
+    <url>%2F2019%2F10%2F09%2Fambari-%E8%B5%84%E6%96%99%E7%AF%87%2F</url>
     <content type="text"><![CDATA[Ambari参考Ambari官网: http://ambari.apache.org/ Ambari-Github: https://github.com/apache/ambari/tree/branch-2.7 Ambari参考: https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/index.html Ambari官网-2.7.0: https://docs.hortonworks.com/HDPDocuments/Ambari/Ambari-2.7.0.0/index.html Apache-Ambari-2.6.2 http://www.apache.org/dyn/closer.cgi/ambari/ambari-2.6.2 Apache-Ambari-2.6.2: https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.6.2 Apache-Ambari-guide: https://cwiki.apache.org/confluence/display/AMBARI/Ambari Apache-Ambari-2.7.0: https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.7.0 Ambari添加Stack参考：http://www.itkeyword.com/doc/617736624192567x360 Ambari扩展Stack参考：https://my.oschina.net/u/2277929/blog/666180?tdsourcetag=s_pctim_aiomsg Ambari安装参考 Ambari2.7.0安装: https://blog.csdn.net/zsj777/article/details/81052859 Ambari学习链接Ambari参考教程：https://www.aliyun.com/jiaocheng/topic_25417_1.html Ambari操作指南：https://blog.csdn.net/devalone/article/details/80781652 Ambari操作指南：https://blog.csdn.net/devalone/article/details/80800262 Ambari基础参考：https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html Ambari基础应用：https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html Ambari-Metrics：https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/ Ambari-Alerts：https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari3/ Ambari-RoadMap：https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=30755705 Hortonworks链接：https://hortonworks.com/apache/ambari/]]></content>
       <categories>
-        <category>Ambari</category>
+        <category>ambari</category>
       </categories>
       <tags>
-        <tag>Ambari-资料篇</tag>
+        <tag>ambari-资料篇</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Ambari-学习篇]]></title>
-    <url>%2F2019%2F10%2F09%2FAmbari-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <url>%2F2019%2F10%2F09%2Fambari-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
     <content type="text"></content>
       <categories>
         <category>Ambari</category>
@@ -188,14 +188,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[IDEA-使用篇]]></title>
-    <url>%2F2019%2F09%2F30%2FIDEA-%E4%BD%BF%E7%94%A8%E7%AF%87%2F</url>
+    <title><![CDATA[idea-使用篇]]></title>
+    <url>%2F2019%2F09%2F30%2Fidea-%E4%BD%BF%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[资料 IntelliJ IDEA，使用心得汇总]]></content>
       <categories>
         <category>工具</category>
       </categories>
       <tags>
-        <tag>IDEA-使用篇</tag>
+        <tag>idea-使用篇</tag>
       </tags>
   </entry>
   <entry>
@@ -388,11 +388,23 @@
     <title><![CDATA[airflow-常用篇]]></title>
     <url>%2F2019%2F09%2F25%2Fairflow-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>airflow</category>
+      </categories>
+      <tags>
+        <tag>airflow-常用篇</tag>
+      </tags>
   </entry>
   <entry>
-    <title><![CDATA[Azkaban-常用篇]]></title>
-    <url>%2F2019%2F09%2F25%2FAzkaban-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
+    <title><![CDATA[azkaban-常用篇]]></title>
+    <url>%2F2019%2F09%2F25%2Fazkaban-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>azkaban</category>
+      </categories>
+      <tags>
+        <tag>azkaban-常用篇</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[kylin-常用篇]]></title>
@@ -621,14 +633,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Pulsar-学习篇]]></title>
-    <url>%2F2019%2F07%2F17%2FPulsar-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <title><![CDATA[pulsar-学习篇]]></title>
+    <url>%2F2019%2F07%2F17%2Fpulsar-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
     <content type="text"><![CDATA[]]></content>
       <categories>
-        <category>Pulsar</category>
+        <category>pulsar</category>
       </categories>
       <tags>
-        <tag>Pulsar-学习篇</tag>
+        <tag>pulsar-学习篇</tag>
       </tags>
   </entry>
   <entry>
@@ -731,25 +743,25 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Druid-学习篇]]></title>
-    <url>%2F2019%2F05%2F17%2FDruid-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
+    <title><![CDATA[druid-学习篇]]></title>
+    <url>%2F2019%2F05%2F17%2Fdruid-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
     <content type="text"><![CDATA[druid 系列csdn]]></content>
       <categories>
-        <category>Druid</category>
+        <category>druid</category>
       </categories>
       <tags>
-        <tag>Druid-学习篇</tag>
+        <tag>druid-学习篇</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Homebrew-使用篇]]></title>
-    <url>%2F2019%2F05%2F17%2FHomebrew-%E4%BD%BF%E7%94%A8%E7%AF%87%2F</url>
+    <title><![CDATA[brew-使用篇]]></title>
+    <url>%2F2019%2F05%2F17%2Fbrew-%E4%BD%BF%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[安装路径1/usr/local/Cellar/ 常用命令服务管理123456brew services list # 查看使用brew安装的服务列表brew services run formula|--all # 启动服务（仅启动不注册）brew services start formula|--all # 启动服务，并注册brew services stop formula|--all # 停止服务，并取消注册brew services restart formula|--all # 重启服务，并注册brew services cleanup # 清除已卸载应用的无用的配置 查找软件包1brew search wget 安装软件包1brew install wget 列出已安装的软件包1brew list 删除软件包1brew remove wget 查看软件包信息1brew info wget 更新brew1brew update 列出软件包的依赖关系1brew deps wget 列出过时的软件包（已安装但不是最新版本）1brew outdated 更新过时的软件包（全部或指定）1brew upgrade 或 brew upgrade wget 问题及解决安装或卸载 问题 Error: No such keg: /usr/local/Cellar/**1234567方法一： brew cleanup brew uninstall *** brew install *** 方法二： 如果方法一不生效，则查看是否有版本号，或者软件名错误]]></content>
       <categories>
-        <category>工具</category>
+        <category>brew</category>
       </categories>
       <tags>
-        <tag>Homebrew-使用篇</tag>
+        <tag>brew-使用篇</tag>
       </tags>
   </entry>
   <entry>
@@ -797,14 +809,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MacOS-使用篇]]></title>
-    <url>%2F2019%2F04%2F29%2FMacOS-%E4%BD%BF%E7%94%A8%E7%AF%87%2F</url>
+    <title><![CDATA[macOS-使用篇]]></title>
+    <url>%2F2019%2F04%2F29%2FmacOS-%E4%BD%BF%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[快捷键：退出关闭应用：Command+Q 目录地址： 软件的安装目录 1~/Library/Application Support brew 安装路径 1234/usr/local/Cellar/ ``` &gt; 系统环境加载顺序 /etc/profile/etc/paths~/.bash_profile~/.bash_login~/.profile~/.bashrc` 软件 Mac Beyond Compare4 破解方法 tldr 命令帮助]]></content>
       <categories>
         <category>工具</category>
       </categories>
       <tags>
-        <tag>MacOS-使用篇</tag>
+        <tag>macOS-使用篇</tag>
       </tags>
   </entry>
   <entry>
