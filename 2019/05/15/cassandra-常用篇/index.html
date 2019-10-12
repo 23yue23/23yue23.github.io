@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool  describecluster 查看节点状态1nodetool    status 重启节点1sudo systemctl restart scylla-server 查看系统相关日志信息1s">
+<meta name="description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300  查看集群信息1nodetool  describecluster  查看节点状态1nodetool    status  重启节点1sudo systemctl restart scylla-server  查看系统相关日志">
 <meta name="keywords" content="cassandra-常用篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cassandra-常用篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/05/15/cassandra-常用篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool  describecluster 查看节点状态1nodetool    status 重启节点1sudo systemctl restart scylla-server 查看系统相关日志信息1s">
+<meta property="og:description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300  查看集群信息1nodetool  describecluster  查看节点状态1nodetool    status  重启节点1sudo systemctl restart scylla-server  查看系统相关日志">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-09-25T03:40:54.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cassandra-常用篇">
-<meta name="twitter:description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300 查看集群信息1nodetool  describecluster 查看节点状态1nodetool    status 重启节点1sudo systemctl restart scylla-server 查看系统相关日志信息1s">
+<meta name="twitter:description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300  查看集群信息1nodetool  describecluster  查看节点状态1nodetool    status  重启节点1sudo systemctl restart scylla-server  查看系统相关日志">
 
 
 
@@ -468,16 +468,26 @@
 <p><a href="http://www.myoak.info/post/12/" target="_blank" rel="noopener">cassandra mac os 安装</a></p>
 </blockquote>
 <h4 id="shell-命令"><a href="#shell-命令" class="headerlink" title="shell 命令"></a>shell 命令</h4><h5 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cqlsh -u cassandra -p cassandra --connect-timeout 300</span><br></pre></td></tr></table></figure>
+
 <h5 id="查看集群信息"><a href="#查看集群信息" class="headerlink" title="查看集群信息"></a>查看集群信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nodetool  describecluster</span><br></pre></td></tr></table></figure>
+
 <h5 id="查看节点状态"><a href="#查看节点状态" class="headerlink" title="查看节点状态"></a>查看节点状态</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nodetool    status</span><br></pre></td></tr></table></figure>
+
 <h5 id="重启节点"><a href="#重启节点" class="headerlink" title="重启节点"></a>重启节点</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart scylla-server</span><br></pre></td></tr></table></figure>
+
 <h5 id="查看系统相关日志信息"><a href="#查看系统相关日志信息" class="headerlink" title="查看系统相关日志信息"></a>查看系统相关日志信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo journalctl --follow _UID=`id -u scylla`</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="Cql操作"><a href="#Cql操作" class="headerlink" title="Cql操作"></a>Cql操作</h4><h5 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SHOW VERSION</span><br><span class="line"></span><br><span class="line">OR </span><br><span class="line"></span><br><span class="line">SELECT release_version from system.local;</span><br></pre></td></tr></table></figure>
+
 <h5 id="查看Schema-信息"><a href="#查看Schema-信息" class="headerlink" title="查看Schema 信息"></a>查看Schema 信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM system_schema.keyspaces;</span><br></pre></td></tr></table></figure>
+
 <h5 id="keyspaces-操作"><a href="#keyspaces-操作" class="headerlink" title="keyspaces 操作"></a>keyspaces 操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#查看</span><br><span class="line">desc keyspaces;</span><br><span class="line">#使用</span><br><span class="line">use keyspaceName</span><br></pre></td></tr></table></figure>
+
 <h5 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#table list</span><br><span class="line">describe tables;</span><br><span class="line"></span><br><span class="line">#查看表结构</span><br><span class="line">describe table table_name;</span><br></pre></td></tr></table></figure>
+
 <h5 id="修改keyspaces-的副本"><a href="#修改keyspaces-的副本" class="headerlink" title="修改keyspaces 的副本"></a>修改keyspaces 的副本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER KEYSPACE library WITH REPLICATION = &#123; &apos;class&apos; : &apos;SimpleStrategy&apos;, &apos;replication_factor&apos; : 1 &#125;;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -640,7 +650,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -651,7 +661,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -662,7 +672,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -788,7 +798,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36k</span>
+    <span title="Site words total count">36.3k</span>
   
 </div>
 
@@ -799,6 +809,9 @@
 
 
 <div><span> --不忘初心<>方得始终--</span></div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
 
         
 <div class="busuanzi-count">

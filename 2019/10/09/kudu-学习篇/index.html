@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -494,18 +494,16 @@
 <blockquote>
 <p>一个table由多个tablet组成，对分区查看、扩容和数据高可用支持非常好</p>
 </blockquote>
-<h4 id="性能压测："><a href="#性能压测：" class="headerlink" title="性能压测："></a>性能压测：</h4><h5 id="写入性能测试"><a href="#写入性能测试" class="headerlink" title="写入性能测试"></a>写入性能测试</h5><pre><code>executor-cores=2      num-executors=30    executor-memory=4G
-</code></pre><p>小时级别写（LZ4 ）：源数据2000W行，38G，耗时1.4min，平均23w条/s。</p>
+<h4 id="性能压测："><a href="#性能压测：" class="headerlink" title="性能压测："></a>性能压测：</h4><h5 id="写入性能测试"><a href="#写入性能测试" class="headerlink" title="写入性能测试"></a>写入性能测试</h5><pre><code>executor-cores=2      num-executors=30    executor-memory=4G</code></pre><p>小时级别写（LZ4 ）：源数据2000W行，38G，耗时1.4min，平均23w条/s。</p>
 <p>小时级别写（ZLIB）：源数据1940W行，34.9G，耗时2min，平均16.2w条/s。</p>
-<h5 id="读取性能测试"><a href="#读取性能测试" class="headerlink" title="读取性能测试"></a>读取性能测试</h5><pre><code>executor-cores=2      num-executors=50    executor-memory=4G
-</code></pre><p>天级别读（LZ4 ）：源数据2.8亿行，541.7 G，耗时10min，平均46.6w条/s。</p>
+<h5 id="读取性能测试"><a href="#读取性能测试" class="headerlink" title="读取性能测试"></a>读取性能测试</h5><pre><code>executor-cores=2      num-executors=50    executor-memory=4G</code></pre><p>天级别读（LZ4 ）：源数据2.8亿行，541.7 G，耗时10min，平均46.6w条/s。</p>
 <p>天级别读（ZLIB）：源数据3.2亿行，581.7 G，耗时15min，平均35.7w条/s。</p>
-<h5 id="增加新字段性能测试"><a href="#增加新字段性能测试" class="headerlink" title="增加新字段性能测试"></a>增加新字段性能测试</h5><pre><code>executor-cores=2      num-executors=30    executor-memory=4G
-</code></pre><p>天级别增加（LZ4 ）：源数据4.74亿行，10个新列，耗时17min，平均46.5w条/s。（先读hive表，再选10列插入kudu中。所以其中包括读837G的text格式hive表全量读的时间，真实插入时间理应更少）</p>
+<h5 id="增加新字段性能测试"><a href="#增加新字段性能测试" class="headerlink" title="增加新字段性能测试"></a>增加新字段性能测试</h5><pre><code>executor-cores=2      num-executors=30    executor-memory=4G</code></pre><p>天级别增加（LZ4 ）：源数据4.74亿行，10个新列，耗时17min，平均46.5w条/s。（先读hive表，再选10列插入kudu中。所以其中包括读837G的text格式hive表全量读的时间，真实插入时间理应更少）</p>
 <p>天级别增加（ZLIB）：源数据3.2亿行，10个新列，耗时12min，平均44.7w条/s。（包括读581G的text格式hive表全量读的时间）</p>
 <h4 id="Kudu接口"><a href="#Kudu接口" class="headerlink" title="Kudu接口"></a>Kudu接口</h4><p>在KuduHandle.scala中封装了spark操作kudu的常用接口，在KuduHandleExample.scala中给出了Kudu接口的使用示例。</p>
 <p>业务开发时可直接使用封装在 train_data_flow的dataflow-sdk中的方法，包括saveDFInsertKuduTable()、saveDFUpsertKuduTable()两种插入数据的方法，和读取kudu表数据的 kudu() 方法，以及addKuduColumns()加列方法。</p>
 <h5 id="接口使用注意事项："><a href="#接口使用注意事项：" class="headerlink" title="接口使用注意事项："></a>接口使用注意事项：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1、通过读数据 kudu() 接口返回的df，注册临时视图后可直接用sparkSQL读取，</span><br><span class="line">   但必须使用between或者in来指定range分区字段的范围（目前字段是hour_id），</span><br><span class="line">   否则会变成全表扫描，效率极低！！！</span><br><span class="line"></span><br><span class="line">2、kudu引擎暂不支持sparkSQL中 &lt;、&gt;、or 这些谓词下推，支持like，</span><br><span class="line">   但仅限于“201907%”这种形式，不支持“201907%02”这种形式；</span><br><span class="line">  （只要正确指定了range分区字段，其他字段对读取效率影响不大）</span><br><span class="line"></span><br><span class="line">3、saveDFInsertKuduTable()用于base特征的小时级入库，会根据小时时间新建range分区，</span><br><span class="line">   saveDFUpsertKuduTable()用于插入新列数据，除base数据的小时级入库外，皆用此方法插入数据；</span><br><span class="line"></span><br><span class="line">4、待插入数据df必须包含所有的主键，且主键不可为空值；</span><br><span class="line"></span><br><span class="line">5、删除kudu分区会同时删除分区内的数据，慎用。</span><br></pre></td></tr></table></figure>
+
 <h4 id="Alluxio-FUSE-测试"><a href="#Alluxio-FUSE-测试" class="headerlink" title="Alluxio FUSE 测试"></a>Alluxio FUSE 测试</h4><ol>
 <li>IO基本性能测试，拷贝一个768M的文件。</li>
 </ol>
@@ -677,7 +675,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -688,7 +686,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -699,7 +697,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -825,7 +823,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36k</span>
+    <span title="Site words total count">36.3k</span>
   
 </div>
 
@@ -836,6 +834,9 @@
 
 
 <div><span> --不忘初心<>方得始终--</span></div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
 
         
 <div class="busuanzi-count">

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -472,37 +472,45 @@
 <p>报错信息：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Can&apos;t connect to local MySQL server through socket &apos;/tmp/mysql.sock&apos; (2)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>解决方法：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主要原因是mysql 服务没有启动</span><br><span class="line">解决：mysql.server start</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="om-mysql-jdbc-exceptions-jdbc4-CommunicationsException"><a href="#om-mysql-jdbc-exceptions-jdbc4-CommunicationsException" class="headerlink" title="om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:"></a>om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:</h4><blockquote>
 <p>报错信息：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">om.mysql.jdbc.exceptions.jdbc4.CommunicationsException:The last packet successfully received from the server was 44,024,462 milliseconds ago.  The last packet sent successfully to the server was 44,024,462 milliseconds ago. is longer than the server configured value of &apos;wait_timeout&apos;. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property &apos;autoReconnect=true&apos; to avoid this problem.</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>解决方法：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.在连接上添加这个设置</span><br><span class="line">&amp;autoReconnect=true&amp;failOverReadOnly=false</span><br><span class="line">2.每次使用完记得归还连接</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="ERROR-The-server-quit-without-updating-PID-file"><a href="#ERROR-The-server-quit-without-updating-PID-file" class="headerlink" title="ERROR! The server quit without updating PID file"></a>ERROR! The server quit without updating PID file</h4><blockquote>
 <p>报错信息：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mysql.server start</span><br><span class="line">Starting MySQL</span><br><span class="line">. ERROR! The server quit without updating PID file (/usr/local/var/mysql/localhost.pid).</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>解决方法：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">0.用sudo 的权限执行。 sudo mysql.server start</span><br><span class="line"></span><br><span class="line">1.可能是/usr/local/mysql/data/rekfan.pid文件没有写的权限</span><br><span class="line">解决方法 ：给予权限，执行 “chown -R mysql:mysql /var/data” “chmod -R 755 /usr/local/mysql/data”  然后重新启动mysqld！</span><br><span class="line"></span><br><span class="line">2.可能进程里已经存在mysql进程</span><br><span class="line">解决方法：用命令“ps -ef|grep mysqld”查看是否有mysqld进程，如果有使用“kill -9  进程号”杀死，然后重新启动mysqld！</span><br><span class="line"></span><br><span class="line">3.可能是第二次在机器上安装mysql，有残余数据影响了服务的启动。</span><br><span class="line">解决方法：去mysql的数据目录/data看看，如果存在mysql-bin.index，就赶快把它删除掉吧，它就是罪魁祸首了。本人就是使用第三条方法解决的 ！http://blog.rekfan.com/?p=186</span><br><span class="line"></span><br><span class="line">4.mysql在启动时没有指定配置文件时会使用/etc/my.cnf配置文件，请打开这个文件查看在[mysqld]节下有没有指定数据目录(datadir)。</span><br><span class="line">解决方法：请在[mysqld]下设置这一行：datadir = /usr/local/mysql/data</span><br><span class="line"></span><br><span class="line">5.skip-federated字段问题</span><br><span class="line">解决方法：检查一下/etc/my.cnf文件中有没有没被注释掉的skip-federated字段，如果有就立即注释掉吧。</span><br><span class="line"></span><br><span class="line">6.错误日志目录不存在</span><br><span class="line">解决方法：使用“chown” “chmod”命令赋予mysql所有者及权限</span><br><span class="line"></span><br><span class="line">7.selinux惹的祸，如果是centos系统，默认会开启selinux</span><br><span class="line">解决方法：关闭它，打开/etc/selinux/config，把SELINUX=enforcing改为SELINUX=disabled后存盘退出重启机器试试。</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="Formula-mysql-is-not-installed"><a href="#Formula-mysql-is-not-installed" class="headerlink" title="Formula mysql is not installed"></a>Formula mysql is not installed</h4><blockquote>
 <p>报错信息：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew services restart mysql</span><br><span class="line">Stopping `mysql`... (might take a while)</span><br><span class="line">==&gt; Successfully stopped `mysql` (label: homebrew.mxcl.mysql)</span><br><span class="line">Error: Formula `mysql` is not installed.</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>解决方法：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	查看mysql 的版本</span><br><span class="line">	brew services start mysql@5.7</span><br><span class="line">==&gt; Successfully started `mysql@5.7` (label: homebrew.mxcl.mysql@5.7)</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -665,7 +673,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -676,7 +684,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -687,7 +695,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -813,7 +821,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36k</span>
+    <span title="Site words total count">36.3k</span>
   
 </div>
 
@@ -824,6 +832,9 @@
 
 
 <div><span> --不忘初心<>方得始终--</span></div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
 
         
 <div class="busuanzi-count">

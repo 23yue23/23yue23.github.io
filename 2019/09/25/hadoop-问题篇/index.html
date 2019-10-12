@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="hadoop streaming执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space123解决方法： 在你的程序里设置以下环境变量值：export HADOOP_CLIENT_OPTS=&amp;quot;-Xmx2048m&amp;quot; MapReduce保持以下异常信息时：报错信息： 1">
+<meta name="description" content="hadoop streaming执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space123解决方法： 在你的程序里设置以下环境变量值：export HADOOP_CLIENT_OPTS=&amp;quot;-Xmx2048m&amp;quot;  MapReduce保持以下异常信息时：报错信息：">
 <meta name="keywords" content="hadoop-问题篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hadoop-问题篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/09/25/hadoop-问题篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="hadoop streaming执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space123解决方法： 在你的程序里设置以下环境变量值：export HADOOP_CLIENT_OPTS=&amp;quot;-Xmx2048m&amp;quot; MapReduce保持以下异常信息时：报错信息： 1">
+<meta property="og:description" content="hadoop streaming执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space123解决方法： 在你的程序里设置以下环境变量值：export HADOOP_CLIENT_OPTS=&amp;quot;-Xmx2048m&amp;quot;  MapReduce保持以下异常信息时：报错信息：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-10-09T09:36:45.282Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hadoop-问题篇">
-<meta name="twitter:description" content="hadoop streaming执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space123解决方法： 在你的程序里设置以下环境变量值：export HADOOP_CLIENT_OPTS=&amp;quot;-Xmx2048m&amp;quot; MapReduce保持以下异常信息时：报错信息： 1">
+<meta name="twitter:description" content="hadoop streaming执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space123解决方法： 在你的程序里设置以下环境变量值：export HADOOP_CLIENT_OPTS=&amp;quot;-Xmx2048m&amp;quot;  MapReduce保持以下异常信息时：报错信息：">
 
 
 
@@ -465,13 +465,18 @@
 
       
         <h4 id="hadoop-streaming"><a href="#hadoop-streaming" class="headerlink" title="hadoop streaming"></a>hadoop streaming</h4><h5 id="执行-hadoop-streaming-的时候，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space"><a href="#执行-hadoop-streaming-的时候，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space" class="headerlink" title="执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space"></a>执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解决方法： </span><br><span class="line">在你的程序里设置以下环境变量值：</span><br><span class="line">export HADOOP_CLIENT_OPTS=&quot;-Xmx2048m&quot;</span><br></pre></td></tr></table></figure>
+
 <h5 id="MapReduce保持以下异常信息时："><a href="#MapReduce保持以下异常信息时：" class="headerlink" title="MapReduce保持以下异常信息时："></a>MapReduce保持以下异常信息时：</h5><p>报错信息：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Container [pid=81565,containerID=container_1489372757489_79086_01_000031] </span><br><span class="line">is running beyond physical memory limits. </span><br><span class="line">Current usage: 1.8 GB of 1.8 GB physical memory used; </span><br><span class="line">3.4 GB of 8.8 GB virtual memory used. Killing container.</span><br></pre></td></tr></table></figure>
+
 <p>解决方案：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">说明你的代码存在内存泄露的风险，尝试优化代码，如果确定不存在内存泄露的情况，</span><br><span class="line">可以在你代码里设置以下参数，增加map端或者reduce端的内存大小：</span><br><span class="line"></span><br><span class="line">mapreduce.map.memory.mb=3072</span><br><span class="line">mapreduce.reduce.memory.mb=3072</span><br></pre></td></tr></table></figure>
+
 <h5 id="Mapreduce在运行时，在map阶段出现以下内存溢出问题：Error-Java-heap-space"><a href="#Mapreduce在运行时，在map阶段出现以下内存溢出问题：Error-Java-heap-space" class="headerlink" title="Mapreduce在运行时，在map阶段出现以下内存溢出问题：Error: Java heap space"></a>Mapreduce在运行时，在map阶段出现以下内存溢出问题：Error: Java heap space</h5><p>解决方案：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">提交作业时增加以下两个参数设置，可以根据程序使用内存的大小调整参数的大小：</span><br><span class="line">-Dmapreduce.map.memory.mb=3072 </span><br><span class="line">-Dmapred.map.child.java.opts=-Xmx3072m</span><br></pre></td></tr></table></figure>
+
 <h5 id="如何设置MR作业推测执行"><a href="#如何设置MR作业推测执行" class="headerlink" title="如何设置MR作业推测执行"></a>如何设置MR作业推测执行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mapreduce.map.speculative=true// 打开map端推测执行</span><br><span class="line">mapreduce.reduce.speculative=true// 打开reduce端推测执行</span><br><span class="line"></span><br><span class="line">推测执行的原理：</span><br><span class="line">	当某一个map或者reduce执行比较慢时，集群会再开启一个计算单元，</span><br><span class="line">	计算该map或者reduce正在计算的数据，哪一个先计算完成，就使用先计算完成的结果，</span><br><span class="line">	没有计算完成的map或者reduce会被kill掉。</span><br><span class="line"></span><br><span class="line">开启推测执行，有一点需要注意下：</span><br><span class="line">&gt; map端或者reduce端不能产生结果性的数据。</span><br><span class="line">&gt; “结果性的数据”，没有一个明确性的定义，</span><br><span class="line">这里举个栗子：map端或者reduce端往目标数据库（例如RDS）里写入了数据，这就是产生了结果性的数据。</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -634,7 +639,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -645,7 +650,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -656,7 +661,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -782,7 +787,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36k</span>
+    <span title="Site words total count">36.3k</span>
   
 </div>
 
@@ -793,6 +798,9 @@
 
 
 <div><span> --不忘初心<>方得始终--</span></div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
 
         
 <div class="busuanzi-count">

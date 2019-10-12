@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="hadoop 命令 cat1234将路径指定文件的内容输出到stdout。示例：  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2  hadoop fs -cat file:///file3 /user/hadoop/file4   dus1使用方法：hadoop fs -dus &amp;lt;args&amp;gt;显示文件的大小">
+<meta name="description" content="hadoop 命令 cat  1234将路径指定文件的内容输出到stdout。示例：  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2  hadoop fs -cat file:///file3 /user/hadoop/file4   dus  1使用方法：hadoop fs -dus &amp;lt;args&amp;gt;显示文">
 <meta name="keywords" content="hadoop-常用篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hadoop-常用篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/09/25/hadoop-常用篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="hadoop 命令 cat1234将路径指定文件的内容输出到stdout。示例：  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2  hadoop fs -cat file:///file3 /user/hadoop/file4   dus1使用方法：hadoop fs -dus &amp;lt;args&amp;gt;显示文件的大小">
+<meta property="og:description" content="hadoop 命令 cat  1234将路径指定文件的内容输出到stdout。示例：  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2  hadoop fs -cat file:///file3 /user/hadoop/file4   dus  1使用方法：hadoop fs -dus &amp;lt;args&amp;gt;显示文">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-10-09T06:47:13.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hadoop-常用篇">
-<meta name="twitter:description" content="hadoop 命令 cat1234将路径指定文件的内容输出到stdout。示例：  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2  hadoop fs -cat file:///file3 /user/hadoop/file4   dus1使用方法：hadoop fs -dus &amp;lt;args&amp;gt;显示文件的大小">
+<meta name="twitter:description" content="hadoop 命令 cat  1234将路径指定文件的内容输出到stdout。示例：  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2  hadoop fs -cat file:///file3 /user/hadoop/file4   dus  1使用方法：hadoop fs -dus &amp;lt;args&amp;gt;显示文">
 
 
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  899
+                  901
                 </span>
               
 
@@ -465,31 +465,46 @@
 
       
         <h4 id="hadoop-命令"><a href="#hadoop-命令" class="headerlink" title="hadoop 命令"></a>hadoop 命令</h4><blockquote>
-<p>cat<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将路径指定文件的内容输出到stdout。</span><br><span class="line">示例：</span><br><span class="line">  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2</span><br><span class="line">  hadoop fs -cat file:///file3 /user/hadoop/file4</span><br></pre></td></tr></table></figure></p>
+<p>cat</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将路径指定文件的内容输出到stdout。</span><br><span class="line">示例：</span><br><span class="line">  hadoop fs -cat hdfs://host1:port1/file1hdfs://host2:port2/file2</span><br><span class="line">  hadoop fs -cat file:///file3 /user/hadoop/file4</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>dus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用方法：hadoop fs -dus &lt;args&gt;显示文件的大小</span><br></pre></td></tr></table></figure></p>
+<p>dus</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用方法：hadoop fs -dus &lt;args&gt;显示文件的大小</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>test<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">使用方法：hadoop fs -test -[ezd] URI</span><br><span class="line">选项：</span><br><span class="line">-e 检查文件是否存在。如果存在则返回0。</span><br><span class="line">-z 检查文件是否是0字节。如果是则返回0。 </span><br><span class="line">-d 如果路径是个目录，则返回1，否则返回0。</span><br><span class="line">示例：</span><br><span class="line">  hadoop fs -test -e filename</span><br></pre></td></tr></table></figure></p>
+<p>test</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">使用方法：hadoop fs -test -[ezd] URI</span><br><span class="line">选项：</span><br><span class="line">-e 检查文件是否存在。如果存在则返回0。</span><br><span class="line">-z 检查文件是否是0字节。如果是则返回0。 </span><br><span class="line">-d 如果路径是个目录，则返回1，否则返回0。</span><br><span class="line">示例：</span><br><span class="line">  hadoop fs -test -e filename</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>查看.gz 的文件内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*无需解压整个文件： </span><br><span class="line">	 hadoop fs -cat /hdfs_location/part-00000.gz | zcat | head -n 20</span><br><span class="line">  或者 hadoop fs -cat /hdfs_location/part-00000.gz | zmore</span><br><span class="line"></span><br><span class="line">*需要解压整个文件：</span><br><span class="line">	hadoop fs -text /myfolder/part-r-00024.gz | tail</span><br></pre></td></tr></table></figure></p>
+<p>查看.gz 的文件内容</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*无需解压整个文件： </span><br><span class="line">	 hadoop fs -cat /hdfs_location/part-00000.gz | zcat | head -n 20</span><br><span class="line">  或者 hadoop fs -cat /hdfs_location/part-00000.gz | zmore</span><br><span class="line"></span><br><span class="line">*需要解压整个文件：</span><br><span class="line">	hadoop fs -text /myfolder/part-r-00024.gz | tail</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>查看.bz2 的文件内容</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类似查看.gz的方法，只需将zcat换为bzcat， 或者将zmore换为bzmore即可</span><br></pre></td></tr></table></figure>
+
 <h4 id="yarn-命令"><a href="#yarn-命令" class="headerlink" title="yarn 命令"></a>yarn 命令</h4><h5 id="查看-application列表"><a href="#查看-application列表" class="headerlink" title="查看 application列表 :"></a>查看 application列表 :</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn application -list</span><br></pre></td></tr></table></figure>
+
 <h5 id="查看单独的logs-日志："><a href="#查看单独的logs-日志：" class="headerlink" title="查看单独的logs 日志："></a>查看单独的logs 日志：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn logs -applicationId  application_1493700892407_0007</span><br><span class="line">yarn logs -applicationId application_1542870632001_26426 &gt; ./application.log</span><br></pre></td></tr></table></figure>
+
 <h5 id="查看当前作业的状态："><a href="#查看当前作业的状态：" class="headerlink" title="查看当前作业的状态："></a>查看当前作业的状态：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn application -status application_1542870632001_26426</span><br></pre></td></tr></table></figure>
+
 <h5 id="kill-当前作业"><a href="#kill-当前作业" class="headerlink" title="kill 当前作业"></a>kill 当前作业</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn application -kill application_1542870632001_26426</span><br></pre></td></tr></table></figure>
+
 <p>#####查看yarn-site.xml，确定log配置目录以及集群ip</p>
 <hr>
-<h4 id="yarn-rest-API"><a href="#yarn-rest-API" class="headerlink" title="yarn rest API"></a>yarn rest API</h4><h5 id="作业状态"><a href="#作业状态" class="headerlink" title="作业状态"></a>作业状态</h5><h5 id="资源使用情况"><a href="#资源使用情况" class="headerlink" title="资源使用情况"></a>资源使用情况</h5><p>##### </p>
-<h4 id="hadoop-集群配置"><a href="#hadoop-集群配置" class="headerlink" title="hadoop 集群配置"></a>hadoop 集群配置</h4><h5 id="日志清理"><a href="#日志清理" class="headerlink" title="日志清理"></a>日志清理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">相关参数：</span><br><span class="line">key : mapreduce.jobhistory.max-age-ms</span><br><span class="line">value : 2592000000 (30天)</span><br><span class="line">descrption：负责清理hdfs路径下日志 /var/hadoop/mapred/mr-history/done</span><br><span class="line">key : yarn.log-aggregation.retain-seconds</span><br><span class="line">value : 2592000 （30天）</span><br><span class="line">description：负责清理hdfs路径下日志 /var/hadoop/yarn/$&#123;user&#125;/logs</span><br><span class="line">服务器上的本地日志在任务执行完进行日志聚合之后会自动进行删除，不过老数据目前还没有清理。</span><br></pre></td></tr></table></figure>
+<h4 id="yarn-rest-API"><a href="#yarn-rest-API" class="headerlink" title="yarn rest API"></a>yarn rest API</h4><h5 id="作业状态"><a href="#作业状态" class="headerlink" title="作业状态"></a>作业状态</h5><h5 id="资源使用情况"><a href="#资源使用情况" class="headerlink" title="资源使用情况"></a>资源使用情况</h5><h5 id><a href="#" class="headerlink" title></a></h5><h4 id="hadoop-集群配置"><a href="#hadoop-集群配置" class="headerlink" title="hadoop 集群配置"></a>hadoop 集群配置</h4><h5 id="日志清理"><a href="#日志清理" class="headerlink" title="日志清理"></a>日志清理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">相关参数：</span><br><span class="line">key : mapreduce.jobhistory.max-age-ms</span><br><span class="line">value : 2592000000 (30天)</span><br><span class="line">descrption：负责清理hdfs路径下日志 /var/hadoop/mapred/mr-history/done</span><br><span class="line">key : yarn.log-aggregation.retain-seconds</span><br><span class="line">value : 2592000 （30天）</span><br><span class="line">description：负责清理hdfs路径下日志 /var/hadoop/yarn/$&#123;user&#125;/logs</span><br><span class="line">服务器上的本地日志在任务执行完进行日志聚合之后会自动进行删除，不过老数据目前还没有清理。</span><br></pre></td></tr></table></figure>
+
 <h6 id="日志相关参数"><a href="#日志相关参数" class="headerlink" title="日志相关参数"></a>日志相关参数</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1) yarn.log-aggregation-enable</span><br><span class="line">    是否开启日志聚合功能</span><br><span class="line">2) yarn.log-aggregation.retain-seconds</span><br><span class="line">    hdfs上的日志保留多久。当前配置路径为：/var/hadoop/yarn/$&#123;user&#125;/logs</span><br><span class="line">3) yarn.log-aggregation.retain-check-interval-seconds</span><br><span class="line">    多长时间检查一次日志，并将满足条件的删除，如果是0或者负数，则为上一个值的1/10，已经配置为：1296000（15天）</span><br><span class="line">4) yarn.nodemanager.remote-app-log-dir</span><br><span class="line">    前缀目录：/var/hadoop/yarn</span><br><span class="line">5) yarn.nodemanager.remote-app-log-dir-suffix</span><br><span class="line">    后缀目录：logs</span><br><span class="line">6) yarn.nodemanager.log-aggregation.roll-monitoring-interval-seconds</span><br><span class="line">    每隔一段时间进行日志的聚合，当前配置为：3600。如果配置为-1，则会等待任务执行完还会聚合</span><br></pre></td></tr></table></figure>
+
 <h6 id="日志聚合参数配置"><a href="#日志聚合参数配置" class="headerlink" title="日志聚合参数配置"></a>日志聚合参数配置</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yarn.log-aggregation-enable</span><br><span class="line">参数说明：是否启用日志聚合功能，日志聚合开启后保存到HDFS上。默认值：false</span><br><span class="line">yarn.log-aggregation.retain-seconds</span><br><span class="line">参数说明：聚合后的日志在HDFS上保存多长时间，单位为s。默认值：-1（不启用日志聚合），例如设置为86400，24小时</span><br><span class="line">yarn.log-aggregation.retain-check-interval-seconds</span><br><span class="line">参数说明：删除任务在HDFS上执行的间隔，执行时候将满足条件的日志删除（超过参数2设置的时间的日志），如果是0或者负数，则为参数2设置值的1/10，上例值在此处为8640s。默认值：-1</span><br><span class="line">yarn.nodemanager.log.retain-seconds</span><br><span class="line">参数说明：当不启用日志聚合此参数生效，日志文件保存在本地的时间，单位为s。默认值：10800</span><br><span class="line">yarn.nodemanager.remote-app-log-dir</span><br><span class="line">参数说明：当应用程序运行结束后，日志被转移到的HDFS目录（启用日志聚集功能时有效），修改为保存的日志文件夹。默认值：/tmp/logs</span><br><span class="line">yarn.nodemanager.remote-app-log-dir-suffix</span><br><span class="line">参数说明：远程日志目录子目录名称（启用日志聚集功能时有效）。默认值：logs 日志将被转移到目录$&#123;yarn.nodemanager.remote-app-log-dir&#125;/$&#123;user&#125;/$&#123;thisParam&#125;下</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -652,7 +667,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -663,7 +678,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -674,7 +689,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -766,7 +781,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-命令"><span class="nav-number">1.</span> <span class="nav-text">hadoop 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yarn-命令"><span class="nav-number">2.</span> <span class="nav-text">yarn 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看-application列表"><span class="nav-number">2.1.</span> <span class="nav-text">查看 application列表 :</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看单独的logs-日志："><span class="nav-number">2.2.</span> <span class="nav-text">查看单独的logs 日志：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看当前作业的状态："><span class="nav-number">2.3.</span> <span class="nav-text">查看当前作业的状态：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#kill-当前作业"><span class="nav-number">2.4.</span> <span class="nav-text">kill 当前作业</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yarn-rest-API"><span class="nav-number">3.</span> <span class="nav-text">yarn rest API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#作业状态"><span class="nav-number">3.1.</span> <span class="nav-text">作业状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#资源使用情况"><span class="nav-number">3.2.</span> <span class="nav-text">资源使用情况</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-集群配置"><span class="nav-number">4.</span> <span class="nav-text">hadoop 集群配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#日志清理"><span class="nav-number">4.1.</span> <span class="nav-text">日志清理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#日志相关参数"><span class="nav-number">4.1.1.</span> <span class="nav-text">日志相关参数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#日志聚合参数配置"><span class="nav-number">4.1.2.</span> <span class="nav-text">日志聚合参数配置</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-命令"><span class="nav-number">1.</span> <span class="nav-text">hadoop 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yarn-命令"><span class="nav-number">2.</span> <span class="nav-text">yarn 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看-application列表"><span class="nav-number">2.1.</span> <span class="nav-text">查看 application列表 :</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看单独的logs-日志："><span class="nav-number">2.2.</span> <span class="nav-text">查看单独的logs 日志：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看当前作业的状态："><span class="nav-number">2.3.</span> <span class="nav-text">查看当前作业的状态：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#kill-当前作业"><span class="nav-number">2.4.</span> <span class="nav-text">kill 当前作业</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yarn-rest-API"><span class="nav-number">3.</span> <span class="nav-text">yarn rest API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#作业状态"><span class="nav-number">3.1.</span> <span class="nav-text">作业状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#资源使用情况"><span class="nav-number">3.2.</span> <span class="nav-text">资源使用情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">3.3.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-集群配置"><span class="nav-number">4.</span> <span class="nav-text">hadoop 集群配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#日志清理"><span class="nav-number">4.1.</span> <span class="nav-text">日志清理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#日志相关参数"><span class="nav-number">4.1.1.</span> <span class="nav-text">日志相关参数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#日志聚合参数配置"><span class="nav-number">4.1.2.</span> <span class="nav-text">日志聚合参数配置</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -800,7 +815,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36k</span>
+    <span title="Site words total count">36.3k</span>
   
 </div>
 
@@ -811,6 +826,9 @@
 
 
 <div><span> --不忘初心<>方得始终--</span></div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
 
         
 <div class="busuanzi-count">

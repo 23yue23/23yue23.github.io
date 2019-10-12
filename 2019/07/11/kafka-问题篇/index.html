@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -465,8 +465,10 @@
 
       
         <h4 id="No-resolvable-bootstrap-urls-given-in-bootstrap-servers"><a href="#No-resolvable-bootstrap-urls-given-in-bootstrap-servers" class="headerlink" title="No resolvable bootstrap urls given in bootstrap.servers"></a>No resolvable bootstrap urls given in bootstrap.servers</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">说明当前的bootstrap.servers 填写不正确或者未再配置conf 中设置</span><br><span class="line"></span><br><span class="line">conf 基础配置</span><br><span class="line"></span><br><span class="line">val props = parameterTool.getProperties</span><br><span class="line">    //判断是线上还是线下</span><br><span class="line">if (parameterTool.get(ENV_STATE_FLAG) == &quot;online&quot;) props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_ONLINE_BROKERS))</span><br><span class="line">else props.put(&quot;bootstrap.servers&quot;, parameterTool.get(KAFKA_OFFLINE_BROKERS))</span><br><span class="line">    props.put(&quot;group.id&quot;, parameterTool.get(&quot;groupId&quot;))</span><br><span class="line">    props.put(&quot;key.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;)</span><br><span class="line">    props.put(&quot;value.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;)</span><br><span class="line">    props.put(&quot;auto.offset.reset&quot;, &quot;latest&quot;)</span><br><span class="line">    props</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="写kafka-超时"><a href="#写kafka-超时" class="headerlink" title="写kafka 超时"></a>写kafka 超时</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Caused by: </span><br><span class="line">org.apache.kafka.common.errors.TimeoutException: </span><br><span class="line">Expiring 23 record(s) for Topic: 30001 ms has passed since last append</span><br></pre></td></tr></table></figure>
+
 <p>解决方法：<br>  查看 request.timeout.ms=120000 （defalt 30s）</p>
 
       
@@ -630,7 +632,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -641,7 +643,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -652,7 +654,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -778,7 +780,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36k</span>
+    <span title="Site words total count">36.3k</span>
   
 </div>
 
@@ -789,6 +791,9 @@
 
 
 <div><span> --不忘初心<>方得始终--</span></div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
 
         
 <div class="busuanzi-count">

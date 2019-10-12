@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -500,6 +500,7 @@
 <p>错误：<br> Cassandra关闭后，重启，提示，7199端口被占用，分析原因是关闭时使用的ctrl+c，实际上并没有关闭cassandra服务进程，所以提示端口已被使用； </p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yxcdeMacBook-Pro:3.11.4 yxc$ cqlsh</span><br><span class="line">Connection error: (&apos;Unable to connect to any servers&apos;, &#123;&apos;127.0.0.1&apos;: error(61, &quot;Tried connecting to [(&apos;127.0.0.1&apos;, 9042)]. Last error: Connection refused&quot;)&#125;)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>解决：<br>找出使用7199端口的进程<br>lsof -i:7199<br>杀死残留进程<br>kill direct_pid</p>
 </blockquote>
@@ -508,27 +509,35 @@
 <p>错误： </p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Connection error: </span><br><span class="line">(‘Unable to connect to any servers’, </span><br><span class="line">&#123;‘127.0.0.1’: ProtocolError(“cql_version ‘3.3.0’ is not supported by remote (w/ native protocol). Supported versions: [u’3.3.1’]”,)&#125;)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>解决： </p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">修改cassandra_home/bin/cqlsh.py: </span><br><span class="line">DEFAULT_CQLVER = ‘3.3.0’为DEFAULT_CQLVER = ‘3.3.1’；</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="All-host-s-tried-for-query-failed"><a href="#All-host-s-tried-for-query-failed" class="headerlink" title="All host(s) tried for query failed"></a>All host(s) tried for query failed</h4><blockquote>
 <p>错误： </p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">message: ‘All host(s) tried for query failed. First host tried, </span><br><span class="line">127.0.0.1:9042: Error: connect ECONNREFUSED 127.0.0.1:9042. </span><br><span class="line">See innerErrors.’ &#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>解决： </p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">修改cassandra_home/conf/cassandra.yaml: </span><br><span class="line">start_native_transport=false改为start_native_transport=true;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="Cannot-build-a-cluster-without-contact-points"><a href="#Cannot-build-a-cluster-without-contact-points" class="headerlink" title="Cannot build a cluster without contact points"></a>Cannot build a cluster without contact points</h4><blockquote>
-<p>解决：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不能构建cassandra 的集群，查看是否ip 没有写对</span><br></pre></td></tr></table></figure></p>
+<p>解决：</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不能构建cassandra 的集群，查看是否ip 没有写对</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="caching-增加导致负载升高"><a href="#caching-增加导致负载升高" class="headerlink" title="caching 增加导致负载升高"></a>caching 增加导致负载升高</h4><blockquote>
-<p>解决：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Not enough replica available for query at consistency ONE (1 required but only 0 alive)</span><br><span class="line">https://issues.apache.org/jira/browse/CASSANDRA-7905</span><br><span class="line">https://issues.apache.org/jira/browse/CASSANDRA-11815</span><br><span class="line">https://stackoverflow.com/questions/27974911/not-enough-replica-available-for-query-at-consistency-one-1-required-but-only-0</span><br><span class="line">复制数据的官网解释：</span><br><span class="line">https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureDataDistributeReplication_c.html</span><br><span class="line">https://docs.datastax.com/en/archived/cassandra/2.1/cassandra/operations/ops_add_dc_to_cluster_t.html</span><br></pre></td></tr></table></figure></p>
+<p>解决：</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Not enough replica available for query at consistency ONE (1 required but only 0 alive)</span><br><span class="line">https://issues.apache.org/jira/browse/CASSANDRA-7905</span><br><span class="line">https://issues.apache.org/jira/browse/CASSANDRA-11815</span><br><span class="line">https://stackoverflow.com/questions/27974911/not-enough-replica-available-for-query-at-consistency-one-1-required-but-only-0</span><br><span class="line">复制数据的官网解释：</span><br><span class="line">https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureDataDistributeReplication_c.html</span><br><span class="line">https://docs.datastax.com/en/archived/cassandra/2.1/cassandra/operations/ops_add_dc_to_cluster_t.html</span><br></pre></td></tr></table></figure>
+
 <h4 id="Cassandra-received-an-invalid-gossip-generation-for-peer"><a href="#Cassandra-received-an-invalid-gossip-generation-for-peer" class="headerlink" title="Cassandra received an invalid gossip generation for peer"></a>Cassandra received an invalid gossip generation for peer</h4><blockquote>
 <p>解决：<br><a href="https://stackoverflow.com/questions/40676589/cassandra-received-an-invalid-gossip-generation-for-peer" target="_blank" rel="noopener">链接</a></p>
 </blockquote>
@@ -695,7 +704,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -706,7 +715,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -717,7 +726,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -843,7 +852,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36k</span>
+    <span title="Site words total count">36.3k</span>
   
 </div>
 
@@ -854,6 +863,9 @@
 
 
 <div><span> --不忘初心<>方得始终--</span></div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
 
         
 <div class="busuanzi-count">

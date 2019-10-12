@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -474,10 +474,12 @@
 <p>在低带宽环境下，防火墙会检测闲置的连接并关闭，为了保护节点之间，或者多个DC节点之间的连接，建议如下配置系统参数</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl -w</span><br><span class="line">net.ipv4.tcp_keepalive_time=60</span><br><span class="line">net.ipv4.tcp_keepalive_probes=3</span><br><span class="line">net.ipv4.tcp_keepalive_intvl=10</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>设置这个就是可以快速的发现底层的TCP连接是否已经关闭，它间隔60秒开始探测3次，每次探测间隔10秒，也就是说最多在60+3*10=90秒内就可以检测到连接被中断。<br>为了支撑上千个数据库连接，还建议修改以下参数</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl -w</span><br><span class="line">net.core.rmem_max=16777216</span><br><span class="line">net.core.wmem_max=16777216</span><br><span class="line">net.core.rmem_default=16777216</span><br><span class="line">net.core.wmem_default=16777216</span><br><span class="line">net.core.optmem_max=40960</span><br><span class="line">net.ipv4.tcp_rmem=4096 87380 16777216</span><br><span class="line">net.ipv4.tcp_wmem=4096 65536 16777216</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>为了让参数永久生效，记得把它们写入系统配置文件/etc/sysctl.conf里</p>
 </blockquote>
@@ -486,16 +488,19 @@
 <p>最近的linux系统增加了一个新特性，就是可以动态调整CPU频率，就是在机器低负载的时候，可以降低CPU频率，以达到降低功耗的目的。<br>这种动态调频功能会影响cassandra数据库的吞吐量。建议禁用，让CPU一直维持恒定的频率输出，尽管这很耗电，但是保证你的数据库的吞吐量。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">禁用方式：</span><br><span class="line"></span><br><span class="line">for CPUFREQ in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor</span><br><span class="line">do</span><br><span class="line">[ -f $CPUFREQ ] || continue</span><br><span class="line">echo -n performance &gt; $CPUFREQ</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="禁用zone-reclaim-mode"><a href="#禁用zone-reclaim-mode" class="headerlink" title="禁用zone_reclaim_mode"></a>禁用zone_reclaim_mode</h4><blockquote>
 <p>官方建议禁用，这个是关于多核CPU使用NUMA架构，分别访问内存，内存回收方面的一个参数<br>这个参数的解释，可以参考：<br><a href="http://linuxinsight.com/proc_sys_vm_zone_reclaim_mode.html" target="_blank" rel="noopener">http://linuxinsight.com/proc_sys_vm_zone_reclaim_mode.html</a><br>这里面有一句话，当你的机器用作文件服务器，或者你的大部分内存需要用于系统文件缓存的时候，你需要禁用这个功能。<br>我们的Cassandra就相当于文件服务器，它对IO是依赖的，它需要系统内存用于大量缓存DB文件。所以要禁用这个功能。<br>echo 0 &gt; /proc/sys/vm/zone_reclaim_mode<br>Cassandra官方描述了如果不禁用这个参数带来的后果：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、随机CPU尖峰带来时延增加，吞吐量增加。</span><br><span class="line">2、程序假死，什么也不做。</span><br><span class="line">3、一些突然发生又消失的莫名异常。</span><br><span class="line">4、重启机器，可能在一段时间内不再出现异常。</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="资源限制放开。"><a href="#资源限制放开。" class="headerlink" title="资源限制放开。"></a>资源限制放开。</h4><blockquote>
 <p>cassandra会使用很多内存，很多连接，很多文件，所以一律放开。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;cassandra_user&gt; – memlock unlimited</span><br><span class="line">&lt;cassandra_user&gt; – nofile 100000</span><br><span class="line">&lt;cassandra_user&gt; – nproc 32768</span><br><span class="line">&lt;cassandra_user&gt; – as unlimited</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>这个加入到/etc/security/limits.conf 里（不同操作系统，可能不同，后面不再注明）<br>vm.max_map_count = 1048575   将这个加入到 /etc/sysctl.conf 里</p>
 </blockquote>
@@ -508,14 +513,17 @@
 <p>默认保持64k即可</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 64 &gt; /sys/class/block/&#123;sda&#125;/queue/read_ahead_kb</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>如果是ssd，设置为8k</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 8 &gt; /sys/class/block/&#123;sda&#125;/queue/read_ahead_kb</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>如果是ssd，还要设置下面的参数进行优化。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo deadline &gt; /sys/block/sda/queue/scheduler</span><br><span class="line">#OR…</span><br><span class="line">#echo noop &gt; /sys/block/sda/queue/scheduler</span><br><span class="line">touch /var/lock/subsys/local</span><br><span class="line">echo 0 &gt; /sys/class/block/sda/queue/rotational</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="确保以上参数重启机器后仍然有效。"><a href="#确保以上参数重启机器后仍然有效。" class="headerlink" title="确保以上参数重启机器后仍然有效。"></a>确保以上参数重启机器后仍然有效。</h4><hr>
 <h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p><a href="https://zhaoyanblog.com/archives/1005.html" target="_blank" rel="noopener">赵岩的博客</a></p>
@@ -681,7 +689,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -692,7 +700,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -703,7 +711,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -829,7 +837,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36k</span>
+    <span title="Site words total count">36.3k</span>
   
 </div>
 
@@ -840,6 +848,9 @@
 
 
 <div><span> --不忘初心<>方得始终--</span></div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
 
         
 <div class="busuanzi-count">

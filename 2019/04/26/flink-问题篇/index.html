@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -137,18 +137,18 @@
 
 
 
-<meta name="description" content="资源管理：flinkvcore:提示：并行度一定要小于solt数，也就是提交命令里 ynys的值，最好保持一致，这样可以将申请的资源充分利用。计算方式：如果并行度小于solt数（ynys），则vocer默认是：并行度 +1 ；如果并行度和solt数(ynys)一致，则vcore数为yn  ys + 1memory:计算方式：并行度和solt数保持一致时：    yn  yjm + ytm并行度小于">
+<meta name="description" content="资源管理：flinkvcore:提示：并行度一定要小于solt数，也就是提交命令里 ynys的值，最好保持一致，这样可以将申请的资源充分利用。计算方式：如果并行度小于solt数（ynys），则vocer默认是：并行度 +1 ；如果并行度和solt数(yn*ys)一致，则vcore数为yn * ys + 1memory:计算方式：并行度和solt数保持一致时：    yn * yjm + ytm并行">
 <meta name="keywords" content="flink-问题篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flink-问题篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/04/26/flink-问题篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="资源管理：flinkvcore:提示：并行度一定要小于solt数，也就是提交命令里 ynys的值，最好保持一致，这样可以将申请的资源充分利用。计算方式：如果并行度小于solt数（ynys），则vocer默认是：并行度 +1 ；如果并行度和solt数(ynys)一致，则vcore数为yn  ys + 1memory:计算方式：并行度和solt数保持一致时：    yn  yjm + ytm并行度小于">
+<meta property="og:description" content="资源管理：flinkvcore:提示：并行度一定要小于solt数，也就是提交命令里 ynys的值，最好保持一致，这样可以将申请的资源充分利用。计算方式：如果并行度小于solt数（ynys），则vocer默认是：并行度 +1 ；如果并行度和solt数(yn*ys)一致，则vcore数为yn * ys + 1memory:计算方式：并行度和solt数保持一致时：    yn * yjm + ytm并行">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-09-25T03:00:37.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flink-问题篇">
-<meta name="twitter:description" content="资源管理：flinkvcore:提示：并行度一定要小于solt数，也就是提交命令里 ynys的值，最好保持一致，这样可以将申请的资源充分利用。计算方式：如果并行度小于solt数（ynys），则vocer默认是：并行度 +1 ；如果并行度和solt数(ynys)一致，则vcore数为yn  ys + 1memory:计算方式：并行度和solt数保持一致时：    yn  yjm + ytm并行度小于">
+<meta name="twitter:description" content="资源管理：flinkvcore:提示：并行度一定要小于solt数，也就是提交命令里 ynys的值，最好保持一致，这样可以将申请的资源充分利用。计算方式：如果并行度小于solt数（ynys），则vocer默认是：并行度 +1 ；如果并行度和solt数(yn*ys)一致，则vcore数为yn * ys + 1memory:计算方式：并行度和solt数保持一致时：    yn * yjm + ytm并行">
 
 
 
@@ -464,36 +464,50 @@
       
 
       
-        <h4 id="资源管理："><a href="#资源管理：" class="headerlink" title="资源管理："></a>资源管理：</h4><p>flink<br>vcore:<br>提示：并行度一定要小于solt数，也就是提交命令里 yn<em>ys的值，最好保持一致，这样可以将申请的资源充分利用。<br>计算方式：如果并行度小于solt数（yn</em>ys），则vocer默认是：并行度 +1 ；如果并行度和solt数(yn<em>ys)一致，则vcore数为yn </em> ys + 1<br>memory:<br>计算方式：<br>并行度和solt数保持一致时：    yn <em> yjm + ytm<br>并行度小于solt 数是：并行度 </em> yjm + ytm</p>
+        <h4 id="资源管理："><a href="#资源管理：" class="headerlink" title="资源管理："></a>资源管理：</h4><p>flink<br>vcore:<br>提示：并行度一定要小于solt数，也就是提交命令里 yn<em>ys的值，最好保持一致，这样可以将申请的资源充分利用。<br>计算方式：如果并行度小于solt数（yn</em>ys），则vocer默认是：并行度 +1 ；如果并行度和solt数(yn*ys)一致，则vcore数为yn * ys + 1<br>memory:<br>计算方式：<br>并行度和solt数保持一致时：    yn * yjm + ytm<br>并行度小于solt 数是：并行度 * yjm + ytm</p>
 <h4 id="隐式转换器的异常："><a href="#隐式转换器的异常：" class="headerlink" title="隐式转换器的异常："></a>隐式转换器的异常：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">错误信息：value foreach is not a member of java.util.ArrayList</span><br><span class="line">解决：import scala.collection.JavaConversions._</span><br><span class="line">错误信息：could not find implicit value for evidence parameter of type org.apache.flink.api.common.typeinfo.TypeInformation</span><br><span class="line">解决：import org.apache.flink.streaming.api.scala._（DataStream API）</span><br><span class="line">     import org.apache.flink.api.scala._（DataSet API）</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"><a href="#如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现" class="headerlink" title="如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"></a>如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def myFunction[T: TypeInformation](input: DataSet[T]): DataSet[Seq[T]] = &#123;</span><br><span class="line">  input.reduceGroup( i =&gt; i.toSeq )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="ClassCastException：X无法强制转换为X"><a href="#ClassCastException：X无法强制转换为X" class="headerlink" title="ClassCastException：X无法强制转换为X"></a>ClassCastException：X无法强制转换为X</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.尝试classloader.resolve-order: parent-first在配置中进行设置</span><br><span class="line">2.从不同的执行尝试缓存类</span><br><span class="line">3.通过child-first类加载进行类复制</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="AbstractMethodError或NoSuchFieldError"><a href="#AbstractMethodError或NoSuchFieldError" class="headerlink" title="AbstractMethodError或NoSuchFieldError"></a>AbstractMethodError或NoSuchFieldError</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">存在依赖项版本冲突,确保所有依赖项版本都一致。</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="事件正在进行，DataStream应用程序不产生任何输出"><a href="#事件正在进行，DataStream应用程序不产生任何输出" class="headerlink" title="事件正在进行，DataStream应用程序不产生任何输出"></a>事件正在进行，DataStream应用程序不产生任何输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.如果您的DataStream应用程序使用事件时间，请检查您的水印是否已更新。</span><br><span class="line">  如果没有产生水印，事件时间窗口可能永远不会触发，应用程序将不会产生任何结果。</span><br><span class="line">2.您可以在Flink的Web UI（水印部分）中查看水印是否正在取得进展。</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="exception-reporting-“Insufficient-number-of-network-buffers”"><a href="#exception-reporting-“Insufficient-number-of-network-buffers”" class="headerlink" title="exception reporting “Insufficient number of network buffers”"></a>exception reporting “Insufficient number of network buffers”</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.原因可能：以很高的并发来执行flink ,增加了网络缓冲区的数量。</span><br><span class="line">  默认情况下，Flink占用网络缓冲区的JVM堆大小的10％，最小为64MB，最大为1GB。</span><br><span class="line">2.可以通过修改一下以下参数来调整：</span><br><span class="line">taskmanager.network.memory.fraction</span><br><span class="line">taskmanager.network.memory.min</span><br><span class="line">taskmanager.network.memory.max</span><br></pre></td></tr></table></figure>
+
 <p><a href="https://ci.apache.org/projects/flink/flink-docs-master/ops/config.html#configuring-the-network-buffers" title="flink 配置信息" target="_blank" rel="noopener">flink 配置信息</a></p>
 <hr>
 <h4 id="由于javadoc错误无法构建maven项目"><a href="#由于javadoc错误无法构建maven项目" class="headerlink" title="由于javadoc错误无法构建maven项目"></a>由于javadoc错误无法构建maven项目</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">三个选择：</span><br><span class="line">1.修复错误</span><br><span class="line">2.禁用严格检查</span><br><span class="line">3.在建造时跳过Javadoc</span><br><span class="line">&lt;plugins&gt;</span><br><span class="line">  &lt;plugin&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;maven-javadoc-plugin&lt;/artifactId&gt;</span><br><span class="line">    &lt;configuration&gt;</span><br><span class="line">      &lt;additionalparam&gt;-Xdoclint:none&lt;/additionalparam&gt;</span><br><span class="line">    &lt;/configuration&gt;</span><br><span class="line">  &lt;/plugin&gt;</span><br><span class="line">&lt;/plugins&gt;</span><br><span class="line">构建时跳过javadoc</span><br><span class="line">mvn -Dmaven.javadoc.skip=true verify</span><br></pre></td></tr></table></figure>
+
 <h4 id="java-lang-ClassNotFoundException-scala-Product-class"><a href="#java-lang-ClassNotFoundException-scala-Product-class" class="headerlink" title="java.lang.ClassNotFoundException: scala.Product$class"></a>java.lang.ClassNotFoundException: scala.Product$class</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">原因：构建文件不对。您的scala版本是2.12.x但您使用的是scala版本2.11中编译的库。</span><br><span class="line">解决：查看构建文件的lib 中是否包含2.12的版本。</span><br></pre></td></tr></table></figure>
+
 <h4 id="Flink-BucketingSink-crashes-with-NoClassDefFoundError-Lorg-apache-hadoop-fs-FileSystem"><a href="#Flink-BucketingSink-crashes-with-NoClassDefFoundError-Lorg-apache-hadoop-fs-FileSystem" class="headerlink" title="Flink BucketingSink crashes with NoClassDefFoundError: Lorg/apache/hadoop/fs/FileSystem"></a>Flink BucketingSink crashes with NoClassDefFoundError: Lorg/apache/hadoop/fs/FileSystem</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">缺少hadoop 依赖：（ 版本根据自己的来）</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.7.1&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.7.1&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="Name-node-is-in-safe"><a href="#Name-node-is-in-safe" class="headerlink" title="Name node is in safe"></a>Name node is in safe</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">modeorg.apache.hadoop.ipc.RemoteException(org.apache.hadoop.hdfs.server.namenode.SafeModeException): Cannot create file/user/test. Name node is in safe mode.</span><br><span class="line">解决方法：bin/hadoop dfsadmin -safemode leave </span><br><span class="line">参考：https://blog.csdn.net/hongweigg/article/details/7185328</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="No-implicit-arguments-of-type-XXXXXX"><a href="#No-implicit-arguments-of-type-XXXXXX" class="headerlink" title="No implicit arguments of type: XXXXXX"></a>No implicit arguments of type: XXXXXX</h4><p>错误：could not find implicit value for evidence parameter of type org.apache.flink.api.common.typeinfo.TypeInformation[Int]<br>解决办法：import org.apache.flink.api.scala._<br>        或者<br>        import org.apache.flink.streaming.api.scala._</p>
 <hr>
 <h4 id="Stack-trace-ExitCodeException-exitCode-1"><a href="#Stack-trace-ExitCodeException-exitCode-1" class="headerlink" title="Stack trace: ExitCodeException exitCode=1:"></a>Stack trace: ExitCodeException exitCode=1:</h4><blockquote>
-<p>报错信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Application application_1556525638125_0015 failed 1 times (global limit =2; local limit is =1) due to AM Container for appattempt_1556525638125_0015_000001 exited with exitCode: 1</span><br><span class="line">Failing this attempt.Diagnostics: Exception from container-launch.</span><br><span class="line">Container id: container_e04_1556525638125_0015_01_000001</span><br><span class="line">Exit code: 1</span><br><span class="line">Stack trace: ExitCodeException exitCode=1:</span><br></pre></td></tr></table></figure></p>
+<p>报错信息</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Application application_1556525638125_0015 failed 1 times (global limit =2; local limit is =1) due to AM Container for appattempt_1556525638125_0015_000001 exited with exitCode: 1</span><br><span class="line">Failing this attempt.Diagnostics: Exception from container-launch.</span><br><span class="line">Container id: container_e04_1556525638125_0015_01_000001</span><br><span class="line">Exit code: 1</span><br><span class="line">Stack trace: ExitCodeException exitCode=1:</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>解决方式：</p>
 </blockquote>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.查看提交flink 作业的版本是否和提交环境版本一致。</span><br></pre></td></tr></table></figure>
+
 <h4 id="Checkpoint失败：Checkpoint-expired-before-completing"><a href="#Checkpoint失败：Checkpoint-expired-before-completing" class="headerlink" title="Checkpoint失败：Checkpoint expired before completing"></a>Checkpoint失败：Checkpoint expired before completing</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">env.enableCheckpointing(1000L)</span><br><span class="line">val checkpointConf = env.getCheckpointConfig</span><br><span class="line">checkpointConf.setMinPauseBetweenCheckpoints(30000L)</span><br><span class="line">checkpointConf.setCheckpointTimeout(8000L)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p> 解决方式：<br> 主要因为checkpointConf.setCheckpointTimeout(8000L)设置的太小了，默认是10min。<br> 这里只设置了8sec。当一个Flink App背压的时候（例如由外部组件异常引起），Barrier会流动的非常缓慢，导致Checkpoint时长飙升。</p>
 </blockquote>
@@ -505,13 +519,21 @@
 </ol>
 </blockquote>
 <h4 id="map-和list-声明方式"><a href="#map-和list-声明方式" class="headerlink" title="map 和list 声明方式"></a>map 和list 声明方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val seMap: java.util.Map[String, java.util.Map[String, Object]] =</span><br><span class="line">      new java.util.HashMap[String, java.util.Map[String, Object]]()</span><br><span class="line">val topList: java.util.List[String] =</span><br><span class="line">      new java.util.ArrayList[String]()</span><br></pre></td></tr></table></figure>
-<h4 id="Flink参数设置slot数量增加-导致作业无法启动"><a href="#Flink参数设置slot数量增加-导致作业无法启动" class="headerlink" title="Flink参数设置slot数量增加,导致作业无法启动"></a>Flink参数设置slot数量增加,导致作业无法启动</h4><p>报错信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Insufficient number of network buffers: required 96, but only 25 available. </span><br><span class="line">The total number of network buffers is currently set to 2048 of 32768 bytes each. </span><br><span class="line">You can increase this number by setting the configuration keys &apos;taskmanager.network.memory.fraction&apos;, </span><br><span class="line">&apos;taskmanager.network.memory.min&apos;,</span><br><span class="line"> and &apos;taskmanager.network.memory.max&apos;</span><br></pre></td></tr></table></figure></p>
-<p>解决方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">调整Flink里面flink-conf.yaml里面的新增参数增加可支持的slot数量</span><br><span class="line">taskmanager.network.memory.fraction: 0.1</span><br><span class="line">taskmanager.network.memory.min: 268435456</span><br><span class="line">taskmanager.network.memory.max: 4294967296</span><br></pre></td></tr></table></figure></p>
+
+<h4 id="Flink参数设置slot数量增加-导致作业无法启动"><a href="#Flink参数设置slot数量增加-导致作业无法启动" class="headerlink" title="Flink参数设置slot数量增加,导致作业无法启动"></a>Flink参数设置slot数量增加,导致作业无法启动</h4><p>报错信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Insufficient number of network buffers: required 96, but only 25 available. </span><br><span class="line">The total number of network buffers is currently set to 2048 of 32768 bytes each. </span><br><span class="line">You can increase this number by setting the configuration keys &apos;taskmanager.network.memory.fraction&apos;, </span><br><span class="line">&apos;taskmanager.network.memory.min&apos;,</span><br><span class="line"> and &apos;taskmanager.network.memory.max&apos;</span><br></pre></td></tr></table></figure>
+
+<p>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">调整Flink里面flink-conf.yaml里面的新增参数增加可支持的slot数量</span><br><span class="line">taskmanager.network.memory.fraction: 0.1</span><br><span class="line">taskmanager.network.memory.min: 268435456</span><br><span class="line">taskmanager.network.memory.max: 4294967296</span><br></pre></td></tr></table></figure>
+
 <h4 id="flink-任务物理内存溢出问题定位"><a href="#flink-任务物理内存溢出问题定位" class="headerlink" title="flink 任务物理内存溢出问题定位"></a>flink 任务物理内存溢出问题定位</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.apache.flink.yarn.YarnTaskExecutorRunner </span><br><span class="line">- RECEIVED SIGNAL 15: SIGTERM. Shutting down as requested.</span><br></pre></td></tr></table></figure>
+
 <p>问题定位：<a href="https://www.jianshu.com/p/f18f0494e8ab" target="_blank" rel="noopener">物理内存溢出问题定位</a></p>
 <h4 id="某个TaskManger丢失的问题排查"><a href="#某个TaskManger丢失的问题排查" class="headerlink" title="某个TaskManger丢失的问题排查"></a>某个TaskManger丢失的问题排查</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR [flink-akka.remote.default-remote-dispatcher-5] org.apache.flink.runtime.rest.handler.legacy.TaskManagerLogHandler - Fetching TaskManager log failed.</span><br><span class="line">java.util.concurrent.CompletionException: java.io.IOException: TaskManager log files are unavailable. Log file could not be found at /mnt/disk1/log/hadoop-yarn/containers/application_1556227576661_152377/container_1556227576661_152377_01_000012/taskmanager.log</span><br></pre></td></tr></table></figure>
+
 <p>地址：<a href="https://blog.csdn.net/u012164361/article/details/95317945" target="_blank" rel="noopener">问题解决地址</a></p>
 <h4 id="flink-设置uid-以及savepoint"><a href="#flink-设置uid-以及savepoint" class="headerlink" title="flink 设置uid 以及savepoint"></a>flink 设置uid 以及savepoint</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">DataStream&lt;String&gt; stream = env.</span><br><span class="line">  // Stateful source (e.g. Kafka) with ID</span><br><span class="line"> .addSource(new StatefulSource())</span><br><span class="line"> .uid(&quot;source-id&quot;) // ID for the source operator</span><br><span class="line"> .shuffle()</span><br><span class="line"> // Stateful mapper with ID</span><br><span class="line"> .map(new StatefulMapper())</span><br><span class="line"> .uid(&quot;mapper-id&quot;)</span><br><span class="line"> </span><br><span class="line">不人为指定ID，它们会被自动生成。</span><br><span class="line">只要ID不变化，则程序可以自动的从savepoint恢复。</span><br><span class="line">ID的生成依赖于程序的结构，并且对程序变化敏感。</span><br><span class="line">因此强烈建议人为分配ID</span><br><span class="line"></span><br><span class="line">可以将savepoint想象成持有每个有状态的操作的Operator ID到State的映射关系：</span><br><span class="line">Operator ID | State</span><br><span class="line">------------+------------------------</span><br><span class="line">source-id   | State of StatefulSource</span><br><span class="line">mapper-id   | State of StatefulMapper</span><br><span class="line">在上面的例子中，print sink是无状态的，因此不是savepoint的一部分。默认情况下，会尝试映射savepoint的每条记录到新的程序中</span><br></pre></td></tr></table></figure>
+
 <p>参考：</p>
 <blockquote>
 <p>flink官网：<a href="https://flink.apache.org/gettinghelp.html" target="_blank" rel="noopener">https://flink.apache.org/gettinghelp.html</a></p>
@@ -678,7 +700,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -689,7 +711,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -700,7 +722,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -826,7 +848,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36k</span>
+    <span title="Site words total count">36.3k</span>
   
 </div>
 
@@ -837,6 +859,9 @@
 
 
 <div><span> --不忘初心<>方得始终--</span></div>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
 
         
 <div class="busuanzi-count">
