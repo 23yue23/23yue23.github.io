@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[sql-常用篇]]></title>
+    <url>%2F2019%2F10%2F15%2Fsql-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[编程规范https://www.sqlstyle.guide/zh/]]></content>
+      <categories>
+        <category>sql</category>
+      </categories>
+      <tags>
+        <tag>sql-常用篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[详细文档设计规范]]></title>
+    <url>%2F2019%2F10%2F15%2F%E8%AF%A6%E7%BB%86%E6%96%87%E6%A1%A3%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%2F</url>
+    <content type="text"><![CDATA[详细设计的目标在项目实施之前进行问题、方案等重要项目信息的归纳整理。书写文档的过程中模块负责人能够更深入的思考问题与解决方案，提升对目标的理解、后续工作的质量、效率，降低项目风险。文档本身作为组织资产进行信息载体，发挥长期的价值。 详细设计文档原则能够面向不了解业务&amp;技术背景的人群 清晰表述完主要问题以及解决方案 详细设计阶段必须定义接口(也可以单独书写接口文档) 考虑到测试、运维、产品的主要关注点 设计文档的格式以及载体格式: markdown 或 word(更新时使用审阅模式) 载体: gitlab , 文档存放项目下doc目录, 每次发版tag携带最新文档 详细设计的适用场景需要写详细设计文档的场景新的线上模块 架构的大调整 对业务产生较大的影响的版本 不需要写详细设计文档的场景不影响架构bug修复和升级且不影响主体逻辑和接口 详细设计文档规范]]></content>
+      <categories>
+        <category>工作文档</category>
+      </categories>
+      <tags>
+        <tag>详细文档设计规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell-案例篇]]></title>
+    <url>%2F2019%2F10%2F15%2Fshell-%E6%A1%88%E4%BE%8B%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122## 此shell脚本只在bash解释器下测试运行过, sh解释器不保证一定正确## 关于bash和sh有啥区别, 大家可自行Google, 我建议大家使用bash## 可能大部分Linux系统, bash跟sh不会有太多区别, 但是如果你用Debian或者Ubuntu的话## 你会发现之前写的脚本sh运行会爆出一堆语法错误, 因为他们的sh等于Dash, 很蛋疼.################### PRODUCTLINE=&quot;rta&quot;PROJECT=&quot;ga-device&quot; ## 自带出错邮件报警: 尽量使用邮件组而不是使用具体某个人的邮箱## 因为科比曾经说过: 朋友来来走走, 冠军旗帜永不倒## 使用具体某个人的邮箱回头离职了邮件就发不出来了ALARM_ADDR=&quot;bin.li@mobvista.com&quot;ALARM_CC=&quot;bin.li@mobvista.com&quot; ## 钉钉报警有个好处是你可以建立群组, 而且可以分类, 不重要的信息你## 可以发到一个群里, 然后大家屏蔽群消息就好, 出问题的时候再去翻## dingtalkid: 钉钉群讨论的ID, 我想不需要我教你怎么获得这个IDALARM_DINGDING_TALKID=&quot;62138ba2d704500d24b21064663659e2288bdf5f6b72d8a8d5895746f2ee0f8f&quot;# https://oapi.dingtalk.com/robot/send?access_token=62138ba2d704500d24b21064663659e2288bdf5f6b72d8a8d5895746f2ee0f8fINFO_DINGDING_TALKID=&quot;d49490482e23f0780bf017ad04cb29d027755e0550578ff4324e48f989e7a4c1&quot;# https://oapi.dingtalk.com/robot/send?access_token=d49490482e23f0780bf017ad04cb29d027755e0550578ff4324e48f989e7a4c1 ## kibana使用的EleasticSearch的地址, 数据上报到ES, 才能用kibana展示出来## 尽量用公司统一的, 不要自己单独整## 如果觉得别人搞的不好用, 尽量推动别人优化## 而不是自己搭一个扔在那里没人管ES_ADDR=&quot;bj-report-ELB20151027-2124151593.us-east-1.elb.amazonaws.com:80&quot;ES_USER=&quot;mob_report&quot;ES_PASSWD=&quot;Mobvista_256&quot; ## 顾名思义, 就是把一个JSON document推到ES## 这里面有一些概念: docid, doc, index, type(如果不知道啥意思, 自行google)## 参数:## + docid: doc唯一的ID, 很多人喜欢让ES自己生成, 但是这个地方尽量不要,## 因为将来你的任务失败你还会补数呢, 找一个唯一的ID, 或者拼一个出来,## 将来补数原来的doc会被自动覆盖掉, 不至于数据重复## + doc: json doc## 任何你想塞进去的信息, 如果你足够聪明, 请塞一个格式化好的时间(北京时区)和## 一个时间戳进去function doc2es() &#123; local __docid=&quot;$1&quot; local __doc=&quot;$2&quot; curl -XPUT &quot;$ES_ADDR/mp_rba/cap_updater_jobstatus/$__docid&quot; \ -H &apos;Content-Type: application/json&apos; \ -u &quot;$ES_USER:$ES_PASSWD&quot; -d&quot;$__doc&quot;&#125; ## 邮件报警, 会使用全局变量里面的收件人地址 ALARM_ADDR &amp; ALARM_CC## 两个参数:## + sub: 邮件主题## + body: 报警内容(别JB图省事, 多写点东西又不会死, 让别人一眼看出来发生了什么吧!)function email_alarm() &#123; local _sub=$1 local _body=&quot;$2&quot; cat &quot;$_body&quot; | mail -s &quot;[$PRODUCTLINE][$PROJECT]$_sub&quot; -c &quot;$ALARM_CC&quot; &quot;$ALARM_ADDR&quot;&#125; function send_dingding_msg() &#123; local _dingtalkid=&quot;$1&quot; local _msg=&quot;$2&quot; url=&quot;https://oapi.dingtalk.com/robot/send?access_token=$_dingtalkid&quot; body=&quot;&#123; \&quot;msgtype\&quot;: \&quot;text\&quot;, \&quot;text\&quot;: &#123; \&quot;content\&quot;: \&quot;[$PRODUCTLINE][$PROJECT] Failed !!! [$_msg]\&quot; &#125;, \&quot;at\&quot;: &#123; \&quot;atMobiles\&quot;: [], \&quot;isAtAll\&quot;: false &#125; &#125;&quot; curl &quot;$url&quot; -H &apos;Content-Type: application/json&apos; -X POST -d &quot;$body&quot;&#125; ## 钉钉报警, 会使用全局变量里面的收件人地址 ALARM_ADDR &amp; ALARM_CC## 参数:## + msg: 报警内容(别JB图省事, 多写点东西又不会死, 让别人一眼看出来发生了什么吧!)function dingding_alarm() &#123; send_dingding_msg $ALARM_DINGDING_TALKID &quot;$1&quot;&#125; function dingding_info() &#123; send_dingding_msg $INFO_DINGDING_TALKID &quot;$1&quot;&#125; ## 就是想让输出多个时间而已## 参数: 你想打的消息function info() &#123; local _msg=&quot;$1&quot; echo &quot;$(date +&quot;%Y-%m-%d %H:%M:%S&quot;) INFO [$_msg]&quot;&#125; ## 就是想让输出多个时间而已## 参数: 你想打的消息function error() &#123; local _msg=&quot;$1&quot; echo &quot;$(date +&quot;%Y-%m-%d %H:%M:%S&quot;) ERROR [$_msg]&quot;&#125; ## 任务运行结束, 清理掉临时文件## 参数: 给个文件名function clean_file() &#123; local _f=&quot;$1&quot; if [ -f $_f ]; then info &quot;rm $_f&quot; rm $_f fi&#125;## 任务运行结束, 备份重要结果文件## 参数: 给个文件名和后缀## 比如: back_file file-name 2019032013function back_file() &#123; local _f=&quot;$1&quot; local _postfix=&quot;$2&quot; if [ -f $_f ]; then info &quot;mv $_f $_f.$_postfix&quot; mv $_f $_f.$_postfix fi&#125; 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152# 为了方便CTI和CVR的计算, 我们需要从s3拉取一些中间结果下来# 这个地方定义一个下载函数# 希望达到的效果是, 给定一个输入路径, 可以把这个路径下的所有文件都下载下来# 并且导到一个目标文件中# 当然还需要做一下文件大小的check, 别把本地磁盘给撑爆了function download_from_s3_dir() &#123; local _s3_dir=$1 local _local_file=$2 local _tmp_index=&quot;__tmp_index_for_download_s3_file__$(date +&quot;%s&quot;).$RANDOM&quot; local _sz_max=4000000000 # local _sz_max=1000 # check file size 1st if [ -f $_tmp_index ]; then rm $_tmp_index fi run_with_check &quot;aws s3 ls $_s3_dir &gt; $_tmp_index&quot; if [ 0 -eq $(wc -l $_tmp_index | awk &apos;&#123;print $1&#125;&apos;) ]; then echo &quot;WARNING: no file in $_s3_dir&quot; touch $_local_file else local _sz_tt=0 for sz in $(cat $_tmp_index | awk &apos;&#123;print $3&#125;&apos;) do echo $sz # debug _sz_tt=$((_sz_tt+$sz)) done if [ $_sz_tt -gt $_sz_max ]; then echo &quot;ERROR: files too large exit!!! [$_sz_tt &gt; $_sz_max]&quot; exit 1 fi if [ -f $_local_file ]; then rm $_local_file fi for f in $(cat $_tmp_index | awk &apos;&#123;print $3&quot;|&quot;$4&#125;&apos;) do local _sz=$(echo &quot;$f&quot; | awk -F&apos;|&apos; &apos;&#123;print $1&#125;&apos;) local _ff=$(echo &quot;$f&quot; | awk -F&apos;|&apos; &apos;&#123;print $2&#125;&apos;) local _ff_local=$_ff&quot;.$(date +&quot;%s&quot;).$RANDOM&quot; if [ x&quot;0&quot; = x&quot;$_sz&quot; ]; then continue fi run_with_check &quot;aws s3 cp $_s3_dir$_ff $_ff_local&quot; run_with_check &quot;cat $_ff_local &gt;&gt; $_local_file&quot; if [ -f $_ff_local ]; then rm $_ff_local fi done fi if [ -f $_tmp_index ]; then rm $_tmp_index fi&#125; 1234567891011121314151617## 这个函数我想大家都可以用到## 把你任务一些可能会失败的操作过程, 比如从s3拷个文件## 比如执行一个py脚本, 比如curl一个东西## run_with_check, 发现失败, 自动报警, 而且立马终止任务## 参数: 你要执行的命令## 比如: run_with_check &quot;python demo.py&quot;function run_with_check &#123; cmd=&quot;$1&quot; info &quot;$cmd&quot; eval &quot;$cmd&quot; if [ 0 -ne $? ]; then error &quot;[$cmd] failed!!!!! exit !!!!!!!!&quot; email_alarm &quot;[$PRODUCTLINE][$PROJECT] Failed !!!&quot; &quot;command exit code not 0: $cmd&quot; dingding_alarm &quot;command exit code not 0: $cmd&quot; exit 1 fi&#125; 微信报警接口12345678910111213141516171819202122232425262728293031323334353637383940414243444546#!/usr/bin/env python# coding:utf-8import sysimport urllib2import timeimport jsonimport requestsimport redis reload(sys)sys.setdefaultencoding(&apos;utf-8&apos;)print sys.argv message = sys.argv[3] # 位置参数获取title 适用于zabbixuser = sys.argv[1] # 位置参数获取content 适用于zabbix POOL = redis.ConnectionPool(host=&apos;&apos;,port=3721,password=&apos;&apos;,db=1)rs=redis.Redis(connection_pool=POOL) def send_msg(user,message): # 发送消息 qs_token = rs.get(&apos;weixin&apos;) url = &quot;https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=&#123;0&#125;&quot;.format( qs_token) payload = &#123; &quot;touser&quot;:user, &quot;msgtype&quot;: &quot;text&quot;, &quot;agentid&quot;: &quot;2&quot;, &quot;text&quot;: &#123; &quot;content&quot;: message &#125;, &quot;safe&quot;: &quot;0&quot; &#125; ret = requests.post(url, data=json.dumps(payload, ensure_ascii=False)) print ret.json() if __name__ == &apos;__main__&apos;: send_msg(user,message)# 使用方法：python wetchat.py mail@qq.com subject message]]></content>
+      <categories>
+        <category>shell-案例篇</category>
+      </categories>
+      <tags>
+        <tag>shell-案例篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell-常用篇]]></title>
+    <url>%2F2019%2F10%2F15%2Fshell-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>shell-常用篇</category>
+      </categories>
+      <tags>
+        <tag>shell-常用篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[go-常用篇]]></title>
+    <url>%2F2019%2F10%2F15%2Fgo-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[编码规范http://docscn.studygolang.com/doc/effective_go.html 单测样例http://gitlab.mobvista.com/mtech/mtech/blob/master/开发-Go单元测试.md 开发工具开发可自由选择编辑器，推荐使用IDE：https://www.jetbrains.com/go/ 常用库标准库: http://docscn.studygolang.com/pkg/日志: https://github.com/cihub/seelog配置: https://github.com/spf13/viperuuid: https://github.com/satori/go.uuidleveldb: https://github.com/syndtr/goleveldb/leveldbmurmurhash3: https://github.com/spaolacci/murmur3redis: https://github.com/garyburd/redigo/redisredis-cluster: https://github.com/chasex/redis-go-clustermongo: http://gopkg.in/mgo.v2命令行: http://gopkg.in/alecthomas/kingpin.v2grpc: http://www.grpc.io/docs/quickstart/go.html]]></content>
+      <categories>
+        <category>go-常用篇</category>
+      </categories>
+      <tags>
+        <tag>go-常用篇</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git-常用篇]]></title>
     <url>%2F2019%2F10%2F14%2Fgit-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[git config –global user.name “你的名字” 让你全部的Git仓库绑定你的名字 git config –global user.email “你的邮箱” 让你全部的Git仓库绑定你的邮箱 git init 初始化你的仓库 git add . 把工作区的文件全部提交到暂存区 git add .// 把工作区的文件提交到暂存区 git commit -m “xxx” 把暂存区的所有文件提交到仓库区，暂存区空空荡荡 git remote add origin https://github.com/name/name_cangku.git 把本地仓库与远程仓库连接起来 git push -u origin master 把仓库区的主分支master提交到远程仓库里 git push -u origin &lt;其他分支&gt; 把其他分支提交到远程仓库 git status查看当前仓库的状态 git diff 查看文件修改的具体内容 git log 显示从最近到最远的提交历史 git clone + 仓库地址下载克隆文件 git reset –hard + 版本号 回溯版本，版本号在commit的时候与master跟随在一起 git reflog 显示命令历史 git checkout – 撤销命令，用版本库里的文件替换掉工作区的文件。我觉得就像是Git世界的ctrl + z git rm 删除版本库的文件 git branch 查看当前所有分支 git branch &lt;分支名字&gt; 创建分支 git checkout &lt;分支名字&gt; 切换到分支 git merge &lt;分支名字&gt; 合并分支 git branch -d &lt;分支名字&gt; 删除分支,有可能会删除失败，因为Git会保护没有被合并的分支 git branch -D + &lt;分支名字&gt; 强行删除，丢弃没被合并的分支 git log –graph 查看分支合并图 git merge –no-ff &lt;分支名字&gt; 合并分支的时候禁用Fast forward模式,因为这个模式会丢失分支历史信息 git stash 当有其他任务插进来时，把当前工作现场“存储”起来,以后恢复后继续工作 git stash list 查看你刚刚“存放”起来的工作去哪里了 git stash apply 恢复却不删除stash内容 git stash drop 删除stash内容 git stash pop 恢复的同时把stash内容也删了 git remote 查看远程库的信息，会显示origin，远程仓库默认名称为origin git remote -v 显示更详细的信息 git pull 把最新的提交从远程仓库中抓取下来，在本地合并,和git push相反 git rebase 把分叉的提交历史“整理”成一条直线，看上去更直观 git tag 查看所有标签，可以知道历史版本的tag git tag 打标签，默认为HEAD。比如git tag v1.0 git tag &lt;版本号&gt; 把版本号打上标签，版本号就是commit时，跟在旁边的一串字母数字 git show 查看标签信息 git tag -a -m “&lt;说明&gt;” 创建带说明的标签。-a指定标签名，-m指定说明文字 git tag -d 删除标签 git push origin 推送某个标签到远程 git push origin –tags 一次性推送全部尚未推送到远程的本地标签 git push origin :refs/tags/ 删除远程标签 git config –global color.ui true 让Git显示颜色，会让命令输出看起来更醒目 git add -f 强制提交已忽略的的文件 git check-ignore -v 检查为什么Git会忽略该文件]]></content>
@@ -124,7 +179,7 @@
   <entry>
     <title><![CDATA[python-学习篇]]></title>
     <url>%2F2019%2F10%2F09%2Fpython-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[编码规范http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/contents/ 开发工具https://www.jetbrains.com/pycharm/ 常用库: pymysql httplib2 kafka kafka-python pymongo psycopg2 elasticsearch murmurhash3]]></content>
       <categories>
         <category>python</category>
       </categories>
@@ -646,7 +701,7 @@
   <entry>
     <title><![CDATA[广告-学习篇]]></title>
     <url>%2F2019%2F07%2F12%2F%E5%B9%BF%E5%91%8A-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[术语理解1.dsp系统架构 实践 dsp 业务 1.1 美团DSP广告策略实践 123DSP基本概念介绍： 广告平台：将广告素材分发给下游设备、目标用户，然后跟踪分析用户事件行为，并反馈广告主。 DSP：DemandSidePlatform，需求方平台。即将广告平台或者其他来源的广告素材分发给指定的其他广告平台，并收集分析广告的展示激活信息，反馈广告主]]></content>
+    <content type="text"><![CDATA[术语理解1.dsp系统架构 实践 dsp 业务 1.1 美团DSP广告策略实践 123DSP基本概念介绍： 广告平台：将广告素材分发给下游设备、目标用户，然后跟踪分析用户事件行为，并反馈广告主。 DSP：DemandSidePlatform，需求方平台。即将广告平台或者其他来源的广告素材分发给指定的其他广告平台，并收集分析广告的展示激活信息，反馈广告主 广告术语：12345678910111213141516171819202122232425262728通用术语包名：package name，可以唯一确定一个app。CTR：click-through rate，点击率，点击/展现。Campaign：广告计划，某个客户某个广告在某个区域的宣传，投放单元，比如“MT 安卓台湾”。DSP：需求方平台。广告素材Offer：广告组织单元，商务运营层面的一支广告，约等于一个campaign。有时3S系统内部的同一个UUID会拆分成3~4个campaign，分属于ADN1/2/3，这些campaign属于一个offer。直客单：第一跳是3s，下一跳就是第三方（直接跳转到了第三方）的单子。效果评估CVR：安装/点击。归因：简单理解就是把一个安装归功于某一个点击或者展示的过程。因此有点击归因、展示归因等不同细化叫法。VTA：业务上指代透明卖。透明卖是使用展示匹配安装进行结算。使用DSP的设备和M系统的campaign合成展示，与自然安装量进行匹配，同时vta透明卖的ctr和cvr需要控制在合理的范围内。系统名称fVTA：fake的VTA流量。]]></content>
       <categories>
         <category>广告</category>
       </categories>
