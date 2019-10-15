@@ -149,7 +149,7 @@
 <meta property="og:site_name" content="蜗牛笔记">
 <meta property="og:description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300  查看集群信息1nodetool  describecluster  查看节点状态1nodetool    status  重启节点1sudo systemctl restart scylla-server  查看系统相关日志">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T03:40:54.050Z">
+<meta property="og:updated_time" content="2019-10-15T09:07:04.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cassandra-常用篇">
 <meta name="twitter:description" content="cassandra mac os 安装  shell 命令登陆1cqlsh -u cassandra -p cassandra --connect-timeout 300  查看集群信息1nodetool  describecluster  查看节点状态1nodetool    status  重启节点1sudo systemctl restart scylla-server  查看系统相关日志">
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  132
+                  872
                 </span>
               
 
@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -496,11 +496,136 @@
 
 <h5 id="查看Schema-信息"><a href="#查看Schema-信息" class="headerlink" title="查看Schema 信息"></a>查看Schema 信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM system_schema.keyspaces;</span><br></pre></td></tr></table></figure>
 
-<h5 id="keyspaces-操作"><a href="#keyspaces-操作" class="headerlink" title="keyspaces 操作"></a>keyspaces 操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#查看</span><br><span class="line">desc keyspaces;</span><br><span class="line">#使用</span><br><span class="line">use keyspaceName</span><br></pre></td></tr></table></figure>
+<h5 id="keyspaces-操作"><a href="#keyspaces-操作" class="headerlink" title="keyspaces 操作"></a>keyspaces 操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#创建</span><br><span class="line">CREATE KEYSPACE tutorialspoint</span><br><span class="line">WITH replication = &#123;&apos;class&apos;:&apos;SimpleStrategy&apos;, &apos;replication_factor&apos; : 3&#125;;</span><br><span class="line"></span><br><span class="line">#修改</span><br><span class="line">ALTER KEYSPACE tutorialspoint</span><br><span class="line">WITH replication = &#123;&apos;class&apos;:&apos;NetworkTopologyStrategy&apos;, &apos;replication_factor&apos; : 3&#125;;</span><br><span class="line"></span><br><span class="line">#删除</span><br><span class="line">DROP KEYSPACE “KeySpace name”</span><br><span class="line"></span><br><span class="line">#查看</span><br><span class="line">desc keyspaces;</span><br><span class="line"></span><br><span class="line">#使用</span><br><span class="line">use keyspaceName</span><br></pre></td></tr></table></figure>
 
-<h5 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#table list</span><br><span class="line">describe tables;</span><br><span class="line"></span><br><span class="line">#查看表结构</span><br><span class="line">describe table table_name;</span><br></pre></td></tr></table></figure>
+<h5 id="table-操作"><a href="#table-操作" class="headerlink" title="table 操作"></a>table 操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">#创建表</span><br><span class="line">#1</span><br><span class="line">CREATE TABLE user_action.user_history (</span><br><span class="line">   device_id text PRIMARY KEY,</span><br><span class="line">   user_history text,</span><br><span class="line">   dmp_tag text,</span><br><span class="line">   install_pkg text</span><br><span class="line">) WITH bloom_filter_fp_chance = 0.01</span><br><span class="line">   AND caching = &#123;&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;ALL&apos;&#125;</span><br><span class="line">   AND comment = &apos;m user history action, tag, pkg  records&apos;</span><br><span class="line">   AND compaction = &#123;&apos;class&apos;: &apos;SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;&#125;</span><br><span class="line">   AND compression = &#123;&apos;chunk_length_kb&apos;: &apos;1&apos;, &apos;crc_check_chance&apos;: &apos;0.000010&apos;, &apos;sstable_compression&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;&#125;</span><br><span class="line">   AND crc_check_chance = 1.0</span><br><span class="line">   AND dclocal_read_repair_chance = 0.1</span><br><span class="line">   AND default_time_to_live = 15552000</span><br><span class="line">   AND gc_grace_seconds = 864000</span><br><span class="line">   AND max_index_interval = 2048</span><br><span class="line">   AND memtable_flush_period_in_ms = 0</span><br><span class="line">   AND min_index_interval = 128</span><br><span class="line">   AND read_repair_chance = 0.0</span><br><span class="line">   AND speculative_retry = &apos;99.0PERCENTILE&apos;;</span><br><span class="line"></span><br><span class="line">#2</span><br><span class="line">CREATE TABLE test.test_user_action_history (</span><br><span class="line">    device_id text,</span><br><span class="line">    user_history text,</span><br><span class="line">    dmp_tag text,</span><br><span class="line">    install_pkg text,</span><br><span class="line">    PRIMARY KEY (device_id)</span><br><span class="line">) WITH comment=&apos;test user history action records&apos;</span><br><span class="line">    AND caching = &#123;&apos;keys&apos;: &apos;ALL&apos;, &apos;rows_per_partition&apos;: &apos;ALL&apos;&#125;</span><br><span class="line">    AND compaction = &#123;&apos;class&apos;: &apos;SizeTieredCompactionStrategy&apos;, &apos;max_threshold&apos;: &apos;32&apos;, &apos;min_threshold&apos;: &apos;4&apos;&#125;</span><br><span class="line">    AND compression = &#123;&apos;chunk_length_kb&apos;: &apos;1&apos;, &apos;crc_check_chance&apos;: &apos;0.000010&apos;, &apos;sstable_compression&apos;: &apos;org.apache.cassandra.io.compress.LZ4Compressor&apos;&#125;;</span><br><span class="line">     </span><br><span class="line">##添加列</span><br><span class="line">ALTER TABLE emp ADD emp_email text;</span><br><span class="line"></span><br><span class="line">##删除列</span><br><span class="line">ALTER TABLE emp DROP emp_email;  </span><br><span class="line"></span><br><span class="line"># 删除表</span><br><span class="line">DROP TABLE emp;</span><br><span class="line"></span><br><span class="line">#截断表（删除所有数据）表结构保留</span><br><span class="line">TRUNCATE student;</span><br><span class="line"></span><br><span class="line">#创建索引</span><br><span class="line">CREATE INDEX name ON emp1 (emp_name);</span><br><span class="line"></span><br><span class="line">#删除索引</span><br><span class="line">drop index name;</span><br><span class="line"></span><br><span class="line">#bacth 处理</span><br><span class="line">BEGIN BATCH</span><br><span class="line">... INSERT INTO emp (emp_id, emp_city, emp_name, emp_phone, emp_sal) values(  4,&apos;Pune&apos;,&apos;rajeev&apos;,9848022331, 30000);</span><br><span class="line">... UPDATE emp SET emp_sal = 50000 WHERE emp_id =3;</span><br><span class="line">... DELETE emp_city FROM emp WHERE emp_id = 2;</span><br><span class="line">... APPLY BATCH;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#table list</span><br><span class="line">desc tables;</span><br><span class="line"></span><br><span class="line">#查看表结构</span><br><span class="line">desc table &apos;table_name&apos;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="CURD-操作"><a href="#CURD-操作" class="headerlink" title="CURD 操作"></a>CURD 操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#插入</span><br><span class="line">INSERT INTO emp (emp_id, emp_name, emp_city,</span><br><span class="line">   emp_phone, emp_sal) VALUES(1,&apos;ram&apos;, &apos;Hyderabad&apos;, 9848022338, 50000);</span><br><span class="line"></span><br><span class="line">#修改</span><br><span class="line">UPDATE emp SET emp_city=&apos;Delhi&apos;,emp_sal=50000</span><br><span class="line">   WHERE emp_id=2;</span><br><span class="line"></span><br><span class="line">#读取</span><br><span class="line">select </span><br><span class="line"></span><br><span class="line">#删除</span><br><span class="line">DELETE emp_sal FROM emp WHERE emp_id=3;</span><br></pre></td></tr></table></figure>
 
 <h5 id="修改keyspaces-的副本"><a href="#修改keyspaces-的副本" class="headerlink" title="修改keyspaces 的副本"></a>修改keyspaces 的副本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER KEYSPACE library WITH REPLICATION = &#123; &apos;class&apos; : &apos;SimpleStrategy&apos;, &apos;replication_factor&apos; : 1 &#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>常量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ascii</td>
+<td>strings</td>
+<td>表示ASCII字符串</td>
+</tr>
+<tr>
+<td>bigint</td>
+<td>bigint</td>
+<td>表示64位有符号长</td>
+</tr>
+<tr>
+<td>blob</td>
+<td>blobs</td>
+<td>表示任意字节</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>booleans</td>
+<td>表示true或false</td>
+</tr>
+<tr>
+<td>counter</td>
+<td>integers</td>
+<td>表示计数器列</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>integers, floats</td>
+<td>表示变量精度十进制</td>
+</tr>
+<tr>
+<td>double</td>
+<td>integers</td>
+<td>表示64位IEEE-754浮点</td>
+</tr>
+<tr>
+<td>float</td>
+<td>integers, floats</td>
+<td>表示32位IEEE-754浮点</td>
+</tr>
+<tr>
+<td>inet</td>
+<td>strings</td>
+<td>表示一个IP地址，IPv4或IPv6</td>
+</tr>
+<tr>
+<td>int</td>
+<td>integers</td>
+<td>表示32位有符号整数</td>
+</tr>
+<tr>
+<td>text</td>
+<td>strings</td>
+<td>表示UTF8编码的字符串</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>integers, strings</td>
+<td>表示时间戳</td>
+</tr>
+<tr>
+<td>timeuuid</td>
+<td>uuids</td>
+<td>表示类型1 UUID</td>
+</tr>
+<tr>
+<td>uuid</td>
+<td>uuids</td>
+<td>表示类型1或类型4</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>UUID</td>
+</tr>
+<tr>
+<td>varchar</td>
+<td>strings</td>
+<td>表示uTF8编码的字符串</td>
+</tr>
+<tr>
+<td>varint</td>
+<td>integers</td>
+<td>表示任意精度整数</td>
+</tr>
+</tbody></table>
+<h4 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h4><blockquote>
+<p>Cassandra查询语言还提供了一个集合数据类型。下表提供了CQL中可用的集合的列表。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>集合</th>
+<th>描述</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>list</td>
+<td>列表是一个或多个有序元素的集合。</td>
+<td>将保持元素的顺序，并且值将被多次存储。</td>
+</tr>
+<tr>
+<td>map</td>
+<td>map是键值对的集合。</td>
+<td></td>
+</tr>
+<tr>
+<td>set</td>
+<td>集合是一个或多个元素的集合。</td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id="list"><a href="#list" class="headerlink" title="list"></a>list</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE data(name text PRIMARY KEY, email list&lt;text&gt;);</span><br><span class="line"></span><br><span class="line">INSERT INTO data(name, email) VALUES (&apos;ramu&apos;,[&apos;abc@gmail.com&apos;,&apos;cba@yahoo.com&apos;])</span><br><span class="line"></span><br><span class="line">UPDATE data SET email = email +[&apos;xyz@tutorialspoint.com&apos;] where name = &apos;ramu&apos;;</span><br><span class="line"></span><br><span class="line">SELECT * FROM data;</span><br><span class="line">name | email</span><br><span class="line">------+--------------------------------------------------------------</span><br><span class="line"> ramu | [&apos;abc@gmail.com&apos;, &apos;cba@yahoo.com&apos;, &apos;xyz@tutorialspoint.com&apos;]</span><br></pre></td></tr></table></figure>
 
 
       
@@ -564,7 +689,7 @@
   <!-- 修改时间 -->
   <li>
     <strong>更新于： </strong>
-    2019年09月25日 - 11时09分
+    2019年10月15日 - 17时10分
   </li>
 
   <!-- 引用链接 -->
@@ -713,7 +838,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">96</span>
+                  <span class="site-state-item-count">98</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -724,7 +849,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -735,7 +860,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-count">80</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -827,7 +952,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#shell-命令"><span class="nav-number">1.</span> <span class="nav-text">shell 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#登陆"><span class="nav-number">1.1.</span> <span class="nav-text">登陆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看集群信息"><span class="nav-number">1.2.</span> <span class="nav-text">查看集群信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看节点状态"><span class="nav-number">1.3.</span> <span class="nav-text">查看节点状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重启节点"><span class="nav-number">1.4.</span> <span class="nav-text">重启节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看系统相关日志信息"><span class="nav-number">1.5.</span> <span class="nav-text">查看系统相关日志信息</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cql操作"><span class="nav-number">2.</span> <span class="nav-text">Cql操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看版本"><span class="nav-number">2.1.</span> <span class="nav-text">查看版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看Schema-信息"><span class="nav-number">2.2.</span> <span class="nav-text">查看Schema 信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#keyspaces-操作"><span class="nav-number">2.3.</span> <span class="nav-text">keyspaces 操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看表"><span class="nav-number">2.4.</span> <span class="nav-text">查看表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改keyspaces-的副本"><span class="nav-number">2.5.</span> <span class="nav-text">修改keyspaces 的副本</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#shell-命令"><span class="nav-number">1.</span> <span class="nav-text">shell 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#登陆"><span class="nav-number">1.1.</span> <span class="nav-text">登陆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看集群信息"><span class="nav-number">1.2.</span> <span class="nav-text">查看集群信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看节点状态"><span class="nav-number">1.3.</span> <span class="nav-text">查看节点状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重启节点"><span class="nav-number">1.4.</span> <span class="nav-text">重启节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看系统相关日志信息"><span class="nav-number">1.5.</span> <span class="nav-text">查看系统相关日志信息</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cql操作"><span class="nav-number">2.</span> <span class="nav-text">Cql操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看版本"><span class="nav-number">2.1.</span> <span class="nav-text">查看版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看Schema-信息"><span class="nav-number">2.2.</span> <span class="nav-text">查看Schema 信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#keyspaces-操作"><span class="nav-number">2.3.</span> <span class="nav-text">keyspaces 操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#table-操作"><span class="nav-number">2.4.</span> <span class="nav-text">table 操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CURD-操作"><span class="nav-number">3.</span> <span class="nav-text">CURD 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改keyspaces-的副本"><span class="nav-number">3.1.</span> <span class="nav-text">修改keyspaces 的副本</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合类型"><span class="nav-number">5.</span> <span class="nav-text">集合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#list"><span class="nav-number">5.1.</span> <span class="nav-text">list</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -861,7 +986,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">39.9k</span>
+    <span title="Site words total count">41.6k</span>
   
 </div>
 
