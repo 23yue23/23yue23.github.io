@@ -149,7 +149,7 @@
 <meta property="og:site_name" content="蜗牛笔记">
 <meta property="og:description" content="prometheus 介绍12345671.prometheus负责从pushgateway和job中采集数据， 存储到后端Storatge中，可以通过PromQL进行查询,推送alerts信息到AlertManager。 AlertManager根据不同的路由规则进行报警通知.2.可以很好地记录任何纯数字时间序列。它既适合以机器为中心的监视，也适合高度动态的面向服务的体系结构的监视。在微服务的世">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-30T06:57:43.275Z">
+<meta property="og:updated_time" content="2019-10-16T07:46:29.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="promethus-学习篇">
 <meta name="twitter:description" content="prometheus 介绍12345671.prometheus负责从pushgateway和job中采集数据， 存储到后端Storatge中，可以通过PromQL进行查询,推送alerts信息到AlertManager。 AlertManager根据不同的路由规则进行报警通知.2.可以很好地记录任何纯数字时间序列。它既适合以机器为中心的监视，也适合高度动态的面向服务的体系结构的监视。在微服务的世">
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  894
+                  796
                 </span>
               
 
@@ -480,20 +480,15 @@
       
         <h4 id="prometheus-介绍"><a href="#prometheus-介绍" class="headerlink" title="prometheus 介绍"></a>prometheus 介绍</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.prometheus负责从pushgateway和job中采集数据， 存储到后端Storatge中，可以通过PromQL进行查询,推送alerts信息到AlertManager。 AlertManager根据不同的路由规则进行报警通知.</span><br><span class="line"></span><br><span class="line">2.可以很好地记录任何纯数字时间序列。</span><br><span class="line">它既适合以机器为中心的监视，也适合高度动态的面向服务的体系结构的监视。在微服务的世界中，它对多维数据收集和查询的支持是一个特别的优势。</span><br><span class="line">普罗米修斯是为可靠性而设计的，它是您在停机期间使用的系统，允许您快速诊断问题。</span><br><span class="line">每台普罗米修斯服务器都是独立的，不依赖于网络存储或其他远程服务。</span><br><span class="line">当您的基础设施的其他部分被破坏时，您可以依赖它，并且您不需要设置广泛的基础设施来使用它。</span><br></pre></td></tr></table></figure>
 
-<p>####grafana 安装和常用配置<br>#####常用配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">配置：</span><br><span class="line">    配置文件应位于/usr/local/etc/grafana/grafana.ini。</span><br><span class="line">日志：</span><br><span class="line">    日志文件应位于/usr/local/var/log/grafana/grafana.log。</span><br><span class="line">插件：</span><br><span class="line">    如果你想手动安装一个插件，请点击此处：/usr/local/var/lib/grafana/plugins。</span><br><span class="line">数据库：</span><br><span class="line">    默认的sqlite数据库位于 /usr/local/var/lib/grafana</span><br></pre></td></tr></table></figure>
-
-<h5 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.grafana.com/oss/release/grafana-6.3.5.linux-amd64.tar.gz</span><br><span class="line">tar -zxvf grafana-6.3.5.linux-amd64.tar.gz</span><br><span class="line">conf/grafana.ini</span><br><span class="line">./bin/grafana-server web</span><br></pre></td></tr></table></figure>
-
-<h5 id="mac-安装方式"><a href="#mac-安装方式" class="headerlink" title="mac 安装方式"></a>mac 安装方式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">安装：brew install grafana</span><br><span class="line">执行：brew services start grafana</span><br><span class="line">重启：brew services restart grafana</span><br><span class="line"></span><br><span class="line">#Log</span><br><span class="line">/usr/local/var/log/grafana/grafana.log</span><br><span class="line"></span><br><span class="line">#conf</span><br><span class="line">/usr/local/etc/grafana/grafana.ini</span><br><span class="line"></span><br><span class="line">#plugins</span><br><span class="line">/usr/local/var/lib/grafana/plugins</span><br><span class="line"></span><br><span class="line">#database</span><br><span class="line">/usr/local/var/lib/grafana</span><br></pre></td></tr></table></figure>
-
-<hr>
 <h4 id="Metrics-类型"><a href="#Metrics-类型" class="headerlink" title="Metrics 类型"></a>Metrics 类型</h4><h5 id="Counter（计数器）"><a href="#Counter（计数器）" class="headerlink" title="Counter（计数器）"></a>Counter（计数器）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#获取样本数据</span><br><span class="line">node_cpu&#123;cpu=&quot;cpu0&quot;,mode=&quot;idle”&#125; </span><br><span class="line">#通过rate()函数获取HTTP请求量的增长率</span><br><span class="line">rate(http_requests_total[5m])</span><br><span class="line"># 查询当前系统中，访问量前10的HTTP地址：</span><br><span class="line">topk(10, http_requests_total)</span><br></pre></td></tr></table></figure>
 
 <h5 id="Gauge-可增可减的仪表盘"><a href="#Gauge-可增可减的仪表盘" class="headerlink" title="Gauge 可增可减的仪表盘"></a>Gauge 可增可减的仪表盘</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">预测系统磁盘空间在4个小时之后的剩余情况：</span><br><span class="line">predict_linear(node_filesystem_free&#123;job=&quot;node&quot;&#125;[1h], 4 * 3600)</span><br></pre></td></tr></table></figure>
 
 <h5 id="Histogram和Summary分析数据分布情况"><a href="#Histogram和Summary分析数据分布情况" class="headerlink" title="Histogram和Summary分析数据分布情况"></a>Histogram和Summary分析数据分布情况</h5><hr>
-<h4 id="PromQL基础"><a href="#PromQL基础" class="headerlink" title="PromQL基础"></a>PromQL基础</h4><h5 id="基本函数语法"><a href="#基本函数语法" class="headerlink" title="基本函数语法"></a>基本函数语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">prometheus_http_requests_total </span><br><span class="line"> 等价于</span><br><span class="line">prometheus_http_requests_total&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="PromQL基础"><a href="#PromQL基础" class="headerlink" title="PromQL基础"></a>PromQL基础</h4><h5 id="常用函数参考"><a href="#常用函数参考" class="headerlink" title="常用函数参考"></a>常用函数参考</h5><blockquote>
+<p><a href="https://prometheus.io/docs/prometheus/latest/querying/functions/" target="_blank" rel="noopener">https://prometheus.io/docs/prometheus/latest/querying/functions/</a></p>
+</blockquote>
+<h5 id="基本函数语法"><a href="#基本函数语法" class="headerlink" title="基本函数语法"></a>基本函数语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">prometheus_http_requests_total </span><br><span class="line"> 等价于</span><br><span class="line">prometheus_http_requests_total&#123;&#125;</span><br></pre></td></tr></table></figure>
 
 <p>#####条件筛选</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">prometheus_http_requests_total&#123;instance=&quot;localhost:9090”&#125;</span><br><span class="line">不满足条件</span><br><span class="line">prometheus_http_requests_total&#123;instance!=&quot;localhost:9090”&#125;</span><br></pre></td></tr></table></figure>
@@ -504,13 +499,17 @@
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">瞬时向量表达式或者区间向量表达式中，都是以当前时间为基准</span><br><span class="line">http_request_total&#123;&#125; # 瞬时向量表达式，选择当前最新的数据</span><br><span class="line">http_request_total&#123;&#125;[5m]  # 区间向量表达式，选择以当前时间为基准，5分钟内的数据</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果我们想查询，5分钟前的瞬时样本数据，或昨天一天的区间内的样本数据呢? 这个时候我们就可以使用位移操作，位移操作的关键字为offset</span><br><span class="line">http_request_total&#123;&#125; offset 5m </span><br><span class="line">http_request_total&#123;&#125;[1d] offset 1d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果我们想查询，5分钟前的瞬时样本数据，或昨天一天的区间内的样本数据呢?，一天前5分钟内的样本数据？ 这个时候我们就可以使用位移操作，位移操作的关键字为offset</span><br><span class="line">http_request_total&#123;&#125; offset 5m </span><br><span class="line">http_request_total&#123;&#125;[1d] offset 1d</span><br><span class="line">http_request_total&#123;&#125;[5m] offset 1d</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">获取前3个top 值</span><br><span class="line">topk(3,prometheus_http_requests_total&#123;instance=~&quot;$node&quot;&#125;[1m])</span><br></pre></td></tr></table></figure>
 
 <h5 id="聚合操作"><a href="#聚合操作" class="headerlink" title="聚合操作"></a>聚合操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 查询系统所有http请求的总量</span><br><span class="line">sum(http_request_total)</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 按照mode计算主机CPU的平均使用时间</span><br><span class="line">avg(node_cpu) by (mode)</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 按照主机查询各个主机的CPU使用率</span><br><span class="line">sum(sum(irate(node_cpu&#123;mode!=&apos;idle&apos;&#125;[5m])) / sum(irate(node_cpu[5m]))) by (instance)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">irate平均值 节点中每分钟请求的平均值</span><br><span class="line">irate（prometheus_http_requests_total&#123;instance=~&quot;$node&quot;&#125;[1m]）</span><br></pre></td></tr></table></figure>
 
 <h5 id="支持的算法："><a href="#支持的算法：" class="headerlink" title="支持的算法："></a>支持的算法：</h5><ul>
 <li>(加法) - (减法) * (乘法) / (除法) % (求余) ^ (幂运算)</li>
@@ -578,7 +577,7 @@
   <!-- 修改时间 -->
   <li>
     <strong>更新于： </strong>
-    2019年09月30日 - 14时09分
+    2019年10月16日 - 15时10分
   </li>
 
   <!-- 引用链接 -->
@@ -841,7 +840,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#prometheus-介绍"><span class="nav-number">1.</span> <span class="nav-text">prometheus 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载安装"><span class="nav-number">1.1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mac-安装方式"><span class="nav-number">1.2.</span> <span class="nav-text">mac 安装方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Metrics-类型"><span class="nav-number">2.</span> <span class="nav-text">Metrics 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Counter（计数器）"><span class="nav-number">2.1.</span> <span class="nav-text">Counter（计数器）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gauge-可增可减的仪表盘"><span class="nav-number">2.2.</span> <span class="nav-text">Gauge 可增可减的仪表盘</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Histogram和Summary分析数据分布情况"><span class="nav-number">2.3.</span> <span class="nav-text">Histogram和Summary分析数据分布情况</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PromQL基础"><span class="nav-number">3.</span> <span class="nav-text">PromQL基础</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本函数语法"><span class="nav-number">3.1.</span> <span class="nav-text">基本函数语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#范围查询"><span class="nav-number">3.2.</span> <span class="nav-text">范围查询</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚合操作"><span class="nav-number">3.3.</span> <span class="nav-text">聚合操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#支持的算法："><span class="nav-number">3.4.</span> <span class="nav-text">支持的算法：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#prometheus-介绍"><span class="nav-number">1.</span> <span class="nav-text">prometheus 介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Metrics-类型"><span class="nav-number">2.</span> <span class="nav-text">Metrics 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Counter（计数器）"><span class="nav-number">2.1.</span> <span class="nav-text">Counter（计数器）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gauge-可增可减的仪表盘"><span class="nav-number">2.2.</span> <span class="nav-text">Gauge 可增可减的仪表盘</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Histogram和Summary分析数据分布情况"><span class="nav-number">2.3.</span> <span class="nav-text">Histogram和Summary分析数据分布情况</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PromQL基础"><span class="nav-number">3.</span> <span class="nav-text">PromQL基础</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常用函数参考"><span class="nav-number">3.1.</span> <span class="nav-text">常用函数参考</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基本函数语法"><span class="nav-number">3.2.</span> <span class="nav-text">基本函数语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#范围查询"><span class="nav-number">3.3.</span> <span class="nav-text">范围查询</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚合操作"><span class="nav-number">3.4.</span> <span class="nav-text">聚合操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#支持的算法："><span class="nav-number">3.5.</span> <span class="nav-text">支持的算法：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -875,7 +874,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">41.6k</span>
+    <span title="Site words total count">42k</span>
   
 </div>
 

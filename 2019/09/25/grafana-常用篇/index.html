@@ -141,18 +141,18 @@
 
 
 
-<meta name="description" content="grafana 集成ldapgrafana集成ldap">
+<meta name="description" content="grafana 安装和配置#####常用配置地址 12345678配置：    配置文件应位于/usr/local/etc/grafana/grafana.ini。日志：    日志文件应位于/usr/local/var/log/grafana/grafana.log。插件：    如果你想手动安装一个插件，请点击此处：/usr/local/var/lib/grafana/plugins。数据库：">
 <meta name="keywords" content="grafana-常用篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="grafana-常用篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/09/25/grafana-常用篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="grafana 集成ldapgrafana集成ldap">
+<meta property="og:description" content="grafana 安装和配置#####常用配置地址 12345678配置：    配置文件应位于/usr/local/etc/grafana/grafana.ini。日志：    日志文件应位于/usr/local/var/log/grafana/grafana.log。插件：    如果你想手动安装一个插件，请点击此处：/usr/local/var/lib/grafana/plugins。数据库：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-30T01:23:43.189Z">
+<meta property="og:updated_time" content="2019-10-16T08:04:45.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="grafana-常用篇">
-<meta name="twitter:description" content="grafana 集成ldapgrafana集成ldap">
+<meta name="twitter:description" content="grafana 安装和配置#####常用配置地址 12345678配置：    配置文件应位于/usr/local/etc/grafana/grafana.ini。日志：    日志文件应位于/usr/local/var/log/grafana/grafana.log。插件：    如果你想手动安装一个插件，请点击此处：/usr/local/var/lib/grafana/plugins。数据库：">
 
 
 
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6
+                  302
                 </span>
               
 
@@ -478,7 +478,64 @@
       
 
       
-        <h5 id="grafana-集成ldap"><a href="#grafana-集成ldap" class="headerlink" title="grafana 集成ldap"></a>grafana 集成ldap</h5><p><a href="https://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_liunx_51_ldap_for_grafana.html" target="_blank" rel="noopener">grafana集成ldap</a></p>
+        <h4 id="grafana-安装和配置"><a href="#grafana-安装和配置" class="headerlink" title="grafana 安装和配置"></a>grafana 安装和配置</h4><p>#####常用配置地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">配置：</span><br><span class="line">    配置文件应位于/usr/local/etc/grafana/grafana.ini。</span><br><span class="line">日志：</span><br><span class="line">    日志文件应位于/usr/local/var/log/grafana/grafana.log。</span><br><span class="line">插件：</span><br><span class="line">    如果你想手动安装一个插件，请点击此处：/usr/local/var/lib/grafana/plugins。</span><br><span class="line">数据库：</span><br><span class="line">    默认的sqlite数据库位于 /usr/local/var/lib/grafana</span><br></pre></td></tr></table></figure>
+
+<h5 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.grafana.com/oss/release/grafana-6.3.5.linux-amd64.tar.gz</span><br><span class="line">tar -zxvf grafana-6.3.5.linux-amd64.tar.gz</span><br><span class="line">conf/grafana.ini</span><br><span class="line">./bin/grafana-server web</span><br></pre></td></tr></table></figure>
+
+<h5 id="mac-安装方式"><a href="#mac-安装方式" class="headerlink" title="mac 安装方式"></a>mac 安装方式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">安装：brew install grafana</span><br><span class="line">执行：brew services start grafana</span><br><span class="line">重启：brew services restart grafana</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 鼠标放在图标上，按 ‘e’ 直接启动编辑模式</span><br><span class="line">2.</span><br></pre></td></tr></table></figure>
+
+<h4 id="grafana-setting"><a href="#grafana-setting" class="headerlink" title="grafana setting"></a>grafana setting</h4><h5 id="General"><a href="#General" class="headerlink" title="General"></a>General</h5><blockquote>
+<p>仪表盘的基本信息</p>
+</blockquote>
+<h5 id="Annotations"><a href="#Annotations" class="headerlink" title="Annotations"></a>Annotations</h5><blockquote>
+<p>注解，一般很少使用</p>
+</blockquote>
+<h5 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h5><p>当前定义的值将在制作仪表盘的时候使用。</p>
+<blockquote>
+<p>变量 和定义</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>demo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>label_names()</td>
+<td>Returns a list of label names.</td>
+<td></td>
+</tr>
+<tr>
+<td>label_values(label)</td>
+<td>Returns a list of label values for the label in every metric.</td>
+<td></td>
+</tr>
+<tr>
+<td>label_values(metric, label)</td>
+<td>Returns a list of label values for the label in the specified metric.</td>
+<td>label_values(grafana_instance_start_total, instance) 返回所有granfana的instance 的值</td>
+</tr>
+<tr>
+<td>metrics(metric)</td>
+<td>Returns a list of metrics matching the specified metric regex.</td>
+<td></td>
+</tr>
+<tr>
+<td>query_result(query)</td>
+<td>Returns a list of Prometheus query result for the query.</td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id="Dashboard-Links"><a href="#Dashboard-Links" class="headerlink" title="Dashboard Links"></a>Dashboard Links</h5><h5 id="Versions"><a href="#Versions" class="headerlink" title="Versions"></a>Versions</h5><blockquote>
+<p>记录用户修改版本时间</p>
+</blockquote>
+<h5 id="Permissions"><a href="#Permissions" class="headerlink" title="Permissions"></a>Permissions</h5><h5 id="JSON-Model"><a href="#JSON-Model" class="headerlink" title="JSON Model"></a>JSON Model</h5><h4 id="grafana-集成ldap"><a href="#grafana-集成ldap" class="headerlink" title="grafana 集成ldap"></a>grafana 集成ldap</h4><p><a href="https://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_liunx_51_ldap_for_grafana.html" target="_blank" rel="noopener">grafana集成ldap</a></p>
 
       
     </div>
@@ -541,7 +598,7 @@
   <!-- 修改时间 -->
   <li>
     <strong>更新于： </strong>
-    2019年09月30日 - 09时09分
+    2019年10月16日 - 16时10分
   </li>
 
   <!-- 引用链接 -->
@@ -804,7 +861,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#grafana-集成ldap"><span class="nav-number">1.</span> <span class="nav-text">grafana 集成ldap</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#grafana-安装和配置"><span class="nav-number">1.</span> <span class="nav-text">grafana 安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载安装"><span class="nav-number">1.1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mac-安装方式"><span class="nav-number">1.2.</span> <span class="nav-text">mac 安装方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快捷键"><span class="nav-number">2.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grafana-setting"><span class="nav-number">3.</span> <span class="nav-text">grafana setting</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#General"><span class="nav-number">3.1.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Annotations"><span class="nav-number">3.2.</span> <span class="nav-text">Annotations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Variables"><span class="nav-number">3.3.</span> <span class="nav-text">Variables</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Dashboard-Links"><span class="nav-number">3.4.</span> <span class="nav-text">Dashboard Links</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Versions"><span class="nav-number">3.5.</span> <span class="nav-text">Versions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Permissions"><span class="nav-number">3.6.</span> <span class="nav-text">Permissions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSON-Model"><span class="nav-number">3.7.</span> <span class="nav-text">JSON Model</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grafana-集成ldap"><span class="nav-number">4.</span> <span class="nav-text">grafana 集成ldap</span></a></li></ol></div>
             
 
           </div>
@@ -838,7 +895,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">41.6k</span>
+    <span title="Site words total count">42k</span>
   
 </div>
 
