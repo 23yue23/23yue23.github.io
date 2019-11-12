@@ -499,7 +499,7 @@
     <url>%2F2019%2F09%2F25%2Fairflow-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"></content>
       <categories>
-        <category>调度框架</category>
+        <category>airflow</category>
       </categories>
       <tags>
         <tag>airflow-常用篇</tag>
@@ -510,7 +510,7 @@
     <url>%2F2019%2F09%2F25%2Fazkaban-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"></content>
       <categories>
-        <category>调度框架</category>
+        <category>azkaban</category>
       </categories>
       <tags>
         <tag>azkaban-常用篇</tag>
