@@ -141,18 +141,18 @@
 
 
 
-<meta name="description" content="参考资料https://kubernetes.io/docs/concepts/services-networking/ingress/ nginx官方介绍：https://www.nginx.com/products/nginx/kubernetes-ingress-controller 部署方式https://kubernetes.github.io/ingress-nginx/deploy/">
+<meta name="description" content="k8s 介绍Kubernetes 是一个生产级的开源平台，用于协调计算机集群内部和跨计算机集群的应用程序容器的分发(调度)和运行。一个 Master 是集群的调度节点。nodes 是应用程序实际运行的工作节点。 k8s 部署在k8s中，通过发布 Deployment，可以创建应用程序 (docker image) 的实例 (docker container)，这个实例会被包含在称为 Pod 的概念">
 <meta name="keywords" content="k8s-学习篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="k8s-学习篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/10/15/k8s-学习篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="参考资料https://kubernetes.io/docs/concepts/services-networking/ingress/ nginx官方介绍：https://www.nginx.com/products/nginx/kubernetes-ingress-controller 部署方式https://kubernetes.github.io/ingress-nginx/deploy/">
+<meta property="og:description" content="k8s 介绍Kubernetes 是一个生产级的开源平台，用于协调计算机集群内部和跨计算机集群的应用程序容器的分发(调度)和运行。一个 Master 是集群的调度节点。nodes 是应用程序实际运行的工作节点。 k8s 部署在k8s中，通过发布 Deployment，可以创建应用程序 (docker image) 的实例 (docker container)，这个实例会被包含在称为 Pod 的概念">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-15T05:41:02.037Z">
+<meta property="og:updated_time" content="2019-10-25T07:09:56.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k8s-学习篇">
-<meta name="twitter:description" content="参考资料https://kubernetes.io/docs/concepts/services-networking/ingress/ nginx官方介绍：https://www.nginx.com/products/nginx/kubernetes-ingress-controller 部署方式https://kubernetes.github.io/ingress-nginx/deploy/">
+<meta name="twitter:description" content="k8s 介绍Kubernetes 是一个生产级的开源平台，用于协调计算机集群内部和跨计算机集群的应用程序容器的分发(调度)和运行。一个 Master 是集群的调度节点。nodes 是应用程序实际运行的工作节点。 k8s 部署在k8s中，通过发布 Deployment，可以创建应用程序 (docker image) 的实例 (docker container)，这个实例会被包含在称为 Pod 的概念">
 
 
 
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  593
+                  959
                 </span>
               
 
@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -478,7 +478,12 @@
       
 
       
-        <h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_blank" rel="noopener">https://kubernetes.io/docs/concepts/services-networking/ingress/</a></p>
+        <h4 id="k8s-介绍"><a href="#k8s-介绍" class="headerlink" title="k8s 介绍"></a>k8s 介绍</h4><p>Kubernetes 是一个生产级的开源平台，用于协调计算机集群内部和跨计算机集群的应用程序容器的分发(调度)和运行。<br>一个 Master 是集群的调度节点。<br>nodes 是应用程序实际运行的工作节点。</p>
+<h4 id="k8s-部署"><a href="#k8s-部署" class="headerlink" title="k8s 部署"></a>k8s 部署</h4><p>在k8s中，通过发布 Deployment，可以创建应用程序 (docker image) 的实例 (docker container)，这个实例会被包含在称为 Pod 的概念中，Pod 是 k8s 中最小单元的可管理单元</p>
+<p>在 k8s 集群中发布 Deployment 后，Deployment 将指示 k8s 如何创建和更新应用程序的实例，master 节点将应用程序实例调度到集群中的具体的节点上。</p>
+<p>创建应用程序实例后，Kubernetes Deployment Controller 会持续监控这些实例。如果运行实例的 worker 节点关机或被删除，则 Kubernetes Deployment Controller 将在群集中资源最优的另一个 worker 节点上重新创建一个新的实例。这提供了一种自我修复机制来解决机器故障或维护问题。</p>
+<p>在容器编排之前的时代，各种安装脚本通常用于启动应用程序，但是不能够使应用程序从机器故障中恢复。通过创建应用程序实例并确保它们在集群节点中的运行实例个数，Kubernetes Deployment 提供了一种完全不同的方式来管理应用程序。</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_blank" rel="noopener">https://kubernetes.io/docs/concepts/services-networking/ingress/</a></p>
 <p>nginx官方介绍：<a href="https://www.nginx.com/products/nginx/kubernetes-ingress-controller" target="_blank" rel="noopener">https://www.nginx.com/products/nginx/kubernetes-ingress-controller</a></p>
 <h4 id="部署方式"><a href="#部署方式" class="headerlink" title="部署方式"></a>部署方式</h4><p><a href="https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployment-command" target="_blank" rel="noopener">https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployment-command</a></p>
 <p>首先先下载相关的yaml文件，保存到本地。</p>
@@ -602,7 +607,7 @@
   <!-- 修改时间 -->
   <li>
     <strong>更新于： </strong>
-    2019年10月15日 - 13时10分
+    2019年10月25日 - 15时10分
   </li>
 
   <!-- 引用链接 -->
@@ -751,7 +756,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -762,7 +767,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -773,7 +778,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -865,7 +870,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#参考资料"><span class="nav-number">1.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署方式"><span class="nav-number">2.</span> <span class="nav-text">部署方式</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#root-node1-wordpress-cat-wordpress-db-yaml"><span class="nav-number"></span> <span class="nav-text">[root@node1 wordpress]# cat wordpress-db.yaml</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#启动容器"><span class="nav-number">1.</span> <span class="nav-text">启动容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看集群信息"><span class="nav-number">2.</span> <span class="nav-text">查看集群信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置ingress"><span class="nav-number">3.</span> <span class="nav-text">配置ingress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建ingress"><span class="nav-number">4.</span> <span class="nav-text">创建ingress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看ingres信息"><span class="nav-number">5.</span> <span class="nav-text">查看ingres信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后绑定域名wordpress-boshao-wang-到node节点即可。"><span class="nav-number">6.</span> <span class="nav-text">最后绑定域名wordpress.boshao.wang  到node节点即可。</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#k8s-介绍"><span class="nav-number">1.</span> <span class="nav-text">k8s 介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k8s-部署"><span class="nav-number">2.</span> <span class="nav-text">k8s 部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署方式"><span class="nav-number">4.</span> <span class="nav-text">部署方式</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#root-node1-wordpress-cat-wordpress-db-yaml"><span class="nav-number"></span> <span class="nav-text">[root@node1 wordpress]# cat wordpress-db.yaml</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#启动容器"><span class="nav-number">1.</span> <span class="nav-text">启动容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看集群信息"><span class="nav-number">2.</span> <span class="nav-text">查看集群信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置ingress"><span class="nav-number">3.</span> <span class="nav-text">配置ingress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建ingress"><span class="nav-number">4.</span> <span class="nav-text">创建ingress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看ingres信息"><span class="nav-number">5.</span> <span class="nav-text">查看ingres信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后绑定域名wordpress-boshao-wang-到node节点即可。"><span class="nav-number">6.</span> <span class="nav-text">最后绑定域名wordpress.boshao.wang  到node节点即可。</span></a></li></ol></li></div>
             
 
           </div>
@@ -899,7 +904,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">42k</span>
+    <span title="Site words total count">43.2k</span>
   
 </div>
 

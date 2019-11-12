@@ -149,7 +149,7 @@
 <meta property="og:site_name" content="蜗牛笔记">
 <meta property="og:description" content="org.apache.spark.SparkException: Could not find CoarseGrainedScheduler.  这个可能是一个资源问题，应该给任务分配更多的 cores 和Executors，并且分配更多的内存。并且需要给RDD分配更多的分区  在配置资源中加入这句话也许能解决你的问题： –conf spark.dynamicAllocation.enabled=">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T02:39:26.405Z">
+<meta property="og:updated_time" content="2019-10-21T09:22:32.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spark-问题篇">
 <meta name="twitter:description" content="org.apache.spark.SparkException: Could not find CoarseGrainedScheduler.  这个可能是一个资源问题，应该给任务分配更多的 cores 和Executors，并且分配更多的内存。并且需要给RDD分配更多的分区  在配置资源中加入这句话也许能解决你的问题： –conf spark.dynamicAllocation.enabled=">
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  130
+                  483
                 </span>
               
 
@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -486,7 +486,15 @@
 </ol>
 </blockquote>
 <hr>
-<h5 id><a href="#" class="headerlink" title></a></h5>
+<h5 id="心跳超时"><a href="#心跳超时" class="headerlink" title="心跳超时"></a>心跳超时</h5><blockquote>
+<p>报错信息：</p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">WARN executor.Executor: Issue communicating with driver in heartbeater</span><br><span class="line">org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10 seconds]. This timeout is controlled by spark.executor.heartbeatInterval</span><br><span class="line">	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:47)</span><br><span class="line">	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:62)</span><br><span class="line">	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:58)</span><br><span class="line">	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)</span><br><span class="line">	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)</span><br><span class="line">	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:92)</span><br><span class="line">	at org.apache.spark.executor.Executor.org$apache$spark$executor$Executor$$reportHeartBeat(Executor.scala:785)</span><br><span class="line">	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply$mcV$sp(Executor.scala:814)</span><br><span class="line">	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply(Executor.scala:814)</span><br><span class="line">	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply(Executor.scala:814)</span><br><span class="line">	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1992)</span><br><span class="line">	at org.apache.spark.executor.Executor$$anon$2.run(Executor.scala:814)</span><br><span class="line">	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</span><br><span class="line">	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)</span><br><span class="line">	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)</span><br><span class="line">	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:748)</span><br><span class="line">Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10 seconds]</span><br><span class="line">	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219)</span><br><span class="line">	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223)</span><br><span class="line">	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:201)</span><br><span class="line">	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)</span><br><span class="line">	... 14 more</span><br><span class="line">19/10/21 07:00:29 ERROR executor.Executor: Exit as unable to send heartbeats to driver more than 60 times</span><br><span class="line"> </span><br><span class="line"> ```	</span><br><span class="line"> </span><br><span class="line">&gt; 解决方法：</span><br></pre></td></tr></table></figure>
+
+<pre><code>--conf spark.executor.heartbeatInterval=15s 
+--conf spark.network.timeout=120s 
+--conf spark.core.connection.ack.wait.timeout=300</code></pre><p>  ```</p>
+<h4 id><a href="#" class="headerlink" title></a></h4><h4 id="sg"><a href="#sg" class="headerlink" title="sg"></a>sg</h4>
       
     </div>
     
@@ -548,7 +556,7 @@
   <!-- 修改时间 -->
   <li>
     <strong>更新于： </strong>
-    2019年09月25日 - 10时09分
+    2019年10月21日 - 17时10分
   </li>
 
   <!-- 引用链接 -->
@@ -697,7 +705,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -708,7 +716,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -719,7 +727,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -811,7 +819,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#org-apache-spark-SparkException-Could-not-find-CoarseGrainedScheduler"><span class="nav-number">1.</span> <span class="nav-text">org.apache.spark.SparkException: Could not find CoarseGrainedScheduler.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#org-apache-spark-SparkException-Could-not-find-CoarseGrainedScheduler"><span class="nav-number">1.</span> <span class="nav-text">org.apache.spark.SparkException: Could not find CoarseGrainedScheduler.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#心跳超时"><span class="nav-number">2.</span> <span class="nav-text">心跳超时</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number"></span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sg"><span class="nav-number"></span> <span class="nav-text">sg</span></a></li></div>
             
 
           </div>
@@ -845,7 +853,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">42k</span>
+    <span title="Site words total count">43.2k</span>
   
 </div>
 
