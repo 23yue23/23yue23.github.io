@@ -104,7 +104,7 @@
     <url>%2F2019%2F10%2F15%2Fgo-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[编码规范http://docscn.studygolang.com/doc/effective_go.html 单测样例http://gitlab.mobvista.com/mtech/mtech/blob/master/开发-Go单元测试.md 开发工具开发可自由选择编辑器，推荐使用IDE：https://www.jetbrains.com/go/ 常用库标准库: http://docscn.studygolang.com/pkg/日志: https://github.com/cihub/seelog配置: https://github.com/spf13/viperuuid: https://github.com/satori/go.uuidleveldb: https://github.com/syndtr/goleveldb/leveldbmurmurhash3: https://github.com/spaolacci/murmur3redis: https://github.com/garyburd/redigo/redisredis-cluster: https://github.com/chasex/redis-go-clustermongo: http://gopkg.in/mgo.v2命令行: http://gopkg.in/alecthomas/kingpin.v2grpc: http://www.grpc.io/docs/quickstart/go.html]]></content>
       <categories>
-        <category>go-常用篇</category>
+        <category>go</category>
       </categories>
       <tags>
         <tag>go-常用篇</tag>

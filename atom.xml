@@ -247,7 +247,7 @@
     <link href="https://23yue23.github.io/2019/10/15/go-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/10/15/go-常用篇/</id>
     <published>2019-10-15T02:34:37.000Z</published>
-    <updated>2019-10-15T02:40:12.116Z</updated>
+    <updated>2019-11-12T08:12:50.448Z</updated>
     
     <content type="html"><![CDATA[<h4 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h4><p><a href="http://docscn.studygolang.com/doc/effective_go.html" target="_blank" rel="noopener">http://docscn.studygolang.com/doc/effective_go.html</a></p><h4 id="单测样例"><a href="#单测样例" class="headerlink" title="单测样例"></a>单测样例</h4><p><a href="http://gitlab.mobvista.com/mtech/mtech/blob/master/开发-Go单元测试.md" target="_blank" rel="noopener">http://gitlab.mobvista.com/mtech/mtech/blob/master/开发-Go单元测试.md</a></p><h4 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h4><p>开发可自由选择编辑器，推荐使用IDE：<a href="https://www.jetbrains.com/go/" target="_blank" rel="noopener">https://www.jetbrains.com/go/</a></p><h4 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h4><p>标准库: <a href="http://docscn.studygolang.com/pkg/" target="_blank" rel="noopener">http://docscn.studygolang.com/pkg/</a><br>日志: <a href="https://github.com/cihub/seelog" target="_blank" rel="noopener">https://github.com/cihub/seelog</a><br>配置: <a href="https://github.com/spf13/viper" target="_blank" rel="noopener">https://github.com/spf13/viper</a><br>uuid: <a href="https://github.com/satori/go.uuid" target="_blank" rel="noopener">https://github.com/satori/go.uuid</a><br>leveldb: <a href="https://github.com/syndtr/goleveldb/leveldb" target="_blank" rel="noopener">https://github.com/syndtr/goleveldb/leveldb</a><br>murmurhash3: <a href="https://github.com/spaolacci/murmur3" target="_blank" rel="noopener">https://github.com/spaolacci/murmur3</a><br>redis: <a href="https://github.com/garyburd/redigo/redis" target="_blank" rel="noopener">https://github.com/garyburd/redigo/redis</a><br>redis-cluster: <a href="https://github.com/chasex/redis-go-cluster" target="_blank" rel="noopener">https://github.com/chasex/redis-go-cluster</a><br>mongo: <a href="http://gopkg.in/mgo.v2" target="_blank" rel="noopener">http://gopkg.in/mgo.v2</a><br>命令行: <a href="http://gopkg.in/alecthomas/kingpin.v2" target="_blank" rel="noopener">http://gopkg.in/alecthomas/kingpin.v2</a><br>grpc: <a href="http://www.grpc.io/docs/quickstart/go.html" target="_blank" rel="noopener">http://www.grpc.io/docs/quickstart/go.html</a></p>]]></content>
     
@@ -260,7 +260,7 @@
     
     </summary>
     
-      <category term="go-常用篇" scheme="https://23yue23.github.io/categories/go-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+      <category term="go" scheme="https://23yue23.github.io/categories/go/"/>
     
     
       <category term="go-常用篇" scheme="https://23yue23.github.io/tags/go-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
