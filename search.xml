@@ -5,7 +5,7 @@
     <url>%2F2019%2F11%2F12%2Fk8s-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
     <content type="text"><![CDATA[Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host 问题原因： 链接不上服务地址，可能是机器没有启动，或者节点已经丢失。 解决方案： 查看运行状态 minikube status 启动机器（测试虚拟机） error: unable to forward port because pod is not running. Current status=Pending 查看问题： kubectl get nodes 首先查看node 是不是Ready 状态 kubectl get pods (查看当前的pods) kubectl describe nodes （查看node 的vm 详细信息） kubectl get services (查看运行服务) Kube-proxy: error looking for path of conntrack kube-proxy 报错，并且 service 的 DNS 解析异常 12kube-proxy[2241]: E0502 15:55:13.889842 2241 conntrack.go:42] conntrack returned error: error looking for path of conntrack: exec: &quot;conntrack&quot;: executable file not found in $PATH 解决方式是安装 conntrack-tools 包后重启 kube-proxy 即可。]]></content>
       <categories>
-        <category>k8s-问题篇</category>
+        <category>k8s</category>
       </categories>
       <tags>
         <tag>k8s-问题篇</tag>
