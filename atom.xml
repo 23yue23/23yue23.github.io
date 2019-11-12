@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-10-25T06:05:54.973Z</updated>
+  <updated>2019-11-12T06:40:31.375Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>k8s-问题篇</title>
+    <link href="https://23yue23.github.io/2019/11/12/k8s-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/11/12/k8s-问题篇/</id>
+    <published>2019-11-12T06:16:23.000Z</published>
+    <updated>2019-11-12T06:40:31.375Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Unable-to-connect-to-the-server-dial-tcp-192-168-99-100-8443-connect-no-route-to-host"><a href="#Unable-to-connect-to-the-server-dial-tcp-192-168-99-100-8443-connect-no-route-to-host" class="headerlink" title="Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host"></a>Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host</h4><blockquote><p>问题原因：<br>     链接不上服务地址，可能是机器没有启动，或者节点已经丢失。</p></blockquote><blockquote><p>解决方案：<br>    查看运行状态 minikube status<br>     启动机器（测试虚拟机）</p></blockquote><hr><h4 id="error-unable-to-forward-port-because-pod-is-not-running-Current-status-Pending"><a href="#error-unable-to-forward-port-because-pod-is-not-running-Current-status-Pending" class="headerlink" title="error: unable to forward port because pod is not running. Current status=Pending"></a>error: unable to forward port because pod is not running. Current status=Pending</h4><blockquote><p>查看问题：<br>  kubectl get nodes 首先查看node 是不是Ready 状态<br>  kubectl get pods (查看当前的pods)<br>  kubectl describe nodes （查看node 的vm 详细信息）<br>  kubectl get services (查看运行服务)</p></blockquote><h4 id="Kube-proxy-error-looking-for-path-of-conntrack"><a href="#Kube-proxy-error-looking-for-path-of-conntrack" class="headerlink" title="Kube-proxy: error looking for path of conntrack"></a>Kube-proxy: error looking for path of conntrack</h4><blockquote><p>kube-proxy 报错，并且 service 的 DNS 解析异常</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kube-proxy[2241]: E0502 15:55:13.889842    2241 conntrack.go:42] </span><br><span class="line">conntrack returned error: error looking for path of conntrack: exec: &quot;conntrack&quot;: executable file not found in $PATH</span><br></pre></td></tr></table></figure><blockquote><p>解决方式是安装 conntrack-tools 包后重启 kube-proxy 即可。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;Unable-to-connect-to-the-server-dial-tcp-192-168-99-100-8443-connect-no-route-to-host&quot;&gt;&lt;a href=&quot;#Unable-to-connect-to-the-server-dia
+      
+    
+    </summary>
+    
+      <category term="k8s-问题篇" scheme="https://23yue23.github.io/categories/k8s-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    
+    
+      <category term="k8s-问题篇" scheme="https://23yue23.github.io/tags/k8s-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    
+  </entry>
   
   <entry>
     <title>k8s-实战篇</title>
@@ -484,34 +509,6 @@
     
     
       <category term="kylin-问题篇" scheme="https://23yue23.github.io/tags/kylin-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python-资料篇</title>
-    <link href="https://23yue23.github.io/2019/10/09/python-%E8%B5%84%E6%96%99%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/09/python-资料篇/</id>
-    <published>2019-10-09T05:41:58.000Z</published>
-    <updated>2019-10-10T09:19:18.962Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><a href="https://www.liaoxuefeng.com/wiki/1016959663602400" target="_blank" rel="noopener">廖雪峰</a></p></blockquote><blockquote><p><a href="http://www.icourse163.org/learn/BIT-268001?tid=1002001005#/learn/content" target="_blank" rel="noopener">中国大学mocc</a></p></blockquote><blockquote><p><a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">Python - 100天从新手到大师</a></p></blockquote><blockquote><p><a href="https://mlog.club/article/42724" target="_blank" rel="noopener">超实用的 30 段 Python 案例</a>  </p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/1016959663602400&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;廖雪峰&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockq
-      
-    
-    </summary>
-    
-      <category term="python" scheme="https://23yue23.github.io/categories/python/"/>
-    
-    
-      <category term="python-资料篇" scheme="https://23yue23.github.io/tags/python-%E8%B5%84%E6%96%99%E7%AF%87/"/>
     
   </entry>
   

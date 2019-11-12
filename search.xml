@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[k8s-问题篇]]></title>
+    <url>%2F2019%2F11%2F12%2Fk8s-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host 问题原因： 链接不上服务地址，可能是机器没有启动，或者节点已经丢失。 解决方案： 查看运行状态 minikube status 启动机器（测试虚拟机） error: unable to forward port because pod is not running. Current status=Pending 查看问题： kubectl get nodes 首先查看node 是不是Ready 状态 kubectl get pods (查看当前的pods) kubectl describe nodes （查看node 的vm 详细信息） kubectl get services (查看运行服务) Kube-proxy: error looking for path of conntrack kube-proxy 报错，并且 service 的 DNS 解析异常 12kube-proxy[2241]: E0502 15:55:13.889842 2241 conntrack.go:42] conntrack returned error: error looking for path of conntrack: exec: &quot;conntrack&quot;: executable file not found in $PATH 解决方式是安装 conntrack-tools 包后重启 kube-proxy 即可。]]></content>
+      <categories>
+        <category>k8s-问题篇</category>
+      </categories>
+      <tags>
+        <tag>k8s-问题篇</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[k8s-实战篇]]></title>
     <url>%2F2019%2F10%2F25%2Fk8s-%E5%AE%9E%E6%88%98%E7%AF%87%2F</url>
     <content type="text"><![CDATA[安装kubectl安装minikube 1.下载virtualbox 2.brew cask install minikube 3.minikube start –vm-driver=virtualbox 4.minikube config set vm-driver virtualbox 5.kubectl version 查看版本 minikube 操作123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105********************# 应用和服务 #*************#启动minikubeminikube start#部署应用kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080#查看部署的应用kubectl get pods#发布应用kubectl expose deployment hello-minikube --type=NodePort#查看发布的内容kubectl get services#访问服务1.虚拟机：curl http://ip:port2.curl $(minikube service hello-minikube --url)#获取服务url 链接minikube service --url service_name#查看控制台minikube dashboard查看所有Kubernetes Pod的部署状态kubectl get po -A#删除服务kubectl delete services hello-minikube#删除应用kubectl delete deployment hello-minikube#停止minikubeminikube stop**********************# 集群相关 #**************************#获取集群的ipminikube ip#获取集群节点kubectl get nodes#启动第二个本地集群minikube start -p cluster2#停止本地集群minikube stop#删除本地集群minikube delete#删除所有本地集群和配置文件minikube delete --all获取网桥ipminikube ssh &quot;route -n | grep ^0.0.0.0 | awk &apos;&#123; print \$2 &#125;&apos;&quot;链接到集群minikubeminikube sshtelnet ip port********************************* 附加组件 ********************#查询可添加的组件minikube addons list#启用组件minikube addons enable &lt;name&gt;#与组件交互minikube addons open &lt;name&gt;#禁用组件minikube addons disable &lt;name&gt;************************** 启动调试日志 *******************--v=0将输出INFO级别的日志--v=1将输出警告级别的日志--v=2将输出错误级别的日志--v=3将输出libmachine日志记录--v=7将输出libmachine –debug级日志记录minikube start --v=7 将启动minikube并将所有重要的调试日志输出到stdout#收集虚拟机日志，要调试Kubernetes部署失败的问题，收集Kubernetes pod和内核日志非常有用minikube logs#立即查看启动失败minikube logs --problems#查看所有Kubernetes Pod的部署状态kubectl get po -A 参考地址： minikube参考 命令查询]]></content>
