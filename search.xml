@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[python-常用篇]]></title>
     <url>%2F2019%2F10%2F24%2Fpython-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[Mac下pyenv与pyenv-virtualenv的安装和使用]]></content>
+    <content type="text"><![CDATA[####pyenv 的使用 12345#查看python 版本信息 pyenv versions#python 切换版本 pyenv local 版本号 Mac下pyenv与pyenv-virtualenv的安装和使用]]></content>
       <categories>
         <category>python</category>
       </categories>
