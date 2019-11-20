@@ -141,18 +141,18 @@
 
 
 
-<meta name="description" content="安装kubectl安装minikube 1.下载virtualbox   2.brew cask install minikube   3.minikube start –vm-driver=virtualbox   4.minikube config set vm-driver virtualbox   5.kubectl version 查看版本  minikube 操作12345678910">
+<meta name="description" content="安装kubectl安装minikube 1.下载virtualbox   2.brew cask install minikube   3.minikube start –vm-driver=virtualbox   4.minikube config set vm-driver virtualbox   5.kubectl version 查看版本   重用Docker 守护程序使用本地映像12">
 <meta name="keywords" content="k8s-实战篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="k8s-实战篇">
 <meta property="og:url" content="https://23yue23.github.io/2019/10/25/k8s-实战篇/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
-<meta property="og:description" content="安装kubectl安装minikube 1.下载virtualbox   2.brew cask install minikube   3.minikube start –vm-driver=virtualbox   4.minikube config set vm-driver virtualbox   5.kubectl version 查看版本  minikube 操作12345678910">
+<meta property="og:description" content="安装kubectl安装minikube 1.下载virtualbox   2.brew cask install minikube   3.minikube start –vm-driver=virtualbox   4.minikube config set vm-driver virtualbox   5.kubectl version 查看版本   重用Docker 守护程序使用本地映像12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-25T06:05:54.973Z">
+<meta property="og:updated_time" content="2019-11-19T11:32:16.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k8s-实战篇">
-<meta name="twitter:description" content="安装kubectl安装minikube 1.下载virtualbox   2.brew cask install minikube   3.minikube start –vm-driver=virtualbox   4.minikube config set vm-driver virtualbox   5.kubectl version 查看版本  minikube 操作12345678910">
+<meta name="twitter:description" content="安装kubectl安装minikube 1.下载virtualbox   2.brew cask install minikube   3.minikube start –vm-driver=virtualbox   4.minikube config set vm-driver virtualbox   5.kubectl version 查看版本   重用Docker 守护程序使用本地映像12">
 
 
 
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  456
+                  1.4k
                 </span>
               
 
@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  6
                 </span>
               
             </div>
@@ -493,8 +493,119 @@
 <blockquote>
 <p>5.kubectl version 查看版本</p>
 </blockquote>
-<h4 id="minikube-操作"><a href="#minikube-操作" class="headerlink" title="minikube 操作"></a>minikube 操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">********************# 应用和服务 #*************</span><br><span class="line">#启动minikube</span><br><span class="line">minikube start</span><br><span class="line"></span><br><span class="line">#部署应用</span><br><span class="line">kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080</span><br><span class="line"></span><br><span class="line">#查看部署的应用</span><br><span class="line">kubectl get pods</span><br><span class="line"></span><br><span class="line">#发布应用</span><br><span class="line">kubectl expose deployment hello-minikube --type=NodePort</span><br><span class="line"></span><br><span class="line">#查看发布的内容</span><br><span class="line">kubectl get services</span><br><span class="line"></span><br><span class="line">#访问服务</span><br><span class="line">1.虚拟机：curl http://ip:port</span><br><span class="line">2.curl $(minikube service hello-minikube --url)</span><br><span class="line"></span><br><span class="line">#获取服务url 链接</span><br><span class="line">minikube service --url service_name</span><br><span class="line"></span><br><span class="line">#查看控制台</span><br><span class="line">minikube dashboard</span><br><span class="line"></span><br><span class="line">查看所有Kubernetes Pod的部署状态</span><br><span class="line">kubectl get po -A</span><br><span class="line"></span><br><span class="line">#删除服务</span><br><span class="line">kubectl delete services hello-minikube</span><br><span class="line"></span><br><span class="line">#删除应用</span><br><span class="line">kubectl delete deployment hello-minikube</span><br><span class="line"></span><br><span class="line">#停止minikube</span><br><span class="line">minikube stop</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**********************# 集群相关 #**************************</span><br><span class="line">#获取集群的ip</span><br><span class="line">minikube ip</span><br><span class="line"></span><br><span class="line">#获取集群节点</span><br><span class="line">kubectl get nodes</span><br><span class="line"></span><br><span class="line">#启动第二个本地集群</span><br><span class="line">minikube start -p cluster2</span><br><span class="line"></span><br><span class="line">#停止本地集群</span><br><span class="line">minikube stop</span><br><span class="line"></span><br><span class="line">#删除本地集群</span><br><span class="line">minikube delete</span><br><span class="line"></span><br><span class="line">#删除所有本地集群和配置文件</span><br><span class="line">minikube delete --all</span><br><span class="line"></span><br><span class="line">获取网桥ip</span><br><span class="line">minikube ssh &quot;route -n | grep ^0.0.0.0 | awk &apos;&#123; print \$2 &#125;&apos;&quot;</span><br><span class="line"></span><br><span class="line">链接到集群minikube</span><br><span class="line">minikube ssh</span><br><span class="line">telnet ip port</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">********************************* 附加组件 ********************</span><br><span class="line"></span><br><span class="line">#查询可添加的组件</span><br><span class="line">minikube addons list</span><br><span class="line"></span><br><span class="line">#启用组件</span><br><span class="line">minikube addons enable &lt;name&gt;</span><br><span class="line"></span><br><span class="line">#与组件交互</span><br><span class="line">minikube addons open &lt;name&gt;</span><br><span class="line"></span><br><span class="line">#禁用组件</span><br><span class="line">minikube addons disable &lt;name&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">************************** 启动调试日志 *******************</span><br><span class="line">--v=0将输出INFO级别的日志</span><br><span class="line">--v=1将输出警告级别的日志</span><br><span class="line">--v=2将输出错误级别的日志</span><br><span class="line"></span><br><span class="line">--v=3将输出libmachine日志记录</span><br><span class="line"></span><br><span class="line">--v=7将输出libmachine –debug级日志记录</span><br><span class="line"></span><br><span class="line">minikube start --v=7 将启动minikube并将所有重要的调试日志输出到stdout</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#收集虚拟机日志，要调试Kubernetes部署失败的问题，收集Kubernetes pod和内核日志非常有用</span><br><span class="line"></span><br><span class="line">minikube logs</span><br><span class="line"></span><br><span class="line">#立即查看启动失败</span><br><span class="line">minikube logs --problems</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#查看所有Kubernetes Pod的部署状态</span><br><span class="line">kubectl get po -A</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="重用Docker-守护程序使用本地映像"><a href="#重用Docker-守护程序使用本地映像" class="headerlink" title="重用Docker 守护程序使用本地映像"></a>重用Docker 守护程序使用本地映像</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eval $(minikube docker-env)</span><br><span class="line">docker ps</span><br></pre></td></tr></table></figure>
 
+<hr>
+<h4 id="学习案例一"><a href="#学习案例一" class="headerlink" title="学习案例一"></a>学习案例一</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#启动并创建集群</span><br><span class="line">minikube start</span><br><span class="line"></span><br><span class="line">#查看仪表盘</span><br><span class="line">minikube dashboard</span><br><span class="line"></span><br><span class="line">#使用现有镜像</span><br><span class="line">kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10</span><br><span class="line"></span><br><span class="line">#访问时将端口进行公开映射</span><br><span class="line">kubectl expose deployment hello-minikube --type=NodePort --port=8080</span><br><span class="line"></span><br><span class="line">#查看是否已经正在运行</span><br><span class="line">kubectl get pods</span><br><span class="line"></span><br><span class="line">#获取公开服务的URL以查看服务详细信息</span><br><span class="line">minikube service hello-minikube --url</span><br><span class="line"></span><br><span class="line">#curl 获取的url 查看本地集群的详细信息</span><br><span class="line">curl http://192.168.99.100:30083</span><br><span class="line"></span><br><span class="line">#删除 hello-minikube 服务</span><br><span class="line">kubectl delete services hello-minikube</span><br><span class="line"></span><br><span class="line">#删除 hello-minikube 部署</span><br><span class="line">kubectl delete deployment hello-minikube</span><br><span class="line"></span><br><span class="line">#停止本地minikube 集群</span><br><span class="line">minikube stop</span><br><span class="line"></span><br><span class="line">#删除本地minikube 集群</span><br><span class="line">minikube delete</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="minikube-应用和服务"><a href="#minikube-应用和服务" class="headerlink" title="minikube 应用和服务"></a>minikube 应用和服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">********************# 应用和服务 #*************</span><br><span class="line">#启动minikube</span><br><span class="line">minikube start</span><br><span class="line"></span><br><span class="line">#部署应用</span><br><span class="line">kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080</span><br><span class="line"></span><br><span class="line">#确定deployment</span><br><span class="line">kubectl get deployment</span><br><span class="line"></span><br><span class="line">#查看部署的应用</span><br><span class="line">kubectl get pods</span><br><span class="line"></span><br><span class="line">#发布应用</span><br><span class="line">kubectl expose deployment hello-minikube --type=NodePort</span><br><span class="line"></span><br><span class="line">#查看发布的内容</span><br><span class="line">kubectl get services</span><br><span class="line"></span><br><span class="line">#访问服务</span><br><span class="line">1.虚拟机：curl http://ip:port</span><br><span class="line">2.curl $(minikube service hello-minikube --url)</span><br><span class="line"></span><br><span class="line">#获取服务url 链接</span><br><span class="line">minikube service --url service_name</span><br><span class="line"></span><br><span class="line">#查看控制台</span><br><span class="line">minikube dashboard</span><br><span class="line"></span><br><span class="line">查看所有Kubernetes Pod的部署状态</span><br><span class="line">kubectl get po -A</span><br><span class="line"></span><br><span class="line">#删除服务</span><br><span class="line">kubectl delete services hello-minikube</span><br><span class="line"></span><br><span class="line">#删除应用</span><br><span class="line">kubectl delete deployment hello-minikube</span><br><span class="line"></span><br><span class="line">#删除pods</span><br><span class="line">kubectl delete pods podName</span><br><span class="line"></span><br><span class="line">#停止minikube</span><br><span class="line">minikube stop</span><br><span class="line"></span><br><span class="line">#进入minikube 控制台</span><br><span class="line">minikube ssh</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="kubectl-权限"><a href="#kubectl-权限" class="headerlink" title="kubectl 权限"></a>kubectl 权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**********************# 权限问题 #*************************</span><br><span class="line">查看是否有权限：kubectl auth can-i &lt;list|create|edit|delete&gt; pods</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="集群相关"><a href="#集群相关" class="headerlink" title="集群相关"></a>集群相关</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">**********************# 集群相关 #**************************</span><br><span class="line">#获取集群的ip</span><br><span class="line">minikube ip</span><br><span class="line"></span><br><span class="line">#获取集群节点</span><br><span class="line">kubectl get nodes</span><br><span class="line"></span><br><span class="line">#启动第二个本地集群</span><br><span class="line">minikube start -p cluster2</span><br><span class="line"></span><br><span class="line">#停止本地集群</span><br><span class="line">minikube stop</span><br><span class="line"></span><br><span class="line">#删除本地集群</span><br><span class="line">minikube delete</span><br><span class="line"></span><br><span class="line">#删除所有本地集群和配置文件</span><br><span class="line">minikube delete --all</span><br><span class="line"></span><br><span class="line">获取网桥ip</span><br><span class="line">minikube ssh &quot;route -n | grep ^0.0.0.0 | awk &apos;&#123; print \$2 &#125;&apos;&quot;</span><br><span class="line"></span><br><span class="line">链接到集群minikube</span><br><span class="line">minikube ssh</span><br><span class="line">telnet ip port</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="minikube-附加组件"><a href="#minikube-附加组件" class="headerlink" title="minikube 附加组件"></a>minikube 附加组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">********************************* 附加组件 ********************</span><br><span class="line"></span><br><span class="line">#查询可添加的组件</span><br><span class="line">minikube addons list</span><br><span class="line"></span><br><span class="line">#启用组件</span><br><span class="line">minikube addons enable &lt;name&gt;</span><br><span class="line"></span><br><span class="line">#与组件交互</span><br><span class="line">minikube addons open &lt;name&gt;</span><br><span class="line"></span><br><span class="line">#禁用组件</span><br><span class="line">minikube addons disable &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="minikube-调试"><a href="#minikube-调试" class="headerlink" title="minikube 调试"></a>minikube 调试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">************************** 启动调试日志 *******************</span><br><span class="line">--v=0将输出INFO级别的日志</span><br><span class="line">--v=1将输出警告级别的日志</span><br><span class="line">--v=2将输出错误级别的日志</span><br><span class="line">--v=3将输出libmachine日志记录</span><br><span class="line">--v=7将输出libmachine –debug级日志记录</span><br><span class="line">minikube start --v=7 将启动minikube并将所有重要的调试日志输出到stdout</span><br><span class="line"></span><br><span class="line">#收集虚拟机日志，要调试Kubernetes部署失败的问题，收集Kubernetes pod和内核日志非常有用</span><br><span class="line">minikube logs</span><br><span class="line"></span><br><span class="line">#立即查看启动失败</span><br><span class="line">minikube logs --problems</span><br><span class="line"></span><br><span class="line">#查看所有Kubernetes Pod的部署状态</span><br><span class="line">kubectl get po -A</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="查看docker镜像"><a href="#查看docker镜像" class="headerlink" title="查看docker镜像"></a>查看docker镜像</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">登录minikube 控制台</span><br><span class="line">minikube ssh </span><br><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="常用故障排查以及修改命令"><a href="#常用故障排查以及修改命令" class="headerlink" title="常用故障排查以及修改命令"></a>常用故障排查以及修改命令</h4><blockquote>
+<p>scale </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scale命令进行横向扩展，将原本为1的副本，提高到3</span><br><span class="line">kubectl scale --current-replicas=1 --replicas=3 deployment/nginx</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>autoscale</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">和scale不同的是autoscale则会根据负载进行调解</span><br><span class="line">kubectl autoscale deployment nginx --min=2 --max=5</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>cordon</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">查询nodeAddress</span><br><span class="line">kubectl get pods -o wide</span><br><span class="line"></span><br><span class="line">设定nodeAddress，使得nodeAddress不可使用，使用get node确认，</span><br><span class="line">其状态显示SchedulingDisabled</span><br><span class="line"></span><br><span class="line">kubectl cordon nodeAddress</span><br><span class="line">案例：</span><br><span class="line">设定134不可用：</span><br><span class="line">kubectl cordon 192.168.32.134</span><br><span class="line"></span><br><span class="line">横向扩展：</span><br><span class="line">kubectl scale --replicas=6 deployment/nginx</span><br><span class="line"></span><br><span class="line">发现没有pods 再执行在134这台机器上。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>kubectl uncordon</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">解除限制</span><br><span class="line">kubectl uncordon nodeAddress</span><br><span class="line">``` </span><br><span class="line">&gt;kubectl drain</span><br></pre></td></tr></table></figure>
+
+<p>drain命令用于对某个node进行设定，是为了设定此node为维护做准备。<br>此命令主要执行的操作是：</p>
+<ol>
+<li>设定此node不可以使用（cordon)</li>
+<li>evict（回收）了其上的两个pod<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;kubectl api-versions</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>查看当前版本的kubernetes的服务器端所支持的api版本信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;kubectl get all -o wide</span><br></pre></td></tr></table></figure>
+
+<p>列出pod services deployment replicaset 的信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;kubectl 可get 的信息</span><br></pre></td></tr></table></figure>
+
+<p>kubectl get deployments<br>kubectl get pods<br>kubectl get namespaces</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;kubectl 查看详情信息</span><br></pre></td></tr></table></figure>
+
+<p>kubectl describe node 192.168.32.132<br>kubectl describe deployment mysql</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;kubectl 查看日志</span><br></pre></td></tr></table></figure>
+
+<p>kubectl logs podsName</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#### 学习案例2</span><br></pre></td></tr></table></figure>
+
+<h2 id="root-node1-wordpress-cat-wordpress-db-yaml"><a href="#root-node1-wordpress-cat-wordpress-db-yaml" class="headerlink" title="[root@node1 wordpress]# cat wordpress-db.yaml"></a>[root@node1 wordpress]# cat wordpress-db.yaml</h2><p>apiVersion: apps/v1beta1<br>kind: Deployment<br>metadata:<br>name: mysql-deploy<br>labels:<br>app: mysql<br>spec:<br>template:<br>metadata:<br>labels:<br>app: mysql<br>spec:<br>containers:</p>
+<ul>
+<li>name: mysql<br>image: mysql:5.7<br>imagePullPolicy: IfNotPresent<br>ports:</li>
+<li>containerPort: 3306<br>name: dbport<br>env:</li>
+<li>name: MYSQL_ROOT_PASSWORD<br>value: rootPassW0rd</li>
+<li>name: MYSQL_DATABASE<br>value: wordpress</li>
+<li>name: MYSQL_USER<br>value: wordpress</li>
+<li>name: MYSQL_PASSWORD<br>value: wordpress<br>volumeMounts:</li>
+<li>name: db<br>mountPath: /var/lib/mysql<br>volumes:</li>
+<li>name: db<br>hostPath:<br>path: /var/lib/mysql</li>
+</ul>
+<hr>
+<p>apiVersion: v1<br>kind: Service<br>metadata:<br>name: mysql<br>spec:<br>selector:<br>app: mysql<br>ports:</p>
+<ul>
+<li>name: mysqlport<br>protocol: TCP<br>port: 3306<br>targetPort: dbport</li>
+</ul>
+<p>[root@node1 wordpress]# cat wordpress.yaml<br>apiVersion: apps/v1beta1<br>kind: Deployment<br>metadata:<br>name: wordpress-deploy<br>labels:<br>app: wordpress<br>spec:<br>template:<br>metadata:<br>labels:<br>app: wordpress<br>spec:<br>containers:</p>
+<ul>
+<li>name: wordpress<br>image: wordpress<br>imagePullPolicy: IfNotPresent<br>ports:</li>
+<li>containerPort: 80<br>name: wdport<br>env:</li>
+<li>name: WORDPRESS_DB_HOST<br>value: mysql:3306</li>
+<li>name: WORDPRESS_DB_USER<br>value: wordpress</li>
+<li>name: WORDPRESS_DB_PASSWORD<br>value: wordpress</li>
+</ul>
+<hr>
+<p>apiVersion: v1<br>kind: Service<br>metadata:<br>name: wordpress<br>spec:<br>type: NodePort<br>selector:<br>app: wordpress<br>ports:</p>
+<ul>
+<li>name: wordpressport<br>protocol: TCP<br>port: 80<br>targetPort: wdport</li>
+</ul>
+<h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><p>kubectl create -f wordpress-db.yaml<br>kubectl create -f wordpress.yaml</p>
+<h4 id="查看集群信息"><a href="#查看集群信息" class="headerlink" title="查看集群信息"></a>查看集群信息</h4><p>kubectl get all -A -l app=wordpress<br>NAMESPACE NAME READY STATUS RESTARTS AGE<br>default pod/wordpress-deploy-f9c5cf5c6-tj2bc 1/1 Running 0 80m</p>
+<p>NAMESPACE NAME READY UP-TO-DATE AVAILABLE AGE<br>default deployment.apps/wordpress-deploy 1/1 1 1 80m</p>
+<p>NAMESPACE NAME DESIRED CURRENT READY AGE<br>default replicaset.apps/wordpress-deploy-f9c5cf5c6 1 1 1 80m</p>
+<h4 id="配置ingress"><a href="#配置ingress" class="headerlink" title="配置ingress"></a>配置ingress</h4><p>[root@node1 wordpress]# cat ingress.yaml<br>apiVersion: extensions/v1beta1<br>kind: Ingress<br>metadata:<br>name: wordpress-ingress<br>namespace: default<br>annotations:<br>kubernetes.io/ingress.class: “nginx”<br>spec:<br>rules:</p>
+<ul>
+<li>host: wordpress.boshao.wang<br>http:<br>paths:</li>
+<li>backend:<br>serviceName: wordpress<br>servicePort: 80</li>
+</ul>
+<h4 id="创建ingress"><a href="#创建ingress" class="headerlink" title="创建ingress"></a>创建ingress</h4><p>kubectl create -f ingress.yaml</p>
+<h4 id="查看ingres信息"><a href="#查看ingres信息" class="headerlink" title="查看ingres信息"></a>查看ingres信息</h4><p>[root@node1 wordpress]# kubectl get ing wordpress-ingress<br>NAME HOSTS ADDRESS PORTS AGE<br>wordpress-ingress wordpress.boshao.wang 80 78m</p>
+<p>[root@node1 wordpress]# kubectl describe ingress wordpress-ingress<br>Name: wordpress-ingress<br>Namespace: default<br>Address:<br>Default backend: default-http-backend:80 (<none>)<br>Rules:<br>Host Path Backends</none></p>
+<hr>
+<p>wordpress.boshao.wang<br>wordpress:80 (10.233.70.27:80)<br>Annotations:<br>kubernetes.io/ingress.class: nginx<br>Events: <none></none></p>
+<h4 id="最后绑定域名wordpress-boshao-wang-到node节点即可。"><a href="#最后绑定域名wordpress-boshao-wang-到node节点即可。" class="headerlink" title="最后绑定域名wordpress.boshao.wang  到node节点即可。"></a>最后绑定域名wordpress.boshao.wang  到node节点即可。</h4><p>通过ingress-nginx 暴露的端口进行访问，即可。<br>ingress-nginx service/ingress-nginx NodePort 10.233.29.94 <none> 80:31661/TCP,443:30250/TCP 6d2h</none></p>
+<p>访问方式：wordpress.boshao.wang → node ip:31661<br><a href="http://wordpress.boshao.wang:31661/" target="_blank" rel="noopener">http://wordpress.boshao.wang:31661/</a></p>
+<p>```</p>
 <h4 id="参考地址："><a href="#参考地址：" class="headerlink" title="参考地址："></a>参考地址：</h4><blockquote>
 <p><a href="https://minikube.sigs.k8s.io/" target="_blank" rel="noopener">minikube参考</a></p>
 </blockquote>
@@ -563,7 +674,7 @@
   <!-- 修改时间 -->
   <li>
     <strong>更新于： </strong>
-    2019年10月25日 - 14时10分
+    2019年11月19日 - 19时11分
   </li>
 
   <!-- 引用链接 -->
@@ -826,7 +937,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装kubectl"><span class="nav-number">1.</span> <span class="nav-text">安装kubectl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装minikube"><span class="nav-number">2.</span> <span class="nav-text">安装minikube</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#minikube-操作"><span class="nav-number">3.</span> <span class="nav-text">minikube 操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考地址："><span class="nav-number">4.</span> <span class="nav-text">参考地址：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装kubectl"><span class="nav-number">1.</span> <span class="nav-text">安装kubectl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装minikube"><span class="nav-number">2.</span> <span class="nav-text">安装minikube</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重用Docker-守护程序使用本地映像"><span class="nav-number">3.</span> <span class="nav-text">重用Docker 守护程序使用本地映像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#学习案例一"><span class="nav-number">4.</span> <span class="nav-text">学习案例一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#minikube-应用和服务"><span class="nav-number">5.</span> <span class="nav-text">minikube 应用和服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kubectl-权限"><span class="nav-number">6.</span> <span class="nav-text">kubectl 权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集群相关"><span class="nav-number">7.</span> <span class="nav-text">集群相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#minikube-附加组件"><span class="nav-number">8.</span> <span class="nav-text">minikube 附加组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#minikube-调试"><span class="nav-number">9.</span> <span class="nav-text">minikube 调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看docker镜像"><span class="nav-number">10.</span> <span class="nav-text">查看docker镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用故障排查以及修改命令"><span class="nav-number">11.</span> <span class="nav-text">常用故障排查以及修改命令</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#root-node1-wordpress-cat-wordpress-db-yaml"><span class="nav-number"></span> <span class="nav-text">[root@node1 wordpress]# cat wordpress-db.yaml</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#启动容器"><span class="nav-number">1.</span> <span class="nav-text">启动容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看集群信息"><span class="nav-number">2.</span> <span class="nav-text">查看集群信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置ingress"><span class="nav-number">3.</span> <span class="nav-text">配置ingress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建ingress"><span class="nav-number">4.</span> <span class="nav-text">创建ingress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看ingres信息"><span class="nav-number">5.</span> <span class="nav-text">查看ingres信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后绑定域名wordpress-boshao-wang-到node节点即可。"><span class="nav-number">6.</span> <span class="nav-text">最后绑定域名wordpress.boshao.wang  到node节点即可。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考地址："><span class="nav-number">7.</span> <span class="nav-text">参考地址：</span></a></li></ol></li></div>
             
 
           </div>
@@ -860,7 +971,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.4k</span>
+    <span title="Site words total count">44.1k</span>
   
 </div>
 

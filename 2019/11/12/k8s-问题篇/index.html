@@ -149,7 +149,7 @@
 <meta property="og:site_name" content="蜗牛笔记">
 <meta property="og:description" content="Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host 问题原因：     链接不上服务地址，可能是机器没有启动，或者节点已经丢失。   解决方案：    查看运行状态 minikube status     启动机器（测试虚拟机）   error: unable to for">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-12T08:19:35.012Z">
+<meta property="og:updated_time" content="2019-11-13T08:45:40.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k8s-问题篇">
 <meta name="twitter:description" content="Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host 问题原因：     链接不上服务地址，可能是机器没有启动，或者节点已经丢失。   解决方案：    查看运行状态 minikube status     启动机器（测试虚拟机）   error: unable to for">
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  198
+                  273
                 </span>
               
 
@@ -488,6 +488,7 @@
 <h4 id="error-unable-to-forward-port-because-pod-is-not-running-Current-status-Pending"><a href="#error-unable-to-forward-port-because-pod-is-not-running-Current-status-Pending" class="headerlink" title="error: unable to forward port because pod is not running. Current status=Pending"></a>error: unable to forward port because pod is not running. Current status=Pending</h4><blockquote>
 <p>查看问题：<br>  kubectl get nodes 首先查看node 是不是Ready 状态<br>  kubectl get pods (查看当前的pods)<br>  kubectl describe nodes （查看node 的vm 详细信息）<br>  kubectl get services (查看运行服务)</p>
 </blockquote>
+<hr>
 <h4 id="Kube-proxy-error-looking-for-path-of-conntrack"><a href="#Kube-proxy-error-looking-for-path-of-conntrack" class="headerlink" title="Kube-proxy: error looking for path of conntrack"></a>Kube-proxy: error looking for path of conntrack</h4><blockquote>
 <p>kube-proxy 报错，并且 service 的 DNS 解析异常</p>
 </blockquote>
@@ -495,6 +496,10 @@
 
 <blockquote>
 <p>解决方式是安装 conntrack-tools 包后重启 kube-proxy 即可。</p>
+</blockquote>
+<hr>
+<h4 id="“Cannot-connect-to-the-Docker-daemon-at-unix-var-run-docker-sock-Is-the-docker-daemon-running-”"><a href="#“Cannot-connect-to-the-Docker-daemon-at-unix-var-run-docker-sock-Is-the-docker-daemon-running-”" class="headerlink" title="“Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?”"></a>“Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?”</h4><blockquote>
+<p>问题原因：是因为docker服务没有启动，所以在相应的/var/run/ 路径下找不到docker的进程。<br>解决方式：<br>   1.service docker start<br>   2.查看docker-machine是否安装。<br>  <a href="https://blog.csdn.net/Aaron_80726/article/details/83676014" target="_blank" rel="noopener">其他原因及解决方案</a></p>
 </blockquote>
 
       
@@ -558,7 +563,7 @@
   <!-- 修改时间 -->
   <li>
     <strong>更新于： </strong>
-    2019年11月12日 - 16时11分
+    2019年11月13日 - 16时11分
   </li>
 
   <!-- 引用链接 -->
@@ -817,7 +822,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Unable-to-connect-to-the-server-dial-tcp-192-168-99-100-8443-connect-no-route-to-host"><span class="nav-number">1.</span> <span class="nav-text">Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#error-unable-to-forward-port-because-pod-is-not-running-Current-status-Pending"><span class="nav-number">2.</span> <span class="nav-text">error: unable to forward port because pod is not running. Current status=Pending</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Kube-proxy-error-looking-for-path-of-conntrack"><span class="nav-number">3.</span> <span class="nav-text">Kube-proxy: error looking for path of conntrack</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Unable-to-connect-to-the-server-dial-tcp-192-168-99-100-8443-connect-no-route-to-host"><span class="nav-number">1.</span> <span class="nav-text">Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#error-unable-to-forward-port-because-pod-is-not-running-Current-status-Pending"><span class="nav-number">2.</span> <span class="nav-text">error: unable to forward port because pod is not running. Current status=Pending</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Kube-proxy-error-looking-for-path-of-conntrack"><span class="nav-number">3.</span> <span class="nav-text">Kube-proxy: error looking for path of conntrack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#“Cannot-connect-to-the-Docker-daemon-at-unix-var-run-docker-sock-Is-the-docker-daemon-running-”"><span class="nav-number">4.</span> <span class="nav-text">“Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?”</span></a></li></ol></div>
             
 
           </div>
@@ -851,7 +856,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.4k</span>
+    <span title="Site words total count">44.1k</span>
   
 </div>
 

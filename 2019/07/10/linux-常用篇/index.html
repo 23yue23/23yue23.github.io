@@ -149,7 +149,7 @@
 <meta property="og:site_name" content="蜗牛笔记">
 <meta property="og:description" content="常用小技巧快速清除文件内容1&amp;gt; filename  统计文件个数12345统计某文件夹下文件的个数ls -l |grep &amp;quot;^-&amp;quot;|wc -l统计某文件夹下目录的个数ls -l |grep &amp;quot;^ｄ&amp;quot;|wc -l  快捷键操作12Ctl-U   删除光标到行首的所有字符,在某些设置下,删除全行Ctl-W   删除当前光标到前边的最近一个空格之间的字符">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-15T10:37:01.658Z">
+<meta property="og:updated_time" content="2019-11-19T02:38:34.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux-常用篇">
 <meta name="twitter:description" content="常用小技巧快速清除文件内容1&amp;gt; filename  统计文件个数12345统计某文件夹下文件的个数ls -l |grep &amp;quot;^-&amp;quot;|wc -l统计某文件夹下目录的个数ls -l |grep &amp;quot;^ｄ&amp;quot;|wc -l  快捷键操作12Ctl-U   删除光标到行首的所有字符,在某些设置下,删除全行Ctl-W   删除当前光标到前边的最近一个空格之间的字符">
@@ -537,7 +537,7 @@
 
 <h5 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># ifconfig               # 查看所有网络接口的属性</span><br><span class="line"># iptables -L            # 查看防火墙设置</span><br><span class="line"># route -n               # 查看路由表</span><br><span class="line"># netstat -lntp          # 查看所有监听端口</span><br><span class="line"># netstat -antp          # 查看所有已经建立的连接</span><br><span class="line"># netstat -s             # 查看网络统计信息</span><br></pre></td></tr></table></figure>
 
-<h5 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ps -ef                 # 查看所有进程</span><br><span class="line"># top                    # 实时显示进程状态</span><br></pre></td></tr></table></figure>
+<h5 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># ps -ef                 # 查看所有进程</span><br><span class="line"># top                    # 实时显示进程状态</span><br><span class="line"></span><br><span class="line">#根据 top 中作业pid 查看作业进程</span><br><span class="line">cd /proc/pid/</span><br><span class="line"></span><br><span class="line">#查询单独一个指定pid 的内存和cpu 使用情况</span><br><span class="line">ps -aux | grep pid</span><br><span class="line">top -p pid</span><br></pre></td></tr></table></figure>
 
 <h5 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># w                      # 查看活动用户</span><br><span class="line"># id &lt;用户名&gt;            # 查看指定用户信息</span><br><span class="line"># last                   # 查看用户登录日志</span><br><span class="line"># cut -d: -f1 /etc/passwd   # 查看系统所有用户</span><br><span class="line"># cut -d: -f1 /etc/group    # 查看系统所有组</span><br><span class="line"># crontab -l             # 查看当前用户的计划任务</span><br></pre></td></tr></table></figure>
 
@@ -613,7 +613,7 @@
   <!-- 修改时间 -->
   <li>
     <strong>更新于： </strong>
-    2019年10月15日 - 18时10分
+    2019年11月19日 - 10时11分
   </li>
 
   <!-- 引用链接 -->
@@ -910,7 +910,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.4k</span>
+    <span title="Site words total count">44.1k</span>
   
 </div>
 
