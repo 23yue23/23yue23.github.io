@@ -5,9 +5,10 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="hive-问题篇, xianchang.yue,github">
-    <meta name="description" content="hql出现类似以下异常异常信息：
+    <meta name="description" content="####1.hql出现类似以下异常
+异常信息：
 Starting to launch local task to process map join; 
-maximum memory = 301465600 Execution failed with ex">
+maximum memory = 301465600 Execution failed ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -571,18 +572,23 @@ maximum memory = 301465600 Execution failed with ex">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="hql出现类似以下异常"><a href="#hql出现类似以下异常" class="headerlink" title="hql出现类似以下异常"></a>hql出现类似以下异常</h4><p>异常信息：</p>
+                <p>####1.hql出现类似以下异常</p>
+<p>异常信息：</p>
 <pre><code>Starting to launch local task to process map join; 
 maximum memory = 301465600 Execution failed with exit status: 2</code></pre><p>解决方案：尝试增加以下设置：</p>
 <pre><code>set hive.auto.convert.join=false;关闭自动转化MapJoin，默认为true;
-set hive.ignore.mapjoin.hint=false; 关闭忽略mapjoin的hints（不忽略，hints有效），默认为true(忽略hints)。</code></pre><h4 id="执行hql的时，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space"><a href="#执行hql的时，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space" class="headerlink" title="执行hql的时，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space"></a>执行hql的时，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space</h4><p>解决方法： </p>
+set hive.ignore.mapjoin.hint=false; 关闭忽略mapjoin的hints（不忽略，hints有效），默认为true(忽略hints)。</code></pre><p>####2.执行hql的时，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space</p>
+<p>解决方法： </p>
 <pre><code>在你的程序里设置以下环境变量值：
-export HADOOP_CLIENT_OPTS=&quot;-Xmx2048m&quot;</code></pre><h4 id="hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题："><a href="#hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题：" class="headerlink" title="hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题："></a>hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题：</h4><pre><code>任务执行是成功的，但是切换了metadata数据库后，发现该分区数据丢失。
+export HADOOP_CLIENT_OPTS=&quot;-Xmx2048m&quot;</code></pre><p>####3.hive在切换或者升级metadata元数据信息库时，增加分区任务可能会出现以下问题：</p>
+<pre><code>任务执行是成功的，但是切换了metadata数据库后，发现该分区数据丢失。
 
 原因：造成此问题的原因是由于执行成功的任务把元数据信息写入到旧的元数据库里，切换时没有同步到新的元数据信息库里。
 
-解决方法：切换新的元数据信息库后，需要人工检查下分区数据信息，保证分区数据不丢失。</code></pre><h4 id="Failed-to-create-temp-property-file-cause-java-io-IOException-设备上没有空间"><a href="#Failed-to-create-temp-property-file-cause-java-io-IOException-设备上没有空间" class="headerlink" title="Failed to create temp property file cause: java.io.IOException: 设备上没有空间"></a>Failed to create temp property file cause: java.io.IOException: 设备上没有空间</h4><pre><code>原因：服务器的磁盘空间已满。
-解决方法：清理磁盘。</code></pre><h4 id="自定义SerDe的使用方法："><a href="#自定义SerDe的使用方法：" class="headerlink" title="自定义SerDe的使用方法："></a>自定义SerDe的使用方法：</h4><pre><code>创建SerDe:mobvista.dataplatform.text.TextSerde hive表的使用方法：
+解决方法：切换新的元数据信息库后，需要人工检查下分区数据信息，保证分区数据不丢失。</code></pre><p>####4.Failed to create temp property file cause: java.io.IOException: 设备上没有空间</p>
+<pre><code>原因：服务器的磁盘空间已满。
+解决方法：清理磁盘。</code></pre><p>####5.自定义SerDe的使用方法：</p>
+<pre><code>创建SerDe:mobvista.dataplatform.text.TextSerde hive表的使用方法：
 
 CREATE EXTERNAL TABLE dm_campaign_tag_like
 PARTITIONED BY (
@@ -610,7 +616,8 @@ ALTER TABLE ods_adn_trackingnew_click_like SET SERDEPROPERTIES (&#39;schema.url&
 修改表分区的serde属性
 
 ALTER TABLE ods_adn_trackingnew_click_like partition(yyyy=&#39;2017&#39;,mm=&#39;06&#39;,dd=&#39;16&#39;,re=&#39;virginia&#39;,hh=&#39;00&#39;) SET SERDEPROPERTIES (&#39;schema.url&#39; = &#39;s3://click.avsc&#39;);
-</code></pre><h4 id="hive添加分区的时候偶尔会出现以下问题："><a href="#hive添加分区的时候偶尔会出现以下问题：" class="headerlink" title="hive添加分区的时候偶尔会出现以下问题："></a>hive添加分区的时候偶尔会出现以下问题：</h4><p>case 1:</p>
+</code></pre><p>####6.hive添加分区的时候偶尔会出现以下问题：</p>
+<p>case 1:</p>
 <pre><code>Caused by: java.sql.BatchUpdateException: 
 Duplicate entry &#39;admin&#39; for key &#39;ROLEENTITYINDEX&#39;
 这主要是由于hive的metastore数据被修改造成的。
@@ -630,10 +637,12 @@ mysql -ip -u* -p* -Dhive_db -e &#39;delete from VERSION where VER_ID &lt;&gt; 1;
 
 2，优化metastore的写入和查询性能，可以从缓存和事务入手；
 
-3，修改hive客户端配置，hive的conf配置文件里有一项是配置读取metastore的超时时间的，参数项为：hive.stats.jdbc.timeout，默认参数值为30s，可以适当放到该参数项的值。</code></pre><h4 id="Caused-by-java-lang-ClassNotFoundException-org-apache-commons-logging-impl-SLF4JLocationAwareLog"><a href="#Caused-by-java-lang-ClassNotFoundException-org-apache-commons-logging-impl-SLF4JLocationAwareLog" class="headerlink" title="Caused by: java.lang.ClassNotFoundException: org.apache.commons.logging.impl.SLF4JLocationAwareLog"></a>Caused by: java.lang.ClassNotFoundException: org.apache.commons.logging.impl.SLF4JLocationAwareLog</h4><pre><code>造成该问题的主要原因是由于系统环境变量里找不到这个jar：jcl-over-slf4j-1.7.16.jar
+3，修改hive客户端配置，hive的conf配置文件里有一项是配置读取metastore的超时时间的，参数项为：hive.stats.jdbc.timeout，默认参数值为30s，可以适当放到该参数项的值。</code></pre><p>####7.Caused by: java.lang.ClassNotFoundException: org.apache.commons.logging.impl.SLF4JLocationAwareLog</p>
+<pre><code>造成该问题的主要原因是由于系统环境变量里找不到这个jar：jcl-over-slf4j-1.7.16.jar
 
 需要在执行hql之前手动添加下,
-添加命令为：add jar /data/hadoop-alternative/spark/jars/jcl-over-slf4j-1.7.16.jar;</code></pre><h4 id="如何使用hive模拟mysql的自增id"><a href="#如何使用hive模拟mysql的自增id" class="headerlink" title="如何使用hive模拟mysql的自增id"></a>如何使用hive模拟mysql的自增id</h4><pre><code>INSERT INTO TABLE customer_dim 
+添加命令为：add jar /data/hadoop-alternative/spark/jars/jcl-over-slf4j-1.7.16.jar;</code></pre><p>####8.如何使用hive模拟mysql的自增id</p>
+<pre><code>INSERT INTO TABLE customer_dim 
 SELECT 
 ROW_NUMBER() OVER (ORDER BY t1.customer_number) + t2.sk_max, 
 t1.customer_number, 

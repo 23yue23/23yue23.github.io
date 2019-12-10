@@ -4,10 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="k8s-问题篇, xianchang.yue,github">
-    <meta name="description" content="####1. Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host
-
-问题原因：     链接不上服务地址，可能是机">
+    <meta name="keywords" content="azkaban-剖析篇, xianchang.yue,github">
+    <meta name="description" content="
+  
+  
+    Hey, password is required here.
+    
+  
+  57585474b857f8a3b036d7bc94a8e0cfdb0ee40f4a45c42e1ac44bb0e83a529348b">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>k8s-问题篇 | 蜗牛笔记</title>
+    <title>azkaban-剖析篇 | 蜗牛笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -390,13 +394,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        k8s-问题篇
+                        azkaban-剖析篇
                     </div>
                 </div>
             </div>
@@ -514,8 +518,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/k8s-问题篇/">
-                                <span class="chip bg-color">k8s-问题篇</span>
+                            <a href="/tags/azkaban-剖析篇/">
+                                <span class="chip bg-color">azkaban-剖析篇</span>
                             </a>
                         
                     </div>
@@ -526,8 +530,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/k8s/" class="post-category">
-                                k8s
+                            <a href="/categories/azkaban/" class="post-category">
+                                azkaban
                             </a>
                         
                     </div>
@@ -539,7 +543,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-12
+                    2019-12-10
                 </div>
                 
 
@@ -548,7 +552,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    277
+                    6
                 </div>
                 
 
@@ -571,33 +575,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>####1. Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host</p>
-<blockquote>
-<p>问题原因：<br>     链接不上服务地址，可能是机器没有启动，或者节点已经丢失。</p>
-</blockquote>
-<blockquote>
-<p>解决方案：<br>    查看运行状态 minikube status<br>     启动机器（测试虚拟机）</p>
-</blockquote>
-<hr>
-<p>####2. error: unable to forward port because pod is not running. Current status=Pending</p>
-<blockquote>
-<p>查看问题：<br>  kubectl get nodes 首先查看node 是不是Ready 状态<br>  kubectl get pods (查看当前的pods)<br>  kubectl describe nodes （查看node 的vm 详细信息）<br>  kubectl get services (查看运行服务)</p>
-</blockquote>
-<hr>
-<p>####3. Kube-proxy: error looking for path of conntrack</p>
-<blockquote>
-<p>kube-proxy 报错，并且 service 的 DNS 解析异常</p>
-</blockquote>
-<pre><code> kube-proxy[2241]: E0502 15:55:13.889842    2241 conntrack.go:42] 
- conntrack returned error: error looking for path of conntrack: exec: &quot;conntrack&quot;: executable file not found in $PATH</code></pre><blockquote>
-<p>解决方式是安装 conntrack-tools 包后重启 kube-proxy 即可。</p>
-</blockquote>
-<hr>
-<p>####4. “Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?”</p>
-<blockquote>
-<p>问题原因：是因为docker服务没有启动，所以在相应的/var/run/ 路径下找不到docker的进程。<br>解决方式：<br>   1.service docker start<br>   2.查看docker-machine是否安装。<br>  <a href="https://blog.csdn.net/Aaron_80726/article/details/83676014" target="_blank" rel="noopener">其他原因及解决方案</a></p>
-</blockquote>
-
+                <div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="Hey, password is required here." />
+    <label for="hbePass">Hey, password is required here.</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="74be8796acb571a32549cef2278f79ae3cb1c9cfebbe132fe6e6b4049b679231">57585474b857f8a3b036d7bc94a8e0cfdb0ee40f4a45c42e1ac44bb0e83a529348b92e153b1101a3ae145b515cea719012b14baf31132d39f76360efb12245a1806503fd57f585fc3e921727c936b308aa2e02e1b2a12ade48f7145ccf602a36dbb457f55806a7151093d0b37132a7648771ce14032df44fc9cb921f472c8fc98ec3d3b91a86f6e3f308e5a6766ec64750b74b5fdc1cd6eeb4dc587b622e4ea4e06cc2d9f1f2068f8d4ebaed75d358a13c6eb551610412634e55b3cca4d94718922db4b16ab1ac6cb7f72d853abd77f124c45068ced7c67ad17055df506dbbb86a79e610221607592fa84ed9417036378a27774aa624d3ec120062ca5b1bb9cc57a514b400dff35745e8a1394143746eed3ac048f663e6beeaab16f1ffcb542cad439f8ebacc93c0ace2d917022b86d6bd5222d034a93f2f1488a6dd76908a028429252bd3c56d96c7acfaeed587404b03dcbc30dc6f94e518b12de7174b62c8fbdff521994e7efbd73b87bd5eaacb13b6f9a16b740f125303175a29ac7a6d55c8ff56a9b9ffb99cc183649f992a8db9868ecba89a6dfa6cfbc5fefbfddfdd5e0d213b4eb027b668cbefd4bc9658d09f26f9a0f379829f3754efbcff410e5ba131300887c05e353979d030ad97fbe0d75c1c3b5eaaa0f4300d91d92b35ae8511c0b42031d86e7f3998d885e16b667268de33d2563f612d9ead8b4215a2d01a6e03a5aea40048a8c9a61565c29fe9e4861f3da451509288763adf6cbc8da16b6609ef401a74c36a7f884f9fa8e894edad38057b29fe23331f5b5349b62b9b5967392889a7dce6ad4e9be7432bd1b55b3d50062607e7955cce44571c5bda7c4e185080d592e47751c7b2d539bb4574d8dc0ac5da1e9c02eb03b06df400614dc15ffa6dd99374503aedb5fea93de08705f58f832acaf21dd67561bdcaee91f7f92b1aac9c1be4139a72511638ebfb9b6b110e7344e634ec20b9fd36fbbee36c19dd4aca853cbeb5cb98a6bff0e5c617013eec5b29f43d0344432dd529bfe680ef0e78cc48dba8793cc4bdd871a31cf8ed10eff28a06032959996f492fcb975506b5b32b7930d7d8609f44382b329656379123e47317a381b9f7da15eb98e66f043af6fc02e8cb1b3ba3020bcd15a9ff601a19d3b09fa405e80f2c847e3a76f30b2cc8330134f19227c9db7cadaf7f3c510b4aaa0efd898d227366450553613923a3b49f2d025b1d302ac712911b9a976daf8c9728fefcd9d347e1fd166f7b0ff97539635090d4068209648ec20abd278fff48fca21c2de0fd52024ffc3305db2ea2ead893501b239bff19e5d8342ae72b4ca3dde17c878fcbed543bb4f0a61bbd502c0fb9292e966980072cad04c7bffb4a8a702c01620e0e86264e9fb1b3e4ae96196f74ade4ca3d1495627ffbc7c06bd1882174b1d49ad5573ca976571708ff82c02aa3581768049cc59ce2ff5991d5d63fd0e7f2ce5887cef13f48e8731f78d787d3f97afcd2408511f181895db4fc2c953ade0766b3524c4830fc326937db06d90d1846b9762c3c838ac70c8939605a16e9723db9d98cd8cf895f72d1ba94ddbd9eb6860924c21a0f73e32eb174d77edc4c5b03d46d7483ee52ef94309021a45fe2626e2dc9c226d2a2559d872d76e11136b5e966ca919217458c7c8399ff99cd2f22f1e963e7d338caed379505c2f5eea92caff84650ed766ed6419917fed5b11392fb07e2942ca2e7ac9777c8f48b09ab40b9126ead2c6990bb84fe3b20a08eea233980470153a5b6ed058ffc44803392b0052a07a9fa99baa5f51baffa431dde9f9e679a9770460e8b6418201b5a4a5ad72403430488a8f7b31c994d62a8d166d9c08f4f469b55ccc05fb67385f16dfef91a60dadb8272e60d9bb5182d55a98643b3135d8cdb06ad64028da5a460c768e0db87706c86524c521d12014f9a03eb2b6ce3f71bba344bce21926fe5d4f10070c8213efc4365952a5d25d17d83ccc7655481d1114684636fc0f691ba18a4947a5a9f58e31662b38532b0ee9282d62e3c80763b0c8786b19640b398e8e72332995c2336737c0cd39abc7b50e66ff7aa44da9e64348591b7c5deeb06e47186448b839c7e177d874695b99c447ec7a7510f44025abaebbb3619abea309c296f296fe884fe55dff28781039774f233dd4bd777555a44a44453de463fa514c66206d2c82f5788b48646e3ea38621ed5a6235e20a80a240908ad6f4add2185b83d4e918345592410197a46125ab3add496984cbf1e6b0af7aa781ff2d48de55b413afdf22d67193360cac63cc15f585bb31704d2089c6ad7a6078c7adb1c8f13232789d8ffc113aef7eef8b3fdb89c24f35043e61ad5df0ca8a7ded62c2de529811e5f0ae3cfc4fab002f137f0819a3de7526874448ca3ee5039d89df280459fbc88dfbfd9f414ae2e4d6a90a8c6821767ab7044042fc148b98259ae7d5d4bd56110e792eebcf22bd97580c19924d68cd07c6280e60979ad4b7058a2b838d2e0f964b78f508e2bda7153fab4a86cb0352cb65361836896442a5cb90316e6cfe699d3abc6d8648afd4e815ed3c2aeff8eb2a7a6c5fc6801d1e3f499c3532da564161fdd23b6c0656a8de284bb567e21913540bcee1ebdf8fa58c473ad90f5369d1c71636e572d3b3cefa9a01bf46ed71ef2d1744eb41ab8ca7003266d651ff4437ed2b21c8141bfc7e767ca47ede6b46266f8538562b9aec3eb83fdff9692618fda35b8ddbf382a4aaac5b4ad2a8a8e5a4d2b5f1ff224e7ce03ef1feefbaf79c8</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
             </div>
             <hr/>
 
@@ -622,7 +608,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://23yue23.github.io/2019/11/12/k8s-问题篇/">https://23yue23.github.io/2019/11/12/k8s-问题篇/</a>
+                    <a href="https://23yue23.github.io/2019/12/10/azkaban-剖析篇/">https://23yue23.github.io/2019/12/10/azkaban-剖析篇/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -660,8 +646,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/k8s-问题篇/">
-                                    <span class="chip bg-color">k8s-问题篇</span>
+                                <a href="/tags/azkaban-剖析篇/">
+                                    <span class="chip bg-color">azkaban-剖析篇</span>
                                 </a>
                             
                         </div>
@@ -827,9 +813,66 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/12/10/azkaban-剖析篇/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="azkaban-剖析篇">
+                        
+                        <span class="card-title">azkaban-剖析篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+  
+  
+    Hey, password is required here.
+    
+  
+  57585474b857f8a3b036d7bc94a8e0cfdb0ee40f4a45c42e1ac44bb0e83a529348b
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/azkaban/" class="post-category">
+                                    azkaban
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/azkaban-剖析篇/">
+                        <span class="chip bg-color">azkaban-剖析篇</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/12/10/httpd/">
                     <div class="card-image">
@@ -862,9 +905,9 @@ http
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -882,64 +925,6 @@ http
                     
                     <a href="/tags/httpd/">
                         <span class="chip bg-color">httpd</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/10/25/k8s-实战篇/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="k8s-实战篇">
-                        
-                        <span class="card-title">k8s-实战篇</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            ####1. 安装kubectl
-####2. 安装minikube
-
-1.下载virtualbox
-
-
-2.brew cask install minikube
-
-
-3.minikube start –vm-driver=virtualb
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-25
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/k8s/" class="post-category">
-                                    k8s
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/k8s-实战篇/">
-                        <span class="chip bg-color">k8s-实战篇</span>
                     </a>
                     
                 </div>

@@ -5,17 +5,16 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="k8s-实战篇, xianchang.yue,github">
-    <meta name="description" content="安装kubectl安装minikube
+    <meta name="description" content="####1. 安装kubectl
+####2. 安装minikube
+
 1.下载virtualbox
 
 
 2.brew cask install minikube
 
 
-3.minikube start –vm-driver=virtualbox
-
-
-4.minikube ">
+3.minikube start –vm-driver=virtualb">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -556,7 +555,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.5k
                 </div>
                 
 
@@ -579,7 +578,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="安装kubectl"><a href="#安装kubectl" class="headerlink" title="安装kubectl"></a>安装kubectl</h4><h4 id="安装minikube"><a href="#安装minikube" class="headerlink" title="安装minikube"></a>安装minikube</h4><blockquote>
+                <p>####1. 安装kubectl</p>
+<p>####2. 安装minikube</p>
+<blockquote>
 <p>1.下载virtualbox</p>
 </blockquote>
 <blockquote>
@@ -595,9 +596,11 @@
 <p>5.kubectl version 查看版本</p>
 </blockquote>
 <hr>
-<h4 id="重用Docker-守护程序使用本地映像"><a href="#重用Docker-守护程序使用本地映像" class="headerlink" title="重用Docker 守护程序使用本地映像"></a>重用Docker 守护程序使用本地映像</h4><pre><code>eval $(minikube docker-env)
+<p>####3. 重用Docker 守护程序使用本地映像</p>
+<pre><code>eval $(minikube docker-env)
 docker ps</code></pre><hr>
-<h4 id="学习案例一"><a href="#学习案例一" class="headerlink" title="学习案例一"></a>学习案例一</h4><pre><code>#启动并创建集群
+<p>####4. 学习案例一</p>
+<pre><code>#启动并创建集群
 minikube start
 
 #查看仪表盘
@@ -630,7 +633,8 @@ minikube stop
 #删除本地minikube 集群
 minikube delete
 </code></pre><hr>
-<h4 id="minikube-应用和服务"><a href="#minikube-应用和服务" class="headerlink" title="minikube 应用和服务"></a>minikube 应用和服务</h4><pre><code>********************# 应用和服务 #*************
+<p>####5. minikube 应用和服务</p>
+<pre><code>********************# 应用和服务 #*************
 #启动minikube
 minikube start
 
@@ -677,10 +681,12 @@ minikube stop
 #进入minikube 控制台
 minikube ssh
 </code></pre><hr>
-<h4 id="kubectl-权限"><a href="#kubectl-权限" class="headerlink" title="kubectl 权限"></a>kubectl 权限</h4><pre><code>**********************# 权限问题 #*************************
+<p>####6. kubectl 权限</p>
+<pre><code>**********************# 权限问题 #*************************
 查看是否有权限：kubectl auth can-i &lt;list|create|edit|delete&gt; pods
 </code></pre><hr>
-<h4 id="集群相关"><a href="#集群相关" class="headerlink" title="集群相关"></a>集群相关</h4><pre><code>**********************# 集群相关 #**************************
+<p>####7. 集群相关</p>
+<pre><code>**********************# 集群相关 #**************************
 #获取集群的ip
 minikube ip
 
@@ -706,7 +712,8 @@ minikube ssh &quot;route -n | grep ^0.0.0.0 | awk &#39;{ print \$2 }&#39;&quot;
 minikube ssh
 telnet ip port
 </code></pre><hr>
-<h4 id="minikube-附加组件"><a href="#minikube-附加组件" class="headerlink" title="minikube 附加组件"></a>minikube 附加组件</h4><pre><code>********************************* 附加组件 ********************
+<p>####8. minikube 附加组件</p>
+<pre><code>********************************* 附加组件 ********************
 
 #查询可添加的组件
 minikube addons list
@@ -719,7 +726,8 @@ minikube addons open &lt;name&gt;
 
 #禁用组件
 minikube addons disable &lt;name&gt;</code></pre><hr>
-<h4 id="minikube-调试"><a href="#minikube-调试" class="headerlink" title="minikube 调试"></a>minikube 调试</h4><pre><code>************************** 启动调试日志 *******************
+<p>####9. minikube 调试</p>
+<pre><code>************************** 启动调试日志 *******************
 --v=0将输出INFO级别的日志
 --v=1将输出警告级别的日志
 --v=2将输出错误级别的日志
@@ -736,10 +744,12 @@ minikube logs --problems
 #查看所有Kubernetes Pod的部署状态
 kubectl get po -A
 </code></pre><hr>
-<h4 id="查看docker镜像"><a href="#查看docker镜像" class="headerlink" title="查看docker镜像"></a>查看docker镜像</h4><pre><code>登录minikube 控制台
+<p>####10. 查看docker镜像</p>
+<pre><code>登录minikube 控制台
 minikube ssh 
 docker images</code></pre><hr>
-<h4 id="常用故障排查以及修改命令"><a href="#常用故障排查以及修改命令" class="headerlink" title="常用故障排查以及修改命令"></a>常用故障排查以及修改命令</h4><blockquote>
+<p>####11. 常用故障排查以及修改命令</p>
+<blockquote>
 <p>scale </p>
 </blockquote>
 <pre><code>scale命令进行横向扩展，将原本为1的副本，提高到3
@@ -794,7 +804,8 @@ kubectl describe deployment mysql</code></pre><blockquote>
 <p>kubectl 查看日志</p>
 </blockquote>
 <pre><code>kubectl logs podsName
-</code></pre><h4 id="学习案例2"><a href="#学习案例2" class="headerlink" title="学习案例2"></a>学习案例2</h4><pre><code>[root@node1 wordpress]# cat wordpress-db.yaml
+</code></pre><p>####12. 学习案例2</p>
+<pre><code>[root@node1 wordpress]# cat wordpress-db.yaml
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
@@ -948,7 +959,8 @@ Events: &lt;none&gt;
 ingress-nginx service/ingress-nginx NodePort 10.233.29.94 &lt;none&gt; 80:31661/TCP,443:30250/TCP 6d2h
 
 访问方式：wordpress.boshao.wang → node ip:31661 
-http://wordpress.boshao.wang:31661/</code></pre><h4 id="参考地址："><a href="#参考地址：" class="headerlink" title="参考地址："></a>参考地址：</h4><blockquote>
+http://wordpress.boshao.wang:31661/</code></pre><hr>
+<h4 id="参考地址："><a href="#参考地址：" class="headerlink" title="参考地址："></a>参考地址：</h4><blockquote>
 <p><a href="https://minikube.sigs.k8s.io/" target="_blank" rel="noopener">minikube参考</a></p>
 </blockquote>
 <blockquote>
@@ -1200,8 +1212,9 @@ http://wordpress.boshao.wang:31661/</code></pre><h4 id="参考地址："><a href
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host
-问题原因：     链接不上服务地址，可能是机器没有启动，或者
+                            ####1. Unable to connect to the server: dial tcp 192.168.99.100:8443: connect: no route to host
+
+问题原因：     链接不上服务地址，可能是机
                         
                     </div>
                     <div class="publish-info">
