@@ -5,16 +5,11 @@
     <url>%2F2019%2F12%2F10%2Fhttpd%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E9%9B%86%E6%88%90LDAP%2F</url>
     <content type="text"></content>
       <categories>
-        <category>LDAP</category>
+        <category>ldap</category>
       </categories>
       <tags>
         <tag>httpd文件服务集成LDAP</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2F2019%2F12%2F10%2FHz%2F</url>
-    <content type="text"></content>
   </entry>
   <entry>
     <title><![CDATA[k8s-问题篇]]></title>

@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://23yue23.github.io/page/10/index.html">
 <meta property="og:site_name" content="蜗牛笔记">
 <meta property="og:description" content="Either stand out or kicked out">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://23yue23.github.io/images/og_image.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="蜗牛笔记">
@@ -116,7 +116,7 @@
                 
                 
                 
-                <a class="navbar-item search" title="Search" href="javascript:;">
+                <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -136,57 +136,6 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-17T02:56:28.000Z">2019-05-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/brew/">brew</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 348 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/17/brew-使用篇/">brew-使用篇</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="安装软件存放路径"><a href="#安装软件存放路径" class="headerlink" title="安装软件存放路径"></a>安装软件存放路径</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/Cellar/</span><br></pre></td></tr></table></figure>
-
-<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">brew --help #简洁命令帮助</span><br><span class="line">man brew #完整命令帮助</span><br><span class="line">brew install git #安装软件包(这里是示例安装的Git版本控制)</span><br><span class="line">brew uninstall git #卸载软件包</span><br><span class="line">brew search git #搜索软件包</span><br><span class="line">brew list #显示已经安装的所有软件包</span><br><span class="line">brew update #同步远程最新更新情况，对本机已经安装并有更新的软件用*标明</span><br><span class="line">brew outdated #查看已安装的哪些软件包需要更新</span><br><span class="line">brew upgrade git #更新单个软件包</span><br><span class="line">brew info git #查看软件包信息</span><br><span class="line">brew home git #访问软件包官方站</span><br><span class="line">brew cleanup #清理所有已安装软件包的历史老版本</span><br><span class="line">brew cleanup git #清理单个已安装软件包的历史版本</span><br></pre></td></tr></table></figure>
-
-<h4 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a>服务管理</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">brew services list  # 查看使用brew安装的服务列表</span><br><span class="line">brew services run formula|--all  # 启动服务（仅启动不注册）</span><br><span class="line">brew services start formula|--all  # 启动服务，并注册</span><br><span class="line">brew services stop formula|--all   # 停止服务，并取消注册</span><br><span class="line">brew services restart formula|--all  # 重启服务，并注册</span><br><span class="line">brew services cleanup  # 清除已卸载应用的无用的配置</span><br></pre></td></tr></table></figure>
-
-<h4 id="问题及解决"><a href="#问题及解决" class="headerlink" title="问题及解决"></a>问题及解决</h4><h5 id="安装或卸载-问题-Error-No-such-keg-usr-local-Cellar"><a href="#安装或卸载-问题-Error-No-such-keg-usr-local-Cellar" class="headerlink" title="安装或卸载 问题 Error: No such keg: /usr/local/Cellar/****"></a>安装或卸载 问题 Error: No such keg: /usr/local/Cellar/****</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">方法一：</span><br><span class="line">  brew cleanup </span><br><span class="line">  brew uninstall ***</span><br><span class="line">  brew install ***</span><br><span class="line">  </span><br><span class="line">方法二：</span><br><span class="line">	如果方法一不生效，则查看是否有版本号，或者软件名错误</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-05-15T09:33:51.000Z">2019-05-15</time>
                 
                 <div class="level-item">
@@ -197,7 +146,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 797 words)
+                    5 分钟 读完 (大约 797 个字)
                 </span>
                 
                 
@@ -391,7 +340,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    15 minutes read (About 2186 words)
+                    15 分钟 读完 (大约 2186 个字)
                 </span>
                 
                 
@@ -532,7 +481,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 192 words)
+                    1 分钟 读完 (大约 192 个字)
                 </span>
                 
                 
@@ -579,7 +528,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 452 words)
+                    3 分钟 读完 (大约 452 个字)
                 </span>
                 
                 
@@ -640,7 +589,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 174 words)
+                    1 分钟 读完 (大约 174 个字)
                 </span>
                 
                 
@@ -703,7 +652,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 128 words)
+                    1 分钟 读完 (大约 128 个字)
                 </span>
                 
                 
@@ -757,7 +706,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    35 minutes read (About 5225 words)
+                    35 分钟 读完 (大约 5225 个字)
                 </span>
                 
                 
@@ -1039,7 +988,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 44 words)
+                    几秒 读完 (大约 44 个字)
                 </span>
                 
                 
@@ -1096,7 +1045,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1045 words)
+                    7 分钟 读完 (大约 1045 个字)
                 </span>
                 
                 
@@ -1301,15 +1250,134 @@
 
 
 
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-26T05:21:39.000Z">2019-04-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/flink/">flink</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    11 分钟 读完 (大约 1637 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/26/flink-问题篇/">flink-问题篇</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="资源管理："><a href="#资源管理：" class="headerlink" title="资源管理："></a>资源管理：</h4><p>flink<br>vcore:<br>提示：并行度一定要小于solt数，也就是提交命令里 yn<em>ys的值，最好保持一致，这样可以将申请的资源充分利用。<br>计算方式：如果并行度小于solt数（yn</em>ys），则vocer默认是：并行度 +1 ；如果并行度和solt数(yn*ys)一致，则vcore数为yn * ys + 1<br>memory:<br>计算方式：<br>并行度和solt数保持一致时：    yn * yjm + ytm<br>并行度小于solt 数是：并行度 * yjm + ytm</p>
+<h4 id="隐式转换器的异常："><a href="#隐式转换器的异常：" class="headerlink" title="隐式转换器的异常："></a>隐式转换器的异常：</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">错误信息：value foreach is not a member of java.util.ArrayList</span><br><span class="line">解决：import scala.collection.JavaConversions._</span><br><span class="line">错误信息：could not find implicit value for evidence parameter of type org.apache.flink.api.common.typeinfo.TypeInformation</span><br><span class="line">解决：import org.apache.flink.streaming.api.scala._（DataStream API）</span><br><span class="line">     import org.apache.flink.api.scala._（DataSet API）</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"><a href="#如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现" class="headerlink" title="如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现"></a>如果在使用泛型参数的函数或类中使用Flink操作，则TypeInformation必须可用于该参数。这可以通过使用上下文绑定来实现</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def myFunction[T: TypeInformation](input: DataSet[T]): DataSet[Seq[T]] = &#123;</span><br><span class="line">  input.reduceGroup( i =&gt; i.toSeq )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="ClassCastException：X无法强制转换为X"><a href="#ClassCastException：X无法强制转换为X" class="headerlink" title="ClassCastException：X无法强制转换为X"></a>ClassCastException：X无法强制转换为X</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.尝试classloader.resolve-order: parent-first在配置中进行设置</span><br><span class="line">2.从不同的执行尝试缓存类</span><br><span class="line">3.通过child-first类加载进行类复制</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="AbstractMethodError或NoSuchFieldError"><a href="#AbstractMethodError或NoSuchFieldError" class="headerlink" title="AbstractMethodError或NoSuchFieldError"></a>AbstractMethodError或NoSuchFieldError</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">存在依赖项版本冲突,确保所有依赖项版本都一致。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="事件正在进行，DataStream应用程序不产生任何输出"><a href="#事件正在进行，DataStream应用程序不产生任何输出" class="headerlink" title="事件正在进行，DataStream应用程序不产生任何输出"></a>事件正在进行，DataStream应用程序不产生任何输出</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.如果您的DataStream应用程序使用事件时间，请检查您的水印是否已更新。</span><br><span class="line">  如果没有产生水印，事件时间窗口可能永远不会触发，应用程序将不会产生任何结果。</span><br><span class="line">2.您可以在Flink的Web UI（水印部分）中查看水印是否正在取得进展。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="exception-reporting-“Insufficient-number-of-network-buffers”"><a href="#exception-reporting-“Insufficient-number-of-network-buffers”" class="headerlink" title="exception reporting “Insufficient number of network buffers”"></a>exception reporting “Insufficient number of network buffers”</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.原因可能：以很高的并发来执行flink ,增加了网络缓冲区的数量。</span><br><span class="line">  默认情况下，Flink占用网络缓冲区的JVM堆大小的10％，最小为64MB，最大为1GB。</span><br><span class="line">2.可以通过修改一下以下参数来调整：</span><br><span class="line">taskmanager.network.memory.fraction</span><br><span class="line">taskmanager.network.memory.min</span><br><span class="line">taskmanager.network.memory.max</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://ci.apache.org/projects/flink/flink-docs-master/ops/config.html#configuring-the-network-buffers" title="flink 配置信息" target="_blank" rel="noopener">flink 配置信息</a></p>
+<hr>
+<h4 id="由于javadoc错误无法构建maven项目"><a href="#由于javadoc错误无法构建maven项目" class="headerlink" title="由于javadoc错误无法构建maven项目"></a>由于javadoc错误无法构建maven项目</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">三个选择：</span><br><span class="line">1.修复错误</span><br><span class="line">2.禁用严格检查</span><br><span class="line">3.在建造时跳过Javadoc</span><br><span class="line">&lt;plugins&gt;</span><br><span class="line">  &lt;plugin&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;maven-javadoc-plugin&lt;/artifactId&gt;</span><br><span class="line">    &lt;configuration&gt;</span><br><span class="line">      &lt;additionalparam&gt;-Xdoclint:none&lt;/additionalparam&gt;</span><br><span class="line">    &lt;/configuration&gt;</span><br><span class="line">  &lt;/plugin&gt;</span><br><span class="line">&lt;/plugins&gt;</span><br><span class="line">构建时跳过javadoc</span><br><span class="line">mvn -Dmaven.javadoc.skip=true verify</span><br></pre></td></tr></table></figure>
+
+<h4 id="java-lang-ClassNotFoundException-scala-Product-class"><a href="#java-lang-ClassNotFoundException-scala-Product-class" class="headerlink" title="java.lang.ClassNotFoundException: scala.Product$class"></a>java.lang.ClassNotFoundException: scala.Product$class</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">原因：构建文件不对。您的scala版本是2.12.x但您使用的是scala版本2.11中编译的库。</span><br><span class="line">解决：查看构建文件的lib 中是否包含2.12的版本。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Flink-BucketingSink-crashes-with-NoClassDefFoundError-Lorg-apache-hadoop-fs-FileSystem"><a href="#Flink-BucketingSink-crashes-with-NoClassDefFoundError-Lorg-apache-hadoop-fs-FileSystem" class="headerlink" title="Flink BucketingSink crashes with NoClassDefFoundError: Lorg/apache/hadoop/fs/FileSystem"></a>Flink BucketingSink crashes with NoClassDefFoundError: Lorg/apache/hadoop/fs/FileSystem</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">缺少hadoop 依赖：（ 版本根据自己的来）</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.7.1&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.7.1&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="Name-node-is-in-safe"><a href="#Name-node-is-in-safe" class="headerlink" title="Name node is in safe"></a>Name node is in safe</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">modeorg.apache.hadoop.ipc.RemoteException(org.apache.hadoop.hdfs.server.namenode.SafeModeException): Cannot create file/user/test. Name node is in safe mode.</span><br><span class="line">解决方法：bin/hadoop dfsadmin -safemode leave </span><br><span class="line">参考：https://blog.csdn.net/hongweigg/article/details/7185328</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="No-implicit-arguments-of-type-XXXXXX"><a href="#No-implicit-arguments-of-type-XXXXXX" class="headerlink" title="No implicit arguments of type: XXXXXX"></a>No implicit arguments of type: XXXXXX</h4><p>错误：could not find implicit value for evidence parameter of type org.apache.flink.api.common.typeinfo.TypeInformation[Int]<br>解决办法：import org.apache.flink.api.scala._<br>        或者<br>        import org.apache.flink.streaming.api.scala._</p>
+<hr>
+<h4 id="Stack-trace-ExitCodeException-exitCode-1"><a href="#Stack-trace-ExitCodeException-exitCode-1" class="headerlink" title="Stack trace: ExitCodeException exitCode=1:"></a>Stack trace: ExitCodeException exitCode=1:</h4><blockquote>
+<p>报错信息</p>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Application application_1556525638125_0015 failed 1 times (global limit =2; local limit is =1) due to AM Container for appattempt_1556525638125_0015_000001 exited with exitCode: 1</span><br><span class="line">Failing this attempt.Diagnostics: Exception from container-launch.</span><br><span class="line">Container id: container_e04_1556525638125_0015_01_000001</span><br><span class="line">Exit code: 1</span><br><span class="line">Stack trace: ExitCodeException exitCode=1:</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>解决方式：</p>
+</blockquote>
+  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.查看提交flink 作业的版本是否和提交环境版本一致。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Checkpoint失败：Checkpoint-expired-before-completing"><a href="#Checkpoint失败：Checkpoint-expired-before-completing" class="headerlink" title="Checkpoint失败：Checkpoint expired before completing"></a>Checkpoint失败：Checkpoint expired before completing</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">env.enableCheckpointing(1000L)</span><br><span class="line">val checkpointConf = env.getCheckpointConfig</span><br><span class="line">checkpointConf.setMinPauseBetweenCheckpoints(30000L)</span><br><span class="line">checkpointConf.setCheckpointTimeout(8000L)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> 解决方式：<br> 主要因为checkpointConf.setCheckpointTimeout(8000L)设置的太小了，默认是10min。<br> 这里只设置了8sec。当一个Flink App背压的时候（例如由外部组件异常引起），Barrier会流动的非常缓慢，导致Checkpoint时长飙升。</p>
+</blockquote>
+<h4 id="FlinkException：The-assigned-slot-container-XXX-was-removed-异常"><a href="#FlinkException：The-assigned-slot-container-XXX-was-removed-异常" class="headerlink" title="FlinkException：The assigned slot container_XXX was removed 异常"></a>FlinkException：The assigned slot container_XXX was removed 异常</h4><blockquote>
+<p>问题原因：<br>一般就是某一个Flink App内存占用大，导致TaskManager（在Yarn上就是Container）被Kill掉。如果代码写的没问题，就确实是资源不够了，其实1G Slot跑多个Task（Slot Group Share）其实挺容易出现的。因此有两种选择。可以根据具体情况，权衡选择一个。<br>解决方式：</p>
+<ol>
+<li>将该Flink App调度在Per Slot内存更大的集群上。</li>
+<li>通过slotSharingGroup(“xxx”)，减少Slot中共享Task的个数</li>
+</ol>
+</blockquote>
+<h4 id="map-和list-声明方式"><a href="#map-和list-声明方式" class="headerlink" title="map 和list 声明方式"></a>map 和list 声明方式</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val seMap: java.util.Map[String, java.util.Map[String, Object]] =</span><br><span class="line">      new java.util.HashMap[String, java.util.Map[String, Object]]()</span><br><span class="line">val topList: java.util.List[String] =</span><br><span class="line">      new java.util.ArrayList[String]()</span><br></pre></td></tr></table></figure>
+
+<h4 id="Flink参数设置slot数量增加-导致作业无法启动"><a href="#Flink参数设置slot数量增加-导致作业无法启动" class="headerlink" title="Flink参数设置slot数量增加,导致作业无法启动"></a>Flink参数设置slot数量增加,导致作业无法启动</h4><p>报错信息：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Insufficient number of network buffers: required 96, but only 25 available. </span><br><span class="line">The total number of network buffers is currently set to 2048 of 32768 bytes each. </span><br><span class="line">You can increase this number by setting the configuration keys &apos;taskmanager.network.memory.fraction&apos;, </span><br><span class="line">&apos;taskmanager.network.memory.min&apos;,</span><br><span class="line"> and &apos;taskmanager.network.memory.max&apos;</span><br></pre></td></tr></table></figure>
+
+<p>解决方法：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">调整Flink里面flink-conf.yaml里面的新增参数增加可支持的slot数量</span><br><span class="line">taskmanager.network.memory.fraction: 0.1</span><br><span class="line">taskmanager.network.memory.min: 268435456</span><br><span class="line">taskmanager.network.memory.max: 4294967296</span><br></pre></td></tr></table></figure>
+
+<h4 id="flink-任务物理内存溢出问题定位"><a href="#flink-任务物理内存溢出问题定位" class="headerlink" title="flink 任务物理内存溢出问题定位"></a>flink 任务物理内存溢出问题定位</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.apache.flink.yarn.YarnTaskExecutorRunner </span><br><span class="line">- RECEIVED SIGNAL 15: SIGTERM. Shutting down as requested.</span><br></pre></td></tr></table></figure>
+
+<p>问题定位：<a href="https://www.jianshu.com/p/f18f0494e8ab" target="_blank" rel="noopener">物理内存溢出问题定位</a></p>
+<h4 id="某个TaskManger丢失的问题排查"><a href="#某个TaskManger丢失的问题排查" class="headerlink" title="某个TaskManger丢失的问题排查"></a>某个TaskManger丢失的问题排查</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR [flink-akka.remote.default-remote-dispatcher-5] org.apache.flink.runtime.rest.handler.legacy.TaskManagerLogHandler - Fetching TaskManager log failed.</span><br><span class="line">java.util.concurrent.CompletionException: java.io.IOException: TaskManager log files are unavailable. Log file could not be found at /mnt/disk1/log/hadoop-yarn/containers/application_1556227576661_152377/container_1556227576661_152377_01_000012/taskmanager.log</span><br></pre></td></tr></table></figure>
+
+<p>地址：<a href="https://blog.csdn.net/u012164361/article/details/95317945" target="_blank" rel="noopener">问题解决地址</a></p>
+<h4 id="flink-设置uid-以及savepoint"><a href="#flink-设置uid-以及savepoint" class="headerlink" title="flink 设置uid 以及savepoint"></a>flink 设置uid 以及savepoint</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">DataStream&lt;String&gt; stream = env.</span><br><span class="line">  // Stateful source (e.g. Kafka) with ID</span><br><span class="line"> .addSource(new StatefulSource())</span><br><span class="line"> .uid(&quot;source-id&quot;) // ID for the source operator</span><br><span class="line"> .shuffle()</span><br><span class="line"> // Stateful mapper with ID</span><br><span class="line"> .map(new StatefulMapper())</span><br><span class="line"> .uid(&quot;mapper-id&quot;)</span><br><span class="line"> </span><br><span class="line">不人为指定ID，它们会被自动生成。</span><br><span class="line">只要ID不变化，则程序可以自动的从savepoint恢复。</span><br><span class="line">ID的生成依赖于程序的结构，并且对程序变化敏感。</span><br><span class="line">因此强烈建议人为分配ID</span><br><span class="line"></span><br><span class="line">可以将savepoint想象成持有每个有状态的操作的Operator ID到State的映射关系：</span><br><span class="line">Operator ID | State</span><br><span class="line">------------+------------------------</span><br><span class="line">source-id   | State of StatefulSource</span><br><span class="line">mapper-id   | State of StatefulMapper</span><br><span class="line">在上面的例子中，print sink是无状态的，因此不是savepoint的一部分。默认情况下，会尝试映射savepoint的每条记录到新的程序中</span><br></pre></td></tr></table></figure>
+
+<p>参考：</p>
+<blockquote>
+<p>flink官网：<a href="https://flink.apache.org/gettinghelp.html" target="_blank" rel="noopener">https://flink.apache.org/gettinghelp.html</a></p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
 
     
 <div class="card card-transparent">
     <nav class="pagination is-centered" role="navigation" aria-label="pagination">
         <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/page/9/">Previous</a>
+            <a class="is-flex-grow has-text-black-ter" href="/page/9/">上一页</a>
         </div>
         <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/page/11/">Next</a>
+            <a class="is-flex-grow has-text-black-ter" href="/page/11/">下一页</a>
         </div>
         <ul class="pagination-list is-hidden-mobile">
             
@@ -1367,11 +1435,11 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        文章
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            103
+                            102
                         </p>
                     </a>
                 </div>
@@ -1379,7 +1447,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        分类
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
@@ -1391,7 +1459,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        标签
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
@@ -1404,7 +1472,7 @@
         
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
-                Follow</a>
+                关注我</a>
         </div>
         
         
@@ -1457,7 +1525,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Links
+            链接
         </h3>
         <ul class="menu-list">
         
@@ -1494,18 +1562,10 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                分类
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/LDAP/">
-            <span class="level-start">
-                <span class="level-item">LDAP</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
         <a class="level is-marginless" href="/categories/airflow/">
             <span class="level-start">
                 <span class="level-item">airflow</span>
@@ -1674,6 +1734,14 @@
                 <span class="level-item tag">3</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/ldap/">
+            <span class="level-start">
+                <span class="level-item">ldap</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/linux/">
             <span class="level-start">
                 <span class="level-item">linux</span>
@@ -1826,7 +1894,7 @@
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            标签云
         </h3>
         <a href="/tags/airflow-常用篇/" style="font-size: 10px;">airflow-常用篇</a> <a href="/tags/ambari-学习篇/" style="font-size: 10px;">ambari-学习篇</a> <a href="/tags/ambari-资料篇/" style="font-size: 10px;">ambari-资料篇</a> <a href="/tags/azkaban-常用篇/" style="font-size: 10px;">azkaban-常用篇</a> <a href="/tags/brew-使用篇/" style="font-size: 10px;">brew-使用篇</a> <a href="/tags/cassandra-优化篇/" style="font-size: 10px;">cassandra-优化篇</a> <a href="/tags/cassandra-学习篇/" style="font-size: 10px;">cassandra-学习篇</a> <a href="/tags/cassandra-常用篇/" style="font-size: 10px;">cassandra-常用篇</a> <a href="/tags/cassandra-案例篇/" style="font-size: 10px;">cassandra-案例篇</a> <a href="/tags/cassandra-资料篇/" style="font-size: 10px;">cassandra-资料篇</a> <a href="/tags/cassandra-问题篇/" style="font-size: 10px;">cassandra-问题篇</a> <a href="/tags/clickhouse-学习篇/" style="font-size: 10px;">clickhouse-学习篇</a> <a href="/tags/clickhouse-资料篇/" style="font-size: 10px;">clickhouse-资料篇</a> <a href="/tags/druid-学习篇/" style="font-size: 10px;">druid-学习篇</a> <a href="/tags/elasticsearch-学习篇/" style="font-size: 10px;">elasticsearch-学习篇</a> <a href="/tags/elasticsearch-资料篇/" style="font-size: 10px;">elasticsearch-资料篇</a> <a href="/tags/flink-学习篇/" style="font-size: 10px;">flink-学习篇</a> <a href="/tags/flink-资料篇/" style="font-size: 10px;">flink-资料篇</a> <a href="/tags/flink-问题篇/" style="font-size: 10px;">flink-问题篇</a> <a href="/tags/git-常用篇/" style="font-size: 10px;">git-常用篇</a> <a href="/tags/go-常用篇/" style="font-size: 10px;">go-常用篇</a> <a href="/tags/grafana-常用篇/" style="font-size: 10px;">grafana-常用篇</a> <a href="/tags/grafana-资料篇/" style="font-size: 10px;">grafana-资料篇</a> <a href="/tags/hadoop-常用篇/" style="font-size: 10px;">hadoop-常用篇</a> <a href="/tags/hadoop-问题篇/" style="font-size: 10px;">hadoop-问题篇</a> <a href="/tags/haproxy-常用篇/" style="font-size: 10px;">haproxy-常用篇</a> <a href="/tags/haproxy-资料篇/" style="font-size: 10px;">haproxy-资料篇</a> <a href="/tags/hbase-学习篇/" style="font-size: 10px;">hbase-学习篇</a> <a href="/tags/hbase-资料篇/" style="font-size: 10px;">hbase-资料篇</a> <a href="/tags/hexo-常用篇/" style="font-size: 10px;">hexo-常用篇</a> <a href="/tags/hive-问题篇/" style="font-size: 10px;">hive-问题篇</a> <a href="/tags/httpd文件服务集成LDAP/" style="font-size: 10px;">httpd文件服务集成LDAP</a> <a href="/tags/idea-使用篇/" style="font-size: 10px;">idea-使用篇</a> <a href="/tags/java-设计模式/" style="font-size: 10px;">java-设计模式</a> <a href="/tags/k8s-学习篇/" style="font-size: 10px;">k8s-学习篇</a> <a href="/tags/k8s-实战篇/" style="font-size: 10px;">k8s-实战篇</a> <a href="/tags/k8s-问题篇/" style="font-size: 10px;">k8s-问题篇</a> <a href="/tags/kafka-常用篇/" style="font-size: 10px;">kafka-常用篇</a> <a href="/tags/kafka-资料篇/" style="font-size: 10px;">kafka-资料篇</a> <a href="/tags/kafka-问题篇/" style="font-size: 10px;">kafka-问题篇</a> <a href="/tags/kudu-学习篇/" style="font-size: 10px;">kudu-学习篇</a> <a href="/tags/kudu-资料篇/" style="font-size: 10px;">kudu-资料篇</a> <a href="/tags/kylin-学习篇/" style="font-size: 10px;">kylin-学习篇</a> <a href="/tags/kylin-资料篇/" style="font-size: 10px;">kylin-资料篇</a> <a href="/tags/kylin-问题篇/" style="font-size: 10px;">kylin-问题篇</a> <a href="/tags/linux-常用篇/" style="font-size: 10px;">linux-常用篇</a> <a href="/tags/linux-问题篇/" style="font-size: 10px;">linux-问题篇</a> <a href="/tags/macOS-使用篇/" style="font-size: 10px;">macOS-使用篇</a> <a href="/tags/markDown-使用/" style="font-size: 10px;">markDown-使用</a> <a href="/tags/maven-常用篇/" style="font-size: 10px;">maven-常用篇</a> <a href="/tags/maven-问题篇/" style="font-size: 10px;">maven-问题篇</a> <a href="/tags/mysql-常用篇/" style="font-size: 10px;">mysql-常用篇</a> <a href="/tags/mysql-问题篇/" style="font-size: 10px;">mysql-问题篇</a> <a href="/tags/promethus-学习篇/" style="font-size: 10px;">promethus-学习篇</a> <a href="/tags/promethus-常用篇/" style="font-size: 10px;">promethus-常用篇</a> <a href="/tags/promethus-资料篇/" style="font-size: 10px;">promethus-资料篇</a> <a href="/tags/promethus-问题篇/" style="font-size: 10px;">promethus-问题篇</a> <a href="/tags/pulsar-学习篇/" style="font-size: 10px;">pulsar-学习篇</a> <a href="/tags/python-学习篇/" style="font-size: 10px;">python-学习篇</a> <a href="/tags/python-常用篇/" style="font-size: 10px;">python-常用篇</a> <a href="/tags/python-资料篇/" style="font-size: 10px;">python-资料篇</a> <a href="/tags/scala-学习篇/" style="font-size: 10px;">scala-学习篇</a> <a href="/tags/scala-资料篇/" style="font-size: 10px;">scala-资料篇</a> <a href="/tags/shell-常用篇/" style="font-size: 10px;">shell-常用篇</a> <a href="/tags/shell-案例篇/" style="font-size: 10px;">shell-案例篇</a> <a href="/tags/spark-学习篇/" style="font-size: 10px;">spark-学习篇</a> <a href="/tags/spark-调优篇/" style="font-size: 10px;">spark-调优篇</a> <a href="/tags/spark-问题篇/" style="font-size: 10px;">spark-问题篇</a> <a href="/tags/split/" style="font-size: 10px;">split</a> <a href="/tags/sql-常用篇/" style="font-size: 10px;">sql-常用篇</a> <a href="/tags/superset-常用篇/" style="font-size: 10px;">superset-常用篇</a> <a href="/tags/superset-资料篇/" style="font-size: 10px;">superset-资料篇</a> <a href="/tags/zeppelin-常用篇/" style="font-size: 10px;">zeppelin-常用篇</a> <a href="/tags/zeppelin-问题篇/" style="font-size: 10px;">zeppelin-问题篇</a> <a href="/tags/代码库-表达式scala校验/" style="font-size: 10px;">代码库-表达式scala校验</a> <a href="/tags/代码库-邮件发送/" style="font-size: 10px;">代码库-邮件发送</a> <a href="/tags/广告-学习篇/" style="font-size: 10px;">广告-学习篇</a> <a href="/tags/心灵笔录/" style="font-size: 10px;">心灵笔录</a> <a href="/tags/技术文章/" style="font-size: 10px;">技术文章</a> <a href="/tags/指导思想/" style="font-size: 10px;">指导思想</a> <a href="/tags/职业知识图谱/" style="font-size: 10px;">职业知识图谱</a> <a href="/tags/详细文档设计规范/" style="font-size: 10px;">详细文档设计规范</a> <a href="/tags/课程学习/" style="font-size: 10px;">课程学习</a> <a href="/tags/面试资料/" style="font-size: 10px;">面试资料</a>
     </div>
@@ -1838,7 +1906,7 @@
             <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -1854,26 +1922,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-10T05:53:26.000Z">2019-12-10</time></div>
                     <a href="/2019/12/10/httpd文件服务集成LDAP/" class="title has-link-black-ter is-size-6 has-text-weight-normal">httpd文件服务集成LDAP</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/LDAP/">LDAP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/12/10/Hz/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-10T05:51:51.833Z">2019-12-10</time></div>
-                    <a href="/2019/12/10/Hz/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/ldap/">ldap</a>
                     </p>
                 </div>
             </div>
@@ -1936,6 +1985,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2019/10/15/cassandra-案例篇/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="cassandra-案例篇">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-15T07:40:19.000Z">2019-10-15</time></div>
+                    <a href="/2019/10/15/cassandra-案例篇/" class="title has-link-black-ter is-size-6 has-text-weight-normal">cassandra-案例篇</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/cassandra/">cassandra</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
         
@@ -1943,17 +2011,17 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
                 <span class="level-start">
-                    <span class="level-item">December 2019</span>
+                    <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1961,7 +2029,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/11/">
                 <span class="level-start">
-                    <span class="level-item">November 2019</span>
+                    <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1972,7 +2040,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/10/">
                 <span class="level-start">
-                    <span class="level-item">October 2019</span>
+                    <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">24</span>
@@ -1983,7 +2051,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/09/">
                 <span class="level-start">
-                    <span class="level-item">September 2019</span>
+                    <span class="level-item">九月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">49</span>
@@ -1994,7 +2062,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/08/">
                 <span class="level-start">
-                    <span class="level-item">August 2019</span>
+                    <span class="level-item">八月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -2005,7 +2073,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">
                 <span class="level-start">
-                    <span class="level-item">July 2019</span>
+                    <span class="level-item">七月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">9</span>
@@ -2016,7 +2084,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/05/">
                 <span class="level-start">
-                    <span class="level-item">May 2019</span>
+                    <span class="level-item">五月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -2027,7 +2095,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
                 <span class="level-start">
-                    <span class="level-item">April 2019</span>
+                    <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">9</span>
@@ -2044,7 +2112,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -2655,7 +2723,7 @@
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -2671,26 +2739,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-10T05:53:26.000Z">2019-12-10</time></div>
                     <a href="/2019/12/10/httpd文件服务集成LDAP/" class="title has-link-black-ter is-size-6 has-text-weight-normal">httpd文件服务集成LDAP</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/LDAP/">LDAP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/12/10/Hz/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-10T05:51:51.833Z">2019-12-10</time></div>
-                    <a href="/2019/12/10/Hz/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/ldap/">ldap</a>
                     </p>
                 </div>
             </div>
@@ -2753,6 +2802,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2019/10/15/cassandra-案例篇/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="cassandra-案例篇">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-15T07:40:19.000Z">2019-10-15</time></div>
+                    <a href="/2019/10/15/cassandra-案例篇/" class="title has-link-black-ter is-size-6 has-text-weight-normal">cassandra-案例篇</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/cassandra/">cassandra</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
     
@@ -2760,17 +2828,17 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
                 <span class="level-start">
-                    <span class="level-item">December 2019</span>
+                    <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -2778,7 +2846,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/11/">
                 <span class="level-start">
-                    <span class="level-item">November 2019</span>
+                    <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -2789,7 +2857,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/10/">
                 <span class="level-start">
-                    <span class="level-item">October 2019</span>
+                    <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">24</span>
@@ -2800,7 +2868,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/09/">
                 <span class="level-start">
-                    <span class="level-item">September 2019</span>
+                    <span class="level-item">九月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">49</span>
@@ -2811,7 +2879,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/08/">
                 <span class="level-start">
-                    <span class="level-item">August 2019</span>
+                    <span class="level-item">八月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -2822,7 +2890,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">
                 <span class="level-start">
-                    <span class="level-item">July 2019</span>
+                    <span class="level-item">七月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">9</span>
@@ -2833,7 +2901,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/05/">
                 <span class="level-start">
-                    <span class="level-item">May 2019</span>
+                    <span class="level-item">五月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -2844,7 +2912,7 @@
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
                 <span class="level-start">
-                    <span class="level-item">April 2019</span>
+                    <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">9</span>
@@ -2861,7 +2929,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -3464,7 +3532,7 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
+    <!-- <footer class="footer">
     <div class="container">
         <div class="level">
             <div class="level-start has-text-centered-mobile">
@@ -3514,9 +3582,23 @@
         </div>
     </div>
 </footer>
+ -->
+<footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Yue<br>
+               <!-- 首先引入统计用的js，然后编写相应的统计代码 -->
+               <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+               访问量<span id="busuanzi_value_site_pv"></span>次  <i class="fa fa-user-md"></i>  访客数<span id="busuanzi_value_site_uv"></span>人
+               <!-- 注释掉Powered by，Theme by的显示。-->
+               <!-- Powered by <a href="http://blog.kimzing.com/" target="_blank">Kim</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a> -->
+        </div>
+    </div>
+</footer>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh-Hans");</script>
+<script>moment.locale("zh-CN");</script>
 
 <script>
 var IcarusThemeSettings = {
@@ -3588,7 +3670,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
     
     
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -3612,7 +3694,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -3624,11 +3706,11 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
             },
             CONTENT_URL: '/content.json',
         };
