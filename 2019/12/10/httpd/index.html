@@ -4,8 +4,23 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="httpd文件服务集成LDAP, xianchang.yue,github">
-    <meta name="description" content="httpd文件服务集成LDAP | 蜗牛笔记">
+    <meta name="keywords" content="httpd, xianchang.yue,github">
+    <meta name="description" content="httpd 服务简介
+Apache http 服务器2.4 文档
+
+
+download
+
+
+2.httpd 作为文件服务的使用
+安装使用
+
+#安装
+sudo yum install httpd
+sudo su
+
+#测试配置是否正常
+http">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +28,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>httpd文件服务集成LDAP | 蜗牛笔记</title>
+    <title>httpd | 蜗牛笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -388,13 +403,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        httpd文件服务集成LDAP
+                        httpd
                     </div>
                 </div>
             </div>
@@ -512,8 +527,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/httpd文件服务集成LDAP/">
-                                <span class="chip bg-color">httpd文件服务集成LDAP</span>
+                            <a href="/tags/httpd/">
+                                <span class="chip bg-color">httpd</span>
                             </a>
                         
                     </div>
@@ -524,8 +539,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/ldap/" class="post-category">
-                                ldap
+                            <a href="/categories/httpd/" class="post-category">
+                                httpd
                             </a>
                         
                     </div>
@@ -546,7 +561,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    209
                 </div>
                 
 
@@ -569,7 +584,91 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h4 id="httpd-服务简介"><a href="#httpd-服务简介" class="headerlink" title="httpd 服务简介"></a>httpd 服务简介</h4><blockquote>
+<p><a href="https://httpd.apache.org/docs/2.4/" target="_blank" rel="noopener">Apache http 服务器2.4 文档</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://httpd.apache.org/download.cgi" target="_blank" rel="noopener">download</a></p>
+</blockquote>
+<hr>
+<h4 id="2-httpd-作为文件服务的使用"><a href="#2-httpd-作为文件服务的使用" class="headerlink" title="2.httpd 作为文件服务的使用"></a>2.httpd 作为文件服务的使用</h4><blockquote>
+<p>安装使用</p>
+</blockquote>
+<pre><code>#安装
+sudo yum install httpd
+sudo su
+
+#测试配置是否正常
+httpd -t
+
+#start
+httpd -k start
+
+#stop
+httpd -k stop</code></pre><blockquote>
+<p>服务目录    /etc/httpd</p>
+</blockquote>
+<blockquote>
+<p>主配置文件    /etc/httpd/conf/httpd.conf</p>
+</blockquote>
+<blockquote>
+<p>网站数据目录    /var/www/html</p>
+</blockquote>
+<blockquote>
+<p>访问日志    /var/log/httpd/access_log</p>
+</blockquote>
+<blockquote>
+<p>错误日志    /var/log/httpd/error_log</p>
+</blockquote>
+<p><a href=".httpd.png">配置结构</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>对服务机地址目录启动成文件访问服务</p>
+</blockquote>
+<hr>
+<h4 id="3-Httpd-集成ldap"><a href="#3-Httpd-集成ldap" class="headerlink" title="3.Httpd 集成ldap"></a>3.Httpd 集成ldap</h4><blockquote>
+<p>集成前需安装 mod_ldap</p>
+</blockquote>
+<pre><code>sudo su
+yum -y install mod_ldap
+</code></pre><blockquote>
+<p>vim conf.d/auth_ldap.conf</p>
+</blockquote>
+<pre><code>&lt;Directory /data/dataplatform/zepplin/http_server/file/&gt;
+# AuthName &quot;LDAP Authentication&quot;
+AuthName &quot;zeppelin_file&quot;
+AuthType Basic
+AuthBasicProvider ldap
+AuthLDAPURL &quot;ldap://*****:389/ou=acs,dc=****,dc=com?uid?sub?(objectClass=*)&quot;
+AuthLDAPBindDN &quot;uid=gateway,ou=open,dc=****,dc=com&quot;
+AuthLDAPBindPassword &quot;********&quot;
+Require valid-user
+&lt;/Directory&gt;</code></pre><blockquote>
+<p>测试配置是否异常 httpd -t</p>
+</blockquote>
+<blockquote>
+<p>重启 httpd -k restart</p>
+</blockquote>
+<h4 id><a href="#" class="headerlink" title></a></h4>
             </div>
             <hr/>
 
@@ -594,7 +693,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://23yue23.github.io/2019/12/10/httpd文件服务集成LDAP/">https://23yue23.github.io/2019/12/10/httpd文件服务集成LDAP/</a>
+                    <a href="https://23yue23.github.io/2019/12/10/httpd/">https://23yue23.github.io/2019/12/10/httpd/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -632,8 +731,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/httpd文件服务集成LDAP/">
-                                    <span class="chip bg-color">httpd文件服务集成LDAP</span>
+                                <a href="/tags/httpd/">
+                                    <span class="chip bg-color">httpd</span>
                                 </a>
                             
                         </div>
@@ -804,19 +903,34 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/12/10/httpd文件服务集成LDAP/">
+                <a href="/2019/12/10/httpd/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="httpd文件服务集成LDAP">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="httpd">
                         
-                        <span class="card-title">httpd文件服务集成LDAP</span>
+                        <span class="card-title">httpd</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            httpd 服务简介
+Apache http 服务器2.4 文档
+
+
+download
+
+
+2.httpd 作为文件服务的使用
+安装使用
+
+#安装
+sudo yum install httpd
+sudo su
+
+#测试配置是否正常
+http
                         
                     </div>
                     <div class="publish-info">
@@ -827,8 +941,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ldap/" class="post-category">
-                                    ldap
+                            <a href="/categories/httpd/" class="post-category">
+                                    httpd
                                 </a>
                             
                             
@@ -839,8 +953,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/httpd文件服务集成LDAP/">
-                        <span class="chip bg-color">httpd文件服务集成LDAP</span>
+                    <a href="/tags/httpd/">
+                        <span class="chip bg-color">httpd</span>
                     </a>
                     
                 </div>
@@ -1040,7 +1154,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44.7k</span>&nbsp;字
+                class="white-color">44.9k</span>&nbsp;字
             
             
             

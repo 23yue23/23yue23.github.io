@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-12-10T06:32:06.452Z</updated>
+  <updated>2019-12-10T10:10:56.321Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -17,20 +17,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>httpd文件服务集成LDAP</title>
-    <link href="https://23yue23.github.io/2019/12/10/httpd%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E9%9B%86%E6%88%90LDAP/"/>
-    <id>https://23yue23.github.io/2019/12/10/httpd文件服务集成LDAP/</id>
+    <title>httpd</title>
+    <link href="https://23yue23.github.io/2019/12/10/httpd/"/>
+    <id>https://23yue23.github.io/2019/12/10/httpd/</id>
     <published>2019-12-10T05:53:26.000Z</published>
-    <updated>2019-12-10T06:32:06.452Z</updated>
+    <updated>2019-12-10T10:10:56.321Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="httpd-服务简介"><a href="#httpd-服务简介" class="headerlink" title="httpd 服务简介"></a>httpd 服务简介</h4><blockquote><p><a href="https://httpd.apache.org/docs/2.4/" target="_blank" rel="noopener">Apache http 服务器2.4 文档</a></p></blockquote><blockquote><p><a href="https://httpd.apache.org/download.cgi" target="_blank" rel="noopener">download</a></p></blockquote><hr><h4 id="2-httpd-作为文件服务的使用"><a href="#2-httpd-作为文件服务的使用" class="headerlink" title="2.httpd 作为文件服务的使用"></a>2.httpd 作为文件服务的使用</h4><blockquote><p>安装使用</p></blockquote><pre><code>#安装sudo yum install httpdsudo su#测试配置是否正常httpd -t#starthttpd -k start#stophttpd -k stop</code></pre><blockquote><p>服务目录    /etc/httpd</p></blockquote><blockquote><p>主配置文件    /etc/httpd/conf/httpd.conf</p></blockquote><blockquote><p>网站数据目录    /var/www/html</p></blockquote><blockquote><p>访问日志    /var/log/httpd/access_log</p></blockquote><blockquote><p>错误日志    /var/log/httpd/error_log</p></blockquote><p><a href=".httpd.png">配置结构</a></p><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table><blockquote><p>对服务机地址目录启动成文件访问服务</p></blockquote><hr><h4 id="3-Httpd-集成ldap"><a href="#3-Httpd-集成ldap" class="headerlink" title="3.Httpd 集成ldap"></a>3.Httpd 集成ldap</h4><blockquote><p>集成前需安装 mod_ldap</p></blockquote><pre><code>sudo suyum -y install mod_ldap</code></pre><blockquote><p>vim conf.d/auth_ldap.conf</p></blockquote><pre><code>&lt;Directory /data/dataplatform/zepplin/http_server/file/&gt;# AuthName &quot;LDAP Authentication&quot;AuthName &quot;zeppelin_file&quot;AuthType BasicAuthBasicProvider ldapAuthLDAPURL &quot;ldap://*****:389/ou=acs,dc=****,dc=com?uid?sub?(objectClass=*)&quot;AuthLDAPBindDN &quot;uid=gateway,ou=open,dc=****,dc=com&quot;AuthLDAPBindPassword &quot;********&quot;Require valid-user&lt;/Directory&gt;</code></pre><blockquote><p>测试配置是否异常 httpd -t</p></blockquote><blockquote><p>重启 httpd -k restart</p></blockquote><h4 id><a href="#" class="headerlink" title></a></h4>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h4 id=&quot;httpd-服务简介&quot;&gt;&lt;a href=&quot;#httpd-服务简介&quot; class=&quot;headerlink&quot; title=&quot;httpd 服务简介&quot;&gt;&lt;/a&gt;httpd 服务简介&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://httpd.ap
+      
+    
     </summary>
     
-      <category term="ldap" scheme="https://23yue23.github.io/categories/ldap/"/>
+      <category term="httpd" scheme="https://23yue23.github.io/categories/httpd/"/>
     
     
-      <category term="httpd文件服务集成LDAP" scheme="https://23yue23.github.io/tags/httpd%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E9%9B%86%E6%88%90LDAP/"/>
+      <category term="httpd" scheme="https://23yue23.github.io/tags/httpd/"/>
     
   </entry>
   
@@ -377,7 +385,7 @@
     <link href="https://23yue23.github.io/2019/10/09/ambari-%E8%B5%84%E6%96%99%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/10/09/ambari-资料篇/</id>
     <published>2019-10-09T09:04:15.000Z</published>
-    <updated>2019-10-12T01:51:42.578Z</updated>
+    <updated>2019-12-10T10:21:26.389Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Ambari参考"><a href="#Ambari参考" class="headerlink" title="Ambari参考"></a>Ambari参考</h4><p>Ambari官网: <a href="http://ambari.apache.org/" target="_blank" rel="noopener">http://ambari.apache.org/</a></p><p>Ambari-Github: <a href="https://github.com/apache/ambari/tree/branch-2.7" target="_blank" rel="noopener">https://github.com/apache/ambari/tree/branch-2.7</a></p><p>Ambari参考: <a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/index.html</a></p><p>Ambari官网-2.7.0: <a href="https://docs.hortonworks.com/HDPDocuments/Ambari/Ambari-2.7.0.0/index.html" target="_blank" rel="noopener">https://docs.hortonworks.com/HDPDocuments/Ambari/Ambari-2.7.0.0/index.html</a></p><p>Apache-Ambari-2.6.2 <a href="http://www.apache.org/dyn/closer.cgi/ambari/ambari-2.6.2" target="_blank" rel="noopener">http://www.apache.org/dyn/closer.cgi/ambari/ambari-2.6.2</a></p><p>Apache-Ambari-2.6.2: <a href="https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.6.2" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.6.2</a></p><p>Apache-Ambari-guide: <a href="https://cwiki.apache.org/confluence/display/AMBARI/Ambari" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/AMBARI/Ambari</a></p><p>Apache-Ambari-2.7.0: <a href="https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.7.0" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.7.0</a></p><p>Ambari添加Stack参考：<a href="http://www.itkeyword.com/doc/617736624192567x360" target="_blank" rel="noopener">http://www.itkeyword.com/doc/617736624192567x360</a></p><p>Ambari扩展Stack参考：<a href="https://my.oschina.net/u/2277929/blog/666180?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">https://my.oschina.net/u/2277929/blog/666180?tdsourcetag=s_pctim_aiomsg</a></p><hr><h4 id="Ambari安装参考"><a href="#Ambari安装参考" class="headerlink" title="Ambari安装参考"></a>Ambari安装参考</h4><blockquote><p>Ambari2.7.0安装: <a href="https://blog.csdn.net/zsj777/article/details/81052859" target="_blank" rel="noopener">https://blog.csdn.net/zsj777/article/details/81052859</a></p></blockquote><h4 id="Ambari学习链接"><a href="#Ambari学习链接" class="headerlink" title="Ambari学习链接"></a>Ambari学习链接</h4><p>Ambari参考教程：<a href="https://www.aliyun.com/jiaocheng/topic_25417_1.html" target="_blank" rel="noopener">https://www.aliyun.com/jiaocheng/topic_25417_1.html</a></p><p>Ambari操作指南：<a href="https://blog.csdn.net/devalone/article/details/80781652" target="_blank" rel="noopener">https://blog.csdn.net/devalone/article/details/80781652</a></p><p>Ambari操作指南：<a href="https://blog.csdn.net/devalone/article/details/80800262" target="_blank" rel="noopener">https://blog.csdn.net/devalone/article/details/80800262</a></p><p>Ambari基础参考：<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html</a></p><p>Ambari基础应用：<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari/index.html</a></p><p>Ambari-Metrics：<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-ambari-metrics/</a></p><p>Ambari-Alerts：<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari3/" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-bigdata-ambari3/</a></p><p>Ambari-RoadMap：<a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=30755705" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=30755705</a></p><p>Hortonworks链接：<a href="https://hortonworks.com/apache/ambari/" target="_blank" rel="noopener">https://hortonworks.com/apache/ambari/</a></p>]]></content>
     
