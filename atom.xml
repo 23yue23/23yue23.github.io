@@ -127,20 +127,16 @@
     <link href="https://23yue23.github.io/2019/10/24/python-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/10/24/python-常用篇/</id>
     <published>2019-10-24T10:26:44.000Z</published>
-    <updated>2019-11-20T02:38:41.294Z</updated>
+    <updated>2019-12-11T01:59:05.491Z</updated>
     
-    <content type="html"><![CDATA[<p>####pyenv 的使用</p><pre><code> #查看python 版本信息   pyenv versions #python 切换版本   pyenv local 版本号</code></pre><p><a href="https://github.com/eteplus/blog/issues/4" target="_blank" rel="noopener">Mac下pyenv与pyenv-virtualenv的安装和使用</a></p>]]></content>
+    <content type="html"><![CDATA[<h4 id="1-pyenv-的使用"><a href="#1-pyenv-的使用" class="headerlink" title="1.pyenv 的使用"></a>1.pyenv 的使用</h4><pre><code> #查看python 版本信息   pyenv versions #python 切换版本   pyenv local 版本号</code></pre><blockquote><p><a href="https://github.com/eteplus/blog/issues/4" target="_blank" rel="noopener">Mac下pyenv与pyenv-virtualenv的安装和使用</a></p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;####pyenv 的使用&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; #查看python 版本信息
-   pyenv versions
-
- #python 切换版本
-   pyenv local 版本号&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://github.c
+        &lt;h4 id=&quot;1-pyenv-的使用&quot;&gt;&lt;a href=&quot;#1-pyenv-的使用&quot; class=&quot;headerlink&quot; title=&quot;1.pyenv 的使用&quot;&gt;&lt;/a&gt;1.pyenv 的使用&lt;/h4&gt;&lt;pre&gt;&lt;code&gt; #查看python 版本信息
+   pyenv v
       
     
     </summary>
