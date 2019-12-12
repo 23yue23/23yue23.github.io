@@ -555,14 +555,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 				
@@ -633,8 +633,7 @@ minikube stop
 #删除本地minikube 集群
 minikube delete
 </code></pre><hr>
-<p>####5. minikube 应用和服务</p>
-<pre><code>********************# 应用和服务 #*************
+<h4 id="5-kubectl应用和服务"><a href="#5-kubectl应用和服务" class="headerlink" title="5.kubectl应用和服务"></a>5.kubectl应用和服务</h4><pre><code>********************# 应用和服务 #*************
 #启动minikube
 minikube start
 
@@ -744,12 +743,35 @@ minikube logs --problems
 #查看所有Kubernetes Pod的部署状态
 kubectl get po -A
 </code></pre><hr>
-<p>####10. 查看docker镜像</p>
-<pre><code>登录minikube 控制台
-minikube ssh 
-docker images</code></pre><hr>
-<p>####11. 常用故障排查以及修改命令</p>
-<blockquote>
+<h4 id="10-docker-常用操作"><a href="#10-docker-常用操作" class="headerlink" title="10.docker 常用操作"></a>10.docker 常用操作</h4><h5 id="10-1-镜像的操作"><a href="#10-1-镜像的操作" class="headerlink" title="10.1 镜像的操作"></a>10.1 镜像的操作</h5><pre><code>列出所有的镜像: docker images 
+停止运行：docker stop iamgesId
+删除单个镜像：docker rmi imagesId
+
+清理所有（慎用）：docker system prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+ 清理镜像：docker image prune
+ 清理容器：docker container prune
+ 删除所有停止的镜像docker image prune -f -a
+ 删除所有停止的容器：docker container prune -f
+
+复制文件：
+docker cp mycontainer:/opt/file.txt /opt/local/
+docker cp /opt/local/file.txt mycontainer:/opt/</code></pre><hr>
+<h4 id="11-docker-常见问题及解决方案"><a href="#11-docker-常见问题及解决方案" class="headerlink" title="11.docker 常见问题及解决方案"></a>11.docker 常见问题及解决方案</h4><h5 id="11-1-docker日志太多导致磁盘占满"><a href="#11-1-docker日志太多导致磁盘占满" class="headerlink" title="11.1 docker日志太多导致磁盘占满"></a>11.1 docker日志太多导致磁盘占满</h5><blockquote>
+<p>在启动时遇到：No space left on device 官方解决方案：<a href="https://success.docker.com/article/no-space-left-on-device-error" target="_blank" rel="noopener">地址</a></p>
+</blockquote>
+<pre><code>## 1.Sort the /var/lib/docker/containers
+du -d1 -h /var/lib/docker/containers | sort -h
+
+## 2. 选择要清理的容器进行清理 
+cat /dev/null &gt;     /var/lib/docker/containers/********
+
+## 3.限制日志文件的大小：启动容器时，可以通过参数设置日志文件的大小、日志文件的格式
+ docker run -it --log-opt max-size=10m --log-opt max-file=3 alpine ash</code></pre><h4 id="12-kubectl常用故障排查以及修改命令"><a href="#12-kubectl常用故障排查以及修改命令" class="headerlink" title="12.kubectl常用故障排查以及修改命令"></a>12.kubectl常用故障排查以及修改命令</h4><blockquote>
 <p>scale </p>
 </blockquote>
 <pre><code>scale命令进行横向扩展，将原本为1的副本，提高到3
@@ -804,8 +826,7 @@ kubectl describe deployment mysql</code></pre><blockquote>
 <p>kubectl 查看日志</p>
 </blockquote>
 <pre><code>kubectl logs podsName
-</code></pre><p>####12. 学习案例2</p>
-<pre><code>[root@node1 wordpress]# cat wordpress-db.yaml
+</code></pre><h4 id="13-学习案例2"><a href="#13-学习案例2" class="headerlink" title="13.学习案例2"></a>13.学习案例2</h4><pre><code>[root@node1 wordpress]# cat wordpress-db.yaml
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
@@ -1443,7 +1464,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.1k</span>&nbsp;字
+                class="white-color">45.3k</span>&nbsp;字
             
             
             
