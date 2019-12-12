@@ -6,12 +6,6 @@
     <meta charset="utf-8">
     <meta name="keywords" content="httpd, xianchang.yue,github">
     <meta name="description" content="httpd 服务简介
-Apache http 服务器2.4 文档
-
-
-download
-
-
 2.httpd 作为文件服务的使用
 安装使用
 
@@ -20,7 +14,13 @@ sudo yum install httpd
 sudo su
 
 #测试配置是否正常
-http">
+httpd -t
+
+#start
+httpd -k start
+
+#stop
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -561,7 +561,7 @@ http">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    215
+                    225
                 </div>
                 
 
@@ -584,13 +584,7 @@ http">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="httpd-服务简介"><a href="#httpd-服务简介" class="headerlink" title="httpd 服务简介"></a>httpd 服务简介</h4><blockquote>
-<p><a href="https://httpd.apache.org/docs/2.4/" target="_blank" rel="noopener">Apache http 服务器2.4 文档</a></p>
-</blockquote>
-<blockquote>
-<p><a href="https://httpd.apache.org/download.cgi" target="_blank" rel="noopener">download</a></p>
-</blockquote>
-<hr>
+                <h4 id="httpd-服务简介"><a href="#httpd-服务简介" class="headerlink" title="httpd 服务简介"></a>httpd 服务简介</h4><hr>
 <h4 id="2-httpd-作为文件服务的使用"><a href="#2-httpd-作为文件服务的使用" class="headerlink" title="2.httpd 作为文件服务的使用"></a>2.httpd 作为文件服务的使用</h4><blockquote>
 <p>安装使用</p>
 </blockquote>
@@ -668,7 +662,16 @@ Require valid-user
 <blockquote>
 <p>重启 httpd -k restart</p>
 </blockquote>
-<h4 id><a href="#" class="headerlink" title></a></h4>
+<h4 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h4><blockquote>
+<p><a href="https://www.bookstack.cn/read/linuxprobe/5bb5cdfbbed75940.md" target="_blank" rel="noopener">配置参考地址</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://httpd.apache.org/docs/2.4/" target="_blank" rel="noopener">Apache http 服务器2.4 文档</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://httpd.apache.org/download.cgi" target="_blank" rel="noopener">download</a></p>
+</blockquote>
+
             </div>
             <hr/>
 
@@ -1144,7 +1147,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45k</span>&nbsp;字
+                class="white-color">45.1k</span>&nbsp;字
             
             
             
