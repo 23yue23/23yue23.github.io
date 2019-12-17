@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-12-17T02:22:32.963Z</updated>
+  <updated>2019-12-17T02:25:42.168Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -21,16 +21,15 @@
     <link href="https://23yue23.github.io/2019/12/17/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
     <id>https://23yue23.github.io/2019/12/17/博客编写思路/</id>
     <published>2019-12-17T01:13:40.000Z</published>
-    <updated>2019-12-17T02:22:32.963Z</updated>
+    <updated>2019-12-17T02:25:42.168Z</updated>
     
-    <content type="html"><![CDATA[<p>hex</p><h4 id="博客类型分类"><a href="#博客类型分类" class="headerlink" title="博客类型分类"></a>博客类型分类</h4><h5 id="常用篇"><a href="#常用篇" class="headerlink" title="常用篇"></a>常用篇</h5><blockquote><p>主要介绍本知识点和框架常用到的命令和技巧，以及需要注意的事项。</p></blockquote><h5 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h5><blockquote><p>主要介绍本知识点和框架的3W， who 是什么，where 应用场景， what 怎么用比较好。</p></blockquote><h5 id="问题篇"><a href="#问题篇" class="headerlink" title="问题篇"></a>问题篇</h5><blockquote><p>在使用本知识点或框架中遇到的问题。</p></blockquote><h5 id="资料篇"><a href="#资料篇" class="headerlink" title="资料篇"></a>资料篇</h5><blockquote><p>扩展本知识点或架构的其他比较好的学习资料。</p></blockquote><h5 id="优化篇"><a href="#优化篇" class="headerlink" title="优化篇"></a>优化篇</h5><blockquote><p>主要编写的是当前组件或架构可优化点。</p></blockquote><h5 id="实战篇"><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h5><blockquote><p>主要演示在知识点实际搭建过程中的操作。</p></blockquote><h5 id="other"><a href="#other" class="headerlink" title="other"></a>other</h5><blockquote><p>主要是小的知识点分类，比如java-JVM篇，java-cache篇，java-多线程篇</p></blockquote><h4 id="博客思想"><a href="#博客思想" class="headerlink" title="博客思想"></a>博客思想</h4><blockquote><p>本站博客，是以练促学，以学促用的理念来进行编写，当然博客中也会qi其他大牛比较好的内容，</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h4 id="博客类型分类"><a href="#博客类型分类" class="headerlink" title="博客类型分类"></a>博客类型分类</h4><h5 id="常用篇"><a href="#常用篇" class="headerlink" title="常用篇"></a>常用篇</h5><blockquote><p>主要介绍本知识点和框架常用到的命令和技巧，以及需要注意的事项。</p></blockquote><h5 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h5><blockquote><p>主要介绍本知识点和框架的3W， who 是什么，where 应用场景， what 怎么用比较好。</p></blockquote><h5 id="问题篇"><a href="#问题篇" class="headerlink" title="问题篇"></a>问题篇</h5><blockquote><p>在使用本知识点或框架中遇到的问题。</p></blockquote><h5 id="资料篇"><a href="#资料篇" class="headerlink" title="资料篇"></a>资料篇</h5><blockquote><p>扩展本知识点或架构的其他比较好的学习资料。</p></blockquote><h5 id="优化篇"><a href="#优化篇" class="headerlink" title="优化篇"></a>优化篇</h5><blockquote><p>主要编写的是当前组件或架构可优化点。</p></blockquote><h5 id="实战篇"><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h5><blockquote><p>主要演示在知识点实际搭建过程中的操作。</p></blockquote><h5 id="other"><a href="#other" class="headerlink" title="other"></a>other</h5><blockquote><p>主要是小的知识点分类，比如java-JVM篇，java-cache篇，java-多线程篇</p></blockquote><h4 id="博客思想"><a href="#博客思想" class="headerlink" title="博客思想"></a>博客思想</h4><blockquote><p>本站博客，是以练促学，以学促用的理念来进行编写，当然博客中也会qi其他大牛比较好的内容，</p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;hex&lt;/p&gt;
-&lt;h4 id=&quot;博客类型分类&quot;&gt;&lt;a href=&quot;#博客类型分类&quot; class=&quot;headerlink&quot; title=&quot;博客类型分类&quot;&gt;&lt;/a&gt;博客类型分类&lt;/h4&gt;&lt;h5 id=&quot;常用篇&quot;&gt;&lt;a href=&quot;#常用篇&quot; class=&quot;headerlink&quot;
+        &lt;h4 id=&quot;博客类型分类&quot;&gt;&lt;a href=&quot;#博客类型分类&quot; class=&quot;headerlink&quot; title=&quot;博客类型分类&quot;&gt;&lt;/a&gt;博客类型分类&lt;/h4&gt;&lt;h5 id=&quot;常用篇&quot;&gt;&lt;a href=&quot;#常用篇&quot; class=&quot;headerlink&quot; title=&quot;常用篇
       
     
     </summary>
@@ -94,11 +93,11 @@
   </entry>
   
   <entry>
-    <title>httpd</title>
-    <link href="https://23yue23.github.io/2019/12/10/httpd/"/>
-    <id>https://23yue23.github.io/2019/12/10/httpd/</id>
+    <title>httpd-常用篇</title>
+    <link href="https://23yue23.github.io/2019/12/10/httpd-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/12/10/httpd-常用篇/</id>
     <published>2019-12-10T05:53:26.000Z</published>
-    <updated>2019-12-11T02:56:59.782Z</updated>
+    <updated>2019-12-17T02:28:53.766Z</updated>
     
     <content type="html"><![CDATA[<h4 id="httpd-服务简介"><a href="#httpd-服务简介" class="headerlink" title="httpd 服务简介"></a>httpd 服务简介</h4><hr><h4 id="2-httpd-作为文件服务的使用"><a href="#2-httpd-作为文件服务的使用" class="headerlink" title="2.httpd 作为文件服务的使用"></a>2.httpd 作为文件服务的使用</h4><blockquote><p>安装使用</p></blockquote><pre><code>#安装sudo yum install httpdsudo su#测试配置是否正常httpd -t#starthttpd -k start#stophttpd -k stop</code></pre><blockquote><p>服务目录    /etc/httpd</p></blockquote><blockquote><p>主配置文件    /etc/httpd/conf/httpd.conf</p></blockquote><blockquote><p>网站数据目录    /var/www/html</p></blockquote><blockquote><p>访问日志    /var/log/httpd/access_log</p></blockquote><blockquote><p>错误日志    /var/log/httpd/error_log</p></blockquote><p><a href=".httpd.png">配置结构</a></p><table><thead><tr><th>ServerRoot</th><th>服务目录</th></tr></thead><tbody><tr><td>ServerAdmin</td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table><blockquote><p>对服务机地址目录启动成文件访问服务</p></blockquote><hr><h4 id="3-Httpd-集成ldap"><a href="#3-Httpd-集成ldap" class="headerlink" title="3.Httpd 集成ldap"></a>3.Httpd 集成ldap</h4><blockquote><p>集成前需安装 mod_ldap</p></blockquote><pre><code>sudo suyum -y install mod_ldap</code></pre><blockquote><p>vim conf.d/auth_ldap.conf</p></blockquote><pre><code>&lt;Directory /data/dataplatform/zepplin/http_server/file/&gt;# AuthName &quot;LDAP Authentication&quot;AuthName &quot;zeppelin_file&quot;AuthType BasicAuthBasicProvider ldapAuthLDAPURL &quot;ldap://*****:389/ou=acs,dc=****,dc=com?uid?sub?(objectClass=*)&quot;AuthLDAPBindDN &quot;uid=gateway,ou=open,dc=****,dc=com&quot;AuthLDAPBindPassword &quot;********&quot;Require valid-user&lt;/Directory&gt;</code></pre><blockquote><p>测试配置是否异常 httpd -t</p></blockquote><blockquote><p>重启 httpd -k restart</p></blockquote><h4 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h4><blockquote><p><a href="https://www.bookstack.cn/read/linuxprobe/5bb5cdfbbed75940.md" target="_blank" rel="noopener">配置参考地址</a></p></blockquote><blockquote><p><a href="https://httpd.apache.org/docs/2.4/" target="_blank" rel="noopener">Apache http 服务器2.4 文档</a></p></blockquote><blockquote><p><a href="https://httpd.apache.org/download.cgi" target="_blank" rel="noopener">download</a></p></blockquote>]]></content>
     

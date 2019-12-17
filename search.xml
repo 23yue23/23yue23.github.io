@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[博客编写思路]]></title>
     <url>%2F2019%2F12%2F17%2F%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF%2F</url>
-    <content type="text"><![CDATA[hex 博客类型分类常用篇 主要介绍本知识点和框架常用到的命令和技巧，以及需要注意的事项。 学习篇 主要介绍本知识点和框架的3W， who 是什么，where 应用场景， what 怎么用比较好。 问题篇 在使用本知识点或框架中遇到的问题。 资料篇 扩展本知识点或架构的其他比较好的学习资料。 优化篇 主要编写的是当前组件或架构可优化点。 实战篇 主要演示在知识点实际搭建过程中的操作。 other 主要是小的知识点分类，比如java-JVM篇，java-cache篇，java-多线程篇 博客思想 本站博客，是以练促学，以学促用的理念来进行编写，当然博客中也会qi其他大牛比较好的内容，]]></content>
+    <content type="text"><![CDATA[博客类型分类常用篇 主要介绍本知识点和框架常用到的命令和技巧，以及需要注意的事项。 学习篇 主要介绍本知识点和框架的3W， who 是什么，where 应用场景， what 怎么用比较好。 问题篇 在使用本知识点或框架中遇到的问题。 资料篇 扩展本知识点或架构的其他比较好的学习资料。 优化篇 主要编写的是当前组件或架构可优化点。 实战篇 主要演示在知识点实际搭建过程中的操作。 other 主要是小的知识点分类，比如java-JVM篇，java-cache篇，java-多线程篇 博客思想 本站博客，是以练促学，以学促用的理念来进行编写，当然博客中也会qi其他大牛比较好的内容，]]></content>
       <categories>
         <category>博客编写思路</category>
       </categories>
@@ -34,8 +34,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[httpd]]></title>
-    <url>%2F2019%2F12%2F10%2Fhttpd%2F</url>
+    <title><![CDATA[httpd-常用篇]]></title>
+    <url>%2F2019%2F12%2F10%2Fhttpd-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[httpd 服务简介 2.httpd 作为文件服务的使用 安装使用 #安装 sudo yum install httpd sudo su #测试配置是否正常 httpd -t #start httpd -k start #stop httpd -k stop 服务目录 /etc/httpd 主配置文件 /etc/httpd/conf/httpd.conf 网站数据目录 /var/www/html 访问日志 /var/log/httpd/access_log 错误日志 /var/log/httpd/error_log 配置结构 ServerRoot 服务目录 ServerAdmin 对服务机地址目录启动成文件访问服务 3.Httpd 集成ldap 集成前需安装 mod_ldap sudo su yum -y install mod_ldap vim conf.d/auth_ldap.conf &lt;Directory /data/dataplatform/zepplin/http_server/file/&gt; # AuthName &quot;LDAP Authentication&quot; AuthName &quot;zeppelin_file&quot; AuthType Basic AuthBasicProvider ldap AuthLDAPURL &quot;ldap://*****:389/ou=acs,dc=****,dc=com?uid?sub?(objectClass=*)&quot; AuthLDAPBindDN &quot;uid=gateway,ou=open,dc=****,dc=com&quot; AuthLDAPBindPassword &quot;********&quot; Require valid-user &lt;/Directory&gt; 测试配置是否异常 httpd -t 重启 httpd -k restart 相关参考 配置参考地址 Apache http 服务器2.4 文档 download]]></content>
       <categories>
         <category>httpd</category>
