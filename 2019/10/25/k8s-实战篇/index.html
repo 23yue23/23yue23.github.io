@@ -5,16 +5,8 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="k8s-实战篇, xianchang.yue,github">
-    <meta name="description" content="####1. 安装kubectl
-####2. 安装minikube
-
-1.下载virtualbox
-
-
-2.brew cask install minikube
-
-
-3.minikube start –vm-driver=virtualb">
+    <meta name="description" content="1. kubectl 操作1.1 kubectl 配置1.3 kubectl 权限**********************# 权限问题 #*************************
+查看是否有权限：kubectl auth ca">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -578,9 +570,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>####1. 安装kubectl</p>
-<p>####2. 安装minikube</p>
-<blockquote>
+                <h4 id="1-kubectl-操作"><a href="#1-kubectl-操作" class="headerlink" title="1. kubectl 操作"></a>1. kubectl 操作</h4><h5 id="1-1-kubectl-配置"><a href="#1-1-kubectl-配置" class="headerlink" title="1.1 kubectl 配置"></a>1.1 kubectl 配置</h5><h5 id="1-3-kubectl-权限"><a href="#1-3-kubectl-权限" class="headerlink" title="1.3 kubectl 权限"></a>1.3 kubectl 权限</h5><pre><code>**********************# 权限问题 #*************************
+查看是否有权限：kubectl auth can-i &lt;list|create|edit|delete&gt; pods
+</code></pre><h4 id="2-minikube操作"><a href="#2-minikube操作" class="headerlink" title="2. minikube操作"></a>2. minikube操作</h4><h5 id="2-1-minikube-安装"><a href="#2-1-minikube-安装" class="headerlink" title="2.1 minikube 安装"></a>2.1 minikube 安装</h5><blockquote>
 <p>1.下载virtualbox</p>
 </blockquote>
 <blockquote>
@@ -595,12 +587,7 @@
 <blockquote>
 <p>5.kubectl version 查看版本</p>
 </blockquote>
-<hr>
-<p>####3. 重用Docker 守护程序使用本地映像</p>
-<pre><code>eval $(minikube docker-env)
-docker ps</code></pre><hr>
-<p>####4. 学习案例一</p>
-<pre><code>#启动并创建集群
+<h5 id="2-2-minikube-常用操作"><a href="#2-2-minikube-常用操作" class="headerlink" title="2.2 minikube 常用操作"></a>2.2 minikube 常用操作</h5><pre><code>#启动并创建集群
 minikube start
 
 #查看仪表盘
@@ -632,8 +619,7 @@ minikube stop
 
 #删除本地minikube 集群
 minikube delete
-</code></pre><hr>
-<h4 id="5-kubectl应用和服务"><a href="#5-kubectl应用和服务" class="headerlink" title="5.kubectl应用和服务"></a>5.kubectl应用和服务</h4><pre><code>********************# 应用和服务 #*************
+</code></pre><h5 id="2-3-minikube-的应用和服务"><a href="#2-3-minikube-的应用和服务" class="headerlink" title="2.3 minikube 的应用和服务"></a>2.3 minikube 的应用和服务</h5><pre><code>********************# 应用和服务 #*************
 #启动minikube
 minikube start
 
@@ -680,12 +666,7 @@ minikube stop
 #进入minikube 控制台
 minikube ssh
 </code></pre><hr>
-<p>####6. kubectl 权限</p>
-<pre><code>**********************# 权限问题 #*************************
-查看是否有权限：kubectl auth can-i &lt;list|create|edit|delete&gt; pods
-</code></pre><hr>
-<p>####7. 集群相关</p>
-<pre><code>**********************# 集群相关 #**************************
+<h5 id="2-4-minikube-集群相关"><a href="#2-4-minikube-集群相关" class="headerlink" title="2.4 minikube 集群相关"></a>2.4 minikube 集群相关</h5><pre><code>**********************# 集群相关 #**************************
 #获取集群的ip
 minikube ip
 
@@ -711,8 +692,7 @@ minikube ssh &quot;route -n | grep ^0.0.0.0 | awk &#39;{ print \$2 }&#39;&quot;
 minikube ssh
 telnet ip port
 </code></pre><hr>
-<p>####8. minikube 附加组件</p>
-<pre><code>********************************* 附加组件 ********************
+<h5 id="2-5-minikube-附加组件"><a href="#2-5-minikube-附加组件" class="headerlink" title="2.5 minikube 附加组件"></a>2.5 minikube 附加组件</h5><pre><code>********************************* 附加组件 ********************
 
 #查询可添加的组件
 minikube addons list
@@ -725,8 +705,7 @@ minikube addons open &lt;name&gt;
 
 #禁用组件
 minikube addons disable &lt;name&gt;</code></pre><hr>
-<p>####9. minikube 调试</p>
-<pre><code>************************** 启动调试日志 *******************
+<h5 id="2-6-minikube-调试"><a href="#2-6-minikube-调试" class="headerlink" title="2.6 minikube 调试"></a>2.6 minikube 调试</h5><pre><code>************************** 启动调试日志 *******************
 --v=0将输出INFO级别的日志
 --v=1将输出警告级别的日志
 --v=2将输出错误级别的日志
@@ -742,7 +721,12 @@ minikube logs --problems
 
 #查看所有Kubernetes Pod的部署状态
 kubectl get po -A
-</code></pre><hr>
+</code></pre><h5 id="2-7-重用Docker-守护程序使用本地映像"><a href="#2-7-重用Docker-守护程序使用本地映像" class="headerlink" title="2.7 重用Docker 守护程序使用本地映像"></a>2.7 重用Docker 守护程序使用本地映像</h5><pre><code>eval $(minikube docker-env)
+docker ps</code></pre><hr>
+<h4 id="4-学习案例"><a href="#4-学习案例" class="headerlink" title="4.学习案例"></a>4.学习案例</h4><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><hr>
+<h4 id="5-kubectl应用和服务"><a href="#5-kubectl应用和服务" class="headerlink" title="5.kubectl应用和服务"></a>5.kubectl应用和服务</h4><hr>
+<p>####6. </p>
+<hr>
 <h4 id="10-docker-常用操作"><a href="#10-docker-常用操作" class="headerlink" title="10.docker 常用操作"></a>10.docker 常用操作</h4><h5 id="10-1-镜像的操作"><a href="#10-1-镜像的操作" class="headerlink" title="10.1 镜像的操作"></a>10.1 镜像的操作</h5><pre><code>列出所有的镜像: docker images 
 停止运行：docker stop iamgesId
 删除单个镜像：docker rmi imagesId
@@ -1464,7 +1448,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.3k</span>&nbsp;字
+                class="white-color">46.1k</span>&nbsp;字
             
             
             
