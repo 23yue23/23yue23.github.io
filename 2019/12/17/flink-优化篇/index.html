@@ -629,56 +629,68 @@ slot是指TaskManagere的并发执行能力，通常来说TaskManager有多少�
 置的并行度其实是与TaskManager所有Slot数量有关的</code></pre><hr>
 <h5 id="4-name-和uid-设置的作用"><a href="#4-name-和uid-设置的作用" class="headerlink" title="4.name 和uid 设置的作用"></a>4.name 和uid 设置的作用</h5><hr>
 <h4 id="flink-的容错层面"><a href="#flink-的容错层面" class="headerlink" title="flink 的容错层面"></a>flink 的容错层面</h4><h5 id="1-内部失败重试策略"><a href="#1-内部失败重试策略" class="headerlink" title="1.内部失败重试策略"></a>1.内部失败重试策略</h5><blockquote>
-<p>失败指标：</p>
-<blockquote>
-<p>1.RestartStrategies.fixedDelayRestart<br>2.RestartStrategies.failureRateRestart<br>3.RestartStrategies.noRestart</p>
-</blockquote>
+<p>故障恢复可设置指标：</p>
 </blockquote>
 <blockquote>
-<p>1.如果发生故障，系统将尝试重新启动作业3次，并在连续的重新启动尝试之间等待10秒。</p>
+<ul>
+<li>RestartStrategies.fixedDelayRestart  </li>
+<li>RestartStrategies.failureRateRestart</li>
+<li>RestartStrategies.noRestart</li>
+</ul>
+</blockquote>
+<blockquote>
+<ol>
+<li>如果发生故障，系统将尝试重新启动作业3次，并在连续的重新启动尝试之间等待10秒。</li>
+</ol>
 </blockquote>
 <pre class=" language-scala"><code class="language-scala">env<span class="token punctuation">.</span>setRestartStrategy<span class="token punctuation">(</span>RestartStrategies<span class="token punctuation">.</span>fixedDelayRestart<span class="token punctuation">(</span>
   <span class="token number">3</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// number of restart attempts</span>
   Time<span class="token punctuation">.</span>of<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span>SECONDS<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// delay</span>
 <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <blockquote>
-<p>2.超过设定的指标，则该作业最终将失败（程序常用）</p>
+<ol start="2">
+<li>超过设定的指标，则该作业最终将失败（程序常用）</li>
+</ol>
 </blockquote>
-<pre><code>// 设置内部 如果10分钟内连续失败3次，或者每次失败间隔时间超过15s 将认为不可恢复，则作业失败。其他情况作业默认启用内部恢复策略，直到作业恢复。
-env.setRestartStrategy(RestartStrategies.failureRateRestart(3,
-   org.apache.flink.api.common.time.Time.of(10, TimeUnit.MINUTES),
-   org.apache.flink.api.common.time.Time.of(15, TimeUnit.SECONDS)))
-</code></pre><blockquote>
-<p>3.不设置重试策略，作业有异常时直接失败。</p>
+<pre class=" language-scala"><code class="language-scala"><span class="token comment" spellcheck="true">// 设置内部 如果10分钟内连续失败3次，或者每次失败间隔时间超过15s 将认为不可恢复，则作业失败。其他情况作业默认启用内部恢复策略，直到作业恢复。</span>
+env<span class="token punctuation">.</span>setRestartStrategy<span class="token punctuation">(</span>RestartStrategies<span class="token punctuation">.</span>failureRateRestart<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span>
+   org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>flink<span class="token punctuation">.</span>api<span class="token punctuation">.</span>common<span class="token punctuation">.</span>time<span class="token punctuation">.</span>Time<span class="token punctuation">.</span>of<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">,</span>
+   org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>flink<span class="token punctuation">.</span>api<span class="token punctuation">.</span>common<span class="token punctuation">.</span>time<span class="token punctuation">.</span>Time<span class="token punctuation">.</span>of<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span>SECONDS<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<ol start="3">
+<li>不设置重试策略，作业有异常时直接失败。</li>
+</ol>
 </blockquote>
-<pre><code> env.setRestartStrategy(RestartStrategies.noRestart())
-</code></pre><hr>
-<h4 id="flink-状态数据层面"><a href="#flink-状态数据层面" class="headerlink" title="flink 状态数据层面"></a>flink 状态数据层面</h4><h5 id="1-checkpoint-优化设置"><a href="#1-checkpoint-优化设置" class="headerlink" title="1.checkpoint 优化设置"></a>1.checkpoint 优化设置</h5><pre><code>//设置checkpoint 快照时间为5分钟
-env.enableCheckpointing(300000l) 
+<pre class=" language-scala"><code class="language-scala"> env<span class="token punctuation">.</span>setRestartStrategy<span class="token punctuation">(</span>RestartStrategies<span class="token punctuation">.</span>noRestart<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<h4 id="flink-状态数据层面"><a href="#flink-状态数据层面" class="headerlink" title="flink 状态数据层面"></a>flink 状态数据层面</h4><h5 id="1-checkpoint-优化设置"><a href="#1-checkpoint-优化设置" class="headerlink" title="1.checkpoint 优化设置"></a>1.checkpoint 优化设置</h5><pre class=" language-scala"><code class="language-scala"><span class="token comment" spellcheck="true">//设置checkpoint 快照时间为5分钟</span>
+env<span class="token punctuation">.</span>enableCheckpointing<span class="token punctuation">(</span><span class="token number">300000l</span><span class="token punctuation">)</span> 
 
-//设置的是事件的处理时间
-.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime) 
+<span class="token comment" spellcheck="true">//设置的是事件的处理时间</span>
+<span class="token punctuation">.</span>setStreamTimeCharacteristic<span class="token punctuation">(</span>TimeCharacteristic<span class="token punctuation">.</span>ProcessingTime<span class="token punctuation">)</span> 
 
-/**
+<span class="token comment" spellcheck="true">/**
 *设置checkpoint 取消时清理和保留机制：
 * 1.DELETE_ON_CANCELLATION 工作取消时删除checkpoint 做的检查点。
 * 2.RETAIN_ON_CANCELLATION 工作取消时保留checkpoint 做的检查点
-*/
-env.getCheckpointConfig.enableExternalizedCheckpoints(ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION)
+*/</span>
+env<span class="token punctuation">.</span>getCheckpointConfig<span class="token punctuation">.</span>enableExternalizedCheckpoints<span class="token punctuation">(</span>ExternalizedCheckpointCleanup<span class="token punctuation">.</span>RETAIN_ON_CANCELLATION<span class="token punctuation">)</span>
 
-// 设置两个检查点之间的最小间隔，
-env.getCheckpointConfig.setMinPauseBetweenCheckpoints(1000L * 60L * 5L)
+<span class="token comment" spellcheck="true">// 设置两个检查点之间的最小间隔，</span>
+env<span class="token punctuation">.</span>getCheckpointConfig<span class="token punctuation">.</span>setMinPauseBetweenCheckpoints<span class="token punctuation">(</span><span class="token number">1000L</span> <span class="token operator">*</span> <span class="token number">60L</span> <span class="token operator">*</span> <span class="token number">5L</span><span class="token punctuation">)</span>
 
-//设置checkpoint的超时时间
-env.getCheckpointConfig.setCheckpointTimeout(1000L * 60L * 30L)
+<span class="token comment" spellcheck="true">//设置checkpoint的超时时间</span>
+env<span class="token punctuation">.</span>getCheckpointConfig<span class="token punctuation">.</span>setCheckpointTimeout<span class="token punctuation">(</span><span class="token number">1000L</span> <span class="token operator">*</span> <span class="token number">60L</span> <span class="token operator">*</span> <span class="token number">30L</span><span class="token punctuation">)</span>
 
-//设置checkpoint 的最大并发数       
-env.getCheckpointConfig.setMaxConcurrentCheckpoints(1)
+<span class="token comment" spellcheck="true">//设置checkpoint 的最大并发数       </span>
+env<span class="token punctuation">.</span>getCheckpointConfig<span class="token punctuation">.</span>setMaxConcurrentCheckpoints<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 
-//当前path 最好是hdfs 的路径，s3 的路径有时会出现一致性的问题。
-val backend = new RocksDBStateBackend(path, true)
+<span class="token comment" spellcheck="true">//当前path 最好是hdfs 的路径，s3 的路径有时会出现一致性的问题。</span>
+<span class="token keyword">val</span> backend <span class="token operator">=</span> <span class="token keyword">new</span> RocksDBStateBackend<span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
 
-/**
+<span class="token comment" spellcheck="true">/**
 * 设置rsDB的保存策略
 * 由于flink 不依赖磁盘上的RocksDB数据进行恢复，因此无需将数据同步到稳定的存储中。
 * 1.DEFAULT ：所有设置都是默认选项，但不强制写入磁盘
@@ -686,16 +698,17 @@ val backend = new RocksDBStateBackend(path, true)
 * 3.SPINNING_DISK_OPTIMIZED_HIGH_MEM：此配置将会应用大量的内存用于块的缓存和压缩，如果遇到DB内存不足，建议切换为第二种SPINNING_DISK_OPTIMIZED。
 * 4.FLASH_SSD_OPTIMIZED：使用SSD 提高性能
 *
-*/
-backend.setPredefinedOptions(PredefinedOptions.FLASH_SSD_OPTIMIZED)
+*/</span>
+backend<span class="token punctuation">.</span>setPredefinedOptions<span class="token punctuation">(</span>PredefinedOptions<span class="token punctuation">.</span>FLASH_SSD_OPTIMIZED<span class="token punctuation">)</span>
 
-//设置checkpoint的模式：CheckpointingMode.EXACTLY_ONCE or CheckpointingMode.AT_LEAST_ONCE
-//默认是使用的 EXACTLY_ONCE
-env.getCheckpointConfig.setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE)
+<span class="token comment" spellcheck="true">//设置checkpoint的模式：CheckpointingMode.EXACTLY_ONCE or CheckpointingMode.AT_LEAST_ONCE</span>
+<span class="token comment" spellcheck="true">//默认是使用的 EXACTLY_ONCE</span>
+env<span class="token punctuation">.</span>getCheckpointConfig<span class="token punctuation">.</span>setCheckpointingMode<span class="token punctuation">(</span>CheckpointingMode<span class="token punctuation">.</span>EXACTLY_ONCE<span class="token punctuation">)</span>
 
-//将ck保存进行set
-env.setStateBackend(backend.asInstanceOf[StateBackend])
-</code></pre><hr>
+<span class="token comment" spellcheck="true">//将ck保存进行set</span>
+env<span class="token punctuation">.</span>setStateBackend<span class="token punctuation">(</span>backend<span class="token punctuation">.</span>asInstanceOf<span class="token punctuation">[</span>StateBackend<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
 <h4 id="streamAPI-层面"><a href="#streamAPI-层面" class="headerlink" title="streamAPI 层面"></a>streamAPI 层面</h4><h5 id="1-source-和-sink-常用"><a href="#1-source-和-sink-常用" class="headerlink" title="1.source 和 sink 常用"></a>1.source 和 sink 常用</h5><blockquote>
 <p>source         </p>
 </blockquote>
@@ -755,19 +768,20 @@ env.setStateBackend(backend.asInstanceOf[StateBackend])
 <li>构建flink kafka source代码：</li>
 </ul>
 </blockquote>
-<pre><code> //设置kafka
-val props = new Properties()
-props.setProperty(&quot;bootstrap.servers&quot;,config.getProperty(BOOTSTRAP_SERVERS))
-props.setProperty(&quot;group.id&quot;, parameters.getRequired(&quot;groupid&quot;).trim)
-props.setProperty(&quot;auto.offset.reset&quot;, &quot;latest&quot;)
+<pre class=" language-scala"><code class="language-scala"> <span class="token comment" spellcheck="true">//设置kafka</span>
+<span class="token keyword">val</span> props <span class="token operator">=</span> <span class="token keyword">new</span> Properties<span class="token punctuation">(</span><span class="token punctuation">)</span>
+props<span class="token punctuation">.</span>setProperty<span class="token punctuation">(</span><span class="token string">"bootstrap.servers"</span><span class="token punctuation">,</span>config<span class="token punctuation">.</span>getProperty<span class="token punctuation">(</span>BOOTSTRAP_SERVERS<span class="token punctuation">)</span><span class="token punctuation">)</span>
+props<span class="token punctuation">.</span>setProperty<span class="token punctuation">(</span><span class="token string">"group.id"</span><span class="token punctuation">,</span> parameters<span class="token punctuation">.</span>getRequired<span class="token punctuation">(</span><span class="token string">"groupid"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>trim<span class="token punctuation">)</span>
+props<span class="token punctuation">.</span>setProperty<span class="token punctuation">(</span><span class="token string">"auto.offset.reset"</span><span class="token punctuation">,</span> <span class="token string">"latest"</span><span class="token punctuation">)</span>
 
-//获取kafka的数据源（如有特殊配制可以根据以上基本设置进行配置）
-val source = env.addSource[String](new FlinkKafkaConsumer011[String](config.getProperty(TOPIC), new SimpleStringSchema(), props)
-      .setCommitOffsetsOnCheckpoints(true))
-      .setParallelism(32)
-      .name(&quot;topic-source&quot;)
-      .uid(&quot;topic-source&quot;)
-</code></pre><hr>
+<span class="token comment" spellcheck="true">//获取kafka的数据源（如有特殊配制可以根据以上基本设置进行配置）</span>
+<span class="token keyword">val</span> source <span class="token operator">=</span> env<span class="token punctuation">.</span>addSource<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">new</span> FlinkKafkaConsumer011<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>getProperty<span class="token punctuation">(</span>TOPIC<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> SimpleStringSchema<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> props<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span>setCommitOffsetsOnCheckpoints<span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span>setParallelism<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span>name<span class="token punctuation">(</span><span class="token string">"topic-source"</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span>uid<span class="token punctuation">(</span><span class="token string">"topic-source"</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
 <blockquote>
 <ol start="2">
 <li>flink mysql Async I/O 访问</li>
