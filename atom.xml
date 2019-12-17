@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-12-17T01:12:10.277Z</updated>
+  <updated>2019-12-17T01:27:09.140Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客编写思路</title>
+    <link href="https://23yue23.github.io/2019/12/17/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
+    <id>https://23yue23.github.io/2019/12/17/博客编写思路/</id>
+    <published>2019-12-17T01:13:40.000Z</published>
+    <updated>2019-12-17T01:27:09.140Z</updated>
+    
+    <content type="html"><![CDATA[<p>hex</p><h4 id="博客类型分类"><a href="#博客类型分类" class="headerlink" title="博客类型分类"></a>博客类型分类</h4><h5 id="常用篇"><a href="#常用篇" class="headerlink" title="常用篇"></a>常用篇</h5><blockquote><p>主要介绍本知识点和框架常用到的命令和技巧，以及需要注意的事项。</p></blockquote><h5 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h5><blockquote><p>主要介绍本知识点和框架的3W， who 是什么，where 应用场景， what 怎么用比较好。</p></blockquote><h5 id="问题篇"><a href="#问题篇" class="headerlink" title="问题篇"></a>问题篇</h5><blockquote><p>在使用本知识点或框架中遇到的问题。</p></blockquote><h5 id="资料篇"><a href="#资料篇" class="headerlink" title="资料篇"></a>资料篇</h5><blockquote><p>扩展本知识点或架构的其他比较好的学习资料。</p></blockquote><h5 id="优化篇"><a href="#优化篇" class="headerlink" title="优化篇"></a>优化篇</h5><blockquote><p>主要编写的是当前组件或架构可优化点。</p></blockquote><h5 id="实战篇"><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h5><blockquote><p>主要演示在知识点实际搭建过程中的操作。</p></blockquote><h5 id="other"><a href="#other" class="headerlink" title="other"></a>other</h5><blockquote><p>主要是小的知识点分类，比如java-JVM篇，java-cache篇，java-多线程篇</p></blockquote><h4 id="博客思想"><a href="#博客思想" class="headerlink" title="博客思想"></a>博客思想</h4><blockquote><p>本站博客，是以练促学，以学促用的理念来进行编写，当然博客中也会qi其他大牛比较好的内容，</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;hex&lt;/p&gt;
+&lt;h4 id=&quot;博客类型分类&quot;&gt;&lt;a href=&quot;#博客类型分类&quot; class=&quot;headerlink&quot; title=&quot;博客类型分类&quot;&gt;&lt;/a&gt;博客类型分类&lt;/h4&gt;&lt;h5 id=&quot;常用篇&quot;&gt;&lt;a href=&quot;#常用篇&quot; class=&quot;headerlink&quot;
+      
+    
+    </summary>
+    
+      <category term="博客编写思路" scheme="https://23yue23.github.io/categories/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
+    
+    
+      <category term="博客编写思路" scheme="https://23yue23.github.io/tags/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>java-cache篇</title>
@@ -201,7 +227,7 @@
     <link href="https://23yue23.github.io/2019/10/15/k8s-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/10/15/k8s-学习篇/</id>
     <published>2019-10-15T04:03:49.000Z</published>
-    <updated>2019-11-20T05:46:13.223Z</updated>
+    <updated>2019-12-17T01:30:59.934Z</updated>
     
     <content type="html"><![CDATA[<h4 id="k8s-介绍"><a href="#k8s-介绍" class="headerlink" title="k8s 介绍"></a>k8s 介绍</h4><p>Kubernetes 是一个生产级的开源平台，用于协调计算机集群内部和跨计算机集群的应用程序容器的分发(调度)和运行。<br>一个 Master 是集群的调度节点。<br>nodes 是应用程序实际运行的工作节点。</p><h4 id="k8s-重要组件"><a href="#k8s-重要组件" class="headerlink" title="k8s 重要组件"></a>k8s 重要组件</h4><p>k8s核心组件：</p><blockquote><p>etcd保存了整个集群的状态；  </p></blockquote><blockquote><p>apiserver提供了资源操作的唯一入口，并提供认证、授权、访问控制、API注册和发现等机制；  </p></blockquote><blockquote><p>controller manager负责维护集群的状态，比如故障检测、自动扩展、滚动更新等；  </p></blockquote><blockquote><p>scheduler负责资源的调度，按照预定的调度策略将Pod调度到相应的机器上；  </p></blockquote><blockquote><p>kubelet负责维护容器的生命周期，同时也负责Volume（CVI）和网络（CNI）的管理；  </p></blockquote><blockquote><p>Container runtime负责镜像管理以及Pod和容器的真正运行（CRI）；  </p></blockquote><blockquote><p>kube-proxy负责为Service提供cluster内部的服务发现和负载均衡；  </p></blockquote><p>推荐的Add-ons：</p><blockquote><p>kube-dns负责为整个集群提供DNS服务</p></blockquote><blockquote><p>Ingress Controller为服务提供外网入口</p></blockquote><blockquote><p>Heapster提供资源监控</p></blockquote><blockquote><p>Dashboard提供GUI</p></blockquote><blockquote><p>Federation提供跨可用区的集群</p></blockquote><blockquote><p>Fluentd-elasticsearch提供集群日志采集、存储与查询</p></blockquote><h4 id="k8s-部署"><a href="#k8s-部署" class="headerlink" title="k8s 部署"></a>k8s 部署</h4><p>在k8s中，通过发布 Deployment，可以创建应用程序 (docker image) 的实例 (docker container)，这个实例会被包含在称为 Pod 的概念中，Pod 是 k8s 中最小单元的可管理单元</p><p>在 k8s 集群中发布 Deployment 后，Deployment 将指示 k8s 如何创建和更新应用程序的实例，master 节点将应用程序实例调度到集群中的具体的节点上。</p><p>创建应用程序实例后，Kubernetes Deployment Controller 会持续监控这些实例。如果运行实例的 worker 节点关机或被删除，则 Kubernetes Deployment Controller 将在群集中资源最优的另一个 worker 节点上重新创建一个新的实例。这提供了一种自我修复机制来解决机器故障或维护问题。</p><p>在容器编排之前的时代，各种安装脚本通常用于启动应用程序，但是不能够使应用程序从机器故障中恢复。通过创建应用程序实例并确保它们在集群节点中的运行实例个数，Kubernetes Deployment 提供了一种完全不同的方式来管理应用程序。</p><h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_blank" rel="noopener">https://kubernetes.io/docs/concepts/services-networking/ingress/</a></p><p>nginx官方介绍：<a href="https://www.nginx.com/products/nginx/kubernetes-ingress-controller" target="_blank" rel="noopener">https://www.nginx.com/products/nginx/kubernetes-ingress-controller</a></p><h4 id="部署方式"><a href="#部署方式" class="headerlink" title="部署方式"></a>部署方式</h4><p><a href="https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployment-command" target="_blank" rel="noopener">https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployment-command</a></p><p>首先先下载相关的yaml文件，保存到本地。</p><p>deployments：<br>kubectl apply -f <a href="https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml" target="_blank" rel="noopener">https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml</a></p><p>service： 这里官方提供了各种云平台，系统等相关配置。我们这里是自建的k8s集群，所以我们选择裸机版本。</p><p>Bare-metal<br>Using NodePort:</p><p>kubectl apply -f <a href="https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml" target="_blank" rel="noopener">https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml</a></p><p>安装完后。看看集群信息。</p><p>[root@node1 ingress-nginx]# kubectl get all -A -l app.kubernetes.io/name=ingress-nginx<br>NAMESPACE NAME READY STATUS RESTARTS AGE<br>ingress-nginx pod/nginx-ingress-controller-79f6884cf6-vh2w2 1/1 Running 0 5d3h</p><p>NAMESPACE NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE<br>ingress-nginx service/ingress-nginx NodePort 10.233.29.94 <none> 80:31661/TCP,443:30250/TCP 6d2h</none></p><p>NAMESPACE NAME READY UP-TO-DATE AVAILABLE AGE<br>ingress-nginx deployment.apps/nginx-ingress-controller 1/1 1 1 6d3h</p><p>NAMESPACE NAME DESIRED CURRENT READY AGE<br>ingress-nginx replicaset.apps/nginx-ingress-controller-79f6884cf6 1 1 1 6d3h</p>]]></content>
     
@@ -459,7 +485,7 @@
     <link href="https://23yue23.github.io/2019/10/09/ambari-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/10/09/ambari-学习篇/</id>
     <published>2019-10-09T09:04:08.000Z</published>
-    <updated>2019-12-17T01:12:07.387Z</updated>
+    <updated>2019-12-17T01:12:53.367Z</updated>
     
     <content type="html"><![CDATA[<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><pre><code>(1).Ambari的作用:就是创建、管理、监视 Hadoop 的集群，这里的Hadoop是广义，指的是Hadoop整个生态圈（例如 Hive，Hbase，Sqoop，Zookeeper 等）Ambari就是为了让Hadoop以及相关的大数据软件更容易使用的一个工具(2).Ambari 自身也是一个分布式架构的软件，主要由两部分组成：Ambari Server 和 Ambari Agent。用户通过 Ambari Server 通知 Ambari Agent 安装对应的软件；Agent 会定时地发送各个机器每个软件模块的状态给 Ambari Server，最终这些状态信息会呈现在 Ambari 的 GUI，方便用户了解到集群的各种状态，并进行相应的维护。</code></pre>]]></content>
     
@@ -503,24 +529,6 @@ Ambari的作用:就是创建、管理、监视 Hadoop 的集群，
     
     
       <category term="hbase-资料篇" scheme="https://23yue23.github.io/tags/hbase-%E8%B5%84%E6%96%99%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>kudu-资料篇</title>
-    <link href="https://23yue23.github.io/2019/10/09/kudu-%E8%B5%84%E6%96%99%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/09/kudu-资料篇/</id>
-    <published>2019-10-09T08:40:32.000Z</published>
-    <updated>2019-10-09T08:40:50.766Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="kudu" scheme="https://23yue23.github.io/categories/kudu/"/>
-    
-    
-      <category term="kudu-资料篇" scheme="https://23yue23.github.io/tags/kudu-%E8%B5%84%E6%96%99%E7%AF%87/"/>
     
   </entry>
   
