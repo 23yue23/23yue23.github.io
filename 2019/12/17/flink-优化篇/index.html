@@ -554,14 +554,14 @@ env.getConfig.s">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    11 分
                 </div>
                 
 				
@@ -709,7 +709,7 @@ env<span class="token punctuation">.</span>getCheckpointConfig<span class="token
 env<span class="token punctuation">.</span>setStateBackend<span class="token punctuation">(</span>backend<span class="token punctuation">.</span>asInstanceOf<span class="token punctuation">[</span>StateBackend<span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
 <hr>
-<h4 id="streamAPI-层面"><a href="#streamAPI-层面" class="headerlink" title="streamAPI 层面"></a>streamAPI 层面</h4><h5 id="1-source-和-sink-常用"><a href="#1-source-和-sink-常用" class="headerlink" title="1.source 和 sink 常用"></a>1.source 和 sink 常用</h5><blockquote>
+<h5 id="2-自动清理程序状态（flink-1-8-）"><a href="#2-自动清理程序状态（flink-1-8-）" class="headerlink" title="2.自动清理程序状态（flink 1.8+）"></a>2.自动清理程序状态（flink 1.8+）</h5><h4 id="streamAPI-层面"><a href="#streamAPI-层面" class="headerlink" title="streamAPI 层面"></a>streamAPI 层面</h4><h5 id="1-source-和-sink-常用"><a href="#1-source-和-sink-常用" class="headerlink" title="1.source 和 sink 常用"></a>1.source 和 sink 常用</h5><blockquote>
 <p>source         </p>
 <blockquote>
 <ol>
@@ -760,11 +760,41 @@ env<span class="token punctuation">.</span>setStateBackend<span class="token pun
 
  checkpoint 开启：构建source 时 setCommitOffsetsOnCheckpoints(true) 
          *offset 自己在checkpoint state 中进行管理和维护。提交kafka offset 和ck时间一致，仅仅为了外部监控消费情况。
-         *通过setCommitOffsetsOnCheckpoints 设置,ck成功后是否提交offset 到kafka 。</code></pre><hr>
+         *通过setCommitOffsetsOnCheckpoints 设置,ck成功后是否提交offset 到kafka 。
+
+
+7.Timestamp Extraction/Watermark 生成
+  我们知道当 Flink 作业内使用 EventTime 属性时，需要指定从消息中提取时戳和生成水位的函数。
+  FlinkKakfaConsumer 构造的 source 后直接调用 assignTimestampsAndWatermarks 函数设置水位生成器的好处是此时是每个 partition 一个 watermark assigner，
+  如下图。source 生成的时戳为多个 partition 时戳对齐后的最小时戳。此时在一个 source 读取多个 partition，并且 partition 之间数据时戳有一定差距的情况下，因为在 source 端 watermark 在 partition 级别有对齐，不会导致数据读取较慢 partition 数据丢失
+</code></pre><p><img src="https://pic3.zhimg.com/v2-c6614444177e3c59dc86123748db0b4a_r.jpg" alt="flink-kafka-consumer waterMaker"></p>
+<pre><code>8.Producer 分区
+   8.1 FlinkKafkaProducer 往 kafka 中写数据时，如果不单独设置 partition 策略，会默认使用 FlinkFixedPartitioner，
+该 partitioner 分区的方式是 task 所在的并发 id 对 topic 总 partition 数取余：
+parallelInstanceId % partitions.length
+
+那么如果sink 的task 为4 partition 为2 则 4/2= 2 则2个并行度往2个partion 里写。
+那么如果sink 的task 为4 partition 为1 则 4/1= 4 则4个并行度往1个partion 里写。
+那么如果sink 的task 为2 partition 为4 则 2/4    则2个并行度往2个partion 里写，剩余两个partion 将没有数据。
+
+   8.2 构建 FlinkKafkaProducer 时，partition 设置为 null，此时会使用 kafka producer 默认分区方式，非 key 写入的情况下，使用 round-robin 的方式进行分区，每个 task 都会轮循的写下游的所有 partition。该方式下游的 partition 数据会比较均衡，但是缺点是 partition 个数过多的情况下需要维持过多的网络连接，即每个 task 都会维持跟所有 partition 所在 broker 的连接。
+
+
+9.连接kafka容错
+  Flink kafka 09、010 版本下通过 setLogFailuresOnly 为 false，setFlushOnCheckpoint 为 true，能达到 at-least-once 语义。
+
+  setLogFailuresOnly，默认为 false，是控制写 kafka 失败时，是否只打印失败的 log 不抛异常让作业停止。
+
+  setFlushOnCheckpoint，默认为 true，是控制是否在 checkpoint 时 fluse 数据到 kafka，保证数据已经写到 kafka。否则数据有可能还缓存在 kafka 客户端的 buffer 中，并没有真正写出到 kafka，此时作业挂掉数据即丢失，不能做到至少一次的语义。
+
+  Flink kafka 011 版本下，通过两阶段提交的 sink 结合 kafka 事务的功能，可以保证端到端精准一次 </code></pre><p><a href="https://www.ververica.com/blog/end-to-end-exactly-once-processing-apache-flink-apache-kafka" target="_blank" rel="noopener">flink到kafka精准一次</a></p>
+<hr>
+<blockquote>
 <blockquote>
 <ul>
 <li>构建flink kafka source代码：</li>
 </ul>
+</blockquote>
 </blockquote>
 <pre class=" language-scala"><code class="language-scala"> <span class="token comment" spellcheck="true">//设置kafka</span>
 <span class="token keyword">val</span> props <span class="token operator">=</span> <span class="token keyword">new</span> Properties<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -781,6 +811,26 @@ props<span class="token punctuation">.</span>setProperty<span class="token punct
 </code></pre>
 <hr>
 <blockquote>
+<blockquote>
+<ul>
+<li>构建flink kafka sink 代码：</li>
+</ul>
+</blockquote>
+</blockquote>
+<pre class=" language-scala"><code class="language-scala"><span class="token keyword">val</span> stream<span class="token operator">:</span> DataStream<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token keyword">val</span> myProducer <span class="token operator">=</span> <span class="token keyword">new</span> FlinkKafkaProducer011<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">(</span>
+        <span class="token string">"localhost:9092"</span><span class="token punctuation">,</span>         <span class="token comment" spellcheck="true">// broker 列表</span>
+        <span class="token string">"my-topic"</span><span class="token punctuation">,</span>               <span class="token comment" spellcheck="true">// 目标 topic</span>
+        <span class="token keyword">new</span> SimpleStringSchema<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// 序列化 schema</span>
+
+<span class="token comment" spellcheck="true">// 0.10+ 版本的 Kafka 允许在将记录写入 Kafka 时附加记录的事件时间戳；</span>
+<span class="token comment" spellcheck="true">// 此方法不适用于早期版本的 Kafka</span>
+myProducer<span class="token punctuation">.</span>setWriteTimestampToKafka<span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+
+stream<span class="token punctuation">.</span>addSink<span class="token punctuation">(</span>myProducer<span class="token punctuation">)</span></code></pre>
+<hr>
+<blockquote>
 <ol start="2">
 <li>flink mysql Async I/O 访问</li>
 </ol>
@@ -795,27 +845,35 @@ props<span class="token punctuation">.</span>setProperty<span class="token punct
 <p>sink</p>
 </blockquote>
 <blockquote>
+<blockquote>
 <ol>
 <li>flink sink kafka</li>
 </ol>
 </blockquote>
+</blockquote>
+<blockquote>
 <blockquote>
 <ol start="2">
 <li>flink sink cassandra</li>
 </ol>
 </blockquote>
+</blockquote>
+<blockquote>
 <blockquote>
 <ol start="3">
 <li>flink sink redis</li>
 </ol>
 </blockquote>
+</blockquote>
+<blockquote>
 <blockquote>
 <ol start="4">
 <li>flink sink hdfs</li>
 </ol>
 </blockquote>
+</blockquote>
 <hr>
-<h5 id="2-ProcessFunction-的使用"><a href="#2-ProcessFunction-的使用" class="headerlink" title="2.ProcessFunction 的使用"></a>2.ProcessFunction 的使用</h5><h5 id="side-outPut的使用"><a href="#side-outPut的使用" class="headerlink" title=".side outPut的使用"></a>.side outPut的使用</h5><h4 id="flink-编程中的小总结"><a href="#flink-编程中的小总结" class="headerlink" title="flink 编程中的小总结"></a>flink 编程中的小总结</h4><p>1.</p>
+<h5 id="2-ProcessFunction-的使用"><a href="#2-ProcessFunction-的使用" class="headerlink" title="2.ProcessFunction 的使用"></a>2.ProcessFunction 的使用</h5><h5 id="3-side-outPut的使用"><a href="#3-side-outPut的使用" class="headerlink" title="3.side outPut的使用"></a>3.side outPut的使用</h5><h4 id="flink-编程中的小总结"><a href="#flink-编程中的小总结" class="headerlink" title="flink 编程中的小总结"></a>flink 编程中的小总结</h4><p>1.</p>
 
             </div>
             <hr/>
@@ -1287,7 +1345,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.8k</span>&nbsp;字
+                class="white-color">49.5k</span>&nbsp;字
             
             
             
