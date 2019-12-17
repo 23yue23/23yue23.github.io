@@ -711,16 +711,14 @@ env<span class="token punctuation">.</span>setStateBackend<span class="token pun
 <hr>
 <h4 id="streamAPI-层面"><a href="#streamAPI-层面" class="headerlink" title="streamAPI 层面"></a>streamAPI 层面</h4><h5 id="1-source-和-sink-常用"><a href="#1-source-和-sink-常用" class="headerlink" title="1.source 和 sink 常用"></a>1.source 和 sink 常用</h5><blockquote>
 <p>source         </p>
-</blockquote>
 <blockquote>
 <ol>
 <li>flink kafka connector</li>
 </ol>
-</blockquote>
-<blockquote>
 <ul>
 <li>基本设置：</li>
 </ul>
+</blockquote>
 </blockquote>
 <pre><code>1.因为 kafka 中数据都是以二进制 byte 形式存储的。读到 Flink 系统中之后，需要将二进制数据转化为具体的 java、scala 对象。具体需要实现一个 schema 类，定义如何序列化和反序列数据，flink 也提供了常用的序列化反序列化的schema类，例如SimpleStringSchema（按字符串方式进行序列化、反序列化），JsonDeserializationSchema 使用 jackson 反序列化 json 格式消息，并返回 ObjectNode，可以使用 .get(“property”) 方法来访问相应字段。
 
