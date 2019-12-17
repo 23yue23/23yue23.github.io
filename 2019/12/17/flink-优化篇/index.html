@@ -527,8 +527,8 @@ env.getConfig.s">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/flink-优化篇/" class="post-category">
-                                flink-优化篇
+                            <a href="/categories/flink/" class="post-category">
+                                flink
                             </a>
                         
                     </div>
@@ -540,7 +540,7 @@ env.getConfig.s">
                 
                 <div class="text-color" align=center style="font-size:large">
                    
-       			 <i class="far fa-square"></i> 蜗牛
+       			 <i class="far fa-square"></i> 岳贤昌
     		   
 		</div>
                 <div class="post-date info-break-policy">
@@ -554,14 +554,14 @@ env.getConfig.s">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    8 分
                 </div>
                 
 				
@@ -694,41 +694,98 @@ env.setStateBackend(backend.asInstanceOf[StateBackend])
 </code></pre><hr>
 <h4 id="streamAPI-层面"><a href="#streamAPI-层面" class="headerlink" title="streamAPI 层面"></a>streamAPI 层面</h4><h5 id="1-source-和-sink-常用"><a href="#1-source-和-sink-常用" class="headerlink" title="1.source 和 sink 常用"></a>1.source 和 sink 常用</h5><blockquote>
 <p>source         </p>
+</blockquote>
 <blockquote>
-<p>flink kafka connector</p>
+<ol>
+<li>flink kafka connector</li>
+</ol>
+</blockquote>
 <blockquote>
-<p>1.基本介绍</p>
+<ul>
+<li>基本设置：</li>
+</ul>
 </blockquote>
-</blockquote>
-</blockquote>
-<pre><code>注意事项：
-1.因为 kafka 中数据都是以二进制 byte 形式存储的。读到 Flink 系统中之后，需要将二进制数据转化为具体的 java、scala 对象。具体需要实现一个 schema 类，定义如何序列化和反序列数据，flink 也提供了常用的序列化反序列化的schema类，例如SimpleStringSchema（按字符串方式进行序列化、反序列化），JsonDeserializationSchema 使用 jackson 反序列化 json 格式消息，并返回 ObjectNode，可以使用 .get(“property”) 方法来访问相应字段。
+<pre><code>1.因为 kafka 中数据都是以二进制 byte 形式存储的。读到 Flink 系统中之后，需要将二进制数据转化为具体的 java、scala 对象。具体需要实现一个 schema 类，定义如何序列化和反序列数据，flink 也提供了常用的序列化反序列化的schema类，例如SimpleStringSchema（按字符串方式进行序列化、反序列化），JsonDeserializationSchema 使用 jackson 反序列化 json 格式消息，并返回 ObjectNode，可以使用 .get(“property”) 方法来访问相应字段。
 
 2.消费起始位置设置
  2.1 setStartFromLatest: 设置最新位置开始读。
  2.2 setStartFromEarliest: 设置最早位置开始读.
  2.3 setStartFromGroupOffsets: 也是默认的策略，从 group offset 位置读取数据，group offset 指的是 kafka broker 端记录的某个 group 的最后一次的消费位置。但是 kafka broker 端没有该 group 信息，会根据 kafka 的参数&quot;auto.offset.reset&quot;的设置来决定从哪个位置开始消费.
 
-注意事项：作业故障从savepoint自动恢复时，以及手动做savepoint时，消费位置从保存状态中恢复，与上面的起始位置设置无关。
+注意事项：作业故障从savepoint自动恢复时，以及手动做savepoint时，消费位置从保存状态中恢复，与上面的起始位置设置无关。因为Flink Kafka Consumer 不依赖于提交的 offset 来实现容错保证。提交的 offset 只是一种方法，用于公开 consumer 的进度以便进行监控。
 
 3.setCommitOffsetsOnCheckpoints(true)时 会将偏移量提交到checkpoint快照的状态数据中。
 
 4.other 配置：
  4.1 flink.poll-timeout:配置轮询的超时时间。如果没有可用数据，则等待轮询所需的时间 默认是100毫秒
- 4.2 flink.partition-discovery.interval-millis 设置参数为非负值，表示开启动态发现的开关，以及设置的时间间隔，下面会以场景的形式进行讲解。
+ 4.2 flink.partition-discovery.interval-millis 设置参数为非负值，表示开启动态发现的开关，以及设置的时间间隔，下面会以场景的形式进行讲解,也就是下面要说的topic 和 partition 的动态发现。
 
 5.topic 和 partition 动态发现
-或</code></pre><blockquote>
+    场景一：有一个 Flink 作业需要将五份数据聚合到一起，五份数据对应五个 kafka topic，随着业务增长，新增一类数据，同时新增了一个 kafka topic，如何在不重启作业的情况下作业自动感知新的 topic。
+    场景二：作业从一个固定的 kafka topic 读数据，开始该 topic 有 10 个 partition，但随着业务的增长数据量变大，需要对 kafka partition 个数进行扩容，由 10 个扩容到 20。该情况下如何在不重启作业情况下动态感知新扩容的 partition？
+
+    针对上面两种场景，需要在构建 FlinkKafkaConsumer 时的 properties 中设置 flink.partition-discovery.interval-millis(默认为false) 参数为非负值，表示开启动态发现的开关，而设置的值为发现时间间隔。
+    原理：FlinkKafkaConsumer 内部会启动一个单独的线程定期去 kafka 获取最新的 meta 信息。
+
+    针对场景一：需在构建 FlinkKafkaConsumer 时，topic 的描述可以传一个正则表达式描述的 pattern。每次获取最新 kafka meta 时获取正则匹配的最新 topic 列表。
+    代码：
+    val topicStr = &quot;topic1&quot;
+    val topicPattern: Pattern = java.util.regex.Pattern.compile(&quot;topic[0-9]&quot;)
+    val consumer = new FlinkKafkaConsumer011[String](topicPattern, new SimpleStringSchema(), props)    
+
+    针对场景二：设置前面的动态发现参数，在定期获取 kafka 最新 meta 信息时会匹配新的 partition。为了保证数据的正确性，新发现的 partition 从最早的位置开始读取
+    代码：在properties  设置 flink.partition-discovery.interval-millis:发现时间间隔（毫秒）
+</code></pre><hr>
 <blockquote>
-<p>flink mysql Async I/O 访问<br>flink redis Async I/O 访问</p>
+<ul>
+<li>构建代码：</li>
+</ul>
 </blockquote>
+<pre><code> //设置kafka
+val props = new Properties()
+props.setProperty(&quot;bootstrap.servers&quot;,config.getProperty(BOOTSTRAP_SERVERS))
+props.setProperty(&quot;group.id&quot;, parameters.getRequired(&quot;groupid&quot;).trim)
+props.setProperty(&quot;auto.offset.reset&quot;, &quot;latest&quot;)
+
+//获取kafka的数据源（如有特殊配制可以根据以上基本设置进行配置）
+val source = env.addSource[String](new FlinkKafkaConsumer011[String](config.getProperty(TOPIC), new SimpleStringSchema(), props)
+      .setCommitOffsetsOnCheckpoints(true))
+      .setParallelism(32)
+      .name(&quot;topic-source&quot;)
+      .uid(&quot;topic-source&quot;)
+</code></pre><blockquote>
+<ol start="2">
+<li>flink mysql Async I/O 访问</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>flink redis Async I/O 访问</li>
+</ol>
 </blockquote>
 <hr>
 <blockquote>
 <p>sink</p>
-<blockquote>
-<p>flink sink kafka<br>flink sink cassandra<br>flink sink redis<br>flink sink hdfs</p>
 </blockquote>
+<blockquote>
+<ol>
+<li>flink sink kafka</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>flink sink cassandra</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>flink sink redis</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>flink sink hdfs</li>
+</ol>
 </blockquote>
 <hr>
 <h5 id="2-ProcessFunction-的使用"><a href="#2-ProcessFunction-的使用" class="headerlink" title="2.ProcessFunction 的使用"></a>2.ProcessFunction 的使用</h5><h5 id="side-outPut的使用"><a href="#side-outPut的使用" class="headerlink" title=".side outPut的使用"></a>.side outPut的使用</h5><h4 id="flink-编程中的小总结"><a href="#flink-编程中的小总结" class="headerlink" title="flink 编程中的小总结"></a>flink 编程中的小总结</h4><p>1.</p>
@@ -747,7 +804,7 @@ env.setStateBackend(backend.asInstanceOf[StateBackend])
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://23yue23.github.io" rel="external nofollow noreferrer">蜗牛</a>
+                    <a href="https://23yue23.github.io" rel="external nofollow noreferrer">岳贤昌</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -770,7 +827,7 @@ env.setStateBackend(backend.asInstanceOf[StateBackend])
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://23yue23.github.io" target="_blank">蜗牛</a>
+                    <a href="https://23yue23.github.io" target="_blank">岳贤昌</a>
                     !
                 </span>
             </div>
@@ -990,8 +1047,8 @@ env.setStateBackend(backend.asInstanceOf[StateBackend])
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/flink-优化篇/" class="post-category">
-                                    flink-优化篇
+                            <a href="/categories/flink/" class="post-category">
+                                    flink
                                 </a>
                             
                             
@@ -1197,13 +1254,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">年份</span>
-            <a href="https://23yue23.github.io" target="_blank">蜗牛</a>
+            <a href="https://23yue23.github.io" target="_blank">岳贤昌</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.1k</span>&nbsp;字
+                class="white-color">48.7k</span>&nbsp;字
             
             
             
