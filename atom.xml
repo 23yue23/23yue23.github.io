@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-12-17T01:27:09.140Z</updated>
+  <updated>2019-12-17T02:22:32.963Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://23yue23.github.io/2019/12/17/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
     <id>https://23yue23.github.io/2019/12/17/博客编写思路/</id>
     <published>2019-12-17T01:13:40.000Z</published>
-    <updated>2019-12-17T01:27:09.140Z</updated>
+    <updated>2019-12-17T02:22:32.963Z</updated>
     
     <content type="html"><![CDATA[<p>hex</p><h4 id="博客类型分类"><a href="#博客类型分类" class="headerlink" title="博客类型分类"></a>博客类型分类</h4><h5 id="常用篇"><a href="#常用篇" class="headerlink" title="常用篇"></a>常用篇</h5><blockquote><p>主要介绍本知识点和框架常用到的命令和技巧，以及需要注意的事项。</p></blockquote><h5 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h5><blockquote><p>主要介绍本知识点和框架的3W， who 是什么，where 应用场景， what 怎么用比较好。</p></blockquote><h5 id="问题篇"><a href="#问题篇" class="headerlink" title="问题篇"></a>问题篇</h5><blockquote><p>在使用本知识点或框架中遇到的问题。</p></blockquote><h5 id="资料篇"><a href="#资料篇" class="headerlink" title="资料篇"></a>资料篇</h5><blockquote><p>扩展本知识点或架构的其他比较好的学习资料。</p></blockquote><h5 id="优化篇"><a href="#优化篇" class="headerlink" title="优化篇"></a>优化篇</h5><blockquote><p>主要编写的是当前组件或架构可优化点。</p></blockquote><h5 id="实战篇"><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h5><blockquote><p>主要演示在知识点实际搭建过程中的操作。</p></blockquote><h5 id="other"><a href="#other" class="headerlink" title="other"></a>other</h5><blockquote><p>主要是小的知识点分类，比如java-JVM篇，java-cache篇，java-多线程篇</p></blockquote><h4 id="博客思想"><a href="#博客思想" class="headerlink" title="博客思想"></a>博客思想</h4><blockquote><p>本站博客，是以练促学，以学促用的理念来进行编写，当然博客中也会qi其他大牛比较好的内容，</p></blockquote>]]></content>
     
