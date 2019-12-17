@@ -549,14 +549,14 @@ env.getConfig.s">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    4.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    16 分
                 </div>
                 
 				
@@ -748,7 +748,15 @@ env<span class="token punctuation">.</span>setStateBackend<span class="token pun
 
     state <span class="token operator">=</span> getRuntimeContext<span class="token punctuation">.</span>getState<span class="token punctuation">(</span>stateDescriptor<span class="token punctuation">)</span>
 </code></pre>
-<h4 id="flink-监控层面"><a href="#flink-监控层面" class="headerlink" title="flink 监控层面"></a>flink 监控层面</h4><h4 id="flink-streamAPI层面"><a href="#flink-streamAPI层面" class="headerlink" title="flink streamAPI层面"></a>flink streamAPI层面</h4><h5 id="1-source-和-sink-常用"><a href="#1-source-和-sink-常用" class="headerlink" title="1.source 和 sink 常用"></a>1.source 和 sink 常用</h5><blockquote>
+<h4 id="flink-监控层面"><a href="#flink-监控层面" class="headerlink" title="flink 监控层面"></a>flink 监控层面</h4><h4 id="flink-延迟数据的处理"><a href="#flink-延迟数据的处理" class="headerlink" title="flink 延迟数据的处理"></a>flink 延迟数据的处理</h4><p>Watermark机制假设在某个时间点上，不会有比这个时间点更晚的上报数据，常被作为一个时间窗口的结束时间，</p>
+<blockquote>
+<p>生成WaterMaker</p>
+</blockquote>
+<pre><code>流数据中的事件时间戳与Watermark高度相关，事件时间戳的抽取和Watermark的生成也基本是同时进行的，抽取的过程会遇到下面两种情况：
+
+1.数据流中已经包含了事件时间戳和Watermark。
+2.使用抽取算子生成事件时间戳和Watermark，这也是实际应用中更为常见的场景。因为后续的计算都依赖时间，抽取算子最好在数据接入后马上使用。具体而言，抽取算子包含两个函数：第一个函数从数据流的事件中抽取时间戳，并将时间戳赋值到事件的元数据上，第二个函数生成Watermark。
+</code></pre><h4 id="flink-streamAPI层面"><a href="#flink-streamAPI层面" class="headerlink" title="flink streamAPI层面"></a>flink streamAPI层面</h4><h5 id="1-source-和-sink-常用"><a href="#1-source-和-sink-常用" class="headerlink" title="1.source 和 sink 常用"></a>1.source 和 sink 常用</h5><blockquote>
 <p>source         </p>
 <blockquote>
 <ol>
@@ -916,10 +924,17 @@ stream<span class="token punctuation">.</span>addSink<span class="token punctuat
 <p>side outPut的使用</p>
 </blockquote>
 <pre><code>除了DataStream操作产生的主流之外，您还可以产生任意数量的附加副输出结果流。结果流中的数据类型不必与主流中的数据类型匹配，并且不同侧输出的类型也可以不同。
-
-
 </code></pre><hr>
-<h5 id="2-ProcessFunction-的使用"><a href="#2-ProcessFunction-的使用" class="headerlink" title="2.ProcessFunction 的使用"></a>2.ProcessFunction 的使用</h5><h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><h4 id="flink-编程中的小总结"><a href="#flink-编程中的小总结" class="headerlink" title="flink 编程中的小总结"></a>flink 编程中的小总结</h4><p>1.</p>
+<h5 id="2-ProcessFunction-的使用"><a href="#2-ProcessFunction-的使用" class="headerlink" title="2.ProcessFunction 的使用"></a>2.ProcessFunction 的使用</h5><h5 id="3-缓存配置文件数据"><a href="#3-缓存配置文件数据" class="headerlink" title="3.缓存配置文件数据"></a>3.缓存配置文件数据</h5><pre class=" language-scala"><code class="language-scala">
+env<span class="token punctuation">.</span>registerCachedFile<span class="token punctuation">(</span>path<span class="token punctuation">,</span><span class="token string">'myFileCache'</span><span class="token punctuation">)</span>
+
+在富函数的open方法中进行获取
+ <span class="token keyword">val</span> myFile <span class="token operator">=</span> getRuntimeContext<span class="token punctuation">.</span>getDistributedCache<span class="token punctuation">.</span>getFile<span class="token punctuation">(</span><span class="token string">'MyTestFile'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true">//flink支持将变量广播到worker上，以供程序运算使用。</span>
+</code></pre>
+<h4 id="flink-编程中的小总结"><a href="#flink-编程中的小总结" class="headerlink" title="flink 编程中的小总结"></a>flink 编程中的小总结</h4><p>1.</p>
 
             </div>
             <hr/>
@@ -1391,7 +1406,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.4k</span>&nbsp;字
+                class="white-color">50.7k</span>&nbsp;字
             
             
             
