@@ -554,14 +554,14 @@ env.getConfig.s">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 				
@@ -577,25 +577,27 @@ env.getConfig.s">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="flink-基础配置层面"><a href="#flink-基础配置层面" class="headerlink" title="flink 基础配置层面"></a>flink 基础配置层面</h4><h5 id="1-程序内部接收外部传参（配置常变的参数）"><a href="#1-程序内部接收外部传参（配置常变的参数）" class="headerlink" title="1.程序内部接收外部传参（配置常变的参数）"></a>1.程序内部接收外部传参（配置常变的参数）</h5><pre><code>//解析参数
-val parameters = ParameterTool.fromArgs(args)
-//将参数设置到job 的全局参数中
-env.getConfig.setGlobalJobParameters(parameters) //register the parameters globally
-// 获取方式： 外部的参数名
-val parallelisms = parameters.getRequired(&quot;parallelisms&quot;).toInt
+                <h4 id="flink-基础配置层面"><a href="#flink-基础配置层面" class="headerlink" title="flink 基础配置层面"></a>flink 基础配置层面</h4><h5 id="1-程序内部接收外部传参（配置常变的参数）"><a href="#1-程序内部接收外部传参（配置常变的参数）" class="headerlink" title="1.程序内部接收外部传参（配置常变的参数）"></a>1.程序内部接收外部传参（配置常变的参数）</h5><pre class=" language-scala"><code class="language-scala"><span class="token comment" spellcheck="true">//解析参数</span>
+<span class="token keyword">val</span> parameters <span class="token operator">=</span> ParameterTool<span class="token punctuation">.</span>fromArgs<span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">//将参数设置到job 的全局参数中</span>
+env<span class="token punctuation">.</span>getConfig<span class="token punctuation">.</span>setGlobalJobParameters<span class="token punctuation">(</span>parameters<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//register the parameters globally</span>
+<span class="token comment" spellcheck="true">// 获取方式： 外部的参数名</span>
+<span class="token keyword">val</span> parallelisms <span class="token operator">=</span> parameters<span class="token punctuation">.</span>getRequired<span class="token punctuation">(</span><span class="token string">"parallelisms"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toInt
 
 ###在继承富函数后 open中初始化查询
-val params: ParameterTool = getRuntimeContext.getExecutionConfig.getGlobalJobParameters.asInstanceOf[ParameterTool]
+<span class="token keyword">val</span> params<span class="token operator">:</span> ParameterTool <span class="token operator">=</span> getRuntimeContext<span class="token punctuation">.</span>getExecutionConfig<span class="token punctuation">.</span>getGlobalJobParameters<span class="token punctuation">.</span>asInstanceOf<span class="token punctuation">[</span>ParameterTool<span class="token punctuation">]</span>
 
-val restore = params.get(&quot;restoreFlag&quot;).trim
-</code></pre><hr>
-<h5 id="2-加载内部配置文件-（配置固定不变的参数）"><a href="#2-加载内部配置文件-（配置固定不变的参数）" class="headerlink" title="2.加载内部配置文件 （配置固定不变的参数）"></a>2.加载内部配置文件 （配置固定不变的参数）</h5><pre><code> def loadConfig(): Properties = {
-     val p = new Properties()
-     val in = this.getClass.getClassLoader.getResourceAsStream(&quot;config.properties&quot;)
-     p.load(in)
-     in.close()
+<span class="token keyword">val</span> restore <span class="token operator">=</span> params<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"restoreFlag"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>trim
+</code></pre>
+<hr>
+<h5 id="2-加载内部配置文件-（配置固定不变的参数）"><a href="#2-加载内部配置文件-（配置固定不变的参数）" class="headerlink" title="2.加载内部配置文件 （配置固定不变的参数）"></a>2.加载内部配置文件 （配置固定不变的参数）</h5><pre class=" language-scala"><code class="language-scala"> <span class="token keyword">def</span> loadConfig<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Properties <span class="token operator">=</span> <span class="token punctuation">{</span>
+     <span class="token keyword">val</span> p <span class="token operator">=</span> <span class="token keyword">new</span> Properties<span class="token punctuation">(</span><span class="token punctuation">)</span>
+     <span class="token keyword">val</span> in <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>getClass<span class="token punctuation">.</span>getClassLoader<span class="token punctuation">.</span>getResourceAsStream<span class="token punctuation">(</span><span class="token string">"config.properties"</span><span class="token punctuation">)</span>
+     p<span class="token punctuation">.</span>load<span class="token punctuation">(</span>in<span class="token punctuation">)</span>
+     in<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
      p
-   }</code></pre><hr>
+   <span class="token punctuation">}</span></code></pre>
+<hr>
 <h5 id="3-程序中的并行执行设置"><a href="#3-程序中的并行执行设置" class="headerlink" title="3.程序中的并行执行设置"></a>3.程序中的并行执行设置</h5><blockquote>
 <p>并行度的概念</p>
 </blockquote>
@@ -609,13 +611,14 @@ val restore = params.get(&quot;restoreFlag&quot;).trim
  4.命令行中进行全局设置： ./bin/flink run -p 5 ../wordCount-java*.jar</code></pre><blockquote>
 <p>并行度设置优化点：</p>
 </blockquote>
-<pre><code>1. 在设置kafka source的时候，可以设置与partition 数一致的并行度。这样会启动与分区数对等的flinkKafkaConsumer 实例。每个FlinkKafkaConsumer实例消费的topic和partition则是根据探测到的所有指定topic分区对于并行数量取余数拿到的。
-公式：
-  (startIndex+parttion.getPartition())%numParallerSubtasks == currentTaskId
+<pre><code>1. 在设置kafka source的时候，可以设置与partition 数一致的并行度。
+    这样会启动与分区数对等的flinkKafkaConsumer 实例。每个FlinkKafkaConsumer实例消费的topic和partition则是根据探测到的所有指定topic分区对于并行数量取余数拿到的。
+    公式：(startIndex+parttion.getPartition())%numParallerSubtasks == currentTaskId
+2.当然kafka source也可以根据topic的数量进行设置，当数据量少时，可以设置并行度小于partition数。
 
   注意：不要设置并发数大于 partitions 总数，因为这种情况下某些并发因为分配不到 partition 导致没有数据处理。
 
-2.#        </code></pre><blockquote>
+3.#        </code></pre><blockquote>
 <p>并行度设置注意事项：</p>
 </blockquote>
 <pre><code>Apache Flink的并行度设置并不是说越大越好、数据处理的效率就越高。而是需要设置合理的并行度。那么何谓合理呢？
@@ -634,10 +637,11 @@ slot是指TaskManagere的并发执行能力，通常来说TaskManager有多少�
 <blockquote>
 <p>1.如果发生故障，系统将尝试重新启动作业3次，并在连续的重新启动尝试之间等待10秒。</p>
 </blockquote>
-<pre><code>env.setRestartStrategy(RestartStrategies.fixedDelayRestart(
-  3, // number of restart attempts
-  Time.of(10, TimeUnit.SECONDS) // delay
-));</code></pre><blockquote>
+<pre class=" language-scala"><code class="language-scala">env<span class="token punctuation">.</span>setRestartStrategy<span class="token punctuation">(</span>RestartStrategies<span class="token punctuation">.</span>fixedDelayRestart<span class="token punctuation">(</span>
+  <span class="token number">3</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// number of restart attempts</span>
+  Time<span class="token punctuation">.</span>of<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span>SECONDS<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// delay</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
 <p>2.超过设定的指标，则该作业最终将失败（程序常用）</p>
 </blockquote>
 <pre><code>// 设置内部 如果10分钟内连续失败3次，或者每次失败间隔时间超过15s 将认为不可恢复，则作业失败。其他情况作业默认启用内部恢复策略，直到作业恢复。
@@ -647,7 +651,7 @@ env.setRestartStrategy(RestartStrategies.failureRateRestart(3,
 </code></pre><blockquote>
 <p>3.不设置重试策略，作业有异常时直接失败。</p>
 </blockquote>
-<pre><code>env.setRestartStrategy(RestartStrategies.noRestart())
+<pre><code> env.setRestartStrategy(RestartStrategies.noRestart())
 </code></pre><hr>
 <h4 id="flink-状态数据层面"><a href="#flink-状态数据层面" class="headerlink" title="flink 状态数据层面"></a>flink 状态数据层面</h4><h5 id="1-checkpoint-优化设置"><a href="#1-checkpoint-优化设置" class="headerlink" title="1.checkpoint 优化设置"></a>1.checkpoint 优化设置</h5><pre><code>//设置checkpoint 快照时间为5分钟
 env.enableCheckpointing(300000l) 
@@ -735,10 +739,20 @@ env.setStateBackend(backend.asInstanceOf[StateBackend])
 
     针对场景二：设置前面的动态发现参数，在定期获取 kafka 最新 meta 信息时会匹配新的 partition。为了保证数据的正确性，新发现的 partition 从最早的位置开始读取
     代码：在properties  设置 flink.partition-discovery.interval-millis:发现时间间隔（毫秒）
-</code></pre><hr>
+
+
+6.commit offset 方式
+ 提交 offset 的方式分为两种：
+ checkpoint 关闭：
+        *依赖kafka 客户端的auto commit定期提交。
+        *需要设置 enable.auto.commit,auto.commit.interval.ms 参数到配置文件。
+
+ checkpoint 开启：构建source 时 setCommitOffsetsOnCheckpoints(true) 
+         *offset 自己在checkpoint state 中进行管理和维护。提交kafka offset 和ck时间一致，仅仅为了外部监控消费情况。
+         *通过setCommitOffsetsOnCheckpoints 设置,ck成功后是否提交offset 到kafka 。</code></pre><hr>
 <blockquote>
 <ul>
-<li>构建代码：</li>
+<li>构建flink kafka source代码：</li>
 </ul>
 </blockquote>
 <pre><code> //设置kafka
@@ -753,7 +767,8 @@ val source = env.addSource[String](new FlinkKafkaConsumer011[String](config.getP
       .setParallelism(32)
       .name(&quot;topic-source&quot;)
       .uid(&quot;topic-source&quot;)
-</code></pre><blockquote>
+</code></pre><hr>
+<blockquote>
 <ol start="2">
 <li>flink mysql Async I/O 访问</li>
 </ol>
@@ -1260,7 +1275,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.7k</span>&nbsp;字
+                class="white-color">48.8k</span>&nbsp;字
             
             
             
