@@ -549,7 +549,7 @@ env.getConfig.s">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.5k
+                    4.6k
                 </div>
                 
 
@@ -1015,6 +1015,32 @@ env<span class="token punctuation">.</span>registerCachedFile<span class="token 
  <span class="token comment" spellcheck="true">// result = A^B^C^D</span>
  <span class="token keyword">val</span> result <span class="token operator">=</span> join<span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">,</span><span class="token string">"B"</span><span class="token punctuation">,</span><span class="token string">"C"</span><span class="token punctuation">,</span><span class="token string">"D"</span><span class="token punctuation">)</span>
 </code></pre>
+<blockquote>
+<p>构建测试类测试数据解析是否正常</p>
+</blockquote>
+<pre class=" language-scala"><code class="language-scala"><span class="token keyword">import</span> org<span class="token punctuation">.</span>scalatest<span class="token punctuation">.</span>FunSuite
+<span class="token keyword">import</span> scala<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Source
+
+<span class="token keyword">class</span> ScalaTest <span class="token keyword">extends</span> FunSuite <span class="token punctuation">{</span>
+
+    test<span class="token punctuation">(</span><span class="token string">"test-parser-data"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token keyword">val</span> dataFilter <span class="token operator">=</span> <span class="token keyword">new</span> DataFilter
+          <span class="token keyword">val</span> file<span class="token operator">=</span>Source<span class="token punctuation">.</span>fromFile<span class="token punctuation">(</span><span class="token string">"local_file_path"</span><span class="token punctuation">)</span>
+          <span class="token keyword">val</span> lines <span class="token operator">=</span> file<span class="token punctuation">.</span>getLines
+        <span class="token keyword">var</span> counter<span class="token punctuation">,</span>total <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>line <span class="token keyword">&lt;-</span> lines<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            total <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>dataFilter<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                counter <span class="token operator">+=</span> <span class="token number">1</span>
+                <span class="token keyword">val</span> data <span class="token operator">=</span> 解析完的数据。
+                printBean<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+         <span class="token punctuation">}</span>
+         println<span class="token punctuation">(</span><span class="token string">"-"</span><span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span><span class="token string">"counter="</span><span class="token operator">+</span>counter <span class="token operator">+</span><span class="token string">",total="</span><span class="token operator">+</span> total<span class="token punctuation">)</span>
+         file<span class="token punctuation">.</span>close
+     <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
 <h4 id="flink-编程中的小总结"><a href="#flink-编程中的小总结" class="headerlink" title="flink 编程中的小总结"></a>flink 编程中的小总结</h4>
             </div>
             <hr/>
@@ -1486,7 +1512,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.1k</span>&nbsp;字
+                class="white-color">51.2k</span>&nbsp;字
             
             
             
