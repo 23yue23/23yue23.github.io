@@ -682,6 +682,12 @@
     <title><![CDATA[java-guava篇]]></title>
     <url>%2F2019%2F09%2F25%2Fjava-guava%E7%AF%87%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[java-多线程篇]]></title>
@@ -692,11 +698,12 @@
     <title><![CDATA[java-JVM篇]]></title>
     <url>%2F2019%2F09%2F25%2Fjava-JVM%E7%AF%87%2F</url>
     <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[java-基础篇]]></title>
-    <url>%2F2019%2F09%2F25%2Fjava-%E5%9F%BA%E7%A1%80%E7%AF%87%2F</url>
-    <content type="text"></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[mysql-资料篇]]></title>
@@ -716,13 +723,19 @@
         <category>hive</category>
       </categories>
       <tags>
-        <tag>hive-问题篇</tag>
+        <tag>hive</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[hive-学习篇]]></title>
     <url>%2F2019%2F09%2F25%2Fhive-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>hive</category>
+      </categories>
+      <tags>
+        <tag>hive</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[mysql-学习篇]]></title>
