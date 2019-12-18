@@ -5,8 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="hadoop-问题篇, xianchang.yue,github">
-    <meta name="description" content="hadoop streaming执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space解决方法： 
-在你的程序里设置以下环境">
+    <meta name="description" content="hadoop streaming执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space解决方法：对Mapper/Reduce">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -547,14 +546,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    446
+                    582
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 				
@@ -570,9 +569,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="hadoop-streaming"><a href="#hadoop-streaming" class="headerlink" title="hadoop streaming"></a>hadoop streaming</h4><h5 id="执行-hadoop-streaming-的时候，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space"><a href="#执行-hadoop-streaming-的时候，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space" class="headerlink" title="执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space"></a>执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space</h5><pre><code>解决方法： 
-在你的程序里设置以下环境变量值：
-export HADOOP_CLIENT_OPTS=&quot;-Xmx2048m&quot;</code></pre><h5 id="MapReduce保持以下异常信息时："><a href="#MapReduce保持以下异常信息时：" class="headerlink" title="MapReduce保持以下异常信息时："></a>MapReduce保持以下异常信息时：</h5><p>报错信息：</p>
+                <h4 id="hadoop-streaming"><a href="#hadoop-streaming" class="headerlink" title="hadoop streaming"></a>hadoop streaming</h4><h5 id="执行-hadoop-streaming-的时候，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space"><a href="#执行-hadoop-streaming-的时候，加载了太多的文件而导致-内存溢出错误：java-lang-OutOfMemoryError-Java-heap-space" class="headerlink" title="执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space"></a>执行 hadoop streaming 的时候，加载了太多的文件而导致 内存溢出错误：java.lang.OutOfMemoryError:Java heap space</h5><pre><code>解决方法：对Mapper/Reducer阶段JVM堆内存溢出参数调优 
+Maper: 
+mapreduce.map.java.opts=-Xmx2048m(默认参数，表示jvm堆内存,注意是mapreduce不是mapred)
+mapreduce.map.memory.mb=2304(container的内存）
+
+Reducer:
+mapreduce.reduce.java.opts=-Xmx2048m(默认参数，表示jvm堆内存)
+mapreduce.reduce.memory.mb=2304(container的内存)
+
+注意：因为在yarn container这种模式下，map/reduce task是运行在Container之中的，所以上面提到的mapreduce.map(reduce).memory.mb大小都大于mapreduce.map(reduce).java.opts值的大小。mapreduce.{map|reduce}.java.opts能够通过Xmx设置JVM最大的heap的使用，一般设置为0.75倍的memory.mb，因为需要为java code等预留些空间</code></pre><h5 id="MapReduce保持以下异常信息时："><a href="#MapReduce保持以下异常信息时：" class="headerlink" title="MapReduce保持以下异常信息时："></a>MapReduce保持以下异常信息时：</h5><p>报错信息：</p>
 <pre><code>Container [pid=81565,containerID=container_1489372757489_79086_01_000031] 
 is running beyond physical memory limits. 
 Current usage: 1.8 GB of 1.8 GB physical memory used; 
@@ -1066,7 +1072,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.2k</span>&nbsp;字
+                class="white-color">51.3k</span>&nbsp;字
             
             
             
