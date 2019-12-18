@@ -934,8 +934,16 @@ env<span class="token punctuation">.</span>registerCachedFile<span class="token 
 
 <span class="token comment" spellcheck="true">//flink支持将变量广播到worker上，以供程序运算使用。</span>
 </code></pre>
-<h4 id="flink-编程中的小总结"><a href="#flink-编程中的小总结" class="headerlink" title="flink 编程中的小总结"></a>flink 编程中的小总结</h4><p>1.</p>
-
+<h4 id="数据解析中好用的工具类"><a href="#数据解析中好用的工具类" class="headerlink" title="数据解析中好用的工具类"></a>数据解析中好用的工具类</h4><blockquote>
+<p>判断数据是否为空</p>
+</blockquote>
+<pre><code> StringUtils.isNotBlank(data)</code></pre><blockquote>
+<p>如果有就获取，没有就为默认值</p>
+</blockquote>
+<pre class=" language-scala"><code class="language-scala"> person<span class="token punctuation">.</span>getOrElse<span class="token punctuation">(</span>name<span class="token punctuation">)</span></code></pre>
+<blockquote>
+</blockquote>
+<h4 id="flink-编程中的小总结"><a href="#flink-编程中的小总结" class="headerlink" title="flink 编程中的小总结"></a>flink 编程中的小总结</h4>
             </div>
             <hr/>
 
