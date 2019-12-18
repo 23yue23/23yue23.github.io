@@ -549,14 +549,14 @@ env.getConfig.s">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.2k
+                    4.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    17 分
                 </div>
                 
 				
@@ -942,7 +942,79 @@ env<span class="token punctuation">.</span>registerCachedFile<span class="token 
 </blockquote>
 <pre class=" language-scala"><code class="language-scala"> person<span class="token punctuation">.</span>getOrElse<span class="token punctuation">(</span>name<span class="token punctuation">)</span></code></pre>
 <blockquote>
+<p>时间解析 以秒为单位</p>
 </blockquote>
+<pre class=" language-scala"><code class="language-scala"> <span class="token comment" spellcheck="true">//解析格式以秒为单位的数字事件时间字段，如果解析异常，则用当前系统时间代替，返回秒</span>
+ <span class="token keyword">def</span> parseTimestamp<span class="token punctuation">(</span>timestamp<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Long</span> <span class="token operator">=</span> <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    timestamp<span class="token punctuation">.</span>toLong
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> e<span class="token operator">:</span> Exception <span class="token keyword">=></span>
+      logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span>s<span class="token string">"Parsing event time exception: ${e.getMessage}"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span>
+      System<span class="token punctuation">.</span>currentTimeMillis<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span>
+  <span class="token punctuation">}</span>
+
+ <span class="token comment" spellcheck="true">//解析格式为yyyy-MM-dd HH:mm:ss的事件时间字段，如果解析异常，则用当前系统事件代替，返回毫秒</span>
+ <span class="token keyword">def</span> parseDateTime<span class="token punctuation">(</span>dateTime<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Long</span> <span class="token operator">=</span> <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    DateTimeFormat<span class="token punctuation">.</span>forPattern<span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>withZone<span class="token punctuation">(</span>DateTimeZone<span class="token punctuation">.</span>forID<span class="token punctuation">(</span><span class="token string">"+08:00"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>parseDateTime<span class="token punctuation">(</span>dateTime<span class="token punctuation">)</span><span class="token punctuation">.</span>getMillis
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> e<span class="token operator">:</span> Exception <span class="token keyword">=></span>
+      logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span>s<span class="token string">"Parsing event time exception: ${e.getMessage}"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span>
+      System<span class="token punctuation">.</span>currentTimeMillis<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>加载配置文件</p>
+</blockquote>
+<pre class=" language-scala"><code class="language-scala"> <span class="token keyword">def</span> loadConfig<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Properties <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> p <span class="token operator">=</span> <span class="token keyword">new</span> Properties<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> in <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>getClass<span class="token punctuation">.</span>getClassLoader<span class="token punctuation">.</span>getResourceAsStream<span class="token punctuation">(</span><span class="token string">"config.properties"</span><span class="token punctuation">)</span>
+    p<span class="token punctuation">.</span>load<span class="token punctuation">(</span>in<span class="token punctuation">)</span>
+    in<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    p
+  <span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>切分日志 split</p>
+</blockquote>
+<pre class=" language-scala"><code class="language-scala">  <span class="token comment" spellcheck="true">//按照制表符切割日志</span>
+  <span class="token keyword">val</span> splitter <span class="token operator">=</span> Pattern<span class="token punctuation">.</span>compile<span class="token punctuation">(</span><span class="token string">"\001"</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> split<span class="token punctuation">(</span>log<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">)</span><span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    splitter<span class="token punctuation">.</span>split<span class="token punctuation">(</span>log<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>josn 的解析（alibaba.fastjson）</p>
+</blockquote>
+<pre class=" language-scala"><code class="language-scala"><span class="token keyword">val</span> tmp <span class="token operator">=</span> <span class="token keyword">try</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//将json 转化为对象，并获取name 字段的字符串值</span>
+  JSON<span class="token punctuation">.</span>parseObject<span class="token punctuation">(</span>template<span class="token punctuation">)</span><span class="token punctuation">.</span>getString<span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">{</span>
+<span class="token keyword">case</span> e<span class="token operator">:</span>Exception <span class="token keyword">=></span> 
+    logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span>s<span class="token string">"Parsing json from template field occur exception: ${e.getMessage}"</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span>
+    <span class="token string">""</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>正则表达式对设备id 的匹配</p>
+</blockquote>
+<pre class=" language-scala"><code class="language-scala"><span class="token keyword">val</span> deviceIdReg <span class="token operator">=</span> <span class="token string">"^[0-9a-fA-F]{8}(-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}$"</span><span class="token punctuation">.</span>r
+
+<span class="token keyword">def</span> filterDeviceId<span class="token punctuation">(</span>deviceId<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    deviceIdReg<span class="token punctuation">.</span>findFirstMatchIn<span class="token punctuation">(</span>deviceId<span class="token punctuation">)</span><span class="token punctuation">.</span>isDefined <span class="token operator">&amp;&amp;</span> deviceId <span class="token operator">!=</span> <span class="token string">"00000000-0000-0000-0000-000000000000"</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>组合字符</p>
+</blockquote>
+<pre class=" language-scala"><code class="language-scala"><span class="token keyword">private</span> <span class="token keyword">val</span> joiner <span class="token operator">=</span> Joiner<span class="token punctuation">.</span>on<span class="token punctuation">(</span><span class="token string">"^"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>useForNull<span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> join<span class="token punctuation">(</span>str1<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span> str2<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span> str<span class="token operator">:</span> <span class="token builtin">String</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    joiner<span class="token punctuation">.</span>join<span class="token punctuation">(</span>str1<span class="token punctuation">,</span> str2<span class="token punctuation">,</span> str<span class="token operator">:</span> _<span class="token operator">*</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+ <span class="token comment" spellcheck="true">// result = A^B^C^D</span>
+ <span class="token keyword">val</span> result <span class="token operator">=</span> join<span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">,</span><span class="token string">"B"</span><span class="token punctuation">,</span><span class="token string">"C"</span><span class="token punctuation">,</span><span class="token string">"D"</span><span class="token punctuation">)</span>
+</code></pre>
 <h4 id="flink-编程中的小总结"><a href="#flink-编程中的小总结" class="headerlink" title="flink 编程中的小总结"></a>flink 编程中的小总结</h4>
             </div>
             <hr/>
@@ -1414,7 +1486,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">51.1k</span>&nbsp;字
             
             
             
