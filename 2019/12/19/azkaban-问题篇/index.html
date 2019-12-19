@@ -5,8 +5,8 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="azkaban-问题篇, xianchang.yue,github">
-    <meta name="description" content="1.azkaban exec 遇到的问题1.1 Job failed, Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job异常信息：
-    ERROR - Cann">
+    <meta name="description" content="1.azkaban exec 遇到的问题1.1 Job failed, Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job异常：
+    ERROR - Cannot">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -547,7 +547,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    104
+                    124
                 </div>
                 
 
@@ -570,12 +570,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1-azkaban-exec-遇到的问题"><a href="#1-azkaban-exec-遇到的问题" class="headerlink" title="1.azkaban exec 遇到的问题"></a>1.azkaban exec 遇到的问题</h4><h5 id="1-1-Job-failed-Cannot-request-memory-Xms-0-kb-Xmx-0-kb-from-system-for-job"><a href="#1-1-Job-failed-Cannot-request-memory-Xms-0-kb-Xmx-0-kb-from-system-for-job" class="headerlink" title="1.1 Job failed, Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job"></a>1.1 Job failed, Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job</h5><pre><code>异常信息：
+                <h4 id="1-azkaban-exec-遇到的问题"><a href="#1-azkaban-exec-遇到的问题" class="headerlink" title="1.azkaban exec 遇到的问题"></a>1.azkaban exec 遇到的问题</h4><h5 id="1-1-Job-failed-Cannot-request-memory-Xms-0-kb-Xmx-0-kb-from-system-for-job"><a href="#1-1-Job-failed-Cannot-request-memory-Xms-0-kb-Xmx-0-kb-from-system-for-job" class="headerlink" title="1.1 Job failed, Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job"></a>1.1 Job failed, Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job</h5><pre><code>异常：
     ERROR - Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job job_run_distinct_impression cause: null
 
-问题分析：当前遇到的问题，是在提交作业的时候进行了内存的检查，认为空闲资源不足，抛除的异常。
+分析：当前遇到的问题，是在提交作业的时候进行了内存的检查，认为空闲资源不足，抛除的异常。
 
-解决：在 azkaban/exec-server/plugins/jobtypes/commonprivate.properties文件中添加memCheck.enable=false</code></pre>
+解决：在 azkaban/exec-server/plugins/jobtypes/commonprivate.properties文件中添加memCheck.enable=false
+
+参考： https://github.com/azkaban/azkaban/issues/481
+      https://my.oschina.net/u/2988360/blog/1537561</code></pre><h4 id="2-azkaban-web-遇到的问题"><a href="#2-azkaban-web-遇到的问题" class="headerlink" title="2.azkaban web 遇到的问题"></a>2.azkaban web 遇到的问题</h4>
             </div>
             <hr/>
 
@@ -805,48 +808,46 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/19/azkaban-问题篇/">
+                <a href="/2019/12/19/java-ThreadLocalRandom篇/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="azkaban-问题篇">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="java-ThreadLocalRandom篇">
                         
-                        <span class="card-title">azkaban-问题篇</span>
+                        <span class="card-title">java-ThreadLocalRandom篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文介绍了 azkaban 在使用过程中，或者配置中遇到的问题，及解决方案
+                            本文介绍了 java-ThreadLocalRandom 随机数字的创建，多用于大数据数据倾斜
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-19
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/azkaban/" class="post-category">
-                                    azkaban
+                            <a href="/categories/java-ThreadLocalRandom篇/" class="post-category">
+                                    java-ThreadLocalRandom篇
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/azkaban/">
-                        <span class="chip bg-color">azkaban</span>
+                    <a href="/tags/java-ThreadLocalRandom篇/">
+                        <span class="chip bg-color">java-ThreadLocalRandom篇</span>
                     </a>
                     
                 </div>
@@ -1046,7 +1047,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.5k</span>&nbsp;字
+                class="white-color">51.9k</span>&nbsp;字
             
             
             
