@@ -547,14 +547,14 @@ grep -C 5 -rn &amp;quot;test.user&amp;quot; /var快速清除文件内容 &amp;gt
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 				
@@ -577,8 +577,21 @@ ls -l |grep &quot;^-&quot;|wc -l
 统计某文件夹下目录的个数
 ls -l |grep &quot;^ｄ&quot;|wc -l</code></pre><h5 id="快捷键操作"><a href="#快捷键操作" class="headerlink" title="快捷键操作"></a>快捷键操作</h5><pre><code>Ctl-U   删除光标到行首的所有字符,在某些设置下,删除全行
 Ctl-W   删除当前光标到前边的最近一个空格之间的字符</code></pre><h5 id="查看错误日志"><a href="#查看错误日志" class="headerlink" title="查看错误日志"></a>查看错误日志</h5><pre><code>tail -n 2000 namenode.log | grep -i -A 30 -B 5 -E &quot;error|exception&quot;
-读取namenode.log文件的末尾2000行，然后通过grep命令，忽略大小写过滤出包含error或者exception字符的行，并打印匹配行前面5行和后面30行的内容。这样不仅可以找出错误，还可以把异常堆栈信息找出来</code></pre><h5 id="shell文本格式化代码："><a href="#shell文本格式化代码：" class="headerlink" title="shell文本格式化代码："></a>shell文本格式化代码：</h5><pre><code> gg=G</code></pre><h5 id="查看shell-脚本执行过程"><a href="#查看shell-脚本执行过程" class="headerlink" title="查看shell 脚本执行过程"></a>查看shell 脚本执行过程</h5><pre><code>bash -x test.sh</code></pre><hr>
-<h4 id="案例1-工具使用-sort-uniq-tr-cut-paste-split-file-wc-iconv"><a href="#案例1-工具使用-sort-uniq-tr-cut-paste-split-file-wc-iconv" class="headerlink" title="案例1. 工具使用(sort|uniq|tr|cut|paste|split|file|wc|iconv)"></a>案例1. 工具使用(sort|uniq|tr|cut|paste|split|file|wc|iconv)</h4><pre><code>sort - 对内容排序
+读取namenode.log文件的末尾2000行，然后通过grep命令，忽略大小写过滤出包含error或者exception字符的行，并打印匹配行前面5行和后面30行的内容。这样不仅可以找出错误，还可以把异常堆栈信息找出来</code></pre><h5 id="shell文本格式化代码："><a href="#shell文本格式化代码：" class="headerlink" title="shell文本格式化代码："></a>shell文本格式化代码：</h5><pre><code> gg=G</code></pre><h5 id="查看shell-脚本执行过程"><a href="#查看shell-脚本执行过程" class="headerlink" title="查看shell 脚本执行过程"></a>查看shell 脚本执行过程</h5><pre><code>bash -x test.sh</code></pre><h4 id="案例1-磁盘清理"><a href="#案例1-磁盘清理" class="headerlink" title="案例1. 磁盘清理"></a>案例1. 磁盘清理</h4><pre><code>第一步查看磁盘具体情况
+df -h
+
+第二步定位大文件
+du -h —max-depth=1 /
+
+第三步删除大文件
+
+第四步如果删除磁盘还是没有清理
+lsof -nP | grep &#39;(deleted)’
+
+5.kill 掉你删除文件的pid
+
+6.再查看你会发现世界真的很美好</code></pre><hr>
+<h4 id="案例2-工具使用-sort-uniq-tr-cut-paste-split-file-wc-iconv"><a href="#案例2-工具使用-sort-uniq-tr-cut-paste-split-file-wc-iconv" class="headerlink" title="案例2. 工具使用(sort|uniq|tr|cut|paste|split|file|wc|iconv)"></a>案例2. 工具使用(sort|uniq|tr|cut|paste|split|file|wc|iconv)</h4><pre><code>sort - 对内容排序
 uniq - 去掉相邻重复内容
 tr - 替换指定内容为新内容
 cut / paste - 剪切/黏贴内容
@@ -656,7 +669,7 @@ iconv -f gb2312 -t utf-8 qq.html
 curl -o index.html http://www.codebelief.com  
 wget http://www.qq.com -O qq.html
 
-</code></pre><h4 id="案例2-管道重定向"><a href="#案例2-管道重定向" class="headerlink" title="案例2-管道重定向"></a>案例2-管道重定向</h4><pre><code>查找record.log中包含AAA，但不包含BBB的记录的总数
+</code></pre><h4 id="案例3-管道重定向"><a href="#案例3-管道重定向" class="headerlink" title="案例3-管道重定向"></a>案例3-管道重定向</h4><pre><code>查找record.log中包含AAA，但不包含BBB的记录的总数
 
 [root ~]# cat record.log | grep AAA | grep -v BBB | wc -l
 </code></pre><h6 id="输出重定向和错误重定向-gt-gt-gt-2-gt-。"><a href="#输出重定向和错误重定向-gt-gt-gt-2-gt-。" class="headerlink" title="输出重定向和错误重定向 - &gt; / &gt;&gt; / 2&gt;。"></a>输出重定向和错误重定向 - &gt; / &gt;&gt; / 2&gt;。</h6><pre><code>[root ~]# cat readme.txt
@@ -688,7 +701,7 @@ hello, world!
 Broadcast message from root (Wed Jun 20 19:43:55 2018):
 hello, world!
 I will show you some code.
-</code></pre><h4 id="案例3-字符流编辑器-sed。"><a href="#案例3-字符流编辑器-sed。" class="headerlink" title="案例3. 字符流编辑器 - sed。"></a>案例3. 字符流编辑器 - sed。</h4><pre><code>sed是操作、过滤和转换文本内容的工具。假设有一个名为fruit.txt的文件，内容如下所示。
+</code></pre><h4 id="案例4-字符流编辑器-sed。"><a href="#案例4-字符流编辑器-sed。" class="headerlink" title="案例4. 字符流编辑器 - sed。"></a>案例4. 字符流编辑器 - sed。</h4><pre><code>sed是操作、过滤和转换文本内容的工具。假设有一个名为fruit.txt的文件，内容如下所示。
 
 [root ~]# cat -n fruit.txt 
      1  banana
@@ -744,7 +757,7 @@ gr@pe
 @pple
 w@termelon
 or@nge
-</code></pre><h4 id="案例4-awk-使用"><a href="#案例4-awk-使用" class="headerlink" title="案例4. awk-使用"></a>案例4. awk-使用</h4><pre><code>[root ~]# cat fruit2.txt 
+</code></pre><h4 id="案例5-awk-使用"><a href="#案例5-awk-使用" class="headerlink" title="案例5. awk-使用"></a>案例5. awk-使用</h4><pre><code>[root ~]# cat fruit2.txt 
 1       banana      120
 2       grape       500
 3       apple       1230
@@ -767,9 +780,9 @@ orange</code></pre><h5 id="显示文件的最后一列。"><a href="#显示文�
 5       orange      400</code></pre><h5 id="进行行的过滤"><a href="#进行行的过滤" class="headerlink" title="进行行的过滤"></a>进行行的过滤</h5><pre><code>awk &#39;NR &lt; 5&#39; #行号小于5
 awk &#39;NR==1,NR==4 {print}&#39; file #行号等于1和4的打印出来
 awk &#39;/linux/&#39; #包含linux文本的行（可以用正则表达式来指定，超级强大）
-awk &#39;!/linux/&#39; #不包含linux文本的行</code></pre><h4 id="案例5-统计文件的行数"><a href="#案例5-统计文件的行数" class="headerlink" title="案例5. 统计文件的行数"></a>案例5. 统计文件的行数</h4><pre><code>awk &#39; END {print NR}&#39;</code></pre><h4 id="案例6-将外部shell命令的输出读入到变量中"><a href="#案例6-将外部shell命令的输出读入到变量中" class="headerlink" title="案例6. 将外部shell命令的输出读入到变量中"></a>案例6. 将外部shell命令的输出读入到变量中</h4><pre><code>使用getline，将外部shell命令的输出读入到变量cmdout中:
+awk &#39;!/linux/&#39; #不包含linux文本的行</code></pre><h4 id="案例6-统计文件的行数"><a href="#案例6-统计文件的行数" class="headerlink" title="案例6. 统计文件的行数"></a>案例6. 统计文件的行数</h4><pre><code>awk &#39; END {print NR}&#39;</code></pre><h4 id="案例7-将外部shell命令的输出读入到变量中"><a href="#案例7-将外部shell命令的输出读入到变量中" class="headerlink" title="案例7. 将外部shell命令的输出读入到变量中"></a>案例7. 将外部shell命令的输出读入到变量中</h4><pre><code>使用getline，将外部shell命令的输出读入到变量cmdout中:
 
-echo | awk &#39;{&quot;grep root /etc/passwd&quot; | getline cmdout; print cmdout }&#39;</code></pre><h4 id="案例9-替换jar-或war-中的文件"><a href="#案例9-替换jar-或war-中的文件" class="headerlink" title="案例9.替换jar 或war 中的文件"></a>案例9.替换jar 或war 中的文件</h4><pre><code>1.首先查找出文件的绝对路径
+echo | awk &#39;{&quot;grep root /etc/passwd&quot; | getline cmdout; print cmdout }&#39;</code></pre><h4 id="案例8-替换jar-或war-中的文件"><a href="#案例8-替换jar-或war-中的文件" class="headerlink" title="案例8.替换jar 或war 中的文件"></a>案例8.替换jar 或war 中的文件</h4><pre><code>1.首先查找出文件的绝对路径
 jar tvf test.war | grep application.yml
 
 2.解压文件
@@ -790,7 +803,7 @@ jar -tf file.jar
 -x 解档文件
 -t 列出归档文件内容
 -0  仅存储; 不使用任何 ZIP 压缩（把jar包放进war必须把这个参数加上）
-</code></pre><h4 id="案例8-按占用内存由高到低排序"><a href="#案例8-按占用内存由高到低排序" class="headerlink" title="案例8.按占用内存由高到低排序"></a>案例8.按占用内存由高到低排序</h4><h6 id="内存使用前10"><a href="#内存使用前10" class="headerlink" title="内存使用前10:"></a>内存使用前10:</h6><pre><code>ps auxw|head -1;ps auxw|sort -rn -k4|head -10</code></pre><h6 id="内存整体情况"><a href="#内存整体情况" class="headerlink" title="内存整体情况"></a>内存整体情况</h6><pre><code>free -m</code></pre><h6 id="含义："><a href="#含义：" class="headerlink" title="含义："></a>含义：</h6><pre><code>USER    进程所属用户    
+</code></pre><h4 id="案例9-按占用内存由高到低排序"><a href="#案例9-按占用内存由高到低排序" class="headerlink" title="案例9.按占用内存由高到低排序"></a>案例9.按占用内存由高到低排序</h4><h6 id="内存使用前10"><a href="#内存使用前10" class="headerlink" title="内存使用前10:"></a>内存使用前10:</h6><pre><code>ps auxw|head -1;ps auxw|sort -rn -k4|head -10</code></pre><h6 id="内存整体情况"><a href="#内存整体情况" class="headerlink" title="内存整体情况"></a>内存整体情况</h6><pre><code>free -m</code></pre><h6 id="含义："><a href="#含义：" class="headerlink" title="含义："></a>含义：</h6><pre><code>USER    进程所属用户    
 PID    进程ID    
 %CPU    进程占用CPU百分比    
 %MEM    进程占用内存百分比    
@@ -1320,7 +1333,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.3k</span>&nbsp;字
+                class="white-color">51.4k</span>&nbsp;字
             
             
             
