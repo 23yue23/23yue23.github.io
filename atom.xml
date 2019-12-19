@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-12-19T09:10:07.657Z</updated>
+  <updated>2019-12-19T09:11:57.621Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://23yue23.github.io/2019/12/19/java-ThreadLocalRandom%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/12/19/java-ThreadLocalRandom篇/</id>
     <published>2019-12-19T08:47:06.000Z</published>
-    <updated>2019-12-19T09:10:07.657Z</updated>
+    <updated>2019-12-19T09:11:57.621Z</updated>
     
     <content type="html"><![CDATA[<h4 id="1-为什么用？"><a href="#1-为什么用？" class="headerlink" title="1.为什么用？"></a>1.为什么用？</h4><p>因为在Java 7 才引入了 java.util.concurrent.ThreadLocalRandom 类，主要是用于在多线程环境中生成随机数。是 ThreadLocal 类和 Random 类的组合，与当前线程隔离，通过简单地避免对 Random 对象的任何并发访问，在多线程环境中实现了更好的性能。</p><h4 id="2-怎么用？"><a href="#2-怎么用？" class="headerlink" title="2.怎么用？"></a>2.怎么用？</h4><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//当前边界时 int 的边界</span><span class="token keyword">int</span> boundedRandomValue <span class="token operator">=</span> ThreadLocalRandom<span class="token punctuation">.</span><span class="token function">current</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//当前边界时【0，100） 之间，包含0 不包含100</span><span class="token keyword">int</span> boundedRandomValue <span class="token operator">=</span> ThreadLocalRandom<span class="token punctuation">.</span><span class="token function">current</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><h4 id="3-使用场景"><a href="#3-使用场景" class="headerlink" title="3.使用场景"></a>3.使用场景</h4><pre><code>//可用于大数据倾斜时，用于打散数据。//key + &quot;@&quot; + ThreadLocalRandom.current().nextInt()</code></pre><p><img src="https://awps-assets.meituan.net/mit-x/blog-images-bundle-2016/ed298b30.png" alt="图来自美团技术团队的博客：https://tech.meituan.com/2016/05/12/spark-tuning-pro.html"></p>]]></content>
     
@@ -34,10 +34,10 @@
     
     </summary>
     
-      <category term="java-ThreadLocalRandom篇" scheme="https://23yue23.github.io/categories/java-ThreadLocalRandom%E7%AF%87/"/>
+      <category term="java" scheme="https://23yue23.github.io/categories/java/"/>
     
     
-      <category term="java-ThreadLocalRandom篇" scheme="https://23yue23.github.io/tags/java-ThreadLocalRandom%E7%AF%87/"/>
+      <category term="java ThreadLocalRandom" scheme="https://23yue23.github.io/tags/java-ThreadLocalRandom/"/>
     
   </entry>
   

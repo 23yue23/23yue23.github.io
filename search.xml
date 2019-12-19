@@ -5,10 +5,10 @@
     <url>%2F2019%2F12%2F19%2Fjava-ThreadLocalRandom%E7%AF%87%2F</url>
     <content type="text"><![CDATA[1.为什么用？因为在Java 7 才引入了 java.util.concurrent.ThreadLocalRandom 类，主要是用于在多线程环境中生成随机数。是 ThreadLocal 类和 Random 类的组合，与当前线程隔离，通过简单地避免对 Random 对象的任何并发访问，在多线程环境中实现了更好的性能。 2.怎么用？//当前边界时 int 的边界 int boundedRandomValue = ThreadLocalRandom.current().nextInt(); //当前边界时【0，100） 之间，包含0 不包含100 int boundedRandomValue = ThreadLocalRandom.current().nextInt(0, 100); 3.使用场景//可用于大数据倾斜时，用于打散数据。 //key + &quot;@&quot; + ThreadLocalRandom.current().nextInt()]]></content>
       <categories>
-        <category>java-ThreadLocalRandom篇</category>
+        <category>java</category>
       </categories>
       <tags>
-        <tag>java-ThreadLocalRandom篇</tag>
+        <tag>java ThreadLocalRandom</tag>
       </tags>
   </entry>
   <entry>
