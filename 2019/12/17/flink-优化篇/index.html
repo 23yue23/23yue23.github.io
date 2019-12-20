@@ -549,7 +549,7 @@ env.getConfig.s">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.8k
+                    4.9k
                 </div>
                 
 
@@ -1041,6 +1041,42 @@ env<span class="token punctuation">.</span>registerCachedFile<span class="token 
      <span class="token punctuation">}</span>
 
 <span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>加载定时加载外部数据</p>
+</blockquote>
+<pre class=" language-scala"><code class="language-scala"><span class="token comment" spellcheck="true">//设置当前的线程数</span>
+  <span class="token keyword">var</span> countDown<span class="token operator">:</span> CountDownLatch <span class="token operator">=</span> <span class="token keyword">new</span> CountDownLatch<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token annotation punctuation">@volatile</span> <span class="token keyword">var</span> resultData<span class="token operator">:</span> mutable<span class="token punctuation">.</span>Map<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> _
+
+  <span class="token keyword">def</span> getUccrAndKvAndDefalut<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>countDown<span class="token punctuation">.</span>getCount <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      countDown<span class="token punctuation">.</span>await<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    resultData
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">//创建调度器</span>
+  <span class="token keyword">var</span> executor<span class="token operator">:</span> ScheduledExecutorService <span class="token operator">=</span> Executors<span class="token punctuation">.</span>newSingleThreadScheduledExecutor<span class="token punctuation">(</span>
+    <span class="token keyword">new</span> ThreadFactoryBuilder<span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span>setDaemon<span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span>setNameFormat<span class="token punctuation">(</span><span class="token string">"loaderData-%d"</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span>build<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true">// 开始调度 一开始就执行，每三分钟调度一次</span>
+  executor<span class="token punctuation">.</span>scheduleAtFixedRate<span class="token punctuation">(</span><span class="token keyword">new</span> Runnable <span class="token punctuation">{</span>
+    <span class="token keyword">override</span> <span class="token keyword">def</span> run<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+      loadData<span class="token punctuation">(</span><span class="token punctuation">)</span>
+      logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"Sync resultData from filesystem complete"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span>
+
+ <span class="token keyword">def</span> loadData<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    resultData <span class="token operator">+=</span> <span class="token punctuation">(</span><span class="token string">"1"</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token string">"A"</span><span class="token punctuation">)</span>
+     <span class="token keyword">if</span> <span class="token punctuation">(</span>countDown<span class="token punctuation">.</span>getCount <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      countDown<span class="token punctuation">.</span>countDown<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+</code></pre>
 <h4 id="flink-排查问题层面"><a href="#flink-排查问题层面" class="headerlink" title="flink 排查问题层面"></a>flink 排查问题层面</h4><h5 id="1-查看-flinkUI-的监控"><a href="#1-查看-flinkUI-的监控" class="headerlink" title="1.查看 flinkUI 的监控"></a>1.查看 flinkUI 的监控</h5><pre><code>1.查看当前作业运行的状态
 2.如果有checkpoint 快照，首先查看快照是否按照约定的时间触发。
 3.查看作业是否有背压。-&gt;根据拓扑结构定位错误位置，查看哪里数据产生堆积。
@@ -1050,7 +1086,13 @@ env<span class="token punctuation">.</span>registerCachedFile<span class="token 
 <p>promethus 抓取kafka 的信息，并通过grafana 展现出来。</p>
 </blockquote>
 <hr>
-<h5 id="3-如果发现subTask-有问题，怎么排查"><a href="#3-如果发现subTask-有问题，怎么排查" class="headerlink" title="3.如果发现subTask 有问题，怎么排查"></a>3.如果发现subTask 有问题，怎么排查</h5><p>基本思路是根据restApi来定位<br><a href="https://juejin.im/post/5d973af2518825096a1874f4" target="_blank" rel="noopener">Flink定位SubTask在哪台机器哪个进程执行</a></p>
+<h5 id="3-如果发现subTask-有问题，怎么排查"><a href="#3-如果发现subTask-有问题，怎么排查" class="headerlink" title="3.如果发现subTask 有问题，怎么排查"></a>3.如果发现subTask 有问题，怎么排查</h5><p>基本思路是根据restApi来定位:<br><a href="https://juejin.im/post/5d973af2518825096a1874f4" target="_blank" rel="noopener">Flink定位SubTask在哪台机器哪个进程执行</a></p>
+<h5 id="4-keyby-的数据倾斜了怎么办"><a href="#4-keyby-的数据倾斜了怎么办" class="headerlink" title="4.keyby 的数据倾斜了怎么办"></a>4.keyby 的数据倾斜了怎么办</h5><pre class=" language-scala"><code class="language-scala"><span class="token comment" spellcheck="true">//1. 将值进行hash</span>
+<span class="token comment" spellcheck="true">//将keyData 进行hash</span>
+    <span class="token keyword">val</span> hashCode<span class="token operator">:</span> HashCode <span class="token operator">=</span> Hashing<span class="token punctuation">.</span>murmur3_32<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hashString<span class="token punctuation">(</span>keyData<span class="token punctuation">,</span> Charset<span class="token punctuation">.</span>forName<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">(</span>hashCode<span class="token punctuation">.</span>hashCode<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> Integer<span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">,</span> hashCode<span class="token punctuation">.</span>toString<span class="token punctuation">)</span>
+
+</code></pre>
 
             </div>
             <hr/>
@@ -1520,7 +1562,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.9k</span>&nbsp;字
+                class="white-color">52.1k</span>&nbsp;字
             
             
             
