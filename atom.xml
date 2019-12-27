@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://23yue23.github.io/"/>
-  <updated>2019-12-19T11:49:14.347Z</updated>
+  <updated>2019-12-27T08:09:16.890Z</updated>
   <id>https://23yue23.github.io/</id>
   
   <author>
@@ -15,6 +15,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>扫雷系列-Java进程CPU过高故障排查</title>
+    <link href="https://23yue23.github.io/2019/12/27/%E6%89%AB%E9%9B%B7%E7%B3%BB%E5%88%97-Java%E8%BF%9B%E7%A8%8BCPU%E8%BF%87%E9%AB%98%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/"/>
+    <id>https://23yue23.github.io/2019/12/27/扫雷系列-Java进程CPU过高故障排查/</id>
+    <published>2019-12-27T08:04:41.000Z</published>
+    <updated>2019-12-27T08:09:16.890Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>转载地址：<a href="http://blog.itttl.com/blog/java/java_tuning.html" target="_blank" rel="noopener">http://blog.itttl.com/blog/java/java_tuning.html</a></p></blockquote><blockquote><p>问题描述：</p></blockquote><p>排查java服务CPU负载异常过高。</p><blockquote><p>解决过程：</p></blockquote><p>1.根据top命令，发现PID为9914的Java进程占用CPU高达150%，出现故障。</p><p>2.找到该进程后，如何定位具体线程或代码呢，首先显示线程列表,并按照CPU占用高的线程排序：</p><pre><code>[root@test01 logs]# ps -mp 9914 -o THREAD,tid,time | sort -rn显示结果如下：USER     %CPU PRI SCNT WCHAN  USER SYSTEM   TID     TIMEroot     28.6  19    - futex_    -      - 10032 00:16:56root     28.6  19    - -         -      -  9985 00:16:59root     28.5  19    - futex_    -      -  9981 00:16:56root     28.5  19    - -         -      - 10108 00:16:55找到了耗时最高的线程10032，占用CPU时间有16分钟了！将需要的线程ID转换为16进制格式：[root@test01 logs]# printf &quot;%x\n&quot; 100322730最后打印线程的堆栈信息：[root@test01 logs]# jstack 2633 |grep 2730 -A 30将输出的信息发给开发部进行确认，这样就能找出有问题的代码。</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;转载地址：&lt;a href=&quot;http://blog.itttl.com/blog/java/java_tuning.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://blog.itttl.com/blog/ja
+      
+    
+    </summary>
+    
+      <category term="扫雷系列" scheme="https://23yue23.github.io/categories/%E6%89%AB%E9%9B%B7%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="扫雷系列 Java进程CPU过高故障排查" scheme="https://23yue23.github.io/tags/%E6%89%AB%E9%9B%B7%E7%B3%BB%E5%88%97-Java%E8%BF%9B%E7%A8%8BCPU%E8%BF%87%E9%AB%98%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zeppelin-部署篇</title>
+    <link href="https://23yue23.github.io/2019/12/24/zeppelin-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/12/24/zeppelin-部署篇/</id>
+    <published>2019-12-24T05:47:35.000Z</published>
+    <updated>2019-12-24T05:47:35.402Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="zeppelin-部署篇" scheme="https://23yue23.github.io/categories/zeppelin-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
+    
+    
+      <category term="zeppelin-部署篇" scheme="https://23yue23.github.io/tags/zeppelin-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>azkaban-部署篇</title>
+    <link href="https://23yue23.github.io/2019/12/24/azkaban-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
+    <id>https://23yue23.github.io/2019/12/24/azkaban-部署篇/</id>
+    <published>2019-12-24T05:47:23.000Z</published>
+    <updated>2019-12-24T06:10:39.657Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h4><blockquote><p>macOS | java 8 |gradle | azkaban</p></blockquote><h4 id="构建source-的命令"><a href="#构建source-的命令" class="headerlink" title="构建source 的命令"></a>构建source 的命令</h4><pre><code># Build Azkaban./gradlew build# Clean the build./gradlew clean# Build and install distributions./gradlew installDist# Run tests./gradlew test# Build without running tests./gradlew build -x test</code></pre><h4 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h4><pre><code>#下载azkaban git clone https://github.com/azkaban/azkaban.git#选择版本git checkout 3.81.4#source 进行build./gradlew clean build#或者构建成tar 的形式，上传服务器进行部署，只需部署exec 和web ./gradlew clean distTar</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;部署环境&quot;&gt;&lt;a href=&quot;#部署环境&quot; class=&quot;headerlink&quot; title=&quot;部署环境&quot;&gt;&lt;/a&gt;部署环境&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;macOS | java 8 |gradle | azkaban&lt;/p&gt;
+&lt;/blockquote
+      
+    
+    </summary>
+    
+      <category term="azkaban" scheme="https://23yue23.github.io/categories/azkaban/"/>
+    
+    
+      <category term="azkaban-部署篇" scheme="https://23yue23.github.io/tags/azkaban-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
+    
+  </entry>
   
   <entry>
     <title>k8s-aliyun操作</title>
@@ -253,9 +324,9 @@
     <link href="https://23yue23.github.io/2019/10/25/k8s-%E5%AE%9E%E6%88%98%E7%AF%87/"/>
     <id>https://23yue23.github.io/2019/10/25/k8s-实战篇/</id>
     <published>2019-10-25T02:15:02.000Z</published>
-    <updated>2019-12-18T06:51:39.277Z</updated>
+    <updated>2019-12-20T07:49:13.680Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="1-kubectl-操作"><a href="#1-kubectl-操作" class="headerlink" title="1. kubectl 操作"></a>1. kubectl 操作</h4><h5 id="1-1-kubectl-配置"><a href="#1-1-kubectl-配置" class="headerlink" title="1.1 kubectl 配置"></a>1.1 kubectl 配置</h5><h5 id="1-3-kubectl-权限"><a href="#1-3-kubectl-权限" class="headerlink" title="1.3 kubectl 权限"></a>1.3 kubectl 权限</h5><pre><code>**********************# 权限问题 #*************************查看是否有权限：kubectl auth can-i &lt;list|create|edit|delete&gt; pods</code></pre><h4 id="2-minikube操作"><a href="#2-minikube操作" class="headerlink" title="2. minikube操作"></a>2. minikube操作</h4><h5 id="2-1-minikube-安装"><a href="#2-1-minikube-安装" class="headerlink" title="2.1 minikube 安装"></a>2.1 minikube 安装</h5><blockquote><p>1.下载virtualbox</p></blockquote><blockquote><p>2.brew cask install minikube</p></blockquote><blockquote><p>3.minikube start –vm-driver=virtualbox</p></blockquote><blockquote><p>4.minikube config set vm-driver virtualbox</p></blockquote><blockquote><p>5.kubectl version 查看版本</p></blockquote><h5 id="2-2-minikube-常用操作"><a href="#2-2-minikube-常用操作" class="headerlink" title="2.2 minikube 常用操作"></a>2.2 minikube 常用操作</h5><pre><code>#启动并创建集群minikube start#查看仪表盘minikube dashboard#使用现有镜像kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10#访问时将端口进行公开映射kubectl expose deployment hello-minikube --type=NodePort --port=8080#查看是否已经正在运行kubectl get pods#获取公开服务的URL以查看服务详细信息minikube service hello-minikube --url#curl 获取的url 查看本地集群的详细信息curl http://192.168.99.100:30083#删除 hello-minikube 服务kubectl delete services hello-minikube#删除 hello-minikube 部署kubectl delete deployment hello-minikube#停止本地minikube 集群minikube stop#删除本地minikube 集群minikube delete</code></pre><h5 id="2-3-minikube-的应用和服务"><a href="#2-3-minikube-的应用和服务" class="headerlink" title="2.3 minikube 的应用和服务"></a>2.3 minikube 的应用和服务</h5><pre><code>********************# 应用和服务 #*************#启动minikubeminikube start#部署应用kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080#确定deploymentkubectl get deployment#查看部署的应用kubectl get pods#发布应用kubectl expose deployment hello-minikube --type=NodePort#查看发布的内容kubectl get services#访问服务1.虚拟机：curl http://ip:port2.curl $(minikube service hello-minikube --url)#获取服务url 链接minikube service --url service_name#查看控制台minikube dashboard查看所有Kubernetes Pod的部署状态kubectl get po -A#删除服务kubectl delete services hello-minikube#删除应用kubectl delete deployment hello-minikube#删除podskubectl delete pods podName#停止minikubeminikube stop#进入minikube 控制台minikube ssh</code></pre><hr><h5 id="2-4-minikube-集群相关"><a href="#2-4-minikube-集群相关" class="headerlink" title="2.4 minikube 集群相关"></a>2.4 minikube 集群相关</h5><pre><code>**********************# 集群相关 #**************************#获取集群的ipminikube ip#获取集群节点kubectl get nodes#启动第二个本地集群minikube start -p cluster2#停止本地集群minikube stop#删除本地集群minikube delete#删除所有本地集群和配置文件minikube delete --all获取网桥ipminikube ssh &quot;route -n | grep ^0.0.0.0 | awk &#39;{ print \$2 }&#39;&quot;链接到集群minikubeminikube sshtelnet ip port</code></pre><hr><h5 id="2-5-minikube-附加组件"><a href="#2-5-minikube-附加组件" class="headerlink" title="2.5 minikube 附加组件"></a>2.5 minikube 附加组件</h5><pre><code>********************************* 附加组件 ********************#查询可添加的组件minikube addons list#启用组件minikube addons enable &lt;name&gt;#与组件交互minikube addons open &lt;name&gt;#禁用组件minikube addons disable &lt;name&gt;</code></pre><hr><h5 id="2-6-minikube-调试"><a href="#2-6-minikube-调试" class="headerlink" title="2.6 minikube 调试"></a>2.6 minikube 调试</h5><pre><code>************************** 启动调试日志 *******************--v=0将输出INFO级别的日志--v=1将输出警告级别的日志--v=2将输出错误级别的日志--v=3将输出libmachine日志记录--v=7将输出libmachine –debug级日志记录minikube start --v=7 将启动minikube并将所有重要的调试日志输出到stdout#收集虚拟机日志，要调试Kubernetes部署失败的问题，收集Kubernetes pod和内核日志非常有用minikube logs#立即查看启动失败minikube logs --problems#查看所有Kubernetes Pod的部署状态kubectl get po -A</code></pre><h5 id="2-7-重用Docker-守护程序使用本地映像"><a href="#2-7-重用Docker-守护程序使用本地映像" class="headerlink" title="2.7 重用Docker 守护程序使用本地映像"></a>2.7 重用Docker 守护程序使用本地映像</h5><pre><code>eval $(minikube docker-env)docker ps</code></pre><hr><h4 id="4-学习案例"><a href="#4-学习案例" class="headerlink" title="4.学习案例"></a>4.学习案例</h4><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><hr><h4 id="5-kubectl应用和服务"><a href="#5-kubectl应用和服务" class="headerlink" title="5.kubectl应用和服务"></a>5.kubectl应用和服务</h4><hr><p>####6. </p><hr><h4 id="10-docker-常用操作"><a href="#10-docker-常用操作" class="headerlink" title="10.docker 常用操作"></a>10.docker 常用操作</h4><h5 id="10-1-镜像的操作"><a href="#10-1-镜像的操作" class="headerlink" title="10.1 镜像的操作"></a>10.1 镜像的操作</h5><pre><code>列出所有的镜像: docker images 停止运行：docker stop iamgesId删除单个镜像：docker rmi imagesId清理所有（慎用）：docker system pruneWARNING! This will remove:  - all stopped containers  - all networks not used by at least one container  - all dangling images  - all dangling build cache 清理镜像：docker image prune 清理容器：docker container prune 删除所有停止的镜像docker image prune -f -a 删除所有停止的容器：docker container prune -f复制文件：docker cp mycontainer:/opt/file.txt /opt/local/docker cp /opt/local/file.txt mycontainer:/opt/</code></pre><hr><h4 id="11-docker-常见问题及解决方案"><a href="#11-docker-常见问题及解决方案" class="headerlink" title="11.docker 常见问题及解决方案"></a>11.docker 常见问题及解决方案</h4><h5 id="11-1-docker日志太多导致磁盘占满"><a href="#11-1-docker日志太多导致磁盘占满" class="headerlink" title="11.1 docker日志太多导致磁盘占满"></a>11.1 docker日志太多导致磁盘占满</h5><blockquote><p>在启动时遇到：No space left on device 官方解决方案：<a href="https://success.docker.com/article/no-space-left-on-device-error" target="_blank" rel="noopener">地址</a></p></blockquote><pre><code>## 1.Sort the /var/lib/docker/containersdu -d1 -h /var/lib/docker/containers | sort -h## 2. 选择要清理的容器进行清理 cat /dev/null &gt;     /var/lib/docker/containers/********## 3.限制日志文件的大小：启动容器时，可以通过参数设置日志文件的大小、日志文件的格式 docker run -it --log-opt max-size=10m --log-opt max-file=3 alpine ash</code></pre><h4 id="12-kubectl常用故障排查以及修改命令"><a href="#12-kubectl常用故障排查以及修改命令" class="headerlink" title="12.kubectl常用故障排查以及修改命令"></a>12.kubectl常用故障排查以及修改命令</h4><blockquote><p>scale </p></blockquote><pre><code>scale命令进行横向扩展，将原本为1的副本，提高到3kubectl scale --current-replicas=1 --replicas=3 deployment/nginx</code></pre><blockquote><p>autoscale</p></blockquote><pre><code>和scale不同的是autoscale则会根据负载进行调解kubectl autoscale deployment nginx --min=2 --max=5</code></pre><blockquote><p>cordon</p></blockquote><pre><code>查询nodeAddresskubectl get pods -o wide设定nodeAddress，使得nodeAddress不可使用，使用get node确认，其状态显示SchedulingDisabledkubectl cordon nodeAddress案例：设定134不可用：kubectl cordon 192.168.32.134横向扩展：kubectl scale --replicas=6 deployment/nginx发现没有pods 再执行在134这台机器上。</code></pre><blockquote><p>kubectl uncordon</p></blockquote><pre><code>解除限制kubectl uncordon nodeAddress</code></pre><blockquote><p>kubectl drain </p></blockquote><pre><code>drain命令用于对某个node进行设定，是为了设定此node为维护做准备。此命令主要执行的操作是：1. 设定此node不可以使用（cordon)2. evict（回收）了其上的两个pod</code></pre><blockquote><p>kubectl api-versions</p></blockquote><pre><code>查看当前版本的kubernetes的服务器端所支持的api版本信息</code></pre><blockquote><p>kubectl get all -o wide</p></blockquote><pre><code>列出pod services deployment replicaset 的信息</code></pre><blockquote><p>kubectl 可get 的信息</p></blockquote><pre><code>kubectl get deploymentskubectl get podskubectl get namespaces</code></pre><blockquote><p>kubectl 查看详情信息</p></blockquote><pre><code>kubectl describe node 192.168.32.132kubectl describe deployment mysql</code></pre><blockquote><p>kubectl 查看日志</p></blockquote><pre><code>kubectl logs podsName</code></pre><h4 id="13-学习案例2"><a href="#13-学习案例2" class="headerlink" title="13.学习案例2"></a>13.学习案例2</h4><pre><code>[root@node1 wordpress]# cat wordpress-db.yaml---apiVersion: apps/v1beta1kind: Deploymentmetadata:name: mysql-deploylabels:app: mysqlspec:template:metadata:labels:app: mysqlspec:containers:- name: mysqlimage: mysql:5.7imagePullPolicy: IfNotPresentports:- containerPort: 3306name: dbportenv:- name: MYSQL_ROOT_PASSWORDvalue: rootPassW0rd- name: MYSQL_DATABASEvalue: wordpress- name: MYSQL_USERvalue: wordpress- name: MYSQL_PASSWORDvalue: wordpressvolumeMounts:- name: dbmountPath: /var/lib/mysqlvolumes:- name: dbhostPath:path: /var/lib/mysql---apiVersion: v1kind: Servicemetadata:name: mysqlspec:selector:app: mysqlports:- name: mysqlportprotocol: TCPport: 3306targetPort: dbport[root@node1 wordpress]# cat wordpress.yamlapiVersion: apps/v1beta1kind: Deploymentmetadata:name: wordpress-deploylabels:app: wordpressspec:template:metadata:labels:app: wordpressspec:containers:- name: wordpressimage: wordpressimagePullPolicy: IfNotPresentports:- containerPort: 80name: wdportenv:- name: WORDPRESS_DB_HOSTvalue: mysql:3306- name: WORDPRESS_DB_USERvalue: wordpress- name: WORDPRESS_DB_PASSWORDvalue: wordpress---apiVersion: v1kind: Servicemetadata:name: wordpressspec:type: NodePortselector:app: wordpressports:- name: wordpressportprotocol: TCPport: 80targetPort: wdport#### 启动容器kubectl create -f wordpress-db.yamlkubectl create -f wordpress.yaml#### 查看集群信息kubectl get all -A -l app=wordpressNAMESPACE NAME READY STATUS RESTARTS AGEdefault pod/wordpress-deploy-f9c5cf5c6-tj2bc 1/1 Running 0 80mNAMESPACE NAME READY UP-TO-DATE AVAILABLE AGEdefault deployment.apps/wordpress-deploy 1/1 1 1 80mNAMESPACE NAME DESIRED CURRENT READY AGEdefault replicaset.apps/wordpress-deploy-f9c5cf5c6 1 1 1 80m#### 配置ingress[root@node1 wordpress]# cat ingress.yamlapiVersion: extensions/v1beta1kind: Ingressmetadata:name: wordpress-ingressnamespace: defaultannotations:kubernetes.io/ingress.class: &quot;nginx&quot;spec:rules:- host: wordpress.boshao.wanghttp:paths:- backend:serviceName: wordpressservicePort: 80#### 创建ingresskubectl create -f ingress.yaml#### 查看ingres信息[root@node1 wordpress]# kubectl get ing wordpress-ingressNAME HOSTS ADDRESS PORTS AGEwordpress-ingress wordpress.boshao.wang 80 78m[root@node1 wordpress]# kubectl describe ingress wordpress-ingressName: wordpress-ingressNamespace: defaultAddress:Default backend: default-http-backend:80 (&lt;none&gt;)Rules:Host Path Backends---- ---- --------wordpress.boshao.wangwordpress:80 (10.233.70.27:80)Annotations:kubernetes.io/ingress.class: nginxEvents: &lt;none&gt;#### 最后绑定域名wordpress.boshao.wang  到node节点即可。通过ingress-nginx 暴露的端口进行访问，即可。ingress-nginx service/ingress-nginx NodePort 10.233.29.94 &lt;none&gt; 80:31661/TCP,443:30250/TCP 6d2h访问方式：wordpress.boshao.wang → node ip:31661 http://wordpress.boshao.wang:31661/</code></pre><hr><h4 id="参考地址："><a href="#参考地址：" class="headerlink" title="参考地址："></a>参考地址：</h4><blockquote><p><a href="https://minikube.sigs.k8s.io/" target="_blank" rel="noopener">minikube参考</a></p></blockquote><blockquote><p><a href="https://k8smeetup.github.io/docs/user-guide/kubectl/v1.7/#-strong-getting-started-strong-" target="_blank" rel="noopener">命令查询</a> </p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h4 id="1-kubectl-操作"><a href="#1-kubectl-操作" class="headerlink" title="1. kubectl 操作"></a>1. kubectl 操作</h4><h5 id="1-1-kubectl-配置"><a href="#1-1-kubectl-配置" class="headerlink" title="1.1 kubectl 配置"></a>1.1 kubectl 配置</h5><h5 id="1-3-kubectl-权限"><a href="#1-3-kubectl-权限" class="headerlink" title="1.3 kubectl 权限"></a>1.3 kubectl 权限</h5><pre><code>**********************# 权限问题 #*************************查看是否有权限：kubectl auth can-i &lt;list|create|edit|delete&gt; pods</code></pre><h5 id="1-4-kubectl-常用命令"><a href="#1-4-kubectl-常用命令" class="headerlink" title="1.4 kubectl 常用命令"></a>1.4 kubectl 常用命令</h5><pre><code>//批量删除所有的podkubectl get pods | grep Evicted | awk &#39;{print $1}&#39; | xargs kubectl delete pod</code></pre><h4 id="2-minikube操作"><a href="#2-minikube操作" class="headerlink" title="2. minikube操作"></a>2. minikube操作</h4><h5 id="2-1-minikube-安装"><a href="#2-1-minikube-安装" class="headerlink" title="2.1 minikube 安装"></a>2.1 minikube 安装</h5><blockquote><p>1.下载virtualbox</p></blockquote><blockquote><p>2.brew cask install minikube</p></blockquote><blockquote><p>3.minikube start –vm-driver=virtualbox</p></blockquote><blockquote><p>4.minikube config set vm-driver virtualbox</p></blockquote><blockquote><p>5.kubectl version 查看版本</p></blockquote><h5 id="2-2-minikube-常用操作"><a href="#2-2-minikube-常用操作" class="headerlink" title="2.2 minikube 常用操作"></a>2.2 minikube 常用操作</h5><pre><code>#启动并创建集群minikube start#查看仪表盘minikube dashboard#使用现有镜像kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10#访问时将端口进行公开映射kubectl expose deployment hello-minikube --type=NodePort --port=8080#查看是否已经正在运行kubectl get pods#获取公开服务的URL以查看服务详细信息minikube service hello-minikube --url#curl 获取的url 查看本地集群的详细信息curl http://192.168.99.100:30083#删除 hello-minikube 服务kubectl delete services hello-minikube#删除 hello-minikube 部署kubectl delete deployment hello-minikube#停止本地minikube 集群minikube stop#删除本地minikube 集群minikube delete</code></pre><h5 id="2-3-minikube-的应用和服务"><a href="#2-3-minikube-的应用和服务" class="headerlink" title="2.3 minikube 的应用和服务"></a>2.3 minikube 的应用和服务</h5><pre><code>********************# 应用和服务 #*************#启动minikubeminikube start#部署应用kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080#确定deploymentkubectl get deployment#查看部署的应用kubectl get pods#发布应用kubectl expose deployment hello-minikube --type=NodePort#查看发布的内容kubectl get services#访问服务1.虚拟机：curl http://ip:port2.curl $(minikube service hello-minikube --url)#获取服务url 链接minikube service --url service_name#查看控制台minikube dashboard查看所有Kubernetes Pod的部署状态kubectl get po -A#删除服务kubectl delete services hello-minikube#删除应用kubectl delete deployment hello-minikube#删除podskubectl delete pods podName#停止minikubeminikube stop#进入minikube 控制台minikube ssh</code></pre><hr><h5 id="2-4-minikube-集群相关"><a href="#2-4-minikube-集群相关" class="headerlink" title="2.4 minikube 集群相关"></a>2.4 minikube 集群相关</h5><pre><code>**********************# 集群相关 #**************************#获取集群的ipminikube ip#获取集群节点kubectl get nodes#启动第二个本地集群minikube start -p cluster2#停止本地集群minikube stop#删除本地集群minikube delete#删除所有本地集群和配置文件minikube delete --all获取网桥ipminikube ssh &quot;route -n | grep ^0.0.0.0 | awk &#39;{ print \$2 }&#39;&quot;链接到集群minikubeminikube sshtelnet ip port</code></pre><hr><h5 id="2-5-minikube-附加组件"><a href="#2-5-minikube-附加组件" class="headerlink" title="2.5 minikube 附加组件"></a>2.5 minikube 附加组件</h5><pre><code>********************************* 附加组件 ********************#查询可添加的组件minikube addons list#启用组件minikube addons enable &lt;name&gt;#与组件交互minikube addons open &lt;name&gt;#禁用组件minikube addons disable &lt;name&gt;</code></pre><hr><h5 id="2-6-minikube-调试"><a href="#2-6-minikube-调试" class="headerlink" title="2.6 minikube 调试"></a>2.6 minikube 调试</h5><pre><code>************************** 启动调试日志 *******************--v=0将输出INFO级别的日志--v=1将输出警告级别的日志--v=2将输出错误级别的日志--v=3将输出libmachine日志记录--v=7将输出libmachine –debug级日志记录minikube start --v=7 将启动minikube并将所有重要的调试日志输出到stdout#收集虚拟机日志，要调试Kubernetes部署失败的问题，收集Kubernetes pod和内核日志非常有用minikube logs#立即查看启动失败minikube logs --problems#查看所有Kubernetes Pod的部署状态kubectl get po -A</code></pre><h5 id="2-7-重用Docker-守护程序使用本地映像"><a href="#2-7-重用Docker-守护程序使用本地映像" class="headerlink" title="2.7 重用Docker 守护程序使用本地映像"></a>2.7 重用Docker 守护程序使用本地映像</h5><pre><code>eval $(minikube docker-env)docker ps</code></pre><hr><h4 id="4-学习案例"><a href="#4-学习案例" class="headerlink" title="4.学习案例"></a>4.学习案例</h4><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><hr><h4 id="5-kubectl应用和服务"><a href="#5-kubectl应用和服务" class="headerlink" title="5.kubectl应用和服务"></a>5.kubectl应用和服务</h4><hr><p>####6. </p><hr><h4 id="10-docker-常用操作"><a href="#10-docker-常用操作" class="headerlink" title="10.docker 常用操作"></a>10.docker 常用操作</h4><h5 id="10-1-镜像的操作"><a href="#10-1-镜像的操作" class="headerlink" title="10.1 镜像的操作"></a>10.1 镜像的操作</h5><pre><code>列出所有的镜像: docker images 停止运行：docker stop iamgesId删除单个镜像：docker rmi imagesId清理所有（慎用）：docker system pruneWARNING! This will remove:  - all stopped containers  - all networks not used by at least one container  - all dangling images  - all dangling build cache 清理镜像：docker image prune 清理容器：docker container prune 删除所有停止的镜像docker image prune -f -a 删除所有停止的容器：docker container prune -f复制文件：docker cp mycontainer:/opt/file.txt /opt/local/docker cp /opt/local/file.txt mycontainer:/opt/</code></pre><hr><h4 id="11-docker-常见问题及解决方案"><a href="#11-docker-常见问题及解决方案" class="headerlink" title="11.docker 常见问题及解决方案"></a>11.docker 常见问题及解决方案</h4><h5 id="11-1-docker日志太多导致磁盘占满"><a href="#11-1-docker日志太多导致磁盘占满" class="headerlink" title="11.1 docker日志太多导致磁盘占满"></a>11.1 docker日志太多导致磁盘占满</h5><blockquote><p>在启动时遇到：No space left on device 官方解决方案：<a href="https://success.docker.com/article/no-space-left-on-device-error" target="_blank" rel="noopener">地址</a></p></blockquote><pre><code>## 1.Sort the /var/lib/docker/containersdu -d1 -h /var/lib/docker/containers | sort -h## 2. 选择要清理的容器进行清理 cat /dev/null &gt;     /var/lib/docker/containers/********## 3.限制日志文件的大小：启动容器时，可以通过参数设置日志文件的大小、日志文件的格式 docker run -it --log-opt max-size=10m --log-opt max-file=3 alpine ash</code></pre><h4 id="12-kubectl常用故障排查以及修改命令"><a href="#12-kubectl常用故障排查以及修改命令" class="headerlink" title="12.kubectl常用故障排查以及修改命令"></a>12.kubectl常用故障排查以及修改命令</h4><blockquote><p>scale </p></blockquote><pre><code>scale命令进行横向扩展，将原本为1的副本，提高到3kubectl scale --current-replicas=1 --replicas=3 deployment/nginx</code></pre><blockquote><p>autoscale</p></blockquote><pre><code>和scale不同的是autoscale则会根据负载进行调解kubectl autoscale deployment nginx --min=2 --max=5</code></pre><blockquote><p>cordon</p></blockquote><pre><code>查询nodeAddresskubectl get pods -o wide设定nodeAddress，使得nodeAddress不可使用，使用get node确认，其状态显示SchedulingDisabledkubectl cordon nodeAddress案例：设定134不可用：kubectl cordon 192.168.32.134横向扩展：kubectl scale --replicas=6 deployment/nginx发现没有pods 再执行在134这台机器上。</code></pre><blockquote><p>kubectl uncordon</p></blockquote><pre><code>解除限制kubectl uncordon nodeAddress</code></pre><blockquote><p>kubectl drain </p></blockquote><pre><code>drain命令用于对某个node进行设定，是为了设定此node为维护做准备。此命令主要执行的操作是：1. 设定此node不可以使用（cordon)2. evict（回收）了其上的两个pod</code></pre><blockquote><p>kubectl api-versions</p></blockquote><pre><code>查看当前版本的kubernetes的服务器端所支持的api版本信息</code></pre><blockquote><p>kubectl get all -o wide</p></blockquote><pre><code>列出pod services deployment replicaset 的信息</code></pre><blockquote><p>kubectl 可get 的信息</p></blockquote><pre><code>kubectl get deploymentskubectl get podskubectl get namespaces</code></pre><blockquote><p>kubectl 查看详情信息</p></blockquote><pre><code>kubectl describe node 192.168.32.132kubectl describe deployment mysql</code></pre><blockquote><p>kubectl 查看日志</p></blockquote><pre><code>kubectl logs podsName</code></pre><h4 id="13-学习案例2"><a href="#13-学习案例2" class="headerlink" title="13.学习案例2"></a>13.学习案例2</h4><pre><code>[root@node1 wordpress]# cat wordpress-db.yaml---apiVersion: apps/v1beta1kind: Deploymentmetadata:name: mysql-deploylabels:app: mysqlspec:template:metadata:labels:app: mysqlspec:containers:- name: mysqlimage: mysql:5.7imagePullPolicy: IfNotPresentports:- containerPort: 3306name: dbportenv:- name: MYSQL_ROOT_PASSWORDvalue: rootPassW0rd- name: MYSQL_DATABASEvalue: wordpress- name: MYSQL_USERvalue: wordpress- name: MYSQL_PASSWORDvalue: wordpressvolumeMounts:- name: dbmountPath: /var/lib/mysqlvolumes:- name: dbhostPath:path: /var/lib/mysql---apiVersion: v1kind: Servicemetadata:name: mysqlspec:selector:app: mysqlports:- name: mysqlportprotocol: TCPport: 3306targetPort: dbport[root@node1 wordpress]# cat wordpress.yamlapiVersion: apps/v1beta1kind: Deploymentmetadata:name: wordpress-deploylabels:app: wordpressspec:template:metadata:labels:app: wordpressspec:containers:- name: wordpressimage: wordpressimagePullPolicy: IfNotPresentports:- containerPort: 80name: wdportenv:- name: WORDPRESS_DB_HOSTvalue: mysql:3306- name: WORDPRESS_DB_USERvalue: wordpress- name: WORDPRESS_DB_PASSWORDvalue: wordpress---apiVersion: v1kind: Servicemetadata:name: wordpressspec:type: NodePortselector:app: wordpressports:- name: wordpressportprotocol: TCPport: 80targetPort: wdport#### 启动容器kubectl create -f wordpress-db.yamlkubectl create -f wordpress.yaml#### 查看集群信息kubectl get all -A -l app=wordpressNAMESPACE NAME READY STATUS RESTARTS AGEdefault pod/wordpress-deploy-f9c5cf5c6-tj2bc 1/1 Running 0 80mNAMESPACE NAME READY UP-TO-DATE AVAILABLE AGEdefault deployment.apps/wordpress-deploy 1/1 1 1 80mNAMESPACE NAME DESIRED CURRENT READY AGEdefault replicaset.apps/wordpress-deploy-f9c5cf5c6 1 1 1 80m#### 配置ingress[root@node1 wordpress]# cat ingress.yamlapiVersion: extensions/v1beta1kind: Ingressmetadata:name: wordpress-ingressnamespace: defaultannotations:kubernetes.io/ingress.class: &quot;nginx&quot;spec:rules:- host: wordpress.boshao.wanghttp:paths:- backend:serviceName: wordpressservicePort: 80#### 创建ingresskubectl create -f ingress.yaml#### 查看ingres信息[root@node1 wordpress]# kubectl get ing wordpress-ingressNAME HOSTS ADDRESS PORTS AGEwordpress-ingress wordpress.boshao.wang 80 78m[root@node1 wordpress]# kubectl describe ingress wordpress-ingressName: wordpress-ingressNamespace: defaultAddress:Default backend: default-http-backend:80 (&lt;none&gt;)Rules:Host Path Backends---- ---- --------wordpress.boshao.wangwordpress:80 (10.233.70.27:80)Annotations:kubernetes.io/ingress.class: nginxEvents: &lt;none&gt;#### 最后绑定域名wordpress.boshao.wang  到node节点即可。通过ingress-nginx 暴露的端口进行访问，即可。ingress-nginx service/ingress-nginx NodePort 10.233.29.94 &lt;none&gt; 80:31661/TCP,443:30250/TCP 6d2h访问方式：wordpress.boshao.wang → node ip:31661 http://wordpress.boshao.wang:31661/</code></pre><hr><h4 id="参考地址："><a href="#参考地址：" class="headerlink" title="参考地址："></a>参考地址：</h4><blockquote><p><a href="https://minikube.sigs.k8s.io/" target="_blank" rel="noopener">minikube参考</a></p></blockquote><blockquote><p><a href="https://k8smeetup.github.io/docs/user-guide/kubectl/v1.7/#-strong-getting-started-strong-" target="_blank" rel="noopener">命令查询</a> </p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -448,86 +519,6 @@
     
     
       <category term="shell-常用篇" scheme="https://23yue23.github.io/tags/shell-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>go-常用篇</title>
-    <link href="https://23yue23.github.io/2019/10/15/go-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/15/go-常用篇/</id>
-    <published>2019-10-15T02:34:37.000Z</published>
-    <updated>2019-12-17T02:04:13.591Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h4><p><a href="http://docscn.studygolang.com/doc/effective_go.html" target="_blank" rel="noopener">http://docscn.studygolang.com/doc/effective_go.html</a></p><h4 id="单测样例"><a href="#单测样例" class="headerlink" title="单测样例"></a>单测样例</h4><p><a href="http://gitlab.mobvista.com/mtech/mtech/blob/master/开发-Go单元测试.md" target="_blank" rel="noopener">http://gitlab.mobvista.com/mtech/mtech/blob/master/开发-Go单元测试.md</a></p><h4 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h4><p>开发可自由选择编辑器，推荐使用IDE：<a href="https://www.jetbrains.com/go/" target="_blank" rel="noopener">https://www.jetbrains.com/go/</a></p><h4 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h4><p>标准库: <a href="http://docscn.studygolang.com/pkg/" target="_blank" rel="noopener">http://docscn.studygolang.com/pkg/</a><br>日志: <a href="https://github.com/cihub/seelog" target="_blank" rel="noopener">https://github.com/cihub/seelog</a><br>配置: <a href="https://github.com/spf13/viper" target="_blank" rel="noopener">https://github.com/spf13/viper</a><br>uuid: <a href="https://github.com/satori/go.uuid" target="_blank" rel="noopener">https://github.com/satori/go.uuid</a><br>leveldb: <a href="https://github.com/syndtr/goleveldb/leveldb" target="_blank" rel="noopener">https://github.com/syndtr/goleveldb/leveldb</a><br>murmurhash3: <a href="https://github.com/spaolacci/murmur3" target="_blank" rel="noopener">https://github.com/spaolacci/murmur3</a><br>redis: <a href="https://github.com/garyburd/redigo/redis" target="_blank" rel="noopener">https://github.com/garyburd/redigo/redis</a><br>redis-cluster: <a href="https://github.com/chasex/redis-go-cluster" target="_blank" rel="noopener">https://github.com/chasex/redis-go-cluster</a><br>mongo: <a href="http://gopkg.in/mgo.v2" target="_blank" rel="noopener">http://gopkg.in/mgo.v2</a><br>命令行: <a href="http://gopkg.in/alecthomas/kingpin.v2" target="_blank" rel="noopener">http://gopkg.in/alecthomas/kingpin.v2</a><br>grpc: <a href="http://www.grpc.io/docs/quickstart/go.html" target="_blank" rel="noopener">http://www.grpc.io/docs/quickstart/go.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;编码规范&quot;&gt;&lt;a href=&quot;#编码规范&quot; class=&quot;headerlink&quot; title=&quot;编码规范&quot;&gt;&lt;/a&gt;编码规范&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;http://docscn.studygolang.com/doc/effective_go.html&quot; 
-      
-    
-    </summary>
-    
-      <category term="go" scheme="https://23yue23.github.io/categories/go/"/>
-    
-    
-      <category term="go-常用篇" scheme="https://23yue23.github.io/tags/go-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git-常用篇</title>
-    <link href="https://23yue23.github.io/2019/10/14/git-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/14/git-常用篇/</id>
-    <published>2019-10-14T05:42:39.000Z</published>
-    <updated>2019-12-17T02:03:40.171Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>git config –global user.name “你的名字” 让你全部的Git仓库绑定你的名字</p></blockquote><blockquote><p>git config –global user.email “你的邮箱” 让你全部的Git仓库绑定你的邮箱</p></blockquote><blockquote><p>git init 初始化你的仓库</p></blockquote><blockquote><p>git add . 把工作区的文件全部提交到暂存区</p></blockquote><blockquote><p>git add ./<file>/ 把工作区的<file>文件提交到暂存区</file></file></p></blockquote><blockquote><p>git commit -m “xxx” 把暂存区的所有文件提交到仓库区，暂存区空空荡荡</p></blockquote><blockquote><p>git remote add origin <a href="https://github.com/name/name_cangku.git" target="_blank" rel="noopener">https://github.com/name/name_cangku.git</a> 把本地仓库与远程仓库连接起来</p></blockquote><blockquote><p>git push -u origin master 把仓库区的主分支master提交到远程仓库里</p></blockquote><blockquote><p>git push -u origin &lt;其他分支&gt; 把其他分支提交到远程仓库</p></blockquote><blockquote><p>git status查看当前仓库的状态</p></blockquote><blockquote><p>git diff 查看文件修改的具体内容</p></blockquote><blockquote><p>git log 显示从最近到最远的提交历史</p></blockquote><blockquote><p>git clone + 仓库地址下载克隆文件</p></blockquote><blockquote><p>git reset –hard + 版本号 回溯版本，版本号在commit的时候与master跟随在一起</p></blockquote><blockquote><p>git reflog 显示命令历史</p></blockquote><blockquote><p>git checkout – <file> 撤销命令，用版本库里的文件替换掉工作区的文件。我觉得就像是Git世界的ctrl + z</file></p></blockquote><blockquote><p>git rm 删除版本库的文件</p></blockquote><blockquote><p>git branch 查看当前所有分支</p></blockquote><blockquote><p>git branch &lt;分支名字&gt; 创建分支</p></blockquote><blockquote><p>git checkout &lt;分支名字&gt; 切换到分支</p></blockquote><blockquote><p>git merge &lt;分支名字&gt; 合并分支</p></blockquote><blockquote><p>git branch -d &lt;分支名字&gt; 删除分支,有可能会删除失败，因为Git会保护没有被合并的分支</p></blockquote><blockquote><p>git branch -D + &lt;分支名字&gt; 强行删除，丢弃没被合并的分支</p></blockquote><blockquote><p>git log –graph 查看分支合并图</p></blockquote><blockquote><p>git merge –no-ff &lt;分支名字&gt; 合并分支的时候禁用Fast forward模式,因为这个模式会丢失分支历史信息</p></blockquote><blockquote><p>git stash 当有其他任务插进来时，把当前工作现场“存储”起来,以后恢复后继续工作</p></blockquote><blockquote><p>git stash list 查看你刚刚“存放”起来的工作去哪里了</p></blockquote><blockquote><p>git stash apply 恢复却不删除stash内容</p></blockquote><blockquote><p>git stash drop 删除stash内容</p></blockquote><blockquote><p>git stash pop 恢复的同时把stash内容也删了</p></blockquote><blockquote><p>git remote 查看远程库的信息，会显示origin，远程仓库默认名称为origin</p></blockquote><blockquote><p>git remote -v 显示更详细的信息</p></blockquote><blockquote><p>git pull 把最新的提交从远程仓库中抓取下来，在本地合并,和git push相反</p></blockquote><blockquote><p>git rebase 把分叉的提交历史“整理”成一条直线，看上去更直观</p></blockquote><blockquote><p>git tag 查看所有标签，可以知道历史版本的tag</p></blockquote><blockquote><p>git tag <name> 打标签，默认为HEAD。比如git tag v1.0</name></p></blockquote><blockquote><p>git tag <tagname> &lt;版本号&gt; 把版本号打上标签，版本号就是commit时，跟在旁边的一串字母数字</tagname></p></blockquote><blockquote><p>git show <tagname> 查看标签信息</tagname></p></blockquote><blockquote><p>git tag -a <tagname> -m “&lt;说明&gt;” 创建带说明的标签。-a指定标签名，-m指定说明文字</tagname></p></blockquote><blockquote><p>git tag -d <tagname> 删除标签</tagname></p></blockquote><blockquote><p>git push origin <tagname> 推送某个标签到远程</tagname></p></blockquote><blockquote><p>git push origin –tags 一次性推送全部尚未推送到远程的本地标签</p></blockquote><blockquote><p>git push origin :refs/tags/<tagname> 删除远程标签<tagname></tagname></tagname></p></blockquote><blockquote><p>git config –global color.ui true 让Git显示颜色，会让命令输出看起来更醒目</p></blockquote><blockquote><p>git add -f <file> 强制提交已忽略的的文件</file></p></blockquote><blockquote><p>git check-ignore -v <file> 检查为什么Git会忽略该文件</file></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;git config –global user.name “你的名字” 让你全部的Git仓库绑定你的名字&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;git config –global user.email “你的邮箱” 
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://23yue23.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="git-常用篇" scheme="https://23yue23.github.io/tags/git-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>elasticsearch-学习篇</title>
-    <link href="https://23yue23.github.io/2019/10/11/elasticsearch-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/11/elasticsearch-学习篇/</id>
-    <published>2019-10-11T04:05:54.000Z</published>
-    <updated>2019-12-17T02:00:34.718Z</updated>
-    
-    <content type="html"><![CDATA[<p>介绍：<br>一个分布式的实时文档存储，每个字段 可以被索引与搜索<br>一个分布式实时分析搜索引擎<br>能胜任上百个服务节点的扩展，并支持 PB 级别的结构化或者非结构化数据</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;介绍：&lt;br&gt;一个分布式的实时文档存储，每个字段 可以被索引与搜索&lt;br&gt;一个分布式实时分析搜索引擎&lt;br&gt;能胜任上百个服务节点的扩展，并支持 PB 级别的结构化或者非结构化数据&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="elasticsearch" scheme="https://23yue23.github.io/categories/elasticsearch/"/>
-    
-    
-      <category term="elasticsearch-学习篇" scheme="https://23yue23.github.io/tags/elasticsearch-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
     
   </entry>
   
