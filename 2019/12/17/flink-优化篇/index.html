@@ -5,10 +5,10 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="flink-优化篇, xianchang.yue,github">
-    <meta name="description" content="flink 基础配置层面1.程序内部接收外部传参（配置常变的参数）//解析参数
-val parameters = ParameterTool.fromArgs(args)
-//将参数设置到job 的全局参数中
-env.getConfig.s">
+    <meta name="description" content="flink 基础配置层面1.flink-conf.yaml 配置优化
+1.优化GC
+
+Flink是依赖内存计算，计算过程中内存不够对Flink的执行效率影响很大。可以通过监控GC（Garbage Collection），评估内存使用及剩余情">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -549,14 +549,14 @@ env.getConfig.s">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.9k
+                    6.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    26 分
                 </div>
                 
 				
@@ -572,7 +572,118 @@ env.getConfig.s">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="flink-基础配置层面"><a href="#flink-基础配置层面" class="headerlink" title="flink 基础配置层面"></a>flink 基础配置层面</h4><h5 id="1-程序内部接收外部传参（配置常变的参数）"><a href="#1-程序内部接收外部传参（配置常变的参数）" class="headerlink" title="1.程序内部接收外部传参（配置常变的参数）"></a>1.程序内部接收外部传参（配置常变的参数）</h5><pre class=" language-scala"><code class="language-scala"><span class="token comment" spellcheck="true">//解析参数</span>
+                <h4 id="flink-基础配置层面"><a href="#flink-基础配置层面" class="headerlink" title="flink 基础配置层面"></a>flink 基础配置层面</h4><h5 id="1-flink-conf-yaml-配置优化"><a href="#1-flink-conf-yaml-配置优化" class="headerlink" title="1.flink-conf.yaml 配置优化"></a>1.flink-conf.yaml 配置优化</h5><blockquote>
+<p>1.优化GC</p>
+</blockquote>
+<pre><code>Flink是依赖内存计算，计算过程中内存不够对Flink的执行效率影响很大。可以通过监控GC（Garbage Collection），评估内存使用及剩余情况来判断内存是否变成性能瓶颈，并根据情况优化。
+监控节点进程的YARN的Container GC日志，如果频繁出现Full GC，需要优化GC。
+
+解决方法：
+GC的配置：在客户端的“conf/flink-conf.yaml”配置文件中，在“env.java.opts”配置项中添加参数：“-Xloggc:&lt;LOG_DIR&gt;/gc.log -XX:+PrintGCDetails -XX:-OmitStackTraceInFastThrow -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=20 -XX:GCLogFileSize=20M”。 此处默认已经添加GC日志。
+
+调整老年代和新生代的比值。在客户端的“conf/flink-conf.yaml”配置文件中，在“env.java.opts”配置项中添加参数：“-XX:NewRatio”。如“ -XX:NewRatio=2”，则表示老年代与新生代的比值为2:1，新生代占整个堆空间的1/3，老年代占2/3。</code></pre><blockquote>
+<p>2.配置进程参数</p>
+</blockquote>
+<pre><code>操作场景
+Flink on YARN模式下，有JobManager和TaskManager两种进程。在任务调度和运行的过程中，JobManager和TaskManager承担了很大的责任。
+
+因而JobManager和TaskManager的参数配置对Flink应用的执行有着很大的影响意义。用户可通过如下操作对Flink集群性能做优化。
+
+操作步骤
+1.配置JobManager内存。
+    JobManager负责任务的调度，以及TaskManager、RM之间的消息通信。当任务数变多，任务平行度增大时，JobManager内存都需要相应增大。
+您可以根据实际任务数量的多少，为JobManager设置一个合适的内存。
+1.1在使用yarn-session命令时，添加“-jm MEM”参数设置内存。
+1.2在使用yarn-cluster命令时，添加“-yjm MEM”参数设置内存。
+
+2.配置TaskManager个数。
+每个TaskManager每个核同时能跑一个task，所以增加了TaskManager的个数相当于增大了任务的并发度。在资源充足的情况下，可以相应增加TaskManager的个数，以提高运行效率。
+
+2.1在使用yarn-session命令时，添加“-n NUM”参数设置TaskManager个数。
+2.2在使用yarn-cluster命令时，添加“-yn NUM”参数设置TaskManager个数。
+
+3.配置TaskManager Slot数。
+每个TaskManager多个核同时能跑多个task，相当于增大了任务的并发度。但是由于所有核共用TaskManager的内存，所以要在内存和核数之间做好平衡。
+
+3.1在使用yarn-session命令时，添加“-s NUM”参数设置SLOT数。
+3.2在使用yarn-cluster命令时，添加“-ys NUM”参数设置SLOT数。
+
+4.配置TaskManager内存。
+TaskManager的内存主要用于任务执行、通信等。当一个任务很大的时候，可能需要较多资源，因而内存也可以做相应的增加。
+
+4.1将在使用yarn-sesion命令时，添加“-tm MEM”参数设置内存。
+4.2将在使用yarn-cluster命令时，添加“-ytm MEM”参数设置内存。</code></pre><blockquote>
+<ol start="3">
+<li>设计分区方法</li>
+</ol>
+</blockquote>
+<pre><code>操作场景
+合理的设计分区依据，可以优化task的切分。在程序编写过程中要尽量分区均匀，这样可以实现每个task数据不倾斜，防止由于某个task的执行时间过长导致整个任务执行缓慢。
+
+操作步骤
+以下是几种分区方法。
+
+随机分区：将元素随机地进行分区。
+dataStream.shuffle();
+Rebalancing (Round-robin partitioning)：基于round-robin对元素进行分区，使得每个分区负责均衡。对于存在数据倾斜的性能优化是很有用的。
+dataStream.rebalance();
+Rescaling：以round-robin的形式将元素分区到下游操作的子集中。如果你想要将数据从一个源的每个并行实例中散发到一些mappers的子集中，用来分散负载，但是又不想要完全的rebalance 介入（引入`rebalance()`），这会非常有用。
+dataStream.rescale();
+广播：广播每个元素到所有分区。
+dataStream.broadcast();
+自定义分区：使用一个用户自定义的Partitioner对每一个元素选择目标task，由于用户对自己的数据更加熟悉，可以按照某个特征进行分区，从而优化任务执行。
+简单示例如下所示：
+// fromElements构造简单的Tuple2流
+DataStream&lt;Tuple2&lt;String, Integer&gt;&gt; dataStream = env.fromElements(Tuple2.of(&quot;hello&quot;,1), Tuple2.of(&quot;test&quot;,2), Tuple2.of(&quot;world&quot;,100));
+
+// 定义用于分区的key值，返回即属于哪个partition的，该值加1就是对应的子任务的id号
+Partitioner&lt;Tuple2&lt;String, Integer&gt;&gt; strPartitioner = new Partitioner&lt;Tuple2&lt;String, Integer&gt;&gt;() {
+    @Override
+    public int partition(Tuple2&lt;String, Integer&gt; key, int numPartitions) {
+        return (key.f0.length() + key.f1) % numPartitions;
+    }
+};
+
+// 使用Tuple2进行分区的key值
+dataStream.partitionCustom(strPartitioner, new KeySelector&lt;Tuple2&lt;String, Integer&gt;, Tuple2&lt;String, Integer&gt;&gt;() {
+    @Override
+    public Tuple2&lt;String, Integer&gt; getKey(Tuple2&lt;String, Integer&gt; value) throws Exception {
+        return value;
+    }
+}).print();
+</code></pre><blockquote>
+<ol start="4">
+<li>配置netty网络通信</li>
+</ol>
+</blockquote>
+<pre><code>操作场景
+Flink通信主要依赖netty网络，所以在Flink应用执行过程中，netty的设置尤为重要，网络通信的好坏直接决定着数据交换的速度以及任务执行的效率。
+
+操作步骤
+以下配置均可在客户端的“conf/flink-conf.yaml”配置文件中进行修改适配，默认已经是相对较优解，请谨慎修改，防止性能下降。
+
+“taskmanager.network.netty.num-arenas”： 默认是“taskmanager.numberOfTaskSlots”，表示netty的域的数量。
+“taskmanager.network.netty.server.numThreads”和“taskmanager.network.netty.client.numThreads”：默认是“taskmanager.numberOfTaskSlots”，表示netty的客户端和服务端的线程数目设置。
+“taskmanager.network.netty.client.connectTimeoutSec”：默认是120s，表示taskmanager的客户端连接超时的时间。
+“taskmanager.network.netty.sendReceiveBufferSize”：默认是系统缓冲区大小(cat /proc/sys/net/ipv4/tcp_[rw]mem) ，一般为4MB，表示netty的发送和接收的缓冲区大小。
+“taskmanager.network.netty.transport”：默认为“nio”方式，表示netty的传输方式，有“nio”和“epoll”两种方式。</code></pre><blockquote>
+<p>5.优化设置总结</p>
+</blockquote>
+<pre><code>1.数据倾斜
+当数据发生倾斜（某一部分数据量特别大），虽然没有GC（Gabage Collection，垃圾回收），但是task执行时间严重不一致。
+1.1需要重新设计key，以更小粒度的key使得task大小合理化。
+1.2修改并行度。
+1.3调用rebalance操作，使数据分区均匀。
+
+2.缓冲区超时设置
+由于task在执行过程中存在数据通过网络进行交换，数据在不同服务器之间传递的缓冲区超时时间可以通过setBufferTimeout进行设置。
+当设置“setBufferTimeout(-1)”，会等待缓冲区满之后才会刷新，使其达到最大吞吐量；当设置“setBufferTimeout(0)”时，可以最小化延迟，数据一旦接收到就会刷新；当设置“setBufferTimeout”大于0时，缓冲区会在该时间之后超时，然后进行缓冲区的刷新。
+
+示例可以参考如下：
+env.setBufferTimeout(timeoutMillis);
+
+env.generateSequence(1,10).map(new MyMapper()).setBufferTimeout(timeoutMillis);
+</code></pre><h5 id="2-程序内部接收外部传参（配置常变的参数）"><a href="#2-程序内部接收外部传参（配置常变的参数）" class="headerlink" title="2.程序内部接收外部传参（配置常变的参数）"></a>2.程序内部接收外部传参（配置常变的参数）</h5><pre class=" language-scala"><code class="language-scala"><span class="token comment" spellcheck="true">//解析参数</span>
 <span class="token keyword">val</span> parameters <span class="token operator">=</span> ParameterTool<span class="token punctuation">.</span>fromArgs<span class="token punctuation">(</span>args<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true">//将参数设置到job 的全局参数中</span>
 env<span class="token punctuation">.</span>getConfig<span class="token punctuation">.</span>setGlobalJobParameters<span class="token punctuation">(</span>parameters<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//register the parameters globally</span>
@@ -585,7 +696,7 @@ env<span class="token punctuation">.</span>getConfig<span class="token punctuati
 <span class="token keyword">val</span> restore <span class="token operator">=</span> params<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"restoreFlag"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>trim
 </code></pre>
 <hr>
-<h5 id="2-加载内部配置文件-（配置固定不变的参数）"><a href="#2-加载内部配置文件-（配置固定不变的参数）" class="headerlink" title="2.加载内部配置文件 （配置固定不变的参数）"></a>2.加载内部配置文件 （配置固定不变的参数）</h5><pre class=" language-scala"><code class="language-scala"> <span class="token keyword">def</span> loadConfig<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Properties <span class="token operator">=</span> <span class="token punctuation">{</span>
+<h5 id="3-加载内部配置文件-（配置固定不变的参数）"><a href="#3-加载内部配置文件-（配置固定不变的参数）" class="headerlink" title="3.加载内部配置文件 （配置固定不变的参数）"></a>3.加载内部配置文件 （配置固定不变的参数）</h5><pre class=" language-scala"><code class="language-scala"> <span class="token keyword">def</span> loadConfig<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Properties <span class="token operator">=</span> <span class="token punctuation">{</span>
      <span class="token keyword">val</span> p <span class="token operator">=</span> <span class="token keyword">new</span> Properties<span class="token punctuation">(</span><span class="token punctuation">)</span>
      <span class="token keyword">val</span> in <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>getClass<span class="token punctuation">.</span>getClassLoader<span class="token punctuation">.</span>getResourceAsStream<span class="token punctuation">(</span><span class="token string">"config.properties"</span><span class="token punctuation">)</span>
      p<span class="token punctuation">.</span>load<span class="token punctuation">(</span>in<span class="token punctuation">)</span>
@@ -593,7 +704,7 @@ env<span class="token punctuation">.</span>getConfig<span class="token punctuati
      p
    <span class="token punctuation">}</span></code></pre>
 <hr>
-<h5 id="3-程序中的并行执行设置"><a href="#3-程序中的并行执行设置" class="headerlink" title="3.程序中的并行执行设置"></a>3.程序中的并行执行设置</h5><blockquote>
+<h5 id="4-程序中的并行执行设置"><a href="#4-程序中的并行执行设置" class="headerlink" title="4.程序中的并行执行设置"></a>4.程序中的并行执行设置</h5><blockquote>
 <p>并行度的概念</p>
 </blockquote>
 <pre><code> 并行度数和slot 数有关，而slot 数是有taskManager 的核数决定的，
@@ -622,7 +733,7 @@ Apache Flink的 并行度取决于每个TaskManager上的slot数量而决定的�
 
 slot是指TaskManagere的并发执行能力，通常来说TaskManager有多少核CPU也就会有多少个slot。这样来看，我们设
 置的并行度其实是与TaskManager所有Slot数量有关的</code></pre><hr>
-<h5 id="4-name-和uid-设置的作用"><a href="#4-name-和uid-设置的作用" class="headerlink" title="4.name 和uid 设置的作用"></a>4.name 和uid 设置的作用</h5><hr>
+<h5 id="5-name-和uid-设置的作用"><a href="#5-name-和uid-设置的作用" class="headerlink" title="5.name 和uid 设置的作用"></a>5.name 和uid 设置的作用</h5><hr>
 <h4 id="flink-的容错层面"><a href="#flink-的容错层面" class="headerlink" title="flink 的容错层面"></a>flink 的容错层面</h4><h5 id="1-内部失败重试策略"><a href="#1-内部失败重试策略" class="headerlink" title="1.内部失败重试策略"></a>1.内部失败重试策略</h5><blockquote>
 <p>故障恢复可设置指标：</p>
 </blockquote>
@@ -1562,7 +1673,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">53k</span>&nbsp;字
+                class="white-color">55.3k</span>&nbsp;字
             
             
             
