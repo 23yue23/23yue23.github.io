@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[博客文章总目录]]></title>
     <url>%2F2020%2F01%2F07%2F%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%80%BB%E7%9B%AE%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[AazkabanairflowatlasavroBbrewCcassandraclickhouseDdruiddubboEelasticsearchFflink flink优化(1)-配置参数优化flink优化(2)-优化flink优化(3)-flink优化(4)-相关文章 flink应用-flink案例-flink flumeGgrafanagogitHhadoophaproxyhbasehivehttpdIideaigniteimpalaJjavaKkafkakubernetskudukylinLlinuxlivyMmavenNnginxnettyOorcPparquetpythonpulsarQRredisrpcSsparkspring 全家桶shellsqoopTtomcatVvimYyarnZzabbixzeppelinzookeeper其他心灵港湾书籍阅读生活感悟]]></content>
+    <content type="text"><![CDATA[Aazkaban系列： 1.azkaban-部署篇 2.azkaban-常用篇 3.azkaban-剖析篇 4.azkaban-问题篇airflow 1.airflow-常用篇ambari 1.ambari-学习篇 2.ambari-资料篇Bbrew 1.brew-使用篇Ccassandra 1.cassandra-学习篇 2.cassandra-常用篇 3.cassandra-优化篇 4.cassandra-问题篇 5.cassandra-资料篇clickhouse 1.clickhouse-学习篇 2.clickhouse-常用篇 3.clickhouse-问题篇 4.clickhouse-资料篇Ddruid 1.druid-学习篇Eelasticsearch 1.elasticsearch-学习篇 2.elasticsearch-常用篇 3.elasticsearch-问题篇 4.elasticsearch-资料篇Fflink 1.flink-常用篇 2.flink-优化篇 3.flink-问题篇 4.flink-资料篇 flink优化(1)-配置参数优化flink优化(2)-优化flink优化(3)-flink优化(4)-相关文章 flink应用-flink案例-flink GgrafanagitHhadoophutool 1.hutool-常用篇haproxy 1.haproxy-学习篇 2.haproxy-使用篇 3.haproxy-问题篇hive 1.hive-常用篇 2.hive-问题篇httpdIidea 1.idea-常用篇 2.idae-问题篇impala 1.impala-学习篇 2.impala-常用篇 3.impala-问题篇Jjava 1.java-cache篇 2.java-guava篇 3.java-JVM篇 4.java-ThreadLocalRandom篇 5.java-多线程篇 6.java-设计模式Kkafkakubernets 1.k8s-学习篇kudukylinLlinuxlivyMmavenNnginxnettyOorcPparquetpythonRredisrpcSsparkspring 全家桶shellsqoopTtomcatVvimYyarnZzabbix 1.zabbix-常用篇 2.zabbix-报警脚本篇zeppelin 1.zeppelin-部署篇 2.zeppelin-常用篇 3.zeppelin-剖析篇 4.zeppelin-问题篇 5.zeppelin-资料篇zookeeper广告 1.广告-学习篇 其他心灵港湾书籍阅读生活感悟]]></content>
       <categories>
         <category>目录</category>
       </categories>
@@ -67,17 +67,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[k8s-aliyun操作]]></title>
-    <url>%2F2019%2F12%2F19%2Fk8s-aliyun%E6%93%8D%E4%BD%9C%2F</url>
-    <content type="text"><![CDATA[常用命令 获取令牌 （需在master 节点） kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk &#39;{print $1}&#39;)]]></content>
-      <categories>
-        <category>k8s-aliyun操作</category>
-      </categories>
-      <tags>
-        <tag>k8s-aliyun操作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[java-ThreadLocalRandom篇]]></title>
     <url>%2F2019%2F12%2F19%2Fjava-ThreadLocalRandom%E7%AF%87%2F</url>
     <content type="text"><![CDATA[1.为什么用？因为在Java 7 才引入了 java.util.concurrent.ThreadLocalRandom 类，主要是用于在多线程环境中生成随机数。是 ThreadLocal 类和 Random 类的组合，与当前线程隔离，通过简单地避免对 Random 对象的任何并发访问，在多线程环境中实现了更好的性能。 2.怎么用？//当前边界时 int 的边界 int boundedRandomValue = ThreadLocalRandom.current().nextInt(); //当前边界时【0，100） 之间，包含0 不包含100 int boundedRandomValue = ThreadLocalRandom.current().nextInt(0, 100); 3.使用场景//可用于大数据倾斜时，用于打散数据。 //key + &quot;@&quot; + ThreadLocalRandom.current().nextInt()]]></content>
@@ -91,7 +80,7 @@
   <entry>
     <title><![CDATA[azkaban-问题篇]]></title>
     <url>%2F2019%2F12%2F19%2Fazkaban-%E9%97%AE%E9%A2%98%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[1.azkaban exec 遇到的问题1.1 Job failed, Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job异常： ERROR - Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job job_run_distinct_impression cause: null 分析：当前遇到的问题，是在提交作业的时候进行了内存的检查，认为空闲资源不足，抛除的异常。 解决：在 azkaban/exec-server/plugins/jobtypes/commonprivate.properties文件中添加memCheck.enable=false 参考： https://github.com/azkaban/azkaban/issues/481 https://my.oschina.net/u/2988360/blog/15375612.azkaban web 遇到的问题]]></content>
+    <content type="text"><![CDATA[1.azkaban exec 遇到的问题1.1 Job failed, Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job异常： ERROR - Cannot request memory (Xms 0 kb, Xmx 0 kb) from system for job job_run_distinct_impression cause: null 分析：当前遇到的问题，是在提交作业的时候进行了内存的检查，认为空闲资源不足，抛除的异常。 解决：在 azkaban/exec-server/plugins/jobtypes/commonprivate.properties文件中添加memCheck.enable=false 参考： https://github.com/azkaban/azkaban/issues/481 https://my.oschina.net/u/2988360/blog/15375611.2 exec出现内存溢出异常：在azkanan-exec.log 日志中报堆内存溢出，并且作业提交不到exec 上来。 分析：部署应用时，设置的内存大小不够导致。 解决：在azkaban-executer-start.sh 脚本中， 增大 AZKABAN_OPTS=&quot;-Xmx4G&quot;2.azkaban web 遇到的问题]]></content>
       <categories>
         <category>azkaban</category>
       </categories>
@@ -166,14 +155,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[k8s-实战篇]]></title>
-    <url>%2F2019%2F10%2F25%2Fk8s-%E5%AE%9E%E6%88%98%E7%AF%87%2F</url>
+    <title><![CDATA[k8s-常用篇]]></title>
+    <url>%2F2019%2F10%2F25%2Fk8s-%E5%B8%B8%E7%94%A8%E7%AF%87%2F</url>
     <content type="text"><![CDATA[1. kubectl 操作1.1 kubectl 配置1.3 kubectl 权限**********************# 权限问题 #************************* 查看是否有权限：kubectl auth can-i &lt;list|create|edit|delete&gt; pods 1.4 kubectl 常用命令//批量删除所有的pod kubectl get pods | grep Evicted | awk &#39;{print $1}&#39; | xargs kubectl delete pod2. minikube操作2.1 minikube 安装 1.下载virtualbox 2.brew cask install minikube 3.minikube start –vm-driver=virtualbox 4.minikube config set vm-driver virtualbox 5.kubectl version 查看版本 2.2 minikube 常用操作#启动并创建集群 minikube start #查看仪表盘 minikube dashboard #使用现有镜像 kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10 #访问时将端口进行公开映射 kubectl expose deployment hello-minikube --type=NodePort --port=8080 #查看是否已经正在运行 kubectl get pods #获取公开服务的URL以查看服务详细信息 minikube service hello-minikube --url #curl 获取的url 查看本地集群的详细信息 curl http://192.168.99.100:30083 #删除 hello-minikube 服务 kubectl delete services hello-minikube #删除 hello-minikube 部署 kubectl delete deployment hello-minikube #停止本地minikube 集群 minikube stop #删除本地minikube 集群 minikube delete 2.3 minikube 的应用和服务********************# 应用和服务 #************* #启动minikube minikube start #部署应用 kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080 #确定deployment kubectl get deployment #查看部署的应用 kubectl get pods #发布应用 kubectl expose deployment hello-minikube --type=NodePort #查看发布的内容 kubectl get services #访问服务 1.虚拟机：curl http://ip:port 2.curl $(minikube service hello-minikube --url) #获取服务url 链接 minikube service --url service_name #查看控制台 minikube dashboard 查看所有Kubernetes Pod的部署状态 kubectl get po -A #删除服务 kubectl delete services hello-minikube #删除应用 kubectl delete deployment hello-minikube #删除pods kubectl delete pods podName #停止minikube minikube stop #进入minikube 控制台 minikube ssh 2.4 minikube 集群相关**********************# 集群相关 #************************** #获取集群的ip minikube ip #获取集群节点 kubectl get nodes #启动第二个本地集群 minikube start -p cluster2 #停止本地集群 minikube stop #删除本地集群 minikube delete #删除所有本地集群和配置文件 minikube delete --all 获取网桥ip minikube ssh &quot;route -n | grep ^0.0.0.0 | awk &#39;{ print \$2 }&#39;&quot; 链接到集群minikube minikube ssh telnet ip port 2.5 minikube 附加组件********************************* 附加组件 ******************** #查询可添加的组件 minikube addons list #启用组件 minikube addons enable &lt;name&gt; #与组件交互 minikube addons open &lt;name&gt; #禁用组件 minikube addons disable &lt;name&gt; 2.6 minikube 调试************************** 启动调试日志 ******************* --v=0将输出INFO级别的日志 --v=1将输出警告级别的日志 --v=2将输出错误级别的日志 --v=3将输出libmachine日志记录 --v=7将输出libmachine –debug级日志记录 minikube start --v=7 将启动minikube并将所有重要的调试日志输出到stdout #收集虚拟机日志，要调试Kubernetes部署失败的问题，收集Kubernetes pod和内核日志非常有用 minikube logs #立即查看启动失败 minikube logs --problems #查看所有Kubernetes Pod的部署状态 kubectl get po -A 2.7 重用Docker 守护程序使用本地映像eval $(minikube docker-env) docker ps 4.学习案例4. 5.kubectl应用和服务 ####6. 10.docker 常用操作10.1 镜像的操作列出所有的镜像: docker images 停止运行：docker stop iamgesId 删除单个镜像：docker rmi imagesId 清理所有（慎用）：docker system prune WARNING! This will remove: - all stopped containers - all networks not used by at least one container - all dangling images - all dangling build cache 清理镜像：docker image prune 清理容器：docker container prune 删除所有停止的镜像docker image prune -f -a 删除所有停止的容器：docker container prune -f 复制文件： docker cp mycontainer:/opt/file.txt /opt/local/ docker cp /opt/local/file.txt mycontainer:/opt/ 11.docker 常见问题及解决方案11.1 docker日志太多导致磁盘占满 在启动时遇到：No space left on device 官方解决方案：地址 ## 1.Sort the /var/lib/docker/containers du -d1 -h /var/lib/docker/containers | sort -h ## 2. 选择要清理的容器进行清理 cat /dev/null &gt; /var/lib/docker/containers/******** ## 3.限制日志文件的大小：启动容器时，可以通过参数设置日志文件的大小、日志文件的格式 docker run -it --log-opt max-size=10m --log-opt max-file=3 alpine ash12.kubectl常用故障排查以及修改命令 scale scale命令进行横向扩展，将原本为1的副本，提高到3 kubectl scale --current-replicas=1 --replicas=3 deployment/nginx autoscale 和scale不同的是autoscale则会根据负载进行调解 kubectl autoscale deployment nginx --min=2 --max=5 cordon 查询nodeAddress kubectl get pods -o wide 设定nodeAddress，使得nodeAddress不可使用，使用get node确认， 其状态显示SchedulingDisabled kubectl cordon nodeAddress 案例： 设定134不可用： kubectl cordon 192.168.32.134 横向扩展： kubectl scale --replicas=6 deployment/nginx 发现没有pods 再执行在134这台机器上。 kubectl uncordon 解除限制 kubectl uncordon nodeAddress kubectl drain drain命令用于对某个node进行设定，是为了设定此node为维护做准备。 此命令主要执行的操作是： 1. 设定此node不可以使用（cordon) 2. evict（回收）了其上的两个pod kubectl api-versions 查看当前版本的kubernetes的服务器端所支持的api版本信息 kubectl get all -o wide 列出pod services deployment replicaset 的信息 kubectl 可get 的信息 kubectl get deployments kubectl get pods kubectl get namespaces kubectl 查看详情信息 kubectl describe node 192.168.32.132 kubectl describe deployment mysql kubectl 查看日志 kubectl logs podsName 13.学习案例2[root@node1 wordpress]# cat wordpress-db.yaml --- apiVersion: apps/v1beta1 kind: Deployment metadata: name: mysql-deploy labels: app: mysql spec: template: metadata: labels: app: mysql spec: containers: - name: mysql image: mysql:5.7 imagePullPolicy: IfNotPresent ports: - containerPort: 3306 name: dbport env: - name: MYSQL_ROOT_PASSWORD value: rootPassW0rd - name: MYSQL_DATABASE value: wordpress - name: MYSQL_USER value: wordpress - name: MYSQL_PASSWORD value: wordpress volumeMounts: - name: db mountPath: /var/lib/mysql volumes: - name: db hostPath: path: /var/lib/mysql --- apiVersion: v1 kind: Service metadata: name: mysql spec: selector: app: mysql ports: - name: mysqlport protocol: TCP port: 3306 targetPort: dbport [root@node1 wordpress]# cat wordpress.yaml apiVersion: apps/v1beta1 kind: Deployment metadata: name: wordpress-deploy labels: app: wordpress spec: template: metadata: labels: app: wordpress spec: containers: - name: wordpress image: wordpress imagePullPolicy: IfNotPresent ports: - containerPort: 80 name: wdport env: - name: WORDPRESS_DB_HOST value: mysql:3306 - name: WORDPRESS_DB_USER value: wordpress - name: WORDPRESS_DB_PASSWORD value: wordpress --- apiVersion: v1 kind: Service metadata: name: wordpress spec: type: NodePort selector: app: wordpress ports: - name: wordpressport protocol: TCP port: 80 targetPort: wdport #### 启动容器 kubectl create -f wordpress-db.yaml kubectl create -f wordpress.yaml #### 查看集群信息 kubectl get all -A -l app=wordpress NAMESPACE NAME READY STATUS RESTARTS AGE default pod/wordpress-deploy-f9c5cf5c6-tj2bc 1/1 Running 0 80m NAMESPACE NAME READY UP-TO-DATE AVAILABLE AGE default deployment.apps/wordpress-deploy 1/1 1 1 80m NAMESPACE NAME DESIRED CURRENT READY AGE default replicaset.apps/wordpress-deploy-f9c5cf5c6 1 1 1 80m #### 配置ingress [root@node1 wordpress]# cat ingress.yaml apiVersion: extensions/v1beta1 kind: Ingress metadata: name: wordpress-ingress namespace: default annotations: kubernetes.io/ingress.class: &quot;nginx&quot; spec: rules: - host: wordpress.boshao.wang http: paths: - backend: serviceName: wordpress servicePort: 80 #### 创建ingress kubectl create -f ingress.yaml #### 查看ingres信息 [root@node1 wordpress]# kubectl get ing wordpress-ingress NAME HOSTS ADDRESS PORTS AGE wordpress-ingress wordpress.boshao.wang 80 78m [root@node1 wordpress]# kubectl describe ingress wordpress-ingress Name: wordpress-ingress Namespace: default Address: Default backend: default-http-backend:80 (&lt;none&gt;) Rules: Host Path Backends ---- ---- -------- wordpress.boshao.wang wordpress:80 (10.233.70.27:80) Annotations: kubernetes.io/ingress.class: nginx Events: &lt;none&gt; #### 最后绑定域名wordpress.boshao.wang 到node节点即可。 通过ingress-nginx 暴露的端口进行访问，即可。 ingress-nginx service/ingress-nginx NodePort 10.233.29.94 &lt;none&gt; 80:31661/TCP,443:30250/TCP 6d2h 访问方式：wordpress.boshao.wang → node ip:31661 http://wordpress.boshao.wang:31661/ 参考地址： minikube参考 命令查询]]></content>
       <categories>
         <category>k8s</category>
       </categories>
       <tags>
-        <tag>k8s-实战篇</tag>
+        <tag>k8s-常用篇</tag>
       </tags>
   </entry>
   <entry>
@@ -185,17 +174,6 @@
       </categories>
       <tags>
         <tag>python-常用篇</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[cassandra-案例篇]]></title>
-    <url>%2F2019%2F10%2F15%2Fcassandra-%E6%A1%88%E4%BE%8B%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[java 链接cassandra 查询导入依赖 &lt;!-- https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core --&gt; &lt;dependency&gt; &lt;groupId&gt;com.datastax.cassandra&lt;/groupId&gt; &lt;artifactId&gt;cassandra-driver-core&lt;/artifactId&gt; &lt;version&gt;3.7.1&lt;/version&gt; &lt;/dependency&gt; import com.datastax.driver.core.Cluster; import com.datastax.driver.core.ResultSet; import com.datastax.driver.core.Row; import com.datastax.driver.core.Session; import java.util.List; /** * @author xianchang.yue * @date 2019-10-15 14:59 */ public class TestCassandra { public static void main(String[] args) { Cluster cluster = null; try { cluster = Cluster.builder().addContactPoints(&quot;127.0.0.1&quot;).withPort(9042).build(); Session session = cluster.connect(); ResultSet execute = session.execute(&quot;select * from system_schema.keyspaces&quot;); List&lt;Row&gt; all = execute.all(); for (Row row : all) { String keyspace_name = row.getString(&quot;keyspace_name&quot;); System.out.println(keyspace_name); } } finally { if (cluster != null) { cluster.close(); } } } }]]></content>
-      <categories>
-        <category>cassandra</category>
-      </categories>
-      <tags>
-        <tag>cassandra-案例篇</tag>
       </tags>
   </entry>
   <entry>
@@ -218,17 +196,6 @@
       </categories>
       <tags>
         <tag>sql-常用篇</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[详细文档设计规范]]></title>
-    <url>%2F2019%2F10%2F15%2F%E8%AF%A6%E7%BB%86%E6%96%87%E6%A1%A3%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%2F</url>
-    <content type="text"><![CDATA[详细设计的目标在项目实施之前进行问题、方案等重要项目信息的归纳整理。书写文档的过程中模块负责人能够更深入的思考问题与解决方案，提升对目标的理解、后续工作的质量、效率，降低项目风险。文档本身作为组织资产进行信息载体，发挥长期的价值。 详细设计文档原则能够面向不了解业务&amp;技术背景的人群 清晰表述完主要问题以及解决方案 详细设计阶段必须定义接口(也可以单独书写接口文档) 考虑到测试、运维、产品的主要关注点 设计文档的格式以及载体格式: markdown 或 word(更新时使用审阅模式) 载体: gitlab , 文档存放项目下doc目录, 每次发版tag携带最新文档 详细设计的适用场景需要写详细设计文档的场景新的线上模块 架构的大调整 对业务产生较大的影响的版本 不需要写详细设计文档的场景不影响架构bug修复和升级且不影响主体逻辑和接口 详细设计文档规范]]></content>
-      <categories>
-        <category>杂七杂八</category>
-      </categories>
-      <tags>
-        <tag>详细文档设计规范</tag>
       </tags>
   </entry>
   <entry>
@@ -863,11 +830,6 @@
       <tags>
         <tag>linux</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[flink-实战篇]]></title>
-    <url>%2F2019%2F09%2F25%2Fflink-%E5%AE%9E%E6%88%98%E7%AF%87%2F</url>
-    <content type="text"></content>
   </entry>
   <entry>
     <title><![CDATA[mysql-问题篇]]></title>

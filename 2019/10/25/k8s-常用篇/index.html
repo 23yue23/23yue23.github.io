@@ -4,10 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="cassandra-案例篇, 笔记,yxc">
-    <meta name="description" content="java 链接cassandra 查询导入依赖
- &amp;lt;!-- https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core --&amp;gt;
-">
+    <meta name="keywords" content="k8s-常用篇, 笔记,yxc">
+    <meta name="description" content="1. kubectl 操作1.1 kubectl 配置1.3 kubectl 权限**********************# 权限问题 #*************************
+查看是否有权限：kubectl auth ca">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>cassandra-案例篇 | 蜗牛笔记</title>
+    <title>k8s-常用篇 | 蜗牛笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -390,13 +389,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        cassandra-案例篇
+                        k8s-常用篇
                     </div>
                 </div>
             </div>
@@ -514,8 +513,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/cassandra-案例篇/">
-                                <span class="chip bg-color">cassandra-案例篇</span>
+                            <a href="/tags/k8s-常用篇/">
+                                <span class="chip bg-color">k8s-常用篇</span>
                             </a>
                         
                     </div>
@@ -526,8 +525,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/cassandra/" class="post-category">
-                                cassandra
+                            <a href="/categories/k8s/" class="post-category">
+                                k8s
                             </a>
                         
                     </div>
@@ -539,7 +538,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-15
+                    2019-10-25
                 </div>
                 
 
@@ -548,14 +547,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    160
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
 				
@@ -571,44 +570,409 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="java-链接cassandra-查询"><a href="#java-链接cassandra-查询" class="headerlink" title="java 链接cassandra 查询"></a>java 链接cassandra 查询</h4><pre><code>导入依赖
- &lt;!-- https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;com.datastax.cassandra&lt;/groupId&gt;
-    &lt;artifactId&gt;cassandra-driver-core&lt;/artifactId&gt;
-    &lt;version&gt;3.7.1&lt;/version&gt;
- &lt;/dependency&gt;
+                <h4 id="1-kubectl-操作"><a href="#1-kubectl-操作" class="headerlink" title="1. kubectl 操作"></a>1. kubectl 操作</h4><h5 id="1-1-kubectl-配置"><a href="#1-1-kubectl-配置" class="headerlink" title="1.1 kubectl 配置"></a>1.1 kubectl 配置</h5><h5 id="1-3-kubectl-权限"><a href="#1-3-kubectl-权限" class="headerlink" title="1.3 kubectl 权限"></a>1.3 kubectl 权限</h5><pre><code>**********************# 权限问题 #*************************
+查看是否有权限：kubectl auth can-i &lt;list|create|edit|delete&gt; pods
+</code></pre><h5 id="1-4-kubectl-常用命令"><a href="#1-4-kubectl-常用命令" class="headerlink" title="1.4 kubectl 常用命令"></a>1.4 kubectl 常用命令</h5><pre><code>//批量删除所有的pod
+kubectl get pods | grep Evicted | awk &#39;{print $1}&#39; | xargs kubectl delete pod</code></pre><h4 id="2-minikube操作"><a href="#2-minikube操作" class="headerlink" title="2. minikube操作"></a>2. minikube操作</h4><h5 id="2-1-minikube-安装"><a href="#2-1-minikube-安装" class="headerlink" title="2.1 minikube 安装"></a>2.1 minikube 安装</h5><blockquote>
+<p>1.下载virtualbox</p>
+</blockquote>
+<blockquote>
+<p>2.brew cask install minikube</p>
+</blockquote>
+<blockquote>
+<p>3.minikube start –vm-driver=virtualbox</p>
+</blockquote>
+<blockquote>
+<p>4.minikube config set vm-driver virtualbox</p>
+</blockquote>
+<blockquote>
+<p>5.kubectl version 查看版本</p>
+</blockquote>
+<h5 id="2-2-minikube-常用操作"><a href="#2-2-minikube-常用操作" class="headerlink" title="2.2 minikube 常用操作"></a>2.2 minikube 常用操作</h5><pre><code>#启动并创建集群
+minikube start
 
-import com.datastax.driver.core.Cluster;
-import com.datastax.driver.core.ResultSet;
-import com.datastax.driver.core.Row;
-import com.datastax.driver.core.Session;
+#查看仪表盘
+minikube dashboard
 
-import java.util.List;
+#使用现有镜像
+kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10
 
-/**
- * @author xianchang.yue
- * @date 2019-10-15 14:59
- */
-public class TestCassandra {
-    public static void main(String[] args) {
-        Cluster cluster = null;
-        try {
-            cluster = Cluster.builder().addContactPoints(&quot;127.0.0.1&quot;).withPort(9042).build();
-            Session session = cluster.connect();
-            ResultSet execute = session.execute(&quot;select * from system_schema.keyspaces&quot;);
-            List&lt;Row&gt; all = execute.all();
-            for (Row row : all) {
-                String keyspace_name = row.getString(&quot;keyspace_name&quot;);
-                System.out.println(keyspace_name);
-            }
-        } finally {
-            if (cluster != null) {
-                cluster.close();
-            }
-        }
-    }
-}</code></pre>
+#访问时将端口进行公开映射
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+
+#查看是否已经正在运行
+kubectl get pods
+
+#获取公开服务的URL以查看服务详细信息
+minikube service hello-minikube --url
+
+#curl 获取的url 查看本地集群的详细信息
+curl http://192.168.99.100:30083
+
+#删除 hello-minikube 服务
+kubectl delete services hello-minikube
+
+#删除 hello-minikube 部署
+kubectl delete deployment hello-minikube
+
+#停止本地minikube 集群
+minikube stop
+
+#删除本地minikube 集群
+minikube delete
+</code></pre><h5 id="2-3-minikube-的应用和服务"><a href="#2-3-minikube-的应用和服务" class="headerlink" title="2.3 minikube 的应用和服务"></a>2.3 minikube 的应用和服务</h5><pre><code>********************# 应用和服务 #*************
+#启动minikube
+minikube start
+
+#部署应用
+kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080
+
+#确定deployment
+kubectl get deployment
+
+#查看部署的应用
+kubectl get pods
+
+#发布应用
+kubectl expose deployment hello-minikube --type=NodePort
+
+#查看发布的内容
+kubectl get services
+
+#访问服务
+1.虚拟机：curl http://ip:port
+2.curl $(minikube service hello-minikube --url)
+
+#获取服务url 链接
+minikube service --url service_name
+
+#查看控制台
+minikube dashboard
+
+查看所有Kubernetes Pod的部署状态
+kubectl get po -A
+
+#删除服务
+kubectl delete services hello-minikube
+
+#删除应用
+kubectl delete deployment hello-minikube
+
+#删除pods
+kubectl delete pods podName
+
+#停止minikube
+minikube stop
+
+#进入minikube 控制台
+minikube ssh
+</code></pre><hr>
+<h5 id="2-4-minikube-集群相关"><a href="#2-4-minikube-集群相关" class="headerlink" title="2.4 minikube 集群相关"></a>2.4 minikube 集群相关</h5><pre><code>**********************# 集群相关 #**************************
+#获取集群的ip
+minikube ip
+
+#获取集群节点
+kubectl get nodes
+
+#启动第二个本地集群
+minikube start -p cluster2
+
+#停止本地集群
+minikube stop
+
+#删除本地集群
+minikube delete
+
+#删除所有本地集群和配置文件
+minikube delete --all
+
+获取网桥ip
+minikube ssh &quot;route -n | grep ^0.0.0.0 | awk &#39;{ print \$2 }&#39;&quot;
+
+链接到集群minikube
+minikube ssh
+telnet ip port
+</code></pre><hr>
+<h5 id="2-5-minikube-附加组件"><a href="#2-5-minikube-附加组件" class="headerlink" title="2.5 minikube 附加组件"></a>2.5 minikube 附加组件</h5><pre><code>********************************* 附加组件 ********************
+
+#查询可添加的组件
+minikube addons list
+
+#启用组件
+minikube addons enable &lt;name&gt;
+
+#与组件交互
+minikube addons open &lt;name&gt;
+
+#禁用组件
+minikube addons disable &lt;name&gt;</code></pre><hr>
+<h5 id="2-6-minikube-调试"><a href="#2-6-minikube-调试" class="headerlink" title="2.6 minikube 调试"></a>2.6 minikube 调试</h5><pre><code>************************** 启动调试日志 *******************
+--v=0将输出INFO级别的日志
+--v=1将输出警告级别的日志
+--v=2将输出错误级别的日志
+--v=3将输出libmachine日志记录
+--v=7将输出libmachine –debug级日志记录
+minikube start --v=7 将启动minikube并将所有重要的调试日志输出到stdout
+
+#收集虚拟机日志，要调试Kubernetes部署失败的问题，收集Kubernetes pod和内核日志非常有用
+minikube logs
+
+#立即查看启动失败
+minikube logs --problems
+
+#查看所有Kubernetes Pod的部署状态
+kubectl get po -A
+</code></pre><h5 id="2-7-重用Docker-守护程序使用本地映像"><a href="#2-7-重用Docker-守护程序使用本地映像" class="headerlink" title="2.7 重用Docker 守护程序使用本地映像"></a>2.7 重用Docker 守护程序使用本地映像</h5><pre><code>eval $(minikube docker-env)
+docker ps</code></pre><hr>
+<h4 id="4-学习案例"><a href="#4-学习案例" class="headerlink" title="4.学习案例"></a>4.学习案例</h4><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><hr>
+<h4 id="5-kubectl应用和服务"><a href="#5-kubectl应用和服务" class="headerlink" title="5.kubectl应用和服务"></a>5.kubectl应用和服务</h4><hr>
+<p>####6. </p>
+<hr>
+<h4 id="10-docker-常用操作"><a href="#10-docker-常用操作" class="headerlink" title="10.docker 常用操作"></a>10.docker 常用操作</h4><h5 id="10-1-镜像的操作"><a href="#10-1-镜像的操作" class="headerlink" title="10.1 镜像的操作"></a>10.1 镜像的操作</h5><pre><code>列出所有的镜像: docker images 
+停止运行：docker stop iamgesId
+删除单个镜像：docker rmi imagesId
+
+清理所有（慎用）：docker system prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+ 清理镜像：docker image prune
+ 清理容器：docker container prune
+ 删除所有停止的镜像docker image prune -f -a
+ 删除所有停止的容器：docker container prune -f
+
+复制文件：
+docker cp mycontainer:/opt/file.txt /opt/local/
+docker cp /opt/local/file.txt mycontainer:/opt/</code></pre><hr>
+<h4 id="11-docker-常见问题及解决方案"><a href="#11-docker-常见问题及解决方案" class="headerlink" title="11.docker 常见问题及解决方案"></a>11.docker 常见问题及解决方案</h4><h5 id="11-1-docker日志太多导致磁盘占满"><a href="#11-1-docker日志太多导致磁盘占满" class="headerlink" title="11.1 docker日志太多导致磁盘占满"></a>11.1 docker日志太多导致磁盘占满</h5><blockquote>
+<p>在启动时遇到：No space left on device 官方解决方案：<a href="https://success.docker.com/article/no-space-left-on-device-error" target="_blank" rel="noopener">地址</a></p>
+</blockquote>
+<pre><code>## 1.Sort the /var/lib/docker/containers
+du -d1 -h /var/lib/docker/containers | sort -h
+
+## 2. 选择要清理的容器进行清理 
+cat /dev/null &gt;     /var/lib/docker/containers/********
+
+## 3.限制日志文件的大小：启动容器时，可以通过参数设置日志文件的大小、日志文件的格式
+ docker run -it --log-opt max-size=10m --log-opt max-file=3 alpine ash</code></pre><h4 id="12-kubectl常用故障排查以及修改命令"><a href="#12-kubectl常用故障排查以及修改命令" class="headerlink" title="12.kubectl常用故障排查以及修改命令"></a>12.kubectl常用故障排查以及修改命令</h4><blockquote>
+<p>scale </p>
+</blockquote>
+<pre><code>scale命令进行横向扩展，将原本为1的副本，提高到3
+kubectl scale --current-replicas=1 --replicas=3 deployment/nginx
+</code></pre><blockquote>
+<p>autoscale</p>
+</blockquote>
+<pre><code>和scale不同的是autoscale则会根据负载进行调解
+kubectl autoscale deployment nginx --min=2 --max=5</code></pre><blockquote>
+<p>cordon</p>
+</blockquote>
+<pre><code>查询nodeAddress
+kubectl get pods -o wide
+
+设定nodeAddress，使得nodeAddress不可使用，使用get node确认，
+其状态显示SchedulingDisabled
+
+kubectl cordon nodeAddress
+案例：
+设定134不可用：
+kubectl cordon 192.168.32.134
+
+横向扩展：
+kubectl scale --replicas=6 deployment/nginx
+
+发现没有pods 再执行在134这台机器上。</code></pre><blockquote>
+<p>kubectl uncordon</p>
+</blockquote>
+<pre><code>解除限制
+kubectl uncordon nodeAddress</code></pre><blockquote>
+<p>kubectl drain </p>
+</blockquote>
+<pre><code>drain命令用于对某个node进行设定，是为了设定此node为维护做准备。
+此命令主要执行的操作是：
+1. 设定此node不可以使用（cordon)
+2. evict（回收）了其上的两个pod</code></pre><blockquote>
+<p>kubectl api-versions</p>
+</blockquote>
+<pre><code>查看当前版本的kubernetes的服务器端所支持的api版本信息</code></pre><blockquote>
+<p>kubectl get all -o wide</p>
+</blockquote>
+<pre><code>列出pod services deployment replicaset 的信息</code></pre><blockquote>
+<p>kubectl 可get 的信息</p>
+</blockquote>
+<pre><code>kubectl get deployments
+kubectl get pods
+kubectl get namespaces</code></pre><blockquote>
+<p>kubectl 查看详情信息</p>
+</blockquote>
+<pre><code>kubectl describe node 192.168.32.132
+kubectl describe deployment mysql</code></pre><blockquote>
+<p>kubectl 查看日志</p>
+</blockquote>
+<pre><code>kubectl logs podsName
+</code></pre><h4 id="13-学习案例2"><a href="#13-学习案例2" class="headerlink" title="13.学习案例2"></a>13.学习案例2</h4><pre><code>[root@node1 wordpress]# cat wordpress-db.yaml
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+name: mysql-deploy
+labels:
+app: mysql
+spec:
+template:
+metadata:
+labels:
+app: mysql
+spec:
+containers:
+- name: mysql
+image: mysql:5.7
+imagePullPolicy: IfNotPresent
+ports:
+- containerPort: 3306
+name: dbport
+env:
+- name: MYSQL_ROOT_PASSWORD
+value: rootPassW0rd
+- name: MYSQL_DATABASE
+value: wordpress
+- name: MYSQL_USER
+value: wordpress
+- name: MYSQL_PASSWORD
+value: wordpress
+volumeMounts:
+- name: db
+mountPath: /var/lib/mysql
+volumes:
+- name: db
+hostPath:
+path: /var/lib/mysql
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+name: mysql
+spec:
+selector:
+app: mysql
+ports:
+- name: mysqlport
+protocol: TCP
+port: 3306
+targetPort: dbport
+
+[root@node1 wordpress]# cat wordpress.yaml
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+name: wordpress-deploy
+labels:
+app: wordpress
+spec:
+template:
+metadata:
+labels:
+app: wordpress
+spec:
+containers:
+- name: wordpress
+image: wordpress
+imagePullPolicy: IfNotPresent
+ports:
+- containerPort: 80
+name: wdport
+env:
+- name: WORDPRESS_DB_HOST
+value: mysql:3306
+- name: WORDPRESS_DB_USER
+value: wordpress
+- name: WORDPRESS_DB_PASSWORD
+value: wordpress
+---
+apiVersion: v1
+kind: Service
+metadata:
+name: wordpress
+spec:
+type: NodePort
+selector:
+app: wordpress
+ports:
+- name: wordpressport
+protocol: TCP
+port: 80
+targetPort: wdport
+
+#### 启动容器
+kubectl create -f wordpress-db.yaml
+kubectl create -f wordpress.yaml
+
+#### 查看集群信息
+kubectl get all -A -l app=wordpress
+NAMESPACE NAME READY STATUS RESTARTS AGE
+default pod/wordpress-deploy-f9c5cf5c6-tj2bc 1/1 Running 0 80m
+
+NAMESPACE NAME READY UP-TO-DATE AVAILABLE AGE
+default deployment.apps/wordpress-deploy 1/1 1 1 80m
+
+NAMESPACE NAME DESIRED CURRENT READY AGE
+default replicaset.apps/wordpress-deploy-f9c5cf5c6 1 1 1 80m
+
+#### 配置ingress
+[root@node1 wordpress]# cat ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+name: wordpress-ingress
+namespace: default
+annotations:
+kubernetes.io/ingress.class: &quot;nginx&quot;
+spec:
+rules:
+- host: wordpress.boshao.wang
+http:
+paths:
+- backend:
+serviceName: wordpress
+servicePort: 80
+
+#### 创建ingress
+kubectl create -f ingress.yaml
+
+#### 查看ingres信息
+[root@node1 wordpress]# kubectl get ing wordpress-ingress
+NAME HOSTS ADDRESS PORTS AGE
+wordpress-ingress wordpress.boshao.wang 80 78m
+
+[root@node1 wordpress]# kubectl describe ingress wordpress-ingress
+Name: wordpress-ingress
+Namespace: default
+Address:
+Default backend: default-http-backend:80 (&lt;none&gt;)
+Rules:
+Host Path Backends
+---- ---- --------
+wordpress.boshao.wang
+wordpress:80 (10.233.70.27:80)
+Annotations:
+kubernetes.io/ingress.class: nginx
+Events: &lt;none&gt;
+
+#### 最后绑定域名wordpress.boshao.wang  到node节点即可。
+通过ingress-nginx 暴露的端口进行访问，即可。
+ingress-nginx service/ingress-nginx NodePort 10.233.29.94 &lt;none&gt; 80:31661/TCP,443:30250/TCP 6d2h
+
+访问方式：wordpress.boshao.wang → node ip:31661 
+http://wordpress.boshao.wang:31661/</code></pre><hr>
+<h4 id="参考地址："><a href="#参考地址：" class="headerlink" title="参考地址："></a>参考地址：</h4><blockquote>
+<p><a href="https://minikube.sigs.k8s.io/" target="_blank" rel="noopener">minikube参考</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://k8smeetup.github.io/docs/user-guide/kubectl/v1.7/#-strong-getting-started-strong-" target="_blank" rel="noopener">命令查询</a> </p>
+</blockquote>
+
             </div>
             <hr/>
 
@@ -633,7 +997,7 @@ public class TestCassandra {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://BradyYue.github.io/2019/10/15/cassandra-案例篇/">https://BradyYue.github.io/2019/10/15/cassandra-案例篇/</a>
+                    <a href="https://BradyYue.github.io/2019/10/25/k8s-常用篇/">https://BradyYue.github.io/2019/10/25/k8s-常用篇/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -671,8 +1035,8 @@ public class TestCassandra {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/cassandra-案例篇/">
-                                    <span class="chip bg-color">cassandra-案例篇</span>
+                                <a href="/tags/k8s-常用篇/">
+                                    <span class="chip bg-color">k8s-常用篇</span>
                                 </a>
                             
                         </div>
@@ -842,6 +1206,55 @@ public class TestCassandra {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2019/11/12/k8s-问题篇/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="k8s-问题篇">
+                        
+                        <span class="card-title">k8s-问题篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文介绍了 k8s 部署和使用是遇到的问题。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/k8s/" class="post-category">
+                                    k8s
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/k8s-问题篇/">
+                        <span class="chip bg-color">k8s-问题篇</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2019/10/24/python-常用篇/">
                     <div class="card-image">
                         
@@ -865,9 +1278,9 @@ Mac下pyenv与pyenv-virtualenv的安装和使用
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -885,55 +1298,6 @@ Mac下pyenv与pyenv-virtualenv的安装和使用
                     
                     <a href="/tags/python-常用篇/">
                         <span class="chip bg-color">python-常用篇</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/10/15/k8s-学习篇/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="k8s-学习篇">
-                        
-                        <span class="card-title">k8s-学习篇</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            本文介绍了 k8s 的3W。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-15
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/k8s/" class="post-category">
-                                    k8s
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/k8s-学习篇/">
-                        <span class="chip bg-color">k8s-学习篇</span>
                     </a>
                     
                 </div>
@@ -1084,7 +1448,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.3k</span>&nbsp;字
+                class="white-color">55.1k</span>&nbsp;字
             
             
             

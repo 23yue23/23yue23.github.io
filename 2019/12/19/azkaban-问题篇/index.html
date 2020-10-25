@@ -547,7 +547,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    124
+                    193
                 </div>
                 
 
@@ -578,7 +578,9 @@
 解决：在 azkaban/exec-server/plugins/jobtypes/commonprivate.properties文件中添加memCheck.enable=false
 
 参考： https://github.com/azkaban/azkaban/issues/481
-      https://my.oschina.net/u/2988360/blog/1537561</code></pre><h4 id="2-azkaban-web-遇到的问题"><a href="#2-azkaban-web-遇到的问题" class="headerlink" title="2.azkaban web 遇到的问题"></a>2.azkaban web 遇到的问题</h4>
+      https://my.oschina.net/u/2988360/blog/1537561</code></pre><h5 id="1-2-exec出现内存溢出"><a href="#1-2-exec出现内存溢出" class="headerlink" title="1.2 exec出现内存溢出"></a>1.2 exec出现内存溢出</h5><pre><code>异常：在azkanan-exec.log 日志中报堆内存溢出，并且作业提交不到exec 上来。
+分析：部署应用时，设置的内存大小不够导致。
+解决：在azkaban-executer-start.sh 脚本中， 增大 AZKABAN_OPTS=&quot;-Xmx4G&quot;</code></pre><h4 id="2-azkaban-web-遇到的问题"><a href="#2-azkaban-web-遇到的问题" class="headerlink" title="2.azkaban web 遇到的问题"></a>2.azkaban web 遇到的问题</h4>
             </div>
             <hr/>
 
@@ -1047,7 +1049,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.3k</span>&nbsp;字
+                class="white-color">55.1k</span>&nbsp;字
             
             
             
