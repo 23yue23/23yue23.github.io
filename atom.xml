@@ -5,9 +5,9 @@
   <subtitle>永不设限，尽在自律。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://23yue23.github.io/"/>
+  <link href="https://yxc.github.io/"/>
   <updated>2020-03-04T02:11:16.665Z</updated>
-  <id>https://23yue23.github.io/</id>
+  <id>https://yxc.github.io/</id>
   
   <author>
     <name>岳贤昌</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>博客文章总目录</title>
-    <link href="https://23yue23.github.io/2020/01/07/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%80%BB%E7%9B%AE%E5%BD%95/"/>
-    <id>https://23yue23.github.io/2020/01/07/博客文章总目录/</id>
+    <link href="https://yxc.github.io/2020/01/07/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%80%BB%E7%9B%AE%E5%BD%95/"/>
+    <id>https://yxc.github.io/2020/01/07/博客文章总目录/</id>
     <published>2020-01-07T07:17:38.000Z</published>
     <updated>2020-03-04T02:11:16.665Z</updated>
     
@@ -34,17 +34,17 @@
     
     </summary>
     
-      <category term="目录" scheme="https://23yue23.github.io/categories/%E7%9B%AE%E5%BD%95/"/>
+      <category term="目录" scheme="https://yxc.github.io/categories/%E7%9B%AE%E5%BD%95/"/>
     
     
-      <category term="目录" scheme="https://23yue23.github.io/tags/%E7%9B%AE%E5%BD%95/"/>
+      <category term="目录" scheme="https://yxc.github.io/tags/%E7%9B%AE%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>go-学习篇</title>
-    <link href="https://23yue23.github.io/2019/12/31/go-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/12/31/go-学习篇/</id>
+    <link href="https://yxc.github.io/2019/12/31/go-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/12/31/go-学习篇/</id>
     <published>2019-12-31T02:58:23.000Z</published>
     <updated>2019-12-31T03:01:17.398Z</updated>
     
@@ -60,17 +60,17 @@
     
     </summary>
     
-      <category term="go" scheme="https://23yue23.github.io/categories/go/"/>
+      <category term="go" scheme="https://yxc.github.io/categories/go/"/>
     
     
-      <category term="go 学习篇" scheme="https://23yue23.github.io/tags/go-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+      <category term="go 学习篇" scheme="https://yxc.github.io/tags/go-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>zabbix-报警脚本篇</title>
-    <link href="https://23yue23.github.io/2019/12/27/zabbix-%E6%8A%A5%E8%AD%A6%E8%84%9A%E6%9C%AC%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/12/27/zabbix-报警脚本篇/</id>
+    <link href="https://yxc.github.io/2019/12/27/zabbix-%E6%8A%A5%E8%AD%A6%E8%84%9A%E6%9C%AC%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/12/27/zabbix-报警脚本篇/</id>
     <published>2019-12-27T08:11:43.000Z</published>
     <updated>2019-12-27T08:14:47.843Z</updated>
     
@@ -91,17 +91,17 @@ e
     
     </summary>
     
-      <category term="zabbix" scheme="https://23yue23.github.io/categories/zabbix/"/>
+      <category term="zabbix" scheme="https://yxc.github.io/categories/zabbix/"/>
     
     
-      <category term="zabbix 报警脚本篇" scheme="https://23yue23.github.io/tags/zabbix-%E6%8A%A5%E8%AD%A6%E8%84%9A%E6%9C%AC%E7%AF%87/"/>
+      <category term="zabbix 报警脚本篇" scheme="https://yxc.github.io/tags/zabbix-%E6%8A%A5%E8%AD%A6%E8%84%9A%E6%9C%AC%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>扫雷系列-Java进程CPU过高故障排查</title>
-    <link href="https://23yue23.github.io/2019/12/27/%E6%89%AB%E9%9B%B7%E7%B3%BB%E5%88%97-Java%E8%BF%9B%E7%A8%8BCPU%E8%BF%87%E9%AB%98%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/"/>
-    <id>https://23yue23.github.io/2019/12/27/扫雷系列-Java进程CPU过高故障排查/</id>
+    <link href="https://yxc.github.io/2019/12/27/%E6%89%AB%E9%9B%B7%E7%B3%BB%E5%88%97-Java%E8%BF%9B%E7%A8%8BCPU%E8%BF%87%E9%AB%98%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/"/>
+    <id>https://yxc.github.io/2019/12/27/扫雷系列-Java进程CPU过高故障排查/</id>
     <published>2019-12-27T08:04:41.000Z</published>
     <updated>2019-12-27T08:09:16.890Z</updated>
     
@@ -117,17 +117,17 @@ e
     
     </summary>
     
-      <category term="扫雷系列" scheme="https://23yue23.github.io/categories/%E6%89%AB%E9%9B%B7%E7%B3%BB%E5%88%97/"/>
+      <category term="扫雷系列" scheme="https://yxc.github.io/categories/%E6%89%AB%E9%9B%B7%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="扫雷系列 Java进程CPU过高故障排查" scheme="https://23yue23.github.io/tags/%E6%89%AB%E9%9B%B7%E7%B3%BB%E5%88%97-Java%E8%BF%9B%E7%A8%8BCPU%E8%BF%87%E9%AB%98%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/"/>
+      <category term="扫雷系列 Java进程CPU过高故障排查" scheme="https://yxc.github.io/tags/%E6%89%AB%E9%9B%B7%E7%B3%BB%E5%88%97-Java%E8%BF%9B%E7%A8%8BCPU%E8%BF%87%E9%AB%98%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/"/>
     
   </entry>
   
   <entry>
     <title>zeppelin-部署篇</title>
-    <link href="https://23yue23.github.io/2019/12/24/zeppelin-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/12/24/zeppelin-部署篇/</id>
+    <link href="https://yxc.github.io/2019/12/24/zeppelin-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/12/24/zeppelin-部署篇/</id>
     <published>2019-12-24T05:47:35.000Z</published>
     <updated>2019-12-24T05:47:35.402Z</updated>
     
@@ -135,17 +135,17 @@ e
     
     </summary>
     
-      <category term="zeppelin-部署篇" scheme="https://23yue23.github.io/categories/zeppelin-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
+      <category term="zeppelin-部署篇" scheme="https://yxc.github.io/categories/zeppelin-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
     
     
-      <category term="zeppelin-部署篇" scheme="https://23yue23.github.io/tags/zeppelin-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
+      <category term="zeppelin-部署篇" scheme="https://yxc.github.io/tags/zeppelin-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>azkaban-部署篇</title>
-    <link href="https://23yue23.github.io/2019/12/24/azkaban-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/12/24/azkaban-部署篇/</id>
+    <link href="https://yxc.github.io/2019/12/24/azkaban-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/12/24/azkaban-部署篇/</id>
     <published>2019-12-24T05:47:23.000Z</published>
     <updated>2019-12-24T06:10:39.657Z</updated>
     
@@ -162,17 +162,17 @@ e
     
     </summary>
     
-      <category term="azkaban" scheme="https://23yue23.github.io/categories/azkaban/"/>
+      <category term="azkaban" scheme="https://yxc.github.io/categories/azkaban/"/>
     
     
-      <category term="azkaban-部署篇" scheme="https://23yue23.github.io/tags/azkaban-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
+      <category term="azkaban-部署篇" scheme="https://yxc.github.io/tags/azkaban-%E9%83%A8%E7%BD%B2%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>k8s-aliyun操作</title>
-    <link href="https://23yue23.github.io/2019/12/19/k8s-aliyun%E6%93%8D%E4%BD%9C/"/>
-    <id>https://23yue23.github.io/2019/12/19/k8s-aliyun操作/</id>
+    <link href="https://yxc.github.io/2019/12/19/k8s-aliyun%E6%93%8D%E4%BD%9C/"/>
+    <id>https://yxc.github.io/2019/12/19/k8s-aliyun操作/</id>
     <published>2019-12-19T11:47:39.000Z</published>
     <updated>2019-12-19T11:49:14.347Z</updated>
     
@@ -190,17 +190,17 @@ e
     
     </summary>
     
-      <category term="k8s-aliyun操作" scheme="https://23yue23.github.io/categories/k8s-aliyun%E6%93%8D%E4%BD%9C/"/>
+      <category term="k8s-aliyun操作" scheme="https://yxc.github.io/categories/k8s-aliyun%E6%93%8D%E4%BD%9C/"/>
     
     
-      <category term="k8s-aliyun操作" scheme="https://23yue23.github.io/tags/k8s-aliyun%E6%93%8D%E4%BD%9C/"/>
+      <category term="k8s-aliyun操作" scheme="https://yxc.github.io/tags/k8s-aliyun%E6%93%8D%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>java-ThreadLocalRandom篇</title>
-    <link href="https://23yue23.github.io/2019/12/19/java-ThreadLocalRandom%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/12/19/java-ThreadLocalRandom篇/</id>
+    <link href="https://yxc.github.io/2019/12/19/java-ThreadLocalRandom%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/12/19/java-ThreadLocalRandom篇/</id>
     <published>2019-12-19T08:47:06.000Z</published>
     <updated>2019-12-19T09:11:57.621Z</updated>
     
@@ -215,17 +215,17 @@ e
     
     </summary>
     
-      <category term="java" scheme="https://23yue23.github.io/categories/java/"/>
+      <category term="java" scheme="https://yxc.github.io/categories/java/"/>
     
     
-      <category term="java ThreadLocalRandom" scheme="https://23yue23.github.io/tags/java-ThreadLocalRandom/"/>
+      <category term="java ThreadLocalRandom" scheme="https://yxc.github.io/tags/java-ThreadLocalRandom/"/>
     
   </entry>
   
   <entry>
     <title>azkaban-问题篇</title>
-    <link href="https://23yue23.github.io/2019/12/19/azkaban-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/12/19/azkaban-问题篇/</id>
+    <link href="https://yxc.github.io/2019/12/19/azkaban-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/12/19/azkaban-问题篇/</id>
     <published>2019-12-19T02:26:22.000Z</published>
     <updated>2019-12-19T02:44:07.508Z</updated>
     
@@ -240,17 +240,17 @@ e
     
     </summary>
     
-      <category term="azkaban" scheme="https://23yue23.github.io/categories/azkaban/"/>
+      <category term="azkaban" scheme="https://yxc.github.io/categories/azkaban/"/>
     
     
-      <category term="azkaban" scheme="https://23yue23.github.io/tags/azkaban/"/>
+      <category term="azkaban" scheme="https://yxc.github.io/tags/azkaban/"/>
     
   </entry>
   
   <entry>
     <title>flink-优化篇</title>
-    <link href="https://23yue23.github.io/2019/12/17/flink-%E4%BC%98%E5%8C%96%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/12/17/flink-优化篇/</id>
+    <link href="https://yxc.github.io/2019/12/17/flink-%E4%BC%98%E5%8C%96%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/12/17/flink-优化篇/</id>
     <published>2019-12-17T02:33:22.000Z</published>
     <updated>2020-01-07T03:21:37.275Z</updated>
     
@@ -265,17 +265,17 @@ e
     
     </summary>
     
-      <category term="flink" scheme="https://23yue23.github.io/categories/flink/"/>
+      <category term="flink" scheme="https://yxc.github.io/categories/flink/"/>
     
     
-      <category term="flink-优化篇" scheme="https://23yue23.github.io/tags/flink-%E4%BC%98%E5%8C%96%E7%AF%87/"/>
+      <category term="flink-优化篇" scheme="https://yxc.github.io/tags/flink-%E4%BC%98%E5%8C%96%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>博客编写思路</title>
-    <link href="https://23yue23.github.io/2019/12/17/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
-    <id>https://23yue23.github.io/2019/12/17/博客编写思路/</id>
+    <link href="https://yxc.github.io/2019/12/17/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
+    <id>https://yxc.github.io/2019/12/17/博客编写思路/</id>
     <published>2019-12-17T01:13:40.000Z</published>
     <updated>2020-01-07T09:01:14.977Z</updated>
     
@@ -290,17 +290,17 @@ e
     
     </summary>
     
-      <category term="博客编写思路" scheme="https://23yue23.github.io/categories/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
+      <category term="博客编写思路" scheme="https://yxc.github.io/categories/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
     
     
-      <category term="博客编写思路" scheme="https://23yue23.github.io/tags/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
+      <category term="博客编写思路" scheme="https://yxc.github.io/tags/%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title>java-cache篇</title>
-    <link href="https://23yue23.github.io/2019/12/17/java-cache%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/12/17/java-cache篇/</id>
+    <link href="https://yxc.github.io/2019/12/17/java-cache%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/12/17/java-cache篇/</id>
     <published>2019-12-16T23:54:44.000Z</published>
     <updated>2019-12-18T06:48:07.391Z</updated>
     
@@ -315,17 +315,17 @@ e
     
     </summary>
     
-      <category term="java" scheme="https://23yue23.github.io/categories/java/"/>
+      <category term="java" scheme="https://yxc.github.io/categories/java/"/>
     
     
-      <category term="java cache" scheme="https://23yue23.github.io/tags/java-cache/"/>
+      <category term="java cache" scheme="https://yxc.github.io/tags/java-cache/"/>
     
   </entry>
   
   <entry>
     <title>azkaban-剖析篇</title>
-    <link href="https://23yue23.github.io/2019/12/10/azkaban-%E5%89%96%E6%9E%90%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/12/10/azkaban-剖析篇/</id>
+    <link href="https://yxc.github.io/2019/12/10/azkaban-%E5%89%96%E6%9E%90%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/12/10/azkaban-剖析篇/</id>
     <published>2019-12-10T08:34:59.000Z</published>
     <updated>2019-12-17T01:06:34.130Z</updated>
     
@@ -341,17 +341,17 @@ e
     
     </summary>
     
-      <category term="azkaban" scheme="https://23yue23.github.io/categories/azkaban/"/>
+      <category term="azkaban" scheme="https://yxc.github.io/categories/azkaban/"/>
     
     
-      <category term="azkaban" scheme="https://23yue23.github.io/tags/azkaban/"/>
+      <category term="azkaban" scheme="https://yxc.github.io/tags/azkaban/"/>
     
   </entry>
   
   <entry>
     <title>httpd-常用篇</title>
-    <link href="https://23yue23.github.io/2019/12/10/httpd-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/12/10/httpd-常用篇/</id>
+    <link href="https://yxc.github.io/2019/12/10/httpd-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/12/10/httpd-常用篇/</id>
     <published>2019-12-10T05:53:26.000Z</published>
     <updated>2019-12-17T02:28:53.766Z</updated>
     
@@ -367,17 +367,17 @@ e
     
     </summary>
     
-      <category term="httpd" scheme="https://23yue23.github.io/categories/httpd/"/>
+      <category term="httpd" scheme="https://yxc.github.io/categories/httpd/"/>
     
     
-      <category term="httpd" scheme="https://23yue23.github.io/tags/httpd/"/>
+      <category term="httpd" scheme="https://yxc.github.io/tags/httpd/"/>
     
   </entry>
   
   <entry>
     <title>k8s-问题篇</title>
-    <link href="https://23yue23.github.io/2019/11/12/k8s-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/11/12/k8s-问题篇/</id>
+    <link href="https://yxc.github.io/2019/11/12/k8s-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/11/12/k8s-问题篇/</id>
     <published>2019-11-12T06:16:23.000Z</published>
     <updated>2019-12-18T06:52:08.313Z</updated>
     
@@ -394,17 +394,17 @@ e
     
     </summary>
     
-      <category term="k8s" scheme="https://23yue23.github.io/categories/k8s/"/>
+      <category term="k8s" scheme="https://yxc.github.io/categories/k8s/"/>
     
     
-      <category term="k8s-问题篇" scheme="https://23yue23.github.io/tags/k8s-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
+      <category term="k8s-问题篇" scheme="https://yxc.github.io/tags/k8s-%E9%97%AE%E9%A2%98%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>k8s-实战篇</title>
-    <link href="https://23yue23.github.io/2019/10/25/k8s-%E5%AE%9E%E6%88%98%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/25/k8s-实战篇/</id>
+    <link href="https://yxc.github.io/2019/10/25/k8s-%E5%AE%9E%E6%88%98%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/10/25/k8s-实战篇/</id>
     <published>2019-10-25T02:15:02.000Z</published>
     <updated>2019-12-20T07:49:13.680Z</updated>
     
@@ -419,17 +419,17 @@ e
     
     </summary>
     
-      <category term="k8s" scheme="https://23yue23.github.io/categories/k8s/"/>
+      <category term="k8s" scheme="https://yxc.github.io/categories/k8s/"/>
     
     
-      <category term="k8s-实战篇" scheme="https://23yue23.github.io/tags/k8s-%E5%AE%9E%E6%88%98%E7%AF%87/"/>
+      <category term="k8s-实战篇" scheme="https://yxc.github.io/tags/k8s-%E5%AE%9E%E6%88%98%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>python-常用篇</title>
-    <link href="https://23yue23.github.io/2019/10/24/python-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/24/python-常用篇/</id>
+    <link href="https://yxc.github.io/2019/10/24/python-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/10/24/python-常用篇/</id>
     <published>2019-10-24T10:26:44.000Z</published>
     <updated>2019-12-11T01:59:05.491Z</updated>
     
@@ -445,17 +445,17 @@ e
     
     </summary>
     
-      <category term="python" scheme="https://23yue23.github.io/categories/python/"/>
+      <category term="python" scheme="https://yxc.github.io/categories/python/"/>
     
     
-      <category term="python-常用篇" scheme="https://23yue23.github.io/tags/python-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+      <category term="python-常用篇" scheme="https://yxc.github.io/tags/python-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>cassandra-案例篇</title>
-    <link href="https://23yue23.github.io/2019/10/15/cassandra-%E6%A1%88%E4%BE%8B%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/15/cassandra-案例篇/</id>
+    <link href="https://yxc.github.io/2019/10/15/cassandra-%E6%A1%88%E4%BE%8B%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/10/15/cassandra-案例篇/</id>
     <published>2019-10-15T07:40:19.000Z</published>
     <updated>2019-12-17T01:55:21.739Z</updated>
     
@@ -470,17 +470,17 @@ e
     
     </summary>
     
-      <category term="cassandra" scheme="https://23yue23.github.io/categories/cassandra/"/>
+      <category term="cassandra" scheme="https://yxc.github.io/categories/cassandra/"/>
     
     
-      <category term="cassandra-案例篇" scheme="https://23yue23.github.io/tags/cassandra-%E6%A1%88%E4%BE%8B%E7%AF%87/"/>
+      <category term="cassandra-案例篇" scheme="https://yxc.github.io/tags/cassandra-%E6%A1%88%E4%BE%8B%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>k8s-学习篇</title>
-    <link href="https://23yue23.github.io/2019/10/15/k8s-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/15/k8s-学习篇/</id>
+    <link href="https://yxc.github.io/2019/10/15/k8s-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/10/15/k8s-学习篇/</id>
     <published>2019-10-15T04:03:49.000Z</published>
     <updated>2019-12-18T06:51:01.624Z</updated>
     
@@ -495,17 +495,17 @@ e
     
     </summary>
     
-      <category term="k8s" scheme="https://23yue23.github.io/categories/k8s/"/>
+      <category term="k8s" scheme="https://yxc.github.io/categories/k8s/"/>
     
     
-      <category term="k8s-学习篇" scheme="https://23yue23.github.io/tags/k8s-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
+      <category term="k8s-学习篇" scheme="https://yxc.github.io/tags/k8s-%E5%AD%A6%E4%B9%A0%E7%AF%87/"/>
     
   </entry>
   
   <entry>
     <title>sql-常用篇</title>
-    <link href="https://23yue23.github.io/2019/10/15/sql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
-    <id>https://23yue23.github.io/2019/10/15/sql-常用篇/</id>
+    <link href="https://yxc.github.io/2019/10/15/sql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+    <id>https://yxc.github.io/2019/10/15/sql-常用篇/</id>
     <published>2019-10-15T03:17:16.000Z</published>
     <updated>2019-10-15T03:17:44.017Z</updated>
     
@@ -520,10 +520,10 @@ e
     
     </summary>
     
-      <category term="sql" scheme="https://23yue23.github.io/categories/sql/"/>
+      <category term="sql" scheme="https://yxc.github.io/categories/sql/"/>
     
     
-      <category term="sql-常用篇" scheme="https://23yue23.github.io/tags/sql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
+      <category term="sql-常用篇" scheme="https://yxc.github.io/tags/sql-%E5%B8%B8%E7%94%A8%E7%AF%87/"/>
     
   </entry>
   
