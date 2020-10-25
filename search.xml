@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[博客文章总目录]]></title>
-    <url>%2F2020%2F01%2F07%2F%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%80%BB%E7%9B%AE%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[Aazkaban系列： 1.azkaban-部署篇 2.azkaban-常用篇 3.azkaban-剖析篇 4.azkaban-问题篇airflow 1.airflow-常用篇ambari 1.ambari-学习篇 2.ambari-资料篇Bbrew 1.brew-使用篇Ccassandra 1.cassandra-学习篇 2.cassandra-常用篇 3.cassandra-优化篇 4.cassandra-问题篇 5.cassandra-资料篇clickhouse 1.clickhouse-学习篇 2.clickhouse-常用篇 3.clickhouse-问题篇 4.clickhouse-资料篇Ddruid 1.druid-学习篇Eelasticsearch 1.elasticsearch-学习篇 2.elasticsearch-常用篇 3.elasticsearch-问题篇 4.elasticsearch-资料篇Fflink 1.flink-常用篇 2.flink-优化篇 3.flink-问题篇 4.flink-资料篇 flink优化(1)-配置参数优化flink优化(2)-优化flink优化(3)-flink优化(4)-相关文章 flink应用-flink案例-flink GgrafanagitHhadoophutool 1.hutool-常用篇haproxy 1.haproxy-学习篇 2.haproxy-使用篇 3.haproxy-问题篇hive 1.hive-常用篇 2.hive-问题篇httpdIidea 1.idea-常用篇 2.idae-问题篇impala 1.impala-学习篇 2.impala-常用篇 3.impala-问题篇Jjava 1.java-cache篇 2.java-guava篇 3.java-JVM篇 4.java-ThreadLocalRandom篇 5.java-多线程篇 6.java-设计模式Kkafkakubernets 1.k8s-学习篇kudukylinLlinuxlivyMmavenNnginxnettyOorcPparquetpythonRredisrpcSsparkspring 全家桶shellsqoopTtomcatVvimYyarnZzabbix 1.zabbix-常用篇 2.zabbix-报警脚本篇zeppelin 1.zeppelin-部署篇 2.zeppelin-常用篇 3.zeppelin-剖析篇 4.zeppelin-问题篇 5.zeppelin-资料篇zookeeper广告 1.广告-学习篇 其他心灵港湾书籍阅读生活感悟]]></content>
-      <categories>
-        <category>目录</category>
-      </categories>
-      <tags>
-        <tag>目录</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[go-学习篇]]></title>
     <url>%2F2019%2F12%2F31%2Fgo-%E5%AD%A6%E4%B9%A0%E7%AF%87%2F</url>
     <content type="text"><![CDATA[基础：声明放后面，函数多产出，]]></content>
