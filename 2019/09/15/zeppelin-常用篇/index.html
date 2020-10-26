@@ -5,14 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="zeppelin-常用篇, 笔记,yxc">
-    <meta name="description" content="安装解释器#解释器所有安装
-./bin/install-interpreter.sh --all
-
-#解释器可安装列表
-./bin/install-interpreter.sh --list
-
-#解释器安装单独的
-./bin/install">
+    <meta name="description" content="zeppelin 操作kill 所有进程ps -ef | grep &amp;#39;zeppelin&amp;#39; | awk &amp;#39;{print $2}&amp;#39; |xargs kill -9删除note 操作调用 restAPI 进行 删除。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -553,14 +546,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    569
+                    628
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 				
@@ -576,19 +569,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="安装解释器"><a href="#安装解释器" class="headerlink" title="安装解释器"></a>安装解释器</h4><pre><code>#解释器所有安装
-./bin/install-interpreter.sh --all
-
-#解释器可安装列表
-./bin/install-interpreter.sh --list
-
-#解释器安装单独的
-./bin/install-interpreter.sh --name kylin 
-./bin/install-interpreter.sh --name livy
-</code></pre><h4 id="hive-使用"><a href="#hive-使用" class="headerlink" title="hive 使用"></a>hive 使用</h4><h5 id="作业名设置"><a href="#作业名设置" class="headerlink" title="作业名设置"></a>作业名设置</h5><pre><code>```
+                <h4 id="zeppelin-操作"><a href="#zeppelin-操作" class="headerlink" title="zeppelin 操作"></a>zeppelin 操作</h4><h5 id="kill-所有进程"><a href="#kill-所有进程" class="headerlink" title="kill 所有进程"></a>kill 所有进程</h5><pre><code>ps -ef | grep &#39;zeppelin&#39; | awk &#39;{print $2}&#39; |xargs kill -9</code></pre><h5 id="删除note-操作"><a href="#删除note-操作" class="headerlink" title="删除note 操作"></a>删除note 操作</h5><pre><code>调用 restAPI 进行 删除。http://ip/api/notebook/2EKP1TRX6</code></pre><h5 id="清理note-日志"><a href="#清理note-日志" class="headerlink" title="清理note 日志"></a>清理note 日志</h5><h4 id="hive-解释器使用"><a href="#hive-解释器使用" class="headerlink" title="hive 解释器使用"></a>hive 解释器使用</h4><h5 id="作业名设置"><a href="#作业名设置" class="headerlink" title="作业名设置"></a>作业名设置</h5><pre><code>```
 %hive
 set mapred.job.name=zeppelin_hive_xianchang.yue;
-```</code></pre><h5 id><a href="#" class="headerlink" title></a></h5><hr>
+```</code></pre><h5 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h5><pre><code>```
+%hive
+hive -hiveconf mapreduce.map.memory.mb=4096 -hiveconf mapreduce.reduce.memory.mb=5120
+
+``` </code></pre><hr>
 <h4 id="shell-使用"><a href="#shell-使用" class="headerlink" title="shell 使用"></a>shell 使用</h4><h5 id="参数优化"><a href="#参数优化" class="headerlink" title="参数优化"></a>参数优化</h5><pre><code>```
 %shell
  set mapred.child.java.opts;
@@ -636,9 +624,7 @@ import urllib2
 data = urllib2.urlopen(&quot;http://zeppeline.com:8060/file/shell/product/shellppp_demo.xls&quot;)
 for line in data:
     print line
-</code></pre><p>####kyline的安装</p>
-<pre class=" language-shell"><code class="language-shell"></code></pre>
-<h4 id="Livy的集成"><a href="#Livy的集成" class="headerlink" title="Livy的集成"></a>Livy的集成</h4><p>Livy-env.sh</p>
+</code></pre><h4 id="Livy的集成"><a href="#Livy的集成" class="headerlink" title="Livy的集成"></a>Livy的集成</h4><p>Livy-env.sh</p>
 <pre><code>livy.spark.master = yarn  
 livy.spark.deploy-mode = cluster  
 livy.repl.enable-hive-context = true </code></pre><ul>
@@ -656,7 +642,16 @@ livy.repl.enable-hive-context = true </code></pre><ul>
 <p>部署中遇到的问题：Spark 问题：</p>
 <p><a href="https://www.oipapio.com/question-713829" target="_blank" rel="noopener">https://www.oipapio.com/question-713829</a></p>
 </blockquote>
+<h4 id="安装解释器"><a href="#安装解释器" class="headerlink" title="安装解释器"></a>安装解释器</h4><pre><code>#解释器所有安装
+./bin/install-interpreter.sh --all
 
+#解释器可安装列表
+./bin/install-interpreter.sh --list
+
+#解释器安装单独的
+./bin/install-interpreter.sh --name kylin 
+./bin/install-interpreter.sh --name livy
+</code></pre>
             </div>
             <hr/>
 
@@ -1146,7 +1141,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.1k</span>&nbsp;字
+                class="white-color">55.5k</span>&nbsp;字
             
             
             

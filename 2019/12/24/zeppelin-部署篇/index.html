@@ -5,7 +5,10 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="zeppelin-部署篇, 笔记,yxc">
-    <meta name="description" content="zeppelin-部署篇 | 蜗牛笔记">
+    <meta name="description" content="相关地址
+github: https://github.com/apache/zeppelin.gitapache: https://zeppelin.apache.org
+
+构建编译步骤1.首先从git 上选择自己要编译的分支，进行下载，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -524,8 +527,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/zeppelin-部署篇/" class="post-category">
-                                zeppelin-部署篇
+                            <a href="/categories/zeppelin/" class="post-category">
+                                zeppelin
                             </a>
                         
                     </div>
@@ -546,7 +549,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    287
                 </div>
                 
 
@@ -569,7 +572,31 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h5 id="相关地址"><a href="#相关地址" class="headerlink" title="相关地址"></a>相关地址</h5><blockquote>
+<p>github: <a href="https://github.com/apache/zeppelin.git" target="_blank" rel="noopener">https://github.com/apache/zeppelin.git</a><br>apache: <a href="https://zeppelin.apache.org" target="_blank" rel="noopener">https://zeppelin.apache.org</a></p>
+</blockquote>
+<h5 id="构建编译步骤"><a href="#构建编译步骤" class="headerlink" title="构建编译步骤"></a>构建编译步骤</h5><pre><code>1.首先从git 上选择自己要编译的分支，进行下载，cd 到home 下。
+2.进行编译代码：mvn clean install -DskipTests -DskipRat. 
+3.interpreter目录下不需要的interpreter删掉就好，这样可以小很多,
+  然后再运行 mvn clean package -DskipTests -pl zeppelin-distribution -DskipRat -Pbuild-distr
+4.可以运行以下构建的zeppelin
+  zeppelin/zeppelin-distribution/target/zeppelin-0.9.0-SNAPSHOT.tar.gz</code></pre><h5 id="安装解释器："><a href="#安装解释器：" class="headerlink" title="安装解释器："></a>安装解释器：</h5><pre><code> 1.安装所有的解释器
+./bin/install-interpreter.sh —all
+
+2.安装单独的解释器
+./bin/install-interpreter.sh --name flink</code></pre><h5 id="启动和停止sever"><a href="#启动和停止sever" class="headerlink" title="启动和停止sever"></a>启动和停止sever</h5><pre><code>bin/zeppelin-daemon.sh start
+bin/zeppelin-daemon.sh restart
+bin/zeppelin-daemon.sh stop</code></pre><h5 id="解释器安装"><a href="#解释器安装" class="headerlink" title="解释器安装"></a>解释器安装</h5><h6 id="spark"><a href="#spark" class="headerlink" title="spark"></a>spark</h6><pre><code> yarn 模式：填写hadoop_conf_dir 和spark_home_dir 就可以了。</code></pre><h6 id="hive"><a href="#hive" class="headerlink" title="hive"></a>hive</h6><pre><code> url
+ username
+ password</code></pre><h6 id="kylin"><a href="#kylin" class="headerlink" title="kylin"></a>kylin</h6><pre><code> 采用jdbc 的解释器，和hive类似</code></pre><h6 id="imapla"><a href="#imapla" class="headerlink" title="imapla"></a>imapla</h6><h6 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h6><h5 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h5><h6 id="禁用公共用户："><a href="#禁用公共用户：" class="headerlink" title="禁用公共用户："></a>禁用公共用户：</h6><pre><code>&lt;property&gt;
+&lt;name&gt;zeppelin.anonymous.allowed&lt;/name&gt;
+&lt;value&gt;false&lt;/value&gt;
+&lt;description&gt;Anonymous user allowed by default&lt;/description&gt;
+&lt;/property&gt;</code></pre><h6 id="开启禁用的job页面"><a href="#开启禁用的job页面" class="headerlink" title="开启禁用的job页面"></a>开启禁用的job页面</h6><pre><code>Job 页面被禁掉，在配置文件中打开方式：
+&lt;property&gt;
+  &lt;name&gt;zeppelin.jobmanager.enable&lt;/name&gt;
+  &lt;value&gt;true&lt;/value&gt;
+&lt;/property&gt;</code></pre>
             </div>
             <hr/>
 
@@ -1038,7 +1065,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.1k</span>&nbsp;字
+                class="white-color">55.5k</span>&nbsp;字
             
             
             
